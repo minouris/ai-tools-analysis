@@ -140,15 +140,14 @@ GitHub Copilot is powered by generative AI models developed by GitHub, OpenAI, a
 **Supported File Types:** 
 - `.github/copilot-instructions.md` (repository-wide custom instructions)
 - `.github/instructions/*.instructions.md` (path-specific custom instructions)
-- `AGENTS.md` (agent instructions, can be stored anywhere in repository)
-- `CLAUDE.md` (alternative agent instructions in root)
-- `GEMINI.md` (alternative agent instructions in root)
+- `AGENTS.md` (agent instructions, can be stored anywhere in repository; nearest file in directory tree takes precedence)
+- `CLAUDE.md` or `GEMINI.md` (alternative agent instruction files in repository root)
 - `global-copilot-instructions.md` (global instructions for JetBrains IDEs)
 
 **File Locations:** 
 - Repository-wide: `.github/copilot-instructions.md`
 - Path-specific: `.github/instructions/` directory with `*.instructions.md` files
-- Agent instructions: Anywhere in repository hierarchy (nearest `AGENTS.md` takes precedence)
+- Agent instructions: `AGENTS.md` anywhere in repository hierarchy, or `CLAUDE.md`/`GEMINI.md` in root
 - Global (JetBrains): `~/.config/github-copilot/intellij/global-copilot-instructions.md` (macOS) or `C:\Users\USERNAME\AppData\Local\github-copilot\intellij\global-copilot-instructions.md` (Windows)
 
 **File Format:** Markdown
