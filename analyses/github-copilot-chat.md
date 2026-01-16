@@ -248,11 +248,11 @@ Log all database operations at debug level.
 
 ### Prompt Storage Mechanism
 
-**Available:** Yes (partial - via repository files and built-in shortcuts)
+**Available:** Yes (partial - via built-in shortcuts; prompt files mentioned but not fully documented)
 
 GitHub Copilot Chat provides several mechanisms for reusable prompts:
 
-1. **Custom prompt files**: Prompt files can be stored in the `.github/prompts` folder for repository-specific reusable prompts
+1. **Custom prompt files**: The `.github/prompts` folder has been mentioned for repository-specific reusable prompts, but detailed official documentation on implementation is not available in official sources
 2. **Chat participants**: Special keywords prefixed with `@` to scope prompts to specific domains (e.g., `@workspace`, `@terminal`)
 3. **Slash commands**: Shortcut commands prefixed with `/` for common scenarios (e.g., `/explain`, `/fix`, `/tests`)
 4. **Chat variables**: Context variables prefixed with `#` to include specific context (e.g., `#file`, `#selection`)
@@ -263,7 +263,7 @@ GitHub Copilot Chat provides several mechanisms for reusable prompts:
 Users can create reusable prompt patterns through multiple methods:
 
 **Prompt Files** (`.github/prompts` folder):
-Repository-specific custom prompts can be stored in the `.github/prompts` directory for team sharing and reuse. The specific file format and usage patterns for prompt files are supported in VS Code and other IDEs.
+The `.github/prompts` directory has been referenced for storing repository-specific custom prompts, but comprehensive documentation on file format, structure, and usage patterns is not available in official GitHub Copilot documentation sources.
 
 **Built-in Keywords**:
 1. **Chat participants**: Type `@` to see available participants (e.g., `@workspace`, `@terminal`)
@@ -274,13 +274,13 @@ These can be combined in prompts for consistent results, though they are not sto
 
 ### Organising Prompts
 
-**Prompt Files**: Custom prompts stored in the `.github/prompts` folder can be organised by naming conventions and directory structure within that folder.
+**Prompt Files**: The `.github/prompts` folder structure is referenced but not fully documented in official sources. Organisation and management details are not available in official GitHub Copilot documentation.
 
 **Built-in Keywords**: Chat participants, slash commands, and chat variables are pre-defined by the system and cannot be customised or organised by users.
 
 ### Using Stored Prompts
 
-**Prompt Files**: Access custom prompts from the `.github/prompts` folder through the IDE's prompt management interface (specific invocation method varies by IDE).
+**Prompt Files**: The specific method for accessing and invoking custom prompts from the `.github/prompts` folder is not documented in official sources.
 
 **Built-in Keywords**: To use the built-in prompt shortcuts:
 
@@ -292,13 +292,13 @@ Example: `@workspace /explain #file:auth.ts` asks Copilot to explain the auth.ts
 
 ### Sharing and Exporting
 
-**Prompt Files**: Custom prompts in the `.github/prompts` folder are committed to the repository and can be shared with team members through version control.
+**Prompt Files**: If implemented via `.github/prompts` folder, custom prompts could be committed to version control and shared with team members, though official documentation on this functionality is not available.
 
 **Custom instructions**: Repository-level instructions (Section 3) can be shared via repository files, providing team-wide guidance for Copilot behaviour.
 
 **Built-in Keywords**: Individual prompt templates using built-in keywords cannot be directly exported or shared through the Copilot interface, but effective prompt patterns can be documented and shared externally.
 
-**Citation:** Adding custom instructions for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot. Accessed 16 January 2026. Changing the AI model for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat. Accessed 16 January 2026.
+**Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 16 January 2026.
 
 ---
 
@@ -718,7 +718,7 @@ gh copilot
 - **Native GitHub integration**: Seamless integration with GitHub.com, issues, pull requests, and repositories for Enterprise customers
 - **Extensibility**: MCP support allows integration with external tools and services, with both local and remote server options
 - **Multi-model support**: Choice of various AI models from OpenAI, Anthropic, Google, and others with model switching capability, including support for local models via Ollama and Azure AI through model management
-- **Custom instructions and prompts**: Repository-wide and path-specific instruction files, plus support for custom prompt files in `.github/prompts` folder for reusable team prompts
+- **Custom instructions and prompts**: Repository-wide and path-specific instruction files allow fine-tuned control over Copilot's behaviour; `.github/prompts` folder mentioned for custom prompts but not fully documented in official sources
 - **CLI agent**: Terminal-based autonomous agent for command-line workflows
 - **Enterprise-ready**: Strong governance, policy management, and security features including IP indemnity for Business and Enterprise plans
 - **Active development**: Regular feature updates and improvements with public preview features
@@ -726,9 +726,9 @@ gh copilot
 ### Limitations
 
 - **Model management requires setup**: Adding Ollama, Azure AI, and other third-party models requires manual configuration through IDE-specific "Manage Models" interface
-- **Prompt file documentation limited**: While `.github/prompts` folder is supported, detailed documentation on prompt file format and usage patterns is limited
+- **Prompt files not fully documented**: While `.github/prompts` folder has been referenced, comprehensive official documentation on format and usage is not available
 - **Subscription required**: Core features require paid subscription (Free tier has significant limitations: 2000 completions, 50 chat requests)
-- **Public preview features**: Some advanced features (Plan mode, Eclipse support, CLI, prompt files) are in public preview and subject to change
+- **Public preview features**: Some advanced features (Plan mode, Eclipse support, CLI) are in public preview and subject to change
 - **MCP policy restrictions**: Enterprise/Business customers need administrator approval to enable MCP servers
 - **No direct deployment features**: Limited built-in support for deployment automation
 - **AI Toolkit dependency**: Ollama and some other model integrations require the AI Toolkit extension for VS Code
