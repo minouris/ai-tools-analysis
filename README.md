@@ -31,6 +31,19 @@ A ready-to-use template for creating new tool analyses. This template includes:
 
 **Use this template as a starting point for each new tool analysis.**
 
+### ⚡ [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
+
+A concise guide for quick access while conducting analyses. Includes:
+
+- Essential guidelines and checklist
+- Section-by-section quick reference
+- Citation format examples
+- Common phrases for missing information
+- UK vs US English reference
+- Tips for efficient analysis
+
+**Use this for quick lookups during the analysis process.**
+
 ## How to Analyse a New Tool
 
 1. **Read the Analysis Plan**  
@@ -72,7 +85,9 @@ ai-tools-analysis/
 ├── README.md                    # This file
 ├── ANALYSIS_PLAN.md            # Detailed analysis methodology
 ├── TOOL_ANALYSIS_TEMPLATE.md   # Template for new analyses
+├── QUICK_REFERENCE.md          # Quick lookup guide
 └── analyses/                   # Individual tool analyses
+    ├── README.md
     ├── tool-name-1.md
     ├── tool-name-2.md
     └── ...
