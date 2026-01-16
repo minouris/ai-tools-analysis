@@ -4,7 +4,7 @@ This directory contains individual analyses of AI coding tools, each following t
 
 ## Current Analyses
 
-- [Claude Code](claude-code.md) - Analysis of Anthropic's Claude models for code generation and assistance
+*No analyses have been created yet. Use the [TOOL_ANALYSIS_TEMPLATE.md](../TOOL_ANALYSIS_TEMPLATE.md) to create a new analysis.*
 
 ## Creating a New Analysis
 
