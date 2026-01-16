@@ -43,17 +43,25 @@ GitHub Copilot transforms the developer experience by enabling developers to foc
 
 ### 2.1 Ollama Integration
 
-**Supported:** Not documented in official sources
+**Supported:** Yes (via model management in VS Code)
 
 **Configuration:**
 
-Not documented in official sources.
+In Visual Studio Code, users can add Ollama models through the model management interface:
 
-**Supported Models:** Not documented in official sources
+1. In the Copilot chat view, click the model picker dropdown
+2. Click "Manage Models"
+3. Install the AI Toolkit for Visual Studio Code extension (if not already installed)
+4. Add models from the AI Toolkit, which supports Ollama and other local model providers
+5. Provide any required authentication or configuration for the provider
 
-**Limitations:** Not documented in official sources
+The first time you use a model added via the AI Toolkit, you may be prompted to download it and authenticate with the provider.
 
-**Citation:** Not documented in official sources
+**Supported Models:** Depends on models available through Ollama installation
+
+**Limitations:** Requires AI Toolkit extension for VS Code. Support may vary by IDE - primarily documented for VS Code.
+
+**Citation:** Changing the AI model for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat. Accessed 16 January 2026.
 
 ---
 
@@ -84,17 +92,25 @@ GitHub Copilot Pro is designed for individual developers, freelancers, students,
 
 ### 2.3 Microsoft AI Foundry Integration
 
-**Supported:** Not documented in official sources
+**Supported:** Yes (via model management in VS Code)
 
 **Configuration:**
 
-- **Endpoint URL Configuration:** Not documented in official sources
-- **API Key Configuration:** Not documented in official sources
-- **Supported Models:** Not documented in official sources
+In Visual Studio Code, users can add Azure AI/Microsoft AI Foundry models through the model management interface:
 
-**Authentication Methods:** Not documented in official sources
+1. In the Copilot chat view, click the model picker dropdown
+2. Click "Manage Models"
+3. Select the Azure AI provider from the list
+4. Provide the required authentication (GitHub PAT, API key, or model ID as applicable)
+5. Select the specific models to add
 
-**Citation:** Not documented in official sources
+- **Endpoint URL Configuration:** Configured through the model management interface
+- **API Key Configuration:** Provided when adding the provider through "Manage Models"
+- **Supported Models:** Azure OpenAI models and other models available through Microsoft AI Foundry
+
+**Authentication Methods:** GitHub personal access token (PAT), API keys, or provider-specific authentication as required by the model provider
+
+**Citation:** Changing the AI model for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat. Accessed 16 January 2026.
 
 ---
 
@@ -232,19 +248,24 @@ Log all database operations at debug level.
 
 ### Prompt Storage Mechanism
 
-**Available:** Partial
+**Available:** Yes (partial - via repository files and built-in shortcuts)
 
-GitHub Copilot Chat does not provide a built-in prompt library or storage mechanism for custom prompts in the traditional sense. However, users can leverage several approaches for reusable prompts:
+GitHub Copilot Chat provides several mechanisms for reusable prompts:
 
-1. **Chat participants**: Special keywords prefixed with `@` to scope prompts to specific domains
-2. **Slash commands**: Shortcut commands prefixed with `/` for common scenarios
-3. **Chat variables**: Context variables prefixed with `#` to include specific context
-4. **Custom instructions**: Repository-level instructions that guide Copilot's behaviour (see Section 3)
+1. **Custom prompt files**: Prompt files can be stored in the `.github/prompts` folder for repository-specific reusable prompts
+2. **Chat participants**: Special keywords prefixed with `@` to scope prompts to specific domains (e.g., `@workspace`, `@terminal`)
+3. **Slash commands**: Shortcut commands prefixed with `/` for common scenarios (e.g., `/explain`, `/fix`, `/tests`)
+4. **Chat variables**: Context variables prefixed with `#` to include specific context (e.g., `#file`, `#selection`)
+5. **Custom instructions**: Repository-level instructions that guide Copilot's behaviour (see Section 3)
 
 ### Creating Custom Prompts
 
-Users can create reusable prompt patterns through:
+Users can create reusable prompt patterns through multiple methods:
 
+**Prompt Files** (`.github/prompts` folder):
+Repository-specific custom prompts can be stored in the `.github/prompts` directory for team sharing and reuse. The specific file format and usage patterns for prompt files are supported in VS Code and other IDEs.
+
+**Built-in Keywords**:
 1. **Chat participants**: Type `@` to see available participants (e.g., `@workspace`, `@terminal`)
 2. **Slash commands**: Type `/` to see available commands (e.g., `/explain`, `/fix`, `/tests`)
 3. **Chat variables**: Type `#` to see available variables (e.g., `#file`, `#selection`)
@@ -253,11 +274,15 @@ These can be combined in prompts for consistent results, though they are not sto
 
 ### Organising Prompts
 
-Not documented in official sources for built-in organisation of custom prompts. Users would need to maintain their own documentation of effective prompt patterns outside of the Copilot interface.
+**Prompt Files**: Custom prompts stored in the `.github/prompts` folder can be organised by naming conventions and directory structure within that folder.
+
+**Built-in Keywords**: Chat participants, slash commands, and chat variables are pre-defined by the system and cannot be customised or organised by users.
 
 ### Using Stored Prompts
 
-To use the built-in prompt shortcuts:
+**Prompt Files**: Access custom prompts from the `.github/prompts` folder through the IDE's prompt management interface (specific invocation method varies by IDE).
+
+**Built-in Keywords**: To use the built-in prompt shortcuts:
 
 1. Open Copilot Chat in your IDE
 2. Type `@`, `/`, or `#` to trigger auto-completion of available options
@@ -267,9 +292,13 @@ Example: `@workspace /explain #file:auth.ts` asks Copilot to explain the auth.ts
 
 ### Sharing and Exporting
 
-Not documented in official sources. Custom instructions (Section 3) can be shared via repository files, but individual prompt templates cannot be directly exported or shared through the Copilot interface.
+**Prompt Files**: Custom prompts in the `.github/prompts` folder are committed to the repository and can be shared with team members through version control.
 
-**Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 16 January 2026.
+**Custom instructions**: Repository-level instructions (Section 3) can be shared via repository files, providing team-wide guidance for Copilot behaviour.
+
+**Built-in Keywords**: Individual prompt templates using built-in keywords cannot be directly exported or shared through the Copilot interface, but effective prompt patterns can be documented and shared externally.
+
+**Citation:** Adding custom instructions for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot. Accessed 16 January 2026. Changing the AI model for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat. Accessed 16 January 2026.
 
 ---
 
@@ -688,21 +717,21 @@ gh copilot
 - **Multiple interaction modes**: Flexible workflows with Ask, Edit, Agent, and Plan modes for different development scenarios
 - **Native GitHub integration**: Seamless integration with GitHub.com, issues, pull requests, and repositories for Enterprise customers
 - **Extensibility**: MCP support allows integration with external tools and services, with both local and remote server options
-- **Multi-model support**: Choice of various AI models from OpenAI, Anthropic, Google, and others with model switching capability
-- **Custom instructions**: Repository-wide and path-specific instruction files allow fine-tuned control over Copilot's behaviour
+- **Multi-model support**: Choice of various AI models from OpenAI, Anthropic, Google, and others with model switching capability, including support for local models via Ollama and Azure AI through model management
+- **Custom instructions and prompts**: Repository-wide and path-specific instruction files, plus support for custom prompt files in `.github/prompts` folder for reusable team prompts
 - **CLI agent**: Terminal-based autonomous agent for command-line workflows
 - **Enterprise-ready**: Strong governance, policy management, and security features including IP indemnity for Business and Enterprise plans
 - **Active development**: Regular feature updates and improvements with public preview features
 
 ### Limitations
 
-- **No built-in prompt library**: Lacks a formal system for storing and organising custom prompt templates (must rely on external documentation)
-- **No Ollama integration documented**: Local LLM support through Ollama is not mentioned in official documentation
-- **Limited Microsoft AI Foundry details**: No documented configuration for Azure AI Foundry/Azure OpenAI integration
+- **Model management requires setup**: Adding Ollama, Azure AI, and other third-party models requires manual configuration through IDE-specific "Manage Models" interface
+- **Prompt file documentation limited**: While `.github/prompts` folder is supported, detailed documentation on prompt file format and usage patterns is limited
 - **Subscription required**: Core features require paid subscription (Free tier has significant limitations: 2000 completions, 50 chat requests)
-- **Public preview features**: Some advanced features (Plan mode, Eclipse support, CLI) are in public preview and subject to change
+- **Public preview features**: Some advanced features (Plan mode, Eclipse support, CLI, prompt files) are in public preview and subject to change
 - **MCP policy restrictions**: Enterprise/Business customers need administrator approval to enable MCP servers
 - **No direct deployment features**: Limited built-in support for deployment automation
+- **AI Toolkit dependency**: Ollama and some other model integrations require the AI Toolkit extension for VS Code
 
 ### Best Use Cases
 
