@@ -82,7 +82,7 @@ GitHub Copilot Pro is designed for individual developers, freelancers, students,
 - Copilot Chat in supported IDEs
 - GitHub Mobile support with Bing and public repository code search
 - Access to Copilot CLI (requires preview features to be enabled)
-- Monthly limit of 2000 completions and 50 chat requests for Free tier; Pro tier includes higher limits
+- Higher monthly usage limits for completions and chat requests compared to the Free tier (see current plans for exact quotas)
 - Model selection capabilities
 - Custom instructions support
 
