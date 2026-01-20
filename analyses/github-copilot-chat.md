@@ -1,9 +1,44 @@
+← [Previous: Continue](continue.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
+
+---
+
 # GitHub Copilot Chat Analysis
 
 **Analysis Date:** 16 January 2026  
 **Tool Version:** Current (as of January 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://docs.github.com/en/copilot
+
+## Table of Contents
+
+- [1. Tool Overview](#1-tool-overview)
+- [2. LLM Provider Integration](#2-llm-provider-integration)
+  - [2.1 Ollama Integration](#21-ollama-integration)
+  - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
+  - [2.3 Microsoft AI Foundry Integration](#23-microsoft-ai-foundry-integration)
+  - [2.4 OpenAI Integration](#24-openai-integration)
+  - [2.5 Anthropic (Claude) Integration](#25-anthropic-claude-integration)
+- [3. Policies and Rules (Instruction Files)](#3-policies-and-rules-instruction-files)
+- [4. Custom and Stored Prompts](#4-custom-and-stored-prompts)
+- [5. Tools and Model Context Protocol (MCP)](#5-tools-and-model-context-protocol-mcp)
+- [6. Application Development Workflow](#6-application-development-workflow)
+  - [6.1 Project Initialisation](#61-project-initialisation)
+  - [6.2 Design and Planning](#62-design-and-planning)
+  - [6.3 Code Generation](#63-code-generation)
+  - [6.4 Iterative Development](#64-iterative-development)
+  - [6.5 Testing and Validation](#65-testing-and-validation)
+  - [6.6 Debugging](#66-debugging)
+  - [6.7 Deployment](#67-deployment)
+- [7. IDE and Environment Integration](#7-ide-and-environment-integration)
+  - [7.1 Visual Studio Code](#71-visual-studio-code)
+  - [7.2 JetBrains IDEs](#72-jetbrains-ides)
+  - [7.3 Eclipse](#73-eclipse)
+  - [7.4 Terminal and CLI](#74-terminal-and-cli)
+  - [7.5 Other IDEs and Editors](#75-other-ides-and-editors)
+- [8. Summary and Key Findings](#8-summary-and-key-findings)
+- [9. Completeness Checklist](#9-completeness-checklist)
+- [10. References](#10-references)
+- [Revision History](#revision-history)
 
 ---
 
@@ -36,6 +71,8 @@ GitHub Copilot transforms the developer experience by enabling developers to foc
 - **Smart Actions**: Context menu shortcuts for common tasks
 
 **Citation:** About GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/about-github-copilot. Accessed 16 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -147,6 +184,8 @@ GitHub Copilot is powered by generative AI models developed by GitHub, OpenAI, a
 
 **Citation:** Changing the AI model for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat. Accessed 16 January 2026.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 3. Policies and Rules (Instruction Files)
@@ -242,6 +281,8 @@ Log all database operations at debug level.
 
 **Citation:** Adding custom instructions for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot. Accessed 16 January 2026.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 4. Custom and Stored Prompts
@@ -314,6 +355,8 @@ Example: `@workspace /explain #file:auth.ts` asks Copilot to explain the auth.ts
 
 **Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 16 January 2026. Prompt files for GitHub Copilot. VS Code Documentation. https://code.visualstudio.com/docs/copilot/customization/prompt-files. Accessed 16 January 2026.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 5. Tools and Model Context Protocol (MCP)
@@ -379,6 +422,8 @@ MCP allows developers to create custom servers that extend Copilot Chat's capabi
 Developers can create custom tools and services that work with Copilot Chat by implementing MCP servers. The GitHub MCP Registry provides a curated list of MCP servers from partners and the community.
 
 **Citation:** About Model Context Protocol (MCP). GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/context/mcp. Accessed 16 January 2026. GitHub MCP Registry. GitHub. https://github.com/mcp. Accessed 16 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -477,6 +522,8 @@ Smart actions (accessed via right-click context menu or sparkle icon) include op
 Not extensively documented in official sources. Copilot can assist with generating deployment scripts and configuration files through chat prompts, but does not provide built-in deployment automation features.
 
 **Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 16 January 2026. GitHub Copilot CLI. GitHub Features. https://github.com/features/copilot/cli. Accessed 16 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -721,6 +768,8 @@ gh copilot
 **Limitations:** Limited compared to desktop IDE integrations  
 **Citation:** What languages, IDEs, and platforms does GitHub Copilot support? GitHub Features. https://github.com/features/copilot. Accessed 16 January 2026.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 8. Summary and Key Findings
@@ -771,6 +820,8 @@ Areas for improvement:
 - Integration with third-party tools and services could be more thoroughly documented
 - Clearer distinction between features available in different subscription tiers in some sections
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 9. Completeness Checklist
@@ -795,6 +846,8 @@ Areas for improvement:
 - [x] All claims have citations
 - [x] UK English used throughout
 - [x] Consistent formatting applied
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -821,6 +874,8 @@ Areas for improvement:
 - **Documentation Last Updated:** January 2026 (continuously updated)
 - **Analysis Last Updated:** 16 January 2026
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## Revision History
@@ -828,3 +883,23 @@ Areas for improvement:
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 16 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## See Also
+
+- [Amazon Q Developer](amazon-q-developer.md) - AWS-integrated AI coding assistant
+- [Azure AI Toolkit](azure-ai-toolkit.md) - Microsoft Azure AI development toolkit
+- [Claude Code](claude-code.md) - Anthropic's Claude AI for code generation
+- [Codeium](codeium.md) - Free AI-powered code completion tool
+- [Continue](continue.md) - Open-source AI code assistant
+- [Cursor](cursor.md) - AI-first code editor
+- [Roo Cline](roo-cline.md) - AI coding assistant for VS Code
+- [Sourcegraph Cody](sourcegraph-cody.md) - AI assistant with codebase understanding
+- [Tabnine](tabnine.md) - AI code completion and chat assistant
+
+---
+
+← [Previous: Continue](continue.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →

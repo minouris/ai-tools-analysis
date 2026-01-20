@@ -1,9 +1,80 @@
+← [Previous: Azure AI Toolkit](azure-ai-toolkit.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Chat](github-copilot-chat.md) →
+
+---
+
 # Continue AI Coding Tool Analysis
 
 **Analysis Date:** 16 January 2025  
 **Tool Version:** Development version (latest main branch, "0.0.0-dev")  
 **Analyst:** AI Analysis System  
 **Official Documentation:** https://docs.continue.dev
+
+---
+
+## Table of Contents
+
+- [1. Tool Overview](#1-tool-overview)
+- [2. LLM Provider Integration](#2-llm-provider-integration)
+  - [2.1 Ollama Integration](#21-ollama-integration)
+  - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
+  - [2.3 Microsoft AI Foundry Integration](#23-microsoft-ai-foundry-integration)
+  - [2.4 OpenAI Integration](#24-openai-integration)
+  - [2.5 Anthropic (Claude) Integration](#25-anthropic-claude-integration)
+  - [2.6 Additional Provider Support](#26-additional-provider-support)
+- [3. Policies and Rules](#3-policies-and-rules)
+  - [3.1 Rules System Overview](#31-rules-system-overview)
+  - [3.2 Rule Configuration](#32-rule-configuration)
+  - [3.3 Instruction File Support](#33-instruction-file-support)
+- [4. Custom and Stored Prompts](#4-custom-and-stored-prompts)
+  - [4.1 Prompts System](#41-prompts-system)
+  - [4.2 Slash Commands](#42-slash-commands)
+  - [4.3 Prompt Storage and Management](#43-prompt-storage-and-management)
+  - [4.4 Using Prompts in CLI](#44-using-prompts-in-cli)
+- [5. Tools and MCP](#5-tools-and-mcp)
+  - [5.1 Model Context Protocol (MCP) Support](#51-model-context-protocol-mcp-support)
+  - [5.2 MCP Server Configuration](#52-mcp-server-configuration)
+  - [5.3 MCP Server Properties](#53-mcp-server-properties)
+  - [5.4 MCP Secrets Management](#54-mcp-secrets-management)
+  - [5.5 JSON MCP Format Support](#55-json-mcp-format-support)
+  - [5.6 MCP Resources](#56-mcp-resources)
+- [6. Application Development Workflow](#6-application-development-workflow)
+  - [6.1 Continuous AI Maturity Model](#61-continuous-ai-maturity-model)
+  - [6.2 Development Workflow Patterns](#62-development-workflow-patterns)
+  - [6.3 Implementation Workflow](#63-implementation-workflow)
+  - [6.4 TUI to Headless Workflow](#64-tui-to-headless-workflow)
+  - [6.5 CI/CD Integration](#65-cicd-integration)
+- [7. IDE Integration](#7-ide-integration)
+  - [7.1 VS Code Integration](#71-vs-code-integration)
+  - [7.2 JetBrains Integration](#72-jetbrains-integration)
+  - [7.3 Eclipse Integration](#73-eclipse-integration)
+  - [7.4 Terminal/CLI Integration](#74-terminalcli-integration)
+  - [7.5 CLI Authentication](#75-cli-authentication)
+  - [7.6 CLI Slash Commands](#76-cli-slash-commands)
+  - [7.7 CLI Context Engineering](#77-cli-context-engineering)
+  - [7.8 Other IDE Integration](#78-other-ide-integration)
+- [8. Continue Mission Control](#8-continue-mission-control)
+  - [8.1 Overview](#81-overview)
+  - [8.2 Integrations](#82-integrations)
+  - [8.3 Workflows](#83-workflows)
+  - [8.4 Configuration Management](#84-configuration-management)
+- [9. Best Practices and Recommendations](#9-best-practices-and-recommendations)
+  - [9.1 Getting Started](#91-getting-started)
+  - [9.2 Model Selection](#92-model-selection)
+  - [9.3 Security Considerations](#93-security-considerations)
+  - [9.4 Performance Optimisation](#94-performance-optimisation)
+- [10. Limitations and Considerations](#10-limitations-and-considerations)
+  - [10.1 Known Limitations](#101-known-limitations)
+  - [10.2 Migration Considerations](#102-migration-considerations)
+- [11. Summary and Conclusions](#11-summary-and-conclusions)
+  - [11.1 Strengths](#111-strengths)
+  - [11.2 Ideal Use Cases](#112-ideal-use-cases)
+  - [11.3 Comparison with Alternatives](#113-comparison-with-alternatives)
+- [12. Additional Resources](#12-additional-resources)
+  - [12.1 Official Documentation](#121-official-documentation)
+  - [12.2 Community](#122-community)
+  - [12.3 Hub Resources](#123-hub-resources)
+- [Appendix A: Configuration Example](#appendix-a-configuration-example)
+- [Appendix B: Glossary](#appendix-b-glossary)
 
 ---
 
@@ -37,6 +108,8 @@ Continue is a comprehensive AI coding platform that enables developers to create
 - **Workflow Automation** - Scheduled and event-triggered agents
 
 **Citation:** docs/index.mdx, docs/home.mdx, docs/ide-extensions/quick-start.mdx, LICENSE
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -196,6 +269,8 @@ Continue supports 40+ LLM providers:
 
 **Citation:** docs/customize/model-providers/overview.mdx
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 3. Policies and Rules
@@ -283,6 +358,8 @@ rules:
 
 **Citation:** docs/customize/deep-dives/configuration.mdx
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 4. Custom and Stored Prompts
@@ -358,6 +435,8 @@ cn -p --prompt supabase/create-functions "Generate function for current branch"
 ```
 
 **Citation:** docs/customize/deep-dives/prompts.mdx
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -490,6 +569,8 @@ Continue supports JSON MCP config files from Claude Desktop, Cursor, and Cline:
 
 **Citation:** docs/customize/deep-dives/mcp.mdx
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 6. Application Development Workflow
@@ -619,6 +700,8 @@ cn -p "Analyse test failures and create GitHub issue"
 3. **IDE Agents** - Triggered from VS Code or JetBrains
 
 **Citation:** docs/cli/quick-start.mdx, README.md
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -802,6 +885,8 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 **Citation:** docs/index.mdx, docs/home.mdx
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 8. Continue Mission Control
@@ -879,6 +964,8 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 **Citation:** docs/customize/deep-dives/configuration.mdx
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 9. Best Practices and Recommendations
@@ -943,6 +1030,8 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 **Citation:** docs/customize/model-providers/top-level/anthropic.mdx
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 10. Limitations and Considerations
@@ -980,6 +1069,8 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 - Migration guide: docs/reference/yaml-migration.mdx
 
 **Citation:** docs/customize/deep-dives/configuration.mdx
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -1033,6 +1124,8 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 **Citation:** Based on feature analysis from documentation
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 12. Additional Resources
@@ -1063,6 +1156,8 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 - **Prompts:** https://hub.continue.dev/hub?type=prompts
 - **MCP Servers:** https://hub.continue.dev/explore/mcp
 - **Integrations:** https://hub.continue.dev/integrations
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -1118,6 +1213,8 @@ mcpServers:
       GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PAT }}
 ```
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## Appendix B: Glossary
@@ -1134,8 +1231,28 @@ mcpServers:
 - **Rules** - Instructions guiding AI behaviour
 - **Prompts** - Reusable task instructions (slash commands)
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 **End of Analysis**
 
 *This analysis is based entirely on official documentation from the continuedev/continue GitHub repository (https://github.com/continuedev/continue) as of 16 January 2025.*
+
+---
+
+## See Also
+
+- [Amazon Q Developer](amazon-q-developer.md) - AWS AI-powered coding assistant with security scanning and AWS service integration
+- [Azure AI Toolkit for Visual Studio Code](azure-ai-toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
+- [Claude Code](claude-code.md) - Terminal-based agentic coding tool from Anthropic with MCP support, plugin system, and VS Code integration
+- [Codeium](codeium.md) - Free AI-powered code completion and chat assistant with broad IDE support
+- [Cursor](cursor.md) - AI-first code editor built for productivity with deep AI integration
+- [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
+- [Roo Cline](roo-cline.md) - AI-powered development assistant for VS Code with multiple operational modes (Version 3.41.0)
+- [Sourcegraph Cody](sourcegraph-cody.md) - AI coding assistant with deep codebase context and understanding
+- [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options
+
+---
+
+← [Previous: Azure AI Toolkit](azure-ai-toolkit.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Chat](github-copilot-chat.md) →

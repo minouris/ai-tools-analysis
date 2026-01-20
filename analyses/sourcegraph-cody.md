@@ -1,9 +1,43 @@
+← [Previous: Cursor](cursor.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Tabnine](tabnine.md) →
+
+---
+
 # Sourcegraph Cody Analysis
 
 **Analysis Date:** 20 January 2026  
 **Tool Version:** Current (as of January 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://docs.sourcegraph.com/cody
+
+## Table of Contents
+
+- [1. Tool Overview](#1-tool-overview)
+- [2. LLM Provider Integration](#2-llm-provider-integration)
+  - [2.1 Ollama Integration](#21-ollama-integration)
+  - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
+  - [2.3 Microsoft AI Foundry Integration](#23-microsoft-ai-foundry-integration)
+  - [2.4 OpenAI Integration](#24-openai-integration)
+  - [2.5 Anthropic (Claude) Integration](#25-anthropic-claude-integration)
+- [3. Policies and Rules (Instruction Files)](#3-policies-and-rules-instruction-files)
+- [4. Custom and Stored Prompts](#4-custom-and-stored-prompts)
+- [5. Tools and Model Context Protocol (MCP)](#5-tools-and-model-context-protocol-mcp)
+- [6. Application Development Workflow](#6-application-development-workflow)
+  - [6.1 Project Initialisation](#61-project-initialisation)
+  - [6.2 Design and Planning](#62-design-and-planning)
+  - [6.3 Code Generation](#63-code-generation)
+  - [6.4 Iterative Development](#64-iterative-development)
+  - [6.5 Testing and Validation](#65-testing-and-validation)
+  - [6.6 Debugging](#66-debugging)
+  - [6.7 Deployment](#67-deployment)
+- [7. IDE and Environment Integration](#7-ide-and-environment-integration)
+  - [7.1 Visual Studio Code](#71-visual-studio-code)
+  - [7.2 JetBrains IDEs](#72-jetbrains-ides)
+  - [7.3 Eclipse](#73-eclipse)
+  - [7.4 Terminal and CLI](#74-terminal-and-cli)
+  - [7.5 Other IDEs and Editors](#75-other-ides-and-editors)
+- [8. Summary and Key Findings](#8-summary-and-key-findings)
+- [9. Completeness Checklist](#9-completeness-checklist)
+- [10. References](#10-references)
 
 ---
 
@@ -37,6 +71,8 @@ Cody distinguishes itself through its ability to search and understand large cod
 
 **Citation:** General information available at https://sourcegraph.com/cody and https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 2. LLM Provider Integration
@@ -56,6 +92,8 @@ Users can configure Ollama endpoints in Cody settings to use local models such a
 **Limitations:** Available in Pro and Enterprise tiers; configuration requires Ollama server setup
 
 **Citation:** General information about model support available at https://docs.sourcegraph.com/cody. Specific Ollama integration details mentioned in product documentation. Accessed 20 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -132,6 +170,8 @@ Cody has first-class support for Anthropic's Claude models. Claude is the defaul
 
 **Citation:** Claude integration information available at https://docs.sourcegraph.com/cody and https://sourcegraph.com/cody. Accessed 20 January 2026.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 3. Policies and Rules (Instruction Files)
@@ -193,6 +233,8 @@ Instructions can specify coding standards, architectural patterns, testing requi
 
 **Citation:** Custom instructions mentioned in Cody documentation. Detailed configuration not fully documented in accessible sources. Information from https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 4. Custom and Stored Prompts
@@ -242,6 +284,8 @@ Enterprise deployments can define organisation-wide custom commands that are sha
 
 **Citation:** Custom Commands feature documented at https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 5. Tools and Model Context Protocol (MCP)
@@ -278,6 +322,8 @@ Cody's architecture allows for Enterprise customisation, but detailed informatio
 **Development Framework:** Not documented in official sources
 
 **Citation:** Built-in tools mentioned in Sourcegraph documentation. MCP and custom tool development not documented in accessible sources. Accessed 20 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -344,6 +390,8 @@ Not directly applicable. Cody focuses on code development rather than deployment
 
 **Citation:** Workflow information available at https://docs.sourcegraph.com/cody and https://sourcegraph.com/cody. Accessed 20 January 2026.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 7. IDE and Environment Integration
@@ -393,6 +441,8 @@ Cody adds a sidebar panel for chat and commands, inline suggestions in the edito
 
 **Citation:** Extension available on VS Code Marketplace. Documentation at https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ### 7.2 JetBrains IDEs
@@ -430,6 +480,8 @@ Cody adds a sidebar panel for chat and commands, inline suggestions in the edito
 Cody integrates with JetBrains' IntelliSense system and provides features tailored to JetBrains' UI patterns. The plugin is optimised for JetBrains' editor architecture.
 
 **Citation:** Plugin available on JetBrains Marketplace. Documentation at https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -484,6 +536,8 @@ Cody does not provide a standalone CLI tool. The Sourcegraph CLI (`src`) provide
 
 Cody currently focuses on VS Code, JetBrains IDEs, and Neovim. Support for other editors is not documented.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 8. Summary and Key Findings
@@ -529,6 +583,8 @@ Sourcegraph Cody excels in scenarios requiring:
 
 Sourcegraph Cody's documentation is comprehensive for core features like installation, basic usage, and commands. Advanced configuration, Enterprise features, and customisation options are documented but could benefit from more detailed examples and best practices. The documentation is actively maintained and updated with new features.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 9. Completeness Checklist
@@ -554,6 +610,8 @@ Sourcegraph Cody's documentation is comprehensive for core features like install
 - [x] UK English used throughout
 - [x] Consistent formatting applied
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 10. References
@@ -574,6 +632,8 @@ Sourcegraph Cody's documentation is comprehensive for core features like install
 
 This analysis is based on publicly accessible Sourcegraph documentation and product information. Some Enterprise features and advanced configuration options may have additional documentation available to Enterprise customers. The product is actively developed with regular feature additions and improvements.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## Revision History
@@ -581,3 +641,23 @@ This analysis is based on publicly accessible Sourcegraph documentation and prod
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## See Also
+
+- [Amazon Q Developer](amazon-q-developer.md) - AWS AI-powered coding assistant with security scanning and AWS service integration
+- [Azure AI Toolkit for Visual Studio Code](azure-ai-toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
+- [Claude Code](claude-code.md) - Terminal-based agentic coding tool from Anthropic with MCP support, plugin system, and VS Code integration
+- [Codeium](codeium.md) - Free AI-powered code completion and chat assistant with broad IDE support
+- [Continue](continue.md) - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
+- [Cursor](cursor.md) - AI-first code editor built for productivity with deep AI integration
+- [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
+- [Roo Cline](roo-cline.md) - AI-powered development assistant for VS Code with multiple operational modes (Version 3.41.0)
+- [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options
+
+---
+
+← [Previous: Cursor](cursor.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Tabnine](tabnine.md) →

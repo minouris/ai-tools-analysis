@@ -1,9 +1,67 @@
+← [Previous: Amazon Q Developer](amazon-q-developer.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Cursor](cursor.md) →
+
+---
+
 # Codeium Analysis
 
 **Analysis Date:** 20 January 2026  
 **Tool Version:** Current (as of January 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://codeium.com/docs
+
+## Table of Contents
+
+- [1. Tool Overview](#1-tool-overview)
+  - [Description](#description)
+  - [Key Features](#key-features)
+- [2. LLM Provider Integration](#2-llm-provider-integration)
+  - [2.1 Ollama Integration](#21-ollama-integration)
+  - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
+  - [2.3 Microsoft AI Foundry Integration](#23-microsoft-ai-foundry-integration)
+  - [2.4 OpenAI Integration](#24-openai-integration)
+  - [2.5 Anthropic (Claude) Integration](#25-anthropic-claude-integration)
+- [3. Policies and Rules (Instruction Files)](#3-policies-and-rules-instruction-files)
+  - [Instruction File Support](#instruction-file-support)
+  - [Configuration Method](#configuration-method)
+  - [Syntax and Structure](#syntax-and-structure)
+  - [Scope and Application](#scope-and-application)
+  - [Example Policies](#example-policies)
+- [4. Custom and Stored Prompts](#4-custom-and-stored-prompts)
+  - [Prompt Storage Mechanism](#prompt-storage-mechanism)
+  - [Creating Custom Prompts](#creating-custom-prompts)
+  - [Organising Prompts](#organising-prompts)
+  - [Using Stored Prompts](#using-stored-prompts)
+  - [Sharing and Exporting](#sharing-and-exporting)
+- [5. Tools and Model Context Protocol (MCP)](#5-tools-and-model-context-protocol-mcp)
+  - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
+  - [MCP Server Configuration](#mcp-server-configuration)
+  - [Available Tools](#available-tools)
+  - [Custom Tool Development](#custom-tool-development)
+- [6. Application Development Workflow](#6-application-development-workflow)
+  - [6.1 Project Initialisation](#61-project-initialisation)
+  - [6.2 Design and Planning](#62-design-and-planning)
+  - [6.3 Code Generation](#63-code-generation)
+  - [6.4 Iterative Development](#64-iterative-development)
+  - [6.5 Testing and Validation](#65-testing-and-validation)
+  - [6.6 Debugging](#66-debugging)
+  - [6.7 Deployment](#67-deployment)
+- [7. IDE and Environment Integration](#7-ide-and-environment-integration)
+  - [7.1 Visual Studio Code](#71-visual-studio-code)
+  - [7.2 JetBrains IDEs](#72-jetbrains-ides)
+  - [7.3 Eclipse](#73-eclipse)
+  - [7.4 Terminal and CLI](#74-terminal-and-cli)
+  - [7.5 Other IDEs and Editors](#75-other-ides-and-editors)
+- [8. Summary and Key Findings](#8-summary-and-key-findings)
+  - [Strengths](#strengths)
+  - [Limitations](#limitations)
+  - [Best Use Cases](#best-use-cases)
+  - [Documentation Quality](#documentation-quality)
+- [9. Completeness Checklist](#9-completeness-checklist)
+- [10. References](#10-references)
+  - [Official Documentation](#official-documentation)
+  - [Version Information](#version-information)
+  - [Notes on Documentation Availability](#notes-on-documentation-availability)
+- [Revision History](#revision-history)
 
 ---
 
@@ -36,6 +94,8 @@ Codeium distinguishes itself by offering a comprehensive free tier for individua
 - **Docstring Generation**: Automatic documentation generation
 
 **Citation:** General information available at https://codeium.com and https://codeium.com/docs. Accessed 20 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -114,6 +174,8 @@ Codeium uses its own proprietary AI models trained specifically for code complet
 
 **Citation:** Not documented in official sources
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 3. Policies and Rules (Instruction Files)
@@ -146,6 +208,8 @@ Not documented in official sources
 
 **Citation:** Not documented in official sources
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 4. Custom and Stored Prompts
@@ -173,6 +237,8 @@ Not documented in official sources
 Not documented in official sources
 
 **Citation:** Chat history mentioned in general product information. Detailed prompt management not documented in accessible sources.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -203,6 +269,8 @@ Not documented in official sources
 **Development Framework:** Not documented in official sources
 
 **Citation:** Not documented in official sources
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -258,6 +326,8 @@ The /explain command can be used to get explanations of code sections or errors.
 Not applicable - Codeium is a code assistant and does not include deployment features
 
 **Citation:** General workflow information available at https://codeium.com and https://codeium.com/docs. Accessed 20 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -425,6 +495,8 @@ Codeium focuses on IDE integration and does not provide a standalone command-lin
 **Features:** Code completions for Swift and Objective-C development  
 **Citation:** Extension available for Xcode. Information at https://codeium.com
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 8. Summary and Key Findings
@@ -470,6 +542,8 @@ Codeium excels in scenarios requiring:
 
 Codeium's publicly accessible documentation provides installation and basic usage information but lacks comprehensive technical documentation for advanced features and enterprise capabilities. The documentation is improving but could benefit from more detailed guides for configuration, customisation, and best practices.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 9. Completeness Checklist
@@ -495,6 +569,8 @@ Codeium's publicly accessible documentation provides installation and basic usag
 - [x] UK English used throughout
 - [x] Consistent formatting applied
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 10. References
@@ -515,6 +591,8 @@ Codeium's publicly accessible documentation provides installation and basic usag
 
 This analysis was limited by the scope of publicly accessible documentation. Many advanced features, configuration options, and technical implementation details are not thoroughly documented in public sources. The analysis is based on general product information, user experience patterns, and commonly available features.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## Revision History
@@ -522,3 +600,23 @@ This analysis was limited by the scope of publicly accessible documentation. Man
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## See Also
+
+- [Amazon Q Developer](amazon-q-developer.md) - AWS-integrated AI coding assistant
+- [Azure AI Toolkit](azure-ai-toolkit.md) - Microsoft Azure AI development tools
+- [Claude Code](claude-code.md) - Anthropic's Claude-powered coding assistant
+- [Continue](continue.md) - Open-source AI code assistant
+- [Cursor](cursor.md) - AI-first code editor
+- [GitHub Copilot Chat](github-copilot-chat.md) - GitHub's AI pair programmer with chat interface
+- [Roo Cline](roo-cline.md) - AI coding assistant focused on autonomous workflows
+- [Sourcegraph Cody](sourcegraph-cody.md) - AI assistant with deep codebase understanding
+- [Tabnine](tabnine.md) - AI code completion with privacy focus
+
+---
+
+← [Previous: Amazon Q Developer](amazon-q-developer.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Cursor](cursor.md) →
