@@ -4,34 +4,18 @@ This directory contains individual analyses of AI coding tools, each following t
 
 ## Current Analyses
 
-### AI-First Code Editors
-
-Tools built as standalone editors with AI as a core architectural component:
-
-- [Cursor](cursor.md) - AI-first code editor built for productivity with deep AI integration
-
-### IDE Extensions and Plugins
-
-Tools that integrate into existing development environments as extensions:
-
-- [Codeium](codeium.md) - Free AI-powered code completion and chat assistant with broad IDE support (40+ IDEs)
+- [Azure AI Toolkit for Visual Studio Code](azure-ai-toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
+- [Continue](continue.md) - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
 - [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
 - [Roo Cline](roo-cline.md) - AI-powered development assistant for VS Code with multiple operational modes (Version 3.41.0)
-- [Sourcegraph Cody](sourcegraph-cody.md) - AI coding assistant with deep codebase context and understanding
-- [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options (cloud/local/hybrid)
 
-### Multi-Platform Development Tools
-
-Tools providing multiple interfaces (IDE, CLI, cloud) for diverse workflows:
-
-- [Continue](continue.md) - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
-
-### Cloud Platform-Specific Tools
-
-Tools designed for integration with specific cloud platforms and services:
+## Other
 
 - [Amazon Q Developer](amazon-q-developer.md) - AWS AI-powered coding assistant with security scanning and AWS service integration
-- [Azure AI Toolkit for Visual Studio Code](azure-ai-toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
+- [Codeium](codeium.md) - Free AI-powered code completion and chat assistant with broad IDE support
+- [Cursor](cursor.md) - AI-first code editor built for productivity with deep AI integration
+- [Sourcegraph Cody](sourcegraph-cody.md) - AI coding assistant with deep codebase context and understanding
+- [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options
 
 ## Creating a New Analysis
 
