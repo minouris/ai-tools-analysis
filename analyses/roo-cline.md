@@ -3,13 +3,13 @@
 **Analysis Date:** 16 January 2026  
 **Tool Version:** 3.41.0  
 **Analyst:** GitHub Copilot  
-**Official Documentation:** https://github.com/RooVetGit/Roo-Cline
+**Official Documentation:** https://github.com/RooCodeInc/Roo-Code
 
 ---
 
 ## 1. Tool Overview
 
-**Official Documentation:** https://github.com/RooVetGit/Roo-Cline  
+**Official Documentation:** https://github.com/RooCodeInc/Roo-Code  
 **Version Analysed:** 3.41.0  
 **Primary Use Case:** AI-powered development assistant for VS Code  
 **Licensing:** Apache 2.0 (open source)
@@ -18,7 +18,7 @@
 
 Roo Cline (previously known as Roo Code) is an AI-powered development assistant that operates as a Visual Studio Code extension. The tool is described as "Your AI-Powered Dev Team, Right in Your Editor" and is maintained by Roo Code, Inc. (formerly Roo Veterinary, Inc.). The extension provides autonomous coding capabilities with multiple specialised operational modes.
 
-**Citation:** [GitHub README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md), [LICENSE file](https://github.com/RooVetGit/Roo-Cline/blob/main/LICENSE)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md), [LICENSE file](https://github.com/RooCodeInc/Roo-Code/blob/main/LICENSE)
 
 ### Key Features
 
@@ -32,7 +32,7 @@ Roo Cline (previously known as Roo Code) is an AI-powered development assistant 
 - Codebase indexing for enhanced context
 - Remote control capabilities through "Roomote Control"
 
-**Citation:** [GitHub README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)
 
 ---
 
@@ -58,7 +58,7 @@ The integration includes a function `getOllamaModels` for retrieving available m
 
 The integration is implemented in `src/api/providers/native-ollama.ts`, which converts between Anthropic's message format and Ollama's format, handles tool calls, and manages context windows through the `num_ctx` parameter.
 
-**Citation:** [native-ollama.ts source code](https://github.com/RooVetGit/Roo-Cline/blob/main/src/api/providers/native-ollama.ts)
+**Citation:** [native-ollama.ts source code](https://github.com/RooCodeInc/Roo-Code/blob/main/src/api/providers/native-ollama.ts)
 
 ---
 
@@ -78,7 +78,7 @@ The extension provides a configuration option `roo-cline.vsCodeLmModelSelector` 
 
 The integration is implemented through `src/api/providers/vscode-lm.ts`, which interfaces with VS Code's Language Model API.
 
-**Citation:** [package.json configuration](https://github.com/RooVetGit/Roo-Cline/blob/main/src/package.json), [vscode-lm.ts source code](https://github.com/RooVetGit/Roo-Cline/blob/main/src/api/providers/vscode-lm.ts)
+**Citation:** [package.json configuration](https://github.com/RooCodeInc/Roo-Code/blob/main/src/package.json), [vscode-lm.ts source code](https://github.com/RooCodeInc/Roo-Code/blob/main/src/api/providers/vscode-lm.ts)
 
 ---
 
@@ -101,7 +101,7 @@ Users can configure Microsoft AI Foundry by:
 
 The integration leverages the base OpenAI-compatible provider implementation, which supports custom endpoints that follow the OpenAI API specification. Microsoft AI Foundry provides OpenAI-compatible endpoints, making it accessible through this mechanism.
 
-**Citation:** [base-openai-compatible-provider.ts](https://github.com/RooVetGit/Roo-Cline/blob/main/src/api/providers/base-openai-compatible-provider.ts), OpenAI-compatible provider support documented in section 2.4
+**Citation:** [base-openai-compatible-provider.ts](https://github.com/RooCodeInc/Roo-Code/blob/main/src/api/providers/base-openai-compatible-provider.ts), OpenAI-compatible provider support documented in section 2.4
 
 ---
 
@@ -126,7 +126,7 @@ The source code includes references to various OpenAI models including GPT-4 and
 
 The tool includes a base OpenAI-compatible provider (`base-openai-compatible-provider.ts`), suggesting support for custom OpenAI-compatible endpoints.
 
-**Citation:** [openai-native.ts](https://github.com/RooVetGit/Roo-Cline/blob/main/src/api/providers/openai-native.ts), [openai.ts](https://github.com/RooVetGit/Roo-Cline/blob/main/src/api/providers/openai.ts), [base-openai-compatible-provider.ts](https://github.com/RooVetGit/Roo-Cline/blob/main/src/api/providers/base-openai-compatible-provider.ts)
+**Citation:** [openai-native.ts](https://github.com/RooCodeInc/Roo-Code/blob/main/src/api/providers/openai-native.ts), [openai.ts](https://github.com/RooCodeInc/Roo-Code/blob/main/src/api/providers/openai.ts), [base-openai-compatible-provider.ts](https://github.com/RooCodeInc/Roo-Code/blob/main/src/api/providers/base-openai-compatible-provider.ts)
 
 ---
 
@@ -147,7 +147,7 @@ Specific configuration steps are not documented in the README, but the extensive
 
 The source code references multiple Claude model variants and includes comprehensive tool-calling and streaming implementations.
 
-**Citation:** [anthropic.ts](https://github.com/RooVetGit/Roo-Cline/blob/main/src/api/providers/anthropic.ts), [claude-code.ts](https://github.com/RooVetGit/Roo-Cline/blob/main/src/api/providers/claude-code.ts), [anthropic-vertex.ts](https://github.com/RooVetGit/Roo-Cline/blob/main/src/api/providers/anthropic-vertex.ts)
+**Citation:** [anthropic.ts](https://github.com/RooCodeInc/Roo-Code/blob/main/src/api/providers/anthropic.ts), [claude-code.ts](https://github.com/RooCodeInc/Roo-Code/blob/main/src/api/providers/claude-code.ts), [anthropic-vertex.ts](https://github.com/RooCodeInc/Roo-Code/blob/main/src/api/providers/anthropic-vertex.ts)
 
 ---
 
@@ -179,7 +179,7 @@ The source code reveals extensive support for numerous additional LLM providers:
 - **LiteLLM:** `lite-llm.ts`
 - **Custom providers:** Vercel AI Gateway, Unbound, Chutes, Requesty, and others
 
-**Citation:** [src/api/providers/ directory](https://github.com/RooVetGit/Roo-Cline/tree/main/src/api/providers)
+**Citation:** [src/api/providers/ directory](https://github.com/RooCodeInc/Roo-Code/tree/main/src/api/providers)
 
 ---
 
@@ -212,7 +212,7 @@ The extension includes a configuration option `roo-cline.useAgentRules` (boolean
 
 Roo Cline supports mode-specific rule files (e.g., `.clinerules-code`, `.clinerules-ask`), allowing different instruction sets for different operational modes.
 
-**Citation:** [built-in-commands.ts](https://github.com/RooVetGit/Roo-Cline/blob/main/src/services/command/built-in-commands.ts), [package.json configuration](https://github.com/RooVetGit/Roo-Cline/blob/main/src/package.json), [fs/promises.ts mock](https://github.com/RooVetGit/Roo-Cline/blob/main/src/__mocks__/fs/promises.ts)
+**Citation:** [built-in-commands.ts](https://github.com/RooCodeInc/Roo-Code/blob/main/src/services/command/built-in-commands.ts), [package.json configuration](https://github.com/RooCodeInc/Roo-Code/blob/main/src/package.json), [fs/promises.ts mock](https://github.com/RooCodeInc/Roo-Code/blob/main/src/__mocks__/fs/promises.ts)
 
 ### 3.2 Configuration Options
 
@@ -231,7 +231,7 @@ The extension provides several configuration options:
 - `roo-cline.enableCodeActions` - Enable/disable code actions
 - `roo-cline.apiRequestTimeout` - Timeout for API requests (0-3600 seconds)
 
-**Citation:** [package.json configuration](https://github.com/RooVetGit/Roo-Cline/blob/main/src/package.json)
+**Citation:** [package.json configuration](https://github.com/RooCodeInc/Roo-Code/blob/main/src/package.json)
 
 ---
 
@@ -267,7 +267,7 @@ The repository includes several example custom modes:
 
 Custom modes can restrict file editing based on regular expressions. For example, the Test mode limits edits to files matching test-related patterns.
 
-**Citation:** [.roomodes file](https://github.com/RooVetGit/Roo-Cline/blob/main/.roomodes)
+**Citation:** [.roomodes file](https://github.com/RooCodeInc/Roo-Code/blob/main/.roomodes)
 
 ### 4.2 Prompt Storage and Reuse
 
@@ -279,7 +279,7 @@ Custom instructions can be defined at the mode level through the `customInstruct
 
 Not explicitly documented in the examined sources beyond the custom modes system.
 
-**Citation:** [.roomodes file](https://github.com/RooVetGit/Roo-Cline/blob/main/.roomodes)
+**Citation:** [.roomodes file](https://github.com/RooCodeInc/Roo-Code/blob/main/.roomodes)
 
 ---
 
@@ -310,7 +310,7 @@ The tool provides several MCP-specific capabilities:
 - Auto-approval system for MCP operations
 - Resource access through dedicated tools
 
-**Citation:** [src/services/mcp/ directory](https://github.com/RooVetGit/Roo-Cline/tree/main/src/services/mcp), [MCP-related tool files](https://github.com/RooVetGit/Roo-Cline/tree/main/src/core/prompts/tools)
+**Citation:** [src/services/mcp/ directory](https://github.com/RooCodeInc/Roo-Code/tree/main/src/services/mcp), [MCP-related tool files](https://github.com/RooCodeInc/Roo-Code/tree/main/src/core/prompts/tools)
 
 ### 5.2 Tool Ecosystem
 
@@ -337,7 +337,7 @@ Roo Cline includes numerous native tools:
 - File reading (`read-file.ts`)
 - Task management (`new-task.ts`)
 
-**Citation:** [src/core/prompts/tools/native-tools/ directory](https://github.com/RooVetGit/Roo-Cline/tree/main/src/core/prompts/tools/native-tools), [src/core/prompts/tools/ directory](https://github.com/RooVetGit/Roo-Cline/tree/main/src/core/prompts/tools)
+**Citation:** [src/core/prompts/tools/native-tools/ directory](https://github.com/RooCodeInc/Roo-Code/tree/main/src/core/prompts/tools/native-tools), [src/core/prompts/tools/ directory](https://github.com/RooCodeInc/Roo-Code/tree/main/src/core/prompts/tools)
 
 ---
 
@@ -353,7 +353,7 @@ Roo Cline includes numerous native tools:
 - **Debug Mode:** Tracing issues, adding logs, isolating root causes
 - **Custom Modes:** User-defined specialised modes for specific workflows
 
-**Citation:** [GitHub README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)
 
 ### 6.2 Code Generation and Editing
 
@@ -370,7 +370,7 @@ Roo Cline includes numerous native tools:
 
 The tool includes comprehensive file operation capabilities through native tools for reading, writing, editing, searching, and replacing content in files.
 
-**Citation:** [GitHub README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md), [Native tools directory](https://github.com/RooVetGit/Roo-Cline/tree/main/src/core/prompts/tools/native-tools)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md), [Native tools directory](https://github.com/RooCodeInc/Roo-Code/tree/main/src/core/prompts/tools/native-tools)
 
 ### 6.3 Codebase Understanding
 
@@ -387,7 +387,7 @@ Roo Cline includes codebase indexing functionality for enhanced context awarenes
 - Codebase-wide search through `codebase-search` tool
 - File listing and exploration
 
-**Citation:** [package.json configuration](https://github.com/RooVetGit/Roo-Cline/blob/main/src/package.json), [src/services/code-index/ directory](https://github.com/RooVetGit/Roo-Cline/tree/main/src/services/code-index)
+**Citation:** [package.json configuration](https://github.com/RooCodeInc/Roo-Code/blob/main/src/package.json), [src/services/code-index/ directory](https://github.com/RooCodeInc/Roo-Code/tree/main/src/services/code-index)
 
 ### 6.4 Remote Control
 
@@ -395,7 +395,7 @@ Roo Cline includes codebase indexing functionality for enhanced context awarenes
 
 Roo Cline includes "Roomote Control" functionality that allows remote control of tasks running in a local VS Code instance. This feature is mentioned in the README but specific implementation details and configuration steps are not documented in the examined sources.
 
-**Citation:** [GitHub README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)
 
 ---
 
@@ -427,7 +427,7 @@ Full integration as a native VS Code extension with:
 - File system access
 - Command execution capabilities
 
-**Citation:** [GitHub README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md), [package.json](https://github.com/RooVetGit/Roo-Cline/blob/main/src/package.json)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md), [package.json](https://github.com/RooCodeInc/Roo-Code/blob/main/src/package.json)
 
 ### 7.2 Cursor Editor
 
@@ -437,7 +437,7 @@ Full integration as a native VS Code extension with:
 
 The tool explicitly mentions Cursor support in its installation scripts, which include an `--editor=cursor` option for VSIX installation. Additionally, the tool recognises and reads `.cursorrules` files for cross-compatibility with Cursor AI.
 
-**Citation:** [GitHub README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md), [built-in-commands.ts](https://github.com/RooVetGit/Roo-Cline/blob/main/src/services/command/built-in-commands.ts)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md), [built-in-commands.ts](https://github.com/RooCodeInc/Roo-Code/blob/main/src/services/command/built-in-commands.ts)
 
 ### 7.3 VS Code Insiders
 
@@ -447,7 +447,7 @@ The tool explicitly mentions Cursor support in its installation scripts, which i
 
 The installation scripts support VS Code Insiders through the `--editor=code-insiders` option, allowing users to install Roo Cline in the VS Code Insiders edition.
 
-**Citation:** [GitHub README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)
 
 ### 7.4 JetBrains IDEs
 
@@ -476,7 +476,7 @@ Roo Cline includes terminal integration functionality through `src/integrations/
 - Command execution timeout (0-600 seconds)
 - Command timeout allowlist for specific commands
 
-**Citation:** [src/integrations/terminal/README.md](https://github.com/RooVetGit/Roo-Cline/blob/main/src/integrations/terminal/README.md), [package.json configuration](https://github.com/RooVetGit/Roo-Cline/blob/main/src/package.json)
+**Citation:** [src/integrations/terminal/README.md](https://github.com/RooCodeInc/Roo-Code/blob/main/src/integrations/terminal/README.md), [package.json configuration](https://github.com/RooCodeInc/Roo-Code/blob/main/src/package.json)
 
 ### 7.7 Web Interface
 
@@ -486,7 +486,7 @@ Roo Cline includes terminal integration functionality through `src/integrations/
 
 The repository includes a `webview-ui` directory and references to a web application in `apps/web-roo-code/`, suggesting web interface support is under development or available. The webview UI is built with React and uses Tailwind CSS for styling.
 
-**Citation:** [Repository structure](https://github.com/RooVetGit/Roo-Cline), [webview-ui directory](https://github.com/RooVetGit/Roo-Cline/tree/main/webview-ui)
+**Citation:** [Repository structure](https://github.com/RooCodeInc/Roo-Code), [webview-ui directory](https://github.com/RooCodeInc/Roo-Code/tree/main/webview-ui)
 
 ---
 
@@ -496,7 +496,7 @@ The repository includes a `webview-ui` directory and references to a web applica
 
 **Documentation Site:** https://docs.roocode.com (referenced but not accessible during analysis)
 
-**GitHub Repository:** https://github.com/RooVetGit/Roo-Cline
+**GitHub Repository:** https://github.com/RooCodeInc/Roo-Code
 
 **Additional Resources:**
 - [YouTube Channel](https://youtube.com/@roocodeyt) - Tutorials and feature demonstrations
@@ -505,7 +505,7 @@ The repository includes a `webview-ui` directory and references to a web applica
 - [GitHub Issues](https://github.com/RooCodeInc/Roo-Code/issues) - Bug reports and development tracking
 - [Feature Requests](https://github.com/RooCodeInc/Roo-Code/discussions/categories/feature-requests) - Feature suggestions
 
-**Citation:** [GitHub README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)
 
 ### 8.2 Tutorial Videos
 
@@ -517,7 +517,7 @@ The project maintains an extensive collection of tutorial videos covering:
 - Checkpoints functionality
 - Context management
 
-**Citation:** [GitHub README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)
 
 ### 8.3 Localisation
 
@@ -543,7 +543,7 @@ Roo Cline includes localisation support for 17 languages:
 - Chinese Simplified (简体中文)
 - Chinese Traditional (繁體中文)
 
-**Citation:** [GitHub README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md), [locales directory](https://github.com/RooVetGit/Roo-Cline/tree/main/locales)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md), [locales directory](https://github.com/RooCodeInc/Roo-Code/tree/main/locales)
 
 ---
 
@@ -561,7 +561,7 @@ Roo Cline includes localisation support for 17 languages:
 - Vitest (testing)
 - Turbo (monorepo management)
 
-**Citation:** [package.json](https://github.com/RooVetGit/Roo-Cline/blob/main/package.json), [README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md)
+**Citation:** [package.json](https://github.com/RooCodeInc/Roo-Code/blob/main/package.json), [README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)
 
 ### 9.2 Local Development
 
@@ -579,7 +579,7 @@ Roo Cline includes localisation support for 17 languages:
 - Automatic core extension reload
 - Built-in debugging support
 
-**Citation:** [GitHub README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)
 
 ### 9.3 Contributing
 
@@ -591,7 +591,7 @@ The project welcomes community contributions. Contributors are directed to read 
 
 The project uses Changesets for versioning and publishing, with release notes maintained in `CHANGELOG.md`.
 
-**Citation:** [GitHub README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md), [CONTRIBUTING.md](https://github.com/RooVetGit/Roo-Cline/blob/main/CONTRIBUTING.md)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md), [CONTRIBUTING.md](https://github.com/RooCodeInc/Roo-Code/blob/main/CONTRIBUTING.md)
 
 ---
 
@@ -603,7 +603,7 @@ The project uses Changesets for versioning and publishing, with release notes ma
 
 **Copyright:** © 2025 Roo Code, Inc.
 
-**Citation:** [LICENSE file](https://github.com/RooVetGit/Roo-Cline/blob/main/LICENSE)
+**Citation:** [LICENSE file](https://github.com/RooCodeInc/Roo-Code/blob/main/LICENSE)
 
 ### 10.2 Disclaimer
 
@@ -614,7 +614,7 @@ The project includes a comprehensive disclaimer stating that:
 - Risks may include intellectual property infringement, cyber vulnerabilities, bias, inaccuracies, errors, defects, and more
 - Users are solely responsible for use, legality, appropriateness, and results
 
-**Citation:** [GitHub README](https://github.com/RooVetGit/Roo-Cline/blob/main/README.md)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)
 
 ### 10.3 Additional Policies
 
@@ -623,7 +623,7 @@ The project includes a comprehensive disclaimer stating that:
 - Privacy Policy: `PRIVACY.md`
 - Security Policy: `SECURITY.md`
 
-**Citation:** [Repository file listing](https://github.com/RooVetGit/Roo-Cline)
+**Citation:** [Repository file listing](https://github.com/RooCodeInc/Roo-Code)
 
 ---
 
@@ -658,8 +658,10 @@ The official documentation site (https://docs.roocode.com) was not accessible du
 
 This analysis is based on version 3.41.0 of Roo Cline. The tool is actively developed with frequent updates, as evidenced by the extensive CHANGELOG.md file in the repository.
 
-### 12.3 Name Changes
+### 12.3 Repository and Name Information
 
-The tool was previously known as "Roo Code" and has been renamed to "Roo Cline". The repository URL still references "Roo-Cline" whilst some source files and configuration refer to "roo-code". The publisher name has also changed from "Roo Veterinary Inc." to "Roo Code, Inc."
+The official repository for Roo Cline is located at `https://github.com/RooCodeInc/Roo-Code`. There is also a URL at `https://github.com/RooVetGit/Roo-Cline` which redirects to the main repository. All citations in this document use the official `RooCodeInc/Roo-Code` repository URL.
 
-**Citation:** Repository examination and source code analysis
+The tool was previously known as "Roo Code" and has been renamed to "Roo Cline". The repository name still uses "Roo-Code" whilst the tool is now called "Roo Cline". Some source files and configuration refer to "roo-code". The publisher name has also changed from "Roo Veterinary Inc." to "Roo Code, Inc."
+
+**Citation:** [Official GitHub repository](https://github.com/RooCodeInc/Roo-Code), Repository examination and source code analysis
