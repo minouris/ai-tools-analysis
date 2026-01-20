@@ -2,6 +2,10 @@
 
 This directory contains individual analyses of AI coding tools, each following the standardised methodology defined in [ANALYSIS_PLAN.md](../ANALYSIS_PLAN.md).
 
+## Overview
+
+- [Overview](overview.md) - Comparison of all analysed AI coding tools with feature comparison charts
+
 ## Current Analyses
 
 - [Claude Code](claude-code.md) - Terminal-based agentic coding tool from Anthropic with MCP support, plugin system, and VS Code integration

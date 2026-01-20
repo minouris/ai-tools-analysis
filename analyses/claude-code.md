@@ -1,4 +1,4 @@
-← [Previous: Tabnine](tabnine.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
+← [Previous: Overview](overview.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
 
 ---
 
@@ -1217,7 +1217,7 @@ The official documentation quality is comprehensive:
 
 ---
 
-← [Previous: Tabnine](tabnine.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
+← [Previous: Overview](overview.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
 
 ---
 
