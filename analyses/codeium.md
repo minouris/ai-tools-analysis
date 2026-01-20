@@ -1,4 +1,4 @@
-← [Previous: Amazon Q Developer](amazon-q-developer.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Cursor](cursor.md) →
+← [Previous: ChatGPT](chatgpt.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Cursor](cursor.md) →
 
 ---
 

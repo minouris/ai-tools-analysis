@@ -17,6 +17,7 @@ This directory contains individual analyses of AI coding tools, each following t
 ## Other
 
 - [Amazon Q Developer](amazon-q-developer.md) - AWS AI-powered coding assistant with security scanning and AWS service integration
+- [ChatGPT](chatgpt.md) - Browser-based conversational AI with Canvas code editing and Python execution (replaced deprecated Codex)
 - [Codeium](codeium.md) - Free AI-powered code completion and chat assistant with broad IDE support
 - [Cursor](cursor.md) - AI-first code editor built for productivity with deep AI integration
 - [Sourcegraph Cody](sourcegraph-cody.md) - AI coding assistant with deep codebase context and understanding
