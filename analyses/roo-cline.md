@@ -84,13 +84,24 @@ The integration is implemented through `src/api/providers/vscode-lm.ts`, which i
 
 ### 2.3 Microsoft AI Foundry Integration
 
-**Supported:** Not explicitly documented
+**Supported:** Yes (via OpenAI-compatible endpoint)
 
 **Configuration:**
 
-No specific Microsoft AI Foundry configuration is documented in the official repository or source code examined.
+Microsoft AI Foundry can be accessed through Roo Cline's OpenAI-compatible provider support. The tool includes a base OpenAI-compatible provider (`base-openai-compatible-provider.ts`) that enables integration with any OpenAI-compatible endpoint, including Microsoft AI Foundry.
 
-**Citation:** Not documented in official sources
+**Configuration Method:**
+
+Users can configure Microsoft AI Foundry by:
+- Setting the API endpoint URL to their Microsoft AI Foundry endpoint
+- Providing the appropriate API key
+- Using the OpenAI-compatible provider configuration
+
+**Technical Implementation:**
+
+The integration leverages the base OpenAI-compatible provider implementation, which supports custom endpoints that follow the OpenAI API specification. Microsoft AI Foundry provides OpenAI-compatible endpoints, making it accessible through this mechanism.
+
+**Citation:** [base-openai-compatible-provider.ts](https://github.com/RooVetGit/Roo-Cline/blob/main/src/api/providers/base-openai-compatible-provider.ts), OpenAI-compatible provider support documented in section 2.4
 
 ---
 
