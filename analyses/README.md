@@ -5,6 +5,7 @@ This directory contains individual analyses of AI coding tools, each following t
 ## Current Analyses
 
 - [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
+- [Continue](continue.md) - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
 
 ## Creating a New Analysis
 
