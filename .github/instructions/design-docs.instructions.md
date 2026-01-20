@@ -30,7 +30,7 @@ You may want to skip navigation elements for efficiency. This is OVERRIDDEN. ALL
 
 ### 1. Table of Contents (MANDATORY)
 
-When creating or editing Markdown documents in `design/`:
+When creating or editing Markdown documents:
 
 **MUST Include:**
 - Table of Contents immediately after the main H1 heading
@@ -105,7 +105,6 @@ For documents in directories with related content:
 
 **A. Header Navigation** (before H1 heading at top of document):
 ````markdown
-**Navigation:**  
 ← [Previous: Name](link) | ↑ [Parent: Name](link) | [Next: Name](link) →
 
 ---
@@ -123,7 +122,6 @@ For documents in directories with related content:
 
 ---
 
-**Navigation:**  
 ← [Previous: Name](link) | [Parent: Name](link) | [Next: Name](link) →
 ````
 
@@ -481,7 +479,7 @@ When defining problems, solutions, constraints, or requirements, use standardise
 
 ## Document Creation Workflow
 
-When creating a new Markdown document in `design/`:
+When creating a new Markdown document:
 
 1. **Determine Domain:**
    - Identify which directory and design level
@@ -512,7 +510,7 @@ When creating a new Markdown document in `design/`:
 
 ## Document Editing Workflow
 
-When modifying existing Markdown in `design/`:
+When modifying existing Markdown:
 
 1. **Assess Compliance:**
    - Check if document meets all standards
@@ -544,7 +542,6 @@ When modifying existing Markdown in `design/`:
 Use this template for new documents:
 
 ````markdown
-**Navigation:**  
 ← [Previous: Name](link) | ↑ [Parent: Name](link) | [Next: Name](link) →
 
 ---
@@ -580,7 +577,6 @@ Content here.
 
 ---
 
-**Navigation:**  
 ← [Previous: Name](link) | ↑ [Parent: Name](link) | [Next: Name](link) →
 ````
 
