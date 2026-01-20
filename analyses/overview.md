@@ -5,7 +5,7 @@
 # AI Coding Tools: Overview
 
 **Analysis Date:** 20 January 2026  
-**Tools Analysed:** 10 AI coding assistants  
+**Tools Analysed:** 11 AI coding assistants  
 **Methodology:** Based on official documentation and tool analysis files in this repository
 
 ## Table of Contents
@@ -32,7 +32,7 @@
 
 ## 1. Executive Summary
 
-This document provides a comprehensive comparison of 10 AI coding tools analysed in this repository. The tools represent different approaches to AI-assisted development, ranging from cloud-based subscription services to open-source agentic frameworks.
+This document provides a comprehensive comparison of 11 AI coding tools analysed in this repository. The tools represent different approaches to AI-assisted development, ranging from cloud-based subscription services to open-source agentic frameworks, including historical platforms that shaped the industry.
 
 ### Tools Included
 
@@ -43,9 +43,10 @@ This document provides a comprehensive comparison of 10 AI coding tools analysed
 5. **Continue** - Open-source multi-provider platform with MCP
 6. **Cursor** - AI-first standalone code editor
 7. **GitHub Copilot Chat** - GitHub-native multi-mode assistant
-8. **Roo Cline** - Open-source autonomous VS Code agent
-9. **Sourcegraph Cody** - Deep codebase context via Sourcegraph
-10. **Tabnine** - Privacy-focused with local deployment options
+8. **OpenAI API** - GPT-4o, GPT-4, GPT-3.5-turbo for code generation (replaced deprecated Codex)
+9. **Roo Cline** - Open-source autonomous VS Code agent
+10. **Sourcegraph Cody** - Deep codebase context via Sourcegraph
+11. **Tabnine** - Privacy-focused with local deployment options
 
 ### Key Insights
 
@@ -142,6 +143,19 @@ AI-first code editor built on VS Code with deep AI integration. Features compose
 AI-powered conversational interface integrated across multiple IDEs (VS Code, JetBrains, Eclipse, Xcode, Neovim) and GitHub.com. Features Ask, Edit, Agent, and Plan modes. Supports Claude, GPT, and Gemini models. Custom instructions via `.github/copilot-instructions.md` and MCP server support.
 
 **Official Documentation:** https://docs.github.com/en/copilot
+
+---
+
+### OpenAI API
+
+**Type:** API Service  
+**Licence:** Commercial API (pay-per-use, subscription tiers)  
+**Key Focus:** State-of-the-art code generation and general AI capabilities
+
+OpenAI API provides access to GPT-4o, GPT-4 Turbo, GPT-4, and GPT-3.5-turbo models for code generation, completion, and understanding. These models replaced the deprecated Codex in March 2023, offering superior code generation alongside broader general intelligence. Supports function calling, large context windows (up to 128K tokens), streaming, fine-tuning, and multimodal inputs. Foundation for many AI development tools.
+
+**Official Documentation:** https://platform.openai.com/docs  
+**Historical Note:** Replaced OpenAI Codex (deprecated March 2023)
 
 ---
 
