@@ -51,7 +51,7 @@ This document provides a comprehensive comparison of 10 AI coding tools analysed
 
 - **Model Flexibility:** Continue and Roo Cline support 20-40+ LLM providers, whilst Amazon Q is AWS-only
 - **MCP Adoption:** 4 tools (Claude Code, Continue, GitHub Copilot, Roo Cline) offer full MCP support
-- **Total Cost of Ownership:** Codeium ($0) and GitHub Copilot Pro ($10) offer best value. "Free" tools like Continue/Roo Cline require separate LLM subscriptions ($20-30/month) or local deployment (hardware-intensive, lower model quality)
+- **Total Cost of Ownership:** Codeium ($0) and GitHub Copilot Pro ($10 USD ≈ $17 NZD) offer best value. "Free" tools like Continue/Roo Cline require separate LLM subscriptions ($20-30 USD ≈ $33-50 NZD/month) or local deployment (hardware-intensive, lower model quality)
 - **IDE Coverage:** VS Code has universal support (100%); JetBrains (60%); Eclipse and Neovim limited
 - **Customisation:** 6 tools support custom instruction files; 7 support custom prompts/commands
 
@@ -308,18 +308,20 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 
 ### 3.6 Pricing Models
 
+**Currency Note:** All prices are in USD. Approximate NZD conversions provided (1 USD ≈ 1.65 NZD, subject to exchange rate fluctuations).
+
 | Tool | Free Tier | Pro/Individual | Teams/Business | Enterprise | Open Source |
 |------|-----------|----------------|----------------|------------|-------------|
-| **Amazon Q Developer** | ✅ Limited | $19/month | $25/user/month | Custom | ❌ |
+| **Amazon Q Developer** | ✅ Limited | $19/month (≈$31 NZD) | $25/user/month (≈$41 NZD) | Custom | ❌ |
 | **Azure AI Toolkit** | ✅ (Azure costs) | Via Azure | Via Azure | Via Azure | ❌ |
-| **Claude Code** | ❌ | $20/month (Pro) | Not separate | $30/month (Max) | ❌ |
-| **Codeium** | ✅ **Unlimited** | ✅ Free | $12/user/month | Custom | ❌ |
+| **Claude Code** | ❌ | $20/month (≈$33 NZD) (Pro) | Not separate | $30/month (≈$50 NZD) (Max) | ❌ |
+| **Codeium** | ✅ **Unlimited** | ✅ Free | $12/user/month (≈$20 NZD) | Custom | ❌ |
 | **Continue** | ✅ **Full** | ✅ Free | ✅ Free | ✅ Free | ✅ Apache 2.0 |
-| **Cursor** | ✅ Limited | $20/month | Not specified | Not specified | ❌ |
-| **GitHub Copilot** | ✅ Limited | $10/month (Pro) | $19/user/month | $39/user/month | ❌ |
+| **Cursor** | ✅ Limited | $20/month (≈$33 NZD) | Not specified | Not specified | ❌ |
+| **GitHub Copilot** | ✅ Limited | $10/month (≈$17 NZD) (Pro) | $19/user/month (≈$31 NZD) | $39/user/month (≈$64 NZD) | ❌ |
 | **Roo Cline** | ✅ **Full** | ✅ Free | ✅ Free | ✅ Free | ✅ Apache 2.0 |
-| **Sourcegraph Cody** | ✅ Limited | $9/month | $19/user/month | Custom | ❌ |
-| **Tabnine** | ✅ Limited | $12/month | $39/user/month | Custom | ❌ |
+| **Sourcegraph Cody** | ✅ Limited | $9/month (≈$15 NZD) | $19/user/month (≈$31 NZD) | Custom | ❌ |
+| **Tabnine** | ✅ Limited | $12/month (≈$20 NZD) | $39/user/month (≈$64 NZD) | Custom | ❌ |
 
 **Pricing Categories:**
 - **Tool Free, LLM Required:** Continue, Roo Cline (open source, user provides LLM access)
@@ -329,21 +331,21 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 
 **Tool Cost Range (Pro/Individual):**
 - Tool free: $0 (Continue, Roo Cline, Codeium)
-- Low-cost: $9-12/month (Sourcegraph Cody, Tabnine, Codeium Teams)
-- Mid-cost: $19-20/month (Amazon Q, Claude Code, Cursor)
+- Low-cost: $9-12/month (≈$15-20 NZD) (Sourcegraph Cody, Tabnine, Codeium Teams)
+- Mid-cost: $19-20/month (≈$31-33 NZD) (Amazon Q, Claude Code, Cursor)
 
 **Total Cost of Ownership Considerations:**
 
 Tools that appear "free" may require separate LLM subscriptions:
 
-- **Continue/Roo Cline + Cloud LLM:** $0 tool + $20-30/month (Claude Pro, GPT-4) = **$20-30/month total**
+- **Continue/Roo Cline + Cloud LLM:** $0 tool + $20-30/month (≈$33-50 NZD) (Claude Pro, GPT-4) = **$20-30/month (≈$33-50 NZD) total**
 - **Continue/Roo Cline + Local LLM:** $0 tool + $0 LLM = **$0/month** (but requires high-spec hardware, limited model quality)
 - **Codeium:** $0 tool + $0 LLM (included) = **$0/month total**
-- **GitHub Copilot Pro:** $10/month (includes access to Claude, GPT-4, Gemini) = **$10/month total**
-- **Claude Code:** Requires Claude Pro ($20/month) or Max ($30/month) = **$20-30/month total**
-- **Cursor Pro:** $20/month (includes model access) = **$20/month total**
+- **GitHub Copilot Pro:** $10/month (≈$17 NZD) (includes access to Claude, GPT-4, Gemini) = **$10/month (≈$17 NZD) total**
+- **Claude Code:** Requires Claude Pro ($20/month ≈ $33 NZD) or Max ($30/month ≈ $50 NZD) = **$20-30/month (≈$33-50 NZD) total**
+- **Cursor Pro:** $20/month (≈$33 NZD) (includes model access) = **$20/month (≈$33 NZD) total**
 
-**Key Finding:** Whilst Continue and Roo Cline have no tool cost, total cost of ownership matches or exceeds commercial alternatives when factoring in LLM subscriptions. Codeium offers the lowest true total cost ($0), whilst GitHub Copilot Pro offers the best value for cloud-hosted, high-quality models ($10/month).
+**Key Finding:** Whilst Continue and Roo Cline have no tool cost, total cost of ownership matches or exceeds commercial alternatives when factoring in LLM subscriptions. Codeium offers the lowest true total cost ($0), whilst GitHub Copilot Pro offers the best value for cloud-hosted, high-quality models ($10/month ≈ $17 NZD).
 
 [↑ Back to top](#table-of-contents)
 
@@ -434,8 +436,8 @@ To complete this section with authentic user feedback, the following approaches 
 **Recommendation: Codeium (lowest total cost) or GitHub Copilot Pro (best value)**
 
 - **Codeium:** Free unlimited completions and chat with proprietary models included. No LLM subscription required. **Total cost: $0/month**
-- **GitHub Copilot Pro:** $10/month includes access to multiple high-quality models (Claude, GPT-4, Gemini). **Total cost: $10/month**
-- **Continue/Roo Cline:** Free tool but requires separate LLM subscription ($20-30/month for Claude/GPT-4) or local models (hardware-intensive, lower quality). **Total cost: $0-30/month**
+- **GitHub Copilot Pro:** $10/month (≈$17 NZD) includes access to multiple high-quality models (Claude, GPT-4, Gemini). **Total cost: $10 USD (≈$17 NZD)/month**
+- **Continue/Roo Cline:** Free tool but requires separate LLM subscription ($20-30 USD ≈ $33-50 NZD/month for Claude/GPT-4) or local models (hardware-intensive, lower quality). **Total cost: $0-30 USD (≈$0-50 NZD)/month**
 
 **Rationale:** Codeium offers genuinely free AI assistance with no hidden costs. GitHub Copilot Pro provides the best value for cloud-hosted, high-quality models. Continue and Roo Cline appear free but require LLM access, making total cost comparable to commercial alternatives unless using local models.
 
@@ -472,7 +474,7 @@ To complete this section with authentic user feedback, the following approaches 
 
 **Rationale:** Highest number of supported LLM providers, allowing switching between models based on task requirements.
 
-**Cost Consideration:** Whilst tools are free, each provider requires separate subscription or API access. Total monthly cost depends on chosen provider(s): $0 for local models (Ollama), $20-30/month for cloud providers (Claude, GPT-4), or pay-per-use API pricing.
+**Cost Consideration:** Whilst tools are free, each provider requires separate subscription or API access. Total monthly cost depends on chosen provider(s): $0 for local models (Ollama), $20-30 USD (≈$33-50 NZD)/month for cloud providers (Claude, GPT-4), or pay-per-use API pricing.
 
 ---
 
@@ -598,6 +600,8 @@ To complete this section with authentic user feedback, the following approaches 
 
 ### Pricing Insights
 
+**Currency Note:** All prices are in USD. Approximate NZD conversions provided in parentheses (1 USD ≈ 1.65 NZD, subject to exchange rate fluctuations).
+
 **Free Options (Tool Cost Only):**
 - **Tool Free, LLM Required:** Continue, Roo Cline (open source, user provides LLM access)
 - **All-Inclusive Free:** Codeium (proprietary models included)
@@ -607,30 +611,30 @@ To complete this section with authentic user feedback, the following approaches 
 
 When factoring in LLM access costs, the true pricing picture changes significantly:
 
-| Tool | Tool Cost | LLM Cost | Total Monthly Cost |
-|------|-----------|----------|-------------------|
+| Tool | Tool Cost (USD) | LLM Cost (USD) | Total Monthly Cost |
+|------|-----------------|----------------|-------------------|
 | Codeium | $0 | $0 (included) | **$0** |
 | Continue/Roo Cline (local) | $0 | $0 | **$0** (requires high-spec hardware) |
-| GitHub Copilot Pro | $10 | $0 (included) | **$10** |
-| Continue/Roo Cline (cloud) | $0 | $20-30 | **$20-30** |
-| Cursor Pro | $20 | $0 (included) | **$20** |
-| Claude Code | $0 (tool) | $20-30 (Claude Pro/Max) | **$20-30** |
-| Amazon Q Pro | $19 | $0 (included) | **$19** |
-| Sourcegraph Cody Pro | $9 | Varies | **$9+** |
-| Tabnine Pro | $12 | $0 (included) | **$12** |
+| GitHub Copilot Pro | $10 (≈$17 NZD) | $0 (included) | **$10 (≈$17 NZD)** |
+| Continue/Roo Cline (cloud) | $0 | $20-30 (≈$33-50 NZD) | **$20-30 (≈$33-50 NZD)** |
+| Cursor Pro | $20 (≈$33 NZD) | $0 (included) | **$20 (≈$33 NZD)** |
+| Claude Code | $0 (tool) | $20-30 (≈$33-50 NZD) (Claude Pro/Max) | **$20-30 (≈$33-50 NZD)** |
+| Amazon Q Pro | $19 (≈$31 NZD) | $0 (included) | **$19 (≈$31 NZD)** |
+| Sourcegraph Cody Pro | $9 (≈$15 NZD) | Varies | **$9+ (≈$15+ NZD)** |
+| Tabnine Pro | $12 (≈$20 NZD) | $0 (included) | **$12 (≈$20 NZD)** |
 
 **Cost Considerations:**
 - **Codeium** offers the only truly free option with proprietary models included
-- **GitHub Copilot Pro** offers best value for high-quality cloud models at $10/month
-- **Continue and Roo Cline** appear free but require LLM subscriptions ($20-30/month) or local deployment
+- **GitHub Copilot Pro** offers best value for high-quality cloud models at $10 USD (≈$17 NZD)/month
+- **Continue and Roo Cline** appear free but require LLM subscriptions ($20-30 USD ≈ $33-50 NZD/month) or local deployment
 - **Local LLM deployment** eliminates ongoing costs but requires:
   - High-specification hardware (16GB+ RAM, powerful GPU for optimal performance)
   - Reduced model quality compared to cloud-hosted alternatives (Claude, GPT-4)
   - Technical expertise for setup and maintenance
-- Enterprise features (org-wide customisation) typically require top-tier subscriptions ($19-39/user/month)
+- Enterprise features (org-wide customisation) typically require top-tier subscriptions ($19-39 USD ≈ $31-64 NZD/user/month)
 
 **Value Assessment:**
-- **Best Total Value:** GitHub Copilot Pro ($10/month for multiple high-quality models)
+- **Best Total Value:** GitHub Copilot Pro ($10 USD ≈ $17 NZD/month for multiple high-quality models)
 - **Lowest Total Cost:** Codeium ($0/month, models included)
 - **Most Flexible:** Continue/Roo Cline (40+ providers, but cost varies by choice)
 - **Hidden Costs:** "Free" tools requiring separate LLM access can exceed commercial all-in-one solutions
