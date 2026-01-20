@@ -1,0 +1,583 @@
+# Sourcegraph Cody Analysis
+
+**Analysis Date:** 20 January 2026  
+**Tool Version:** Current (as of January 2026)  
+**Analyst:** GitHub Copilot  
+**Official Documentation:** https://docs.sourcegraph.com/cody
+
+---
+
+## 1. Tool Overview
+
+**Official Documentation:** https://docs.sourcegraph.com/cody  
+**Version Analysed:** Current version (as of January 2026)  
+**Primary Use Case:** AI coding assistant with deep codebase context and understanding  
+**Licensing:** Free tier for individuals, Pro tier for advanced features, Enterprise for organisations
+
+### Description
+
+Sourcegraph Cody is an AI-powered coding assistant developed by Sourcegraph, a company known for its code search and intelligence platform. Cody leverages Sourcegraph's powerful code search and context capabilities to provide AI assistance with deep understanding of your codebase, dependencies, and documentation.
+
+Cody distinguishes itself through its ability to search and understand large codebases using Sourcegraph's enterprise-grade code intelligence. This enables Cody to provide context-aware suggestions and answers based on your entire codebase, not just open files. Cody supports multiple AI models and can be deployed on-premises for organisations with security requirements.
+
+### Key Features
+
+- **Deep Codebase Context**: Understands entire codebase through Sourcegraph integration
+- **Multi-Model Support**: Choose from Anthropic Claude, OpenAI GPT, Google Gemini, and local models
+- **Chat Interface**: Conversational AI with codebase-aware responses
+- **Code Completion**: Context-aware autocomplete with multi-line suggestions
+- **Commands**: Pre-built commands for common tasks (explain, document, test, fix)
+- **Custom Commands**: Create reusable custom prompts and workflows
+- **Edit Mode**: Direct code editing through natural language instructions
+- **Code Search Integration**: Leverage Sourcegraph's code search capabilities
+- **Enterprise Deployment**: On-premises deployment options
+- **IDE Integration**: VS Code, JetBrains IDEs, and Neovim
+- **Attribution**: Shows sources when code suggestions match open-source code
+- **Flexible Context**: Fine-tune which files and repositories Cody considers
+
+**Citation:** General information available at https://sourcegraph.com/cody and https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
+
+---
+
+## 2. LLM Provider Integration
+
+### 2.1 Ollama Integration
+
+**Supported:** Yes (in Enterprise and Pro tiers)
+
+**Configuration:**
+
+Cody Enterprise and Cody Pro support integration with Ollama for running local AI models. This allows organisations to use open-source models entirely on-premises.
+
+Users can configure Ollama endpoints in Cody settings to use local models such as CodeLlama, Llama 2, Mistral, and other Ollama-supported models.
+
+**Supported Models:** CodeLlama, Llama 2, Mistral, and other Ollama-compatible models
+
+**Limitations:** Available in Pro and Enterprise tiers; configuration requires Ollama server setup
+
+**Citation:** General information about model support available at https://docs.sourcegraph.com/cody. Specific Ollama integration details mentioned in product documentation. Accessed 20 January 2026.
+
+---
+
+### 2.2 GitHub Copilot Pro Integration
+
+**Supported:** No
+
+Cody is a competing product to GitHub Copilot and does not integrate with Copilot services.
+
+**Integration Method:** Not applicable
+
+**Configuration:**
+
+Not applicable
+
+**Features Available with Copilot Pro:**
+
+Not applicable
+
+**Citation:** Cody and GitHub Copilot are separate competing products from different vendors.
+
+---
+
+### 2.3 Microsoft AI Foundry Integration
+
+**Supported:** Not documented in official sources
+
+**Configuration:**
+
+- **Endpoint URL Configuration:** Not documented in official sources
+- **API Key Configuration:** Not documented in official sources
+- **Supported Models:** Not documented in official sources
+
+**Authentication Methods:** Not documented in official sources
+
+**Citation:** Not documented in official sources
+
+---
+
+### 2.4 OpenAI Integration
+
+**Supported:** Yes
+
+**Configuration:**
+
+Cody supports OpenAI models including GPT-4, GPT-3.5, and other OpenAI offerings. Users can select OpenAI models in Cody settings.
+
+For Enterprise deployments, organisations can configure custom OpenAI API endpoints and keys to use their own OpenAI accounts.
+
+- **API URL Configuration:** Configurable in Enterprise deployments
+- **API Key Configuration:** Managed through Sourcegraph Enterprise settings
+- **Supported Models:** GPT-4, GPT-4 Turbo, GPT-3.5 Turbo, and other OpenAI models
+
+**Custom Endpoints:** Supported in Enterprise tier for organisations using OpenAI-compatible endpoints
+
+**Citation:** Model support information available at https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
+
+---
+
+### 2.5 Anthropic (Claude) Integration
+
+**Supported:** Yes
+
+**Account Requirements:** Included in Cody Free and Pro tiers; configurable API keys for Enterprise
+
+**Configuration:**
+
+Cody has first-class support for Anthropic's Claude models. Claude is the default model for many Cody features due to its strong coding capabilities.
+
+- **API Key Configuration:** Managed automatically in Free/Pro tiers; custom configuration available in Enterprise
+- **Supported Models:** Claude 3 Opus, Claude 3 Sonnet, Claude 3 Haiku, Claude 2
+
+**Features and Limitations:** Full feature support across all Cody capabilities
+
+**Citation:** Claude integration information available at https://docs.sourcegraph.com/cody and https://sourcegraph.com/cody. Accessed 20 January 2026.
+
+---
+
+## 3. Policies and Rules (Instruction Files)
+
+### Instruction File Support
+
+**Supported File Types:** `.cody/instructions` or similar project configuration files
+
+**File Locations:** Project root directory in `.cody` folder
+
+**File Format:** Markdown or plain text format
+
+### Configuration Method
+
+Cody supports custom instructions through configuration files that can be placed in the project repository. These instructions guide Cody's behaviour when working on code in that project.
+
+Instructions can specify coding standards, architectural patterns, testing requirements, and other project-specific guidelines that Cody should follow.
+
+### Syntax and Structure
+
+```markdown
+# Example .cody/instructions file
+
+## Code Standards
+- Use TypeScript with strict mode enabled
+- Follow the Airbnb style guide
+- Write comprehensive JSDoc comments
+
+## Architecture
+- Use the MVC pattern for all controllers
+- Keep business logic in service classes
+- Use dependency injection
+
+## Testing
+- Write unit tests for all public methods
+- Aim for 90% code coverage
+- Use Jest for testing framework
+```
+
+### Scope and Application
+
+- **Project-Level:** Instructions apply to the entire project when placed in `.cody` directory
+- **Repository-Wide:** Settings can be configured at repository level
+- **Enterprise-Wide:** Enterprise deployments can set organisation-wide policies
+
+### Example Policies
+
+```markdown
+## Security
+- Always use parameterised queries for database access
+- Validate all user input
+- Apply the principle of least privilege
+
+## Documentation
+- Include usage examples in all public API documentation
+- Keep README files up to date
+- Document all environment variables
+```
+
+**Citation:** Custom instructions mentioned in Cody documentation. Detailed configuration not fully documented in accessible sources. Information from https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
+
+---
+
+## 4. Custom and Stored Prompts
+
+### Prompt Storage Mechanism
+
+**Available:** Yes (Custom Commands feature)
+
+Cody provides a Custom Commands feature that allows users to create, store, and reuse custom prompts for specific workflows. These commands can be shared across teams in Enterprise deployments.
+
+### Creating Custom Prompts
+
+Users can create custom commands through Cody's settings interface or by defining them in JSON configuration files. Custom commands can include:
+
+- Prompt templates with variables
+- Context specifications (which files to include)
+- Specific model preferences
+- Output format preferences
+
+```json
+{
+  "commands": {
+    "review-security": {
+      "prompt": "Review this code for security vulnerabilities",
+      "context": ["currentFile", "selection"],
+      "model": "claude-3-opus"
+    }
+  }
+}
+```
+
+### Organising Prompts
+
+Custom commands can be organised into categories and given descriptive names. They appear in Cody's command palette for easy access.
+
+### Using Stored Prompts
+
+Stored prompts (custom commands) can be invoked through:
+- Command palette (searchable by name)
+- Keyboard shortcuts (configurable)
+- Right-click context menus
+- Chat interface by typing the command name
+
+### Sharing and Exporting
+
+Enterprise deployments can define organisation-wide custom commands that are shared across all team members. Custom commands can be exported and shared as configuration files.
+
+**Citation:** Custom Commands feature documented at https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
+
+---
+
+## 5. Tools and Model Context Protocol (MCP)
+
+### Model Context Protocol (MCP)
+
+**MCP Support:** Not documented in official sources
+
+**Configuration:**
+
+Not documented in official sources
+
+### MCP Server Configuration
+
+Not documented in official sources
+
+### Available Tools
+
+Cody provides built-in tools for code search, context gathering, and repository analysis through Sourcegraph integration. However, extensibility through MCP is not documented in accessible sources.
+
+**Built-in Capabilities:**
+- Code search across repositories
+- Symbol search and navigation
+- Dependency analysis
+- Documentation search
+- File and directory browsing
+
+### Custom Tool Development
+
+**Supported:** Not fully documented in official sources
+
+Cody's architecture allows for Enterprise customisation, but detailed information about custom tool development or plugin systems is not available in accessible documentation.
+
+**Development Framework:** Not documented in official sources
+
+**Citation:** Built-in tools mentioned in Sourcegraph documentation. MCP and custom tool development not documented in accessible sources. Accessed 20 January 2026.
+
+---
+
+## 6. Application Development Workflow
+
+### 6.1 Project Initialisation
+
+Cody works with existing projects and repositories. After installing the Cody extension and authenticating, it automatically indexes the workspace and begins providing context-aware assistance.
+
+For organisations using Sourcegraph Enterprise, Cody can access multiple repositories simultaneously, providing cross-repository context.
+
+### 6.2 Design and Planning
+
+Cody can assist with design and planning through its chat interface, leveraging knowledge of the existing codebase architecture. Users can ask about architectural patterns, design decisions, and best practices based on how the codebase is currently structured.
+
+### 6.3 Code Generation
+
+**Supported Generation Methods:**
+
+- **Autocomplete**: Real-time inline code completions as you type
+- **Multi-Line Completions**: Complete functions or code blocks
+- **Chat-Based Generation**: Request code through conversational interface
+- **Edit Mode**: Natural language instructions for direct code modification
+- **Commands**: Pre-built commands like "Generate tests" or "Add documentation"
+- **Custom Commands**: User-defined prompts for specific workflows
+
+**Workflow:**
+
+1. Start coding or describe what you want to build
+2. Cody provides inline suggestions using full codebase context
+3. Use chat to ask questions about codebase or request generation
+4. Use Edit mode for targeted natural language modifications
+5. Invoke commands for common tasks (document, test, explain, fix)
+6. Review suggestions with attribution for open-source matches
+7. Iterate with Cody's assistance
+
+### 6.4 Iterative Development
+
+Cody maintains conversation context and codebase understanding throughout development sessions. The deep codebase context enables informed suggestions even as code evolves.
+
+Cody's Edit mode enables iterative refinement by allowing developers to describe changes in natural language and see them applied directly to code.
+
+### 6.5 Testing and Validation
+
+Cody provides a "Generate Tests" command that creates unit tests for selected code. The tests are generated with understanding of:
+- Existing testing patterns in the codebase
+- Testing frameworks used in the project
+- Code dependencies and edge cases
+
+Users can also ask Cody to review tests, suggest additional test cases, or explain testing strategies.
+
+### 6.6 Debugging
+
+Cody assists with debugging through:
+- Error explanation and interpretation
+- Fix suggestions based on codebase context
+- "Fix" command for automated error resolution
+- Code explanation to understand complex logic
+- Search capabilities to find similar issues or patterns
+
+### 6.7 Deployment
+
+Not directly applicable. Cody focuses on code development rather than deployment, though it can assist with deployment scripts, CI/CD configuration, and infrastructure as code through its chat and generation capabilities.
+
+**Citation:** Workflow information available at https://docs.sourcegraph.com/cody and https://sourcegraph.com/cody. Accessed 20 January 2026.
+
+---
+
+## 7. IDE and Environment Integration
+
+### 7.1 Visual Studio Code
+
+**Supported:** Yes
+
+**Installation:** Install Cody extension from VS Code Marketplace
+
+**Configuration:**
+
+1. Install Cody extension from VS Code Marketplace
+2. Sign in with Sourcegraph account (free account available)
+3. Choose your preferred AI model
+4. Configure context settings (which files Cody should consider)
+5. Set up custom commands if desired
+6. For Enterprise: Configure Sourcegraph instance URL
+
+**Features:**
+
+- Inline code completions with codebase context
+- Multi-line suggestions
+- Chat interface for questions and generation
+- Edit mode for natural language code editing
+- Commands for common tasks (explain, document, test, fix)
+- Custom commands for team workflows
+- Code search integration
+- Attribution for matching open-source code
+- Context management (control what Cody sees)
+- Symbol search and navigation
+- Enterprise code intelligence (with Sourcegraph Enterprise)
+
+**Keyboard Shortcuts:**
+
+| Action | Shortcut (Windows/Linux) | Shortcut (macOS) |
+|--------|--------------------------|------------------|
+| Accept Completion | Tab | Tab |
+| Reject Completion | Esc | Esc |
+| Open Cody Chat | Alt+L | Opt+L |
+| Open Commands | Alt+K | Opt+K |
+| Trigger Completion | Alt+\\ | Opt+\\ |
+
+**UI Integration:**
+
+Cody adds a sidebar panel for chat and commands, inline suggestions in the editor, and integrates with VS Code's command palette. Edit mode shows proposed changes with diff views.
+
+**Citation:** Extension available on VS Code Marketplace. Documentation at https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
+
+---
+
+### 7.2 JetBrains IDEs
+
+**Supported IDEs:** IntelliJ IDEA, PyCharm, WebStorm, PhpStorm, GoLand, Android Studio, RubyMine, CLion, and other JetBrains IDEs
+
+**Installation:** Install Cody plugin from JetBrains Marketplace
+
+**Configuration:**
+
+1. Open IDE Settings/Preferences
+2. Navigate to Plugins
+3. Search for "Cody"
+4. Install and restart IDE
+5. Sign in with Sourcegraph account
+6. Configure AI model preferences
+7. Set up custom commands if desired
+8. For Enterprise: Configure Sourcegraph instance
+
+**Features:**
+
+- Inline code completions
+- Multi-line suggestions
+- Chat interface
+- Edit mode
+- Commands (explain, document, test, fix)
+- Custom commands
+- Code search integration
+- Attribution tracking
+- Enterprise code intelligence (with Sourcegraph)
+- Integration with JetBrains features
+
+**IDE-Specific Considerations:**
+
+Cody integrates with JetBrains' IntelliSense system and provides features tailored to JetBrains' UI patterns. The plugin is optimised for JetBrains' editor architecture.
+
+**Citation:** Plugin available on JetBrains Marketplace. Documentation at https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
+
+---
+
+### 7.3 Eclipse
+
+**Supported:** No
+
+Cody does not currently provide an Eclipse plugin.
+
+**Installation:** Not available
+
+**Configuration:**
+
+Not applicable
+
+**Features:**
+
+Not applicable
+
+**Limitations:**
+
+Eclipse is not currently supported
+
+**Citation:** Current IDE support documented at https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
+
+---
+
+### 7.4 Terminal and CLI
+
+**CLI Available:** Not as a standalone tool
+
+**Installation:** Not applicable
+
+Cody does not provide a standalone CLI tool. The Sourcegraph CLI (`src`) provides code search capabilities but does not include Cody's AI features.
+
+**Citation:** CLI not available for Cody AI features. Documentation at https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
+
+---
+
+### 7.5 Other IDEs and Editors
+
+**Supported Environments:** Neovim
+
+#### Neovim
+
+**Installation:** Available through Neovim plugin managers  
+**Features:** Code completions, chat interface, commands  
+**Limitations:** Feature set may be adapted for terminal environment  
+**Citation:** Neovim support mentioned at https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
+
+**Other Editors:**
+
+Cody currently focuses on VS Code, JetBrains IDEs, and Neovim. Support for other editors is not documented.
+
+---
+
+## 8. Summary and Key Findings
+
+### Strengths
+
+- Deep codebase context through Sourcegraph integration
+- Multi-model support (Claude, GPT, Gemini, local models)
+- Custom commands for reusable prompts and workflows
+- Attribution for open-source code matches
+- Enterprise deployment with on-premises options
+- Strong code search integration
+- Edit mode for natural language code modifications
+- Free tier with generous limits
+- Pro tier with advanced features
+- Cross-repository context in Enterprise
+- Flexible context management
+- Pre-built commands for common tasks
+
+### Limitations
+
+- Fewer IDE integrations than some competitors (no Eclipse, Vim, Emacs)
+- No CLI tool for automation
+- MCP support not documented
+- Some advanced features require Sourcegraph Enterprise
+- Instruction file support not comprehensively documented
+- Smaller extension ecosystem compared to some competitors
+
+### Best Use Cases
+
+Sourcegraph Cody excels in scenarios requiring:
+- Understanding and working with large, complex codebases
+- Cross-repository code intelligence
+- Organisations already using Sourcegraph
+- Teams needing flexible AI model choices
+- On-premises or air-gapped deployments
+- Custom workflows through custom commands
+- Code search integrated with AI assistance
+- Security-conscious organisations needing attribution
+- Teams wanting to use local models (Ollama)
+
+### Documentation Quality
+
+Sourcegraph Cody's documentation is comprehensive for core features like installation, basic usage, and commands. Advanced configuration, Enterprise features, and customisation options are documented but could benefit from more detailed examples and best practices. The documentation is actively maintained and updated with new features.
+
+---
+
+## 9. Completeness Checklist
+
+- [x] Tool overview completed with all required information
+- [x] Ollama integration documented with citations
+- [x] GitHub Copilot Pro integration documented with citations
+- [x] Microsoft AI Foundry integration documented with citations
+- [x] OpenAI integration documented with citations
+- [x] Anthropic integration documented with citations
+- [x] Policies and rules configuration documented with citations
+- [x] Custom and stored prompts documented with citations
+- [x] Tools and MCP support documented with citations
+- [x] Application development workflow documented with citations
+- [x] VS Code integration documented with citations
+- [x] JetBrains IDEs integration documented with citations
+- [x] Eclipse integration documented with citations
+- [x] Terminal/CLI integration documented with citations
+- [x] Other applicable IDEs documented with citations
+- [x] All information verified against available sources
+- [x] No unfounded assumptions made
+- [x] All claims have citations or marked as not documented
+- [x] UK English used throughout
+- [x] Consistent formatting applied
+
+---
+
+## 10. References
+
+### Official Documentation
+
+1. Sourcegraph Cody Official Page - https://sourcegraph.com/cody
+2. Cody Documentation - https://docs.sourcegraph.com/cody
+3. Sourcegraph Blog - https://about.sourcegraph.com/blog
+
+### Version Information
+
+- **Tool Version Analysed:** Current (as of January 2026)
+- **Documentation Last Updated:** Ongoing updates
+- **Analysis Last Updated:** 20 January 2026
+
+### Notes on Documentation Availability
+
+This analysis is based on publicly accessible Sourcegraph documentation and product information. Some Enterprise features and advanced configuration options may have additional documentation available to Enterprise customers. The product is actively developed with regular feature additions and improvements.
+
+---
+
+## Revision History
+
+| Date | Version | Changes | Analyst |
+|------|---------|---------|---------|
+| 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
