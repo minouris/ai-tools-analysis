@@ -1,4 +1,4 @@
-↑ [Parent: Tool Analyses](README.md)
+↑ [Parent: Tool Analyses](README.md) | [Next: Claude Code](claude-code.md) →
 
 ---
 
@@ -707,4 +707,19 @@ Tool analysis template: [TOOL_ANALYSIS_TEMPLATE.md](../TOOL_ANALYSIS_TEMPLATE.md
 
 ---
 
-↑ [Parent: Tool Analyses](README.md)
+## See Also
+
+- [Amazon Q Developer](amazon-q-developer.md) - AWS AI-powered coding assistant with security scanning and AWS service integration
+- [Azure AI Toolkit](azure-ai-toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
+- [Claude Code](claude-code.md) - Terminal-based agentic coding tool from Anthropic with MCP support, plugin system, and VS Code integration
+- [Codeium](codeium.md) - Free AI-powered code completion and chat assistant with broad IDE support
+- [Continue](continue.md) - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
+- [Cursor](cursor.md) - AI-first code editor built for productivity with deep AI integration
+- [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
+- [Roo Cline](roo-cline.md) - AI-powered development assistant for VS Code with multiple operational modes
+- [Sourcegraph Cody](sourcegraph-cody.md) - AI coding assistant with deep codebase context and understanding
+- [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options
+
+---
+
+↑ [Parent: Tool Analyses](README.md) | [Next: Claude Code](claude-code.md) →
