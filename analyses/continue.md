@@ -1,0 +1,1141 @@
+# Continue AI Coding Tool Analysis
+
+**Analysis Date:** 16 January 2025  
+**Tool Version:** Development version (latest main branch, "0.0.0-dev")  
+**Analyst:** AI Analysis System  
+**Official Documentation:** https://docs.continue.dev
+
+---
+
+## 1. Tool Overview
+
+**Official Documentation:** https://docs.continue.dev  
+**Version Analysed:** Latest development (0.0.0-dev in package.json)  
+**Primary Use Case:** AI-powered coding assistant for automating development workflows across IDE, terminal, and CI/CD environments  
+**Licensing:** Apache License 2.0 (Open Source)
+
+### Description
+
+Continue is a comprehensive AI coding platform that enables developers to create, share, and use custom AI code agents through open-source IDE extensions (VS Code and JetBrains) and a command-line interface. The platform integrates with Continue Mission Control (hub.continue.dev), a central dashboard for managing agents, tasks, workflows, and integrations.
+
+**Deployment Models:**
+1. **IDE Extensions** - Real-time coding assistance in VS Code and JetBrains IDEs
+2. **CLI (Terminal)** - Interactive TUI mode for complex tasks and headless mode for automation
+3. **Cloud Agents** - Automated workflows triggered by schedules, webhooks, or events
+
+### Key Features
+
+- **Agent Mode** - Autonomous coding assistant with tool access
+- **Chat Mode** - Interactive AI assistant for code analysis and questions
+- **Edit Mode** - Quick targeted code changes via natural language
+- **Autocomplete** - AI-powered inline code suggestions
+- **Plan Mode** - Safe exploration with read-only tools
+- **Model Context Protocol (MCP)** - Integration with external tools and databases
+- **Continue Mission Control** - Cloud dashboard for agents, tasks, and workflows
+- **Custom Rules and Prompts** - Organisation-specific coding standards
+- **Multi-provider Support** - 40+ LLM providers
+- **Workflow Automation** - Scheduled and event-triggered agents
+
+**Citation:** docs/index.mdx, docs/home.mdx, docs/ide-extensions/quick-start.mdx, LICENSE
+
+---
+
+## 2. LLM Provider Integration
+
+### 2.1 Ollama Integration
+
+**Supported:** Yes (Full Support)
+
+**Configuration:**
+
+```yaml
+name: My Config
+version: 0.0.1
+schema: v1
+
+models:
+  - name: <MODEL_NAME>
+    provider: ollama
+    model: <MODEL_ID>
+    apiBase: http://<endpoint>:11434  # For remote instances
+    capabilities:
+      - tool_use      # Optional: enable function calling
+      - image_input   # Optional: for vision models
+```
+
+**Supported Models:** All Ollama models; use `AUTODETECT` to list available models
+
+**Supported Features:** Chat, Edit, Apply, Embeddings, Autocomplete
+
+**Limitations:**
+- Remote instances require apiBase configuration
+- Custom models may need explicit capability configuration
+
+**Citation:** docs/customize/model-providers/top-level/ollama.mdx
+
+---
+
+### 2.2 GitHub Copilot Pro Integration
+
+**Supported:** Not documented in official sources
+
+Continue does not document integration with GitHub Copilot Pro. It is designed as an alternative/complementary tool with its own model provider integrations.
+
+**Citation:** Not documented in official sources (extensive search conducted)
+
+---
+
+### 2.3 Microsoft AI Foundry Integration
+
+**Supported:** Yes (Full Support via Azure provider)
+
+**Configuration:**
+
+```yaml
+models:
+  - name: <MODEL_NAME>
+    provider: azure
+    model: <MODEL_ID>
+    apiBase: <YOUR_DEPLOYMENT_BASE>
+    apiKey: <YOUR_AZURE_API_KEY>
+    env:
+      deployment: <YOUR_DEPLOYMENT_NAME>
+      apiType: azure-foundry  # Or "azure-openai"
+      apiVersion: 2023-07-01-preview
+```
+
+**Finding Configuration Details:**
+1. Select model in Azure AI Foundry
+2. Navigate to Endpoint > Target URI
+3. Extract apiBase, deployment name, and API version
+
+**Supported Models:** All models deployed in Azure AI Foundry
+
+**Authentication Methods:**
+- API key authentication
+- Subscription key (via Azure gateway)
+
+**Citation:** docs/customize/model-providers/top-level/azure.mdx
+
+---
+
+### 2.4 OpenAI Integration
+
+**Supported:** Yes (Full Support)
+
+**Configuration:**
+
+```yaml
+models:
+  - name: <MODEL_NAME>
+    provider: openai
+    model: <MODEL_ID>
+    apiKey: <YOUR_OPENAI_API_KEY>
+    apiBase: http://localhost:8000/v1  # Optional: for custom endpoints
+```
+
+**API Key:** Obtain from https://platform.openai.com/account/api-keys
+
+**Supported Models:** All OpenAI models (GPT-3.5, GPT-4, GPT-4o, GPT-5)
+
+**OpenAI-Compatible Providers:** KoboldCpp, text-gen-webui, FastChat, LocalAI, llama-cpp-python, TensorRT-LLM, vLLM, litellm, Tetrate Agent Router Service
+
+**Legacy Completions Endpoint:**
+```yaml
+models:
+  - name: <MODEL_NAME>
+    provider: openai
+    model: <MODEL_NAME>
+    useLegacyCompletionsEndpoint: true
+```
+
+**Citation:** docs/customize/model-providers/top-level/openai.mdx
+
+---
+
+### 2.5 Anthropic (Claude) Integration
+
+**Supported:** Yes (Full Support)
+
+**Configuration:**
+
+```yaml
+models:
+  - name: <MODEL_NAME>
+    provider: anthropic
+    model: <MODEL_ID>
+    apiKey: <YOUR_ANTHROPIC_API_KEY>
+    roles:
+      - chat
+    defaultCompletionOptions:
+      promptCaching: true  # Optional: enable caching
+```
+
+**API Key:** Obtain from https://console.anthropic.com/account/keys
+
+**Supported Models:** All Claude models (Claude Sonnet 4.5, Opus, Haiku)
+
+**Advanced Features:**
+- **Prompt Caching** - Caches system messages and conversation history to reduce costs
+
+**Supported Features:** Chat, Edit, Apply, Embeddings
+
+**Citation:** docs/customize/model-providers/top-level/anthropic.mdx
+
+---
+
+### 2.6 Additional Provider Support
+
+Continue supports 40+ LLM providers:
+
+**Hosted Services:** Google Gemini, Amazon Bedrock, Vertex AI, Groq, Together AI, DeepInfra, OpenRouter, Cohere, xAI, Mistral, DeepSeek, NVIDIA, Cloudflare
+
+**Local/Self-Hosted:** LM Studio, llama.cpp, LlamaStack, llamafile
+
+**Enterprise:** SambaNova, Watson x (IBM), AWS Sagemaker, Nebius
+
+**Citation:** docs/customize/model-providers/overview.mdx
+
+---
+
+## 3. Policies and Rules
+
+### 3.1 Rules System Overview
+
+**Purpose:** Rules provide instructions to AI models in Agent, Chat, and Edit modes to enforce coding standards, security practices, and organisational best practices.
+
+**How Rules Work:**
+- Automatically detected and applied
+- Joined with newlines to form system message
+- Applied in order: Hub assistant rules → Referenced Hub rules → Local workspace rules → Global rules
+- Not included in autocomplete or apply features
+
+**Storage Locations:**
+
+1. **Local Rules** (`.continue/rules/` folder)
+   - Version controlled with code
+   - Automatically visible with Hub configs
+   - Can be created via "Add Rules" button or by agent
+
+2. **Hub Rules** (hub.continue.dev)
+   - Stored on Continue Mission Control
+   - Referenced in config with `uses:` syntax
+   - Shareable across teams
+
+**Citation:** docs/customize/rules.mdx, docs/customize/deep-dives/rules.mdx
+
+---
+
+### 3.2 Rule Configuration
+
+**Creating Local Rules:**
+
+```markdown
+---
+name: TypeScript Standards
+globs: "**/*.{ts,tsx}"
+alwaysApply: true
+description: Enforce TypeScript best practices
+---
+
+- Use strict typing
+- Document public APIs
+- Follow naming conventions
+```
+
+**Rule Properties:**
+- `name` - Display name
+- `globs` - File pattern matching (string or array)
+- `regex` - Content pattern matching (string or array)
+- `description` - For agent decision-making
+- `alwaysApply` - Controls inclusion (true/false/undefined)
+
+**Hub Rules Reference:**
+```yaml
+rules:
+  - uses: username/my-hub-rule
+```
+
+**Rule Management:**
+- Browse: https://hub.continue.dev/hub?type=rules
+- Create: https://hub.continue.dev/new?type=block&blockType=rules
+
+**Citation:** docs/customize/deep-dives/rules.mdx
+
+---
+
+### 3.3 Instruction File Support
+
+**Supported Files:**
+- `.continue/rules/*.md` - Primary rule storage
+- `~/.continue/rules/` - Global rules
+- `.continuerc.json` - Workspace configuration (deprecated)
+
+**Legacy `.continuerc.json`:**
+```json
+{
+  "tabAutocompleteOptions": {
+    "disable": true
+  },
+  "mergeBehavior": "overwrite"
+}
+```
+
+**Citation:** docs/customize/deep-dives/configuration.mdx
+
+---
+
+## 4. Custom and Stored Prompts
+
+### 4.1 Prompts System
+
+**Purpose:** Specialized instructions for repetitive and complex tasks, acting as automated code reviewers and workflow templates.
+
+**Capabilities:**
+- Define interaction patterns for specific tasks
+- Encode domain expertise
+- Ensure consistent guidance
+- Shareable and reusable across agents
+
+---
+
+### 4.2 Slash Commands
+
+**Configuration:**
+
+```markdown
+---
+name: Create Unit Tests
+description: Generate comprehensive unit tests
+invokable: true
+---
+
+Generate unit tests following these guidelines:
+- Test all public methods
+- Include edge cases
+- Use descriptive test names
+- Follow AAA pattern (Arrange, Act, Assert)
+```
+
+**Usage:**
+- Type `/` in Chat, Plan, or Agent mode
+- Select prompt from list
+- Combine with highlighted code
+
+**Citation:** docs/customize/deep-dives/prompts.mdx
+
+---
+
+### 4.3 Prompt Storage and Management
+
+**Storage Locations:**
+1. **Local Prompts** - `.md` files in project directory
+2. **Hub Prompts** - Stored on Continue Mission Control
+
+**Configuration:**
+```yaml
+prompts:
+  - uses: supabase/create-functions
+  - uses: company/code-review
+```
+
+**Hub Resources:**
+- Browse: https://hub.continue.dev/hub?type=prompts
+- Create: https://hub.continue.dev/new?type=block&blockType=prompts
+
+---
+
+### 4.4 Using Prompts in CLI
+
+**TUI Mode:**
+```bash
+cn --prompt supabase/create-functions "Create health check function"
+```
+
+**Headless Mode:**
+```bash
+cn -p --prompt supabase/create-functions "Generate function for current branch"
+```
+
+**Citation:** docs/customize/deep-dives/prompts.mdx
+
+---
+
+## 5. Tools and MCP
+
+### 5.1 Model Context Protocol (MCP) Support
+
+**Overview:** Continue implements MCP standard (created by Anthropic) for connecting AI models with external data sources, tools, and environments.
+
+**Capabilities:**
+- Integration with external tools and systems
+- Database connectivity
+- Custom tool development
+- Partner-contributed functionality
+
+**Availability:** Agent mode only
+
+**Citation:** docs/customize/mcp-tools.mdx, docs/customize/deep-dives/mcp.mdx
+
+---
+
+### 5.2 MCP Server Configuration
+
+**Quick Start:**
+
+```yaml
+# .continue/mcpServers/playwright-mcp.yaml
+name: Playwright mcpServer
+version: 0.0.1
+schema: v1
+mcpServers:
+  - name: Browser search
+    command: npx
+    args:
+      - "@playwright/mcp@latest"
+```
+
+**Configuration in config.yaml:**
+
+```yaml
+mcpServers:
+  - name: SQLite MCP
+    command: npx
+    args:
+      - "-y"
+      - "mcp-sqlite"
+      - "/path/to/database.db"
+```
+
+---
+
+### 5.3 MCP Server Properties
+
+**Configuration Options:**
+- `name` - Display name
+- `type` - Server type (sse, stdio, streamable-http)
+- `command` - Start command
+- `args` - Command arguments
+- `env` - Environment variables/secrets
+
+**Transport Types:**
+
+1. **SSE (Server-Sent Events):**
+```yaml
+mcpServers:
+  - name: Remote Server
+    type: sse
+    url: https://server.example.com
+```
+
+2. **stdio (Standard I/O):**
+```yaml
+mcpServers:
+  - name: Local Server
+    type: stdio
+    command: npx
+    args:
+      - "@modelcontextprotocol/server-sqlite"
+```
+
+3. **Streamable HTTP:**
+```yaml
+mcpServers:
+  - name: HTTP Server
+    type: streamable-http
+    url: https://server.example.com
+```
+
+**Citation:** docs/customize/deep-dives/mcp.mdx
+
+---
+
+### 5.4 MCP Secrets Management
+
+**Hub Secrets:**
+
+```yaml
+mcpServers:
+  - name: Supabase MCP
+    command: npx
+    args:
+      - "@supabase/mcp-server-supabase@latest"
+      - --access-token
+      - ${{ secrets.SUPABASE_TOKEN }}
+    env:
+      SUPABASE_TOKEN: ${{ secrets.SUPABASE_TOKEN }}
+```
+
+**Secret Management:**
+- Visit https://hub.continue.dev/settings/secrets
+- Add API keys and sensitive data
+- Reference with `${{ secrets.SECRET_NAME }}`
+
+---
+
+### 5.5 JSON MCP Format Support
+
+Continue supports JSON MCP config files from Claude Desktop, Cursor, and Cline:
+- Copy JSON files to `.continue/mcpServers/` directory
+- Continue automatically detects them
+- No conversion needed
+
+---
+
+### 5.6 MCP Resources
+
+- **Explore MCP Servers:** https://hub.continue.dev/explore/mcp
+- **MCP Introduction:** https://modelcontextprotocol.io/introduction
+- **MCP Quickstart:** https://modelcontextprotocol.io/quickstart
+
+**Citation:** docs/customize/deep-dives/mcp.mdx
+
+---
+
+## 6. Application Development Workflow
+
+### 6.1 Continuous AI Maturity Model
+
+**Level 1: Manual AI Assistance**
+- Prompt AI when remembered for one-off tasks
+- Continue Implementation: Chat or Edit mode
+
+**Level 2: Workflow Automation**
+- AI handles routine tasks with human oversight
+- Examples: Auto-documentation, unit tests, issue tracking
+- Continue Implementation: CLI with rules in CI/CD
+
+**Level 3: Zero-Intervention Workflows**
+- AI autonomously completes end-to-end processes
+- Examples: Safe dependency merges, self-healing tests
+- Continue Implementation: Automated agents with strict permissions
+
+**Citation:** docs/guides/continuous-ai.mdx
+
+---
+
+### 6.2 Development Workflow Patterns
+
+**Pattern 1: Async Triage Bot**
+- Checks GitHub issues daily
+- Leaves helpful first response
+- Reduces maintainer load
+
+**Pattern 2: PR Review Agent**
+- Automatically reviews PRs
+- Checks security, performance, style
+- Highlights issues before human review
+
+**Pattern 3: Documentation Guardian**
+- Scans for doc mismatches on code changes
+- Suggests updates automatically
+- Keeps docs current
+
+**Citation:** docs/guides/continuous-ai.mdx
+
+---
+
+### 6.3 Implementation Workflow
+
+**Start with Level 1 → Level 2:**
+
+```bash
+# Automated code review
+git diff | cn -p "review this diff following team standards"
+
+# Generate tests
+cn -p "create unit tests for src/auth.js"
+
+# Update documentation
+cn -p "update README with new API endpoints"
+```
+
+**Team-Wide Configuration:**
+
+```yaml
+rules:
+  - name: code-review
+    description: "Review code following team standards"
+    rule: "Follow TypeScript style guide and security practices"
+```
+
+**Progressive Permissions:**
+
+```yaml
+permissions:
+  - allow: "Bash(git*)"      # Safe git commands
+  - ask: "Write(**/*.ts)"    # Confirm before modifying
+  - deny: "Bash(rm*)"        # Never allow deletions
+```
+
+**Citation:** docs/guides/continuous-ai.mdx
+
+---
+
+### 6.4 TUI to Headless Workflow
+
+**Development Pattern:**
+
+1. **Experiment in TUI Mode:**
+```bash
+cn
+> @package.json @CHANGELOG.md Generate release notes for v2.1.0
+```
+
+2. **Automate with Headless Mode:**
+```bash
+cn -p "Generate release notes based on package.json and commits"
+```
+
+**Tool Permission Differences:**
+- **TUI mode:** "ask" permission tools available with approval
+- **Headless mode:** "ask" tools automatically excluded
+
+**Citation:** docs/cli/quick-start.mdx, docs/cli/overview.mdx
+
+---
+
+### 6.5 CI/CD Integration
+
+**Common Workflows:**
+
+```bash
+# Git automation
+cn -p "Generate conventional commit message for staged changes"
+
+# Code quality
+cn -p "Fix all TypeScript errors in src/ directory"
+
+# Documentation
+cn -p "@README.md Update documentation based on recent changes"
+
+# CI/CD
+cn -p "Analyse test failures and create GitHub issue"
+```
+
+**Agent Deployment Models:**
+1. **Cloud Agents** - Scheduled and event-triggered
+2. **CLI Agents** - Real-time with step-by-step approval
+3. **IDE Agents** - Triggered from VS Code or JetBrains
+
+**Citation:** docs/cli/quick-start.mdx, README.md
+
+---
+
+## 7. IDE Integration
+
+### 7.1 VS Code Integration
+
+**Installation:**
+1. Visit https://marketplace.visualstudio.com/items?itemName=Continue.continue
+2. Click Install
+3. Extension opens in VS Code, install again
+4. Move to right sidebar (recommended)
+5. Sign in: https://auth.continue.dev/
+
+**Keyboard Shortcuts:**
+
+**Autocomplete:**
+- `Tab` - Accept full suggestion
+- `Esc` - Reject suggestion
+- `Cmd/Ctrl + →` - Accept word-by-word
+- `Cmd/Ctrl + Alt + Space` - Force suggestion
+
+**Chat Mode:**
+- `Cmd/Ctrl + L` - New Chat / Close Sidebar
+- `Cmd/Ctrl + Shift + L` - Focus Chat / Add Code
+
+**Edit Mode:**
+- `Cmd/Ctrl + I` - Open Edit mode
+
+**Agent Mode:**
+- `Cmd/Ctrl + .` - Cycle between modes
+
+**Citation:** docs/ide-extensions/install.mdx, docs/ide-extensions/quick-start.mdx
+
+---
+
+### 7.2 JetBrains Integration
+
+**Supported IDEs:** All JetBrains IDEs (IntelliJ IDEA, PyCharm, WebStorm, PhpStorm, Rider, GoLand, CLion, RubyMine, etc.)
+
+**Installation:**
+1. Open Settings: `Ctrl + Alt + S`
+2. Select Plugins
+3. Search "Continue"
+4. Install
+5. Sign in: https://auth.continue.dev/
+
+**Marketplace:** https://plugins.jetbrains.com/plugin/22707-continue-extension
+
+**Keyboard Shortcuts:**
+- `Cmd/Ctrl + J` - Chat
+- `Cmd/Ctrl + Shift + J` - Focus Chat / Add Code
+- `Cmd/Ctrl + I` - Edit mode
+- `Cmd/Ctrl + .` - Cycle modes
+
+**Support Level:** Community supported for autocomplete and multi-file edits
+
+**Citation:** docs/ide-extensions/install.mdx, docs/index.mdx
+
+---
+
+### 7.3 Eclipse Integration
+
+**Supported:** Not documented in official sources
+
+Eclipse is not mentioned in the official Continue documentation. Only VS Code and JetBrains IDEs are supported.
+
+**Citation:** Extensive documentation search revealed no Eclipse integration
+
+---
+
+### 7.4 Terminal/CLI Integration
+
+**Installation:**
+
+```bash
+# npm
+npm install -g @continuedev/cli
+
+# yarn
+yarn global add @continuedev/cli
+
+# pnpm
+pnpm add -g @continuedev/cli
+```
+
+**Prerequisites:**
+- Node.js 18+
+- Continue Mission Control account (recommended)
+
+**Two Operating Modes:**
+
+**1. TUI Mode (Interactive):**
+```bash
+cn
+> @src/components/UserProfile.js Review this component for security
+```
+
+Perfect for: Exploration, debugging, iteration
+
+**2. Headless Mode (Automation):**
+```bash
+cn -p "Generate conventional commit message for staged changes"
+```
+
+Perfect for: CI/CD, git hooks, automation
+
+**Citation:** docs/cli/install.mdx, docs/cli/overview.mdx
+
+---
+
+### 7.5 CLI Authentication
+
+**Interactive (TUI):**
+```bash
+cn login
+```
+
+**Automation (Headless):**
+1. Visit https://hub.continue.dev/settings/api-keys
+2. Create API key
+3. Use for automation
+
+**Secrets Management:**
+- Visit https://hub.continue.dev/settings/secrets
+- Reference with `${{ secrets.SECRET_NAME }}`
+
+**Citation:** docs/cli/install.mdx
+
+---
+
+### 7.6 CLI Slash Commands
+
+**Available Commands:**
+- `/clear` - Clear chat history
+- `/compact` - Summarise history
+- `/config` - Switch configuration
+- `/exit` - Exit chat
+- `/fork` - Fork chat session
+- `/help` - Show help
+- `/info` - Show session stats (cost, tokens, cache)
+- `/init` - Create AGENTS.md
+- `/login` - Authenticate
+- `/logout` - Sign out
+- `/mcp` - Manage MCP servers
+- `/model` - Switch models
+- `/resume` - Resume session
+- `/whoami` - Check login status
+
+**Citation:** docs/cli/quick-start.mdx
+
+---
+
+### 7.7 CLI Context Engineering
+
+**@ Symbols for Context:**
+```bash
+cn
+> @src/components/UserProfile.js Review this component
+> @tests/ Check test coverage
+```
+
+**/ Commands for Tasks:**
+```bash
+cn
+> /explain How does authentication work?
+> /debug What causes the timeout error?
+```
+
+**Citation:** docs/cli/overview.mdx
+
+---
+
+### 7.8 Other IDE Integration
+
+**Other IDEs:** Not officially supported
+
+Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs, Sublime Text, Atom, etc.
+
+**Alternative:** Continue CLI works from any terminal, providing IDE-independent access.
+
+**Citation:** docs/index.mdx, docs/home.mdx
+
+---
+
+## 8. Continue Mission Control
+
+### 8.1 Overview
+
+**URL:** https://hub.continue.dev
+
+**Features:**
+1. **Tasks** - One-off agent tasks
+2. **Agent Workflows** - Scheduled/triggered automation
+3. **Inbox Queue** - PR resolution agents
+4. **Integrations** - GitHub, Slack, Sentry, Snyk, etc.
+5. **Configuration Management** - Cloud-synced configs
+6. **Secrets Management** - Secure credential storage
+7. **API Keys** - For automation workflows
+
+**Citation:** docs/index.mdx
+
+---
+
+### 8.2 Integrations
+
+**Available Integrations:**
+- **GitHub** - Repository access, PR creation
+- **Slack** - @Continue triggers and updates
+- **Sentry** - Auto-fix issues from alerts
+- **Snyk** - Security vulnerability fixes
+- **PostHog** - Monitor signals, automate workflows
+- **Supabase** - Database integration
+- **Netlify** - Deployment automation
+- **Atlassian** - Jira/Confluence integration
+- **Sanity** - Content management
+
+**Integration Features:**
+- Surface actionable work as "Opportunities"
+- Delegate to agents for first pass
+- Review and approve results
+- Trigger from Slack/GitHub with @Continue
+
+**Integration Hub:** https://hub.continue.dev/integrations
+
+**Citation:** docs/index.mdx, docs/changelog.mdx
+
+---
+
+### 8.3 Workflows
+
+**Workflow Types:**
+1. **Cron-based** - Scheduled execution
+2. **Webhook-based** - External event triggers
+3. **GitHub-based** - PR opens, commits, etc.
+
+**Use Cases:** Daily audits, PR reviews, issue triage, doc updates, security scans
+
+**Citation:** docs/index.mdx
+
+---
+
+### 8.4 Configuration Management
+
+**Hub Configurations:**
+- Manage on hub.continue.dev
+- Share with team/community
+- Automatic sync across installations
+
+**Local Configurations:**
+- Stored in `~/.continue/config.yaml`
+- Can reference Hub configurations
+
+**Editing:**
+- Hub: Click "new window" icon
+- Local: Click "gear" icon
+- Direct: Edit `~/.continue/config.yaml`
+
+**Citation:** docs/customize/deep-dives/configuration.mdx
+
+---
+
+## 9. Best Practices and Recommendations
+
+### 9.1 Getting Started
+
+1. Start with Level 1 (Manual Assistance) using Chat and Edit
+2. Choose one specific friction point to automate
+3. Use TUI mode to iterate before full automation
+4. Track intervention rate (lower is better)
+5. Use progressive permissions (ask → allow)
+
+**Citation:** docs/guides/continuous-ai.mdx
+
+---
+
+### 9.2 Model Selection
+
+**Consider:**
+1. Hosting (local vs cloud)
+2. Performance requirements
+3. Specific capabilities
+4. Pricing
+5. API key requirements
+
+**Model Roles:**
+- Chat model for conversations
+- Autocomplete model for inline suggestions
+- Embeddings model for semantic search
+- Edit model for modifications
+
+**Citation:** docs/customize/model-providers/overview.mdx
+
+---
+
+### 9.3 Security Considerations
+
+1. **Secrets Management:**
+   - Never commit API keys
+   - Use Hub secrets
+   - Reference with `${{ secrets.NAME }}`
+
+2. **Tool Permissions:**
+   - Review agent tool access
+   - Use "ask" for destructive operations
+   - Use "deny" for dangerous commands
+
+3. **Code Review:**
+   - Always review agent changes
+   - Use Plan mode for read-only exploration
+   - Validate AI suggestions
+
+**Citation:** docs/cli/overview.mdx, docs/customize/deep-dives/mcp.mdx
+
+---
+
+### 9.4 Performance Optimisation
+
+1. **Prompt Caching:** Enable for Anthropic models
+2. **Context Selection:** Use `@` syntax for relevant context only
+3. **Model Selection:** Smaller for autocomplete, larger for reasoning
+
+**Citation:** docs/customize/model-providers/top-level/anthropic.mdx
+
+---
+
+## 10. Limitations and Considerations
+
+### 10.1 Known Limitations
+
+1. **IDE Support:**
+   - Only VS Code and JetBrains supported
+   - No Eclipse, Vim, or other IDE integration
+   - JetBrains has community-maintained features
+
+2. **GitHub Copilot:**
+   - No documented Copilot Pro integration
+   - Designed as standalone/alternative solution
+
+3. **Tool Availability:**
+   - MCP only in Agent mode
+   - Rules not in autocomplete/apply
+   - Some tools require "ask" permission in TUI
+
+4. **Requirements:**
+   - Node.js 18+ for CLI
+   - Mission Control account recommended
+   - Internet for cloud models
+
+**Citation:** docs/ide-extensions/install.mdx, docs/cli/install.mdx
+
+---
+
+### 10.2 Migration Considerations
+
+- `config.json` deprecated, use `config.yaml`
+- `.continuerc.json` supported but deprecated
+- `config.ts` for advanced programmatic configuration
+- Migration guide: docs/reference/yaml-migration.mdx
+
+**Citation:** docs/customize/deep-dives/configuration.mdx
+
+---
+
+## 11. Summary and Conclusions
+
+### 11.1 Strengths
+
+1. Comprehensive platform (IDE, CLI, cloud)
+2. 40+ LLM provider support
+3. Full MCP integration
+4. Open source (Apache 2.0)
+5. Flexible configuration (Hub + local)
+6. Progressive automation path
+7. Rich tooling (rules, prompts, MCP)
+8. Multiple deployment models
+
+---
+
+### 11.2 Ideal Use Cases
+
+1. Team collaboration (Hub-based configs)
+2. CI/CD integration (headless CLI)
+3. Development acceleration (IDE extensions)
+4. Workflow automation (cloud agents)
+5. Custom tooling (MCP servers)
+6. Policy enforcement (rules system)
+
+**Citation:** docs/guides/continuous-ai.mdx, docs/cli/overview.mdx
+
+---
+
+### 11.3 Comparison with Alternatives
+
+**vs. GitHub Copilot:**
+- More flexible model support
+- Open source with self-hosting
+- Stronger automation capabilities
+- Built-in CLI and cloud agents
+
+**vs. Cursor:**
+- Open source Apache 2.0
+- More extensive MCP support
+- Cloud-based Mission Control
+- Multiple deployment models
+
+**vs. Cline:**
+- Built-in workflow automation
+- Cloud agent deployment
+- Hub-based configuration
+- Extensive integration ecosystem
+
+**Citation:** Based on feature analysis from documentation
+
+---
+
+## 12. Additional Resources
+
+### 12.1 Official Documentation
+
+- **Main Docs:** https://docs.continue.dev
+- **Mission Control:** https://hub.continue.dev
+- **GitHub:** https://github.com/continuedev/continue
+- **VS Code:** https://marketplace.visualstudio.com/items?itemName=Continue.continue
+- **JetBrains:** https://plugins.jetbrains.com/plugin/22707-continue-extension
+
+---
+
+### 12.2 Community
+
+- **Discord:** https://discord.gg/NWtdYexhMs
+- **Discussions:** https://github.com/continuedev/continue/discussions
+- **Changelog:** https://changelog.continue.dev
+- **Contributing:** https://github.com/continuedev/continue/blob/main/CONTRIBUTING.md
+
+---
+
+### 12.3 Hub Resources
+
+- **Agents:** https://hub.continue.dev/hub?type=agents
+- **Rules:** https://hub.continue.dev/hub?type=rules
+- **Prompts:** https://hub.continue.dev/hub?type=prompts
+- **MCP Servers:** https://hub.continue.dev/explore/mcp
+- **Integrations:** https://hub.continue.dev/integrations
+
+---
+
+## Appendix A: Configuration Example
+
+```yaml
+# config.yaml - Multi-Provider Setup
+name: My Config
+version: 0.0.1
+schema: v1
+
+models:
+  # Anthropic for chat
+  - name: Claude Sonnet
+    provider: anthropic
+    model: claude-sonnet-4-20250514
+    apiKey: ${{ secrets.ANTHROPIC_API_KEY }}
+    roles:
+      - chat
+    defaultCompletionOptions:
+      promptCaching: true
+  
+  # OpenAI for editing
+  - name: GPT-4o
+    provider: openai
+    model: gpt-4o
+    apiKey: ${{ secrets.OPENAI_API_KEY }}
+    roles:
+      - edit
+      - apply
+  
+  # Ollama for autocomplete
+  - name: Qwen Coder
+    provider: ollama
+    model: qwen2.5-coder:7b
+    roles:
+      - autocomplete
+
+rules:
+  - uses: company/coding-standards
+  - uses: company/security-practices
+
+prompts:
+  - uses: company/commit-message-generator
+
+mcpServers:
+  - name: GitHub
+    command: npx
+    args:
+      - "-y"
+      - "@modelcontextprotocol/server-github"
+    env:
+      GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_PAT }}
+```
+
+---
+
+## Appendix B: Glossary
+
+- **Agent Mode** - Autonomous coding assistant with full tool access
+- **Chat Mode** - Interactive AI assistant without code modifications
+- **Edit Mode** - Targeted code changes via natural language
+- **Autocomplete** - Inline code suggestions as you type
+- **Plan Mode** - Read-only exploration and planning
+- **MCP** - Model Context Protocol for tool integration
+- **TUI Mode** - Interactive Terminal User Interface
+- **Headless Mode** - Automated CLI execution for CI/CD
+- **Hub** - Continue Mission Control cloud dashboard
+- **Rules** - Instructions guiding AI behaviour
+- **Prompts** - Reusable task instructions (slash commands)
+
+---
+
+**End of Analysis**
+
+*This analysis is based entirely on official documentation from the continuedev/continue GitHub repository (https://github.com/continuedev/continue) as of 16 January 2025.*
