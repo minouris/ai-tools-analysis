@@ -5,7 +5,7 @@
 # AI Coding Tools: Overview
 
 **Analysis Date:** 20 January 2026  
-**Tools Analysed:** 11 AI coding assistants  
+**Tools Analysed:** 12 AI coding assistants  
 **Methodology:** Based on official documentation and tool analysis files in this repository
 
 ## Table of Contents
@@ -32,7 +32,7 @@
 
 ## 1. Executive Summary
 
-This document provides a comprehensive comparison of 11 AI coding tools analysed in this repository. The tools represent different approaches to AI-assisted development, ranging from cloud-based subscription services to open-source agentic frameworks, including historical platforms.
+This document provides a comprehensive comparison of 12 AI coding tools analysed in this repository. The tools represent different approaches to AI-assisted development, ranging from cloud-based subscription services to open-source agentic frameworks, including historical platforms.
 
 ### Tools Included
 
@@ -43,17 +43,18 @@ This document provides a comprehensive comparison of 11 AI coding tools analysed
 5. **Codeium** - Free unlimited code completion and chat
 6. **Continue** - Open-source multi-provider platform with MCP
 7. **Cursor** - AI-first standalone code editor
-8. **GitHub Copilot Chat** - GitHub-native multi-mode assistant
-9. **Roo Cline** - Open-source autonomous VS Code agent
-10. **Sourcegraph Cody** - Deep codebase context via Sourcegraph
-11. **Tabnine** - Privacy-focused with local deployment options
+8. **Gemini Code Assist** - Google Cloud enterprise AI assistant with agent mode
+9. **GitHub Copilot Chat** - GitHub-native multi-mode assistant
+10. **Roo Cline** - Open-source autonomous VS Code agent
+11. **Sourcegraph Cody** - Deep codebase context via Sourcegraph
+12. **Tabnine** - Privacy-focused with local deployment options
 
 ### Key Insights
 
-- **Model Flexibility:** Continue and Roo Cline support 20-40+ LLM providers, whilst Amazon Q is AWS-only
-- **MCP Adoption:** 4 tools (Claude Code, Continue, GitHub Copilot, Roo Cline) offer full MCP support
+- **Model Flexibility:** Continue and Roo Cline support 20-40+ LLM providers, whilst Amazon Q is AWS-only and Gemini Code Assist is Google-only
+- **MCP Adoption:** 5 tools (Claude Code, Continue, Gemini Code Assist, GitHub Copilot, Roo Cline) offer full MCP support
 - **Total Cost of Ownership:** Codeium ($0) and GitHub Copilot Pro ($10 USD ≈ $17 NZD) offer best value. "Free" tools like Continue/Roo Cline require separate LLM subscriptions ($20-30 USD ≈ $33-50 NZD/month) or local deployment (hardware-intensive, lower model quality)
-- **IDE Coverage:** VS Code has universal support (100%); JetBrains (60%); Eclipse and Neovim limited
+- **IDE Coverage:** VS Code has universal support (100%); JetBrains (58%); Eclipse and Neovim limited
 - **Customisation:** 6 tools support custom instruction files; 7 support custom prompts/commands
 
 [↑ Back to top](#table-of-contents)
@@ -147,6 +148,18 @@ AI-first code editor built on VS Code with deep AI integration. Features compose
 
 ---
 
+### Gemini Code Assist
+
+**Type:** IDE Plugin + CLI  
+**Licence:** Commercial (Standard and Enterprise editions, hourly billing)  
+**Key Focus:** Enterprise Google Cloud integration with agent mode
+
+Google Cloud's enterprise AI coding assistant using Gemini 3 models. Available in Standard and Enterprise editions with code completion, chat, and agent mode (MCP support). Features 1M token context window, Gemini CLI for terminal, and integration with Google Cloud services (Firebase, BigQuery, Apigee). Enterprise edition includes code customisation using private repositories. Supports VS Code, JetBrains IDEs, Android Studio, and Cloud environments.
+
+**Official Documentation:** https://cloud.google.com/gemini/docs/codeassist/overview
+
+---
+
 ### GitHub Copilot Chat
 
 **Type:** Multi-IDE Plugin  
@@ -210,12 +223,13 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 | **Codeium** | Not doc. | Not doc. | Not doc. | Not doc. | Not doc. | Not doc. | Proprietary |
 | **Continue** | ✅ | ✅ | ✅ | ✅ (Azure) | ✅ | ✅ | **40+ providers** |
 | **Cursor** | ✅ | ✅ | Not doc. | Not doc. | ❌ | Not doc. | Limited |
+| **Gemini Code Assist** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ Native | Google only |
 | **GitHub Copilot** | ✅ | ✅ Native | ✅ (Toolkit) | ✅ (Toolkit) | ❌ | ✅ | Multi-provider |
 | **Roo Cline** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | **20+ providers** |
 | **Sourcegraph Cody** | ✅ | ✅ | ✅ | Not doc. | ❌ | ✅ | Multi-provider |
 | **Tabnine** | Not doc. | Not doc. | Not doc. | Not doc. | ❌ | Not doc. | Proprietary |
 
-**Key Finding:** Continue and Roo Cline offer the most provider flexibility with 20-40+ integrations, whilst Amazon Q is locked to AWS infrastructure.
+**Key Finding:** Continue and Roo Cline offer the most provider flexibility with 20-40+ integrations, whilst Amazon Q (AWS-only) and Gemini Code Assist (Google-only) are locked to their respective cloud ecosystems.
 
 [↑ Back to top](#table-of-contents)
 
@@ -232,12 +246,13 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 | **Codeium** | ❌ Not documented | N/A | N/A | N/A |
 | **Continue** | ✅ **Full** | `.continue/mcpServers/` | Multiple | Extensive |
 | **Cursor** | ❌ Not documented | N/A | N/A | N/A |
+| **Gemini Code Assist** | ✅ **Full** (Agent mode) | `~/.gemini/settings.json` or `mcp.json` | stdio, SSE | Multiple |
 | **GitHub Copilot** | ✅ **Supported** | IDE-specific config | stdio, SSE | GitHub MCP |
 | **Roo Cline** | ✅ **Full** | `.roomodes` config | Multiple | McpHub |
 | **Sourcegraph Cody** | ❌ Not documented | Built-in tools | N/A | N/A |
 | **Tabnine** | ❌ Not documented | N/A | N/A | N/A |
 
-**Key Finding:** Only 4 tools (Claude Code, Continue, GitHub Copilot, Roo Cline) have documented MCP support, representing 40% of analysed tools. MCP adoption is growing but not yet universal.
+**Key Finding:** 5 tools (Claude Code, Continue, Gemini Code Assist, GitHub Copilot, Roo Cline) have documented MCP support, representing 42% of analysed tools. MCP adoption is growing but not yet universal.
 
 [↑ Back to top](#table-of-contents)
 
@@ -254,20 +269,21 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 | **Codeium** | ✅ | ✅ | ✅ | ✅ | Not doc. | ❌ | ❌ |
 | **Continue** | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ TUI/Headless | ❌ |
 | **Cursor** | Built-in | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ **Editor** |
+| **Gemini Code Assist** | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ **Gemini CLI** | Cloud native |
 | **GitHub Copilot** | ✅ | ✅ | ✅ Preview | ✅ | ✅ | ✅ CLI | ❌ |
 | **Roo Cline** | ✅ **Native** | ❌ | ❌ | ❌ | ❌ | Partial | Cursor compat. |
 | **Sourcegraph Cody** | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ |
 | **Tabnine** | ✅ | ✅ | ✅ | ✅ | Not doc. | ❌ | ❌ |
 
 **IDE Support Count:**
-- **VS Code:** 10/11 tools (91%)
-- **JetBrains:** 6/11 tools (55%)
-- **Eclipse:** 3/11 tools (27%)
-- **Neovim:** 4/11 tools (36%)
-- **Terminal/CLI:** 3/11 tools (27%)
-- **Standalone:** 2/11 tools (18%) - Cursor (editor), ChatGPT (browser/app)
+- **VS Code:** 11/12 tools (92%)
+- **JetBrains:** 7/12 tools (58%)
+- **Eclipse:** 3/12 tools (25%)
+- **Neovim:** 4/12 tools (33%)
+- **Terminal/CLI:** 4/12 tools (33%)
+- **Standalone:** 2/12 tools (17%) - Cursor (editor), ChatGPT (browser/app)
 
-**Key Finding:** VS Code has near-universal support among IDE-integrated tools. ChatGPT and Cursor operate as standalone applications without IDE integration.
+**Key Finding:** VS Code has near-universal support amongst IDE-integrated tools. ChatGPT and Cursor operate as standalone applications without IDE integration. Gemini Code Assist supports Cloud-native environments (Cloud Shell, Cloud Workstations, Android Studio).
 
 [↑ Back to top](#table-of-contents)
 
@@ -284,6 +300,7 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 | **Codeium** | ❌ Not documented | N/A | N/A | N/A |
 | **Continue** | ✅ `.continue/rules/` | `.continue/` | Hub sharing | Via Hub |
 | **Cursor** | ✅ `.cursorrules` | Project root | Cursor-native | ❌ |
+| **Gemini Code Assist** | ❌ Not documented | N/A | N/A | Code customisation (Enterprise) |
 | **GitHub Copilot** | ✅ `.github/copilot-instructions.md` | `.github/` | Multi-format | Enterprise |
 | **Roo Cline** | ✅ `.clinerules` + 6 variants | Project root | `.cursorrules`, `CLAUDE.md` | ❌ |
 | **Sourcegraph Cody** | ✅ `.cody/instructions` | `.cody/` | Project-level | Enterprise |
@@ -315,12 +332,13 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 | **Codeium** | Partial (History) | Session-based | ❌ | ✅ |
 | **Continue** | ✅ Prompts + Slash | `.continue/` or Hub | Hub sharing | ✅ CLI/IDE |
 | **Cursor** | ❌ Not documented | N/A | N/A | N/A |
+| **Gemini Code Assist** | ❌ Not documented | N/A | N/A | ✅ Smart commands |
 | **GitHub Copilot** | ✅ Prompt files | `.github/prompts/` | Via repository | ✅ Built-in |
 | **Roo Cline** | ✅ Custom Modes | `.roomodes` config | Text-based | Via modes |
 | **Sourcegraph Cody** | ✅ Custom Commands | JSON/settings | Enterprise org-wide | ✅ Via commands |
 | **Tabnine** | ❌ Not documented | N/A | N/A | N/A |
 
-**Key Finding:** 7 out of 11 tools (64%) support some form of custom prompts or commands. Continue and Claude Code offer the most sophisticated prompt management with Hub sharing and skills systems respectively.
+**Key Finding:** 7 out of 12 tools (58%) support some form of custom prompts or commands. Continue and Claude Code offer the most sophisticated prompt management with Hub sharing and skills systems respectively.
 
 [↑ Back to top](#table-of-contents)
 
@@ -339,21 +357,25 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 | **Codeium** | ✅ **Unlimited** | ✅ Free | $12/user/month (≈$20 NZD) | Custom | ❌ |
 | **Continue** | ✅ **Full** | ✅ Free | ✅ Free | ✅ Free | ✅ Apache 2.0 |
 | **Cursor** | ✅ Limited | $20/month (≈$33 NZD) | Not specified | Not specified | ❌ |
+| **Gemini Code Assist** | ❌ | $22/month (≈$36 NZD) Standard | Not separate | $54/month (≈$89 NZD) Enterprise | ❌ |
 | **GitHub Copilot** | ✅ Limited | $10/month (≈$17 NZD) (Pro) | $19/user/month (≈$31 NZD) | $39/user/month (≈$64 NZD) | ❌ |
 | **Roo Cline** | ✅ **Full** | ✅ Free | ✅ Free | ✅ Free | ✅ Apache 2.0 |
 | **Sourcegraph Cody** | ✅ Limited | $9/month (≈$15 NZD) | $19/user/month (≈$31 NZD) | Custom | ❌ |
 | **Tabnine** | ✅ Limited | $12/month (≈$20 NZD) | $39/user/month (≈$64 NZD) | Custom | ❌ |
 
+**Note:** Gemini Code Assist pricing is based on hourly usage with monthly/yearly commitments. Approximate monthly cost calculated assuming 720 hours/month (Standard: $0.031/hr × 720 = ~$22/month with monthly commitment; Enterprise: $0.074/hr × 720 = ~$54/month with monthly commitment).
+
 **Pricing Categories:**
 - **Tool Free, LLM Required:** Continue, Roo Cline (open source, user provides LLM access)
 - **All-Inclusive Free:** Codeium (includes proprietary models)
 - **Freemium Model:** GitHub Copilot, Sourcegraph Cody, Cursor, Amazon Q, Tabnine
-- **Subscription Required:** Claude Code (requires Claude Pro/Max subscription)
+- **Subscription Required:** Claude Code (requires Claude Pro/Max subscription), Gemini Code Assist (hourly billing)
 
 **Tool Cost Range (Pro/Individual):**
 - Tool free: $0 (Continue, Roo Cline, Codeium)
 - Low-cost: $9-12/month (≈$15-20 NZD) (Sourcegraph Cody, Tabnine, Codeium Teams)
-- Mid-cost: $19-20/month (≈$31-33 NZD) (Amazon Q, Claude Code, Cursor)
+- Mid-cost: $19-22/month (≈$31-36 NZD) (Amazon Q, Claude Code, Cursor, Gemini Code Assist Standard)
+- High-cost: $54/month (≈$89 NZD) (Gemini Code Assist Enterprise)
 
 **Total Cost of Ownership Considerations:**
 
@@ -383,12 +405,13 @@ Tools that appear "free" may require separate LLM subscriptions:
 | **Codeium** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Not doc. |
 | **Continue** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Not doc. |
 | **Cursor** | ✅ | ✅ Composer | ✅ | ✅ | ✅ | Not doc. | Not doc. | Not doc. |
+| **Gemini Code Assist** | ✅ | ✅ | ✅ | ✅ Smart actions | ✅ Smart actions | ✅ | ✅ | ✅ |
 | **GitHub Copilot** | ✅ | ✅ | ✅ | ✅ Agent | ✅ | ✅ | ✅ | ✅ PR reviews |
 | **Roo Cline** | ✅ | ✅ | ✅ | ✅ Code mode | ✅ Debug mode | ✅ Test mode | ✅ | Not doc. |
 | **Sourcegraph Cody** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Not doc. |
 | **Tabnine** | ✅ Primary | ✅ | ✅ | Not doc. | Not doc. | Not doc. | Not doc. | Not doc. |
 
-**Key Finding:** All tools except ChatGPT (browser-based) provide code completion. All tools support multi-line generation and chat capabilities. GitHub Copilot and Amazon Q offer specialised security scanning and PR review features. Roo Cline and Claude Code emphasise agentic workflows. ChatGPT focuses on conversational coding via Canvas without IDE integration.
+**Key Finding:** All tools except ChatGPT (browser-based) provide code completion. All tools support multi-line generation and chat capabilities. GitHub Copilot and Amazon Q offer specialised security scanning and PR review features. Roo Cline, Claude Code, and Gemini Code Assist emphasise agentic workflows. ChatGPT focuses on conversational coding via Canvas without IDE integration.
 
 [↑ Back to top](#table-of-contents)
 
