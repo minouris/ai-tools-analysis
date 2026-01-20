@@ -453,7 +453,7 @@ Developers can create custom MCP servers that provide tools to Claude Code. MCP 
 **Plugin-based Tools:**
 The plugin system (v2.0.12) allows developers to create and distribute:
 - Custom tools and commands
-- Custom agents with specific behaviors
+- Custom agents with specific behaviours
 - MCP server integrations
 - Hooks for tool execution lifecycle
 
