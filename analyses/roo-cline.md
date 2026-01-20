@@ -1,5 +1,4 @@
-**Navigation:**  
-← [Previous: GitHub Copilot Chat](github-copilot-chat.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Sourcegraph Cody](sourcegraph-cody.md) →
+← [Previous: GitHub Copilot Chat](github-copilot-chat.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Amazon Q Developer](amazon-q-developer.md) →
 
 ---
 
@@ -763,5 +762,4 @@ The tool was previously known as "Roo Code" and has been renamed to "Roo Cline".
 
 ---
 
-**Navigation:**  
-← [Previous: GitHub Copilot Chat](github-copilot-chat.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Sourcegraph Cody](sourcegraph-cody.md) →
+← [Previous: GitHub Copilot Chat](github-copilot-chat.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Amazon Q Developer](amazon-q-developer.md) →

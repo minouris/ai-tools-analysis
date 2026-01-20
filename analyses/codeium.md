@@ -1,5 +1,4 @@
-**Navigation:**  
-← [Previous: Claude Code](claude-code.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Continue](continue.md) →
+← [Previous: Amazon Q Developer](amazon-q-developer.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Cursor](cursor.md) →
 
 ---
 
@@ -620,5 +619,4 @@ This analysis was limited by the scope of publicly accessible documentation. Man
 
 ---
 
-**Navigation:**  
-← [Previous: Claude Code](claude-code.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Continue](continue.md) →
+← [Previous: Amazon Q Developer](amazon-q-developer.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Cursor](cursor.md) →

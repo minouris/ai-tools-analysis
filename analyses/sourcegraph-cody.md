@@ -1,5 +1,4 @@
-**Navigation:**  
-← [Previous: Roo Cline](roo-cline.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Tabnine](tabnine.md) →
+← [Previous: Cursor](cursor.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Tabnine](tabnine.md) →
 
 ---
 
@@ -661,5 +660,4 @@ This analysis is based on publicly accessible Sourcegraph documentation and prod
 
 ---
 
-**Navigation:**  
-← [Previous: Roo Cline](roo-cline.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Tabnine](tabnine.md) →
+← [Previous: Cursor](cursor.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Tabnine](tabnine.md) →

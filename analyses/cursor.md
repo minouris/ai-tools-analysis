@@ -1,5 +1,4 @@
-**Navigation:**  
-← [Previous: Continue](continue.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Chat](github-copilot-chat.md) →
+← [Previous: Codeium](codeium.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Sourcegraph Cody](sourcegraph-cody.md) →
 
 ---
 
@@ -554,5 +553,4 @@ This analysis was limited by restricted access to detailed official documentatio
 
 ---
 
-**Navigation:**  
-← [Previous: Continue](continue.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Chat](github-copilot-chat.md) →
+← [Previous: Codeium](codeium.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Sourcegraph Cody](sourcegraph-cody.md) →

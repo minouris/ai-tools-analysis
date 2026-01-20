@@ -1,5 +1,4 @@
-**Navigation:**  
-← [Previous: Amazon Q Developer](amazon-q-developer.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Claude Code](claude-code.md) →
+← [Previous: Claude Code](claude-code.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Continue](continue.md) →
 
 ---
 
@@ -623,8 +622,7 @@ The documentation for Azure AI Toolkit is spread across multiple sources (Azure 
 
 ---
 
-**Navigation:**  
-← [Previous: Amazon Q Developer](amazon-q-developer.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Claude Code](claude-code.md) →
+← [Previous: Claude Code](claude-code.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Continue](continue.md) →
 
 ---
 

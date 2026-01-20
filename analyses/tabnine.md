@@ -1,5 +1,4 @@
-**Navigation:**  
-← [Previous: Sourcegraph Cody](sourcegraph-cody.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Amazon Q Developer](amazon-q-developer.md) →
+← [Previous: Sourcegraph Cody](sourcegraph-cody.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Claude Code](claude-code.md) →
 
 ---
 
@@ -586,5 +585,4 @@ This analysis was limited by restricted access to detailed official documentatio
 
 ---
 
-**Navigation:**  
-← [Previous: Sourcegraph Cody](sourcegraph-cody.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Amazon Q Developer](amazon-q-developer.md) →
+← [Previous: Sourcegraph Cody](sourcegraph-cody.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Claude Code](claude-code.md) →

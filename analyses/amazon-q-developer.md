@@ -1,5 +1,4 @@
-**Navigation:**  
-← [Previous: Tabnine](tabnine.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
+← [Previous: Roo Cline](roo-cline.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Codeium](codeium.md) →
 
 ---
 
@@ -649,5 +648,4 @@ This analysis is based on publicly accessible AWS documentation and product info
 
 ---
 
-**Navigation:**  
-← [Previous: Tabnine](tabnine.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
+← [Previous: Roo Cline](roo-cline.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Codeium](codeium.md) →

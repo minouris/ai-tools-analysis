@@ -1,5 +1,4 @@
-**Navigation:**  
-← [Previous: Cursor](cursor.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
+← [Previous: Continue](continue.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
 
 ---
 
@@ -903,5 +902,4 @@ Areas for improvement:
 
 ---
 
-**Navigation:**  
-← [Previous: Cursor](cursor.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
+← [Previous: Continue](continue.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →

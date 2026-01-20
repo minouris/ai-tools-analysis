@@ -1,5 +1,4 @@
-**Navigation:**  
-← [Previous: Azure AI Toolkit](azure-ai-toolkit.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Codeium](codeium.md) →
+← [Previous: Tabnine](tabnine.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
 
 ---
 
@@ -1218,8 +1217,7 @@ The official documentation quality is comprehensive:
 
 ---
 
-**Navigation:**  
-← [Previous: Azure AI Toolkit](azure-ai-toolkit.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Codeium](codeium.md) →
+← [Previous: Tabnine](tabnine.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
 
 ---
 

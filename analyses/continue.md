@@ -1,5 +1,4 @@
-**Navigation:**  
-← [Previous: Codeium](codeium.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Cursor](cursor.md) →
+← [Previous: Azure AI Toolkit](azure-ai-toolkit.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Chat](github-copilot-chat.md) →
 
 ---
 
@@ -1256,5 +1255,4 @@ mcpServers:
 
 ---
 
-**Navigation:**  
-← [Previous: Codeium](codeium.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Cursor](cursor.md) →
+← [Previous: Azure AI Toolkit](azure-ai-toolkit.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Chat](github-copilot-chat.md) →
