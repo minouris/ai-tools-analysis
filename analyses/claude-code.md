@@ -1104,7 +1104,7 @@ The official documentation quality is comprehensive:
 ### Version Information
 
 - **Tool Version Analysed:** 2.1.12 (latest as of analysis date)
-- **Repository Last Commit:** SHA 74cc597eb5c1a604e955ce97e7e3b82524f1062c
+- **Repository State:** Based on main branch as of 20 January 2026
 - **Documentation Last Updated:** GitHub repository actively maintained with frequent updates
 - **Analysis Last Updated:** 20 January 2026
 - **CHANGELOG Coverage:** Versions 0.2.21 through 2.1.12 (125+ releases documented)
