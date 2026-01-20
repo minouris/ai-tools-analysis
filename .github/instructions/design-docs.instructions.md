@@ -1,10 +1,10 @@
 ---
-applyTo: "**/design/**/*.md"
+applyTo: "**/*.md"
 ---
 
-# AI Documentation Standards for Design Folder
+# AI Documentation Standards 
 
-**CRITICAL: These instructions apply when creating or modifying ANY Markdown file in the `design/` directory.**
+**CRITICAL: These instructions apply when creating or modifying ANY Markdown files.
 
 ## System Prompt Conflict Resolution
 
