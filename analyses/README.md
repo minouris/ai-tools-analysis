@@ -1,6 +1,6 @@
 # Tool Analyses
 
-This directory contains individual analyses of AI coding tools, each following the standardised methodology defined in [ANALYSIS_PLAN.md](../ANALYSIS_PLAN.md).
+This directory contains individual analyses of AI coding tools, each following the standardised methodology defined in [analysis_plan.md](../analysis_plan.md).
 
 ## Current Analyses
 
@@ -24,10 +24,10 @@ To analyse a new tool:
 
 1. Copy the template:
    ```bash
-   cp ../TOOL_ANALYSIS_TEMPLATE.md [tool-name].md
+   cp ../tool_analysis_template.md [tool-name].md
    ```
 
-2. Follow the [Analysis Plan](../ANALYSIS_PLAN.md) methodology
+2. Follow the [Analysis Plan](../analysis_plan.md) methodology
 
 3. Complete all applicable sections with information from official documentation
 

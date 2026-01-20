@@ -8,7 +8,7 @@ This repository provides a standardised methodology for analysing AI coding tool
 
 ## Documents
 
-### 📋 [ANALYSIS_PLAN.md](ANALYSIS_PLAN.md)
+### 📋 [analysis_plan.md](analysis_plan.md)
 
 The comprehensive guide for conducting tool analyses. This document contains:
 
@@ -20,7 +20,7 @@ The comprehensive guide for conducting tool analyses. This document contains:
 
 **Use this document to understand the analysis process and requirements.**
 
-### 📝 [TOOL_ANALYSIS_TEMPLATE.md](TOOL_ANALYSIS_TEMPLATE.md)
+### 📝 [tool_analysis_template.md](tool_analysis_template.md)
 
 A ready-to-use template for creating new tool analyses. This template includes:
 
@@ -31,7 +31,7 @@ A ready-to-use template for creating new tool analyses. This template includes:
 
 **Use this template as a starting point for each new tool analysis.**
 
-### ⚡ [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
+### ⚡ [quick_reference.md](quick_reference.md)
 
 A concise guide for quick access while conducting analyses. Includes:
 
@@ -47,12 +47,12 @@ A concise guide for quick access while conducting analyses. Includes:
 ## How to Analyse a New Tool
 
 1. **Read the Analysis Plan**  
-   Review [ANALYSIS_PLAN.md](ANALYSIS_PLAN.md) to understand the methodology and requirements.
+   Review [analysis_plan.md](analysis_plan.md) to understand the methodology and requirements.
 
 2. **Copy the Template**  
-   Create a copy of [TOOL_ANALYSIS_TEMPLATE.md](TOOL_ANALYSIS_TEMPLATE.md) for your new analysis:
+   Create a copy of [tool_analysis_template.md](tool_analysis_template.md) for your new analysis:
    ```bash
-   cp TOOL_ANALYSIS_TEMPLATE.md analyses/[tool-name].md
+   cp tool_analysis_template.md analyses/[tool-name].md
    ```
 
 3. **Follow the Guidelines**  
@@ -83,9 +83,9 @@ Each tool analysis covers:
 ```
 ai-tools-analysis/
 ├── README.md                    # This file
-├── ANALYSIS_PLAN.md            # Detailed analysis methodology
-├── TOOL_ANALYSIS_TEMPLATE.md   # Template for new analyses
-├── QUICK_REFERENCE.md          # Quick lookup guide
+├── analysis_plan.md            # Detailed analysis methodology
+├── tool_analysis_template.md   # Template for new analyses
+├── quick_reference.md          # Quick lookup guide
 └── analyses/                   # Individual tool analyses
     ├── README.md
     ├── tool-name-1.md
