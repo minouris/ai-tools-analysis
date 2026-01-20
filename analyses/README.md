@@ -4,7 +4,7 @@ This directory contains individual analyses of AI coding tools, each following t
 
 ## Current Analyses
 
-*No analyses have been created yet. Use the [TOOL_ANALYSIS_TEMPLATE.md](../TOOL_ANALYSIS_TEMPLATE.md) to create a new analysis.*
+- [Claude Code](claude-code.md) - Terminal-based agentic coding tool from Anthropic with MCP support, plugin system, and VS Code integration
 
 ## Creating a New Analysis
 
