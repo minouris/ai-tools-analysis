@@ -4,7 +4,7 @@ This directory contains individual analyses of AI coding tools, each following t
 
 ## Current Analyses
 
-*No analyses have been created yet. Use the [TOOL_ANALYSIS_TEMPLATE.md](../TOOL_ANALYSIS_TEMPLATE.md) to create a new analysis.*
+- [Roo Cline](roo-cline.md) - AI-powered development assistant for VS Code with multiple operational modes (Version 3.41.0)
 
 ## Creating a New Analysis
 
