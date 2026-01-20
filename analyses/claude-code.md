@@ -1,3 +1,8 @@
+**Navigation:**  
+← [Previous: Azure AI Toolkit](azure-ai-toolkit.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Codeium](codeium.md) →
+
+---
+
 # Claude Code Analysis
 
 **Analysis Date:** 20 January 2026  
@@ -5,11 +10,11 @@
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://code.claude.com/docs/en/overview
 
----
-
 ## Table of Contents
 
 - [1. Tool Overview](#1-tool-overview)
+  - [Description](#description)
+  - [Key Features](#key-features)
 - [2. LLM Provider Integration](#2-llm-provider-integration)
   - [2.1 Ollama Integration](#21-ollama-integration)
   - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
@@ -17,8 +22,22 @@
   - [2.4 OpenAI Integration](#24-openai-integration)
   - [2.5 Anthropic (Claude) Integration](#25-anthropic-claude-integration)
 - [3. Policies and Rules (Instruction Files)](#3-policies-and-rules-instruction-files)
+  - [Instruction File Support](#instruction-file-support)
+  - [Configuration Method](#configuration-method)
+  - [Syntax and Structure](#syntax-and-structure)
+  - [Scope and Application](#scope-and-application)
+  - [Example Policies](#example-policies)
 - [4. Custom and Stored Prompts](#4-custom-and-stored-prompts)
+  - [Prompt Storage Mechanism](#prompt-storage-mechanism)
+  - [Creating Custom Prompts](#creating-custom-prompts)
+  - [Organising Prompts](#organising-prompts)
+  - [Using Stored Prompts](#using-stored-prompts)
+  - [Sharing and Exporting](#sharing-and-exporting)
 - [5. Tools and Model Context Protocol (MCP)](#5-tools-and-model-context-protocol-mcp)
+  - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
+  - [MCP Server Configuration](#mcp-server-configuration)
+  - [Available Tools](#available-tools)
+  - [Custom Tool Development](#custom-tool-development)
 - [6. Application Development Workflow](#6-application-development-workflow)
   - [6.1 Project Initialisation](#61-project-initialisation)
   - [6.2 Design and Planning](#62-design-and-planning)
@@ -34,8 +53,16 @@
   - [7.4 Terminal and CLI](#74-terminal-and-cli)
   - [7.5 Other IDEs and Editors](#75-other-ides-and-editors)
 - [8. Summary and Key Findings](#8-summary-and-key-findings)
+  - [Strengths](#strengths)
+  - [Limitations](#limitations)
+  - [Best Use Cases](#best-use-cases)
+  - [Documentation Quality](#documentation-quality)
 - [9. Completeness Checklist](#9-completeness-checklist)
 - [10. References](#10-references)
+  - [Official Documentation](#official-documentation)
+  - [Version Information](#version-information)
+  - [Key Release Milestones](#key-release-milestones)
+  - [SDK and Development Resources](#sdk-and-development-resources)
 
 ---
 
@@ -1174,6 +1201,25 @@ The official documentation quality is comprehensive:
 - Plugin Development: Examples available in repository plugins directory
 
 [↑ Back to top](#table-of-contents)
+
+---
+
+## See Also
+
+- [Amazon Q Developer](amazon-q-developer.md) - Analysis of Amazon Q Developer
+- [Azure AI Toolkit](azure-ai-toolkit.md) - Analysis of Azure AI Toolkit
+- [Codeium](codeium.md) - Analysis of Codeium
+- [Continue](continue.md) - Analysis of Continue
+- [Cursor](cursor.md) - Analysis of Cursor
+- [GitHub Copilot Chat](github-copilot-chat.md) - Analysis of GitHub Copilot Chat
+- [Roo Cline](roo-cline.md) - Analysis of Roo Cline
+- [Sourcegraph Cody](sourcegraph-cody.md) - Analysis of Sourcegraph Cody
+- [Tabnine](tabnine.md) - Analysis of Tabnine
+
+---
+
+**Navigation:**  
+← [Previous: Azure AI Toolkit](azure-ai-toolkit.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Codeium](codeium.md) →
 
 ---
 

@@ -1,11 +1,14 @@
+**Navigation:**  
+← [Previous: Claude Code](claude-code.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Continue](continue.md) →
+
+---
+
 # Codeium Analysis
 
 **Analysis Date:** 20 January 2026  
 **Tool Version:** Current (as of January 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://codeium.com/docs
-
----
 
 ## Table of Contents
 
@@ -600,3 +603,22 @@ This analysis was limited by the scope of publicly accessible documentation. Man
 | 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
+
+---
+
+## See Also
+
+- [Amazon Q Developer](amazon-q-developer.md) - AWS-integrated AI coding assistant
+- [Azure AI Toolkit](azure-ai-toolkit.md) - Microsoft Azure AI development tools
+- [Claude Code](claude-code.md) - Anthropic's Claude-powered coding assistant
+- [Continue](continue.md) - Open-source AI code assistant
+- [Cursor](cursor.md) - AI-first code editor
+- [GitHub Copilot Chat](github-copilot-chat.md) - GitHub's AI pair programmer with chat interface
+- [Roo Cline](roo-cline.md) - AI coding assistant focused on autonomous workflows
+- [Sourcegraph Cody](sourcegraph-cody.md) - AI assistant with deep codebase understanding
+- [Tabnine](tabnine.md) - AI code completion with privacy focus
+
+---
+
+**Navigation:**  
+← [Previous: Claude Code](claude-code.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Continue](continue.md) →

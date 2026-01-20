@@ -1,3 +1,8 @@
+**Navigation:**  
+← [Previous: Tabnine](tabnine.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
+
+---
+
 # Amazon Q Developer Analysis
 
 **Analysis Date:** 20 January 2026  
@@ -625,3 +630,24 @@ This analysis is based on publicly accessible AWS documentation and product info
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## See Also
+
+- [Azure AI Toolkit](azure-ai-toolkit.md) - Visual Studio Code extension for Azure AI services
+- [Claude Code](claude-code.md) - Terminal-based agentic coding tool from Anthropic
+- [Codeium](codeium.md) - Free AI-powered code completion and chat assistant
+- [Continue](continue.md) - AI-powered coding assistant with IDE extensions
+- [Cursor](cursor.md) - AI-first code editor
+- [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance
+- [Roo Cline](roo-cline.md) - AI-powered development assistant for VS Code
+- [Sourcegraph Cody](sourcegraph-cody.md) - AI coding assistant with codebase context
+- [Tabnine](tabnine.md) - AI-powered code completion tool
+
+---
+
+**Navigation:**  
+← [Previous: Tabnine](tabnine.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →

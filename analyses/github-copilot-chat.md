@@ -1,3 +1,8 @@
+**Navigation:**  
+← [Previous: Cursor](cursor.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
+
+---
+
 # GitHub Copilot Chat Analysis
 
 **Analysis Date:** 16 January 2026  
@@ -5,13 +10,9 @@
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://docs.github.com/en/copilot
 
----
-
 ## Table of Contents
 
 - [1. Tool Overview](#1-tool-overview)
-  - [Description](#description)
-  - [Key Features](#key-features)
 - [2. LLM Provider Integration](#2-llm-provider-integration)
   - [2.1 Ollama Integration](#21-ollama-integration)
   - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
@@ -19,22 +20,8 @@
   - [2.4 OpenAI Integration](#24-openai-integration)
   - [2.5 Anthropic (Claude) Integration](#25-anthropic-claude-integration)
 - [3. Policies and Rules (Instruction Files)](#3-policies-and-rules-instruction-files)
-  - [Instruction File Support](#instruction-file-support)
-  - [Configuration Method](#configuration-method)
-  - [Syntax and Structure](#syntax-and-structure)
-  - [Scope and Application](#scope-and-application)
-  - [Example Policies](#example-policies)
 - [4. Custom and Stored Prompts](#4-custom-and-stored-prompts)
-  - [Prompt Storage Mechanism](#prompt-storage-mechanism)
-  - [Creating Custom Prompts](#creating-custom-prompts)
-  - [Organising Prompts](#organising-prompts)
-  - [Using Stored Prompts](#using-stored-prompts)
-  - [Sharing and Exporting](#sharing-and-exporting)
 - [5. Tools and Model Context Protocol (MCP)](#5-tools-and-model-context-protocol-mcp)
-  - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
-  - [MCP Server Configuration](#mcp-server-configuration)
-  - [Available Tools](#available-tools)
-  - [Custom Tool Development](#custom-tool-development)
 - [6. Application Development Workflow](#6-application-development-workflow)
   - [6.1 Project Initialisation](#61-project-initialisation)
   - [6.2 Design and Planning](#62-design-and-planning)
@@ -50,14 +37,8 @@
   - [7.4 Terminal and CLI](#74-terminal-and-cli)
   - [7.5 Other IDEs and Editors](#75-other-ides-and-editors)
 - [8. Summary and Key Findings](#8-summary-and-key-findings)
-  - [Strengths](#strengths)
-  - [Limitations](#limitations)
-  - [Best Use Cases](#best-use-cases)
-  - [Documentation Quality](#documentation-quality)
 - [9. Completeness Checklist](#9-completeness-checklist)
 - [10. References](#10-references)
-  - [Official Documentation](#official-documentation)
-  - [Version Information](#version-information)
 - [Revision History](#revision-history)
 
 ---
@@ -903,3 +884,24 @@ Areas for improvement:
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 16 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## See Also
+
+- [Amazon Q Developer](amazon-q-developer.md) - AWS-integrated AI coding assistant
+- [Azure AI Toolkit](azure-ai-toolkit.md) - Microsoft Azure AI development toolkit
+- [Claude Code](claude-code.md) - Anthropic's Claude AI for code generation
+- [Codeium](codeium.md) - Free AI-powered code completion tool
+- [Continue](continue.md) - Open-source AI code assistant
+- [Cursor](cursor.md) - AI-first code editor
+- [Roo Cline](roo-cline.md) - AI coding assistant for VS Code
+- [Sourcegraph Cody](sourcegraph-cody.md) - AI assistant with codebase understanding
+- [Tabnine](tabnine.md) - AI code completion and chat assistant
+
+---
+
+**Navigation:**  
+← [Previous: Cursor](cursor.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →

@@ -1,11 +1,14 @@
+**Navigation:**  
+← [Previous: Sourcegraph Cody](sourcegraph-cody.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Amazon Q Developer](amazon-q-developer.md) →
+
+---
+
 # Tabnine Analysis
 
 **Analysis Date:** 20 January 2026  
 **Tool Version:** Current (as of January 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://docs.tabnine.com
-
----
 
 ## Table of Contents
 
@@ -564,3 +567,24 @@ This analysis was limited by restricted access to detailed official documentatio
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## See Also
+
+- [Amazon Q Developer](amazon-q-developer.md) - Analysis of Amazon Q Developer
+- [Azure AI Toolkit](azure-ai-toolkit.md) - Analysis of Azure AI Toolkit
+- [Claude Code](claude-code.md) - Analysis of Claude Code
+- [Codeium](codeium.md) - Analysis of Codeium
+- [Continue](continue.md) - Analysis of Continue
+- [Cursor](cursor.md) - Analysis of Cursor
+- [GitHub Copilot Chat](github-copilot-chat.md) - Analysis of GitHub Copilot Chat
+- [Roo Cline](roo-cline.md) - Analysis of Roo Cline
+- [Sourcegraph Cody](sourcegraph-cody.md) - Analysis of Sourcegraph Cody
+
+---
+
+**Navigation:**  
+← [Previous: Sourcegraph Cody](sourcegraph-cody.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Amazon Q Developer](amazon-q-developer.md) →

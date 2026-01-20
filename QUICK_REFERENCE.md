@@ -2,8 +2,8 @@
 
 ## Getting Started
 
-1. **Read** [analysis_plan.md](analysis_plan.md) for methodology
-2. **Copy** [tool_analysis_template.md](tool_analysis_template.md) to `analyses/[tool-name].md`
+1. **Read** [ANALYSIS_PLAN.md](ANALYSIS_PLAN.md) for methodology
+2. **Copy** [TOOL_ANALYSIS_TEMPLATE.md](TOOL_ANALYSIS_TEMPLATE.md) to `analyses/[tool-name].md`
 3. **Fill in** each section using official documentation only
 4. **Check** completeness using the checklist
 
@@ -108,20 +108,20 @@ Use these exact phrases when official documentation is lacking:
 
 ## File Naming
 
-Use lowercase with underscores (lower-snake-case):
-- ✅ `github_copilot.md`
-- ✅ `cursor_editor.md`
-- ✅ `amazon_codewhisperer.md`
+Use lowercase with hyphens:
+- ✅ `github-copilot.md`
+- ✅ `cursor-editor.md`
+- ✅ `amazon-codewhisperer.md`
 - ❌ `GitHub Copilot.md`
-- ❌ `github-copilot.md` (kebab-case not allowed)
+- ❌ `cursor_editor.md`
 
 ## Directory Structure
 
 ```
 ai-tools-analysis/
-├── analysis_plan.md              ← Full methodology
-├── tool_analysis_template.md     ← Copy this for new analyses
-├── quick_reference.md            ← This file
+├── ANALYSIS_PLAN.md              ← Full methodology
+├── TOOL_ANALYSIS_TEMPLATE.md     ← Copy this for new analyses
+├── QUICK_REFERENCE.md            ← This file
 └── analyses/                     ← Put completed analyses here
     ├── tool-name.md
     └── ...
@@ -188,9 +188,9 @@ ai-tools-analysis/
 
 ## Need Help?
 
-1. Review [analysis_plan.md](analysis_plan.md) for detailed methodology
+1. Review [ANALYSIS_PLAN.md](ANALYSIS_PLAN.md) for detailed methodology
 2. Look at completed analyses in `analyses/` directory for examples
-3. Check the template structure in [tool_analysis_template.md](tool_analysis_template.md)
+3. Check the template structure in [TOOL_ANALYSIS_TEMPLATE.md](TOOL_ANALYSIS_TEMPLATE.md)
 
 ---
 

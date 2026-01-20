@@ -1,11 +1,14 @@
+**Navigation:**  
+← [Previous: Amazon Q Developer](amazon-q-developer.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Claude Code](claude-code.md) →
+
+---
+
 # Azure AI Toolkit for Visual Studio Code Analysis
 
 **Analysis Date:** 20 January 2026  
 **Tool Version:** Current (as of January 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://learn.microsoft.com/en-us/azure/ai-studio/
-
----
 
 ## Table of Contents
 
@@ -195,8 +198,6 @@ Not documented in official sources. Azure AI Toolkit focuses on Azure AI service
 [↑ Back to top](#table-of-contents)
 
 ---
-
-## 3. Policies and Rules (Instruction Files)
 
 ## 3. Policies and Rules (Instruction Files)
 
@@ -608,10 +609,27 @@ The documentation for Azure AI Toolkit is spread across multiple sources (Azure 
 
 ---
 
+## See Also
+
+- [Amazon Q Developer](amazon-q-developer.md) - AWS-integrated AI coding assistant
+- [Claude Code](claude-code.md) - Anthropic's coding assistant
+- [Codeium](codeium.md) - Free AI code completion and chat
+- [Continue](continue.md) - Open-source AI code assistant
+- [Cursor](cursor.md) - AI-powered code editor
+- [GitHub Copilot Chat](github-copilot-chat.md) - Conversational AI for GitHub Copilot
+- [Roo-Cline](roo-cline.md) - Autonomous coding agent
+- [Sourcegraph Cody](sourcegraph-cody.md) - AI assistant with code search
+- [Tabnine](tabnine.md) - AI code completion with privacy focus
+
+---
+
+**Navigation:**  
+← [Previous: Amazon Q Developer](amazon-q-developer.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Claude Code](claude-code.md) →
+
+---
+
 ## Revision History
 
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
-
-[↑ Back to top](#table-of-contents)

@@ -1,3 +1,8 @@
+**Navigation:**  
+← [Previous: Roo Cline](roo-cline.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Tabnine](tabnine.md) →
+
+---
+
 # Sourcegraph Cody Analysis
 
 **Analysis Date:** 20 January 2026  
@@ -5,13 +10,9 @@
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://docs.sourcegraph.com/cody
 
----
-
 ## Table of Contents
 
 - [1. Tool Overview](#1-tool-overview)
-  - [Description](#description)
-  - [Key Features](#key-features)
 - [2. LLM Provider Integration](#2-llm-provider-integration)
   - [2.1 Ollama Integration](#21-ollama-integration)
   - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
@@ -19,22 +20,8 @@
   - [2.4 OpenAI Integration](#24-openai-integration)
   - [2.5 Anthropic (Claude) Integration](#25-anthropic-claude-integration)
 - [3. Policies and Rules (Instruction Files)](#3-policies-and-rules-instruction-files)
-  - [Instruction File Support](#instruction-file-support)
-  - [Configuration Method](#configuration-method)
-  - [Syntax and Structure](#syntax-and-structure)
-  - [Scope and Application](#scope-and-application)
-  - [Example Policies](#example-policies)
 - [4. Custom and Stored Prompts](#4-custom-and-stored-prompts)
-  - [Prompt Storage Mechanism](#prompt-storage-mechanism)
-  - [Creating Custom Prompts](#creating-custom-prompts)
-  - [Organising Prompts](#organising-prompts)
-  - [Using Stored Prompts](#using-stored-prompts)
-  - [Sharing and Exporting](#sharing-and-exporting)
 - [5. Tools and Model Context Protocol (MCP)](#5-tools-and-model-context-protocol-mcp)
-  - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
-  - [MCP Server Configuration](#mcp-server-configuration)
-  - [Available Tools](#available-tools)
-  - [Custom Tool Development](#custom-tool-development)
 - [6. Application Development Workflow](#6-application-development-workflow)
   - [6.1 Project Initialisation](#61-project-initialisation)
   - [6.2 Design and Planning](#62-design-and-planning)
@@ -50,16 +37,8 @@
   - [7.4 Terminal and CLI](#74-terminal-and-cli)
   - [7.5 Other IDEs and Editors](#75-other-ides-and-editors)
 - [8. Summary and Key Findings](#8-summary-and-key-findings)
-  - [Strengths](#strengths)
-  - [Limitations](#limitations)
-  - [Best Use Cases](#best-use-cases)
-  - [Documentation Quality](#documentation-quality)
 - [9. Completeness Checklist](#9-completeness-checklist)
 - [10. References](#10-references)
-  - [Official Documentation](#official-documentation)
-  - [Version Information](#version-information)
-  - [Notes on Documentation Availability](#notes-on-documentation-availability)
-- [Revision History](#revision-history)
 
 ---
 
@@ -114,6 +93,8 @@ Users can configure Ollama endpoints in Cody settings to use local models such a
 **Limitations:** Available in Pro and Enterprise tiers; configuration requires Ollama server setup
 
 **Citation:** General information about model support available at https://docs.sourcegraph.com/cody. Specific Ollama integration details mentioned in product documentation. Accessed 20 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -461,6 +442,8 @@ Cody adds a sidebar panel for chat and commands, inline suggestions in the edito
 
 **Citation:** Extension available on VS Code Marketplace. Documentation at https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ### 7.2 JetBrains IDEs
@@ -498,6 +481,8 @@ Cody adds a sidebar panel for chat and commands, inline suggestions in the edito
 Cody integrates with JetBrains' IntelliSense system and provides features tailored to JetBrains' UI patterns. The plugin is optimised for JetBrains' editor architecture.
 
 **Citation:** Plugin available on JetBrains Marketplace. Documentation at https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -657,3 +642,24 @@ This analysis is based on publicly accessible Sourcegraph documentation and prod
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## See Also
+
+- [Amazon Q Developer](amazon-q-developer.md) - AWS AI-powered coding assistant with security scanning and AWS service integration
+- [Azure AI Toolkit for Visual Studio Code](azure-ai-toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
+- [Claude Code](claude-code.md) - Terminal-based agentic coding tool from Anthropic with MCP support, plugin system, and VS Code integration
+- [Codeium](codeium.md) - Free AI-powered code completion and chat assistant with broad IDE support
+- [Continue](continue.md) - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
+- [Cursor](cursor.md) - AI-first code editor built for productivity with deep AI integration
+- [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
+- [Roo Cline](roo-cline.md) - AI-powered development assistant for VS Code with multiple operational modes (Version 3.41.0)
+- [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options
+
+---
+
+**Navigation:**  
+← [Previous: Roo Cline](roo-cline.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Tabnine](tabnine.md) →

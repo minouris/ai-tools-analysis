@@ -1,3 +1,8 @@
+**Navigation:**  
+← [Previous: Codeium](codeium.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Cursor](cursor.md) →
+
+---
+
 # Continue AI Coding Tool Analysis
 
 **Analysis Date:** 16 January 2025  
@@ -1234,3 +1239,22 @@ mcpServers:
 **End of Analysis**
 
 *This analysis is based entirely on official documentation from the continuedev/continue GitHub repository (https://github.com/continuedev/continue) as of 16 January 2025.*
+
+---
+
+## See Also
+
+- [Amazon Q Developer](amazon_q_developer.md) - AWS AI-powered coding assistant with security scanning and AWS service integration
+- [Azure AI Toolkit for Visual Studio Code](azure_ai_toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
+- [Claude Code](claude_code.md) - Terminal-based agentic coding tool from Anthropic with MCP support, plugin system, and VS Code integration
+- [Codeium](codeium.md) - Free AI-powered code completion and chat assistant with broad IDE support
+- [Cursor](cursor.md) - AI-first code editor built for productivity with deep AI integration
+- [GitHub Copilot Chat](github_copilot_chat.md) - AI-powered code assistance and chat interface for software development
+- [Roo Cline](roo_cline.md) - AI-powered development assistant for VS Code with multiple operational modes (Version 3.41.0)
+- [Sourcegraph Cody](sourcegraph_cody.md) - AI coding assistant with deep codebase context and understanding
+- [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options
+
+---
+
+**Navigation:**  
+← [Previous: Codeium](codeium.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Cursor](cursor.md) →
