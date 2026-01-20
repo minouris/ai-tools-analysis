@@ -174,12 +174,12 @@ CLAUDE.md files provide instructions and context to Claude Code. They support:
 - Image and PDF file references
 
 **Rules Files:**
-Rules files in `.claude/rules/` directory provide behavior control and can be used to define coding standards, conventions, and project-specific guidelines.
+Rules files in `.claude/rules/` directory provide behaviour control and can be used to define coding standards, conventions, and project-specific guidelines.
 
 **Settings.json:**
-The settings.json file controls permissions, tool access, and behavior. Key settings include:
+The settings.json file controls permissions, tool access, and behaviour. Key settings include:
 - `allowedTools` / `disallowedTools` - Control which tools Claude can use
-- `permissionMode` - Set default permission behavior
+- `permissionMode` - Set default permission behaviour
 - `ignorePatterns` - File patterns to exclude from operations
 - Various feature flags and configuration options
 
