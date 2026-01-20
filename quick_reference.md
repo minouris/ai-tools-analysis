@@ -108,12 +108,12 @@ Use these exact phrases when official documentation is lacking:
 
 ## File Naming
 
-Use lowercase with hyphens:
-- ✅ `github-copilot.md`
-- ✅ `cursor-editor.md`
-- ✅ `amazon-codewhisperer.md`
+Use lowercase with underscores (lower-snake-case):
+- ✅ `github_copilot.md`
+- ✅ `cursor_editor.md`
+- ✅ `amazon_codewhisperer.md`
 - ❌ `GitHub Copilot.md`
-- ❌ `cursor_editor.md`
+- ❌ `github-copilot.md` (kebab-case not allowed)
 
 ## Directory Structure
 

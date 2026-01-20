@@ -4,18 +4,18 @@ This directory contains individual analyses of AI coding tools, each following t
 
 ## Current Analyses
 
-- [Claude Code](claude-code.md) - Terminal-based agentic coding tool from Anthropic with MCP support, plugin system, and VS Code integration
-- [Azure AI Toolkit for Visual Studio Code](azure-ai-toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
+- [Claude Code](claude_code.md) - Terminal-based agentic coding tool from Anthropic with MCP support, plugin system, and VS Code integration
+- [Azure AI Toolkit for Visual Studio Code](azure_ai_toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
 - [Continue](continue.md) - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
-- [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
-- [Roo Cline](roo-cline.md) - AI-powered development assistant for VS Code with multiple operational modes (Version 3.41.0)
+- [GitHub Copilot Chat](github_copilot_chat.md) - AI-powered code assistance and chat interface for software development
+- [Roo Cline](roo_cline.md) - AI-powered development assistant for VS Code with multiple operational modes (Version 3.41.0)
 
 ## Other
 
-- [Amazon Q Developer](amazon-q-developer.md) - AWS AI-powered coding assistant with security scanning and AWS service integration
+- [Amazon Q Developer](amazon_q_developer.md) - AWS AI-powered coding assistant with security scanning and AWS service integration
 - [Codeium](codeium.md) - Free AI-powered code completion and chat assistant with broad IDE support
 - [Cursor](cursor.md) - AI-first code editor built for productivity with deep AI integration
-- [Sourcegraph Cody](sourcegraph-cody.md) - AI coding assistant with deep codebase context and understanding
+- [Sourcegraph Cody](sourcegraph_cody.md) - AI coding assistant with deep codebase context and understanding
 - [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options
 
 ## Creating a New Analysis
@@ -35,12 +35,13 @@ To analyse a new tool:
 
 ## Naming Convention
 
-Analysis files should be named using lowercase with hyphens:
-- ✅ `github-copilot.md`
-- ✅ `cursor-editor.md`
-- ✅ `jetbrains-ai-assistant.md`
+Analysis files should be named using lowercase with underscores (lower-snake-case):
+- ✅ `github_copilot.md`
+- ✅ `cursor_editor.md`
+- ✅ `jetbrains_ai_assistant.md`
 - ❌ `GitHub Copilot.md`
-- ❌ `cursor_editor.md`
+- ❌ `github-copilot.md` (kebab-case not allowed)
+- ❌ `cursor_Editor.md` (mixed case not allowed)
 
 ## File Organisation
 
@@ -48,15 +49,15 @@ Each analysis is a single Markdown file containing all sections. For very large 
 
 ```
 analyses/
-├── tool-name.md                    # Simple single-file analysis
-└── complex-tool/                   # Multi-file analysis
+├── tool_name.md                    # Simple single-file analysis
+└── complex_tool/                   # Multi-file analysis
     ├── overview.md
-    ├── llm-integration.md
-    ├── policies-rules.md
+    ├── llm_integration.md
+    ├── policies_rules.md
     ├── prompts.md
-    ├── tools-mcp.md
+    ├── tools_mcp.md
     ├── workflow.md
-    └── ide-integration.md
+    └── ide_integration.md
 ```
 
 ## Quality Checklist
