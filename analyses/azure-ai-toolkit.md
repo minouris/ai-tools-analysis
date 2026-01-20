@@ -58,7 +58,7 @@ The toolkit provides a unified interface for managing both Azure-hosted and loca
 
 **Limitations:** Requires local Ollama installation. Performance depends on local hardware capabilities.
 
-**Citation:** Changing the AI model for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat. Accessed 20 January 2026.
+**Citation:** Information about adding Ollama models through AI Toolkit is documented in: Changing the AI model for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat. Accessed 20 January 2026.
 
 ---
 
@@ -348,7 +348,7 @@ Not specifically documented in official sources. Uses standard VS Code navigatio
 - Model picker integration in Copilot Chat
 - Settings integration for configuration
 
-**Citation:** Azure AI Toolkit for VS Code. VS Code Marketplace. https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio. Accessed 20 January 2026.
+**Citation:** Installation and basic features documented in: Azure AI Toolkit for VS Code. VS Code Marketplace. https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio. Accessed 20 January 2026. Detailed feature documentation available in Azure AI Studio documentation at https://learn.microsoft.com/en-us/azure/ai-studio/.
 
 ---
 
@@ -517,11 +517,11 @@ The documentation for Azure AI Toolkit is spread across multiple sources (Azure 
 
 ### Official Documentation
 
-1. Azure AI Studio/Foundry Documentation - https://learn.microsoft.com/en-us/azure/ai-studio/
-2. Azure AI Toolkit for VS Code - https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio
-3. GitHub Copilot Model Selection - https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat
-4. Azure OpenAI Service - https://learn.microsoft.com/en-us/azure/ai-services/openai/
-5. Azure CLI Documentation - https://learn.microsoft.com/en-us/cli/azure/
+1. Azure AI Studio/Foundry Documentation - https://learn.microsoft.com/en-us/azure/ai-studio/. Accessed 20 January 2026.
+2. Azure AI Toolkit for VS Code - https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio. Accessed 20 January 2026.
+3. GitHub Copilot Model Selection - https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat. Accessed 20 January 2026.
+4. Azure OpenAI Service - https://learn.microsoft.com/en-us/azure/ai-services/openai/. Accessed 20 January 2026.
+5. Azure CLI Documentation - https://learn.microsoft.com/en-us/cli/azure/. Accessed 20 January 2026.
 
 ### Version Information
 
