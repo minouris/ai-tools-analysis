@@ -75,7 +75,7 @@
 
 ### Description
 
-ChatGPT is OpenAI's conversational AI platform accessible via web browser (chatgpt.com) and mobile applications. For coding tasks, ChatGPT provides several specialized features including Canvas (a dedicated code editing interface), code execution capabilities, and file upload/download functionality. ChatGPT uses OpenAI's most advanced models (GPT-4o, o1, o1-pro) to assist with software development tasks.
+ChatGPT is OpenAI's conversational AI platform accessible via web browser (chatgpt.com) and mobile applications. For coding tasks, ChatGPT provides several specialized features including Canvas (a dedicated code editing interface), code execution capabilities, and file upload/download functionality. ChatGPT uses OpenAI's GPT-4o, o1, and o1-pro models to assist with software development tasks.
 
 Unlike IDE-integrated tools (GitHub Copilot, Continue, Roo Cline), ChatGPT operates as a standalone web application. Developers interact with it through a chat interface, requesting code generation, explanations, debugging assistance, and architectural guidance. ChatGPT can execute code directly in a sandboxed environment and provides iterative development through conversational interactions.
 
@@ -131,7 +131,7 @@ ChatGPT's relationship to OpenAI Codex: Codex (deprecated March 2023) was a code
 **Evolution from Codex:**
 - OpenAI Codex (2021-2023): Specialized code generation model
 - Deprecated March 2023 in favour of GPT-3.5-turbo and GPT-4
-- ChatGPT now uses GPT-4o and o1 models with superior coding capabilities
+- ChatGPT now uses GPT-4o and o1 models for code generation
 - Canvas feature introduced October 2024 as dedicated coding interface
 
 **Citation:** Information based on publicly available details about ChatGPT capabilities. Direct access to official OpenAI documentation was unavailable during analysis due to connectivity issues (20 January 2026).
@@ -1048,7 +1048,7 @@ This analysis was conducted using publicly available information about ChatGPT's
 
 **Historical Context:**
 - OpenAI Codex (deprecated March 2023) was an early code-specialized model
-- ChatGPT now uses GPT-4o and o1 models with superior coding capabilities
+- ChatGPT now uses GPT-4o and o1 models for code generation
 - Canvas feature provides dedicated code editing interface
 - Represents evolution from API-only Codex to user-friendly chat interface
 

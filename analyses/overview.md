@@ -32,7 +32,7 @@
 
 ## 1. Executive Summary
 
-This document provides a comprehensive comparison of 11 AI coding tools analysed in this repository. The tools represent different approaches to AI-assisted development, ranging from cloud-based subscription services to open-source agentic frameworks, including historical platforms that shaped the industry.
+This document provides a comprehensive comparison of 11 AI coding tools analysed in this repository. The tools represent different approaches to AI-assisted development, ranging from cloud-based subscription services to open-source agentic frameworks, including historical platforms.
 
 ### Tools Included
 
