@@ -51,8 +51,8 @@ This document provides a comprehensive comparison of 10 AI coding tools analysed
 
 - **Model Flexibility:** Continue and Roo Cline support 20-40+ LLM providers, whilst Amazon Q is AWS-only
 - **MCP Adoption:** 4 tools (Claude Code, Continue, GitHub Copilot, Roo Cline) offer full MCP support
-- **Pricing Range:** From completely free (Codeium, Continue, Roo Cline) to subscription-based services
-- **IDE Coverage:** Most tools support VS Code and JetBrains; fewer support Eclipse or Neovim
+- **Total Cost of Ownership:** Codeium ($0) and GitHub Copilot Pro ($10) offer best value. "Free" tools like Continue/Roo Cline require separate LLM subscriptions ($20-30/month) or local deployment (hardware-intensive, lower model quality)
+- **IDE Coverage:** VS Code has universal support (100%); JetBrains (60%); Eclipse and Neovim limited
 - **Customisation:** 6 tools support custom instruction files; 7 support custom prompts/commands
 
 [↑ Back to top](#table-of-contents)
@@ -322,15 +322,28 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 | **Tabnine** | ✅ Limited | $12/month | $39/user/month | Custom | ❌ |
 
 **Pricing Categories:**
-- **Completely Free:** Continue, Roo Cline (open source)
-- **Free with Full Features:** Codeium
+- **Tool Free, LLM Required:** Continue, Roo Cline (open source, user provides LLM access)
+- **All-Inclusive Free:** Codeium (includes proprietary models)
 - **Freemium Model:** GitHub Copilot, Sourcegraph Cody, Cursor, Amazon Q, Tabnine
-- **Subscription Required:** Claude Code (requires Claude Pro/Max)
+- **Subscription Required:** Claude Code (requires Claude Pro/Max subscription)
 
-**Cost Range (Pro/Individual):**
-- Lowest: $0 (Continue, Roo Cline, Codeium)
-- Mid-range: $9-12/month (Sourcegraph Cody, Tabnine, Codeium Teams)
-- High-range: $19-20/month (Amazon Q, Claude Code, Cursor)
+**Tool Cost Range (Pro/Individual):**
+- Tool free: $0 (Continue, Roo Cline, Codeium)
+- Low-cost: $9-12/month (Sourcegraph Cody, Tabnine, Codeium Teams)
+- Mid-cost: $19-20/month (Amazon Q, Claude Code, Cursor)
+
+**Total Cost of Ownership Considerations:**
+
+Tools that appear "free" may require separate LLM subscriptions:
+
+- **Continue/Roo Cline + Cloud LLM:** $0 tool + $20-30/month (Claude Pro, GPT-4) = **$20-30/month total**
+- **Continue/Roo Cline + Local LLM:** $0 tool + $0 LLM = **$0/month** (but requires high-spec hardware, limited model quality)
+- **Codeium:** $0 tool + $0 LLM (included) = **$0/month total**
+- **GitHub Copilot Pro:** $10/month (includes access to Claude, GPT-4, Gemini) = **$10/month total**
+- **Claude Code:** Requires Claude Pro ($20/month) or Max ($30/month) = **$20-30/month total**
+- **Cursor Pro:** $20/month (includes model access) = **$20/month total**
+
+**Key Finding:** Whilst Continue and Roo Cline have no tool cost, total cost of ownership matches or exceeds commercial alternatives when factoring in LLM subscriptions. Codeium offers the lowest true total cost ($0), whilst GitHub Copilot Pro offers the best value for cloud-hosted, high-quality models ($10/month).
 
 [↑ Back to top](#table-of-contents)
 
@@ -418,12 +431,13 @@ To complete this section with authentic user feedback, the following approaches 
 
 #### Best for Individual Developers
 
-**Recommendation: Codeium or Continue**
+**Recommendation: Codeium (lowest total cost) or GitHub Copilot Pro (best value)**
 
-- **Codeium:** Free unlimited completions and chat, broad IDE support, no subscription required
-- **Continue:** Open source, 40+ provider support, complete feature set, no costs beyond LLM API usage
+- **Codeium:** Free unlimited completions and chat with proprietary models included. No LLM subscription required. **Total cost: $0/month**
+- **GitHub Copilot Pro:** $10/month includes access to multiple high-quality models (Claude, GPT-4, Gemini). **Total cost: $10/month**
+- **Continue/Roo Cline:** Free tool but requires separate LLM subscription ($20-30/month for Claude/GPT-4) or local models (hardware-intensive, lower quality). **Total cost: $0-30/month**
 
-**Rationale:** Both offer full features without subscription costs. Codeium uses proprietary models (no separate LLM costs), whilst Continue allows bring-your-own-provider flexibility.
+**Rationale:** Codeium offers genuinely free AI assistance with no hidden costs. GitHub Copilot Pro provides the best value for cloud-hosted, high-quality models. Continue and Roo Cline appear free but require LLM access, making total cost comparable to commercial alternatives unless using local models.
 
 ---
 
@@ -457,6 +471,8 @@ To complete this section with authentic user feedback, the following approaches 
 - **Roo Cline:** 20+ provider support, multiple operational modes, cross-compatible rules
 
 **Rationale:** Highest number of supported LLM providers, allowing switching between models based on task requirements.
+
+**Cost Consideration:** Whilst tools are free, each provider requires separate subscription or API access. Total monthly cost depends on chosen provider(s): $0 for local models (Ollama), $20-30/month for cloud providers (Claude, GPT-4), or pay-per-use API pricing.
 
 ---
 
@@ -582,20 +598,42 @@ To complete this section with authentic user feedback, the following approaches 
 
 ### Pricing Insights
 
-**Free Options:**
-- **Completely Free:** Continue, Roo Cline (open source, user provides LLM access)
-- **Free with Full Features:** Codeium (proprietary models)
-- **Freemium:** GitHub Copilot Free tier (limited)
+**Free Options (Tool Cost Only):**
+- **Tool Free, LLM Required:** Continue, Roo Cline (open source, user provides LLM access)
+- **All-Inclusive Free:** Codeium (proprietary models included)
+- **Freemium:** GitHub Copilot Free tier (limited features)
 
-**Subscription Costs:**
-- **Individual:** $9-20/month depending on tool
-- **Teams:** $12-25/user/month
-- **Enterprise:** $19-39/user/month plus custom pricing
+**Total Cost of Ownership Analysis:**
+
+When factoring in LLM access costs, the true pricing picture changes significantly:
+
+| Tool | Tool Cost | LLM Cost | Total Monthly Cost |
+|------|-----------|----------|-------------------|
+| Codeium | $0 | $0 (included) | **$0** |
+| Continue/Roo Cline (local) | $0 | $0 | **$0** (requires high-spec hardware) |
+| GitHub Copilot Pro | $10 | $0 (included) | **$10** |
+| Continue/Roo Cline (cloud) | $0 | $20-30 | **$20-30** |
+| Cursor Pro | $20 | $0 (included) | **$20** |
+| Claude Code | $0 (tool) | $20-30 (Claude Pro/Max) | **$20-30** |
+| Amazon Q Pro | $19 | $0 (included) | **$19** |
+| Sourcegraph Cody Pro | $9 | Varies | **$9+** |
+| Tabnine Pro | $12 | $0 (included) | **$12** |
 
 **Cost Considerations:**
-- Open-source tools (Continue, Roo Cline) have $0 tool cost but require LLM API costs
-- Codeium offers best value for unlimited usage without LLM API costs
-- Enterprise features (org-wide customisation) typically require top-tier subscriptions
+- **Codeium** offers the only truly free option with proprietary models included
+- **GitHub Copilot Pro** offers best value for high-quality cloud models at $10/month
+- **Continue and Roo Cline** appear free but require LLM subscriptions ($20-30/month) or local deployment
+- **Local LLM deployment** eliminates ongoing costs but requires:
+  - High-specification hardware (16GB+ RAM, powerful GPU for optimal performance)
+  - Reduced model quality compared to cloud-hosted alternatives (Claude, GPT-4)
+  - Technical expertise for setup and maintenance
+- Enterprise features (org-wide customisation) typically require top-tier subscriptions ($19-39/user/month)
+
+**Value Assessment:**
+- **Best Total Value:** GitHub Copilot Pro ($10/month for multiple high-quality models)
+- **Lowest Total Cost:** Codeium ($0/month, models included)
+- **Most Flexible:** Continue/Roo Cline (40+ providers, but cost varies by choice)
+- **Hidden Costs:** "Free" tools requiring separate LLM access can exceed commercial all-in-one solutions
 
 ### Technology Trends
 
@@ -611,10 +649,11 @@ To complete this section with authentic user feedback, the following approaches 
 
 | Priority | Recommended Tool(s) | Rationale |
 |----------|---------------------|-----------|
-| **Cost Minimisation** | Continue, Roo Cline, Codeium | Free/open source options |
+| **Lowest Total Cost** | Codeium | $0/month (models included) |
+| **Best Value** | GitHub Copilot Pro | $10/month for multiple high-quality models |
 | **AWS Integration** | Amazon Q Developer | Native AWS service integration |
-| **Privacy/Compliance** | Tabnine Enterprise, Continue | Local-only execution options |
-| **Provider Flexibility** | Continue, Roo Cline | 20-40+ provider support |
+| **Privacy/Compliance** | Tabnine Enterprise, Continue (local) | Local-only execution options |
+| **Provider Flexibility** | Continue, Roo Cline | 20-40+ provider support (requires LLM subscriptions) |
 | **GitHub Integration** | GitHub Copilot | Native platform integration |
 | **Enterprise Features** | GitHub Copilot Enterprise, Sourcegraph Cody | Org-wide customisation |
 | **Autonomous Agents** | Claude Code, Roo Cline | Agentic workflow focus |
