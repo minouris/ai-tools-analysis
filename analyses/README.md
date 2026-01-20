@@ -4,8 +4,9 @@ This directory contains individual analyses of AI coding tools, each following t
 
 ## Current Analyses
 
-- [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
+- [Azure AI Toolkit for Visual Studio Code](azure-ai-toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
 - [Continue](continue.md) - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
+- [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
 
 ## Creating a New Analysis
 
