@@ -7,6 +7,60 @@
 
 ---
 
+## Table of Contents
+
+- [1. Tool Overview](#1-tool-overview)
+  - [Description](#description)
+  - [Key Features](#key-features)
+- [2. LLM Provider Integration](#2-llm-provider-integration)
+  - [2.1 Ollama Integration](#21-ollama-integration)
+  - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
+  - [2.3 Microsoft AI Foundry Integration](#23-microsoft-ai-foundry-integration)
+  - [2.4 OpenAI Integration](#24-openai-integration)
+  - [2.5 Anthropic (Claude) Integration](#25-anthropic-claude-integration)
+  - [2.6 Additional LLM Provider Support](#26-additional-llm-provider-support)
+- [3. Policies and Rules](#3-policies-and-rules)
+  - [3.1 Agent Instruction Files](#31-agent-instruction-files)
+  - [3.2 Configuration Options](#32-configuration-options)
+- [4. Custom Prompts](#4-custom-prompts)
+  - [4.1 Custom Modes](#41-custom-modes)
+  - [4.2 Prompt Storage and Reuse](#42-prompt-storage-and-reuse)
+- [5. Tools and MCP](#5-tools-and-mcp)
+  - [5.1 Model Context Protocol (MCP)](#51-model-context-protocol-mcp)
+  - [5.2 Tool Ecosystem](#52-tool-ecosystem)
+- [6. Development Workflow](#6-development-workflow)
+  - [6.1 Operational Modes](#61-operational-modes)
+  - [6.2 Code Generation and Editing](#62-code-generation-and-editing)
+  - [6.3 Codebase Understanding](#63-codebase-understanding)
+  - [6.4 Remote Control](#64-remote-control)
+- [7. IDE Integration](#7-ide-integration)
+  - [7.1 Visual Studio Code](#71-visual-studio-code)
+  - [7.2 Cursor Editor](#72-cursor-editor)
+  - [7.3 VS Code Insiders](#73-vs-code-insiders)
+  - [7.4 JetBrains IDEs](#74-jetbrains-ides)
+  - [7.5 Eclipse](#75-eclipse)
+  - [7.6 Terminal / CLI](#76-terminal--cli)
+  - [7.7 Web Interface](#77-web-interface)
+- [8. Documentation and Resources](#8-documentation-and-resources)
+  - [8.1 Official Documentation](#81-official-documentation)
+  - [8.2 Tutorial Videos](#82-tutorial-videos)
+  - [8.3 Localisation](#83-localisation)
+- [9. Development and Contributing](#9-development-and-contributing)
+  - [9.1 Technology Stack](#91-technology-stack)
+  - [9.2 Local Development](#92-local-development)
+  - [9.3 Contributing](#93-contributing)
+- [10. Legal and Compliance](#10-legal-and-compliance)
+  - [10.1 Licence](#101-licence)
+  - [10.2 Disclaimer](#102-disclaimer)
+  - [10.3 Additional Policies](#103-additional-policies)
+- [11. Analysis Completeness Checklist](#11-analysis-completeness-checklist)
+- [12. Notes](#12-notes)
+  - [12.1 Documentation Accessibility](#121-documentation-accessibility)
+  - [12.2 Version Information](#122-version-information)
+  - [12.3 Repository and Name Information](#123-repository-and-name-information)
+
+---
+
 ## 1. Tool Overview
 
 **Official Documentation:** https://github.com/RooCodeInc/Roo-Code  
@@ -33,6 +87,8 @@ Roo Cline (previously known as Roo Code) is an AI-powered development assistant 
 - Remote control capabilities through "Roomote Control"
 
 **Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -181,6 +237,8 @@ The source code reveals extensive support for numerous additional LLM providers:
 
 **Citation:** [src/api/providers/ directory](https://github.com/RooCodeInc/Roo-Code/tree/main/src/api/providers)
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 3. Policies and Rules
@@ -233,6 +291,8 @@ The extension provides several configuration options:
 
 **Citation:** [package.json configuration](https://github.com/RooCodeInc/Roo-Code/blob/main/src/package.json)
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 4. Custom Prompts
@@ -280,6 +340,8 @@ Custom instructions can be defined at the mode level through the `customInstruct
 Not explicitly documented in the examined sources beyond the custom modes system.
 
 **Citation:** [.roomodes file](https://github.com/RooCodeInc/Roo-Code/blob/main/.roomodes)
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -339,6 +401,8 @@ Roo Cline includes numerous native tools:
 
 **Citation:** [src/core/prompts/tools/native-tools/ directory](https://github.com/RooCodeInc/Roo-Code/tree/main/src/core/prompts/tools/native-tools), [src/core/prompts/tools/ directory](https://github.com/RooCodeInc/Roo-Code/tree/main/src/core/prompts/tools)
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 6. Development Workflow
@@ -396,6 +460,8 @@ Roo Cline includes codebase indexing functionality for enhanced context awarenes
 Roo Cline includes "Roomote Control" functionality that allows remote control of tasks running in a local VS Code instance. This feature is mentioned in the README but specific implementation details and configuration steps are not documented in the examined sources.
 
 **Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -488,6 +554,8 @@ The repository includes a `webview-ui` directory and references to a web applica
 
 **Citation:** [Repository structure](https://github.com/RooCodeInc/Roo-Code), [webview-ui directory](https://github.com/RooCodeInc/Roo-Code/tree/main/webview-ui)
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 8. Documentation and Resources
@@ -545,6 +613,8 @@ Roo Cline includes localisation support for 17 languages:
 
 **Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md), [locales directory](https://github.com/RooCodeInc/Roo-Code/tree/main/locales)
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 9. Development and Contributing
@@ -593,6 +663,8 @@ The project uses Changesets for versioning and publishing, with release notes ma
 
 **Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md), [CONTRIBUTING.md](https://github.com/RooCodeInc/Roo-Code/blob/main/CONTRIBUTING.md)
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 10. Legal and Compliance
@@ -625,6 +697,8 @@ The project includes a comprehensive disclaimer stating that:
 
 **Citation:** [Repository file listing](https://github.com/RooCodeInc/Roo-Code)
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 11. Analysis Completeness Checklist
@@ -642,6 +716,8 @@ The project includes a comprehensive disclaimer stating that:
 - [x] All claims cited with source links
 - [x] UK English used throughout
 - [x] Areas without official documentation marked as such
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -665,3 +741,5 @@ The official repository for Roo Cline is located at `https://github.com/RooCodeI
 The tool was previously known as "Roo Code" and has been renamed to "Roo Cline". The repository name still uses "Roo-Code" whilst the tool is now called "Roo Cline". Some source files and configuration refer to "roo-code". The publisher name has also changed from "Roo Veterinary Inc." to "Roo Code, Inc."
 
 **Citation:** [Official GitHub repository](https://github.com/RooCodeInc/Roo-Code), Repository examination and source code analysis
+
+[↑ Back to top](#table-of-contents)

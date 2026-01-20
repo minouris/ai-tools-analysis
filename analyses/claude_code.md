@@ -7,6 +7,38 @@
 
 ---
 
+## Table of Contents
+
+- [1. Tool Overview](#1-tool-overview)
+- [2. LLM Provider Integration](#2-llm-provider-integration)
+  - [2.1 Ollama Integration](#21-ollama-integration)
+  - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
+  - [2.3 Microsoft AI Foundry Integration](#23-microsoft-ai-foundry-integration)
+  - [2.4 OpenAI Integration](#24-openai-integration)
+  - [2.5 Anthropic (Claude) Integration](#25-anthropic-claude-integration)
+- [3. Policies and Rules (Instruction Files)](#3-policies-and-rules-instruction-files)
+- [4. Custom and Stored Prompts](#4-custom-and-stored-prompts)
+- [5. Tools and Model Context Protocol (MCP)](#5-tools-and-model-context-protocol-mcp)
+- [6. Application Development Workflow](#6-application-development-workflow)
+  - [6.1 Project Initialisation](#61-project-initialisation)
+  - [6.2 Design and Planning](#62-design-and-planning)
+  - [6.3 Code Generation](#63-code-generation)
+  - [6.4 Iterative Development](#64-iterative-development)
+  - [6.5 Testing and Validation](#65-testing-and-validation)
+  - [6.6 Debugging](#66-debugging)
+  - [6.7 Deployment](#67-deployment)
+- [7. IDE and Environment Integration](#7-ide-and-environment-integration)
+  - [7.1 Visual Studio Code](#71-visual-studio-code)
+  - [7.2 JetBrains IDEs](#72-jetbrains-ides)
+  - [7.3 Eclipse](#73-eclipse)
+  - [7.4 Terminal and CLI](#74-terminal-and-cli)
+  - [7.5 Other IDEs and Editors](#75-other-ides-and-editors)
+- [8. Summary and Key Findings](#8-summary-and-key-findings)
+- [9. Completeness Checklist](#9-completeness-checklist)
+- [10. References](#10-references)
+
+---
+
 ## 1. Tool Overview
 
 **Official Documentation:** https://code.claude.com/docs/en/overview  
@@ -42,6 +74,8 @@ The tool is built on Node.js and distributed through multiple installation metho
 - Jupyter notebook support
 
 **Citation:** Claude Code README. https://github.com/anthropics/claude-code. Accessed 20 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -143,6 +177,8 @@ Not applicable - Claude Code is a separate tool from GitHub Copilot and does not
 - **Google Vertex AI:** Supported with `CLOUD_ML_REGION` configuration, global endpoint support for certain models
 
 **Citation:** Multiple entries in Claude Code CHANGELOG and README referencing model support, authentication methods, and provider integrations. https://github.com/anthropics/claude-code. Accessed 20 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -255,6 +291,8 @@ Settings are merged with project settings taking precedence over user settings. 
 
 **Citation:** Multiple CHANGELOG entries mentioning CLAUDE.md imports (v0.2.107), rules directory support (v2.0.64), settings migration, and permission systems. https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md. Accessed 20 January 2026.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 4. Custom and Stored Prompts
@@ -350,6 +388,8 @@ Skills are automatically discovered from nested `.claude/skills` directories whe
 Skills in committed `.claude/skills/` directories are automatically available to all team members working on the project.
 
 **Citation:** Multiple CHANGELOG entries: Skills released in v2.0.20, slash commands in v0.2.31, skills-commands merge in v2.0.0, hot-reload in v2.1.0, hooks support in v2.1.0. https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md. Accessed 20 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -471,6 +511,8 @@ The plugin system (v2.0.12) allows developers to create and distribute:
 - Manual `.mcp.json` configuration
 
 **Citation:** Multiple CHANGELOG entries covering MCP support evolution: SSE transport (v0.2.47), HTTP transport (v1.0.27), OAuth (v1.0.33), tool annotations, resource support, list_changed notifications (v2.1.0), debugging features, and wildcard permissions. https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md. Accessed 20 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -653,6 +695,8 @@ Claude can generate:
 - `/cost` for cost tracking (deprecated, use `/usage`)
 
 **Citation:** Comprehensive analysis of CHANGELOG and README covering all workflow features. Multiple versions referenced including plan mode (v0.2.44), real-time steering (v0.2.108), skills (v2.0.20), debugging improvements, testing features, and deployment capabilities. https://github.com/anthropics/claude-code. Accessed 20 January 2026.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -979,6 +1023,8 @@ claude -p "generate code" --output-format=stream-json
 
 **Citation:** Various terminal editors and integrations mentioned in CHANGELOG: Vim mode (v0.2.34), terminal setup expansions (v2.0.74), Claude in Chrome (v2.0.72), GitHub integration throughout versions. https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md. Accessed 20 January 2026.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 8. Summary and Key Findings
@@ -1052,6 +1098,8 @@ The official documentation quality is comprehensive:
 
 **Overall Assessment:** Documentation is thorough for available features, with GitHub repository serving as primary source. The extensive CHANGELOG provides excellent version-specific information.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 9. Completeness Checklist
@@ -1076,6 +1124,8 @@ The official documentation quality is comprehensive:
 - [x] All claims have citations
 - [x] UK English used throughout
 - [x] Consistent formatting applied
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -1122,6 +1172,8 @@ The official documentation quality is comprehensive:
 - Python SDK: `claude-code-sdk` (available via pip install)
 - Claude Agent SDK: https://platform.claude.com/docs/en/agent-sdk/migration-guide
 - Plugin Development: Examples available in repository plugins directory
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
