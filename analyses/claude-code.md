@@ -152,7 +152,7 @@ Not applicable - Claude Code is a separate tool from GitHub Copilot and does not
 
 **Supported File Types:** 
 - `CLAUDE.md` - Project-level instructions
-- `.claude/rules/` - Rule files for behavior control (added in v2.0.64)
+- `.claude/rules/` - Rule files for behaviour control (added in v2.0.64)
 - `settings.json` - Configuration file for tool permissions and behavior
 - `.mcp.json` - MCP server configuration (project-level)
 
