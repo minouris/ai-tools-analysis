@@ -1,5 +1,5 @@
 **Navigation:**  
-← [Previous: Continue](continue.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Chat](github_copilot_chat.md) →
+← [Previous: Continue](continue.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Chat](github-copilot-chat.md) →
 
 ---
 
@@ -542,17 +542,17 @@ This analysis was limited by restricted access to detailed official documentatio
 
 ## See Also
 
-- [Amazon Q Developer](amazon_q_developer.md) - AWS AI-powered coding assistant with security scanning and AWS service integration
-- [Azure AI Toolkit for Visual Studio Code](azure_ai_toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
-- [Claude Code](claude_code.md) - Terminal-based agentic coding tool from Anthropic with MCP support, plugin system, and VS Code integration
+- [Amazon Q Developer](amazon-q-developer.md) - AWS AI-powered coding assistant with security scanning and AWS service integration
+- [Azure AI Toolkit for Visual Studio Code](azure-ai-toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
+- [Claude Code](claude-code.md) - Terminal-based agentic coding tool from Anthropic with MCP support, plugin system, and VS Code integration
 - [Codeium](codeium.md) - Free AI-powered code completion and chat assistant with broad IDE support
 - [Continue](continue.md) - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
-- [GitHub Copilot Chat](github_copilot_chat.md) - AI-powered code assistance and chat interface for software development
-- [Roo Cline](roo_cline.md) - AI-powered development assistant for VS Code with multiple operational modes (Version 3.41.0)
-- [Sourcegraph Cody](sourcegraph_cody.md) - AI coding assistant with deep codebase context and understanding
+- [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
+- [Roo Cline](roo-cline.md) - AI-powered development assistant for VS Code with multiple operational modes (Version 3.41.0)
+- [Sourcegraph Cody](sourcegraph-cody.md) - AI coding assistant with deep codebase context and understanding
 - [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options
 
 ---
 
 **Navigation:**  
-← [Previous: Continue](continue.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Chat](github_copilot_chat.md) →
+← [Previous: Continue](continue.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Chat](github-copilot-chat.md) →
