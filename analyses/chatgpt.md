@@ -75,11 +75,11 @@
 
 ### Description
 
-ChatGPT is OpenAI's conversational AI platform accessible via web browser (chatgpt.com) and mobile applications. For coding tasks, ChatGPT provides several specialized features including Canvas (a dedicated code editing interface), code execution capabilities, and file upload/download functionality. ChatGPT uses OpenAI's GPT-4o, o1, and o1-pro models to assist with software development tasks.
+ChatGPT is OpenAI's conversational AI platform accessible via web browser (chatgpt.com) and mobile applications. For coding tasks, ChatGPT provides several specialised features including Canvas (a dedicated code editing interface), code execution capabilities, and file upload/download functionality. ChatGPT uses OpenAI's GPT-4o, o1, and o1-pro models to assist with software development tasks.
 
 Unlike IDE-integrated tools (GitHub Copilot, Continue, Roo Cline), ChatGPT operates as a standalone web application. Developers interact with it through a chat interface, requesting code generation, explanations, debugging assistance, and architectural guidance. ChatGPT can execute code directly in a sandboxed environment and provides iterative development through conversational interactions.
 
-ChatGPT's relationship to OpenAI Codex: Codex (deprecated March 2023) was a code-specialized model that powered tools like GitHub Copilot. ChatGPT uses OpenAI's newer models (GPT-4o, o1) which incorporate and exceed Codex's capabilities whilst offering broader general intelligence.
+ChatGPT's relationship to OpenAI Codex: Codex (deprecated March 2023) was a code-specialised model that powered tools like GitHub Copilot. ChatGPT uses OpenAI's newer models (GPT-4o, o1) which incorporate and exceed Codex's capabilities whilst offering broader general intelligence.
 
 ### Key Features
 
@@ -880,7 +880,7 @@ Developers seeking IDE integration should consider:
 - Cannot interact with local services
 
 **No Project Management:**
-- No workspace or project organization
+- No workspace or project organisation
 - Difficult to manage multi-file projects
 - Cannot directly edit files in repository
 - No version control integration
@@ -970,7 +970,7 @@ Developers seeking IDE integration should consider:
 3. **Enterprise Development:**
    - On-premises requirements
    - Custom security policies
-   - Organization-wide configuration
+   - Organisation-wide configuration
    - Audit and compliance needs
 
 **Better Alternatives:**
@@ -1023,6 +1023,8 @@ Developers seeking IDE integration should consider:
 - [x] Consistent formatting applied
 - [x] Documentation access limitations noted
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 10. References
@@ -1047,7 +1049,7 @@ Developers seeking IDE integration should consider:
 This analysis was conducted using publicly available information about ChatGPT's capabilities. Direct access to help.openai.com and chatgpt.com was unavailable during analysis due to connectivity issues.
 
 **Historical Context:**
-- OpenAI Codex (deprecated March 2023) was an early code-specialized model
+- OpenAI Codex (deprecated March 2023) was an early code-specialised model
 - ChatGPT now uses GPT-4o and o1 models for code generation
 - Canvas feature provides dedicated code editing interface
 - Represents evolution from API-only Codex to user-friendly chat interface
@@ -1056,6 +1058,8 @@ Users requiring current, official information should consult:
 - https://chatgpt.com - ChatGPT web application
 - https://help.openai.com/ - Official help documentation
 - https://openai.com/chatgpt - Product information and pricing
+
+[↑ Back to top](#table-of-contents)
 
 ---
 

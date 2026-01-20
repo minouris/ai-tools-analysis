@@ -388,7 +388,7 @@ Tools that appear "free" may require separate LLM subscriptions:
 | **Sourcegraph Cody** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Not doc. |
 | **Tabnine** | ✅ Primary | ✅ | ✅ | Not doc. | Not doc. | Not doc. | Not doc. | Not doc. |
 
-**Key Finding:** All tools except ChatGPT (browser-based) provide code completion. All tools support multi-line generation and chat capabilities. GitHub Copilot and Amazon Q offer specialized security scanning and PR review features. Roo Cline and Claude Code emphasise agentic workflows. ChatGPT focuses on conversational coding via Canvas without IDE integration.
+**Key Finding:** All tools except ChatGPT (browser-based) provide code completion. All tools support multi-line generation and chat capabilities. GitHub Copilot and Amazon Q offer specialised security scanning and PR review features. Roo Cline and Claude Code emphasise agentic workflows. ChatGPT focuses on conversational coding via Canvas without IDE integration.
 
 [↑ Back to top](#table-of-contents)
 
