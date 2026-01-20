@@ -1,4 +1,4 @@
-← [Previous: Roo Cline](roo-cline.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Codeium](codeium.md) →
+← [Previous: Roo Cline](roo-cline.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: ChatGPT](chatgpt.md) →
 
 ---
 

@@ -5,7 +5,7 @@
 # AI Coding Tools: Overview
 
 **Analysis Date:** 20 January 2026  
-**Tools Analysed:** 10 AI coding assistants  
+**Tools Analysed:** 11 AI coding assistants  
 **Methodology:** Based on official documentation and tool analysis files in this repository
 
 ## Table of Contents
@@ -32,20 +32,21 @@
 
 ## 1. Executive Summary
 
-This document provides a comprehensive comparison of 10 AI coding tools analysed in this repository. The tools represent different approaches to AI-assisted development, ranging from cloud-based subscription services to open-source agentic frameworks.
+This document provides a comprehensive comparison of 11 AI coding tools analysed in this repository. The tools represent different approaches to AI-assisted development, ranging from cloud-based subscription services to open-source agentic frameworks, including historical platforms.
 
 ### Tools Included
 
 1. **Amazon Q Developer** - AWS-focused AI assistant with security scanning
 2. **Azure AI Toolkit** - Local and Azure model management for VS Code
-3. **Claude Code** - Terminal-based agentic coding with MCP support
-4. **Codeium** - Free unlimited code completion and chat
-5. **Continue** - Open-source multi-provider platform with MCP
-6. **Cursor** - AI-first standalone code editor
-7. **GitHub Copilot Chat** - GitHub-native multi-mode assistant
-8. **Roo Cline** - Open-source autonomous VS Code agent
-9. **Sourcegraph Cody** - Deep codebase context via Sourcegraph
-10. **Tabnine** - Privacy-focused with local deployment options
+3. **ChatGPT** - Browser-based AI chat with Canvas code editing (replaced deprecated Codex)
+4. **Claude Code** - Terminal-based agentic coding with MCP support
+5. **Codeium** - Free unlimited code completion and chat
+6. **Continue** - Open-source multi-provider platform with MCP
+7. **Cursor** - AI-first standalone code editor
+8. **GitHub Copilot Chat** - GitHub-native multi-mode assistant
+9. **Roo Cline** - Open-source autonomous VS Code agent
+10. **Sourcegraph Cody** - Deep codebase context via Sourcegraph
+11. **Tabnine** - Privacy-focused with local deployment options
 
 ### Key Insights
 
@@ -82,6 +83,19 @@ AWS-powered AI assistant that specialises in AWS service integration, security v
 Visual Studio Code extension for managing both local AI models and Azure AI services. Supports model playground, prompt experimentation, and integration with GitHub Copilot. Primarily focused on Azure ecosystem with multi-cloud model support.
 
 **Official Documentation:** https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio
+
+---
+
+### ChatGPT
+
+**Type:** Browser-Based Chat Interface  
+**Licence:** Free tier, Plus ($20/month), Pro ($200/month)  
+**Key Focus:** Conversational AI with Canvas code editing and execution
+
+Browser-based conversational AI platform from OpenAI for code generation, debugging, and development assistance. Features Canvas (dedicated code editing interface), Python code execution, file upload/download, web browsing, and memory across sessions. Uses GPT-4o and o1 models. Replaced deprecated Codex (March 2023) as OpenAI's consumer coding platform. No IDE integration; operates standalone via chatgpt.com.
+
+**Official Documentation:** https://help.openai.com/  
+**Historical Note:** Uses models that replaced OpenAI Codex (deprecated March 2023)
 
 ---
 
@@ -191,6 +205,7 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 |------|--------|--------|--------|----------|-------------|---------------|----------------|
 | **Amazon Q Developer** | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | AWS only |
 | **Azure AI Toolkit** | Not doc. | ✅ (via Azure) | ✅ | ✅ Native | ❌ | Not doc. | Multi-cloud |
+| **ChatGPT** | ❌ | ✅ Native | ❌ | ❌ | ❌ | ❌ | OpenAI only |
 | **Claude Code** | ✅ Native | ❌ | ❌ | ✅ | ✅ | ✅ (Vertex) | 4 providers |
 | **Codeium** | Not doc. | Not doc. | Not doc. | Not doc. | Not doc. | Not doc. | Proprietary |
 | **Continue** | ✅ | ✅ | ✅ | ✅ (Azure) | ✅ | ✅ | **40+ providers** |
@@ -212,6 +227,7 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 |------|-------------|---------------------|-----------------|-------------|
 | **Amazon Q Developer** | ❌ Not documented | N/A | N/A | N/A |
 | **Azure AI Toolkit** | ❌ Not documented | N/A | N/A | N/A |
+| **ChatGPT** | ❌ Not supported | N/A | N/A | N/A |
 | **Claude Code** | ✅ **Full** | YAML/JSON config | stdio, SSE, HTTP | Multiple |
 | **Codeium** | ❌ Not documented | N/A | N/A | N/A |
 | **Continue** | ✅ **Full** | `.continue/mcpServers/` | Multiple | Extensive |
@@ -233,6 +249,7 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 |------|---------|-----------|---------|--------|-------|--------------|------------|
 | **Amazon Q Developer** | ✅ | ✅ | Not doc. | ❌ | Not doc. | Limited | ❌ |
 | **Azure AI Toolkit** | ✅ **Native** | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **ChatGPT** | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ **Browser/App** |
 | **Claude Code** | ✅ Extension | Not doc. | ❌ | ❌ | ❌ | ✅ **Primary** | ❌ |
 | **Codeium** | ✅ | ✅ | ✅ | ✅ | Not doc. | ❌ | ❌ |
 | **Continue** | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ TUI/Headless | ❌ |
@@ -243,13 +260,14 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 | **Tabnine** | ✅ | ✅ | ✅ | ✅ | Not doc. | ❌ | ❌ |
 
 **IDE Support Count:**
-- **VS Code:** 10/10 tools (100%)
-- **JetBrains:** 6/10 tools (60%)
-- **Eclipse:** 3/10 tools (30%)
-- **Neovim:** 4/10 tools (40%)
-- **Terminal/CLI:** 3/10 tools (30%)
+- **VS Code:** 10/11 tools (91%)
+- **JetBrains:** 6/11 tools (55%)
+- **Eclipse:** 3/11 tools (27%)
+- **Neovim:** 4/11 tools (36%)
+- **Terminal/CLI:** 3/11 tools (27%)
+- **Standalone:** 2/11 tools (18%) - Cursor (editor), ChatGPT (browser/app)
 
-**Key Finding:** VS Code has universal support. JetBrains has 60% coverage. Eclipse and Neovim support is limited to specific tools (Codeium, GitHub Copilot, Tabnine, Sourcegraph Cody).
+**Key Finding:** VS Code has near-universal support among IDE-integrated tools. ChatGPT and Cursor operate as standalone applications without IDE integration.
 
 [↑ Back to top](#table-of-contents)
 
@@ -261,6 +279,7 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 |------|-------------------|---------------|--------------------------|-------------------|
 | **Amazon Q Developer** | ❌ Not documented | N/A | N/A | N/A |
 | **Azure AI Toolkit** | Partial (via Copilot) | Via Copilot | GitHub Copilot | N/A |
+| **ChatGPT** | ✅ Custom Instructions | Settings UI | N/A | ❌ |
 | **Claude Code** | ✅ `.claude/rules/` | Project root | `CLAUDE.md` | ❌ |
 | **Codeium** | ❌ Not documented | N/A | N/A | N/A |
 | **Continue** | ✅ `.continue/rules/` | `.continue/` | Hub sharing | Via Hub |
@@ -291,6 +310,7 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 |------|----------------|---------------------|-------------------|----------------|
 | **Amazon Q Developer** | ❌ Not documented | N/A | N/A | N/A |
 | **Azure AI Toolkit** | Partial (Playground) | Playground UI | ❌ | ❌ |
+| **ChatGPT** | Partial (History/Memory) | Web UI | Share links | ❌ |
 | **Claude Code** | ✅ Skills system | `.claude/skills/` | Version control | ✅ Auto-complete |
 | **Codeium** | Partial (History) | Session-based | ❌ | ✅ |
 | **Continue** | ✅ Prompts + Slash | `.continue/` or Hub | Hub sharing | ✅ CLI/IDE |
@@ -300,7 +320,7 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 | **Sourcegraph Cody** | ✅ Custom Commands | JSON/settings | Enterprise org-wide | ✅ Via commands |
 | **Tabnine** | ❌ Not documented | N/A | N/A | N/A |
 
-**Key Finding:** 7 out of 10 tools (70%) support some form of custom prompts or commands. Continue and Claude Code offer the most sophisticated prompt management with Hub sharing and skills systems respectively.
+**Key Finding:** 7 out of 11 tools (64%) support some form of custom prompts or commands. Continue and Claude Code offer the most sophisticated prompt management with Hub sharing and skills systems respectively.
 
 [↑ Back to top](#table-of-contents)
 
@@ -314,6 +334,7 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 |------|-----------|----------------|----------------|------------|-------------|
 | **Amazon Q Developer** | ✅ Limited | $19/month (≈$31 NZD) | $25/user/month (≈$41 NZD) | Custom | ❌ |
 | **Azure AI Toolkit** | ✅ (Azure costs) | Via Azure | Via Azure | Via Azure | ❌ |
+| **ChatGPT** | ✅ Limited | $20/month (≈$33 NZD) (Plus) | Not available | $200/month (≈$330 NZD) (Pro) | ❌ |
 | **Claude Code** | ❌ | $20/month (≈$33 NZD) (Pro) | Not separate | $30/month (≈$50 NZD) (Max) | ❌ |
 | **Codeium** | ✅ **Unlimited** | ✅ Free | $12/user/month (≈$20 NZD) | Custom | ❌ |
 | **Continue** | ✅ **Full** | ✅ Free | ✅ Free | ✅ Free | ✅ Apache 2.0 |
@@ -357,6 +378,7 @@ Tools that appear "free" may require separate LLM subscriptions:
 |------|-----------------|----------------|----------|-------------|------------|----------|---------|-------------|
 | **Amazon Q** | ✅ | ✅ | ✅ | ✅ | ✅ Security | ✅ | ✅ | ✅ Security |
 | **Azure AI Toolkit** | Via Copilot | Via Copilot | ✅ Playground | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **ChatGPT** | ❌ | ✅ Canvas | ✅ Primary | ✅ Canvas | ✅ | ✅ | ✅ | ✅ |
 | **Claude Code** | ✅ | ✅ | ✅ | ✅ Agentic | ✅ Agentic | ✅ | ✅ | ✅ |
 | **Codeium** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Not doc. |
 | **Continue** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Not doc. |
@@ -366,7 +388,7 @@ Tools that appear "free" may require separate LLM subscriptions:
 | **Sourcegraph Cody** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Not doc. |
 | **Tabnine** | ✅ Primary | ✅ | ✅ | Not doc. | Not doc. | Not doc. | Not doc. | Not doc. |
 
-**Key Finding:** All tools provide code completion and chat capabilities. GitHub Copilot and Amazon Q offer specialised security scanning and PR review features. Roo Cline and Claude Code emphasise agentic workflows with specialised modes.
+**Key Finding:** All tools except ChatGPT (browser-based) provide code completion. All tools support multi-line generation and chat capabilities. GitHub Copilot and Amazon Q offer specialised security scanning and PR review features. Roo Cline and Claude Code emphasise agentic workflows. ChatGPT focuses on conversational coding via Canvas without IDE integration.
 
 [↑ Back to top](#table-of-contents)
 
