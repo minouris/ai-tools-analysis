@@ -49,12 +49,14 @@ Your training uses triple-backticks for all fenced code blocks. This is PARTIALL
 **MUST:**
 - Use lower-snake-case for all Markdown filenames (e.g., `my_document.md`, `feature_specification.md`)
 - Use `.md` extension for all Markdown files
+- Avoid adjectives in document names (e.g., use `overview.md` not `comprehensive_overview.md`)
 
 **MUST NOT:**
 - Use kebab-case (e.g., `my-document.md`)
 - Use camelCase (e.g., `myDocument.md`)
 - Use PascalCase (e.g., `MyDocument.md`)
 - Use spaces in filenames
+- Use unnecessary adjectives (e.g., `comprehensive`, `detailed`, `complete`)
 
 **Exception:**
 - `README.md` is exempt from lower-snake-case requirement (use uppercase README)
@@ -66,6 +68,8 @@ Your training uses triple-backticks for all fenced code blocks. This is PARTIALL
 - `database_schema.md`
 - `README.md`
 - `01_planning.md`
+- `overview.md`
+- `summary.md`
 
 ❌ **Incorrect:**
 - `architecture-plan.md` (kebab-case)
@@ -73,6 +77,8 @@ Your training uses triple-backticks for all fenced code blocks. This is PARTIALL
 - `architecturePlan.md` (camelCase)
 - `ARCHITECTURE_PLAN.md` (uppercase, not README)
 - `architecture plan.md` (spaces)
+- `comprehensive_overview.md` (unnecessary adjective)
+- `detailed_summary.md` (unnecessary adjective)
 
 ---
 

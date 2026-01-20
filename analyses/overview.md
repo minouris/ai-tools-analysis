@@ -1,4 +1,8 @@
-# AI Coding Tools: Comprehensive Overview
+↑ [Parent: Tool Analyses](README.md)
+
+---
+
+# AI Coding Tools: Overview
 
 **Analysis Date:** 20 January 2026  
 **Tools Analysed:** 10 AI coding assistants  
@@ -637,23 +641,27 @@ To complete this section with authentic user feedback, the following approaches 
 
 ### Analysis Files
 
-All detailed tool analyses are available in the `analyses/` directory of this repository:
+All detailed tool analyses are available in this directory:
 
-- [Amazon Q Developer Analysis](analyses/amazon-q-developer.md)
-- [Azure AI Toolkit Analysis](analyses/azure-ai-toolkit.md)
-- [Claude Code Analysis](analyses/claude-code.md)
-- [Codeium Analysis](analyses/codeium.md)
-- [Continue Analysis](analyses/continue.md)
-- [Cursor Analysis](analyses/cursor.md)
-- [GitHub Copilot Chat Analysis](analyses/github-copilot-chat.md)
-- [Roo Cline Analysis](analyses/roo-cline.md)
-- [Sourcegraph Cody Analysis](analyses/sourcegraph-cody.md)
-- [Tabnine Analysis](analyses/tabnine.md)
+- [Amazon Q Developer Analysis](amazon-q-developer.md)
+- [Azure AI Toolkit Analysis](azure-ai-toolkit.md)
+- [Claude Code Analysis](claude-code.md)
+- [Codeium Analysis](codeium.md)
+- [Continue Analysis](continue.md)
+- [Cursor Analysis](cursor.md)
+- [GitHub Copilot Chat Analysis](github-copilot-chat.md)
+- [Roo Cline Analysis](roo-cline.md)
+- [Sourcegraph Cody Analysis](sourcegraph-cody.md)
+- [Tabnine Analysis](tabnine.md)
 
 ### Methodology
 
-Analysis methodology detailed in: [ANALYSIS_PLAN.md](ANALYSIS_PLAN.md)
+Analysis methodology detailed in: [ANALYSIS_PLAN.md](../ANALYSIS_PLAN.md)
 
-Tool analysis template: [TOOL_ANALYSIS_TEMPLATE.md](TOOL_ANALYSIS_TEMPLATE.md)
+Tool analysis template: [TOOL_ANALYSIS_TEMPLATE.md](../TOOL_ANALYSIS_TEMPLATE.md)
 
 [↑ Back to top](#table-of-contents)
+
+---
+
+↑ [Parent: Tool Analyses](README.md)
