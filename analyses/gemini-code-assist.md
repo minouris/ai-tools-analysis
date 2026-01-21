@@ -1,9 +1,65 @@
+← [Previous: Continue](continue.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Chat](github-copilot-chat.md) →
+
+---
+
 # Gemini Code Assist Analysis
 
 **Analysis Date:** 20 January 2026  
 **Tool Version:** Current (Gemini 3)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://cloud.google.com/gemini/docs/codeassist/overview
+
+## Table of Contents
+
+- [1. Tool Overview](#1-tool-overview)
+  - [Description](#description)
+  - [Key Features](#key-features)
+- [2. LLM Provider Integration](#2-llm-provider-integration)
+  - [2.1 Ollama Integration](#21-ollama-integration)
+  - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
+  - [2.3 Microsoft AI Foundry Integration](#23-microsoft-ai-foundry-integration)
+  - [2.4 OpenAI Integration](#24-openai-integration)
+  - [2.5 Anthropic (Claude) Integration](#25-anthropic-claude-integration)
+- [3. Policies and Rules (Instruction Files)](#3-policies-and-rules-instruction-files)
+  - [Instruction File Support](#instruction-file-support)
+  - [Configuration Method](#configuration-method)
+  - [Syntax and Structure](#syntax-and-structure)
+  - [Scope and Application](#scope-and-application)
+  - [Example Policies](#example-policies)
+- [4. Custom and Stored Prompts](#4-custom-and-stored-prompts)
+  - [Prompt Storage Mechanism](#prompt-storage-mechanism)
+  - [Creating Custom Prompts](#creating-custom-prompts)
+  - [Organising Prompts](#organising-prompts)
+  - [Using Stored Prompts](#using-stored-prompts)
+  - [Sharing and Exporting](#sharing-and-exporting)
+- [5. Tools and Model Context Protocol (MCP)](#5-tools-and-model-context-protocol-mcp)
+  - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
+  - [MCP Server Configuration](#mcp-server-configuration)
+  - [Available Tools](#available-tools)
+  - [Custom Tool Development](#custom-tool-development)
+- [6. Application Development Workflow](#6-application-development-workflow)
+  - [6.1 Project Initialisation](#61-project-initialisation)
+  - [6.2 Design and Planning](#62-design-and-planning)
+  - [6.3 Code Generation](#63-code-generation)
+  - [6.4 Iterative Development](#64-iterative-development)
+  - [6.5 Testing and Validation](#65-testing-and-validation)
+  - [6.6 Debugging](#66-debugging)
+  - [6.7 Deployment](#67-deployment)
+- [7. IDE and Environment Integration](#7-ide-and-environment-integration)
+  - [7.1 Visual Studio Code](#71-visual-studio-code)
+  - [7.2 JetBrains IDEs](#72-jetbrains-ides)
+  - [7.3 Eclipse](#73-eclipse)
+  - [7.4 Terminal and CLI](#74-terminal-and-cli)
+  - [7.5 Other IDEs and Editors](#75-other-ides-and-editors)
+- [8. Summary and Key Findings](#8-summary-and-key-findings)
+  - [Strengths](#strengths)
+  - [Limitations](#limitations)
+  - [Best Use Cases](#best-use-cases)
+  - [Documentation Quality](#documentation-quality)
+- [9. Completeness Checklist](#9-completeness-checklist)
+- [10. References](#10-references)
+  - [Official Documentation](#official-documentation)
+  - [Version Information](#version-information)
 
 ---
 
@@ -38,6 +94,8 @@ Gemini Code Assist also features agent mode (preview), which provides multi-step
 - Smart actions and commands for code transformation
 
 **Citation:** https://cloud.google.com/gemini/docs/codeassist/overview, https://cloud.google.com/products/gemini/code-assist
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -91,6 +149,8 @@ Gemini Code Assist does not support Anthropic Claude models. It uses Google's pr
 
 **Citation:** Not documented in official sources
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 3. Policies and Rules (Instruction Files)
@@ -127,6 +187,8 @@ Not documented in official sources
 
 **Citation:** Not documented in official sources. Code customisation described at https://cloud.google.com/gemini/docs/codeassist/code-customization-overview
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 4. Custom and Stored Prompts
@@ -154,6 +216,8 @@ Not documented in official sources
 Not documented in official sources
 
 **Citation:** Not documented in official sources
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -224,6 +288,8 @@ Custom tools can be developed as MCP servers. Once configured, Gemini Code Assis
 **Development Framework:** Model Context Protocol (MCP)
 
 **Citation:** https://cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -303,6 +369,8 @@ Deployment features are available through Google Cloud service integrations:
 Direct deployment features from the IDE are not explicitly documented.
 
 **Citation:** https://cloud.google.com/gemini/docs/codeassist/overview
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -488,6 +556,8 @@ The Gemini CLI integrates directly with terminal environments (bash, zsh, etc.) 
 **Limitations:** None documented  
 **Citation:** https://cloud.google.com/gemini/docs/codeassist/supported-languages
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 8. Summary and Key Findings
@@ -547,6 +617,8 @@ Overall documentation quality: High
 
 **Citation:** https://cloud.google.com/gemini/docs/codeassist/overview
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 9. Completeness Checklist
@@ -571,6 +643,8 @@ Overall documentation quality: High
 - [x] All claims have citations
 - [x] UK English used throughout
 - [x] Consistent formatting applied
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -602,3 +676,25 @@ Overall documentation quality: High
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## See Also
+
+- [Amazon Q Developer](amazon-q-developer.md) - AWS AI-powered coding assistant with security scanning and AWS service integration
+- [Azure AI Toolkit for Visual Studio Code](azure-ai-toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
+- [ChatGPT](chatgpt.md) - Browser-based conversational AI with Canvas code editing and Python execution (replaced deprecated Codex)
+- [Claude Code](claude-code.md) - Terminal-based agentic coding tool from Anthropic with MCP support, plugin system, and VS Code integration
+- [Codeium](codeium.md) - Free AI-powered code completion and chat assistant with broad IDE support
+- [Continue](continue.md) - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
+- [Cursor](cursor.md) - AI-first code editor built for productivity with deep AI integration
+- [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
+- [Roo Cline](roo-cline.md) - AI-powered development assistant for VS Code with multiple operational modes (Version 3.41.0)
+- [Sourcegraph Cody](sourcegraph-cody.md) - AI coding assistant with deep codebase context and understanding
+- [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options
+
+---
+
+← [Previous: Continue](continue.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Chat](github-copilot-chat.md) →
