@@ -541,7 +541,8 @@ Azure AI Toolkit is exclusively available as a Visual Studio Code extension. Dev
   "Azure AI Toolkit has powerful features but takes time to learn. The documentation helps, but there's a lot to absorb." - *User reviews, 2024-2025*
 
 - **Resource Usage:** Running and fine-tuning models locally requires significant computational resources, limiting use on less powerful machines.
-  "Local model fine-tuning eats resources. My laptop struggles with anything beyond small models." - *Reddit discussions, 2024-2025, r/MachineLearning**
+  
+  "Local model fine-tuning eats resources. My laptop struggles with anything beyond small models." - *Reddit discussions, 2024-2025, r/MachineLearning*
 
 - **Overkill for Simple AI Completion:** Developers seeking simple autocomplete find the toolkit overly complex compared to purpose-built tools like Copilot.
   "If you just want AI autocomplete, this toolkit is overkill. It's designed for serious AI/ML workflows, not casual coding assistance." - *User feedback, 2024-2025*

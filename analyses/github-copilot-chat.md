@@ -830,17 +830,20 @@ gh copilot
 **Critical Issues:**
 
 - **Integration Bugs:** Ongoing reports of Copilot occasionally not loading, not suggesting code in particular files, or conflicting with other IDE plugins. Many issues are addressed with extension updates or IDE setting adjustments.
-  *Source: GitHub Troubleshooting Documentation, 2025, https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-common-issues**
+  
+  <a href="https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-common-issues">GitHub Troubleshooting Documentation, 2025</a>
 
 - **Content Exclusion Conflicts:** Content exclusion features can block Copilot suggestions in sensitive or excluded files, which is both a privacy advantage and a limitation when it unexpectedly restricts usefulness.
 
 **Minor Issues:**
 
 - **Outdated Suggestions:** Older Copilot installations may become less compatible with newer frameworks, leading to degraded performance until the extension is updated.
-  *Source: GitHub Troubleshooting Documentation, 2025, https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-common-issues**
+  
+  <a href="https://docs.github.com/en/copilot/how-tos/troubleshoot-copilot/troubleshoot-common-issues">GitHub Troubleshooting Documentation, 2025</a>
 
 - **Learning Curve:** Several users cite a steep learning curve, especially for those new to Copilot or programming in general, and some struggle with integration into non-standard setups.
-  *Source: G2 reviews, 2024-2025, https://www.g2.com/products/github-copilot/reviews?qs=pros-and-cons**
+  
+  <a href="https://www.g2.com/products/github-copilot/reviews?qs=pros-and-cons">G2 reviews, 2024-2025</a>
 
 **Citation:** GitHub official troubleshooting documentation (2025), G2 user reviews (2024-2025).
 
@@ -886,7 +889,8 @@ Developers who use GitHub Copilot report up to 75% higher satisfaction with thei
 **User-Reported Advantages:**
 
 - **Broader IDE Support:** Copilot works across VS Code, JetBrains, Visual Studio, and more, whilst Cursor is a standalone IDE (VS Code fork)
-  *Source: Digital Ocean comparison, 2026, https://www.digitalocean.com/resources/articles/github-copilot-vs-cursor**
+  
+  <a href="https://www.digitalocean.com/resources/articles/github-copilot-vs-cursor">Digital Ocean comparison, 2026</a>
 
 - **Lower Cost:** Copilot Pro at $10/month is more affordable than Cursor at $20/month
 - **More Reliable Autocomplete:** Copilot is called the "gold standard" for inline code completion

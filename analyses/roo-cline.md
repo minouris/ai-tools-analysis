@@ -627,7 +627,7 @@ The repository includes a `webview-ui` directory and references to a web applica
   - Use project documentation files (.roo/context.md) to maintain persistent context
   - Restart sessions when context drift becomes noticeable (typically after 90-120 minutes)
   
-  *Source: GitHub Issues, 2025-2026, https://github.com/RooCodeInc/Roo-Code/issues**
+  <a href="https://github.com/RooCodeInc/Roo-Code/issues">GitHub Issues, 2025-2026</a>
 
 - **File Handling Errors:** Occasional issues with file operations, particularly when dealing with large numbers of files simultaneously.
   

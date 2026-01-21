@@ -572,7 +572,8 @@ Codeium focuses on IDE integration and does not provide a standalone command-lin
 **Critical Issues:**
 
 - **Occasional Freezes:** Some users report the extension occasionally freezing or becoming unresponsive, requiring IDE restart.
-  *Source: User forums and community discussions, 2024-2025*
+  
+  *User forums and community discussions, 2024-2025*
 
 - **Authentication Problems:** Intermittent authentication issues where users need to re-authenticate unexpectedly.
 

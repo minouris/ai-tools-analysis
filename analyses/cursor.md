@@ -498,7 +498,8 @@ Cursor is a standalone editor application and does not integrate with other IDEs
 **Critical Issues:**
 
 - **File Edit Accuracy:** Reports of the AI making incorrect edits or applying changes to wrong locations, particularly in large files with similar code patterns.
-  *Source: User forums and GitHub discussions, 2025-2026*
+  
+  *User forums and GitHub discussions, 2025-2026*
 
 - **Context Drift:** In very long chat sessions, Cursor can lose track of earlier context, leading to suggestions that contradict previous decisions.
 

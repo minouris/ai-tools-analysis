@@ -902,7 +902,8 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
   "Continue.dev stands out as an open-source assistant, allowing developers to easily customise which AI models it uses and even create custom assistants with reusable building blocks and context sources." - <a href="https://www.aitooldiscovery.com/guides/best-ai-for-coding-reddit">AI Tool Discovery review, 2026</a>
 
 - **Privacy Control:** The ability to run models locally or choose where data is sent resonates strongly with security-conscious developers and enterprises.
-  "The privacy controls in Continue are unmatched. I can run everything locally with Ollama and my code never leaves my machine." - *Reddit discussions, 2024-2026, Various programming subreddits**
+  
+  "The privacy controls in Continue are unmatched. I can run everything locally with Ollama and my code never leaves my machine." - *Reddit discussions, 2024-2026, Various programming subreddits*
 
 - **Rapid Development and Side Projects:** Developers report shipping projects significantly faster with Continue's IDE-integrated workflow.
   
@@ -951,7 +952,8 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 **Critical Issues:**
 
 - **Configuration Errors:** Incorrect configuration can lead to Continue failing silently or producing cryptic error messages, making troubleshooting difficult for new users.
-  *Source: GitHub Issues, 2024-2026, https://github.com/continuedev/continue/issues**
+  
+  <a href="https://github.com/continuedev/continue/issues">GitHub Issues, 2024-2026</a>
 
 - **Model Compatibility:** Some LLM providers occasionally experience breaking changes that temporarily break Continue integration until updates are released.
 

@@ -537,7 +537,8 @@ Integrates with terminal environments for AWS CLI assistance. Full shell integra
 **Common Praise:**
 
 - **AWS Integration:** Users working primarily in AWS ecosystems appreciate the deep integration with AWS services and infrastructure.
-  "For AWS development, Amazon Q is incredibly useful. It understands CloudFormation, Lambda, and other AWS services better than general-purpose tools." - *Reddit discussions, 2024-2025, r/aws and r/programming**
+  
+  "For AWS development, Amazon Q is incredibly useful. It understands CloudFormation, Lambda, and other AWS services better than general-purpose tools." - *Reddit discussions, 2024-2025, r/aws and r/programming*
 
 - **Infrastructure Code:** Particularly effective for infrastructure-as-code development with CloudFormation, Terraform (AWS-focused), and CDK.
 

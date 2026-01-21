@@ -517,7 +517,7 @@ Tabnine focuses on IDE integration and does not provide a standalone command-lin
   
   Impact: Vue.js developers report needing to manually disable Tabnine for template files or accept lower suggestion quality in these contexts.
   
-  *Source: GitHub Issues and user forums, 2024-2025, https://github.com/codota/tabnine-vscode/issues**
+  <a href="https://github.com/codota/tabnine-vscode/issues">GitHub Issues and user forums, 2024-2025</a>
 
 - **Slowdowns on Large Codebases:** Users with very large projects report performance degradation and slower suggestion generation.
   
