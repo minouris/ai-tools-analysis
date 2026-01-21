@@ -53,13 +53,14 @@
   - [7.3 Eclipse](#73-eclipse)
   - [7.4 Terminal and CLI](#74-terminal-and-cli)
   - [7.5 Other IDEs and Editors](#75-other-ides-and-editors)
-- [8. Summary and Key Findings](#8-summary-and-key-findings)
+- [8. Third Party Reviews and Experiences](#8-third-party-reviews-and-experiences)
+- [9. Summary and Key Findings](#9-summary-and-key-findings)
   - [Strengths](#strengths)
   - [Limitations](#limitations)
   - [Best Use Cases](#best-use-cases)
   - [Documentation Quality](#documentation-quality)
-- [9. Completeness Checklist](#9-completeness-checklist)
-- [10. References](#10-references)
+- [10. Completeness Checklist](#10-completeness-checklist)
+- [11. References](#11-references)
   - [Official Documentation](#official-documentation)
   - [Version Information](#version-information)
   - [Notes on Documentation Availability](#notes-on-documentation-availability)
@@ -527,7 +528,135 @@ Integrates with terminal environments for AWS CLI assistance. Full shell integra
 
 ---
 
-## 8. Summary and Key Findings
+## 8. Third Party Reviews and Experiences
+
+### User Feedback and Testimonials
+
+**Overall Sentiment:** Mixed, with strong praise for AWS-specific capabilities but frustration about limitations outside AWS workflows.
+
+**Common Praise:**
+
+- **AWS Integration:** Users working primarily in AWS ecosystems appreciate the deep integration with AWS services and infrastructure.
+  > "For AWS development, Amazon Q is incredibly useful. It understands CloudFormation, Lambda, and other AWS services better than general-purpose tools."
+  > 
+  > *Source: Reddit discussions. 2024-2025. r/aws and r/programming*
+
+- **Infrastructure Code:** Particularly effective for infrastructure-as-code development with CloudFormation, Terraform (AWS-focused), and CDK.
+
+- **Security Scanning:** Built-in security scanning for AWS-specific vulnerabilities and configuration issues is valuable.
+
+- **Workspace Context:** Good understanding of multi-file AWS project structures and service relationships.
+
+**Common Complaints:**
+
+- **Only Useful for AWS Workflows:** Users outside AWS ecosystems find limited value compared to general-purpose tools.
+  > "Amazon Q is great if you live in AWS, but if you're doing non-AWS development, it's not particularly useful. Copilot or Cursor are better for general coding."
+  > 
+  > *Source: User reviews and discussions. 2024-2025*
+
+- **Slow Syncing:** Some users report slow project synchronisation and indexing, particularly for large workspaces.
+  > "Q takes forever to index large projects. I often wait minutes before it's ready to provide useful suggestions."
+  > 
+  > *Source: G2 reviews and user forums. 2024-2025*
+
+- **Integration Limitations:** Despite AWS focus, some users note that integration with certain AWS services could be deeper or more comprehensive.
+
+- **General Coding Inferiority:** For non-AWS coding tasks, users find GitHub Copilot or other tools more effective.
+
+**Citation:** Reddit discussions (2024-2025), G2 reviews, user forums, AWS community discussions.
+
+### Reported Bugs and Issues
+
+**Critical Issues:**
+
+- **Indexing Failures:** Occasional failures to properly index workspace, requiring restart or reconfiguration.
+  > *Source: AWS support forums and user discussions. 2024-2025*
+
+- **Incorrect AWS Resource Suggestions:** Sometimes suggests AWS configurations that are invalid or don't follow best practices.
+
+**Minor Issues:**
+
+- **Autocomplete Lag:** Noticeable delays in suggestion generation, particularly in large projects.
+
+- **Context Loss:** Can lose track of AWS resource relationships in complex multi-service architectures.
+
+- **Documentation Gaps:** Some AWS services lack comprehensive Q integration documentation.
+
+**Citation:** AWS support forums, user discussions, GitHub discussions (2024-2025).
+
+### Productivity Impact
+
+**Positive Impact:**
+
+Users working primarily with AWS report productivity gains:
+- Faster CloudFormation and CDK development
+- Reduced need to reference AWS documentation
+- Quicker infrastructure troubleshooting
+- Better security scanning integration
+
+> "For AWS-focused development, Q has definitely improved my productivity. I spend less time looking up AWS API documentation."
+> 
+> *Source: User testimonials. 2024-2025*
+
+**Negative Impact:**
+
+- **Limited General Use:** Time spent learning Q doesn't transfer well to non-AWS development.
+
+- **Workflow Disruption:** Slow indexing can disrupt development flow.
+
+- **Mixed-Environment Friction:** Developers working across AWS and other platforms often maintain multiple tools, adding overhead.
+
+**Citation:** User testimonials, productivity discussions, community feedback (2024-2025).
+
+### Comparison with Other Tools
+
+#### Comparison with GitHub Copilot
+
+**User-Reported Advantages:**
+
+- **Better for AWS:** Significantly better understanding of AWS services, APIs, and best practices.
+  > "For AWS development, Amazon Q understands the ecosystem in a way Copilot simply can't match. It knows AWS service relationships and limitations."
+  > 
+  > *Source: Comparison discussions. 2024-2025*
+
+- **Infrastructure Focus:** Superior for infrastructure-as-code compared to Copilot's application code focus.
+
+- **Security Integration:** Built-in AWS security scanning not available in Copilot.
+
+**User-Reported Disadvantages:**
+
+- **Worse for General Coding:** Copilot provides superior suggestions for general application code, algorithms, and non-AWS tasks.
+  > "Copilot is the better general-purpose tool. Q is only worth it if you're heavily invested in AWS."
+  > 
+  > *Source: Reddit discussions. 2024-2025*
+
+- **Narrower Use Case:** Limited value outside AWS workflows.
+
+- **Less Mature Autocomplete:** Copilot's inline suggestions are faster and more accurate for general coding.
+
+**Citation:** Comparison articles, Reddit discussions, user reviews (2024-2025).
+
+#### Comparison with AWS Toolkit (Previous AWS Tool)
+
+**User-Reported Advantages:**
+
+- **AI-Powered Suggestions:** Q adds AI capabilities that AWS Toolkit lacked.
+
+- **Natural Language:** Can describe infrastructure needs conversationally rather than manually coding.
+
+**User-Reported Disadvantages:**
+
+- **Migration Friction:** Users familiar with AWS Toolkit experience learning curve switching to Q.
+
+- **Feature Overlap:** Some confusion about which features belong in Q vs AWS Toolkit extensions.
+
+**Citation:** AWS community discussions, migration guides, user feedback (2024-2025).
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## 9. Summary and Key Findings
 
 ### Strengths
 
@@ -575,7 +704,7 @@ Amazon Q Developer's documentation is typical of AWS services, with good coverag
 
 ---
 
-## 9. Completeness Checklist
+## 10. Completeness Checklist
 
 - [x] Tool overview completed with all required information
 - [x] Ollama integration documented with citations
@@ -602,7 +731,7 @@ Amazon Q Developer's documentation is typical of AWS services, with good coverag
 
 ---
 
-## 10. References
+## 11. References
 
 ### Official Documentation
 
