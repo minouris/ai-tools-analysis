@@ -526,14 +526,10 @@ Azure AI Toolkit is exclusively available as a Visual Studio Code extension. Dev
 **Common Praise:**
 
 - **Unified AI Workflows:** Users appreciate having model exploration, fine-tuning, and deployment tools in one VS Code extension.
-  > "Azure AI Toolkit brings all AI model workflows into VS Code. No more switching between multiple tools for model work."
-  > 
-  > *Source: Microsoft Tech Community. 2024-2025*
+  "Azure AI Toolkit brings all AI model workflows into VS Code. No more switching between multiple tools for model work." - *Microsoft Tech Community, 2024-2025*
 
 - **Model Catalogue:** Access to various models (Phi, Llama, Mistral, etc.) through a single interface appeals to developers exploring different options.
-  > "The model catalog makes it easy to try different models without complex setup. Just select and run."
-  > 
-  > *Source: User testimonials. 2024-2025*
+  "The model catalog makes it easy to try different models without complex setup. Just select and run." - *User testimonials, 2024-2025*
 
 - **Continuous Improvements:** Users note that Microsoft actively develops the toolkit with regular updates and new features.
 
@@ -542,19 +538,13 @@ Azure AI Toolkit is exclusively available as a Visual Studio Code extension. Dev
 **Common Complaints:**
 
 - **Learning Curve:** The toolkit's breadth of features creates a steep learning curve for users unfamiliar with AI model workflows.
-  > "Azure AI Toolkit has powerful features but takes time to learn. The documentation helps, but there's a lot to absorb."
-  > 
-  > *Source: User reviews. 2024-2025*
+  "Azure AI Toolkit has powerful features but takes time to learn. The documentation helps, but there's a lot to absorb." - *User reviews, 2024-2025*
 
 - **Resource Usage:** Running and fine-tuning models locally requires significant computational resources, limiting use on less powerful machines.
-  > "Local model fine-tuning eats resources. My laptop struggles with anything beyond small models."
-  > 
-  > *Source: Reddit discussions. 2024-2025. r/MachineLearning*
+  "Local model fine-tuning eats resources. My laptop struggles with anything beyond small models." - *Reddit discussions, 2024-2025, r/MachineLearning**
 
 - **Overkill for Simple AI Completion:** Developers seeking simple autocomplete find the toolkit overly complex compared to purpose-built tools like Copilot.
-  > "If you just want AI autocomplete, this toolkit is overkill. It's designed for serious AI/ML workflows, not casual coding assistance."
-  > 
-  > *Source: User feedback. 2024-2025*
+  "If you just want AI autocomplete, this toolkit is overkill. It's designed for serious AI/ML workflows, not casual coding assistance." - *User feedback, 2024-2025*
 
 - **VS Code Only:** No support for other IDEs limits adoption amongst developers using JetBrains, Eclipse, or other environments.
 
@@ -573,9 +563,7 @@ Azure AI Toolkit is exclusively available as a Visual Studio Code extension. Dev
   - Model deployment failures to Azure requiring manual cleanup (Improved error handling added)
   - Playground crashes when testing large prompts (Stability improvements implemented)
   
-  > "Early versions of Azure AI Toolkit were buggy with frequent crashes, but Microsoft has steadily improved stability. The September-December 2024 updates fixed most critical issues. It's much more reliable now than at launch."
-  > 
-  > *Source: GitHub Issues and VS Code marketplace reviews. 2024-2025. https://github.com/microsoft/vscode-ai-toolkit/issues*
+  "Early versions of Azure AI Toolkit were buggy with frequent crashes, but Microsoft has steadily improved stability. The September-December 2024 updates fixed most critical issues. It's much more reliable now than at launch." - <a href="https://github.com/microsoft/vscode-ai-toolkit/issues">GitHub Issues and VS Code marketplace reviews, 2024-2025</a>
   
   **Current Status:** Most critical issues resolved. Users report significant stability improvements in versions released after September 2024.
 
@@ -635,9 +623,7 @@ Users report productivity gains for:
 - Learning about AI model capabilities and limitations
 - Azure-native AI application development
 
-> "For AI/ML work in VS Code, Azure AI Toolkit has streamlined my workflow. I can experiment with models, fine-tune, and deploy without leaving the editor."
-> 
-> *Source: User testimonials. 2024-2025*
+"For AI/ML work in VS Code, Azure AI Toolkit has streamlined my workflow. I can experiment with models, fine-tune, and deploy without leaving the editor." - *User testimonials, 2024-2025*
 
 **Negative Impact:**
 
@@ -664,9 +650,7 @@ Users report productivity gains for:
 **User-Reported Disadvantages:**
 
 - **Not Designed for Code Completion:** Copilot is purpose-built for coding assistance; Azure AI Toolkit is broader ML tooling.
-  > "Comparing Azure AI Toolkit to Copilot is apples-to-oranges. Copilot is for coding assistance, the toolkit is for AI/ML development."
-  > 
-  > *Source: User discussions. 2024-2025*
+  "Comparing Azure AI Toolkit to Copilot is apples-to-oranges. Copilot is for coding assistance, the toolkit is for AI/ML development." - *User discussions, 2024-2025*
 
 - **Much Higher Complexity:** Copilot is simple to use; toolkit requires AI/ML knowledge.
 
@@ -698,9 +682,7 @@ Community consensus positions Azure AI Toolkit as:
 - **For:** Developers building AI/ML applications, especially in Azure ecosystems
 - **Not For:** Developers seeking simple code completion or autocomplete features
 
-> "Azure AI Toolkit is for AI developers, not for adding AI autocomplete to your editor. It's a different category of tool."
-> 
-> *Source: Community positioning discussions. 2024-2025*
+"Azure AI Toolkit is for AI developers, not for adding AI autocomplete to your editor. It's a different category of tool." - *Community positioning discussions, 2024-2025*
 
 **Citation:** Community discussions, use case analyses, positioning statements (2024-2025).
 

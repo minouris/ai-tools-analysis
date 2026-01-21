@@ -463,9 +463,7 @@ This section consolidates third-party user reviews and experiences from multiple
 ### Common Complaints Across Tools
 
 **Accuracy and Reliability:**
-> "Copilot can suggest incorrect, insecure, or inefficient code, particularly with novel algorithms, unfamiliar libraries, or loosely typed codebases. Manual review is essential."
-> 
-> *Source: Sider.ai review. 2025.*
+"Copilot can suggest incorrect, insecure, or inefficient code, particularly with novel algorithms, unfamiliar libraries, or loosely typed codebases. Manual review is essential." - *Sider.ai review, 2025*
 
 - All tools experience "hallucinations" or incorrect code suggestions
 - Quality varies significantly with codebase consistency
@@ -531,38 +529,28 @@ This section consolidates third-party user reviews and experiences from multiple
 **GitHub Copilot vs Cursor:**
 - Copilot: Better autocomplete, broader IDE support, lower cost
 - Cursor: Superior context awareness, better refactoring, more autonomous
-> "Use Copilot for autocomplete and simple suggestions. Use Cursor for architectural advice and in-depth code walkthroughs."
-> 
-> *Source: Reddit discussions. 2024-2026.*
+"Use Copilot for autocomplete and simple suggestions. Use Cursor for architectural advice and in-depth code walkthroughs." - *Reddit discussions, 2024-2026.*
 
 **GitHub Copilot vs Continue.dev:**
 - Copilot: Plug-and-play, most reliable, enterprise features
 - Continue.dev: Open source, privacy control, customisable, free
-> "Continue.dev is lauded for 'letting me create my workflow instead of forcing one on me,' though this comes with some additional upfront effort."
-> 
-> *Source: AI Tool Discovery. 2026.*
+"Continue.dev is lauded for 'letting me create my workflow instead of forcing one on me,' though this comes with some additional upfront effort." - *AI Tool Discovery, 2026.*
 
 **GitHub Copilot vs Codeium:**
 - Copilot: More accurate, better documentation, mature ecosystem
 - Codeium: Free unlimited, good privacy options, self-hosting available
-> "Codeium is often praised as 'the best free AI code completion tool' for individual developers."
-> 
-> *Source: Reddit discussions. 2024-2025.*
+"Codeium is often praised as 'the best free AI code completion tool' for individual developers." - *Reddit discussions, 2024-2025.*
 
 **Cursor vs Cline/Roo Cline:**
 - Cursor: More autonomous, better project intelligence, higher cost
 - Cline: More cautious, human-in-the-loop safety, free (requires LLM)
 - Roo Cline: Maximum automation, multi-role AI, steeper learning curve
-> "Roo Code is the pro's tool; Cline is the 'safe default'."
-> 
-> *Source: MyAIVerdict. 2025.*
+"Roo Code is the pro's tool; Cline is the 'safe default'." - *MyAIVerdict, 2025.*
 
 **Amazon Q vs GitHub Copilot:**
 - Amazon Q: AWS-specific excellence, infrastructure code, security scanning
 - GitHub Copilot: General-purpose, multi-cloud, broader language support
-> "For teams or developers already live on AWS, Amazon Q Developer is increasingly recognised as the top productivity booster. For everyone else (multi-cloud, front-end, cross-language), Copilot remains the 'gold standard'."
-> 
-> *Source: Multiple sources. 2024-2026.*
+"For teams or developers already live on AWS, Amazon Q Developer is increasingly recognised as the top productivity booster. For everyone else (multi-cloud, front-end, cross-language), Copilot remains the 'gold standard'." - *Multiple sources, 2024-2026.*
 
 ### Community Recommendations (2024-2026)
 
@@ -764,9 +752,7 @@ Full citations and detailed reviews are available in individual tool analysis do
 1. **Productivity Gains Are Real:** Users consistently report 40-55% productivity improvements, with GitHub Copilot (55%), Tabnine (45%), and Sourcegraph Cody (5-6 hours/week saved) leading reported gains
 
 2. **Accuracy Requires Vigilance:** All tools experience "hallucinations" and generate incorrect code. Manual review is essential regardless of tool choice
-   > "Copilot can suggest incorrect, insecure, or inefficient code, particularly with novel algorithms, unfamiliar libraries, or loosely typed codebases. Manual review is essential."
-   > 
-   > *Source: Multiple user reviews. 2024-2026.*
+   "Copilot can suggest incorrect, insecure, or inefficient code, particularly with novel algorithms, unfamiliar libraries, or loosely typed codebases. Manual review is essential." - *Multiple user reviews, 2024-2026.*
 
 3. **Context Awareness Varies Dramatically:** Cursor leads with "best-in-class project context," followed by Sourcegraph Cody's "deep codebase understanding." Traditional autocomplete tools lag significantly in multi-file scenarios
 

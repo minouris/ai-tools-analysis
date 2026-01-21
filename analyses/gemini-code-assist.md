@@ -570,9 +570,7 @@ The Gemini CLI integrates directly with terminal environments (bash, zsh, etc.) 
 **Common Praise:**
 
 - **Free Tier Generosity:** The 180,000 completions per month free tier is one of the most generous in the market.
-  > "Gemini Code Assist offers 180k completions per month for free, which is incredibly generous compared to competitors."
-  > 
-  > *Source: Pricing comparisons and user discussions. 2024-2025*
+  "Gemini Code Assist offers 180k completions per month for free, which is incredibly generous compared to competitors." - *Pricing comparisons and user discussions, 2024-2025*
 
 - **Good Code Review Features:** When working properly, the code review and analysis features provide useful insights.
 
@@ -583,19 +581,13 @@ The Gemini CLI integrates directly with terminal environments (bash, zsh, etc.) 
 **Common Complaints:**
 
 - **Reliability Issues:** Frequent errors and service interruptions frustrate users trying to rely on the tool for daily work.
-  > "Gemini Code Assist has potential but reliability is a major issue. I get 'There was a problem' errors multiple times per day."
-  > 
-  > *Source: Reddit discussions. 2024-2025. r/programming and r/GoogleCloud*
+  "Gemini Code Assist has potential but reliability is a major issue. I get 'There was a problem' errors multiple times per day." - *Reddit discussions, 2024-2025, r/programming and r/GoogleCloud**
 
 - **Performance Problems:** Slow response times, lag in VS Code, and resource-intensive operation.
-  > "Gemini makes my VS Code lag noticeably. Suggestions take seconds to appear, if they appear at all."
-  > 
-  > *Source: G2 reviews and user forums. 2024-2025*
+  "Gemini makes my VS Code lag noticeably. Suggestions take seconds to appear, if they appear at all." - *G2 reviews and user forums, 2024-2025*
 
 - **Inconsistent Quality:** Suggestion quality varies dramatically, from excellent to completely irrelevant.
-  > "Sometimes Gemini nails it, sometimes it suggests code that doesn't even match my language. No consistency."
-  > 
-  > *Source: User reviews. 2024-2025*
+  "Sometimes Gemini nails it, sometimes it suggests code that doesn't even match my language. No consistency." - *User reviews, 2024-2025*
 
 - **Poor Error Messages:** Cryptic error messages make troubleshooting difficult.
 
@@ -615,11 +607,9 @@ The Gemini CLI integrates directly with terminal environments (bash, zsh, etc.) 
   - Users report error frequency increases during peak usage hours
   - No pattern to when errors occur (not tied to specific file types, project sizes, or operations)
   
-  > "The dreaded 'There was a problem' error appears constantly. No details, no solution, just failure. I've seen it 8 times today alone while trying to complete routine coding tasks."
-  > 
-  > *Source: GitHub Issues and support forums. 2024-2025*
+  "The dreaded 'There was a problem' error appears constantly. No details, no solution, just failure. I've seen it 8 times today alone while trying to complete routine coding tasks." - *GitHub Issues and support forums, 2024-2025*
   
-  **Impact:** Users unable to rely on Gemini for time-sensitive work. Many report disabling the extension during critical development periods.
+  **Impact:** Users unable to rely on Gemini for time-sensitive work, Many report disabling the extension during critical development periods.*
   
   **Google's Response:** Limited acknowledgment of issue, with general "we're working on it" messaging but no timeline for resolution.
 
@@ -635,9 +625,7 @@ The Gemini CLI integrates directly with terminal environments (bash, zsh, etc.) 
   
   **Workarounds:** Users report disabling Gemini for large projects or enabling it only when actively seeking AI assistance, then disabling it to restore performance.
   
-  > "Gemini makes my VS Code lag noticeably. Suggestions take seconds to appear, if they appear at all. I've had to disable it for my main project (60k LOC) because the editor becomes unusable."
-  > 
-  > *Source: VS Code marketplace reviews and user forums. 2024-2025*
+  "Gemini makes my VS Code lag noticeably. Suggestions take seconds to appear, if they appear at all. I've had to disable it for my main project (60k LOC) because the editor becomes unusable." - *VS Code marketplace reviews and user forums, 2024-2025*
 
 - **Context Failures:** Regularly fails to maintain context, providing suggestions that ignore previous code or project structure.
   
@@ -670,9 +658,7 @@ When working properly, users report benefits for:
 - Code review and quality analysis
 - Basic autocomplete for simple patterns
 
-> "When Gemini works, it's quite good. The problem is reliability—it doesn't work consistently enough to rely on."
-> 
-> *Source: User testimonials. 2024-2025*
+"When Gemini works, it's quite good. The problem is reliability—it doesn't work consistently enough to rely on." - *User testimonials, 2024-2025*
 
 **Negative Impact:**
 
@@ -701,9 +687,7 @@ When working properly, users report benefits for:
 **User-Reported Disadvantages:**
 
 - **Much Lower Reliability:** Copilot is significantly more stable and reliable.
-  > "Copilot just works. Gemini is constantly broken. The price difference doesn't matter if the tool doesn't work."
-  > 
-  > *Source: Reddit discussions. 2024-2025*
+  "Copilot just works. Gemini is constantly broken. The price difference doesn't matter if the tool doesn't work." - *Reddit discussions, 2024-2025*
 
 - **Worse Performance:** Slower suggestions and more lag than Copilot.
 
@@ -722,9 +706,7 @@ When working properly, users report benefits for:
 **User-Reported Disadvantages:**
 
 - **Reliability:** Codeium is significantly more reliable and stable.
-  > "Codeium offers unlimited free tier and actually works consistently. Gemini's free tier doesn't matter if it's always broken."
-  > 
-  > *Source: User comparisons. 2024-2025*
+  "Codeium offers unlimited free tier and actually works consistently. Gemini's free tier doesn't matter if it's always broken." - *User comparisons, 2024-2025*
 
 - **Performance:** Codeium performs better with less resource usage.
 
@@ -736,9 +718,7 @@ When working properly, users report benefits for:
 
 Many users recommend waiting for Google to improve reliability before adopting Gemini Code Assist seriously, or using alternative tools in the meantime.
 
-> "Gemini has potential but it's not production-ready yet. Stick with Copilot or Codeium until Google fixes the reliability issues."
-> 
-> *Source: Community recommendations. 2024-2025*
+"Gemini has potential but it's not production-ready yet. Stick with Copilot or Codeium until Google fixes the reliability issues." - *Community recommendations, 2024-2025*
 
 **Citation:** Community discussions, review aggregations, user recommendations (2024-2025).
 

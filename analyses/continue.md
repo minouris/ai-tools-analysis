@@ -899,21 +899,15 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 **Common Praise:**
 
 - **Open Source and Flexible:** Users appreciate the ability to customise every aspect of Continue, from model selection to custom context providers, without vendor lock-in.
-  > "Continue.dev stands out as an open-source assistant, allowing developers to easily customise which AI models it uses and even create custom assistants with reusable building blocks and context sources."
-  > 
-  > *Source: AI Tool Discovery review. 2026. https://www.aitooldiscovery.com/guides/best-ai-for-coding-reddit*
+  "Continue.dev stands out as an open-source assistant, allowing developers to easily customise which AI models it uses and even create custom assistants with reusable building blocks and context sources." - <a href="https://www.aitooldiscovery.com/guides/best-ai-for-coding-reddit">AI Tool Discovery review, 2026</a>
 
 - **Privacy Control:** The ability to run models locally or choose where data is sent resonates strongly with security-conscious developers and enterprises.
-  > "The privacy controls in Continue are unmatched. I can run everything locally with Ollama and my code never leaves my machine."
-  > 
-  > *Source: Reddit discussions. 2024-2026. Various programming subreddits*
+  "The privacy controls in Continue are unmatched. I can run everything locally with Ollama and my code never leaves my machine." - *Reddit discussions, 2024-2026, Various programming subreddits**
 
 - **Rapid Development and Side Projects:** Developers report shipping projects significantly faster with Continue's IDE-integrated workflow.
   
   **BekahHW's Story - osscommunities.com:**
-  > "I turned an impulsive domain purchase into a live site—osscommunities.com—with less than an hour a week to work on it. 10-minute coming soon page built with Continue. Continue kept everything in my IDE and gave me a way to collaborate with AI without breaking flow. Constraint drives clarity and AI amplifies it when used intentionally."
-  > 
-  > *Source: Continue Blog. 2024. https://blog.continue.dev/javascript-productivity-ai-code-assistants/*
+  "I turned an impulsive domain purchase into a live site—osscommunities.com—with less than an hour a week to work on it. 10-minute coming soon page built with Continue. Continue kept everything in my IDE and gave me a way to collaborate with AI without breaking flow. Constraint drives clarity and AI amplifies it when used intentionally." - <a href="https://blog.continue.dev/javascript-productivity-ai-code-assistants/">Continue Blog, 2024</a>
   
   BekahHW successfully transformed a domain purchase into a functioning website with minimal weekly time investment. Key achievements included:
   - Coming soon page built in 10 minutes using Astro and Continue
@@ -924,9 +918,7 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 - **Custom AI Code Review at Scale - CodeBunny Project:**
   
   Developer Brian Douglas built CodeBunny, a privacy-first PR review bot using Continue's extensible agent capabilities:
-  > "While most developers know Continue for its excellent code completion and chat features, its true power lies in its extensible architecture. Continue isn't just another copilot—it's a framework for building tailored AI experiences that understand your specific context, conventions, and requirements."
-  > 
-  > *Source: Continue Blog. 2024. https://blog.continue.dev/beyond-code-generation-how-continue-enables-ai-code-review-at-scale/*
+  "While most developers know Continue for its excellent code completion and chat features, its true power lies in its extensible architecture. Continue isn't just another copilot—it's a framework for building tailored AI experiences that understand your specific context, conventions, and requirements." - <a href="https://blog.continue.dev/beyond-code-generation-how-continue-enables-ai-code-review-at-scale/">Continue Blog, 2024</a>
   
   CodeBunny demonstrates Continue's capability beyond basic code generation:
   - Custom PR review bot with privacy-first architecture
@@ -936,25 +928,19 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
   - Leverages Claude Opus 4.1 for architectural analysis and security reasoning
 
 - **Active Community:** Users highlight the responsive development team and active community contributing features and fixes.
-  > "The Continue community is incredibly active. Issues get addressed quickly and there's always someone willing to help with configuration questions."
-  > 
-  > *Source: GitHub repository discussions. 2024-2026*
+  "The Continue community is incredibly active. Issues get addressed quickly and there's always someone willing to help with configuration questions." - *GitHub repository discussions, 2024-2026*
 
 - **Cost-Effective:** Being open source with support for free LLM providers makes it attractive for individual developers and small teams.
 
 **Common Complaints:**
 
 - **Steeper Learning Curve:** The extensive configuration options can be overwhelming for new users compared to plug-and-play alternatives.
-  > "Continue is powerful but takes time to set up properly. The documentation is good but there's a lot to learn before you're productive."
-  > 
-  > *Source: BekahhW comparison. 2024. https://dev.to/bekahhw*
+  "Continue is powerful but takes time to set up properly. The documentation is good but there's a lot to learn before you're productive." - <a href="https://dev.to/bekahhw">BekahhW comparison, 2024</a>
 
 - **Less Polished UI:** Some users find the interface less refined than commercial alternatives, with occasional UI inconsistencies.
 
 - **Occasional Bugs:** As an actively developed open-source project, users report encountering bugs more frequently than with mature commercial tools.
-  > "Continue sometimes has quirks and bugs, but they're usually fixed quickly. It's the trade-off for being open source."
-  > 
-  > *Source: Product Hunt reviews. 2024-2026*
+  "Continue sometimes has quirks and bugs, but they're usually fixed quickly. It's the trade-off for being open source." - *Product Hunt reviews, 2024-2026*
 
 - **Documentation Gaps:** Whilst the core documentation is solid, some advanced features and edge cases lack comprehensive documentation.
 
@@ -965,7 +951,7 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 **Critical Issues:**
 
 - **Configuration Errors:** Incorrect configuration can lead to Continue failing silently or producing cryptic error messages, making troubleshooting difficult for new users.
-  > *Source: GitHub Issues. 2024-2026. https://github.com/continuedev/continue/issues*
+  *Source: GitHub Issues, 2024-2026, https://github.com/continuedev/continue/issues**
 
 - **Model Compatibility:** Some LLM providers occasionally experience breaking changes that temporarily break Continue integration until updates are released.
 
@@ -989,9 +975,7 @@ Users report significant productivity gains particularly when:
 - Integrating custom context sources and workflows
 - Operating in environments with specific deployment requirements
 
-> "Continue has made me faster while keeping my company's code secure. The local deployment option was essential for us."
-> 
-> *Source: Developer testimonials. 2025-2026*
+"Continue has made me faster while keeping my company's code secure. The local deployment option was essential for us." - *Developer testimonials, 2025-2026*
 
 **Negative Impact:**
 
@@ -1010,9 +994,7 @@ Users report significant productivity gains particularly when:
 **User-Reported Advantages:**
 
 - **More Control:** Continue offers granular control over models, context, and behaviour that Copilot doesn't provide.
-  > "Continue lets me choose exactly which model to use for different tasks. Copilot gives you whatever Microsoft decides."
-  > 
-  > *Source: BekahhW comparison. 2024. https://dev.to/bekahhw*
+  "Continue lets me choose exactly which model to use for different tasks. Copilot gives you whatever Microsoft decides." - <a href="https://dev.to/bekahhw">BekahhW comparison, 2024</a>
 
 - **Privacy Options:** Code can be kept entirely local or sent to specific providers, unlike Copilot's Microsoft-only routing.
 
@@ -1023,9 +1005,7 @@ Users report significant productivity gains particularly when:
 **User-Reported Disadvantages:**
 
 - **Requires More Setup:** Copilot works immediately after installation; Continue requires configuration.
-  > "Copilot is plug-and-play. Continue requires you to understand what you're configuring before you can be productive."
-  > 
-  > *Source: Reddit discussions. 2024-2026*
+  "Copilot is plug-and-play. Continue requires you to understand what you're configuring before you can be productive." - *Reddit discussions, 2024-2026*
 
 - **Less Reliable Suggestions:** Copilot's autocomplete is still considered more reliable and faster for mainstream use cases.
 

@@ -819,14 +819,10 @@ Developers seeking IDE integration should consider:
 **Common Praise:**
 
 - **Collaborative Coding Experience:** Users appreciate the conversational, back-and-forth approach to problem-solving.
-  > "ChatGPT's conversational interface is perfect for exploring solutions and discussing trade-offs before committing to code."
-  > 
-  > *Source: Reddit discussions. 2024-2025. r/ChatGPT and r/programming*
+  "ChatGPT's conversational interface is perfect for exploring solutions and discussing trade-offs before committing to code." - *Reddit discussions, 2024-2025, r/ChatGPT and r/programming**
 
 - **Canvas Interface:** The dedicated Canvas mode for code editing provides a better experience than plain chat.
-  > "Canvas is a huge improvement over scrolling through chat messages. Having a dedicated code window makes iterative editing much easier."
-  > 
-  > *Source: User testimonials. 2024-2025*
+  "Canvas is a huge improvement over scrolling through chat messages. Having a dedicated code window makes iterative editing much easier." - *User testimonials, 2024-2025*
 
 - **Iterative Editing:** Good for exploratory programming and learning, where discussing approaches is as important as generating code.
 
@@ -835,19 +831,13 @@ Developers seeking IDE integration should consider:
 **Common Complaints:**
 
 - **Barebones Tools:** Compared to full IDE integrations, ChatGPT's Canvas lacks features like syntax highlighting, linting, and debugging.
-  > "Canvas is better than nothing, but it's incredibly basic. No proper syntax highlighting, no debugging, no integration with my actual codebase."
-  > 
-  > *Source: User reviews. 2024-2025*
+  "Canvas is better than nothing, but it's incredibly basic. No proper syntax highlighting, no debugging, no integration with my actual codebase." - *User reviews, 2024-2025*
 
 - **Auto-Switching Issues:** Canvas sometimes activates when users don't want it, or fails to activate when needed.
-  > "Canvas auto-switches at weird times. I'll be having a general discussion and suddenly it switches to Canvas mode."
-  > 
-  > *Source: Reddit discussions. 2024-2025*
+  "Canvas auto-switches at weird times. I'll be having a general discussion and suddenly it switches to Canvas mode." - *Reddit discussions, 2024-2025*
 
 - **Cuts Off Code:** Long code blocks frequently get truncated, requiring users to ask for continuation.
-  > "ChatGPT constantly cuts off code mid-function. I have to keep asking 'continue' to get the full implementation."
-  > 
-  > *Source: User complaints. 2024-2025*
+  "ChatGPT constantly cuts off code mid-function. I have to keep asking 'continue' to get the full implementation." - *User complaints, 2024-2025*
 
 - **No IDE Integration:** Must copy-paste code between ChatGPT and IDE, adding friction to workflow.
 
@@ -867,11 +857,9 @@ Developers seeking IDE integration should consider:
   - Frequency: Reported in approximately 15-25% of Canvas editing sessions
   - No clear pattern to when overwriting occurs (affects both simple and complex edits)
   
-  > "Asked ChatGPT to fix one function and it rewrote three others, breaking working code. Had to restore from git because Canvas undo failed. Canvas editing is unreliable and risky for anything beyond toy projects."
-  > 
-  > *Source: GitHub discussions and user forums. 2024-2025*
+  "Asked ChatGPT to fix one function and it rewrote three others, breaking working code. Had to restore from git because Canvas undo failed. Canvas editing is unreliable and risky for anything beyond toy projects." - *GitHub discussions and user forums, 2024-2025*
   
-  **Impact:** Users avoid Canvas for production code or maintain separate copies before requesting edits. Many revert to copy-pasting code snippets instead of using Canvas editing features.
+  **Impact:** Users avoid Canvas for production code or maintain separate copies before requesting edits, Many revert to copy-pasting code snippets instead of using Canvas editing features.*
 
 - **Undo Doesn't Work Reliably:** The undo functionality in Canvas is inconsistent, sometimes failing to revert changes properly.
   
@@ -884,9 +872,7 @@ Developers seeking IDE integration should consider:
   
   **Workarounds:** Users maintain external copies of code before Canvas editing, or paste code back to IDE before requesting changes.
   
-  > "Canvas undo is completely broken. Half the time it doesn't work, and when it does, it only reverts part of the changes. I've lost work multiple times and now always keep backups."
-  > 
-  > *Source: User bug reports. 2024-2025*
+  "Canvas undo is completely broken. Half the time it doesn't work, and when it does, it only reverts part of the changes. I've lost work multiple times and now always keep backups." - *User bug reports, 2024-2025*
 
 - **Context Failures:** In long conversations, ChatGPT loses track of earlier decisions and suggests contradictory changes.
   
@@ -920,9 +906,7 @@ Users report benefits for:
 - Explaining unfamiliar code or concepts
 - Brainstorming solutions to problems
 
-> "ChatGPT is invaluable for learning and exploring. When I need to understand a new concept or discuss approaches, it's perfect."
-> 
-> *Source: User testimonials. 2024-2025*
+"ChatGPT is invaluable for learning and exploring. When I need to understand a new concept or discuss approaches, it's perfect." - *User testimonials, 2024-2025*
 
 **Negative Impact:**
 
@@ -945,9 +929,7 @@ Users report benefits for:
 **User-Reported Advantages:**
 
 - **Better Explanations:** ChatGPT provides more detailed, educational explanations of code and concepts.
-  > "Copilot autocompletes code. ChatGPT teaches me why the code works that way. Different use cases."
-  > 
-  > *Source: Reddit discussions. 2024-2025*
+  "Copilot autocompletes code. ChatGPT teaches me why the code works that way. Different use cases." - *Reddit discussions, 2024-2025*
 
 - **Conversational Exploration:** Superior for discussing trade-offs and exploring multiple approaches.
 
@@ -956,9 +938,7 @@ Users report benefits for:
 **User-Reported Disadvantages:**
 
 - **No IDE Integration:** Copilot works directly in code editor; ChatGPT requires constant copy-paste.
-  > "Copilot's IDE integration is essential. ChatGPT's web interface adds too much friction for real development work."
-  > 
-  > *Source: User comparisons. 2024-2025*
+  "Copilot's IDE integration is essential. ChatGPT's web interface adds too much friction for real development work." - *User comparisons, 2024-2025*
 
 - **No Codebase Awareness:** Copilot sees open files and project context; ChatGPT is isolated.
 
@@ -977,9 +957,7 @@ Users report benefits for:
 **User-Reported Disadvantages:**
 
 - **No Codebase Integration:** Cursor understands entire projects; ChatGPT works in isolation.
-  > "Cursor indexes my codebase and suggests changes across multiple files. ChatGPT doesn't even know my project exists."
-  > 
-  > *Source: User discussions. 2024-2025*
+  "Cursor indexes my codebase and suggests changes across multiple files. ChatGPT doesn't even know my project exists." - *User discussions, 2024-2025*
 
 - **Barebones Editing:** Cursor's Composer provides sophisticated code editing; Canvas is basic.
 
@@ -993,9 +971,7 @@ Most developers position ChatGPT as complementary to IDE-integrated tools rather
 - Use ChatGPT for learning, exploration, and discussion
 - Use IDE-integrated tools (Copilot, Cursor, etc.) for actual implementation
 
-> "I use ChatGPT to learn and explore, Copilot for autocomplete, and Cursor for refactoring. They all serve different purposes."
-> 
-> *Source: Developer workflows. 2024-2025*
+"I use ChatGPT to learn and explore, Copilot for autocomplete, and Cursor for refactoring. They all serve different purposes." - *Developer workflows, 2024-2025*
 
 **Citation:** Developer workflow discussions, community positioning (2024-2025).
 

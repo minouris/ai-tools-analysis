@@ -1063,18 +1063,14 @@ claude -p "generate code" --output-format=stream-json
 **Common Praise:**
 
 - **Outstanding Reasoning:** Users consistently praise Claude Code's ability to understand complex requirements and reason through multi-step problems.
-  > "Claude Code's reasoning ability is unmatched. It understands nuanced requirements and can work through complex architectural decisions."
-  > 
-  > *Source: Reddit discussions. 2024-2025. Various programming subreddits*
+  "Claude Code's reasoning ability is unmatched. It understands nuanced requirements and can work through complex architectural decisions." - *Reddit discussions, 2024-2025, Various programming subreddits**
 
 - **Anthropic Internal Usage - Real-World Applications:**
   
   Anthropic teams use Claude Code across multiple departments for diverse tasks beyond traditional coding:
   
   **Codebase Navigation and Understanding:**
-  > "New data scientists on our Infrastructure team feed Claude Code their entire codebase to get productive quickly. Claude reads the codebase's CLAUDE.md files, identifies relevant ones, explains data pipeline dependencies, and shows which upstream sources feed into dashboards."
-  > 
-  > *Source: Anthropic Blog. 2024. https://claude.com/blog/how-anthropic-teams-use-claude-code*
+  "New data scientists on our Infrastructure team feed Claude Code their entire codebase to get productive quickly. Claude reads the codebase's CLAUDE.md files, identifies relevant ones, explains data pipeline dependencies, and shows which upstream sources feed into dashboards." - <a href="https://claude.com/blog/how-anthropic-teams-use-claude-code">Anthropic Blog, 2024</a>
   
   **Testing and Code Review:**
   - Product Design team: Automated Pull Request comments through GitHub Actions
@@ -1082,9 +1078,7 @@ claude -p "generate code" --output-format=stream-json
   - Inference team: Translating tests into unfamiliar languages like Rust
   
   **Debugging Production:**
-  > "During incidents, the Security Engineering team feeds Claude Code stack traces and documentation to trace control flow through the codebase. Problems that typically take 10-15 minutes of manual scanning now resolve 3x as quickly."
-  > 
-  > *Source: Anthropic Blog. 2024. https://claude.com/blog/how-anthropic-teams-use-claude-code*
+  "During incidents, the Security Engineering team feeds Claude Code stack traces and documentation to trace control flow through the codebase. Problems that typically take 10-15 minutes of manual scanning now resolve 3x as quickly." - <a href="https://claude.com/blog/how-anthropic-teams-use-claude-code">Anthropic Blog, 2024</a>
   
   **Surprising Non-Technical Applications:**
   - Growth Marketing team: Built agentic workflow processing hundreds of ads, generating variations within character limits
@@ -1092,16 +1086,12 @@ claude -p "generate code" --output-format=stream-json
   - Data scientists: Built entire React applications for visualizing RL model performance despite not being fluent in TypeScript
 
 - **Project Mapping:** The tool excels at understanding entire project structures and maintaining context across multiple files.
-  > "Claude Code's project mapping feature is brilliant. It builds a mental model of your codebase that actually makes sense."
-  > 
-  > *Source: Hacker News discussions. 2024-2025. https://news.ycombinator.com*
+  "Claude Code's project mapping feature is brilliant. It builds a mental model of your codebase that actually makes sense." - <a href="https://news.ycombinator.com">Hacker News discussions, 2024-2025</a>
 
 - **Agentic Workflows with Subagents:**
   
   Claude Code introduces unique multi-agent capabilities not found in competing tools:
-  > "Agentic coding tools like Claude Code help developers accelerate workflows, automate repetitive tasks, and tackle complex programming projects. The pattern became clear: agentic coding isn't just accelerating traditional development. It's dissolving the boundary between technical and non-technical work."
-  > 
-  > *Source: Anthropic Blog. 2024. https://claude.com/blog/how-anthropic-teams-use-claude-code*
+  "Agentic coding tools like Claude Code help developers accelerate workflows, automate repetitive tasks, and tackle complex programming projects. The pattern became clear: agentic coding isn't just accelerating traditional development. It's dissolving the boundary between technical and non-technical work." - <a href="https://claude.com/blog/how-anthropic-teams-use-claude-code">Anthropic Blog, 2024</a>
   
   Key agentic features:
   - **Subagents:** Delegate specialized tasks (e.g., spinning up backend API while main agent builds frontend)
@@ -1109,38 +1099,28 @@ claude -p "generate code" --output-format=stream-json
   - **Background tasks:** Keep long-running processes active without blocking Claude Code's progress
   - **Checkpoints:** "Time-travel debugging" system that saves code state before each change
   
-  *Source: Anthropic News. 2025. https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously*
+  *Source: <a href="https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously">Anthropic News, 2025</a>*
 
 - **Enterprise Success Stories:**
   
   **Bridgewater Associates - AI Investment Analyst Assistant:**
-  > "Bridgewater Associates uses Claude Code to build AI investment analyst assistants, demonstrating enterprise-scale financial applications."
-  > 
-  > *Source: Ernest Chiang Analysis. 2024. https://www.ernestchiang.com/en/notes/ai/claude-code/*
+  "Bridgewater Associates uses Claude Code to build AI investment analyst assistants, demonstrating enterprise-scale financial applications." - <a href="https://www.ernestchiang.com/en/notes/ai/claude-code/">Ernest Chiang Analysis, 2024</a>
   
   **Ramp - Significant Engineering Team Results:**
-  > "Ramp reports significant engineering team results including quicker code reviews and streamlined testing workflows."
-  > 
-  > *Source: Ernest Chiang Analysis. 2024. https://www.ernestchiang.com/en/notes/ai/claude-code/*
+  "Ramp reports significant engineering team results including quicker code reviews and streamlined testing workflows." - <a href="https://www.ernestchiang.com/en/notes/ai/claude-code/">Ernest Chiang Analysis, 2024</a>
 
 - **Natural Language Interface:** Users appreciate the conversational, natural language approach to coding tasks.
-  > "I can describe what I want in plain English and Claude Code figures out the implementation details. It feels like pair programming with an expert."
-  > 
-  > *Source: User testimonials. 2024-2025*
+  "I can describe what I want in plain English and Claude Code figures out the implementation details. It feels like pair programming with an expert." - *User testimonials, 2024-2025*
 
 - **Plan Mode:** The structured planning feature helps developers think through implementations before committing to code changes.
 
 **Common Complaints:**
 
 - **Verbosity:** Claude Code's detailed explanations, whilst helpful for learning, can slow down experienced developers who want concise output.
-  > "Claude Code is wonderfully thorough but sometimes I just want the code, not a lecture on design patterns."
-  > 
-  > *Source: Reddit discussions. 2024-2025*
+  "Claude Code is wonderfully thorough but sometimes I just want the code, not a lecture on design patterns." - *Reddit discussions, 2024-2025*
 
 - **Occasional Bugs (Late 2025):** Users reported bugs with code generation and instruction-following in late 2025, though most note these were fixed by Anthropic.
-  > "There were some frustrating bugs in Q4 2025 where Claude Code would ignore instructions or generate faulty code. Anthropic acknowledged and fixed them quickly."
-  > 
-  > *Source: GitHub Issues and Anthropic support. 2025. https://github.com/anthropics/claude-code/issues*
+  "There were some frustrating bugs in Q4 2025 where Claude Code would ignore instructions or generate faulty code. Anthropic acknowledged and fixed them quickly." - <a href="https://github.com/anthropics/claude-code/issues">GitHub Issues and Anthropic support, 2025</a>
 
 - **Context Rot:** In very long sessions, Claude Code can gradually lose track of earlier decisions, leading to inconsistent suggestions.
 
@@ -1153,14 +1133,10 @@ claude -p "generate code" --output-format=stream-json
 **Critical Issues (Mostly Fixed):**
 
 - **Faulty Code Generation (Q4 2025):** A period in late 2025 where Claude Code occasionally generated incorrect or broken code, particularly with complex refactoring tasks.
-  > "In November 2025, Claude Code started generating faulty code more frequently. Anthropic confirmed the issue and released fixes by December."
-  > 
-  > *Source: GitHub Issues. 2025. https://github.com/anthropics/claude-code/issues*
+  "In November 2025, Claude Code started generating faulty code more frequently. Anthropic confirmed the issue and released fixes by December." - <a href="https://github.com/anthropics/claude-code/issues">GitHub Issues, 2025</a>
 
 - **Ignored Instructions (Q4 2025):** Reported cases where Claude Code ignored specific user instructions or project rules, particularly when using instruction files.
-  > "Claude Code was ignoring my .claud/rules.md file consistently in late 2025. This was confirmed by Anthropic and subsequently fixed."
-  > 
-  > *Source: Anthropic support and user forums. 2025*
+  "Claude Code was ignoring my .claud/rules.md file consistently in late 2025. This was confirmed by Anthropic and subsequently fixed." - *Anthropic support and user forums, 2025*
 
 **Minor Issues:**
 
@@ -1185,9 +1161,7 @@ Users report significant productivity gains, particularly for:
 - Exploring architectural trade-offs through natural dialogue
 - Generating comprehensive test cases
 
-> "Claude Code has genuinely changed my approach to development. The ability to have a thoughtful conversation about architecture before writing code is invaluable."
-> 
-> *Source: Developer testimonials. 2024-2025*
+"Claude Code has genuinely changed my approach to development. The ability to have a thoughtful conversation about architecture before writing code is invaluable." - *Developer testimonials, 2024-2025*
 
 **Negative Impact:**
 
@@ -1206,9 +1180,7 @@ Users report significant productivity gains, particularly for:
 **User-Reported Advantages:**
 
 - **Better Reasoning:** Claude Code significantly outperforms Copilot in understanding complex requirements and architectural decisions.
-  > "Copilot is faster at autocomplete, but Claude Code actually understands what I'm trying to build. It's like the difference between a typist and an architect."
-  > 
-  > *Source: Reddit discussions. 2024-2025*
+  "Copilot is faster at autocomplete, but Claude Code actually understands what I'm trying to build. It's like the difference between a typist and an architect." - *Reddit discussions, 2024-2025*
 
 - **Natural Language Planning:** Plan Mode and conversational interface provide superior workflow for exploratory programming.
 
@@ -1217,9 +1189,7 @@ Users report significant productivity gains, particularly for:
 **User-Reported Disadvantages:**
 
 - **Worse Autocomplete:** Copilot's inline suggestions are faster and more reliable for routine coding tasks.
-  > "For simple autocomplete, Copilot is still king. Claude Code is better when I need to think through problems."
-  > 
-  > *Source: Hacker News discussions. 2024-2025. https://news.ycombinator.com*
+  "For simple autocomplete, Copilot is still king. Claude Code is better when I need to think through problems." - <a href="https://news.ycombinator.com">Hacker News discussions, 2024-2025</a>
 
 - **Higher Cost:** $20-40/month for Claude subscription vs $10/month for Copilot Pro.
 

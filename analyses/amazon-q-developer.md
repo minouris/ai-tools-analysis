@@ -537,9 +537,7 @@ Integrates with terminal environments for AWS CLI assistance. Full shell integra
 **Common Praise:**
 
 - **AWS Integration:** Users working primarily in AWS ecosystems appreciate the deep integration with AWS services and infrastructure.
-  > "For AWS development, Amazon Q is incredibly useful. It understands CloudFormation, Lambda, and other AWS services better than general-purpose tools."
-  > 
-  > *Source: Reddit discussions. 2024-2025. r/aws and r/programming*
+  "For AWS development, Amazon Q is incredibly useful. It understands CloudFormation, Lambda, and other AWS services better than general-purpose tools." - *Reddit discussions, 2024-2025, r/aws and r/programming**
 
 - **Infrastructure Code:** Particularly effective for infrastructure-as-code development with CloudFormation, Terraform (AWS-focused), and CDK.
 
@@ -550,14 +548,10 @@ Integrates with terminal environments for AWS CLI assistance. Full shell integra
 **Common Complaints:**
 
 - **Only Useful for AWS Workflows:** Users outside AWS ecosystems find limited value compared to general-purpose tools.
-  > "Amazon Q is great if you live in AWS, but if you're doing non-AWS development, it's not particularly useful. Copilot or Cursor are better for general coding."
-  > 
-  > *Source: User reviews and discussions. 2024-2025*
+  "Amazon Q is great if you live in AWS, but if you're doing non-AWS development, it's not particularly useful. Copilot or Cursor are better for general coding." - *User reviews and discussions, 2024-2025*
 
 - **Slow Syncing:** Some users report slow project synchronisation and indexing, particularly for large workspaces.
-  > "Q takes forever to index large projects. I often wait minutes before it's ready to provide useful suggestions."
-  > 
-  > *Source: G2 reviews and user forums. 2024-2025*
+  "Q takes forever to index large projects. I often wait minutes before it's ready to provide useful suggestions." - *G2 reviews and user forums, 2024-2025*
 
 - **Integration Limitations:** Despite AWS focus, some users note that integration with certain AWS services could be deeper or more comprehensive.
 
@@ -578,9 +572,7 @@ Integrates with terminal environments for AWS CLI assistance. Full shell integra
   - Multi-account AWS setups confuse the indexer, leading to incorrect resource relationship detection
   - Users report needing to restart IDE or reconfigure Q workspace settings 1-2 times per week on average
   
-  > "Q's indexing is frustratingly slow and unreliable. For our 30-stack CDK monorepo, it takes 10+ minutes to index and sometimes fails halfway through. When it works, it's great, but the failures are too frequent."
-  > 
-  > *Source: AWS support forums and user discussions. 2024-2025*
+  "Q's indexing is frustratingly slow and unreliable. For our 30-stack CDK monorepo, it takes 10+ minutes to index and sometimes fails halfway through. When it works, it's great, but the failures are too frequent." - *AWS support forums and user discussions, 2024-2025*
   
   **Impact:** Developers often work with partially-indexed projects, reducing suggestion quality and context awareness.
 
@@ -621,9 +613,7 @@ Users working primarily with AWS report productivity gains:
 - Quicker infrastructure troubleshooting
 - Better security scanning integration
 
-> "For AWS-focused development, Q has definitely improved my productivity. I spend less time looking up AWS API documentation and CloudFormation resource properties. Infrastructure code that used to take hours now takes 30-45 minutes."
-> 
-> *Source: User testimonials. 2024-2025*
+"For AWS-focused development, Q has definitely improved my productivity. I spend less time looking up AWS API documentation and CloudFormation resource properties. Infrastructure code that used to take hours now takes 30-45 minutes." - *User testimonials, 2024-2025*
 
 **Detailed Productivity Metrics:**
 
@@ -677,9 +667,7 @@ Users working primarily with AWS report productivity gains:
 **User-Reported Advantages:**
 
 - **Better for AWS:** Significantly better understanding of AWS services, APIs, and best practices.
-  > "For AWS development, Amazon Q understands the ecosystem in a way Copilot simply can't match. It knows AWS service relationships and limitations."
-  > 
-  > *Source: Comparison discussions. 2024-2025*
+  "For AWS development, Amazon Q understands the ecosystem in a way Copilot simply can't match. It knows AWS service relationships and limitations." - *Comparison discussions, 2024-2025*
 
 - **Infrastructure Focus:** Superior for infrastructure-as-code compared to Copilot's application code focus.
 
@@ -688,9 +676,7 @@ Users working primarily with AWS report productivity gains:
 **User-Reported Disadvantages:**
 
 - **Worse for General Coding:** Copilot provides superior suggestions for general application code, algorithms, and non-AWS tasks.
-  > "Copilot is the better general-purpose tool. Q is only worth it if you're heavily invested in AWS."
-  > 
-  > *Source: Reddit discussions. 2024-2025*
+  "Copilot is the better general-purpose tool. Q is only worth it if you're heavily invested in AWS." - *Reddit discussions, 2024-2025*
 
 - **Narrower Use Case:** Limited value outside AWS workflows.
 

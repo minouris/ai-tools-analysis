@@ -570,14 +570,10 @@ The repository includes a `webview-ui` directory and references to a web applica
 **Common Praise:**
 
 - **High Autonomy:** Users appreciate Roo Cline's ability to autonomously handle complex multi-file changes with minimal intervention.
-  > "Roo Cline takes autonomy to the next level. It can refactor entire features across multiple files without constant hand-holding."
-  > 
-  > *Source: GitHub discussions and user forums. 2024-2026*
+  "Roo Cline takes autonomy to the next level. It can refactor entire features across multiple files without constant hand-holding." - *GitHub discussions and user forums, 2024-2026*
 
 - **Multi-Role AI Personalities:** The ability to switch between different AI "roles" (architect, debugger, tester) helps users match the tool's behaviour to specific tasks.
-  > "The role system is brilliant. Having an AI switch from 'architect mode' to 'implementation mode' makes the workflow feel more natural."
-  > 
-  > *Source: User testimonials. 2025-2026*
+  "The role system is brilliant. Having an AI switch from 'architect mode' to 'implementation mode' makes the workflow feel more natural." - *User testimonials, 2025-2026*
 
 - **Rapid Feature Generation:** Users report being able to generate complete features, including tests and documentation, in record time.
 
@@ -586,9 +582,7 @@ The repository includes a `webview-ui` directory and references to a web applica
 **Common Complaints:**
 
 - **Steep Learning Curve:** The advanced features and configuration options can be overwhelming for new users.
-  > "Roo Cline is powerful but has a learning curve. It took me a week to understand how to use it effectively."
-  > 
-  > *Source: Reddit discussions. 2025-2026. Various programming subreddits*
+  "Roo Cline is powerful but has a learning curve. It took me a week to understand how to use it effectively." - *Reddit discussions, 2025-2026, Various programming subreddits**
 
 - **Heavy Resource Usage:** Running autonomous agents with multiple roles can be resource-intensive, particularly on older hardware.
   
@@ -599,9 +593,7 @@ The repository includes a `webview-ui` directory and references to a web applica
   - CPU usage during intensive operations: 40-60% on multi-core systems
   - Disk I/O: Heavy read/write activity during file operations and context indexing
   
-  > "Roo Cline eats RAM for breakfast. On my laptop, I have to close other apps when using it heavily. I've seen it consume 4+ GB during complex refactoring tasks."
-  > 
-  > *Source: GitHub Issues. 2025-2026. https://github.com/RooCodeInc/Roo-Code/issues*
+  "Roo Cline eats RAM for breakfast. On my laptop, I have to close other apps when using it heavily. I've seen it consume 4+ GB during complex refactoring tasks." - <a href="https://github.com/RooCodeInc/Roo-Code/issues">GitHub Issues, 2025-2026</a>
   
   **Impact on Older Hardware:**
   - Systems with 8 GB RAM or less experience significant slowdowns
@@ -610,9 +602,7 @@ The repository includes a `webview-ui` directory and references to a web applica
   - Some users configure lower-resource modes or disable certain autonomous features on constrained systems
 
 - **Early Bugs:** Being relatively new, users report encountering bugs more frequently than mature alternatives, though most note they're fixed quickly.
-  > "There are occasional bugs, but the team is very responsive. Most issues I've reported were fixed within days."
-  > 
-  > *Source: GitHub Issues and user forums. 2025-2026*
+  "There are occasional bugs, but the team is very responsive. Most issues I've reported were fixed within days." - *GitHub Issues and user forums, 2025-2026*
 
 - **Documentation Gaps:** Some advanced features lack comprehensive documentation, requiring users to experiment or ask for community help.
 
@@ -637,7 +627,7 @@ The repository includes a `webview-ui` directory and references to a web applica
   - Use project documentation files (.roo/context.md) to maintain persistent context
   - Restart sessions when context drift becomes noticeable (typically after 90-120 minutes)
   
-  > *Source: GitHub Issues. 2025-2026. https://github.com/RooCodeInc/Roo-Code/issues*
+  *Source: GitHub Issues, 2025-2026, https://github.com/RooCodeInc/Roo-Code/issues**
 
 - **File Handling Errors:** Occasional issues with file operations, particularly when dealing with large numbers of files simultaneously.
   
@@ -675,9 +665,7 @@ Users report significant productivity gains, particularly for:
 - Generating comprehensive test suites
 - Prototyping new applications rapidly
 
-> "Roo Cline has changed how I approach feature development. I can describe what I want and it builds it across multiple files with tests. What used to take days now takes hours."
-> 
-> *Source: User testimonials. 2025-2026*
+"Roo Cline has changed how I approach feature development. I can describe what I want and it builds it across multiple files with tests. What used to take days now takes hours." - *User testimonials, 2025-2026*
 
 **Specific Productivity Metrics:**
 
@@ -725,9 +713,7 @@ User-reported time savings vary significantly based on task complexity and user 
 **User-Reported Advantages:**
 
 - **More Automated:** Roo Cline takes a more autonomous approach, making more decisions without requiring user approval for each step.
-  > "Roo Cline is more automated than original Cline. It makes more autonomous decisions, which speeds things up but requires more trust."
-  > 
-  > *Source: Reddit discussions. 2025-2026*
+  "Roo Cline is more automated than original Cline. It makes more autonomous decisions, which speeds things up but requires more trust." - *Reddit discussions, 2025-2026*
 
 - **Role System:** The multi-role AI personality system provides more structured workflows than Cline's single-mode operation.
 
@@ -736,9 +722,7 @@ User-reported time savings vary significantly based on task complexity and user 
 **User-Reported Disadvantages:**
 
 - **Less Safety:** Original Cline's step-by-step approval process provides more safety and control, which some users prefer.
-  > "Cline's approval-at-each-step approach feels safer for production code. Roo Cline's autonomy is powerful but riskier."
-  > 
-  > *Source: GitHub discussions. 2025-2026*
+  "Cline's approval-at-each-step approach feels safer for production code. Roo Cline's autonomy is powerful but riskier." - *GitHub discussions, 2025-2026*
 
 - **Higher Resource Usage:** Roo Cline's additional features and autonomy come at the cost of higher memory and CPU usage.
 
