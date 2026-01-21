@@ -453,16 +453,34 @@ Cursor is a standalone editor application and does not integrate with other IDEs
 **Common Praise:**
 
 - **Best-in-Class Project Context:** Users consistently highlight Cursor's superior ability to understand entire codebases and maintain context across multiple files, making it particularly effective for large refactoring tasks.
-  > "Cursor's codebase indexing and multi-file context awareness is unmatched. It understands the entire project structure better than any other tool I've used."
+  > "Cursor can scan and understand your entire codebase, not just the open file. Developers praise this for speeding up tasks that involve large-scale refactoring or onboarding onto new projects."
   > 
-  > *Source: Reddit discussions. 2025-2026. Various programming subreddits*
+  > *Source: Cursor reviews. 2025-2026. https://www.eesel.ai/blog/cursor-reviews*
+
+- **Full-Stack Refactoring Success:** A developer with 300+ hours of usage reported migrating a monolithic Node.js app to microservices-based architecture in half the usual time.
+  > "Cursor not only suggested code changes but also handled config updates, route adaptations, and even wrote migration scripts—all actions were reviewed as diffs before merging."
+  > 
+  > *Source: AIReviews detailed review. 2025. https://aireviews.in/cursor-ide-review-2025-what-300-hours-of-coding-taught-me*
+
+- **Legacy Code Modernisation:** Team leads describe successful modernisation of enterprise code, converting Python 2 to Python 3 with type hints whilst flagging backward compatibility issues.
+  > "The contextual project understanding meant Cursor could refactor and fix backward compatibility issues while flagging potential runtime problems before they hit production."
+  > 
+  > *Source: PromptKit review. 2025-2026. https://www.promptkit.tools/blog/cursor-ai-ide-review*
+
+- **Onboarding Accelerator:** New hires cite Cursor as a "codebase guide" that reduces onboarding time from a month to a week.
+  > "By asking the AI about unfamiliar modules, dependencies, or business logic, junior developers report becoming productive within a week instead of the typical month-long ramp-up."
+  > 
+  > *Source: DevToolScout review. 2025. https://devtoolscout.com/cursor-review-2025-the-ai-first-code-editor-revolutionizing-developer-productivity/*
 
 - **Faster Deep AI Operations:** The Composer feature and multi-file editing capabilities allow developers to make sweeping changes across projects efficiently.
   > "Cursor's Composer lets me describe a feature and it writes the code across multiple files. What used to take hours now takes minutes."
   > 
   > *Source: Product Hunt reviews. 2025-2026. https://www.producthunt.com/products/cursor*
 
-- **AI-First Architecture:** Users appreciate that Cursor is built with AI at its core rather than bolted on as a plugin, resulting in more cohesive and powerful AI features.
+- **Reduced Routine Coding:** 60-70% of boilerplate, tedious, and repetitive code is now handled by the AI, freeing up time for higher-level thinking.
+  > "Highlighting a code region and hitting a command (like 'add error handling' or 'migrate to async/await') instantly brings up a diff for approval. This is a daily go-to for many developers."
+  > 
+  > *Source: Prismic review. 2026. https://prismic.io/blog/cursor-ai*
 
 **Common Complaints:**
 
@@ -471,10 +489,25 @@ Cursor is a standalone editor application and does not integrate with other IDEs
   > 
   > *Source: Hacker News discussions. 2025-2026. https://news.ycombinator.com*
 
+- **"AI Chaos" Without Boundaries:** Without setting rules and boundaries, the AI can sometimes generate verbose or off-spec code that requires manual pruning.
+  > "Without setting rules and boundaries, the AI can sometimes generate verbose or off-spec code that requires manual pruning."
+  > 
+  > *Source: Prismic detailed review. 2026. https://prismic.io/blog/cursor-ai*
+
+- **Performance on Large Projects:** Some users report lag when AI scan/rule-processing kicks in on codebases with hundreds of thousands of lines.
+  > "Some users reported lag when working with extremely large monorepos (100k+ files), especially during AI scan/rule-processing."
+  > 
+  > *Source: AIReviews. 2025. https://aireviews.in/cursor-ide-review-2025-what-300-hours-of-coding-taught-me*
+
 - **"edit_file" Bugs:** Several users report issues with the edit_file functionality occasionally applying incorrect changes or failing to update files properly.
   > "The edit_file feature sometimes makes changes in the wrong location or misses context, requiring manual fixes."
   > 
   > *Source: GitHub Issues and user forums. 2025-2026*
+
+- **Occasional Hallucinations:** As with all generative models, Cursor can hallucinate functions or APIs that don't exist, necessitating careful review.
+  > "Cursor can hallucinate functions or APIs that don't exist, necessitating careful review before merging suggestions."
+  > 
+  > *Source: EngineLabs review. 2025. https://blog.enginelabs.ai/cursor-ai-an-in-depth-review*
 
 - **IDE Lock-In:** Because Cursor is a standalone editor, users must switch their entire development environment rather than adding a plugin to their preferred IDE.
 
