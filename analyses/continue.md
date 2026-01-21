@@ -908,6 +908,33 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
   > 
   > *Source: Reddit discussions. 2024-2026. Various programming subreddits*
 
+- **Rapid Development and Side Projects:** Developers report shipping projects significantly faster with Continue's IDE-integrated workflow.
+  
+  **BekahHW's Story - osscommunities.com:**
+  > "I turned an impulsive domain purchase into a live site—osscommunities.com—with less than an hour a week to work on it. 10-minute coming soon page built with Continue. Continue kept everything in my IDE and gave me a way to collaborate with AI without breaking flow. Constraint drives clarity and AI amplifies it when used intentionally."
+  > 
+  > *Source: Continue Blog. 2024. https://blog.continue.dev/javascript-productivity-ai-code-assistants/*
+  
+  BekahHW successfully transformed a domain purchase into a functioning website with minimal weekly time investment. Key achievements included:
+  - Coming soon page built in 10 minutes using Astro and Continue
+  - MVP design with Tailwind CSS completed in a couple of hours
+  - Accessibility-focused design with WCAG compliance checks built into Continue rules
+  - Automated blog post collection from Sanity CMS using Continue-assisted Node.js scripts
+  
+- **Custom AI Code Review at Scale - CodeBunny Project:**
+  
+  Developer Brian Douglas built CodeBunny, a privacy-first PR review bot using Continue's extensible agent capabilities:
+  > "While most developers know Continue for its excellent code completion and chat features, its true power lies in its extensible architecture. Continue isn't just another copilot—it's a framework for building tailored AI experiences that understand your specific context, conventions, and requirements."
+  > 
+  > *Source: Continue Blog. 2024. https://blog.continue.dev/beyond-code-generation-how-continue-enables-ai-code-review-at-scale/*
+  
+  CodeBunny demonstrates Continue's capability beyond basic code generation:
+  - Custom PR review bot with privacy-first architecture
+  - Integration with Continue Hub's pre-built agents and MCP tools
+  - Project-specific rules defined in `.continue/rules/` for enforcing team conventions
+  - Automated review comments through GitHub Actions
+  - Leverages Claude Opus 4.1 for architectural analysis and security reasoning
+
 - **Active Community:** Users highlight the responsive development team and active community contributing features and fixes.
   > "The Continue community is incredibly active. Issues get addressed quickly and there's always someone willing to help with configuration questions."
   > 
@@ -931,7 +958,7 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 - **Documentation Gaps:** Whilst the core documentation is solid, some advanced features and edge cases lack comprehensive documentation.
 
-**Citation:** AI Tool Discovery (2026), BekahhW comparison (2024), Product Hunt reviews (2024-2026), Reddit discussions (2024-2026), GitHub repository discussions (2024-2026).
+**Citation:** AI Tool Discovery (2026), BekahhW comparison (2024), Continue Blog - JavaScript Productivity (https://blog.continue.dev/javascript-productivity-ai-code-assistants/), Continue Blog - AI Code Review at Scale (https://blog.continue.dev/beyond-code-generation-how-continue-enables-ai-code-review-at-scale/), Product Hunt reviews (2024-2026), Reddit discussions (2024-2026), GitHub repository discussions (2024-2026).
 
 ### Reported Bugs and Issues
 
