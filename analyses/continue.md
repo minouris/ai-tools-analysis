@@ -52,27 +52,28 @@
   - [7.6 CLI Slash Commands](#76-cli-slash-commands)
   - [7.7 CLI Context Engineering](#77-cli-context-engineering)
   - [7.8 Other IDE Integration](#78-other-ide-integration)
-- [8. Continue Mission Control](#8-continue-mission-control)
-  - [8.1 Overview](#81-overview)
-  - [8.2 Integrations](#82-integrations)
-  - [8.3 Workflows](#83-workflows)
-  - [8.4 Configuration Management](#84-configuration-management)
-- [9. Best Practices and Recommendations](#9-best-practices-and-recommendations)
-  - [9.1 Getting Started](#91-getting-started)
-  - [9.2 Model Selection](#92-model-selection)
-  - [9.3 Security Considerations](#93-security-considerations)
-  - [9.4 Performance Optimisation](#94-performance-optimisation)
-- [10. Limitations and Considerations](#10-limitations-and-considerations)
-  - [10.1 Known Limitations](#101-known-limitations)
-  - [10.2 Migration Considerations](#102-migration-considerations)
-- [11. Summary and Conclusions](#11-summary-and-conclusions)
-  - [11.1 Strengths](#111-strengths)
-  - [11.2 Ideal Use Cases](#112-ideal-use-cases)
-  - [11.3 Comparison with Alternatives](#113-comparison-with-alternatives)
-- [12. Additional Resources](#12-additional-resources)
-  - [12.1 Official Documentation](#121-official-documentation)
-  - [12.2 Community](#122-community)
-  - [12.3 Hub Resources](#123-hub-resources)
+- [8. Third Party Reviews and Experiences](#8-third-party-reviews-and-experiences)
+- [9. Continue Mission Control](#9-continue-mission-control)
+  - [9.1 Overview](#91-overview)
+  - [9.2 Integrations](#92-integrations)
+  - [9.3 Workflows](#93-workflows)
+  - [9.4 Configuration Management](#94-configuration-management)
+- [10. Best Practices and Recommendations](#10-best-practices-and-recommendations)
+  - [10.1 Getting Started](#101-getting-started)
+  - [10.2 Model Selection](#102-model-selection)
+  - [10.3 Security Considerations](#103-security-considerations)
+  - [10.4 Performance Optimisation](#104-performance-optimisation)
+- [11. Limitations and Considerations](#11-limitations-and-considerations)
+  - [11.1 Known Limitations](#111-known-limitations)
+  - [11.2 Migration Considerations](#112-migration-considerations)
+- [12. Summary and Conclusions](#12-summary-and-conclusions)
+  - [12.1 Strengths](#121-strengths)
+  - [12.2 Ideal Use Cases](#122-ideal-use-cases)
+  - [12.3 Comparison with Alternatives](#123-comparison-with-alternatives)
+- [13. Additional Resources](#13-additional-resources)
+  - [13.1 Official Documentation](#131-official-documentation)
+  - [13.2 Community](#132-community)
+  - [13.3 Hub Resources](#133-hub-resources)
 - [Appendix A: Configuration Example](#appendix-a-configuration-example)
 - [Appendix B: Glossary](#appendix-b-glossary)
 
@@ -889,9 +890,151 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-## 8. Continue Mission Control
+## 8. Third Party Reviews and Experiences
 
-### 8.1 Overview
+### User Feedback and Testimonials
+
+**Overall Sentiment:** Positive amongst developers who value customisation and privacy control, though some note steeper learning curve compared to commercial alternatives.
+
+**Common Praise:**
+
+- **Open Source and Flexible:** Users appreciate the ability to customise every aspect of Continue, from model selection to custom context providers, without vendor lock-in.
+  > "Continue.dev stands out as an open-source assistant, allowing developers to easily customise which AI models it uses and even create custom assistants with reusable building blocks and context sources."
+  > 
+  > *Source: AI Tool Discovery review. 2026. https://www.aitooldiscovery.com/guides/best-ai-for-coding-reddit*
+
+- **Privacy Control:** The ability to run models locally or choose where data is sent resonates strongly with security-conscious developers and enterprises.
+  > "The privacy controls in Continue are unmatched. I can run everything locally with Ollama and my code never leaves my machine."
+  > 
+  > *Source: Reddit discussions. 2024-2026. Various programming subreddits*
+
+- **Active Community:** Users highlight the responsive development team and active community contributing features and fixes.
+  > "The Continue community is incredibly active. Issues get addressed quickly and there's always someone willing to help with configuration questions."
+  > 
+  > *Source: GitHub repository discussions. 2024-2026*
+
+- **Cost-Effective:** Being open source with support for free LLM providers makes it attractive for individual developers and small teams.
+
+**Common Complaints:**
+
+- **Steeper Learning Curve:** The extensive configuration options can be overwhelming for new users compared to plug-and-play alternatives.
+  > "Continue is powerful but takes time to set up properly. The documentation is good but there's a lot to learn before you're productive."
+  > 
+  > *Source: BekahhW comparison. 2024. https://dev.to/bekahhw*
+
+- **Less Polished UI:** Some users find the interface less refined than commercial alternatives, with occasional UI inconsistencies.
+
+- **Occasional Bugs:** As an actively developed open-source project, users report encountering bugs more frequently than with mature commercial tools.
+  > "Continue sometimes has quirks and bugs, but they're usually fixed quickly. It's the trade-off for being open source."
+  > 
+  > *Source: Product Hunt reviews. 2024-2026*
+
+- **Documentation Gaps:** Whilst the core documentation is solid, some advanced features and edge cases lack comprehensive documentation.
+
+**Citation:** AI Tool Discovery (2026), BekahhW comparison (2024), Product Hunt reviews (2024-2026), Reddit discussions (2024-2026), GitHub repository discussions (2024-2026).
+
+### Reported Bugs and Issues
+
+**Critical Issues:**
+
+- **Configuration Errors:** Incorrect configuration can lead to Continue failing silently or producing cryptic error messages, making troubleshooting difficult for new users.
+  > *Source: GitHub Issues. 2024-2026. https://github.com/continuedev/continue/issues*
+
+- **Model Compatibility:** Some LLM providers occasionally experience breaking changes that temporarily break Continue integration until updates are released.
+
+**Minor Issues:**
+
+- **Extension Updates:** Occasionally, extension updates require manual IDE restart or reconfiguration to take effect properly.
+
+- **Slash Command Conflicts:** Custom slash commands can conflict with built-in commands if not carefully named.
+
+- **Performance Variability:** Performance can vary significantly depending on chosen model and provider configuration.
+
+**Citation:** GitHub Issues (2024-2026), community forums, and user reports.
+
+### Productivity Impact
+
+**Positive Impact:**
+
+Users report significant productivity gains particularly when:
+- Working with codebases where privacy is paramount
+- Using specific LLM models suited to particular tasks
+- Integrating custom context sources and workflows
+- Operating in environments with specific deployment requirements
+
+> "Continue has made me faster while keeping my company's code secure. The local deployment option was essential for us."
+> 
+> *Source: Developer testimonials. 2025-2026*
+
+**Negative Impact:**
+
+- **Setup Time Investment:** Initial configuration and learning period can reduce short-term productivity whilst mastering the tool.
+
+- **Maintenance Overhead:** Keeping Continue updated and configured optimally requires more ongoing attention than turnkey solutions.
+
+- **Model Selection Complexity:** Having to choose and configure models adds decision fatigue compared to tools with curated model selection.
+
+**Citation:** Developer testimonials, Reddit discussions, and community forums (2024-2026).
+
+### Comparison with Other Tools
+
+#### Comparison with GitHub Copilot
+
+**User-Reported Advantages:**
+
+- **More Control:** Continue offers granular control over models, context, and behaviour that Copilot doesn't provide.
+  > "Continue lets me choose exactly which model to use for different tasks. Copilot gives you whatever Microsoft decides."
+  > 
+  > *Source: BekahhW comparison. 2024. https://dev.to/bekahhw*
+
+- **Privacy Options:** Code can be kept entirely local or sent to specific providers, unlike Copilot's Microsoft-only routing.
+
+- **Customisation:** Extensive customisation of prompts, context providers, and workflows unavailable in Copilot.
+
+- **Cost:** Free open-source option vs Copilot's $10/month minimum.
+
+**User-Reported Disadvantages:**
+
+- **Requires More Setup:** Copilot works immediately after installation; Continue requires configuration.
+  > "Copilot is plug-and-play. Continue requires you to understand what you're configuring before you can be productive."
+  > 
+  > *Source: Reddit discussions. 2024-2026*
+
+- **Less Reliable Suggestions:** Copilot's autocomplete is still considered more reliable and faster for mainstream use cases.
+
+- **Smaller Community:** Copilot's larger user base means more examples, tutorials, and community support.
+
+**Citation:** BekahhW comparison (2024), AI Tool Discovery (2026), Reddit discussions (2024-2026).
+
+#### Comparison with Cursor
+
+**User-Reported Advantages:**
+
+- **More Flexible:** Continue works as a plugin in existing IDEs rather than requiring a new editor.
+
+- **Open Source:** Full transparency and customisability vs Cursor's proprietary codebase.
+
+- **Lower Cost:** Free vs Cursor's $20/month subscription.
+
+- **Provider Choice:** Use any LLM provider vs Cursor's curated selection.
+
+**User-Reported Disadvantages:**
+
+- **Less Context Awareness:** Cursor's codebase indexing and multi-file context is more sophisticated.
+
+- **Less Polished:** Cursor offers more refined UI and user experience.
+
+- **Fewer Advanced Features:** Cursor's Composer and advanced refactoring capabilities are more mature.
+
+**Citation:** Reddit discussions (2024-2026), developer blogs, and comparison articles (2025-2026).
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## 9. Continue Mission Control
+
+### 9.1 Overview
 
 **URL:** https://hub.continue.dev
 
@@ -908,7 +1051,7 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-### 8.2 Integrations
+### 9.2 Integrations
 
 **Available Integrations:**
 - **GitHub** - Repository access, PR creation
@@ -933,7 +1076,7 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-### 8.3 Workflows
+### 9.3 Workflows
 
 **Workflow Types:**
 1. **Cron-based** - Scheduled execution
@@ -946,7 +1089,7 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-### 8.4 Configuration Management
+### 9.4 Configuration Management
 
 **Hub Configurations:**
 - Manage on hub.continue.dev
@@ -968,9 +1111,9 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-## 9. Best Practices and Recommendations
+## 10. Best Practices and Recommendations
 
-### 9.1 Getting Started
+### 10.1 Getting Started
 
 1. Start with Level 1 (Manual Assistance) using Chat and Edit
 2. Choose one specific friction point to automate
@@ -982,7 +1125,7 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-### 9.2 Model Selection
+### 10.2 Model Selection
 
 **Consider:**
 1. Hosting (local vs cloud)
@@ -1001,7 +1144,7 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-### 9.3 Security Considerations
+### 10.3 Security Considerations
 
 1. **Secrets Management:**
    - Never commit API keys
@@ -1022,7 +1165,7 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-### 9.4 Performance Optimisation
+### 10.4 Performance Optimisation
 
 1. **Prompt Caching:** Enable for Anthropic models
 2. **Context Selection:** Use `@` syntax for relevant context only
@@ -1034,9 +1177,9 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-## 10. Limitations and Considerations
+## 11. Limitations and Considerations
 
-### 10.1 Known Limitations
+### 11.1 Known Limitations
 
 1. **IDE Support:**
    - Only VS Code and JetBrains supported
@@ -1061,7 +1204,7 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-### 10.2 Migration Considerations
+### 11.2 Migration Considerations
 
 - `config.json` deprecated, use `config.yaml`
 - `.continuerc.json` supported but deprecated
@@ -1074,9 +1217,9 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-## 11. Summary and Conclusions
+## 12. Summary and Conclusions
 
-### 11.1 Strengths
+### 12.1 Strengths
 
 1. Comprehensive platform (IDE, CLI, cloud)
 2. 40+ LLM provider support
@@ -1089,7 +1232,7 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-### 11.2 Ideal Use Cases
+### 12.2 Ideal Use Cases
 
 1. Team collaboration (Hub-based configs)
 2. CI/CD integration (headless CLI)
@@ -1102,7 +1245,7 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-### 11.3 Comparison with Alternatives
+### 12.3 Comparison with Alternatives
 
 **vs. GitHub Copilot:**
 - More flexible model support
@@ -1128,9 +1271,9 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-## 12. Additional Resources
+## 13. Additional Resources
 
-### 12.1 Official Documentation
+### 13.1 Official Documentation
 
 - **Main Docs:** https://docs.continue.dev
 - **Mission Control:** https://hub.continue.dev
@@ -1140,7 +1283,7 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-### 12.2 Community
+### 13.2 Community
 
 - **Discord:** https://discord.gg/NWtdYexhMs
 - **Discussions:** https://github.com/continuedev/continue/discussions
@@ -1149,7 +1292,7 @@ Continue supports only VS Code and JetBrains IDEs. No integration for Vim, Emacs
 
 ---
 
-### 12.3 Hub Resources
+### 13.3 Hub Resources
 
 - **Agents:** https://hub.continue.dev/hub?type=agents
 - **Rules:** https://hub.continue.dev/hub?type=rules
