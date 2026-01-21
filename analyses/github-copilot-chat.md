@@ -1,4 +1,4 @@
-← [Previous: Continue](continue.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
+← [Previous: Gemini Code Assist](gemini-code-assist.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
 
 ---
 
@@ -902,4 +902,4 @@ Areas for improvement:
 
 ---
 
-← [Previous: Continue](continue.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
+← [Previous: Gemini Code Assist](gemini-code-assist.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →

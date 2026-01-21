@@ -1,4 +1,4 @@
-← [Previous: Azure AI Toolkit](azure-ai-toolkit.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Chat](github-copilot-chat.md) →
+← [Previous: Azure AI Toolkit](azure-ai-toolkit.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Gemini Code Assist](gemini-code-assist.md) →
 
 ---
 
@@ -1255,4 +1255,4 @@ mcpServers:
 
 ---
 
-← [Previous: Azure AI Toolkit](azure-ai-toolkit.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Chat](github-copilot-chat.md) →
+← [Previous: Azure AI Toolkit](azure-ai-toolkit.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Gemini Code Assist](gemini-code-assist.md) →
