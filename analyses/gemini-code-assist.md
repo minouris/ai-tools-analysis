@@ -410,7 +410,7 @@ Not explicitly documented in official sources
 **UI Integration:**
 
 Gemini Code Assist appears as:
-- Activity bar icon (spark **Gemini Code Assist**)
+- Activity bar icon (✨ **Gemini Code Assist**)
 - Chat panel with standard and agent mode toggle
 - Inline code suggestions in the editor
 - Context menu for smart actions
@@ -447,7 +447,7 @@ Plugin name: "Gemini Code Assist"
 **Features:**
 
 - Inline code completion and generation
-- Natural language chat interface (spark **Gemini** in tool window bar)
+- Natural language chat interface (✨ **Gemini** in tool window bar)
 - Agent mode with Agent tab
 - Smart actions on selected code
 - Local codebase awareness
