@@ -72,10 +72,30 @@
 | **Terminal/CLI** | Commands, configuration, shell integration |
 | **Others** | Vim, Emacs, Sublime, etc. |
 
+### 8. Third Party Reviews and Experiences
+- Overall user sentiment (Positive/Mixed/Negative)
+- Common praise from user reviews
+- Common complaints and pain points
+- Reported bugs and issues (critical and minor)
+- Productivity impact (positive and negative)
+- Comparisons with other tools
+- **Sources:** Reddit, Stack Overflow, G2, Gartner, tech blogs, YouTube
+- **Always include:** Dated citations, direct quotes where possible
+- **Note:** When newer information contradicts older accounts, explicitly state this
+
 ## Citation Format
 
 ```markdown
 **Citation:** [Feature Name]. [Tool Name] Documentation. [URL]. Accessed [Date].
+```
+
+### For Third Party Reviews
+
+```markdown
+**Citation:** [Platform/Publication]. [Month Year]. [URL]
+
+Example: Reddit discussion. January 2025. https://reddit.com/...
+Example: "GitHub Copilot Review". TechCrunch. March 2024. https://...
 ```
 
 **Example:**
@@ -97,7 +117,8 @@ Use these exact phrases when official documentation is lacking:
 
 ## Checklist Before Finalising
 
-- [ ] All 7 main sections completed
+- [ ] All 8 main sections completed
+- [ ] Third party reviews section included with dated citations
 - [ ] Every claim has a citation
 - [ ] Tool version clearly stated at top
 - [ ] UK English used throughout
