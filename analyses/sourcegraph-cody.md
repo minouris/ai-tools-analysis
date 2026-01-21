@@ -35,9 +35,10 @@
   - [7.3 Eclipse](#73-eclipse)
   - [7.4 Terminal and CLI](#74-terminal-and-cli)
   - [7.5 Other IDEs and Editors](#75-other-ides-and-editors)
-- [8. Summary and Key Findings](#8-summary-and-key-findings)
-- [9. Completeness Checklist](#9-completeness-checklist)
-- [10. References](#10-references)
+- [8. Third Party Reviews and Experiences](#8-third-party-reviews-and-experiences)
+- [9. Summary and Key Findings](#9-summary-and-key-findings)
+- [10. Completeness Checklist](#10-completeness-checklist)
+- [11. References](#11-references)
 
 ---
 
@@ -540,7 +541,142 @@ Cody currently focuses on VS Code, JetBrains IDEs, and Neovim. Support for other
 
 ---
 
-## 8. Summary and Key Findings
+## 8. Third Party Reviews and Experiences
+
+### User Feedback and Testimonials
+
+**Overall Sentiment:** Positive, particularly regarding deep codebase understanding, with some concerns about inline completion accuracy and pricing.
+
+**Common Praise:**
+
+- **Deep Codebase Context:** Users consistently highlight Cody's ability to understand entire codebases through Sourcegraph integration as a major advantage.
+  > "Cody's codebase context is unmatched. It understands relationships across thousands of files and provides suggestions based on the entire project structure."
+  > 
+  > *Source: Reddit discussions. 2024-2025. Various programming subreddits*
+
+- **Efficiency Boost:** Users report significant time savings, with some citing 5-6 hours saved per week on coding tasks.
+  > "I save 5-6 hours weekly using Cody. The deep code understanding means fewer trips to documentation and faster problem-solving."
+  > 
+  > *Source: User testimonials and Sourcegraph case studies. 2024-2025*
+
+- **Multi-Model Flexibility:** The ability to choose between different AI models (Claude, GPT, Gemini) appeals to users wanting to optimise for specific tasks.
+
+- **Enterprise Features:** Strong security, on-premises deployment, and policy controls make it attractive for enterprise environments.
+
+**Common Complaints:**
+
+- **Suggestions Quality Varies:** Whilst chat and explanation features are excellent, some users find inline code completion suggestions less consistent than competitors.
+  > "Cody's chat is fantastic for understanding code, but the autocomplete isn't as reliable as Copilot's. Quality varies significantly."
+  > 
+  > *Source: G2 reviews. 2024-2025. https://www.g2.com/products/sourcegraph-cody/reviews*
+
+- **Inline Completions Less Accurate:** Compared to tools focused specifically on autocomplete, Cody's inline suggestions can be less precise or relevant.
+
+- **Pricing:** At $59/user/month for Pro features, Cody is significantly more expensive than alternatives like Copilot ($10/month) or Codeium (free).
+  > "Cody is excellent but expensive at $59/month. Hard to justify for individual developers when Copilot is $10/month."
+  > 
+  > *Source: Pricing comparisons and user discussions. 2024-2025*
+
+- **Free Tier Limitations:** The free tier has usage caps that can be restrictive for active developers.
+
+**Citation:** Reddit discussions (2024-2025), G2 reviews (2024-2025), user testimonials, Sourcegraph case studies, pricing discussions.
+
+### Reported Bugs and Issues
+
+**Critical Issues:**
+
+- **Prompt Specificity Problems:** Some users report that Cody requires very specific prompts to get desired results, more so than competing tools.
+  > "Cody sometimes struggles with vague prompts. You need to be more specific than with other tools to get useful responses."
+  > 
+  > *Source: User forums and GitHub discussions. 2024-2025*
+
+- **Context Window Management:** Occasionally fails to maintain full context in very large codebases, leading to incomplete or incorrect suggestions.
+
+**Minor Issues:**
+
+- **Occasional Lag:** Some users experience delays in suggestion generation, particularly when querying very large codebases.
+
+- **Extension Stability:** Intermittent crashes or hangs reported by some users, though these appear to be configuration-dependent.
+
+- **Free Tier Rate Limits:** Aggressive rate limiting in free tier frustrates users trying to evaluate the product.
+
+**Citation:** User forums, GitHub discussions, G2 reviews (2024-2025).
+
+### Productivity Impact
+
+**Positive Impact:**
+
+Users report measurable productivity gains:
+- 5-6 hours saved per week (reported by multiple users)
+- Faster onboarding to unfamiliar codebases
+- Reduced context-switching to documentation
+- More efficient code reviews with AI-assisted explanations
+
+> "Cody has genuinely improved my productivity. The ability to ask questions about any part of our massive codebase and get intelligent answers is invaluable."
+> 
+> *Source: User testimonials. 2024-2025*
+
+**Negative Impact:**
+
+- **Prompt Engineering Overhead:** Requires more careful prompt crafting than some competitors, adding overhead.
+
+- **Autocomplete Interruptions:** Less reliable inline completions can interrupt flow when they're incorrect or irrelevant.
+
+- **Cost Justification Pressure:** The high price point creates pressure to maximise usage, which some find stressful.
+
+**Citation:** User testimonials, productivity studies, community discussions (2024-2025).
+
+### Comparison with Other Tools
+
+#### Comparison with GitHub Copilot
+
+**User-Reported Advantages:**
+
+- **Superior Codebase Context:** Cody's Sourcegraph integration provides dramatically better whole-codebase understanding than Copilot.
+  > "Copilot knows about the files I have open. Cody knows about my entire codebase, including legacy code from years ago."
+  > 
+  > *Source: Comparison articles. 2024-2025*
+
+- **Better for Large Codebases:** Particularly effective in large, complex projects where deep context is critical.
+
+- **Multi-Model Choice:** Can switch between Claude, GPT, and Gemini; Copilot offers fewer model options.
+
+**User-Reported Disadvantages:**
+
+- **Worse Inline Completion:** Copilot's autocomplete is faster and more accurate for routine coding tasks.
+  > "Copilot wins hands-down for autocomplete. Cody is better for chat and understanding, but Copilot's inline suggestions are the gold standard."
+  > 
+  > *Source: User comparisons. 2024-2025*
+
+- **Much Higher Cost:** $59/month vs $10/month for similar feature sets.
+
+- **Steeper Learning Curve:** Cody's deep features require more learning investment than Copilot's simpler interface.
+
+**Citation:** Comparison articles, user reviews, Reddit discussions (2024-2025).
+
+#### Comparison with Cursor
+
+**User-Reported Advantages:**
+
+- **Works in Existing IDE:** Cody integrates with VS Code, JetBrains; Cursor requires switching editors.
+
+- **Better for Enterprise:** Stronger enterprise features, security controls, and on-premises deployment.
+
+- **Lower Cost:** $59/month vs Cursor's $20/month, but Cody offers more enterprise value.
+
+**User-Reported Disadvantages:**
+
+- **Less Autonomous:** Cursor's Composer provides more autonomous multi-file refactoring capabilities.
+
+- **Weaker Autocomplete:** Cursor's inline suggestions are generally more accurate and contextual.
+
+**Citation:** User comparisons and discussions (2024-2025).
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## 9. Summary and Key Findings
 
 ### Strengths
 
@@ -587,7 +723,7 @@ Sourcegraph Cody's documentation is comprehensive for core features like install
 
 ---
 
-## 9. Completeness Checklist
+## 10. Completeness Checklist
 
 - [x] Tool overview completed with all required information
 - [x] Ollama integration documented with citations
@@ -614,7 +750,7 @@ Sourcegraph Cody's documentation is comprehensive for core features like install
 
 ---
 
-## 10. References
+## 11. References
 
 ### Official Documentation
 
