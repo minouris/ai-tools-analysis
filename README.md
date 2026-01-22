@@ -138,7 +138,7 @@ Created and maintained by **[Minouris](https://github.com/minouris)**
 
 ### AI-Assisted Analysis
 
-The analyses in this repository were conducted under the instruction and guidance of **[GitHub Copilot Coding Agent](https://github.com/features/copilot)**, using the **Claude 3.5 Sonnet** model (via Anthropic API). The AI agent followed standardised methodology and guidelines to ensure comprehensive and consistent evaluation.
+The analyses in this repository were conducted by **[GitHub Copilot Coding Agent](https://github.com/features/copilot)** (using the **Claude 3.5 Sonnet** model via Anthropic API) working under instruction and guidance from the author. The AI agent followed standardised methodology and guidelines to ensure comprehensive and consistent evaluation.
 
 ### Important Disclaimer
 
