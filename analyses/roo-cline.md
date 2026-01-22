@@ -956,4 +956,4 @@ The tool was previously known as "Roo Code" and has been renamed to "Roo Cline".
 
 ---
 
-← [Previous: GitHub Copilot Chat](github-copilot-chat.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Amazon Q Developer](amazon-q-developer.md) →
+← [Previous: GitHub Copilot Coding Agent](github-copilot-coding-agent.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Sourcegraph Cody](sourcegraph-cody.md) →
