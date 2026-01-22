@@ -12,6 +12,7 @@ A comprehensive repository of analyses for AI-powered coding tools, providing de
 - [Contributing](#contributing)
 - [Repository Structure](#repository-structure)
 - [Author](#author)
+- [Acknowledgements and Disclaimer](#acknowledgements-and-disclaimer)
 - [Licence](#licence)
 
 ---
@@ -128,6 +129,27 @@ ai-tools-analysis/
 ## Author
 
 Created and maintained by **[Minouris](https://github.com/minouris)**
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## Acknowledgements and Disclaimer
+
+### AI-Assisted Analysis
+
+The analyses in this repository were conducted under the instruction and guidance of **[GitHub Copilot Coding Agent](https://github.com/features/copilot)**, using the **Claude 3.5 Sonnet** model (via Anthropic API). The AI agent followed standardised methodology and guidelines to ensure comprehensive and consistent evaluation.
+
+### Important Disclaimer
+
+⚠️ **Verify Before Use**: While analyses are based on official documentation and follow rigorous methodology, they are AI-generated content and may contain errors, omissions, or outdated information. Users should:
+
+- **Verify critical information** against official documentation before making decisions
+- **Check version compatibility** as tools evolve rapidly
+- **Test features** in your own environment before relying on them
+- **Cross-reference** with multiple sources for important decisions
+
+The analyses are provided as a research resource and starting point, not as authoritative or guaranteed-accurate information.
 
 [↑ Back to top](#table-of-contents)
 
