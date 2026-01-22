@@ -29,10 +29,10 @@ To analyse a new tool:
 
 1. Copy the template:
    ```bash
-   cp ../TOOL_ANALYSIS_TEMPLATE.md [tool-name].md
+   cp ../doc/templates/TOOL_ANALYSIS_TEMPLATE.md [tool-name].md
    ```
 
-2. Follow the [Analysis Plan](../ANALYSIS_PLAN.md) methodology
+2. Follow the [Analysis Instructions](../doc/ANALYSIS_INSTRUCTIONS.md) methodology
 
 3. Complete all applicable sections with information from official documentation
 

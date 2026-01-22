@@ -1,4 +1,25 @@
-# Reusable Analysis Plan for AI Coding Tools
+# Analysis Instructions for AI Coding Tools
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Important Guidelines](#important-guidelines)
+- [Analysis Structure](#analysis-structure)
+  - [1. Tool Overview](#1-tool-overview)
+  - [2. LLM Provider Integration](#2-llm-provider-integration)
+  - [3. Policies and Rules (Instruction Files)](#3-policies-and-rules-instruction-files)
+  - [4. Custom and Stored Prompts](#4-custom-and-stored-prompts)
+  - [5. Tools and Model Context Protocol (MCP)](#5-tools-and-model-context-protocol-mcp)
+  - [6. Application Development Workflow](#6-application-development-workflow)
+  - [7. IDE and Environment Integration](#7-ide-and-environment-integration)
+  - [8. Third Party Reviews and Experiences](#8-third-party-reviews-and-experiences)
+- [Analysis Checklist](#analysis-checklist)
+- [Document Organisation](#document-organisation)
+- [Notes for Analysts](#notes-for-analysts)
+- [Citation Format](#citation-format)
+- [Revision History](#revision-history)
+
+---
 
 ## Overview
 
@@ -13,6 +34,8 @@ This document provides a standardised methodology for analysing AI coding tools.
 - 📚 **Provide citations and links** to official documentation for every claim
 - 🇬🇧 **Use UK English** throughout the analysis
 - 📝 **Create a dedicated page** for each tool analysis in a consistent format
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -49,6 +72,8 @@ Each tool analysis should follow this structure and address each section thoroug
 
 **Citation:** [Official documentation links]
 ```
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -170,6 +195,8 @@ Each tool analysis should follow this structure and address each section thoroug
 **Citation:** [Official documentation links]
 ```
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ### 3. Policies and Rules (Instruction Files)
@@ -208,6 +235,8 @@ Each tool analysis should follow this structure and address each section thoroug
 **Citation:** [Official documentation links]
 ```
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ### 4. Custom and Stored Prompts
@@ -245,6 +274,8 @@ Each tool analysis should follow this structure and address each section thoroug
 **Citation:** [Official documentation links]
 ```
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ### 5. Tools and Model Context Protocol (MCP)
@@ -280,6 +311,8 @@ Each tool analysis should follow this structure and address each section thoroug
 
 **Citation:** [Official documentation links]
 ```
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -331,6 +364,8 @@ Each tool analysis should follow this structure and address each section thoroug
 
 **Citation:** [Official documentation links]
 ```
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -472,6 +507,8 @@ Each tool analysis should follow this structure and address each section thoroug
 **Citation:** [Official documentation links]
 ```
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ### 8. Third Party Reviews and Experiences
@@ -565,6 +602,8 @@ Each tool analysis should follow this structure and address each section thoroug
 - Focus on substantive issues rather than superficial complaints
 - Cross-reference comparison sections between related tool analyses
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## Analysis Checklist
@@ -596,6 +635,8 @@ Use this checklist to ensure completeness when analysing a tool:
 - [ ] UK English used throughout
 - [ ] Consistent formatting applied
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## Document Organisation
@@ -621,6 +662,8 @@ Use this checklist to ensure completeness when analysing a tool:
   /[tool-name].md         # All sections in one file
 ```
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## Notes for Analysts
@@ -637,6 +680,8 @@ Use this checklist to ensure completeness when analysing a tool:
 
 6. **Incomplete Information:** If a section cannot be completed due to lack of documentation, document this explicitly and note what information is missing.
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## Citation Format
@@ -652,6 +697,8 @@ Use the following format for citations:
 **Citation:** OpenAI Integration. Cursor Documentation. https://docs.cursor.com/integrations/openai. Accessed 16 January 2026.
 ```
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## Revision History
@@ -659,4 +706,6 @@ Use the following format for citations:
 | Date | Version | Changes |
 |------|---------|---------|
 | 16 January 2026 | 1.0 | Initial creation of reusable analysis plan |
+| 22 January 2026 | 1.1 | Renamed to ANALYSIS_INSTRUCTIONS.md, added table of contents and back to top navigation, added section 8 for third party reviews |
 
+[↑ Back to top](#table-of-contents)

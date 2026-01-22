@@ -5,6 +5,38 @@
 **Analyst:** [Name]  
 **Official Documentation:** [Primary documentation URL]
 
+## Table of Contents
+
+- [1. Tool Overview](#1-tool-overview)
+- [2. LLM Provider Integration](#2-llm-provider-integration)
+  - [2.1 Ollama Integration](#21-ollama-integration)
+  - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
+  - [2.3 Microsoft AI Foundry Integration](#23-microsoft-ai-foundry-integration)
+  - [2.4 OpenAI Integration](#24-openai-integration)
+  - [2.5 Anthropic (Claude) Integration](#25-anthropic-claude-integration)
+- [3. Policies and Rules (Instruction Files)](#3-policies-and-rules-instruction-files)
+- [4. Custom and Stored Prompts](#4-custom-and-stored-prompts)
+- [5. Tools and Model Context Protocol (MCP)](#5-tools-and-model-context-protocol-mcp)
+- [6. Application Development Workflow](#6-application-development-workflow)
+  - [6.1 Project Initialisation](#61-project-initialisation)
+  - [6.2 Design and Planning](#62-design-and-planning)
+  - [6.3 Code Generation](#63-code-generation)
+  - [6.4 Iterative Development](#64-iterative-development)
+  - [6.5 Testing and Validation](#65-testing-and-validation)
+  - [6.6 Debugging](#66-debugging)
+  - [6.7 Deployment](#67-deployment)
+- [7. IDE and Environment Integration](#7-ide-and-environment-integration)
+  - [7.1 Visual Studio Code](#71-visual-studio-code)
+  - [7.2 JetBrains IDEs](#72-jetbrains-ides)
+  - [7.3 Eclipse](#73-eclipse)
+  - [7.4 Terminal and CLI](#74-terminal-and-cli)
+  - [7.5 Other IDEs and Editors](#75-other-ides-and-editors)
+- [8. Third Party Reviews and Experiences](#8-third-party-reviews-and-experiences)
+- [9. Summary and Key Findings](#9-summary-and-key-findings)
+- [10. Completeness Checklist](#10-completeness-checklist)
+- [11. References](#11-references)
+- [Revision History](#revision-history)
+
 ---
 
 ## 1. Tool Overview
@@ -25,6 +57,8 @@
 - [Feature 3]
 
 **Citation:** [Official documentation links]
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -112,6 +146,8 @@
 
 **Citation:** [Official documentation links, or "Not documented in official sources"]
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 3. Policies and Rules (Instruction Files)
@@ -148,6 +184,8 @@
 
 **Citation:** [Official documentation links, or "Not documented in official sources"]
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 4. Custom and Stored Prompts
@@ -175,6 +213,8 @@
 [Information about sharing prompt collections with team members or exporting prompts]
 
 **Citation:** [Official documentation links, or "Not documented in official sources"]
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -210,6 +250,8 @@
 **Development Framework:** [If custom development is supported, what framework/API is used]
 
 **Citation:** [Official documentation links, or "Not documented in official sources"]
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -254,6 +296,8 @@
 [Deployment-related features, if any, or "Not applicable"]
 
 **Citation:** [Official documentation links, or "Not documented in official sources"]
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -393,6 +437,8 @@
 **Limitations:** [Any known limitations]  
 **Citation:** [Official documentation links]
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 8. Third Party Reviews and Experiences
@@ -463,6 +509,8 @@
 
 **Citation:** [Comparison source with date]
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 9. Summary and Key Findings
@@ -486,6 +534,8 @@
 ### Documentation Quality
 
 [Assessment of the official documentation quality and completeness]
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -514,6 +564,8 @@
 - [ ] UK English used throughout
 - [ ] Consistent formatting applied
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## 11. References
@@ -530,6 +582,8 @@
 - **Documentation Last Updated:** [Date]
 - **Analysis Last Updated:** [Date]
 
+[↑ Back to top](#table-of-contents)
+
 ---
 
 ## Revision History
@@ -538,3 +592,4 @@
 |------|---------|---------|---------|
 | [Date] | 1.0 | Initial analysis | [Name] |
 
+[↑ Back to top](#table-of-contents)
