@@ -12,34 +12,38 @@
 ## Table of Contents
 
 - [1. Tool Overview](#1-tool-overview)
-- [2. LLM Provider Integration](#2-llm-provider-integration)
-  - [2.1 Ollama Integration](#21-ollama-integration)
-  - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
-  - [2.3 Microsoft AI Foundry Integration](#23-microsoft-ai-foundry-integration)
-  - [2.4 OpenAI Integration](#24-openai-integration)
-  - [2.5 Anthropic (Claude) Integration](#25-anthropic-claude-integration)
-- [3. Policies and Rules (Instruction Files)](#3-policies-and-rules-instruction-files)
-- [4. Custom and Stored Prompts](#4-custom-and-stored-prompts)
-- [5. Tools and Model Context Protocol (MCP)](#5-tools-and-model-context-protocol-mcp)
-- [6. Application Development Workflow](#6-application-development-workflow)
-  - [6.1 Project Initialisation](#61-project-initialisation)
-  - [6.2 Design and Planning](#62-design-and-planning)
-  - [6.3 Code Generation](#63-code-generation)
-  - [6.4 Iterative Development](#64-iterative-development)
-  - [6.5 Testing and Validation](#65-testing-and-validation)
-  - [6.6 Debugging](#66-debugging)
-  - [6.7 Deployment](#67-deployment)
-- [7. IDE and Environment Integration](#7-ide-and-environment-integration)
-  - [7.1 Visual Studio Code](#71-visual-studio-code)
-  - [7.2 JetBrains IDEs](#72-jetbrains-ides)
-  - [7.3 Eclipse](#73-eclipse)
-  - [7.4 Terminal and CLI](#74-terminal-and-cli)
-  - [7.5 Other IDEs and Editors](#75-other-ides-and-editors)
-- [8. Third Party Reviews and Experiences](#8-third-party-reviews-and-experiences)
-- [9. Comparison with Local Development](#9-comparison-with-local-development)
-- [10. Summary and Key Findings](#10-summary-and-key-findings)
-- [11. Completeness Checklist](#11-completeness-checklist)
-- [12. References](#12-references)
+- [2. Deployment and Network Options](#2-deployment-and-network-options)
+  - [2.1 Cloud-Hosted Deployment](#21-cloud-hosted-deployment)
+  - [2.2 Local and On-Premises Deployment](#22-local-and-on-premises-deployment)
+  - [2.3 Private Network Connectivity](#23-private-network-connectivity)
+- [3. LLM Provider Integration](#3-llm-provider-integration)
+  - [3.1 Ollama Integration](#31-ollama-integration)
+  - [3.2 GitHub Copilot Pro Integration](#32-github-copilot-pro-integration)
+  - [3.3 Microsoft AI Foundry Integration](#33-microsoft-ai-foundry-integration)
+  - [3.4 OpenAI Integration](#34-openai-integration)
+  - [3.5 Anthropic (Claude) Integration](#35-anthropic-claude-integration)
+- [4. Policies and Rules (Instruction Files)](#4-policies-and-rules-instruction-files)
+- [5. Custom and Stored Prompts](#5-custom-and-stored-prompts)
+- [6. Tools and Model Context Protocol (MCP)](#6-tools-and-model-context-protocol-mcp)
+- [7. Application Development Workflow](#7-application-development-workflow)
+  - [7.1 Project Initialisation](#71-project-initialisation)
+  - [7.2 Design and Planning](#72-design-and-planning)
+  - [7.3 Code Generation](#73-code-generation)
+  - [7.4 Iterative Development](#74-iterative-development)
+  - [7.5 Testing and Validation](#75-testing-and-validation)
+  - [7.6 Debugging](#76-debugging)
+  - [7.7 Deployment](#77-deployment)
+- [8. IDE and Environment Integration](#8-ide-and-environment-integration)
+  - [8.1 Visual Studio Code](#81-visual-studio-code)
+  - [8.2 JetBrains IDEs](#82-jetbrains-ides)
+  - [8.3 Eclipse](#83-eclipse)
+  - [8.4 Terminal and CLI](#84-terminal-and-cli)
+  - [8.5 Other IDEs and Editors](#85-other-ides-and-editors)
+- [9. Third Party Reviews and Experiences](#9-third-party-reviews-and-experiences)
+- [10. Comparison with Local Development](#10-comparison-with-local-development)
+- [11. Summary and Key Findings](#11-summary-and-key-findings)
+- [12. Completeness Checklist](#12-completeness-checklist)
+- [13. References](#13-references)
 - [Revision History](#revision-history)
 
 ---
@@ -84,11 +88,230 @@ GitHub Codespaces is not itself an AI coding tool but rather a development envir
 
 ---
 
-## 2. LLM Provider Integration
+## 2. Deployment and Network Options
+
+### 2.1 Cloud-Hosted Deployment
+
+**Default Deployment Model:** Cloud-only (GitHub/Microsoft-managed infrastructure)
+
+GitHub Codespaces is exclusively a cloud-hosted service. All codespace environments run on GitHub's infrastructure (Microsoft Azure), and there is no official support for on-premises or self-hosted deployment of GitHub Codespaces itself.
+
+**Infrastructure Details:**
+- Codespaces run on virtual machines hosted by GitHub
+- Environments are ephemeral and dynamically provisioned
+- IP addresses are dynamically assigned (not static)
+- Geographic regions determined by GitHub's infrastructure
+- No control over physical server location
+
+**Limitations:**
+- Cannot deploy Codespaces infrastructure within organisation's own data centres
+- Cannot run Codespaces in air-gapped or fully offline environments
+- Cannot guarantee fixed IP addresses for network allowlisting
+- Must rely on GitHub's cloud infrastructure availability
+
+**Citation:** Connecting to a private network. GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/developing-in-a-codespace/connecting-to-a-private-network. Accessed 22 January 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+### 2.2 Local and On-Premises Deployment
+
+**Supported:** No (not officially supported)
+
+GitHub Codespaces cannot be deployed or run locally on developers' machines or within an organisation's private on-premises infrastructure. The service is cloud-only by design.
+
+**Why Not Supported:**
+- Codespaces is a fully managed cloud service
+- Infrastructure management handled entirely by GitHub/Microsoft
+- No self-hosted server component available
+- No on-premises licensing option
+
+**Alternative Solutions for Local/On-Premises Development:**
+
+Organisations requiring on-premises development environments can consider these alternatives:
+
+1. **Dev Containers Locally**
+   - Use VS Code Dev Containers extension locally
+   - Same `.devcontainer` configuration files
+   - Runs Docker containers on local machine
+   - No cloud dependency, fully offline capable
+   - Does not provide Codespaces UI or GitHub integration
+
+2. **Self-Hosted Code Server**
+   - Open-source project: code-server (https://github.com/coder/code-server)
+   - Self-host VS Code in browser on own infrastructure
+   - Full control over deployment and networking
+   - Can run entirely on-premises
+   - Not officially supported by GitHub/Microsoft
+
+3. **VS Code Remote Development**
+   - Connect local VS Code to remote SSH servers
+   - Self-managed server infrastructure
+   - No browser interface
+   - Manual server provisioning and management
+
+4. **Self-Hosted GitHub Actions Runners**
+   - For CI/CD automation on-premises
+   - Not a development environment replacement
+   - Allows running builds/tests within private network
+   - Does not provide interactive development experience
+
+**Note:** None of these alternatives replicate the full Codespaces experience (instant provisioning, GitHub-native integration, browser-based VS Code). They require manual infrastructure management and lack Codespaces' automation.
+
+**Citation:** Not explicitly documented as alternatives in official Codespaces documentation. Based on GitHub's cloud-only service model and community-known alternatives.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+### 2.3 Private Network Connectivity
+
+**Supported:** Yes (connecting cloud Codespaces to private resources)
+
+Whilst Codespaces itself cannot run on-premises, cloud-hosted codespaces can connect to resources within an organisation's private network. This enables developers to use cloud development environments whilst accessing internal databases, APIs, and services.
+
+**Connection Methods:**
+
+#### VPN Connection
+
+**Supported:** Yes (recommended approach)
+
+Codespaces can connect to private networks using VPN clients installed within the codespace container.
+
+**Recommended VPN Solutions:**
+- **OpenVPN**: Open-source VPN client with documented Codespaces integration
+  - Documentation: https://github.com/codespaces-contrib/codespaces-openvpn
+  - Configure via `.devcontainer/devcontainer.json`
+  - VPN starts automatically when codespace launches
+
+- **Tailscale**: Third-party mesh VPN solution
+  - Documentation: https://tailscale.com/kb/1160/github-codespaces/
+  - Provides secure peer-to-peer connections
+  - Integrates with Codespaces via configuration
+
+**Configuration Example (OpenVPN in devcontainer):**
+```json
+{
+  "features": {
+    "ghcr.io/codespaces-contrib/features/openvpn": {}
+  }
+}
+```
+
+**Use Cases:**
+- Access on-premises databases from cloud codespace
+- Connect to internal package registries
+- Reach licence servers behind firewall
+- Integrate with internal APIs and services
+
+#### GitHub CLI Extension (Deprecated)
+
+**Supported:** No (deprecated, no longer maintained)
+
+Previously, GitHub offered a CLI extension (`gh net`) that bridged codespaces to local machines, enabling access to resources via the developer's workstation. This approach is being phased out and is no longer supported.
+
+**Why Deprecated:**
+- Required keeping local machine running continuously
+- Complex network configuration
+- Replaced by VPN-based approaches
+
+**Status:** Do not use for new implementations.
+
+**Citation:** Using the GitHub CLI extension to access remote resources. GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/developing-in-a-codespace/connecting-to-a-private-network#using-the-github-cli-extension-to-access-remote-resources. Accessed 22 January 2026.
+
+---
+
+#### IP Allowlisting Limitations
+
+**Challenge:** Dynamic IP addresses make traditional allowlisting difficult
+
+GitHub Codespaces use dynamically assigned IP addresses, meaning a codespace will not have the same IP address across sessions. This complicates network security policies that rely on IP allowlisting.
+
+**Implications:**
+- Cannot reliably allowlist specific codespace IP addresses
+- Allowlisting entire GitHub IP ranges grants overly broad access
+- IP range allowlisting would affect all GitHub users, not just organisation members
+- Codespace creation disabled if organisation enables IP allow lists
+
+**Workarounds:**
+- Use VPN with authentication instead of IP allowlisting
+- Implement application-level authentication (API keys, OAuth)
+- Use certificate-based authentication
+- Deploy jump boxes/bastion hosts accessible via VPN
+
+**Citation:** Allowlisting private resources for codespaces. GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/developing-in-a-codespace/connecting-to-a-private-network#allowlisting-private-resources-for-codespaces. Accessed 22 January 2026.
+
+---
+
+#### Internet Access Restrictions
+
+**Restriction Capabilities:** None (cannot restrict public internet access)
+
+GitHub Codespaces cannot be configured to:
+- Block access to public internet
+- Restrict outbound network connections
+- Limit which external services can be accessed
+- Prevent data exfiltration via network
+
+**Security Implications:**
+- Codespaces have full public internet access by default
+- Code and data could potentially be transmitted externally
+- Cannot enforce network-level data loss prevention
+- Organisations with strict air-gap requirements cannot use Codespaces
+
+**Mitigation Strategies:**
+- Implement code review and approval processes
+- Use branch protection rules
+- Monitor repository access and activities
+- Apply GitHub security policies
+- Educate developers on security best practices
+- Consider if Codespaces meets organisation's security requirements
+
+**Citation:** Restricting access to the public internet. GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/developing-in-a-codespace/connecting-to-a-private-network#restricting-access-to-the-public-internet. Accessed 22 January 2026.
+
+---
+
+#### Port Forwarding Security
+
+**Access Control:** Limited (authenticated users can access forwarded ports)
+
+When a codespace forwards ports (e.g., for running web servers), those ports are accessible to authenticated GitHub users. There is currently no way to restrict which users can access forwarded ports beyond GitHub authentication.
+
+**Security Considerations:**
+- Forwarded ports protected by GitHub authentication
+- Cannot add additional access controls
+- Other organisation members may access forwarded services
+- Sensitive services should use application-level authentication
+
+**Citation:** Restricting access to the public internet. GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/developing-in-a-codespace/connecting-to-a-private-network#restricting-access-to-the-public-internet. Accessed 22 January 2026.
+
+---
+
+### Summary: Deployment Options
+
+| Capability | Supported | Notes |
+|------------|-----------|-------|
+| **Cloud-hosted deployment** | ✅ Yes | Default and only official deployment model |
+| **On-premises deployment** | ❌ No | Not supported; no self-hosted option |
+| **Local deployment** | ❌ No | Cannot run on developer's local machine |
+| **Private network connectivity** | ✅ Yes | Via VPN (OpenVPN, Tailscale, etc.) |
+| **Static IP addresses** | ❌ No | IPs dynamically assigned |
+| **IP allowlisting** | ❌ Limited | Dynamic IPs prevent reliable allowlisting |
+| **Internet access restrictions** | ❌ No | Cannot block public internet access |
+| **Air-gapped environments** | ❌ No | Requires cloud connectivity |
+
+**Key Takeaway:** GitHub Codespaces is exclusively a cloud-hosted service. Organisations requiring on-premises development environments must use alternative solutions. However, cloud-hosted codespaces can connect to private network resources via VPN.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## 3. LLM Provider Integration
 
 GitHub Codespaces does not directly integrate with LLM providers. Instead, it provides a development environment where AI coding tools (such as GitHub Copilot, Continue, Codeium, etc.) can be installed and configured. The LLM integration capabilities depend entirely on which AI tools are installed within the codespace.
 
-### 2.1 Ollama Integration
+### 3.1 Ollama Integration
 
 **Supported:** Indirectly via installed AI tools
 
@@ -107,7 +330,7 @@ Users would need to:
 
 ---
 
-### 2.2 GitHub Copilot Pro Integration
+### 3.2 GitHub Copilot Pro Integration
 
 **Supported:** Yes (native integration)
 
@@ -131,7 +354,7 @@ GitHub Copilot integrates natively with GitHub Codespaces and can be used direct
 
 ---
 
-### 2.3 Microsoft AI Foundry Integration
+### 3.3 Microsoft AI Foundry Integration
 
 **Supported:** Indirectly via installed AI tools
 
@@ -148,7 +371,7 @@ Requires manual setup within the codespace:
 
 ---
 
-### 2.4 OpenAI Integration
+### 3.4 OpenAI Integration
 
 **Supported:** Indirectly via installed AI tools
 
@@ -165,7 +388,7 @@ Requires manual setup:
 
 ---
 
-### 2.5 Anthropic (Claude) Integration
+### 3.5 Anthropic (Claude) Integration
 
 **Supported:** Indirectly via installed AI tools
 
@@ -184,7 +407,7 @@ Requires manual setup:
 
 ---
 
-## 3. Policies and Rules (Instruction Files)
+## 4. Policies and Rules (Instruction Files)
 
 GitHub Codespaces does not have native support for AI policy or instruction files. However, instruction files used by AI coding tools (such as `.github/copilot-instructions.md` for GitHub Copilot or `.cursorrules` for Cursor) can be committed to the repository and will be available to AI tools running within the codespace.
 
@@ -209,7 +432,7 @@ Instruction files should be committed to the repository before creating a codesp
 
 ---
 
-## 4. Custom and Stored Prompts
+## 5. Custom and Stored Prompts
 
 GitHub Codespaces does not provide native custom prompt storage or management. Prompt management capabilities depend entirely on the AI tools installed within the codespace.
 
@@ -230,7 +453,7 @@ Depends on installed AI tools. Refer to documentation for specific tools:
 
 ---
 
-## 5. Tools and Model Context Protocol (MCP)
+## 6. Tools and Model Context Protocol (MCP)
 
 GitHub Codespaces does not provide native MCP support. However, AI tools installed within codespaces can use MCP if they support it.
 
@@ -259,9 +482,9 @@ Tools and extensions available in codespaces depend on what is installed via the
 
 ---
 
-## 6. Application Development Workflow
+## 7. Application Development Workflow
 
-### 6.1 Project Initialisation
+### 7.1 Project Initialisation
 
 **Creating a Codespace:**
 
@@ -283,7 +506,7 @@ Users can create a codespace from:
 
 ---
 
-### 6.2 Design and Planning
+### 7.2 Design and Planning
 
 GitHub Codespaces provides a full development environment where developers can use any design and planning tools available in their chosen IDE or installed within the codespace. This includes:
 
@@ -298,7 +521,7 @@ Codespaces itself does not provide specific design or planning features beyond s
 
 ---
 
-### 6.3 Code Generation
+### 7.3 Code Generation
 
 Code generation in Codespaces depends on installed AI tools. With GitHub Copilot or other AI assistants installed, developers have access to:
 
@@ -313,7 +536,7 @@ Codespaces provides the environment; AI tools provide the generation capabilitie
 
 ---
 
-### 6.4 Iterative Development
+### 7.4 Iterative Development
 
 Codespaces supports standard iterative development workflows:
 
@@ -330,7 +553,7 @@ Codespaces supports standard iterative development workflows:
 
 ---
 
-### 6.5 Testing and Validation
+### 7.5 Testing and Validation
 
 Testing capabilities in Codespaces include:
 
@@ -345,7 +568,7 @@ Developers can configure test tools in the `.devcontainer/devcontainer.json` fil
 
 ---
 
-### 6.6 Debugging
+### 7.6 Debugging
 
 Codespaces provides full debugging capabilities through VS Code:
 
@@ -361,7 +584,7 @@ Debugging configurations can be specified in `.vscode/launch.json` and committed
 
 ---
 
-### 6.7 Deployment
+### 7.7 Deployment
 
 GitHub Codespaces itself does not provide deployment features. However, developers can:
 
@@ -378,9 +601,9 @@ Deployment processes can be standardised by including deployment tools and scrip
 
 ---
 
-## 7. IDE and Environment Integration
+## 8. IDE and Environment Integration
 
-### 7.1 Visual Studio Code
+### 8.1 Visual Studio Code
 
 **Supported:** Yes (primary interface)
 
@@ -417,7 +640,7 @@ Browser mode is default when creating a codespace. Desktop mode can be activated
 
 ---
 
-### 7.2 JetBrains IDEs
+### 8.2 JetBrains IDEs
 
 **Supported:** Yes (JetBrains Gateway integration)
 
@@ -446,7 +669,7 @@ Browser mode is default when creating a codespace. Desktop mode can be activated
 
 ---
 
-### 7.3 Eclipse
+### 8.3 Eclipse
 
 **Supported:** Not documented
 
@@ -458,7 +681,7 @@ GitHub Codespaces does not provide documented integration with Eclipse IDE. Ecli
 
 ---
 
-### 7.4 Terminal and CLI
+### 8.4 Terminal and CLI
 
 **Supported:** Yes (GitHub CLI)
 
@@ -514,7 +737,7 @@ gh codespace ssh --codespace name-of-codespace
 
 ---
 
-### 7.5 Other IDEs and Editors
+### 8.5 Other IDEs and Editors
 
 **Neovim/Vim:**
 
@@ -536,7 +759,7 @@ Any editor supporting remote development over SSH can potentially connect to a c
 
 ---
 
-## 8. Third Party Reviews and Experiences
+## 9. Third Party Reviews and Experiences
 
 ### User Feedback and Testimonials
 
@@ -659,7 +882,7 @@ Similar feature sets for cloud-based development, with users noting Codespaces h
 
 ---
 
-## 9. Comparison with Local Development
+## 10. Comparison with Local Development
 
 GitHub Codespaces represents a cloud-first alternative to traditional local development environments. This comparison examines the trade-offs between cloud-hosted and local development.
 
@@ -805,7 +1028,7 @@ Many developers use both:
 
 ---
 
-## 10. Summary and Key Findings
+## 11. Summary and Key Findings
 
 ### Core Capabilities
 
@@ -871,7 +1094,7 @@ Codespaces trades offline capability and direct hardware access for consistency,
 
 ---
 
-## 11. Completeness Checklist
+## 12. Completeness Checklist
 
 - [x] Tool overview completed with all required information
 - [x] LLM integration documented (indirectly via AI tools)
@@ -899,39 +1122,45 @@ Codespaces trades offline capability and direct hardware access for consistency,
 
 ---
 
-## 12. References
+## 13. References
 
 1. **What are GitHub Codespaces?** GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/overview. Accessed 22 January 2026.
 
-2. **Introduction to dev containers.** GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers. Accessed 22 January 2026.
+2. **Connecting to a private network.** GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/developing-in-a-codespace/connecting-to-a-private-network. Accessed 22 January 2026.
 
-3. **Creating a codespace for a repository.** GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository. Accessed 22 January 2026.
+3. **Using OpenVPN client from GitHub Codespaces.** Codespaces Contrib. https://github.com/codespaces-contrib/codespaces-openvpn. Accessed 22 January 2026.
 
-4. **Opening an existing codespace.** GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/developing-in-codespaces/opening-an-existing-codespace. Accessed 22 January 2026.
+4. **GitHub Codespaces with Tailscale.** Tailscale Documentation. https://tailscale.com/kb/1160/github-codespaces/. Accessed 22 January 2026.
 
-5. **Deep dive into GitHub Codespaces.** GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/about-codespaces/deep-dive. Accessed 22 January 2026.
+5. **Introduction to dev containers.** GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers. Accessed 22 January 2026.
 
-6. **10 things you didn't know you could do with GitHub Codespaces.** GitHub Blog. https://github.blog/developer-skills/github/10-things-you-didnt-know-you-could-do-with-github-codespaces/. Accessed 22 January 2026.
+6. **Creating a codespace for a repository.** GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository. Accessed 22 January 2026.
 
-7. **GitHub CLI manual - gh codespace.** GitHub CLI Documentation. https://cli.github.com/manual/gh_codespace. Accessed 22 January 2026.
+7. **Opening an existing codespace.** GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/developing-in-codespaces/opening-an-existing-codespace. Accessed 22 January 2026.
 
-8. **GitHub Codespaces, one year later.** Tempered Works. June 2025. https://tempered.works/posts/2025/06/07/github-codespaces-one-year-later/. Accessed 22 January 2026.
+8. **Deep dive into GitHub Codespaces.** GitHub Codespaces Documentation. https://docs.github.com/en/codespaces/about-codespaces/deep-dive. Accessed 22 January 2026.
 
-9. **GitHub Codespaces Reviews, Ratings & Features 2026.** Gartner Peer Insights. January 2026. https://www.gartner.com/reviews/market/cloud-development-environments/vendor/github/product/github-codespaces. Accessed 22 January 2026.
+9. **10 things you didn't know you could do with GitHub Codespaces.** GitHub Blog. https://github.blog/developer-skills/github/10-things-you-didnt-know-you-could-do-with-github-codespaces/. Accessed 22 January 2026.
 
-10. **Codespaces reviews 2025.** PeerSpot. January 2025. https://www.peerspot.com/products/codespaces-reviews. Accessed 22 January 2026.
+10. **GitHub CLI manual - gh codespace.** GitHub CLI Documentation. https://cli.github.com/manual/gh_codespace. Accessed 22 January 2026.
 
-11. **Codespaces: Pros and Cons 2026.** PeerSpot. January 2025. https://www.peerspot.com/products/codespaces-pros-and-cons. Accessed 22 January 2026.
+11. **GitHub Codespaces, one year later.** Tempered Works. June 2025. https://tempered.works/posts/2025/06/07/github-codespaces-one-year-later/. Accessed 22 January 2026.
 
-12. **GitHub Codespaces Reviews (2025).** Product Hunt. 2025. https://www.producthunt.com/products/github-codespaces/reviews. Accessed 22 January 2026.
+12. **GitHub Codespaces Reviews, Ratings & Features 2026.** Gartner Peer Insights. January 2026. https://www.gartner.com/reviews/market/cloud-development-environments/vendor/github/product/github-codespaces. Accessed 22 January 2026.
 
-13. **My Experience With GitHub Codespaces.** Michael Bianco. 2024. https://mikebian.co/my-experience-with-github-codespaces/. Accessed 22 January 2026.
+13. **Codespaces reviews 2025.** PeerSpot. January 2025. https://www.peerspot.com/products/codespaces-reviews. Accessed 22 January 2026.
 
-14. **Managing Dev Environments - Local vs Codespaces.** Waleed Ayoub. 2024. https://waleedayoub.com/post/managing-dev-environments_local-vs-codespaces/. Accessed 22 January 2026.
+14. **Codespaces: Pros and Cons 2026.** PeerSpot. January 2025. https://www.peerspot.com/products/codespaces-pros-and-cons. Accessed 22 January 2026.
 
-15. **What is the difference between GitHub Codespaces and a local environment?** GitHub Community. https://github.com/orgs/community/discussions/174883. Accessed 22 January 2026.
+15. **GitHub Codespaces Reviews (2025).** Product Hunt. 2025. https://www.producthunt.com/products/github-codespaces/reviews. Accessed 22 January 2026.
 
-16. **GitHub (Codespaces) Review 2026.** Linktly. January 2026. https://www.linktly.com/infrastructure-software/githubcodespaces-review/. Accessed 22 January 2026.
+16. **My Experience With GitHub Codespaces.** Michael Bianco. 2024. https://mikebian.co/my-experience-with-github-codespaces/. Accessed 22 January 2026.
+
+17. **Managing Dev Environments - Local vs Codespaces.** Waleed Ayoub. 2024. https://waleedayoub.com/post/managing-dev-environments_local-vs-codespaces/. Accessed 22 January 2026.
+
+18. **What is the difference between GitHub Codespaces and a local environment?** GitHub Community. https://github.com/orgs/community/discussions/174883. Accessed 22 January 2026.
+
+19. **GitHub (Codespaces) Review 2026.** Linktly. January 2026. https://www.linktly.com/infrastructure-software/githubcodespaces-review/. Accessed 22 January 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -942,6 +1171,7 @@ Codespaces trades offline capability and direct hardware access for consistency,
 | Date | Version | Changes |
 |------|---------|---------|
 | 22 January 2026 | 1.0 | Initial analysis of GitHub Codespaces |
+| 22 January 2026 | 1.1 | Added section on deployment and network options (local, on-premises, private network connectivity) |
 
 ---
 
