@@ -474,6 +474,99 @@ Each tool analysis should follow this structure and address each section thoroug
 
 ---
 
+### 8. Third Party Reviews and Experiences
+
+**Purpose:** Document real-world user experiences, reviews, and testimonials from third-party sources to provide a balanced view of the tool's strengths and weaknesses in practice.
+
+**Required Information:**
+- Overall user sentiment from community reviews
+- Common praise and positive experiences
+- Pain points, problems, and bugs reported by users
+- Productivity impact (positive and negative)
+- Comparisons with other tools from user reviews
+- Dated citations from multiple sources (Reddit, Stack Overflow, tech blogs, trade journals)
+
+**Sources to Consider:**
+- Reddit (r/vscode, r/programming, tool-specific subreddits)
+- Stack Overflow discussions and questions
+- G2, Gartner, TrustRadius, and other review platforms
+- Tech blogs and trade journals (The Register, Wired, TechCrunch, etc.)
+- YouTube reviews and tutorials
+- Hacker News discussions
+- GitHub Discussions and Issues (for open-source tools)
+
+**Template:**
+```markdown
+## Third Party Reviews and Experiences
+
+### User Feedback and Testimonials
+
+**Overall Sentiment:** [Positive/Mixed/Negative based on review aggregation]
+
+**Common Praise:**
+
+- [Specific positive aspect mentioned frequently in reviews]
+  > "[Direct quote from review if available]"
+  > 
+  > *Source: [Platform]. [Month Year]. [URL]*
+
+**Common Complaints:**
+
+- [Specific pain point or problem mentioned frequently]
+  > "[Direct quote from review if available]"
+  > 
+  > *Source: [Platform]. [Month Year]. [URL]*
+
+### Reported Bugs and Issues
+
+**Critical Issues:**
+
+- [Major bug or problem with description]
+  - Impact: [How it affects users]
+  - Status: [Fixed/Ongoing/Workaround available]
+  - *Source: [Platform]. [Month Year]. [URL]*
+
+**Minor Issues:**
+
+- [Minor bug or inconvenience with description]
+  - *Source: [Platform]. [Month Year]. [URL]*
+
+### Productivity Impact
+
+[Summary of how the tool affects user productivity based on reviews]
+
+> "[Quote about productivity impact]"
+> 
+> *Source: [Platform]. [Month Year]. [URL]*
+
+### Comparison with Other Tools
+
+#### Comparison with [Competing Tool Name]
+
+**User-Reported Advantages:**
+
+- [Advantage based on user comparisons]
+  - *Source: [Platform]. [Month Year]. [URL]*
+
+**User-Reported Disadvantages:**
+
+- [Disadvantage based on user comparisons]
+  - *Source: [Platform]. [Month Year]. [URL]*
+
+**Citation:** [Aggregate of comparison sources with dates]
+```
+
+**Guidelines:**
+- Use direct quotes where possible to provide authentic user perspectives
+- Include both positive and negative feedback for balance
+- Prioritise recent reviews (2024-2026) but note if older feedback is still relevant
+- Identify patterns across multiple sources rather than isolated opinions
+- When newer information contradicts older accounts, explicitly note this
+- Focus on substantive issues rather than superficial complaints
+- Cross-reference comparison sections between related tool analyses
+
+---
+
 ## Analysis Checklist
 
 Use this checklist to ensure completeness when analysing a tool:
@@ -493,6 +586,10 @@ Use this checklist to ensure completeness when analysing a tool:
 - [ ] Eclipse integration documented with citations
 - [ ] Terminal/CLI integration documented with citations
 - [ ] Other applicable IDEs documented with citations
+- [ ] Third party reviews and experiences documented with dated citations
+- [ ] User feedback (positive and negative) included
+- [ ] Reported bugs and issues documented
+- [ ] Comparisons with other tools from user reviews included where available
 - [ ] All information verified against official documentation
 - [ ] No assumptions or guesses made
 - [ ] All claims have citations
