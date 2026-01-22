@@ -16,9 +16,6 @@ This directory contains individual analyses of AI coding tools, each following t
 - [GitHub Copilot Coding Agent](github-copilot-coding-agent.md) - Autonomous AI developer that works independently in the background to complete development tasks
 - [GitHub Codespaces](github-codespaces.md) - Cloud-hosted development environment platform that supports AI tools
 - [Roo Cline](roo-cline.md) - AI-powered development assistant for VS Code with multiple operational modes (Version 3.41.0)
-
-## Other
-
 - [Amazon Q Developer](amazon-q-developer.md) - AWS AI-powered coding assistant with security scanning and AWS service integration
 - [ChatGPT](chatgpt.md) - Browser-based conversational AI with Canvas code editing and Python execution (replaced deprecated Codex)
 - [Codeium](codeium.md) - Free AI-powered code completion and chat assistant with broad IDE support
