@@ -13,6 +13,8 @@ This directory contains individual analyses of AI coding tools, each following t
 - [Continue](continue.md) - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
 - [Gemini Code Assist](gemini-code-assist.md) - Google Cloud's enterprise AI coding assistant with agent mode, MCP support, and Google Cloud integration
 - [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
+- [GitHub Copilot Coding Agent](github-copilot-coding-agent.md) - Autonomous AI developer that works independently in the background to complete development tasks
+- [GitHub Codespaces](github-codespaces.md) - Cloud-hosted development environment platform that supports AI tools
 - [Roo Cline](roo-cline.md) - AI-powered development assistant for VS Code with multiple operational modes (Version 3.41.0)
 
 ## Other

@@ -1,4 +1,4 @@
-← [Previous: Gemini Code Assist](gemini-code-assist.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
+← [Previous: Gemini Code Assist](gemini-code-assist.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Codespaces](github-codespaces.md) →
 
 ---
 
@@ -1073,4 +1073,4 @@ Areas for improvement:
 
 ---
 
-← [Previous: Gemini Code Assist](gemini-code-assist.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
+← [Previous: Gemini Code Assist](gemini-code-assist.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Codespaces](github-codespaces.md) →

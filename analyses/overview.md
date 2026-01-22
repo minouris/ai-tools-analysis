@@ -4,8 +4,8 @@
 
 # AI Coding Tools: Overview
 
-**Analysis Date:** 20 January 2026  
-**Tools Analysed:** 12 AI coding assistants  
+**Analysis Date:** 22 January 2026  
+**Tools Analysed:** 14 AI coding assistants and development platforms  
 **Methodology:** Based on official documentation and tool analysis files in this repository
 
 ## Table of Contents
@@ -32,7 +32,7 @@
 
 ## 1. Executive Summary
 
-This document provides a comprehensive comparison of 12 AI coding tools analysed in this repository. The tools represent different approaches to AI-assisted development, ranging from cloud-based subscription services to open-source agentic frameworks, including historical platforms.
+This document provides a comprehensive comparison of 14 AI coding tools and development platforms analysed in this repository. The tools represent different approaches to AI-assisted development, ranging from cloud-based subscription services to open-source agentic frameworks, cloud development environments, and historical platforms.
 
 ### Tools Included
 
@@ -41,13 +41,15 @@ This document provides a comprehensive comparison of 12 AI coding tools analysed
 3. **[Continue](continue.md)** - Open-source multi-provider platform with MCP
 4. **[Gemini Code Assist](gemini-code-assist.md)** - Google Cloud enterprise AI assistant with agent mode
 5. **[GitHub Copilot Chat](github-copilot-chat.md)** - GitHub-native multi-mode assistant
-6. **[Roo Cline](roo-cline.md)** - Open-source autonomous VS Code agent
-7. **[Amazon Q Developer](amazon-q-developer.md)** - AWS-focused AI assistant with security scanning
-8. **[ChatGPT](chatgpt.md)** - Browser-based AI chat with Canvas code editing (replaced deprecated Codex)
-9. **[Codeium](codeium.md)** - Free unlimited code completion and chat
-10. **[Cursor](cursor.md)** - AI-first standalone code editor
-11. **[Sourcegraph Cody](sourcegraph-cody.md)** - Deep codebase context via Sourcegraph
-12. **[Tabnine](tabnine.md)** - Privacy-focused with local deployment options
+6. **[GitHub Copilot Coding Agent](github-copilot-coding-agent.md)** - Autonomous AI developer working independently in background
+7. **[GitHub Codespaces](github-codespaces.md)** - Cloud-hosted development environment platform
+8. **[Roo Cline](roo-cline.md)** - Open-source autonomous VS Code agent
+9. **[Amazon Q Developer](amazon-q-developer.md)** - AWS-focused AI assistant with security scanning
+10. **[ChatGPT](chatgpt.md)** - Browser-based AI chat with Canvas code editing (replaced deprecated Codex)
+11. **[Codeium](codeium.md)** - Free unlimited code completion and chat
+12. **[Cursor](cursor.md)** - AI-first standalone code editor
+13. **[Sourcegraph Cody](sourcegraph-cody.md)** - Deep codebase context via Sourcegraph
+14. **[Tabnine](tabnine.md)** - Privacy-focused with local deployment options
 
 ### Key Insights
 
@@ -172,6 +174,30 @@ AI-powered conversational interface integrated across multiple IDEs (VS Code, Je
 
 ---
 
+### GitHub Copilot Coding Agent
+
+**Type:** Cloud-Based Autonomous Agent  
+**Licence:** Subscription-based (Pro, Pro+, Business, Enterprise)  
+**Key Focus:** Asynchronous autonomous development
+
+GitHub-hosted autonomous AI developer that works independently in GitHub Actions environment to complete development tasks. Assign issues to `@copilot` or delegate from VS Code. Creates pull requests, runs builds and tests, responds to review feedback. Supports custom instructions and Copilot Memory. Model selection available for Pro/Pro+ users (Claude Sonnet 4.5 default).
+
+**Official Documentation:** https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent
+
+---
+
+### GitHub Codespaces
+
+**Type:** Cloud Development Environment  
+**Licence:** Usage-based billing (free tier included)  
+**Key Focus:** Consistent cloud-hosted workspaces
+
+Cloud-hosted development environments running in Docker containers on GitHub infrastructure. Provides instant, reproducible workspaces via devcontainer configurations. Supports 2 to 32-core VMs with browser or desktop VS Code/JetBrains access. Native GitHub Copilot integration. Not an AI tool itself but a platform that supports AI coding tools.
+
+**Official Documentation:** https://docs.github.com/en/codespaces
+
+---
+
 ### Roo Cline
 
 **Type:** VS Code Extension  
@@ -224,7 +250,9 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 | **Continue** | ✅ | ✅ | ✅ | ✅ (Azure) | ✅ | ✅ | **40+ providers** |
 | **Cursor** | ✅ | ✅ | Not doc. | Not doc. | ❌ | Not doc. | Limited |
 | **Gemini Code Assist** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ Native | Google only |
-| **GitHub Copilot** | ✅ | ✅ Native | ✅ (Toolkit) | ✅ (Toolkit) | ❌ | ✅ | Multi-provider |
+| **GitHub Copilot Chat** | ✅ | ✅ Native | ✅ (Toolkit) | ✅ (Toolkit) | ❌ | ✅ | Multi-provider |
+| **GitHub Copilot Coding Agent** | ✅ (via GitHub) | ✅ (via GitHub) | ❌ | ❌ | ❌ | ✅ (via GitHub) | GitHub-managed |
+| **GitHub Codespaces** | N/A | N/A | ✅ (via tools) | N/A | N/A | N/A | Via installed tools |
 | **Roo Cline** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | **20+ providers** |
 | **Sourcegraph Cody** | ✅ | ✅ | ✅ | Not doc. | ❌ | ✅ | Multi-provider |
 | **Tabnine** | Not doc. | Not doc. | Not doc. | Not doc. | ❌ | Not doc. | Proprietary |
@@ -247,12 +275,14 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 | **Continue** | ✅ **Full** | `.continue/mcpServers/` | Multiple | Extensive |
 | **Cursor** | ❌ Not documented | N/A | N/A | N/A |
 | **Gemini Code Assist** | ✅ **Full** (Agent mode) | `~/.gemini/settings.json` or `mcp.json` | stdio, SSE | Multiple |
-| **GitHub Copilot** | ✅ **Supported** | IDE-specific config | stdio, SSE | GitHub MCP |
+| **GitHub Copilot Chat** | ✅ **Supported** | IDE-specific config | stdio, SSE | GitHub MCP |
+| **GitHub Copilot Coding Agent** | ❌ Not documented | N/A | N/A | N/A |
+| **GitHub Codespaces** | ✅ (via installed tools) | Via AI tool configs | N/A | Via tools |
 | **Roo Cline** | ✅ **Full** | `.roomodes` config | Multiple | McpHub |
 | **Sourcegraph Cody** | ❌ Not documented | Built-in tools | N/A | N/A |
 | **Tabnine** | ❌ Not documented | N/A | N/A | N/A |
 
-**Key Finding:** 5 tools (Claude Code, Continue, Gemini Code Assist, GitHub Copilot, Roo Cline) have documented MCP support, representing 42% of analysed tools. MCP adoption is growing but not yet universal.
+**Key Finding:** 5 AI tools (Claude Code, Continue, Gemini Code Assist, GitHub Copilot Chat, Roo Cline) have documented MCP support. GitHub Codespaces supports MCP indirectly through installed AI tools. MCP adoption is growing but not yet universal.
 
 [↑ Back to top](#table-of-contents)
 
