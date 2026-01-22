@@ -1,11 +1,32 @@
 # Quick Reference Guide for AI Tool Analysis
 
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [Essential Guidelines](#essential-guidelines)
+- [Section Quick Reference](#section-quick-reference)
+- [Citation Format](#citation-format)
+- [Common Phrases for Missing Information](#common-phrases-for-missing-information)
+- [Checklist Before Finalising](#checklist-before-finalising)
+- [File Naming](#file-naming)
+- [Directory Structure](#directory-structure)
+- [Tips for Efficient Analysis](#tips-for-efficient-analysis)
+- [UK English vs US English Quick Reference](#uk-english-vs-us-english-quick-reference)
+- [Questions to Ask for Each Section](#questions-to-ask-for-each-section)
+- [Need Help?](#need-help)
+
+---
+
 ## Getting Started
 
-1. **Read** [ANALYSIS_PLAN.md](ANALYSIS_PLAN.md) for methodology
-2. **Copy** [TOOL_ANALYSIS_TEMPLATE.md](TOOL_ANALYSIS_TEMPLATE.md) to `analyses/[tool-name].md`
+1. **Read** [ANALYSIS_INSTRUCTIONS.md](ANALYSIS_INSTRUCTIONS.md) for methodology
+2. **Copy** [templates/TOOL_ANALYSIS_TEMPLATE.md](templates/TOOL_ANALYSIS_TEMPLATE.md) to `../analyses/[tool-name].md`
 3. **Fill in** each section using official documentation only
 4. **Check** completeness using the checklist
+
+[↑ Back to top](#table-of-contents)
+
+---
 
 ## Essential Guidelines
 
@@ -16,6 +37,10 @@
 | Use UK English (analyse, organisation, etc.) | Use US English (analyze, organization, etc.) |
 | Mark missing info as "Not documented" | Skip sections or make up information |
 | Include tool version being analysed | Analyse without version context |
+
+[↑ Back to top](#table-of-contents)
+
+---
 
 ## Section Quick Reference
 
@@ -83,6 +108,10 @@
 - **Always include:** Dated citations, direct quotes where possible
 - **Note:** When newer information contradicts older accounts, explicitly state this
 
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## Citation Format
 
 ```markdown
@@ -104,6 +133,10 @@ Example: "GitHub Copilot Review". TechCrunch. March 2024. https://...
 https://docs.continue.dev/reference/models#ollama. Accessed 16 January 2026.
 ```
 
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## Common Phrases for Missing Information
 
 Use these exact phrases when official documentation is lacking:
@@ -114,6 +147,10 @@ Use these exact phrases when official documentation is lacking:
 - "Not available according to official documentation"
 - "Eclipse support not available"
 - "CLI not available"
+
+[↑ Back to top](#table-of-contents)
+
+---
 
 ## Checklist Before Finalising
 
@@ -127,6 +164,10 @@ Use these exact phrases when official documentation is lacking:
 - [ ] Completeness checklist filled in
 - [ ] References section complete
 
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## File Naming
 
 Use lowercase with hyphens:
@@ -136,17 +177,27 @@ Use lowercase with hyphens:
 - ❌ `GitHub Copilot.md`
 - ❌ `cursor_editor.md`
 
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## Directory Structure
 
 ```
 ai-tools-analysis/
-├── ANALYSIS_PLAN.md              ← Full methodology
-├── TOOL_ANALYSIS_TEMPLATE.md     ← Copy this for new analyses
-├── QUICK_REFERENCE.md            ← This file
-└── analyses/                     ← Put completed analyses here
+├── doc/
+│   ├── ANALYSIS_INSTRUCTIONS.md      ← Full methodology
+│   ├── QUICK_REFERENCE.md            ← This file
+│   └── templates/
+│       └── TOOL_ANALYSIS_TEMPLATE.md ← Copy this for new analyses
+└── analyses/                         ← Put completed analyses here
     ├── tool-name.md
     └── ...
 ```
+
+[↑ Back to top](#table-of-contents)
+
+---
 
 ## Tips for Efficient Analysis
 
@@ -156,6 +207,10 @@ ai-tools-analysis/
 4. **Check GitHub repos** - Official repos may have additional setup info in READMEs
 5. **Note version numbers** - Always record what version you're documenting
 6. **Bookmark documentation** - Save all relevant doc pages for your references section
+
+[↑ Back to top](#table-of-contents)
+
+---
 
 ## UK English vs US English Quick Reference
 
@@ -169,6 +224,10 @@ ai-tools-analysis/
 | recognised | recognized |
 | optimise | optimize |
 | colour | color |
+
+[↑ Back to top](#table-of-contents)
+
+---
 
 ## Questions to Ask for Each Section
 
@@ -207,12 +266,20 @@ ai-tools-analysis/
 - How do I install it?
 - What features work in each IDE?
 
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## Need Help?
 
-1. Review [ANALYSIS_PLAN.md](ANALYSIS_PLAN.md) for detailed methodology
-2. Look at completed analyses in `analyses/` directory for examples
-3. Check the template structure in [TOOL_ANALYSIS_TEMPLATE.md](TOOL_ANALYSIS_TEMPLATE.md)
+1. Review [ANALYSIS_INSTRUCTIONS.md](ANALYSIS_INSTRUCTIONS.md) for detailed methodology
+2. Look at completed analyses in `../analyses/` directory for examples
+3. Check the template structure in [templates/TOOL_ANALYSIS_TEMPLATE.md](templates/TOOL_ANALYSIS_TEMPLATE.md)
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
 **Remember:** Quality over speed. A thorough, well-cited analysis is more valuable than a quick, incomplete one.
+
+[↑ Back to top](#table-of-contents)

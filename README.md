@@ -1,119 +1,173 @@
 # AI Tools Analysis
 
-An analysis of available tools for AI-based coding.
+A comprehensive repository of analyses for AI-powered coding tools, providing detailed evaluations of features, integrations, and real-world user experiences.
 
-## Overview
+## Table of Contents
 
-This repository provides a standardised methodology for analysing AI coding tools. It contains a reusable analysis plan and template that ensures comprehensive and consistent evaluation of different AI coding platforms.
+- [Purpose](#purpose)
+- [Available Analyses](#available-analyses)
+- [What You'll Find](#what-youll-find)
+- [Methodology](#methodology)
+- [For AI Agents](#for-ai-agents)
+- [Contributing](#contributing)
+- [Repository Structure](#repository-structure)
+- [Author](#author)
+- [Acknowledgements and Disclaimer](#acknowledgements-and-disclaimer)
+- [Licence](#licence)
 
-## Documents
+---
 
-### 📋 [ANALYSIS_PLAN.md](ANALYSIS_PLAN.md)
+## Purpose
 
-The comprehensive guide for conducting tool analyses. This document contains:
+This repository serves as a central resource for comparing and understanding AI coding tools. Each analysis follows a standardised methodology to ensure consistent, thorough, and objective evaluation of different platforms.
 
-- Detailed methodology for analysing AI coding tools
-- Required information for each analysis section
-- Guidelines for documentation and citations
-- Quality standards and best practices
-- Analysis checklist for completeness
+[↑ Back to top](#table-of-contents)
 
-**Use this document to understand the analysis process and requirements.**
+---
 
-### 📝 [TOOL_ANALYSIS_TEMPLATE.md](TOOL_ANALYSIS_TEMPLATE.md)
+## Available Analyses
 
-A ready-to-use template for creating new tool analyses. This template includes:
+Browse detailed analyses of popular AI coding tools in the [analyses](analyses/) directory.
 
-- Pre-formatted sections matching the analysis plan
-- Placeholder text and examples
-- Built-in citation fields
-- Completeness checklist
+### Featured Tools
 
-**Use this template as a starting point for each new tool analysis.**
+- **[GitHub Copilot Chat](analyses/github-copilot-chat.md)** - AI-powered code assistance and chat interface for software development
+- **[GitHub Copilot Coding Agent](analyses/github-copilot-coding-agent.md)** - Autonomous AI developer that works independently in the background
+- **[Cursor](analyses/cursor.md)** - AI-first code editor built for productivity with deep AI integration
+- **[Roo Cline](analyses/roo-cline.md)** - AI-powered development assistant for VS Code with multiple operational modes
+- **[Continue](analyses/continue.md)** - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
+- **[Claude Code](analyses/claude-code.md)** - Terminal-based agentic coding tool from Anthropic with MCP support
+- **[Sourcegraph Cody](analyses/sourcegraph-cody.md)** - AI coding assistant with deep codebase context and understanding
+- **[Amazon Q Developer](analyses/amazon-q-developer.md)** - AWS AI-powered coding assistant with security scanning
+- **[Gemini Code Assist](analyses/gemini-code-assist.md)** - Google Cloud's enterprise AI coding assistant with agent mode
+- **[Codeium](analyses/codeium.md)** - Free AI-powered code completion and chat assistant
+- **[Tabnine](analyses/tabnine.md)** - AI-powered code completion tool with flexible deployment options
+- **[ChatGPT](analyses/chatgpt.md)** - Browser-based conversational AI with Canvas code editing
+- **[Azure AI Toolkit](analyses/azure-ai-toolkit.md)** - Visual Studio Code extension for Azure AI services integration
+- **[GitHub Codespaces](analyses/github-codespaces.md)** - Cloud-hosted development environment platform
 
-### ⚡ [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
+[View all analyses →](analyses/README.md)
 
-A concise guide for quick access while conducting analyses. Includes:
+[↑ Back to top](#table-of-contents)
 
-- Essential guidelines and checklist
-- Section-by-section quick reference
-- Citation format examples
-- Common phrases for missing information
-- UK vs US English reference
-- Tips for efficient analysis
+---
 
-**Use this for quick lookups during the analysis process.**
+## What You'll Find
 
-## How to Analyse a New Tool
+Each tool analysis includes:
 
-1. **Read the Analysis Plan**  
-   Review [ANALYSIS_PLAN.md](ANALYSIS_PLAN.md) to understand the methodology and requirements.
+- **Tool Overview** - Description, features, and licensing
+- **LLM Provider Integration** - Support for Ollama, OpenAI, Anthropic, and others
+- **Policies and Rules** - Configuration of instruction files and coding standards
+- **Custom Prompts** - Prompt storage and reuse capabilities
+- **Tools and MCP** - Model Context Protocol support and extensions
+- **Development Workflow** - From design to deployment
+- **IDE Integration** - VS Code, JetBrains, Eclipse, CLI support
+- **Third Party Reviews** - Real-world user experiences and comparisons
 
-2. **Copy the Template**  
-   Create a copy of [TOOL_ANALYSIS_TEMPLATE.md](TOOL_ANALYSIS_TEMPLATE.md) for your new analysis:
-   ```bash
-   cp TOOL_ANALYSIS_TEMPLATE.md analyses/[tool-name].md
-   ```
+[↑ Back to top](#table-of-contents)
 
-3. **Follow the Guidelines**  
-   When conducting your analysis:
-   - ✅ Rely entirely on official documentation
-   - ❌ Make NO guesses or assumptions
-   - 📚 Provide citations and links to official documentation
-   - 🇬🇧 Use UK English
-   - 📝 Complete all applicable sections
+---
 
-4. **Use the Checklist**  
-   Before finalising, ensure all items in the completeness checklist are addressed.
+## Methodology
 
-## Analysis Sections
+All analyses follow a standardised approach:
 
-Each tool analysis covers:
+- ✅ Based entirely on official documentation
+- 📚 Comprehensive citations for all claims
+- 🇬🇧 Written in UK English
+- 📊 Includes third-party reviews and user experiences
+- 🔄 Regularly updated to reflect tool changes
 
-1. **Tool Overview** - Description, primary use case, and key features
-2. **LLM Provider Integration** - Ollama, Copilot Pro, Microsoft AI Foundry, OpenAI, Anthropic
-3. **Policies and Rules** - Instruction files and configuration
-4. **Custom Prompts** - Prompt storage and reuse capabilities
-5. **Tools and MCP** - Model Context Protocol and extensions
-6. **Development Workflow** - From design to code generation
-7. **IDE Integration** - VSCode, JetBrains, Eclipse, Terminal/CLI, and others
+[↑ Back to top](#table-of-contents)
 
-## Directory Structure
+---
 
-```
-ai-tools-analysis/
-├── README.md                    # This file
-├── ANALYSIS_PLAN.md            # Detailed analysis methodology
-├── TOOL_ANALYSIS_TEMPLATE.md   # Template for new analyses
-├── QUICK_REFERENCE.md          # Quick lookup guide
-└── analyses/                   # Individual tool analyses
-    ├── README.md
-    ├── tool-name-1.md
-    ├── tool-name-2.md
-    └── ...
-```
+## For AI Agents
 
-## Quality Standards
+If you are an AI agent tasked with performing a new analysis, start here: **[doc/ANALYSIS_INSTRUCTIONS.md](doc/ANALYSIS_INSTRUCTIONS.md)**
 
-All analyses in this repository must:
+This document provides the complete methodology, templates, and guidelines for conducting analyses.
 
-- Be based on official documentation only
-- Include citations for all claims
-- Use UK English
-- Follow the standard template structure
-- Be kept up-to-date with tool versions
-- Clearly mark undocumented features as such
+[↑ Back to top](#table-of-contents)
+
+---
 
 ## Contributing
 
-When contributing an analysis:
+To contribute a new analysis or update an existing one:
 
-1. Use the provided template
-2. Follow the analysis plan methodology
-3. Cite all sources
-4. Use UK English
-5. Complete the checklist before submission
+1. Review the [analysis instructions](doc/ANALYSIS_INSTRUCTIONS.md)
+2. Use the [analysis template](doc/templates/TOOL_ANALYSIS_TEMPLATE.md)
+3. Follow the [quick reference guide](doc/QUICK_REFERENCE.md) for efficiency
+4. Ensure all claims are cited from official documentation
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## Repository Structure
+
+```
+ai-tools-analysis/
+├── README.md                         # This file
+├── doc/                              # Documentation for creating analyses
+│   ├── ANALYSIS_INSTRUCTIONS.md      # Complete methodology
+│   ├── QUICK_REFERENCE.md            # Quick reference guide
+│   └── templates/
+│       └── TOOL_ANALYSIS_TEMPLATE.md # Template for new analyses
+└── analyses/                         # Individual tool analyses
+    ├── README.md                     # Analysis directory index
+    ├── overview.md                   # Comparison overview
+    └── [tool-name].md                # Individual analyses
+```
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## Author
+
+Created and maintained by **[Minouris](https://github.com/minouris)**
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## Acknowledgements and Disclaimer
+
+### AI-Assisted Analysis
+
+The analyses in this repository were conducted by **[GitHub Copilot Coding Agent](https://github.com/features/copilot)** (using the **Claude 3.5 Sonnet** model via Anthropic API) working under instruction and guidance from the author. The AI agent followed standardised methodology and guidelines to ensure comprehensive and consistent evaluation.
+
+### Important Disclaimer
+
+⚠️ **Verify Before Use**: While analyses are based on official documentation and follow rigorous methodology, they are AI-generated content and may contain errors, omissions, or outdated information. Users should:
+
+- **Verify critical information** against official documentation before making decisions
+- **Check version compatibility** as tools evolve rapidly
+- **Test features** in your own environment before relying on them
+- **Cross-reference** with multiple sources for important decisions
+
+The analyses are provided as a research resource and starting point, not as authoritative or guaranteed-accurate information.
+
+[↑ Back to top](#table-of-contents)
+
+---
 
 ## Licence
 
-[To be determined based on repository needs] 
+This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0).
+
+Copyright (c) 2026 Minouris
+
+**You are free to:**
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially
+
+**Under the following terms:**
+- **Attribution** — You must give appropriate credit, provide a link to the licence, and indicate if changes were made.
+
+See the [LICENSE](LICENSE) file for the full licence text.
+
+[↑ Back to top](#table-of-contents) 
