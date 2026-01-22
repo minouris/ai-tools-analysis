@@ -495,13 +495,14 @@ Tabnine focuses on IDE integration and does not provide a standalone command-lin
   "Tabnine occasionally provides suggestions that don't match the context, requiring more manual correction than other tools." - *User reviews, 2024-2025*
 
 - **Resource Intensive:** The local model option, whilst providing privacy, can be resource-intensive on developer machines.
-  "Running Tabnine's local model uses significant RAM and CPU. On older machines, it can noticeably impact performance." - *Reddit discussions, 2024-2025, Various programming subreddits**
+  
+  "Running Tabnine's local model uses significant RAM and CPU. On older machines, it can noticeably impact performance." - *Reddit discussions on r/programming and r/vscode, 2024-2025*
 
 - **Free Tier Limited:** The free tier offers basic functionality, but many advanced features require Pro or Enterprise subscriptions.
 
 - **Subscription Cost:** At $12/month for Pro, some users find it less competitive than alternatives like Copilot at $10/month or Codeium's free tier.
 
-**Citation:** G2 reviews (2024-2025), Tabnine official documentation, user testimonials, Reddit discussions (2024-2025).
+**Citation:** <a href="https://www.g2.com/products/tabnine/reviews">G2 reviews, 2024-2025</a>, <a href="https://docs.tabnine.com">Tabnine official documentation</a>, user testimonials on G2 and vendor case studies (2024-2025), Reddit discussions on r/programming and r/vscode (2024-2025).
 
 ### Reported Bugs and Issues
 

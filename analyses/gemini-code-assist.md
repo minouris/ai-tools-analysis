@@ -581,10 +581,18 @@ The Gemini CLI integrates directly with terminal environments (bash, zsh, etc.) 
 **Common Complaints:**
 
 - **Reliability Issues:** Frequent errors and service interruptions frustrate users trying to rely on the tool for daily work.
-  "Gemini Code Assist has potential but reliability is a major issue. I get 'There was a problem' errors multiple times per day." - *Reddit discussions, 2024-2025, r/programming and r/GoogleCloud**
+  
+  "Gemini Code Assist has potential but reliability is a major issue. I get 'There was a problem' errors multiple times per day." - *Reddit discussions, 2024-2025, r/programming and r/GoogleCloud*
+  
+  **Official Google Acknowledgement:** Google formally acknowledged several reliability issues through official release notes. In December 2025, Google documented a specific issue with the model selection feature in VS Code showing incorrectly for free-tier users, fixed in version 2.63.1 on December 16, 2025. Multiple stability fixes were deployed throughout late 2025 and early 2026. <a href="https://docs.cloud.google.com/gemini/docs/codeassist/release-notes">Google Cloud Gemini Code Assist release notes, 2025-2026</a>
+  
+  **Eligibility Issues:** Users reported incidents where Gemini Code Assist for VS Code would suddenly stop working after updates, displaying eligibility errors for free accounts. These were discussed in official GitHub repositories with workarounds involving downgrading to previous versions until fixes were deployed. <a href="https://github.com/google-gemini/gemini-cli/issues/12318">GitHub Issue #12318, 2025</a>
 
 - **Performance Problems:** Slow response times, lag in VS Code, and resource-intensive operation.
+  
   "Gemini makes my VS Code lag noticeably. Suggestions take seconds to appear, if they appear at all." - *G2 reviews and user forums, 2024-2025*
+  
+  Users have consistently reported degraded performance and occasional unresponsiveness under heavy use, particularly when running complex prompts or modifying multiple files. <a href="https://discuss.ai.google.dev/t/gemini-code-assist-for-vscode-has-bad-performance/107703">Google AI Developer Forums, 2025</a>
 
 - **Inconsistent Quality:** Suggestion quality varies dramatically, from excellent to completely irrelevant.
   "Sometimes Gemini nails it, sometimes it suggests code that doesn't even match my language. No consistency." - *User reviews, 2024-2025*
@@ -609,9 +617,9 @@ The Gemini CLI integrates directly with terminal environments (bash, zsh, etc.) 
   
   "The dreaded 'There was a problem' error appears constantly. No details, no solution, just failure. I've seen it 8 times today alone while trying to complete routine coding tasks." - *GitHub Issues and support forums, 2024-2025*
   
-  **Impact:** Users unable to rely on Gemini for time-sensitive work, Many report disabling the extension during critical development periods.*
+  **Impact:** Users unable to rely on Gemini for time-sensitive work. Many report disabling the extension during critical development periods.
   
-  **Google's Response:** Limited acknowledgment of issue, with general "we're working on it" messaging but no timeline for resolution.
+  **Google's Response:** Multiple stability fixes deployed through release notes throughout 2025-2026. <a href="https://docs.cloud.google.com/gemini/docs/codeassist/release-notes">Official release notes</a> document acknowledged bugs and fixes. Google's documentation advises that Gemini Code Assist is an early-stage tool and users should validate outputs. <a href="https://developers.google.com/gemini-code-assist/docs/overview">Gemini Code Assist overview documentation</a>
 
 - **VS Code Lag and Freezes:** Extension causes noticeable performance degradation in VS Code, particularly with large projects.
   

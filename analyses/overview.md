@@ -483,7 +483,7 @@ This section consolidates third-party user reviews and experiences from multiple
 - Azure AI Toolkit "overkill for simple AI completion"
 
 **Performance Issues:**
-- Gemini Code Assist: "completely unusable during some weeks in 2025-2026"
+- Gemini Code Assist: Severe reliability issues reported during parts of 2025-2026, with official acknowledgement from Google
 - Tabnine: Resource intensive, can slow IDE on large codebases
 - Cursor: edit_file errors if not launched from project root
 - ChatGPT Canvas: cuts off long files, auto-switching frustration
