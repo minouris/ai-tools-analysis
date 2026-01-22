@@ -2,9 +2,27 @@
 
 A comprehensive repository of analyses for AI-powered coding tools, providing detailed evaluations of features, integrations, and real-world user experiences.
 
+## Table of Contents
+
+- [Purpose](#purpose)
+- [Available Analyses](#available-analyses)
+- [What You'll Find](#what-youll-find)
+- [Methodology](#methodology)
+- [For AI Agents](#for-ai-agents)
+- [Contributing](#contributing)
+- [Repository Structure](#repository-structure)
+- [Author](#author)
+- [Licence](#licence)
+
+---
+
 ## Purpose
 
 This repository serves as a central resource for comparing and understanding AI coding tools. Each analysis follows a standardised methodology to ensure consistent, thorough, and objective evaluation of different platforms.
+
+[↑ Back to top](#table-of-contents)
+
+---
 
 ## Available Analyses
 
@@ -29,6 +47,10 @@ Browse detailed analyses of popular AI coding tools in the [analyses](analyses/)
 
 [View all analyses →](analyses/README.md)
 
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## What You'll Find
 
 Each tool analysis includes:
@@ -42,6 +64,10 @@ Each tool analysis includes:
 - **IDE Integration** - VS Code, JetBrains, Eclipse, CLI support
 - **Third Party Reviews** - Real-world user experiences and comparisons
 
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## Methodology
 
 All analyses follow a standardised approach:
@@ -52,11 +78,19 @@ All analyses follow a standardised approach:
 - 📊 Includes third-party reviews and user experiences
 - 🔄 Regularly updated to reflect tool changes
 
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## For AI Agents
 
 If you are an AI agent tasked with performing a new analysis, start here: **[doc/ANALYSIS_INSTRUCTIONS.md](doc/ANALYSIS_INSTRUCTIONS.md)**
 
 This document provides the complete methodology, templates, and guidelines for conducting analyses.
+
+[↑ Back to top](#table-of-contents)
+
+---
 
 ## Contributing
 
@@ -66,6 +100,10 @@ To contribute a new analysis or update an existing one:
 2. Use the [analysis template](doc/templates/TOOL_ANALYSIS_TEMPLATE.md)
 3. Follow the [quick reference guide](doc/QUICK_REFERENCE.md) for efficiency
 4. Ensure all claims are cited from official documentation
+
+[↑ Back to top](#table-of-contents)
+
+---
 
 ## Repository Structure
 
@@ -83,9 +121,17 @@ ai-tools-analysis/
     └── [tool-name].md                # Individual analyses
 ```
 
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## Author
 
 Created and maintained by **[Minouris](https://github.com/minouris)**
+
+[↑ Back to top](#table-of-contents)
+
+---
 
 ## Licence
 
@@ -109,4 +155,8 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE. 
+SOFTWARE.
+
+See the [LICENSE](LICENSE) file for the full licence text.
+
+[↑ Back to top](#table-of-contents) 

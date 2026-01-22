@@ -1,6 +1,6 @@
 # Tool Analyses
 
-This directory contains individual analyses of AI coding tools, each following the standardised methodology defined in [ANALYSIS_PLAN.md](../ANALYSIS_PLAN.md).
+This directory contains individual analyses of AI coding tools, each following the standardised methodology defined in [ANALYSIS_INSTRUCTIONS.md](../doc/ANALYSIS_INSTRUCTIONS.md).
 
 ## Overview
 
