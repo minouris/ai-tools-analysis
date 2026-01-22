@@ -36,18 +36,18 @@ This document provides a comprehensive comparison of 12 AI coding tools analysed
 
 ### Tools Included
 
-1. **Amazon Q Developer** - AWS-focused AI assistant with security scanning
-2. **Azure AI Toolkit** - Local and Azure model management for VS Code
-3. **ChatGPT** - Browser-based AI chat with Canvas code editing (replaced deprecated Codex)
-4. **Claude Code** - Terminal-based agentic coding with MCP support
-5. **Codeium** - Free unlimited code completion and chat
-6. **Continue** - Open-source multi-provider platform with MCP
-7. **Cursor** - AI-first standalone code editor
-8. **Gemini Code Assist** - Google Cloud enterprise AI assistant with agent mode
-9. **GitHub Copilot Chat** - GitHub-native multi-mode assistant
-10. **Roo Cline** - Open-source autonomous VS Code agent
-11. **Sourcegraph Cody** - Deep codebase context via Sourcegraph
-12. **Tabnine** - Privacy-focused with local deployment options
+1. **[Claude Code](claude-code.md)** - Terminal-based agentic coding with MCP support
+2. **[Azure AI Toolkit](azure-ai-toolkit.md)** - Local and Azure model management for VS Code
+3. **[Continue](continue.md)** - Open-source multi-provider platform with MCP
+4. **[Gemini Code Assist](gemini-code-assist.md)** - Google Cloud enterprise AI assistant with agent mode
+5. **[GitHub Copilot Chat](github-copilot-chat.md)** - GitHub-native multi-mode assistant
+6. **[Roo Cline](roo-cline.md)** - Open-source autonomous VS Code agent
+7. **[Amazon Q Developer](amazon-q-developer.md)** - AWS-focused AI assistant with security scanning
+8. **[ChatGPT](chatgpt.md)** - Browser-based AI chat with Canvas code editing (replaced deprecated Codex)
+9. **[Codeium](codeium.md)** - Free unlimited code completion and chat
+10. **[Cursor](cursor.md)** - AI-first standalone code editor
+11. **[Sourcegraph Cody](sourcegraph-cody.md)** - Deep codebase context via Sourcegraph
+12. **[Tabnine](tabnine.md)** - Privacy-focused with local deployment options
 
 ### Key Insights
 
