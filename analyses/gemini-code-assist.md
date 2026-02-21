@@ -4,14 +4,15 @@
 
 # Gemini Code Assist Analysis
 
-**Analysis Date:** 20 January 2026  
-**Tool Version:** Current (Gemini 3)  
+**Analysis Date:** 21 February 2026  
+**Tool Version:** Current (as of February 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://cloud.google.com/gemini/docs/codeassist/overview
 
 ## Table of Contents
 
 - [1. Tool Overview](#1-tool-overview)
+  - [Changes Since January 2026](#changes-since-january-2026)
   - [Description](#description)
   - [Key Features](#key-features)
 - [2. LLM Provider Integration](#2-llm-provider-integration)
@@ -38,6 +39,7 @@
   - [Available Tools](#available-tools)
   - [Custom Tool Development](#custom-tool-development)
 - [6. Application Development Workflow](#6-application-development-workflow)
+  - [Changes Since January 2026](#changes-since-january-2026-1)
   - [6.1 Project Initialisation](#61-project-initialisation)
   - [6.2 Design and Planning](#62-design-and-planning)
   - [6.3 Code Generation](#63-code-generation)
@@ -61,15 +63,35 @@
 - [11. References](#11-references)
   - [Official Documentation](#official-documentation)
   - [Version Information](#version-information)
+- [Changes Since January 2026](#changes-since-january-2026-2)
+- [Revision History](#revision-history)
 
 ---
 
 ## 1. Tool Overview
 
 **Official Documentation:** https://cloud.google.com/gemini/docs/codeassist/overview  
-**Version Analysed:** Current (Gemini 3)  
+**Version Analysed:** Current (as of February 2026)  
 **Primary Use Case:** Enterprise AI-powered coding assistant with Google Cloud integration  
 **Licensing:** Commercial (Standard and Enterprise editions)
+
+### Changes Since January 2026
+
+The following changes have been made since the original analysis date of 20 January 2026.
+
+**Agent Mode General Availability:** Agent Mode is now widely available in both VS Code and IntelliJ IDEs. In IntelliJ, Agent Mode has moved from Preview to Stable.
+
+**Auto-Approve Option in IntelliJ:** Agent Mode now includes an auto-approve option in IntelliJ, allowing the agent to act more independently whilst keeping all changes reviewable and reversible.
+
+**Agent Mode Toggle Persistence:** Agent Mode now remembers its toggle state between IDE restarts, avoiding the need to re-enable it on each session.
+
+**Real-Time Shell Output:** Agent Mode now displays real-time shell output, providing immediate feedback during command execution.
+
+**Batched Tool Call Approvals:** Agent Mode now supports batched tool call approvals, allowing users to approve multiple tool calls at once.
+
+**VS Code Extension v2.68.0:** The Gemini Code Assist VS Code extension version 2.68.0 was released on 23 January 2026.
+
+**Citation:** Gemini Code Assist Release Notes. Google. https://developers.google.com/gemini-code-assist/resources/release-notes. Accessed 21 February 2026.
 
 ### Description
 
@@ -295,6 +317,20 @@ Custom tools can be developed as MCP servers. Once configured, Gemini Code Assis
 ---
 
 ## 6. Application Development Workflow
+
+### Changes Since January 2026
+
+The following Agent Mode usability improvements have been made since January 2026.
+
+**Toggle State Persistence:** Agent Mode now remembers its toggle state between IDE restarts, so users do not need to re-enable it each session.
+
+**Real-Time Shell Output:** Agent Mode now streams shell output in real time during command execution, providing immediate visibility into agent actions.
+
+**Quota Updates Visible:** Quota usage information is now visible within the Agent Mode interface.
+
+**Batched Tool Call Approvals:** Users can now approve multiple pending tool calls at once, reducing the number of manual confirmations required during multi-step agent tasks.
+
+**Citation:** Gemini Code Assist Release Notes. Google. https://developers.google.com/gemini-code-assist/resources/release-notes. Accessed 21 February 2026.
 
 ### 6.1 Project Initialisation
 
@@ -839,9 +875,35 @@ Overall documentation quality: High
 
 ### Version Information
 
-- **Tool Version Analysed:** Current (Gemini 3)
+- **Tool Version Analysed:** Current (as of February 2026)
 - **Documentation Last Updated:** 13 January 2026 UTC
-- **Analysis Last Updated:** 20 January 2026
+- **Analysis Last Updated:** 21 February 2026
+
+---
+
+## Changes Since January 2026
+
+This section summarises all changes to Gemini Code Assist identified since the original analysis date of 20 January 2026.
+
+**Citation:** Gemini Code Assist Release Notes. Google. https://developers.google.com/gemini-code-assist/resources/release-notes. Accessed 21 February 2026.
+
+### Tool Overview Changes
+
+- **Agent Mode General Availability:** Agent Mode is now widely available in both VS Code and IntelliJ IDEs; in IntelliJ it has moved from Preview to Stable.
+- **Auto-Approve Option in IntelliJ:** Agent Mode now includes an auto-approve option in IntelliJ, allowing the agent to act independently whilst keeping changes reviewable and reversible.
+- **Agent Mode Toggle Persistence:** Agent Mode now remembers its toggle state between IDE restarts.
+- **Real-Time Shell Output:** Agent Mode now displays real-time shell output during command execution.
+- **Batched Tool Call Approvals:** Agent Mode now supports batched approval of multiple tool calls.
+- **VS Code Extension v2.68.0:** Released 23 January 2026.
+
+### Application Development Workflow Changes
+
+- **Toggle State Persistence:** Agent Mode remembers its toggle state between IDE restarts.
+- **Real-Time Shell Output:** Shell output is now streamed in real time during agent task execution.
+- **Quota Updates Visible:** Quota usage information is now visible within the Agent Mode interface.
+- **Batched Tool Call Approvals:** Multiple pending tool calls can now be approved at once.
+
+[↑ Back to top](#table-of-contents)
 
 ---
 
@@ -850,6 +912,7 @@ Overall documentation quality: High
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+| 21 February 2026 | 1.1 | Added changes since January 2026: Agent Mode GA in VS Code and IntelliJ, auto-approve option in IntelliJ, toggle state persistence, real-time shell output, batched tool call approvals, VS Code extension v2.68.0 | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 
