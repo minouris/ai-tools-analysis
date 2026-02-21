@@ -4,8 +4,8 @@
 
 # Azure AI Toolkit for Visual Studio Code Analysis
 
-**Analysis Date:** 20 January 2026  
-**Tool Version:** Current (as of January 2026)  
+**Analysis Date:** 21 February 2026  
+**Tool Version:** Current (as of February 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://learn.microsoft.com/en-us/azure/ai-studio/
 
@@ -61,6 +61,7 @@
 - [11. References](#11-references)
   - [Official Documentation](#official-documentation)
   - [Version Information](#version-information)
+- [Changes Since January 2026](#changes-since-january-2026)
 - [Revision History](#revision-history)
 
 ---
@@ -775,9 +776,9 @@ The documentation for Azure AI Toolkit is spread across multiple sources (Azure 
 
 ### Version Information
 
-- **Tool Version Analysed:** Current (as of January 2026)
+- **Tool Version Analysed:** Current (as of February 2026)
 - **Documentation Last Updated:** January 2026
-- **Analysis Last Updated:** 20 January 2026
+- **Analysis Last Updated:** 21 February 2026
 
 [↑ Back to top](#table-of-contents)
 
@@ -801,8 +802,19 @@ The documentation for Azure AI Toolkit is spread across multiple sources (Azure 
 
 ---
 
+## Changes Since January 2026
+
+No major documented feature changes were identified for AI Toolkit for Visual Studio Code in the period January–February 2026 beyond version increments. The extension continues to function as described in this analysis, including its role in adding Ollama and other local models to GitHub Copilot Chat.
+
+**Citation:** VS Code v1.109 release notes. Visual Studio Code. https://code.visualstudio.com/updates/v1_109. Accessed 21 February 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## Revision History
 
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+| 21 February 2026 | 1.1 | Updated analysis date; added Changes Since January 2026 section confirming no major feature changes in this period | GitHub Copilot |
