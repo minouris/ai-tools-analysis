@@ -93,7 +93,7 @@ Citation: Roo Code on VS Code Marketplace. Microsoft. https://marketplace.visual
 
 ### Description
 
-Roo Cline (previously known as Roo Code) is an AI-powered development assistant that operates as a Visual Studio Code extension. The tool is described as "Your AI-Powered Dev Team, Right in Your Editor" and is maintained by Roo Code, Inc. (formerly Roo Veterinary, Inc.). The extension provides autonomous coding capabilities with multiple specialised operational modes.
+Roo Cline (now officially rebranded as Roo Code as of v3.2.0) is an AI-powered development assistant that operates as a Visual Studio Code extension. The tool is described as "Your AI-Powered Dev Team, Right in Your Editor" and is maintained by Roo Code, Inc. (formerly Roo Veterinary, Inc.). The extension provides autonomous coding capabilities with multiple specialised operational modes.
 
 **Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md), [LICENSE file](https://github.com/RooCodeInc/Roo-Code/blob/main/LICENSE)
 
