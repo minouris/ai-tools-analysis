@@ -4,8 +4,8 @@
 
 # Continue AI Coding Tool Analysis
 
-**Analysis Date:** 16 January 2025  
-**Tool Version:** Development version (latest main branch, "0.0.0-dev")  
+**Analysis Date:** 21 February 2026  
+**Tool Version:** 1.0 (stable release, as of February 2026)  
 **Analyst:** AI Analysis System  
 **Official Documentation:** https://docs.continue.dev
 
@@ -14,6 +14,7 @@
 ## Table of Contents
 
 - [1. Tool Overview](#1-tool-overview)
+  - [Changes Since January 2026](#changes-since-january-2026)
 - [2. LLM Provider Integration](#2-llm-provider-integration)
   - [2.1 Ollama Integration](#21-ollama-integration)
   - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
@@ -76,10 +77,27 @@
   - [13.3 Hub Resources](#133-hub-resources)
 - [Appendix A: Configuration Example](#appendix-a-configuration-example)
 - [Appendix B: Glossary](#appendix-b-glossary)
+- [Changes Since January 2026](#changes-since-january-2026-1)
+- [Revision History](#revision-history)
 
 ---
 
 ## 1. Tool Overview
+
+### Changes Since January 2026
+
+The following changes to Continue were documented after the original analysis date.
+
+- **Version 1.0 release**: Continue launched version 1.0, introducing a stable release of the open-source IDE extensions and the Hub (hub.continue.dev) for building and sharing custom AI code assistants. Citation: Continue Changelog. https://changelog.continue.dev/. Accessed 21 February 2026.
+- **OpenRouter provider support**: Added dynamic model loading via OpenRouter, expanding the range of available LLM providers. Citation: Continue Releases. https://github.com/continuedev/continue/releases. Accessed 21 February 2026.
+- **AI-powered code review agent (`cn review`)**: A new code review agent is accessible as both a CLI subcommand (`cn check` / `cn review`) and via the assistant block system. Citation: Continue Releases. https://github.com/continuedev/continue/releases. Accessed 21 February 2026.
+- **New models and blocks**: Added Nous Research Hermes model support and new assistant blocks. Citation: Continue Releases. https://github.com/continuedev/continue/releases. Accessed 21 February 2026.
+- **SSL verification option for CLI client transport**: Added SSL verification configuration for the CLI client transport layer. Citation: Continue Releases. https://github.com/continuedev/continue/releases. Accessed 21 February 2026.
+- **Message counters in chat history**: Added message counters to the chat history interface. Citation: Continue Releases. https://github.com/continuedev/continue/releases. Accessed 21 February 2026.
+- **Tool prompt override in `.continuerc.json`**: Added support for overriding tool prompts via `.continuerc.json` configuration. Citation: Continue Releases. https://github.com/continuedev/continue/releases. Accessed 21 February 2026.
+- **IDE improvements**: VS Code and JetBrains plugin fixes released, and a new "release notes" link added to the JetBrains extension. Citation: Continue Releases. https://github.com/continuedev/continue/releases. Accessed 21 February 2026.
+
+---
 
 **Official Documentation:** https://docs.continue.dev  
 **Version Analysed:** Latest development (0.0.0-dev in package.json)  
@@ -1389,7 +1407,37 @@ mcpServers:
 
 **End of Analysis**
 
-*This analysis is based entirely on official documentation from the continuedev/continue GitHub repository (https://github.com/continuedev/continue) as of 16 January 2025.*
+*This analysis is based entirely on official documentation from the continuedev/continue GitHub repository (https://github.com/continuedev/continue). Original analysis date: 16 January 2025. Last updated: 21 February 2026.*
+
+---
+
+## Changes Since January 2026
+
+This section summarises documented changes to Continue since early 2026.
+
+### Section 1: Tool Overview
+
+- **Version 1.0 release**: Continue launched version 1.0 with stable open-source IDE extensions and the Hub for building and sharing custom AI code assistants. Citation: Continue Changelog. https://changelog.continue.dev/. Accessed 21 February 2026.
+- **OpenRouter provider support**: Dynamic model loading via OpenRouter added. Citation: Continue Releases. https://github.com/continuedev/continue/releases. Accessed 21 February 2026.
+- **AI-powered code review agent (`cn review`)**: Accessible as CLI subcommand (`cn check` / `cn review`) and via assistant block system. Citation: Continue Releases. https://github.com/continuedev/continue/releases. Accessed 21 February 2026.
+- **New models and blocks**: Nous Research Hermes model support and new assistant blocks added. Citation: Continue Releases. https://github.com/continuedev/continue/releases. Accessed 21 February 2026.
+- **SSL verification option for CLI client transport**: Added. Citation: Continue Releases. https://github.com/continuedev/continue/releases. Accessed 21 February 2026.
+- **Message counters in chat history**: Added. Citation: Continue Releases. https://github.com/continuedev/continue/releases. Accessed 21 February 2026.
+- **Tool prompt override in `.continuerc.json`**: Added. Citation: Continue Releases. https://github.com/continuedev/continue/releases. Accessed 21 February 2026.
+- **IDE improvements**: VS Code and JetBrains plugin fixes; new "release notes" link added to JetBrains extension. Citation: Continue Releases. https://github.com/continuedev/continue/releases. Accessed 21 February 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## Revision History
+
+| Date | Version | Changes | Analyst |
+|------|---------|---------|---------|
+| 16 January 2025 | 1.0 | Initial analysis (development version 0.0.0-dev) | AI Analysis System |
+| 21 February 2026 | 1.1 | Updated to reflect version 1.0 release; added OpenRouter support, `cn review` agent, SSL verification, message counters, tool prompt override, and IDE improvements | AI Analysis System |
+
+[↑ Back to top](#table-of-contents)
 
 ---
 

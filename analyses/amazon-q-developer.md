@@ -4,8 +4,8 @@
 
 # Amazon Q Developer Analysis
 
-**Analysis Date:** 20 January 2026  
-**Tool Version:** Current (as of January 2026)  
+**Analysis Date:** 21 February 2026  
+**Tool Version:** Current (as of February 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://aws.amazon.com/q/developer/
 
@@ -16,6 +16,7 @@
 - [1. Tool Overview](#1-tool-overview)
   - [Description](#description)
   - [Key Features](#key-features)
+  - [Changes Since January 2026](#changes-since-january-2026)
 - [2. LLM Provider Integration](#2-llm-provider-integration)
   - [2.1 Ollama Integration](#21-ollama-integration)
   - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
@@ -64,11 +65,22 @@
   - [Official Documentation](#official-documentation)
   - [Version Information](#version-information)
   - [Notes on Documentation Availability](#notes-on-documentation-availability)
+- [Changes Since January 2026](#changes-since-january-2026-1)
 - [Revision History](#revision-history)
 
 ---
 
 ## 1. Tool Overview
+
+### Changes Since January 2026
+
+The following changes and deprecations to Amazon Q Developer were documented after the original analysis date.
+
+- **GitLab code transformation deprecated (January 2026)**: The code transformation feature for GitLab, including the `/q transform` quick action for Java modernisation and the associated CI/CD pipeline, was deprecated on 16 January 2026. Citation: Amazon Q Developer Documentation History. https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/doc-history.html. Accessed 21 February 2026.
+- **GitLab `/q dev (revise)` quick action removed (January 2026)**: The `/q dev (revise)` quick action for GitLab was removed on 13 January 2026. Citation: Amazon Q Developer Documentation History. https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/doc-history.html. Accessed 21 February 2026.
+- **GitLab unit test generation removed (January 2026)**: The entire 'Unit test generation' section, including the `/q test` command, was removed from the GitLab quick actions documentation on 13 January 2026. Citation: Amazon Q Developer Documentation History. https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/doc-history.html. Accessed 21 February 2026.
+
+---
 
 **Official Documentation:** https://aws.amazon.com/q/developer/  
 **Version Analysed:** Current version (as of January 2026)  
@@ -802,11 +814,26 @@ This analysis is based on publicly accessible AWS documentation and product info
 
 ---
 
+## Changes Since January 2026
+
+This section summarises documented changes and deprecations to Amazon Q Developer since the original analysis date.
+
+### Section 1: Tool Overview
+
+- **GitLab code transformation deprecated (January 2026)**: The `/q transform` quick action for Java modernisation and the associated GitLab CI/CD pipeline were deprecated on 16 January 2026. Citation: Amazon Q Developer Documentation History. https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/doc-history.html. Accessed 21 February 2026.
+- **GitLab `/q dev (revise)` quick action removed (January 2026)**: Removed on 13 January 2026. Citation: Amazon Q Developer Documentation History. https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/doc-history.html. Accessed 21 February 2026.
+- **GitLab unit test generation removed (January 2026)**: The 'Unit test generation' section and `/q test` command were removed from GitLab quick actions documentation on 13 January 2026. Citation: Amazon Q Developer Documentation History. https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/doc-history.html. Accessed 21 February 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## Revision History
 
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+| 21 February 2026 | 1.1 | Updated analysis date; added deprecations for GitLab code transformation, `/q dev (revise)`, and `/q test` quick actions | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 
