@@ -4,17 +4,19 @@
 
 # Claude Code Analysis
 
-**Analysis Date:** 20 January 2026  
-**Tool Version:** 2.1.12 (as of January 2026)  
+**Analysis Date:** 21 February 2026  
+**Tool Version:** 2.1.47 (as of February 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://code.claude.com/docs/en/overview
 
 ## Table of Contents
 
 - [1. Tool Overview](#1-tool-overview)
+  - [Changes Since 20 January 2026](#changes-since-20-january-2026)
   - [Description](#description)
   - [Key Features](#key-features)
 - [2. LLM Provider Integration](#2-llm-provider-integration)
+  - [Changes Since 20 January 2026](#changes-since-20-january-2026-1)
   - [2.1 Ollama Integration](#21-ollama-integration)
   - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
   - [2.3 Microsoft AI Foundry Integration](#23-microsoft-ai-foundry-integration)
@@ -38,6 +40,7 @@
   - [Available Tools](#available-tools)
   - [Custom Tool Development](#custom-tool-development)
 - [6. Application Development Workflow](#6-application-development-workflow)
+  - [Changes Since 20 January 2026](#changes-since-20-january-2026-2)
   - [6.1 Project Initialisation](#61-project-initialisation)
   - [6.2 Design and Planning](#62-design-and-planning)
   - [6.3 Code Generation](#63-code-generation)
@@ -46,6 +49,7 @@
   - [6.6 Debugging](#66-debugging)
   - [6.7 Deployment](#67-deployment)
 - [7. IDE and Environment Integration](#7-ide-and-environment-integration)
+  - [Changes Since 20 January 2026](#changes-since-20-january-2026-3)
   - [7.1 Visual Studio Code](#71-visual-studio-code)
   - [7.2 JetBrains IDEs](#72-jetbrains-ides)
   - [7.3 Eclipse](#73-eclipse)
@@ -63,6 +67,7 @@
   - [Version Information](#version-information)
   - [Key Release Milestones](#key-release-milestones)
   - [SDK and Development Resources](#sdk-and-development-resources)
+- [Changes Since 20 January 2026](#changes-since-20-january-2026-4)
 
 ---
 
@@ -72,6 +77,20 @@
 **Version Analysed:** 2.1.12  
 **Primary Use Case:** Terminal-based agentic coding assistant for executing tasks, explaining code, and managing git workflows through natural language  
 **Licensing:** Commercial (requires Claude Pro or Claude Max subscription)
+
+### Changes Since 20 January 2026
+
+The following changes were identified between the original analysis date (20 January 2026) and 21 February 2026, based on official Claude Code release notes.
+
+- **Version updated to 2.1.47:** The latest release as of mid-to-late February 2026 is version 2.1.47, up from 2.1.12 at the time of the original analysis.
+- **Agent hooks:** A new hooks feature allows users to trigger shell commands at key agent lifecycle points (e.g., before or after tool use, on session start or end), enabling automated quality checks and workflow integrations.
+- **Message queueing:** Users can now send follow-up messages whilst a request is still running; messages are queued and processed in sequence.
+- **Claude Sonnet 4.6 support:** Claude Sonnet 4.6 was released on 17 February 2026, offering improved coding performance, computer use, and long-context reasoning. A 1 million token context window is available in beta.
+- **Opus 4 and Opus 4.1 deprecated:** Claude Opus 4 and Opus 4.1 were deprecated from Claude Code in January 2026.
+- **VS Code plan preview improvements:** Plan previews in the VS Code extension now auto-update as the plan evolves and are easier to review.
+
+Citation: Claude Code Release Notes. Anthropic. https://github.com/anthropics/claude-code/releases. Accessed 21 February 2026.  
+Citation: Claude Code Release Notes. Anthropic Support. https://support.claude.com/en/articles/12138966-release-notes. Accessed 21 February 2026.
 
 ### Description
 
@@ -107,6 +126,14 @@ The tool is built on Node.js and distributed through multiple installation metho
 ---
 
 ## 2. LLM Provider Integration
+
+### Changes Since 20 January 2026
+
+- **Claude Sonnet 4.6 added:** Claude Sonnet 4.6 (released 17 February 2026) is now a supported and default model in Claude Code. It introduces improved coding performance, computer use, long-context reasoning, and a 1 million token context window in beta.
+- **Claude Opus 4 and Opus 4.1 deprecated:** These models were deprecated from Claude Code in January 2026 and are no longer available for selection.
+
+Citation: Claude Code Release Notes. Anthropic. https://github.com/anthropics/claude-code/releases. Accessed 21 February 2026.  
+Citation: Claude Code Release Notes. Anthropic Support. https://support.claude.com/en/articles/12138966-release-notes. Accessed 21 February 2026.
 
 ### 2.1 Ollama Integration
 
@@ -545,6 +572,15 @@ The plugin system (v2.0.12) allows developers to create and distribute:
 
 ## 6. Application Development Workflow
 
+### Changes Since 20 January 2026
+
+- **Agent hooks:** Users can now define hooks to trigger shell commands at specific agent lifecycle points, such as before or after tool use or on task completion. This enables automation of quality checks, notifications, and other workflow integrations.
+- **Background agent control changed:** The keyboard shortcut to control background agents has changed from double Esc to Ctrl+F.
+- **Improved file suggestion speed:** The speed of file suggestions when using `@`-mentions has been improved.
+
+Citation: Claude Code Release Notes. Anthropic. https://github.com/anthropics/claude-code/releases. Accessed 21 February 2026.  
+Citation: Claude Code Release Notes. Anthropic Support. https://support.claude.com/en/articles/12138966-release-notes. Accessed 21 February 2026.
+
 ### 6.1 Project Initialisation
 
 Claude Code can assist with project initialisation through natural language commands:
@@ -728,6 +764,13 @@ Claude can generate:
 ---
 
 ## 7. IDE and Environment Integration
+
+### Changes Since 20 January 2026
+
+- **Improved VS Code plan previews:** Plan previews in the VS Code extension now auto-update as the plan evolves and are easier to review.
+
+Citation: Claude Code Release Notes. Anthropic. https://github.com/anthropics/claude-code/releases. Accessed 21 February 2026.  
+Citation: Claude Code Release Notes. Anthropic Support. https://support.claude.com/en/articles/12138966-release-notes. Accessed 21 February 2026.
 
 ### 7.1 Visual Studio Code
 
@@ -1389,10 +1432,42 @@ The official documentation quality is comprehensive:
 
 ---
 
+## Changes Since 20 January 2026
+
+This section summarises all changes identified between the original analysis date (20 January 2026) and the updated analysis date (21 February 2026). All information is sourced from official Claude Code release notes.
+
+### Version
+
+- Latest version is now **2.1.47** (as of mid-to-late February 2026), up from 2.1.12 at the time of the original analysis.
+
+### New Features
+
+- **Agent hooks** (Sections 1, 6): Trigger shell commands at key agent lifecycle points (e.g., before or after tool use, on session start or end), enabling automation of quality checks and workflow integrations.
+- **Message queueing** (Section 1): Send follow-up messages whilst a request is running; messages are queued and processed in sequence.
+- **Improved VS Code plan previews** (Sections 1, 7): Plan previews in the VS Code extension now auto-update as plans evolve and are easier to review.
+- **Improved file suggestion speed** (Section 6): `@`-mention file suggestions now respond faster.
+
+### Model Changes
+
+- **Claude Sonnet 4.6 added** (Sections 1, 2): Released 17 February 2026; now a supported and default model in Claude Code. Offers improved coding performance, computer use, long-context reasoning, and a 1 million token context window in beta.
+- **Claude Opus 4 and Opus 4.1 deprecated** (Sections 1, 2): Deprecated from Claude Code in January 2026.
+
+### Behaviour Changes
+
+- **Background agent control** (Section 6): Keyboard shortcut changed from double Esc to Ctrl+F.
+
+**Citation:** Claude Code Release Notes. Anthropic. https://github.com/anthropics/claude-code/releases. Accessed 21 February 2026.  
+**Citation:** Claude Code Release Notes. Anthropic Support. https://support.claude.com/en/articles/12138966-release-notes. Accessed 21 February 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## Revision History
 
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 16 January 2026 | 0.1 | Initial analysis framework created with limited documentation access | GitHub Copilot |
 | 20 January 2026 | 1.0 | Complete analysis based on GitHub repository documentation, README, and comprehensive CHANGELOG review | GitHub Copilot |
+| 21 February 2026 | 1.1 | Updated to version 2.1.47; added agent hooks, message queueing, Claude Sonnet 4.6 support, Opus 4/4.1 deprecation, VS Code plan preview improvements, and background agent shortcut change | GitHub Copilot |
 
