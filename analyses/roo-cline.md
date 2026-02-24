@@ -71,7 +71,7 @@
 ## 1. Tool Overview
 
 **Official Documentation:** https://github.com/RooCodeInc/Roo-Code  
-**Version Analysed:** 3.41.0  
+**Version Analysed:** 3.48.0 (as of February 2026)  
 **Primary Use Case:** AI-powered development assistant for VS Code  
 **Licensing:** Apache 2.0 (open source)
 
@@ -93,7 +93,7 @@ Citation: Roo Code on VS Code Marketplace. Microsoft. https://marketplace.visual
 
 ### Description
 
-Roo Cline (now officially rebranded as Roo Code as of v3.2.0) is an AI-powered development assistant that operates as a Visual Studio Code extension. The tool is described as "Your AI-Powered Dev Team, Right in Your Editor" and is maintained by Roo Code, Inc. (formerly Roo Veterinary, Inc.). The extension provides autonomous coding capabilities with multiple specialised operational modes.
+Roo Cline (now officially rebranded as Roo Code as of v3.2.0) is an AI-powered development assistant that operates as a Visual Studio Code extension. The current version is 3.48.0. The tool is described as "Your AI-Powered Dev Team, Right in Your Editor" and is maintained by Roo Code, Inc. (formerly Roo Veterinary, Inc.). The extension provides autonomous coding capabilities with multiple specialised operational modes.
 
 **Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md), [LICENSE file](https://github.com/RooCodeInc/Roo-Code/blob/main/LICENSE)
 
@@ -108,8 +108,11 @@ Roo Cline (now officially rebranded as Roo Code as of v3.2.0) is an AI-powered d
 - Support for Model Context Protocol (MCP) servers
 - Codebase indexing for enhanced context
 - Remote control capabilities through "Roomote Control"
+- **Smart Code Folding**: Context condensation preserves a lightweight map of recently accessed files, function signatures, class declarations, and type definitions; approximately 50,000 character budget prioritising recently worked-on files (v3.45.0+)
+- **Worktree Selector**: Native worktree management with new creation UX (v3.44.0)
 
-**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)  
+Citation: Roo Code Update Notes. Roo Code Documentation. https://docs.roocode.com/update-notes/. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -473,6 +476,8 @@ Roo Cline includes codebase indexing functionality for enhanced context awarenes
 - Configurable embedding batch size (`roo-cline.codeIndex.embeddingBatchSize`, default: 60, range: 1-200)
 - Maximum indexed files configuration (`roo-cline.maximumIndexedFilesForFileSearch`, default: 10,000, range: 5,000-500,000)
 - Dedicated code index service with configuration management
+
+**Smart Code Folding (Context Condensation, v3.45.0+):** When the context window becomes full, Roo Code condenses the context by preserving a lightweight structural map of recently accessed files. This map includes function signatures, class declarations, and type definitions, allowing the agent to accurately reference code structure after condensation. The system uses an approximately 50,000 character budget and prioritises files that have been recently worked on.
 
 **Search Capabilities:**
 

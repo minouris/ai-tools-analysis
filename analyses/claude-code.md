@@ -74,7 +74,7 @@
 ## 1. Tool Overview
 
 **Official Documentation:** https://code.claude.com/docs/en/overview  
-**Version Analysed:** 2.1.12  
+**Version Analysed:** 2.1.47 (as of February 2026)  
 **Primary Use Case:** Terminal-based agentic coding assistant for executing tasks, explaining code, and managing git workflows through natural language  
 **Licensing:** Commercial (requires Claude Pro or Claude Max subscription)
 
@@ -110,6 +110,8 @@ The tool is built on Node.js and distributed through multiple installation metho
 - Plugin system for custom commands and agents
 - VS Code extension for IDE integration
 - Background task execution (Ctrl+B)
+- **Agent Hooks**: Trigger custom shell commands at key agent lifecycle points (e.g., before or after file writes, tool calls, or session start/end)
+- **Message Queueing**: Send follow-up messages whilst a request is running; background agents now controlled with `ctrl+f`
 - Plan mode for complex multi-step tasks
 - Thinking mode with extended reasoning
 - Skills system for reusable task definitions
@@ -118,6 +120,7 @@ The tool is built on Node.js and distributed through multiple installation metho
 - Conversation history and session resumption
 - Real-time steering (send messages while Claude works)
 - Jupyter notebook support
+- **Supports Claude Sonnet 4.6** (released 17 February 2026) with 1 million token context window (beta); Claude Opus 4 and Opus 4.1 have been deprecated from Claude Code as of January 2026
 
 **Citation:** Claude Code README. https://github.com/anthropics/claude-code. Accessed 20 January 2026.
 
@@ -213,7 +216,8 @@ Not applicable - Claude Code is a separate tool from GitHub Copilot and does not
 - **Supported Models:** 
   - Claude 3 family: Opus 3, Sonnet 3.5, Haiku 3
   - Claude 3.7: Sonnet 3.7 (Bedrock-specific)
-  - Claude 4 family: Opus 4, Opus 4.1, Opus 4.5, Sonnet 4, Haiku 4, Haiku 4.5
+  - Claude 4 family: Sonnet 4.6 (released 17 February 2026; latest model featuring improved coding skills, computer use, long-context reasoning, and a 1 million token context window in beta), Opus 4.5, Sonnet 4, Haiku 4, Haiku 4.5
+  - **Note:** Claude Opus 4 and Claude Opus 4.1 have been deprecated from Claude Code as of January 2026 and are no longer available for selection
   - Model aliases: `opus`, `sonnet`, `haiku`, `opusplan`
   - Custom model selection via `/model` command
   - Environment variables: `ANTHROPIC_DEFAULT_SONNET_MODEL`, `ANTHROPIC_DEFAULT_OPUS_MODEL`, `ANTHROPIC_DEFAULT_HAIKU_MODEL`
@@ -230,7 +234,8 @@ Not applicable - Claude Code is a separate tool from GitHub Copilot and does not
 - **AWS Bedrock:** Full support with ARN-based model configuration, STS token support, SSO login support, environment variable `AWS_BEARER_TOKEN_BEDROCK`
 - **Google Vertex AI:** Supported with `CLOUD_ML_REGION` configuration, global endpoint support for certain models
 
-**Citation:** Multiple entries in Claude Code CHANGELOG and README referencing model support, authentication methods, and provider integrations. https://github.com/anthropics/claude-code. Accessed 20 January 2026.
+**Citation:** Multiple entries in Claude Code CHANGELOG and README referencing model support, authentication methods, and provider integrations. https://github.com/anthropics/claude-code. Accessed 20 January 2026.  
+Citation: Anthropic Claude Code Releases. GitHub. https://github.com/anthropics/claude-code/releases. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -661,6 +666,15 @@ Powered by Haiku, the Explore agent efficiently searches codebases to understand
 - Redirect approach mid-execution
 - Add additional requirements on the fly
 
+**Agent Hooks:**
+
+Claude Code supports agent hooks that trigger custom shell commands at key lifecycle events during agent execution. Hooks can be configured to run at specific points such as:
+- `PreToolUse`: before a tool call is made
+- `PostToolUse`: after a tool call completes
+- `Notification`: when the agent sends a notification
+
+This enables custom pre-processing, post-processing, logging, or integration with external systems during agent workflows. Hooks are defined in skill frontmatter or project configuration and support full shell command execution.
+
 **Iteration Features:**
 - Conversation history maintained across sessions
 - `/resume` command to continue previous work
@@ -796,6 +810,7 @@ The extension connects to the Claude Code CLI running in the background. Configu
 - **Code Completions** - Inline code suggestions with acceptance indicators
 - **File Operations** - Drag-and-drop support for files and folders
 - **Diff View** - Side-by-side diffs for code changes
+- **Plan Preview** - Plan previews now auto-update as the plan is refined by the agent, making it easier to review evolving plans in real time (v2.1.47)
 - **Image Support** - Paste images directly (⌘+V on macOS, Ctrl+V on other platforms)
 - **Context Menu** - Model selection and configuration access
 - **Usage Indicator** - Token usage and limits display (v2.0.24, v2.1.6)
@@ -998,6 +1013,7 @@ claude -p "generate code" --output-format=stream-json
 |--------|----------|-------|
 | Toggle thinking | Alt+T (Tab deprecated) | View extended reasoning |
 | Background task | Ctrl+B | Background bash/agents |
+| Background agent control | Ctrl+F | View and manage background agents (changed from double Esc in v2.1.47) |
 | Interrupt | Esc | Stop current operation |
 | History search | Ctrl+R | Search command history |
 | Transcript mode | Ctrl+O (was Ctrl+R) | View full conversation |
