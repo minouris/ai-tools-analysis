@@ -100,13 +100,13 @@ The following changes to Continue were documented after the original analysis da
 ---
 
 **Official Documentation:** https://docs.continue.dev  
-**Version Analysed:** Latest development (0.0.0-dev in package.json)  
+**Version Analysed:** 1.0 (stable release)  
 **Primary Use Case:** AI-powered coding assistant for automating development workflows across IDE, terminal, and CI/CD environments  
 **Licensing:** Apache License 2.0 (Open Source)
 
 ### Description
 
-Continue is a comprehensive AI coding platform that enables developers to create, share, and use custom AI code agents through open-source IDE extensions (VS Code and JetBrains) and a command-line interface. The platform integrates with Continue Mission Control (hub.continue.dev), a central dashboard for managing agents, tasks, workflows, and integrations.
+Continue is a comprehensive AI coding platform that enables developers to create, share, and use custom AI code agents through open-source IDE extensions (VS Code and JetBrains) and a command-line interface. Continue reached its v1.0 stable release in early 2026, establishing the Hub (hub.continue.dev) as a stable platform for building and sharing custom AI code assistants. The platform integrates with Continue Mission Control (hub.continue.dev), a central dashboard for managing agents, tasks, workflows, and integrations.
 
 **Deployment Models:**
 1. **IDE Extensions** - Real-time coding assistance in VS Code and JetBrains IDEs
@@ -125,6 +125,8 @@ Continue is a comprehensive AI coding platform that enables developers to create
 - **Custom Rules and Prompts** - Organisation-specific coding standards
 - **Multi-provider Support** - 40+ LLM providers
 - **Workflow Automation** - Scheduled and event-triggered agents
+- **OpenRouter Provider** - OpenRouter is supported as a provider with dynamic model loading, expanding access to numerous models through a single integration
+- **AI Code Review Agent (`cn review`)** - A new AI-powered code review agent accessible as a CLI subcommand and via the assistant block system
 
 **Citation:** docs/index.mdx, docs/home.mdx, docs/ide-extensions/quick-start.mdx, LICENSE
 

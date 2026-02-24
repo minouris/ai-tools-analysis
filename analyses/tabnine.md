@@ -110,8 +110,11 @@ Tabnine distinguishes itself by offering flexible deployment models including fu
 - **Compliance Ready**: SOC 2 Type 2, GDPR, and other compliance certifications
 - **Custom AI Models**: Enterprise option to train private models
 - **Code Review**: AI-powered code review suggestions
+- **Context Engine (GA)**: Deep codebase awareness for agent features, now Generally Available to all Enterprise SaaS and self-hosted environments (v5.28.0, February 2026); previously in limited access
+- **BYOAI (Bring Your Own AI)**: Enterprises can orchestrate their own large language models through Tabnine whilst maintaining governance and a unified user experience (v5.28.0)
+- **Organisation-Level Repositories**: Organisation administrators can define Git repositories (GitHub, GitLab) and Perforce depots in the Admin UI for use by the Context Engine (v5.28.0)
 
-**Citation:** General information available at https://www.tabnine.com and https://docs.tabnine.com. Accessed 20 January 2026.
+**Citation:** General information available at https://www.tabnine.com and https://docs.tabnine.com. Tabnine Release Notes. https://docs.tabnine.com/main/administering-tabnine/release-notes. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -286,7 +289,14 @@ Not documented in official sources
 
 ### Available Tools
 
-Not documented in official sources
+The following agent tools and utilities are available as of v5.28.0:
+
+- **Ripgrep-Powered Search**: A ripgrep-based search utility that enables faster, code-aware context retrieval when the agent generates or refactors code (v5.28.0)
+- **`/code-review` Slash Command**: A predefined `/code-review` slash command is available for triggering code reviews as an agent interaction (v5.28.0)
+
+**Context Engine Admin UI**: The Admin UI now includes dedicated sections for configuring Context Engine availability, model preferences, scheduling, and agent tool access (v5.28.0).
+
+**Citation:** Tabnine Release Notes. Tabnine. https://docs.tabnine.com/main/administering-tabnine/release-notes. Accessed 21 February 2026.
 
 ### Custom Tool Development
 
@@ -385,6 +395,7 @@ The following IDE integration changes were made in Tabnine v5.28.0 (10 February 
 - Language-specific completions
 - Context-aware suggestions from open files
 - Support for all VS Code languages
+- Image context for Gemini models: the agent can analyse and reason over screenshots and diagrams as part of code reviews and queries (v5.28.0)
 
 **Keyboard Shortcuts:**
 
@@ -502,9 +513,10 @@ Tabnine focuses on IDE integration and does not provide a standalone command-lin
 
 #### Visual Studio
 
+**Supported Versions:** Visual Studio 2022 and Visual Studio 2026 (Tabnine Agent support added in v5.28.0, February 2026)  
 **Installation:** Install from Visual Studio Marketplace  
-**Features:** Code completions integrated with Visual Studio IntelliSense  
-**Citation:** Extension available for Visual Studio. Information at https://www.tabnine.com
+**Features:** Code completions and Tabnine Agent integrated with Visual Studio IntelliSense. Official Tabnine Agent support was added for Visual Studio 2022 and Visual Studio 2026 in v5.28.0.  
+**Citation:** Extension available for Visual Studio. Information at https://www.tabnine.com. Tabnine Release Notes. https://docs.tabnine.com/main/administering-tabnine/release-notes. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -749,6 +761,7 @@ Tabnine's publicly accessible documentation provides basic installation and usag
 1. Tabnine Official Website - https://www.tabnine.com
 2. Tabnine Documentation - https://docs.tabnine.com
 3. Tabnine Blog - https://www.tabnine.com/blog
+4. Tabnine Release Notes - https://docs.tabnine.com/main/administering-tabnine/release-notes
 
 ### Version Information
 

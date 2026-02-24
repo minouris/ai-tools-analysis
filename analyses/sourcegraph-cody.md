@@ -5,7 +5,7 @@
 # Sourcegraph Cody Analysis
 
 **Analysis Date:** 21 February 2026  
-**Tool Version:** Current (as of January 2026)  
+**Tool Version:** Current (v1.142.0, as of February 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://docs.sourcegraph.com/cody
 
@@ -59,7 +59,7 @@ The following changes to Sourcegraph Cody were documented after the original ana
 ---
 
 **Official Documentation:** https://docs.sourcegraph.com/cody  
-**Version Analysed:** Current version (as of January 2026)  
+**Version Analysed:** Current version (v1.142.0, as of February 2026)  
 **Primary Use Case:** AI coding assistant with deep codebase context and understanding  
 **Licensing:** Free tier for individuals, Pro tier for advanced features, Enterprise for organisations
 
@@ -68,6 +68,8 @@ The following changes to Sourcegraph Cody were documented after the original ana
 Sourcegraph Cody is an AI-powered coding assistant developed by Sourcegraph, a company known for its code search and intelligence platform. Cody leverages Sourcegraph's powerful code search and context capabilities to provide AI assistance with deep understanding of your codebase, dependencies, and documentation.
 
 Cody distinguishes itself through its ability to search and understand large codebases using Sourcegraph's enterprise-grade code intelligence. This enables Cody to provide context-aware suggestions and answers based on your entire codebase, not just open files. Cody supports multiple AI models and can be deployed on-premises for organisations with security requirements.
+
+As of February 2026, Cody is at version 1.142.0, representing an incremental update. The internal agent has been updated to v1.54.0 for enhanced code understanding and suggestion quality, and auto-edit stability improvements have been made in agent mode. No major new features were announced in this period.
 
 ### Key Features
 
@@ -83,6 +85,8 @@ Cody distinguishes itself through its ability to search and understand large cod
 - **IDE Integration**: VS Code, JetBrains IDEs, and Neovim
 - **Attribution**: Shows sources when code suggestions match open-source code
 - **Flexible Context**: Fine-tune which files and repositories Cody considers
+- **Internal Agent v1.54.0**: The internal agent has been updated to v1.54.0 for enhanced code understanding and suggestion quality (v1.142.0)
+- **Auto-edit Stability**: Improved stability for auto-edit functionality in agent mode (v1.142.0)
 
 **Citation:** General information available at https://sourcegraph.com/cody and https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
 
@@ -801,12 +805,13 @@ Sourcegraph Cody's documentation is comprehensive for core features like install
 1. Sourcegraph Cody Official Page - https://sourcegraph.com/cody
 2. Cody Documentation - https://docs.sourcegraph.com/cody
 3. Sourcegraph Blog - https://about.sourcegraph.com/blog
+4. Sourcegraph Cody Releases - https://github.com/sourcegraph/cody-public-snapshot/releases
 
 ### Version Information
 
-- **Tool Version Analysed:** Current (as of January 2026)
+- **Tool Version Analysed:** Current (v1.142.0, as of February 2026)
 - **Documentation Last Updated:** Ongoing updates
-- **Analysis Last Updated:** 20 January 2026
+- **Analysis Last Updated:** 21 February 2026
 
 ### Notes on Documentation Availability
 
