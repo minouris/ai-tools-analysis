@@ -77,7 +77,7 @@
   - [13.3 Hub Resources](#133-hub-resources)
 - [Appendix A: Configuration Example](#appendix-a-configuration-example)
 - [Appendix B: Glossary](#appendix-b-glossary)
-- [Changes Since January 2026](#changes-since-january-2026-1)
+- [All Changes Since January 2026](#all-changes-since-january-2026)
 - [Revision History](#revision-history)
 
 ---
@@ -1413,9 +1413,7 @@ mcpServers:
 
 ---
 
-## Changes Since January 2026
-
-This section summarises documented changes to Continue since early 2026.
+## All Changes Since January 2026
 
 ### Section 1: Tool Overview
 

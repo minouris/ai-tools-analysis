@@ -88,7 +88,7 @@ As of February 2026, Cody is at version 1.142.0, representing an incremental upd
 - **Internal Agent v1.54.0**: The internal agent has been updated to v1.54.0 for enhanced code understanding and suggestion quality (v1.142.0)
 - **Auto-edit Stability**: Improved stability for auto-edit functionality in agent mode (v1.142.0)
 
-**Citation:** General information available at https://sourcegraph.com/cody and https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
+**Citation:** General information available at https://sourcegraph.com/cody and https://docs.sourcegraph.com/cody. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 

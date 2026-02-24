@@ -39,7 +39,7 @@
 - [9. Summary and Key Findings](#9-summary-and-key-findings)
 - [10. Completeness Checklist](#10-completeness-checklist)
 - [11. References](#11-references)
-- [Changes Since January 2026](#changes-since-january-2026)
+- [All Changes Since January 2026](#all-changes-since-january-2026)
 - [Revision History](#revision-history)
 
 ---
@@ -99,7 +99,7 @@ GitHub Copilot transforms the developer experience by enabling developers to foc
 
 ### Changes Since January 2026
 
-- **GPT-5.3-Codex availability** (February 2026): GPT-5.3-Codex, OpenAI's latest agentic coding model, began rolling out on 9 February 2026. It is 25% faster than GPT-5.2-Codex on agentic tasks and is now generally available for GitHub Copilot.
+- **GPT-5.3-Codex availability** (February 2026): GPT-5.3-Codex, OpenAI's latest agentic coding model, began rolling out on 9 February 2026. It is faster than GPT-5.2-Codex on agentic tasks and is now generally available for GitHub Copilot.
 - **Gemini 3.1 Pro public preview** (February 2026): Gemini 3.1 Pro entered public preview in GitHub Copilot on 19 February 2026.
 - **Claude Agent support public preview** (VS Code v1.109 / February 2026): Users can delegate tasks to Anthropic's official Claude Agent SDK using Claude models from their Copilot subscription.
 
@@ -188,7 +188,7 @@ GitHub Copilot is powered by generative AI models developed by GitHub, OpenAI, a
 
 - **API URL Configuration:** Not applicable - models are provided through GitHub Copilot subscription
 - **API Key Configuration:** Not applicable - authentication handled through GitHub credentials
-- **Supported Models:** GPT-3.5, GPT-4, GPT-4o, GPT-4 Turbo, GPT-5.2-Codex, GPT-5.3-Codex (GA as of 9 February 2026 — 25% faster on agentic tasks), and other variants available through model selection
+- **Supported Models:** GPT-3.5, GPT-4, GPT-4o, GPT-4 Turbo, GPT-5.2-Codex, GPT-5.3-Codex (GA as of 9 February 2026 — faster on agentic tasks), and other variants available through model selection
 
 **Custom Endpoints:** Users can extend Copilot Chat with additional models through the Visual Studio Code AI Toolkit or by adding models from providers such as OpenAI directly. This requires an API key from the provider.
 
@@ -1146,16 +1146,14 @@ Areas for improvement:
 
 ---
 
-## Changes Since January 2026
-
-The following changes have been verified from official sources and occurred after the initial analysis date of 16 January 2026.
+## All Changes Since January 2026
 
 - **Multi-agent development focus** (VS Code v1.109 / February 2026): VS Code is now positioned as the "home for multi-agent development", with multi-agent workflows established as a primary focus area for Copilot.
 - **Claude Agent support** (VS Code v1.109 / February 2026): Users can delegate tasks to Anthropic's official Claude Agent SDK using Claude models from their Copilot subscription. Now in public preview.
 - **Agent orchestrations** (VS Code v1.109 / February 2026): New capability to orchestrate multiple AI agents working together on complex tasks.
 - **Agent Skills** (VS Code v1.109 / February 2026): Teams can create `SKILL.md` files containing reusable workflow definitions that agents can invoke.
 - **Copilot Memory** (VS Code v1.109 / February 2026): Agents can now retain context across sessions using Copilot Memory.
-- **GPT-5.3-Codex availability** (February 2026): GPT-5.3-Codex, OpenAI's latest agentic coding model, is now generally available for GitHub Copilot. 25% faster than GPT-5.2-Codex on agentic tasks.
+- **GPT-5.3-Codex availability** (February 2026): GPT-5.3-Codex, OpenAI's latest agentic coding model, is now generally available for GitHub Copilot. Faster than GPT-5.2-Codex on agentic tasks.
 - **Gemini 3.1 Pro public preview** (February 2026): Gemini 3.1 Pro entered public preview in GitHub Copilot on 19 February 2026.
 - **Agent hooks** (VS Code v1.109.3 / February 2026, preview): Run custom shell commands at key agent lifecycle points.
 - **Claude configuration file compatibility** (VS Code v1.109 / February 2026): Reuse Claude configuration files directly in VS Code.

@@ -107,7 +107,7 @@ Amazon Q Developer distinguishes itself through its deep integration with AWS in
 - **Workspace Indexing**: Understands project context for better suggestions
 - **Agent Capabilities**: Autonomous software development agent (in /dev mode). Note: the GitLab-specific `/q dev (revise)` quick action was removed on 13 January 2026; the `/q test` unit test generation quick action for GitLab was also removed on 13 January 2026.
 
-**Citation:** General information available at https://aws.amazon.com/q/developer/ and AWS documentation. Accessed 20 January 2026.
+**Citation:** General information available at https://aws.amazon.com/q/developer/ and AWS documentation. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 

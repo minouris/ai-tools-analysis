@@ -1050,7 +1050,7 @@ All detailed tool analyses are available in this directory:
 
 Analysis methodology detailed in: [ANALYSIS_PLAN.md](../ANALYSIS_PLAN.md)
 
-Tool analysis template: [TOOL_ANALYSIS_TEMPLATE.md](../TOOL_ANALYSIS_TEMPLATE.md)
+Tool analysis template: [TOOL_ANALYSIS_TEMPLATE.md](../doc/templates/TOOL_ANALYSIS_TEMPLATE.md)
 
 [↑ Back to top](#table-of-contents)
 

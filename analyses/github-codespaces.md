@@ -5,7 +5,7 @@
 # GitHub Codespaces Analysis
 
 **Analysis Date:** 21 February 2026  
-**Tool Version:** Current (as of January 2026)  
+**Tool Version:** Current (as of February 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://docs.github.com/en/codespaces
 
@@ -52,7 +52,7 @@
 ## 1. Tool Overview
 
 **Official Documentation:** https://docs.github.com/en/codespaces  
-**Version Analysed:** Current version (as of January 2026)  
+**Version Analysed:** Current version (as of February 2026)  
 **Primary Use Case:** Cloud-hosted development environment for consistent, reproducible coding workspaces  
 **Licensing:** Usage-based billing (free tier included with GitHub accounts)
 

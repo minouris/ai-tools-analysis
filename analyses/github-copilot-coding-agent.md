@@ -40,7 +40,8 @@
 - [10. Summary and Key Findings](#10-summary-and-key-findings)
 - [11. Completeness Checklist](#11-completeness-checklist)
 - [12. References](#12-references)
-- [Changes Since January 2026](#changes-since-january-2026)
+- [All Changes Since January 2026](#all-changes-since-january-2026)
+- [Agent Skills](#agent-skills)
 - [Revision History](#revision-history)
 
 ---
@@ -102,7 +103,7 @@ The Coding Agent works asynchronously on GitHub's infrastructure, whilst other C
 
 ### Changes Since January 2026
 
-- **GPT-5.3-Codex availability** (February 2026): GPT-5.3-Codex is now generally available for use with the Coding Agent, beginning its rollout on 9 February 2026. It is 25% faster than GPT-5.2-Codex on agentic tasks.
+- **GPT-5.3-Codex availability** (February 2026): GPT-5.3-Codex is now generally available for use with the Coding Agent, beginning its rollout on 9 February 2026. It is faster than GPT-5.2-Codex on agentic tasks. (Source: [GitHub Changelog](https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/))
 - **Network configuration changes** (February 2026): Dedicated domains are now used for AI inference traffic, based on the user's plan. Network administrators should update firewall and proxy rules to permit these domains.
 
 Citation: GPT-5.3-Codex is now generally available for GitHub Copilot. GitHub Changelog. https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/. Accessed 21 February 2026. Network configuration changes for Copilot Coding Agent. GitHub Changelog. https://github.blog/changelog/2026-02-13-network-configuration-changes-for-copilot-coding-agent/. Accessed 21 February 2026.
@@ -142,7 +143,7 @@ For Business and Enterprise users:
 
 GitHub Copilot Pro and Pro+ users can select the AI model used by Coding Agent:
 - Available models include Claude Sonnet 4.5 (default) and GPT-5.3-Codex (generally available as of 9 February 2026)
-- GPT-5.3-Codex delivers 25% faster performance than GPT-5.2-Codex on agentic coding tasks
+- GPT-5.3-Codex delivers faster performance than GPT-5.2-Codex on agentic coding tasks
 - Model selection interface available when delegating tasks
 - Different models may perform better for different task types
 
@@ -258,7 +259,7 @@ The Coding Agent reads and applies custom instructions when:
 - Mentioned in pull request comments
 - Working on security alerts
 
-**Citation:** Enhancing Copilot coding agent's knowledge of a repository. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent#enhancing-copilot-coding-agents-knowledge-of-a-repository. Accessed 22 January 2026.
+**Citation:** Enhancing Copilot coding agent's knowledge of a repository. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent#enhancing-copilot-coding-agents-knowledge-of-a-repository. Accessed 21 February 2026.
 
 ---
 
@@ -1267,13 +1268,11 @@ For users within monthly allowances, no additional costs beyond Copilot subscrip
 
 ---
 
-## Changes Since January 2026
-
-The following changes have been verified from official sources and occurred after the initial analysis date of 22 January 2026.
+## All Changes Since January 2026
 
 - **Agent Skills System** (VS Code v1.109 / February 2026): Teams can create `SKILL.md` files containing reusable workflow definitions. Agents invoke these skills to follow established team patterns when completing tasks.
 - **Copilot Memory** (VS Code v1.109 / February 2026): Copilot Memory helps agents retain repository context across sessions, reducing repeated discovery work.
-- **GPT-5.3-Codex availability** (February 2026): GPT-5.3-Codex is now generally available for use with the Coding Agent. 25% faster than GPT-5.2-Codex on agentic tasks. Rollout began 9 February 2026.
+- **GPT-5.3-Codex availability** (February 2026): GPT-5.3-Codex is now generally available for use with the Coding Agent. Faster than GPT-5.2-Codex on agentic tasks. Rollout began 9 February 2026.
 - **Network configuration changes** (February 2026): Dedicated domains are now used for AI inference traffic based on user plan. Network administrators should update firewall and proxy rules to permit these domains.
 - **Visual Studio 2026 support** (February 2026): Users can now delegate tasks to the Coding Agent from Visual Studio 2026 (December Update 18.1.0+) with the "Enable Copilot Coding agent (preview)" setting enabled.
 

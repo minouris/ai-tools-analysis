@@ -958,13 +958,13 @@ The official documentation site (https://docs.roocode.com) was not accessible du
 
 ### 13.2 Version Information
 
-This analysis is based on version 3.41.0 of Roo Cline. The tool is actively developed with frequent updates, as evidenced by the extensive CHANGELOG.md file in the repository.
+This analysis was originally based on version 3.41.0 of Roo Cline and has been updated to reflect version 3.48.0 (February 2026). The tool is actively developed with frequent updates, as evidenced by the extensive CHANGELOG.md file in the repository.
 
 ### 13.3 Repository and Name Information
 
-The official repository for Roo Cline is located at `https://github.com/RooCodeInc/Roo-Code`. There is also a URL at `https://github.com/RooVetGit/Roo-Cline` which redirects to the main repository. All citations in this document use the official `RooCodeInc/Roo-Code` repository URL.
+The official repository for Roo Code is located at `https://github.com/RooCodeInc/Roo-Code`. There is also a URL at `https://github.com/RooVetGit/Roo-Cline` which redirects to the main repository. All citations in this document use the official `RooCodeInc/Roo-Code` repository URL.
 
-The tool was previously known as "Roo Code" and has been renamed to "Roo Cline". The repository name still uses "Roo-Code" whilst the tool is now called "Roo Cline". Some source files and configuration refer to "roo-code". The publisher name has also changed from "Roo Veterinary Inc." to "Roo Code, Inc."
+The tool is now officially called "Roo Code" (as of v3.2.0). This document retains the original title "Roo Cline Analysis" as a historical reference. The VS Code Marketplace listing uses publisher ID `RooVeterinaryInc.roo-cline` with the display name "Roo Code". The publisher name changed from "Roo Veterinary Inc." to "Roo Code, Inc."
 
 **Citation:** [Official GitHub repository](https://github.com/RooCodeInc/Roo-Code), Repository examination and source code analysis
 
@@ -983,10 +983,6 @@ The tool was previously known as "Roo Code" and has been renamed to "Roo Cline".
 - [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
 - [Sourcegraph Cody](sourcegraph-cody.md) - AI coding assistant with deep codebase context and understanding
 - [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options
-
----
-
-← [Previous: GitHub Copilot Coding Agent](github-copilot-coding-agent.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Sourcegraph Cody](sourcegraph-cody.md) →
 
 ---
 
@@ -1034,3 +1030,7 @@ Fixes applied in versions 3.42.x through 3.48.0:
 |------|---------|---------|---------|
 | 16 January 2026 | 1.0 | Initial analysis based on GitHub repository documentation, README, and source code examination | GitHub Copilot |
 | 21 February 2026 | 1.1 | Updated to version 3.48.0; added rebranding note, new features (Smart Code Folding, worktree selector, improved subtask navigation, enhanced model support), and bug fix documentation | GitHub Copilot |
+
+---
+
+← [Previous: GitHub Copilot Coding Agent](github-copilot-coding-agent.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Sourcegraph Cody](sourcegraph-cody.md) →
