@@ -111,8 +111,7 @@ Roo Cline (now officially rebranded as Roo Code as of v3.2.0) is an AI-powered d
 - **Smart Code Folding**: Context condensation preserves a lightweight map of recently accessed files, function signatures, class declarations, and type definitions; approximately 50,000 character budget prioritising recently worked-on files (v3.45.0+)
 - **Worktree Selector**: Native worktree management with new creation UX (v3.44.0)
 
-**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)  
-Citation: Roo Code Update Notes. Roo Code Documentation. https://docs.roocode.com/update-notes/. Accessed 21 February 2026.
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md). Roo Code Update Notes. Roo Code Documentation. https://docs.roocode.com/update-notes/. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 

@@ -378,7 +378,7 @@ The Cursor CLI provides a command-line interface to the agent with the following
 - The CLI agent command is now the default entry point
 - AI-generated plans can be handed off to the cloud or executed locally
 - A persistent decision menu with keyboard shortcuts is available for plan management
-- Mermaid code blocks render as ASCII diagrams in the CLI (flowcharts, sequence diagrams, state machines, class diagrams, ER diagrams); switch between ASCII and original Mermaid source with Ctrl+O
+- Mermaid code blocks render as ASCII diagrams in the CLI (flowcharts, sequence diagrams, state machines, class diagrams, ER diagrams); switch between ASCII and original Mermaid source with Ctrl+O (Cmd+O on macOS)
 
 **Workflow:**
 

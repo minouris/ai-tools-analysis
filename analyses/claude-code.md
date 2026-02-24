@@ -234,8 +234,7 @@ Not applicable - Claude Code is a separate tool from GitHub Copilot and does not
 - **AWS Bedrock:** Full support with ARN-based model configuration, STS token support, SSO login support, environment variable `AWS_BEARER_TOKEN_BEDROCK`
 - **Google Vertex AI:** Supported with `CLOUD_ML_REGION` configuration, global endpoint support for certain models
 
-**Citation:** Multiple entries in Claude Code CHANGELOG and README referencing model support, authentication methods, and provider integrations. https://github.com/anthropics/claude-code. Accessed 20 January 2026.  
-Citation: Anthropic Claude Code Releases. GitHub. https://github.com/anthropics/claude-code/releases. Accessed 21 February 2026.
+**Citation:** Multiple entries in Claude Code CHANGELOG and README referencing model support, authentication methods, and provider integrations. https://github.com/anthropics/claude-code. Accessed 21 February 2026. Anthropic Claude Code Releases. GitHub. https://github.com/anthropics/claude-code/releases. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
