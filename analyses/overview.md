@@ -4,7 +4,7 @@
 
 # AI Coding Tools: Overview
 
-**Analysis Date:** 22 January 2026  
+**Analysis Date:** 21 February 2026  
 **Tools Analysed:** 14 AI coding assistants and development platforms  
 **Methodology:** Based on official documentation and tool analysis files in this repository
 
@@ -27,6 +27,7 @@
   - [5.3 By Customisation Level](#53-by-customisation-level)
 - [6. Key Findings](#6-key-findings)
 - [7. References](#7-references)
+- [Changes Since January 2026](#changes-since-january-2026)
 
 ---
 
@@ -64,6 +65,21 @@ This document provides a comprehensive comparison of 14 AI coding tools and deve
 ---
 
 ## 2. Tools Overview
+
+### Changes Since January 2026
+
+The following tools have notable updates since 22 January 2026. Detailed changes are documented within each tool's section below.
+
+- **Roo Code (formerly Roo Cline):** Rebranded to Roo Code as of v3.2.0, now at v3.48.0 with new worktree selector, Smart Code Folding, and wider model support.
+- **GitHub Copilot Chat:** Multi-agent development focus in VS Code v1.109, Claude Agent SDK (public preview), GPT-5.3-Codex GA, Agent Skills, Copilot Memory.
+- **GitHub Copilot Coding Agent:** Now accessible from Visual Studio 2026; SKILL.md support for agent skills.
+- **Gemini Code Assist:** Agent mode now generally available (stable) in VS Code and IntelliJ.
+- **Claude Code:** Now at v2.1.47; Sonnet 4.6 added; Opus 4/4.1 deprecated; agent hooks and message queueing.
+- **Cursor:** Now at v2.5 with Plugins/Marketplace, async subagents, and Cursor Blame (Enterprise).
+- **Tabnine:** v5.28.0 with Context Engine GA, BYOAI, predefined slash commands, Visual Studio 2022/2026 support.
+- **Continue:** Reached stable v1.0; OpenRouter provider added.
+
+---
 
 ### Amazon Q Developer
 
@@ -112,6 +128,13 @@ Terminal-based agentic coding tool from Anthropic with native Claude integration
 
 **Official Documentation:** https://docs.claude.ai/docs/claude-code
 
+#### Changes Since January 2026
+
+- **Version:** Now at v2.1.47 (February 2026), up from v2.1.12 at time of original analysis. (Source: [Claude Code Releases](https://github.com/anthropics/claude-code/releases). Accessed 21 February 2026.)
+- **Claude Sonnet 4.6:** Support added on 17 February 2026. (Source: [Claude Code Releases](https://github.com/anthropics/claude-code/releases). Accessed 21 February 2026.)
+- **Model Deprecations:** Opus 4 and Opus 4.1 have been deprecated from Claude Code. (Source: [Claude Code Releases](https://github.com/anthropics/claude-code/releases). Accessed 21 February 2026.)
+- **New Features:** Agent hooks and message queueing added. (Source: [Claude Code Releases](https://github.com/anthropics/claude-code/releases). Accessed 21 February 2026.)
+
 ---
 
 ### Codeium
@@ -136,6 +159,11 @@ Open-source AI coding assistant supporting 40+ LLM providers including Claude, O
 
 **Official Documentation:** https://docs.continue.dev/
 
+#### Changes Since January 2026
+
+- **Version 1.0:** Continue has reached its stable v1.0 release. (Source: [Continue Changelog](https://changelog.continue.dev/). Accessed 21 February 2026.)
+- **OpenRouter Provider:** OpenRouter has been added as a supported LLM provider, expanding the available provider count. (Source: [Continue Changelog](https://changelog.continue.dev/). Accessed 21 February 2026.)
+
 ---
 
 ### Cursor
@@ -147,6 +175,13 @@ Open-source AI coding assistant supporting 40+ LLM providers including Claude, O
 AI-first code editor built on VS Code with deep AI integration. Features composer mode, chat interface, and inline suggestions. Supports Claude and OpenAI models. Custom rules via `.cursorrules` files.
 
 **Official Documentation:** https://cursor.sh/
+
+#### Changes Since January 2026
+
+- **Version v2.5:** Released February 2026. (Source: [Cursor Changelog](https://cursor.com/changelog). Accessed 21 February 2026.)
+- **Plugins and Marketplace:** New Plugins/Marketplace with support for skills, subagents, and hooks. Partners include Amplitude, AWS, Figma, Linear, and Stripe. (Source: [Cursor Changelog](https://cursor.com/changelog). Accessed 21 February 2026.)
+- **Async Subagents:** Asynchronous subagent execution support added. (Source: [Cursor Changelog](https://cursor.com/changelog). Accessed 21 February 2026.)
+- **Cursor Blame (Enterprise):** New Cursor Blame feature available for Enterprise tier. (Source: [Cursor Changelog](https://cursor.com/changelog). Accessed 21 February 2026.)
 
 ---
 
@@ -160,6 +195,10 @@ Google Cloud's enterprise AI coding assistant using Gemini 3 models. Available i
 
 **Official Documentation:** https://cloud.google.com/gemini/docs/codeassist/overview
 
+#### Changes Since January 2026
+
+- **Agent Mode Generally Available:** Agent mode is now widely available in both VS Code and IntelliJ as a stable release, no longer in preview. An auto-approve option has been added in IntelliJ. (Source: [Gemini Code Assist Overview](https://cloud.google.com/gemini/docs/codeassist/overview). Accessed 21 February 2026.)
+
 ---
 
 ### GitHub Copilot Chat
@@ -172,6 +211,13 @@ AI-powered conversational interface integrated across multiple IDEs (VS Code, Je
 
 **Official Documentation:** https://docs.github.com/en/copilot
 
+#### Changes Since January 2026
+
+- **Multi-Agent Development:** VS Code v1.109 (released 4 February 2026) positions VS Code as the platform for multi-agent development, with multi-agent workflows as a primary focus. (Source: [GitHub Copilot in VS Code v1.109 January Release](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
+- **Claude Agent SDK (Public Preview):** Claude Agent support in public preview enables delegation to Anthropic's Claude Agent SDK. (Source: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109). Accessed 21 February 2026.)
+- **New Capabilities:** Agent orchestrations, Agent Skills, Copilot Memory, and parallel subagents. (Source: [GitHub Copilot in VS Code v1.109 January Release](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
+- **GPT-5.3-Codex:** Generally available for GitHub Copilot from 9 February 2026. (Source: [GPT-5.3-Codex is now generally available for GitHub Copilot](https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/). Accessed 21 February 2026.)
+
 ---
 
 ### GitHub Copilot Coding Agent
@@ -183,6 +229,11 @@ AI-powered conversational interface integrated across multiple IDEs (VS Code, Je
 GitHub-hosted autonomous AI developer that works independently in GitHub Actions environment to complete development tasks. Assign issues to `@copilot` or delegate from VS Code. Creates pull requests, runs builds and tests, responds to review feedback. Supports custom instructions and Copilot Memory. Model selection available for Pro/Pro+ users (Claude Sonnet 4.5 default).
 
 **Official Documentation:** https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent
+
+#### Changes Since January 2026
+
+- **Visual Studio 2026 Support:** The Coding Agent is now accessible from Visual Studio 2026 (released 17 February 2026), in addition to VS Code and GitHub.com. (Source: [Delegate tasks to Copilot coding agent from Visual Studio](https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio/). Accessed 21 February 2026.)
+- **Agent Skills System:** SKILL.md files enable definition of custom agent skills. (Source: [GitHub Copilot in VS Code v1.109 January Release](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
 
 ---
 
@@ -206,7 +257,13 @@ Cloud-hosted development environments running in Docker containers on GitHub inf
 
 Open-source autonomous development assistant for VS Code supporting 20+ LLM providers. Features multiple operational modes (Ask, Architect, Code, Test, Debug), MCP integration via McpHub, and cross-compatible rules (`.clinerules`, `.cursorrules`, `CLAUDE.md`).
 
-**Official Documentation:** https://github.com/RooVetGit/Roo-Cline
+**Official Documentation:** https://docs.roocode.com/ (repository: https://github.com/RooCodeInc/Roo-Code; previously published as Roo Cline at https://github.com/RooVetGit/Roo-Cline)
+
+#### Changes Since January 2026
+
+- **Rebrand to Roo Code:** The extension has been officially rebranded from "Roo Cline" to "Roo Code" as of v3.2.0. The repository has moved to https://github.com/RooCodeInc/Roo-Code and official documentation is now at https://docs.roocode.com/. (Source: [Roo Code Update Notes](https://docs.roocode.com/update-notes/). Accessed 21 February 2026.)
+- **Current Version:** v3.48.0 (released 17 February 2026). (Source: [Roo Code Update Notes](https://docs.roocode.com/update-notes/). Accessed 21 February 2026.)
+- **New Features:** Worktree selector, Smart Code Folding (context condensation), and wider model support added since January 2026. (Source: [Roo Code Update Notes](https://docs.roocode.com/update-notes/). Accessed 21 February 2026.)
 
 ---
 
@@ -232,11 +289,25 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 
 **Official Documentation:** https://www.tabnine.com/
 
+#### Changes Since January 2026
+
+- **Version v5.28.0** (released 10 February 2026): Context Engine is now generally available. (Source: [Tabnine Release Notes](https://docs.tabnine.com/main/administering-tabnine/release-notes). Accessed 21 February 2026.)
+- **BYOAI (Bring Your Own AI):** Support for bringing external models including Claude, GPT-4o, Gemini, and Codestral via BYOAI, replacing the previous proprietary-only model approach. (Source: [Tabnine Release Notes](https://docs.tabnine.com/main/administering-tabnine/release-notes). Accessed 21 February 2026.)
+- **Predefined Slash Commands:** New predefined slash commands including `/code-review`. (Source: [Tabnine Release Notes](https://docs.tabnine.com/main/administering-tabnine/release-notes). Accessed 21 February 2026.)
+- **Visual Studio Support:** Added support for Visual Studio 2022 and Visual Studio 2026. (Source: [Tabnine Release Notes](https://docs.tabnine.com/main/administering-tabnine/release-notes). Accessed 21 February 2026.)
+- **Image Context:** Image context support added for Gemini models. (Source: [Tabnine Release Notes](https://docs.tabnine.com/main/administering-tabnine/release-notes). Accessed 21 February 2026.)
+
 [↑ Back to top](#table-of-contents)
 
 ---
 
 ## 3. Feature Comparison Charts
+
+### Changes Since January 2026
+
+Updates to feature comparison data since 22 January 2026 are noted within each relevant subsection below with detailed citations.
+
+---
 
 ### 3.1 LLM Provider Support
 
@@ -250,14 +321,22 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 | **Continue** | ✅ | ✅ | ✅ | ✅ (Azure) | ✅ | ✅ | **40+ providers** |
 | **Cursor** | ✅ | ✅ | Not doc. | Not doc. | ❌ | Not doc. | Limited |
 | **Gemini Code Assist** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ Native | Google only |
-| **GitHub Copilot Chat** | ✅ | ✅ Native | ✅ (Toolkit) | ✅ (Toolkit) | ❌ | ✅ | Multi-provider |
+| **GitHub Copilot Chat** | ✅ + Agent SDK† | ✅ Native | ✅ (Toolkit) | ✅ (Toolkit) | ❌ | ✅ | Multi-provider |
 | **GitHub Copilot Coding Agent** | ✅ (via GitHub) | ✅ (via GitHub) | ❌ | ❌ | ❌ | ✅ (via GitHub) | GitHub-managed |
 | **GitHub Codespaces** | N/A | N/A | ✅ (via tools) | N/A | N/A | N/A | Via installed tools |
 | **Roo Cline** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | **20+ providers** |
 | **Sourcegraph Cody** | ✅ | ✅ | ✅ | Not doc. | ❌ | ✅ | Multi-provider |
-| **Tabnine** | Not doc. | Not doc. | Not doc. | Not doc. | ❌ | Not doc. | Proprietary |
+| **Tabnine** | ✅ BYOAI | ✅ BYOAI | Not doc. | Not doc. | ❌ | ✅ BYOAI | Proprietary + BYOAI |
+
+† Claude Agent SDK integration for GitHub Copilot Chat is in public preview (VS Code v1.109, February 2026). Source: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109). Accessed 21 February 2026.
 
 **Key Finding:** Continue and Roo Cline offer the most provider flexibility with 20-40+ integrations, whilst Amazon Q (AWS-only) and Gemini Code Assist (Google-only) are locked to their respective cloud ecosystems.
+
+#### Changes Since January 2026
+
+- **GitHub Copilot Chat:** Claude Agent SDK integration added in public preview (VS Code v1.109, 4 February 2026). (Source: [GitHub Copilot in VS Code v1.109](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
+- **Tabnine:** BYOAI (Bring Your Own AI) feature in v5.28.0 (10 February 2026) adds support for Claude, GPT-4o, Gemini, and Codestral, replacing the previous proprietary-only model approach. (Source: [Tabnine Release Notes](https://docs.tabnine.com/main/administering-tabnine/release-notes). Accessed 21 February 2026.)
+- **New Models in GitHub Copilot:** GPT-5.3-Codex became generally available on 9 February 2026. (Source: [GPT-5.3-Codex is now generally available for GitHub Copilot](https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/). Accessed 21 February 2026.)
 
 [↑ Back to top](#table-of-contents)
 
@@ -315,6 +394,11 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 
 **Key Finding:** VS Code has near-universal support amongst IDE-integrated tools. ChatGPT and Cursor operate as standalone applications without IDE integration. Gemini Code Assist supports Cloud-native environments (Cloud Shell, Cloud Workstations, Android Studio).
 
+#### Changes Since January 2026
+
+- **GitHub Copilot Coding Agent in Visual Studio 2026:** The Coding Agent is now accessible from Visual Studio 2026 (released 17 February 2026). This adds Microsoft's full IDE to the supported access methods alongside VS Code and GitHub.com. (Source: [Delegate tasks to Copilot coding agent from Visual Studio](https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio/). Accessed 21 February 2026.)
+- **Tabnine in Visual Studio:** Tabnine v5.28.0 (10 February 2026) added support for Visual Studio 2022 and Visual Studio 2026. (Source: [Tabnine Release Notes](https://docs.tabnine.com/main/administering-tabnine/release-notes). Accessed 21 February 2026.)
+
 [↑ Back to top](#table-of-contents)
 
 ---
@@ -366,9 +450,13 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 | **GitHub Copilot** | ✅ Prompt files | `.github/prompts/` | Via repository | ✅ Built-in |
 | **Roo Cline** | ✅ Custom Modes | `.roomodes` config | Text-based | Via modes |
 | **Sourcegraph Cody** | ✅ Custom Commands | JSON/settings | Enterprise org-wide | ✅ Via commands |
-| **Tabnine** | ❌ Not documented | N/A | N/A | N/A |
+| **Tabnine** | ✅ Predefined Slash | Not documented | N/A | ✅ /code-review |
 
 **Key Finding:** 7 out of 12 tools (58%) support some form of custom prompts or commands. Continue and Claude Code offer the most sophisticated prompt management with Hub sharing and skills systems respectively.
+
+#### Changes Since January 2026
+
+- **Tabnine:** v5.28.0 (10 February 2026) introduced predefined slash commands including `/code-review`, updating the previous "Not documented" status. (Source: [Tabnine Release Notes](https://docs.tabnine.com/main/administering-tabnine/release-notes). Accessed 21 February 2026.)
 
 [↑ Back to top](#table-of-contents)
 
@@ -620,6 +708,12 @@ Full citations and detailed reviews are available in individual tool analysis do
 
 ## 5. Comparative Analysis
 
+### Changes Since January 2026
+
+The "Best for Agentic Workflows" recommendation has been updated to include GitHub Copilot Coding Agent following VS Code v1.109 (February 2026) positioning VS Code as the platform for multi-agent development. See [Best for Agentic Workflows](#best-for-agentic-workflows) for details.
+
+---
+
 ### 5.1 By Use Case
 
 #### Best for Individual Developers
@@ -677,6 +771,10 @@ Full citations and detailed reviews are available in individual tool analysis do
 - **Roo Cline:** Multiple operational modes (Ask, Architect, Code, Test, Debug), MCP via McpHub
 
 **Rationale:** Both designed for autonomous task execution with minimal manual intervention.
+
+#### Changes Since January 2026
+
+**GitHub Copilot Coding Agent** has become a strong option for background autonomous development tasks. VS Code v1.109 (4 February 2026) explicitly positions VS Code as "the home for multi-agent development", with agent orchestrations, Agent Skills (SKILL.md files), and parallel subagents. The Coding Agent can be delegated tasks from VS Code, GitHub.com, and now Visual Studio 2026 (17 February 2026). (Sources: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109); [Delegate tasks from Visual Studio](https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio/). Accessed 21 February 2026.)
 
 ---
 
@@ -766,6 +864,16 @@ Full citations and detailed reviews are available in individual tool analysis do
 ---
 
 ## 6. Key Findings
+
+### Changes Since January 2026
+
+**Multi-Agent Development Platforms:** VS Code v1.109 (4 February 2026) explicitly positions VS Code as "the home for multi-agent development". Features added include agent orchestrations, parallel subagents, Agent Skills (SKILL.md files), and Copilot Memory. (Source: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109). Accessed 21 February 2026.)
+
+**Claude Agent SDK Integration:** Claude Agent support in public preview in VS Code expands the agent ecosystem by enabling delegation to Anthropic's Claude Agent SDK. (Source: [GitHub Copilot in VS Code v1.109 January Release](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
+
+**Open-Source Ecosystem Maturity:** The Roo Cline rebrand to "Roo Code" (v3.2.0) and Continue reaching v1.0 reflect increasing maturity of open-source agentic tooling.
+
+---
 
 ### Market Landscape
 
@@ -942,7 +1050,63 @@ All detailed tool analyses are available in this directory:
 
 Analysis methodology detailed in: [ANALYSIS_PLAN.md](../ANALYSIS_PLAN.md)
 
-Tool analysis template: [TOOL_ANALYSIS_TEMPLATE.md](../TOOL_ANALYSIS_TEMPLATE.md)
+Tool analysis template: [TOOL_ANALYSIS_TEMPLATE.md](../doc/templates/TOOL_ANALYSIS_TEMPLATE.md)
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## Changes Since January 2026
+
+**Update Date:** 21 February 2026
+
+This section summarises all changes identified since the original analysis date of 22 January 2026.
+
+### Tool Updates
+
+#### Roo Code (formerly Roo Cline)
+
+The extension has been officially rebranded from "Roo Cline" to "Roo Code" as of v3.2.0. Current version is v3.48.0 (17 February 2026). Documentation has moved to https://docs.roocode.com/ (repository: https://github.com/RooCodeInc/Roo-Code). New features include a worktree selector, Smart Code Folding (context condensation), and wider model support. (Source: [Roo Code Update Notes](https://docs.roocode.com/update-notes/). Accessed 21 February 2026.)
+
+#### GitHub Copilot Chat
+
+VS Code v1.109 (4 February 2026) added multi-agent development as a primary focus, including Claude Agent SDK integration (public preview), agent orchestrations, Agent Skills, Copilot Memory, and parallel subagents. GPT-5.3-Codex became generally available for GitHub Copilot on 9 February 2026. (Sources: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109); [GitHub Copilot in VS Code v1.109](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/); [GPT-5.3-Codex GA](https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/). Accessed 21 February 2026.)
+
+#### GitHub Copilot Coding Agent
+
+The Coding Agent is now accessible from Visual Studio 2026 (17 February 2026), in addition to VS Code and GitHub.com. SKILL.md files enable definition of custom agent skills. (Sources: [Delegate tasks from Visual Studio](https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio/); [GitHub Copilot in VS Code v1.109](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
+
+#### Gemini Code Assist
+
+Agent mode is now widely available in VS Code and IntelliJ as a stable release, no longer in preview. An auto-approve option has been added in IntelliJ. (Source: [Gemini Code Assist Overview](https://cloud.google.com/gemini/docs/codeassist/overview). Accessed 21 February 2026.)
+
+#### Claude Code
+
+Current version is v2.1.47 (February 2026), up from v2.1.12 at the time of original analysis. Claude Sonnet 4.6 support was added on 17 February 2026. Opus 4 and Opus 4.1 have been deprecated from Claude Code. New features include agent hooks and message queueing. (Source: [Claude Code Releases](https://github.com/anthropics/claude-code/releases). Accessed 21 February 2026.)
+
+#### Cursor
+
+Current version is v2.5 (February 2026). A new Plugins/Marketplace enables skills, subagents, and hooks, with partners including Amplitude, AWS, Figma, Linear, and Stripe. Async subagents and Cursor Blame (Enterprise) were added. (Source: [Cursor Changelog](https://cursor.com/changelog). Accessed 21 February 2026.)
+
+#### Tabnine
+
+Version v5.28.0 (10 February 2026): Context Engine is now generally available. BYOAI (Bring Your Own AI) enables use of Claude, GPT-4o, Gemini, and Codestral models. New predefined slash commands (`/code-review`) are available. Support added for Visual Studio 2022 and Visual Studio 2026. Image context support added for Gemini models. (Source: [Tabnine Release Notes](https://docs.tabnine.com/main/administering-tabnine/release-notes). Accessed 21 February 2026.)
+
+#### Continue
+
+Continue has reached its stable v1.0 release. OpenRouter has been added as a supported LLM provider. (Source: [Continue Changelog](https://changelog.continue.dev/). Accessed 21 February 2026.)
+
+### Feature Comparison Updates
+
+- **LLM Provider Support (§3.1):** GitHub Copilot Chat now includes Claude Agent SDK integration (public preview). Tabnine's BYOAI feature adds Claude, GPT-4o, Gemini, and Codestral support. GPT-5.3-Codex is now generally available in GitHub Copilot (9 February 2026).
+- **IDE Support (§3.3):** GitHub Copilot Coding Agent is now accessible from Visual Studio 2026. Tabnine added Visual Studio 2022 and 2026 support.
+- **Custom Prompts (§3.5):** Tabnine now supports predefined slash commands (`/code-review`), updating the previous "Not documented" status.
+
+### Technology Trends
+
+- **Multi-Agent Development:** VS Code is positioning itself as the platform for multi-agent development (v1.109, February 2026), with agent orchestrations, parallel subagents, and Agent Skills now available. (Source: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109). Accessed 21 February 2026.)
+- **Claude Agent SDK:** Integration of Anthropic's Claude Agent SDK into VS Code (public preview) expands the agent ecosystem beyond proprietary implementations. (Source: [GitHub Copilot in VS Code v1.109](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
+- **Open-Source Ecosystem Maturity:** Roo Cline rebranded to Roo Code (v3.2.0) with a dedicated documentation site, and Continue reached stable v1.0, reflecting increased maturity of open-source agentic tooling.
 
 [↑ Back to top](#table-of-contents)
 

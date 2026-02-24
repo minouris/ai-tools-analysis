@@ -4,14 +4,15 @@
 
 # Roo Cline Analysis
 
-**Analysis Date:** 16 January 2026  
-**Tool Version:** 3.41.0  
+**Analysis Date:** 21 February 2026  
+**Tool Version:** 3.48.0 (as of February 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://github.com/RooCodeInc/Roo-Code
 
 ## Table of Contents
 
 - [1. Tool Overview](#1-tool-overview)
+  - [Changes Since 16 January 2026](#changes-since-16-january-2026)
   - [Description](#description)
   - [Key Features](#key-features)
 - [2. LLM Provider Integration](#2-llm-provider-integration)
@@ -25,6 +26,7 @@
   - [3.1 Agent Instruction Files](#31-agent-instruction-files)
   - [3.2 Configuration Options](#32-configuration-options)
 - [4. Custom Prompts](#4-custom-prompts)
+  - [Changes Since 16 January 2026](#changes-since-16-january-2026-1)
   - [4.1 Custom Modes](#41-custom-modes)
   - [4.2 Prompt Storage and Reuse](#42-prompt-storage-and-reuse)
 - [5. Tools and MCP](#5-tools-and-mcp)
@@ -61,19 +63,37 @@
   - [13.1 Documentation Accessibility](#131-documentation-accessibility)
   - [13.2 Version Information](#132-version-information)
   - [13.3 Repository and Name Information](#133-repository-and-name-information)
+- [Changes Since 16 January 2026](#changes-since-16-january-2026-2)
+- [Revision History](#revision-history)
 
 ---
 
 ## 1. Tool Overview
 
 **Official Documentation:** https://github.com/RooCodeInc/Roo-Code  
-**Version Analysed:** 3.41.0  
+**Version Analysed:** 3.48.0 (as of February 2026)  
 **Primary Use Case:** AI-powered development assistant for VS Code  
 **Licensing:** Apache 2.0 (open source)
 
+### Changes Since 16 January 2026
+
+The following changes were identified between the original analysis date (16 January 2026) and 21 February 2026, based on official Roo Code release notes and repository documentation.
+
+- **Rebranding to Roo Code:** The extension's official display name is "Roo Code" (confirmed as of v3.2.0). Note: this document retains the title "Roo Cline Analysis" as the original analysis name. The VS Code Marketplace listing uses publisher ID `RooVeterinaryInc.roo-cline` with display name "Roo Code".
+- **Version updated to 3.48.0:** The current version as of 17 February 2026 is 3.48.0, up from 3.41.0 at the time of the original analysis. Versions 3.42.x through 3.48.0 were released in this period.
+- **Worktree selector and new creation UX** (v3.44.0): A new worktree selector and improved worktree creation interface have been added.
+- **Improved subtask visibility and navigation** (v3.44.0+): Subtask visibility and navigation have been improved in the chat and history interfaces.
+- **Smart Code Folding / context condensation** (v3.45.0+): Preserves a lightweight map of recently accessed files, function signatures, class declarations, and type definitions. Prioritises recently worked-on files with an approximately 50,000 character budget.
+- **Enhanced model support** (v3.46.x): Support added for the `zai-glm-4.7` model and other new models.
+- **Bug fixes:** Fixes applied for parallel tool calls, worktree indexing, context condensation and truncation, duplicate tool_call emissions, token counting errors, and tool name fuzzy matching.
+
+Citation: Roo Code Update Notes. Roo Code Documentation. https://docs.roocode.com/update-notes/. Accessed 21 February 2026.  
+Citation: Roo Code CHANGELOG. GitHub. https://github.com/RooCodeInc/Roo-Code/blob/main/CHANGELOG.md. Accessed 21 February 2026.  
+Citation: Roo Code on VS Code Marketplace. Microsoft. https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline. Accessed 21 February 2026.
+
 ### Description
 
-Roo Cline (previously known as Roo Code) is an AI-powered development assistant that operates as a Visual Studio Code extension. The tool is described as "Your AI-Powered Dev Team, Right in Your Editor" and is maintained by Roo Code, Inc. (formerly Roo Veterinary, Inc.). The extension provides autonomous coding capabilities with multiple specialised operational modes.
+Roo Cline (now officially rebranded as Roo Code as of v3.2.0) is an AI-powered development assistant that operates as a Visual Studio Code extension. The current version is 3.48.0. The tool is described as "Your AI-Powered Dev Team, Right in Your Editor" and is maintained by Roo Code, Inc. (formerly Roo Veterinary, Inc.). The extension provides autonomous coding capabilities with multiple specialised operational modes.
 
 **Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md), [LICENSE file](https://github.com/RooCodeInc/Roo-Code/blob/main/LICENSE)
 
@@ -88,8 +108,10 @@ Roo Cline (previously known as Roo Code) is an AI-powered development assistant 
 - Support for Model Context Protocol (MCP) servers
 - Codebase indexing for enhanced context
 - Remote control capabilities through "Roomote Control"
+- **Smart Code Folding**: Context condensation preserves a lightweight map of recently accessed files, function signatures, class declarations, and type definitions; approximately 50,000 character budget prioritising recently worked-on files (v3.45.0+)
+- **Worktree Selector**: Native worktree management with new creation UX (v3.44.0)
 
-**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md)
+**Citation:** [GitHub README](https://github.com/RooCodeInc/Roo-Code/blob/main/README.md). Roo Code Update Notes. Roo Code Documentation. https://docs.roocode.com/update-notes/. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -300,6 +322,12 @@ The extension provides several configuration options:
 
 ## 4. Custom Prompts
 
+### Changes Since 16 January 2026
+
+The custom modes feature was present at the time of the original analysis and continues to be supported in versions 3.42.x through 3.48.0. Users can define specialised AI personalities (modes), with each mode limited to specific tasks or file patterns, enabling safer and more focused workflows. No structural changes to the custom modes system have been identified in this period.
+
+Citation: Roo Code CHANGELOG. GitHub. https://github.com/RooCodeInc/Roo-Code/blob/main/CHANGELOG.md. Accessed 21 February 2026.
+
 ### 4.1 Custom Modes
 
 **Supported:** Yes
@@ -447,6 +475,8 @@ Roo Cline includes codebase indexing functionality for enhanced context awarenes
 - Configurable embedding batch size (`roo-cline.codeIndex.embeddingBatchSize`, default: 60, range: 1-200)
 - Maximum indexed files configuration (`roo-cline.maximumIndexedFilesForFileSearch`, default: 10,000, range: 5,000-500,000)
 - Dedicated code index service with configuration management
+
+**Smart Code Folding (Context Condensation, v3.45.0+):** When the context window becomes full, Roo Code condenses the context by preserving a lightweight structural map of recently accessed files. This map includes function signatures, class declarations, and type definitions, allowing the agent to accurately reference code structure after condensation. The system uses an approximately 50,000 character budget and prioritises files that have been recently worked on.
 
 **Search Capabilities:**
 
@@ -928,13 +958,13 @@ The official documentation site (https://docs.roocode.com) was not accessible du
 
 ### 13.2 Version Information
 
-This analysis is based on version 3.41.0 of Roo Cline. The tool is actively developed with frequent updates, as evidenced by the extensive CHANGELOG.md file in the repository.
+This analysis was originally based on version 3.41.0 of Roo Cline and has been updated to reflect version 3.48.0 (February 2026). The tool is actively developed with frequent updates, as evidenced by the extensive CHANGELOG.md file in the repository.
 
 ### 13.3 Repository and Name Information
 
-The official repository for Roo Cline is located at `https://github.com/RooCodeInc/Roo-Code`. There is also a URL at `https://github.com/RooVetGit/Roo-Cline` which redirects to the main repository. All citations in this document use the official `RooCodeInc/Roo-Code` repository URL.
+The official repository for Roo Code is located at `https://github.com/RooCodeInc/Roo-Code`. There is also a URL at `https://github.com/RooVetGit/Roo-Cline` which redirects to the main repository. All citations in this document use the official `RooCodeInc/Roo-Code` repository URL.
 
-The tool was previously known as "Roo Code" and has been renamed to "Roo Cline". The repository name still uses "Roo-Code" whilst the tool is now called "Roo Cline". Some source files and configuration refer to "roo-code". The publisher name has also changed from "Roo Veterinary Inc." to "Roo Code, Inc."
+The tool is now officially called "Roo Code" (as of v3.2.0). This document retains the original title "Roo Cline Analysis" as a historical reference. The VS Code Marketplace listing uses publisher ID `RooVeterinaryInc.roo-cline` with the display name "Roo Code". The publisher name changed from "Roo Veterinary Inc." to "Roo Code, Inc."
 
 **Citation:** [Official GitHub repository](https://github.com/RooCodeInc/Roo-Code), Repository examination and source code analysis
 
@@ -953,6 +983,53 @@ The tool was previously known as "Roo Code" and has been renamed to "Roo Cline".
 - [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
 - [Sourcegraph Cody](sourcegraph-cody.md) - AI coding assistant with deep codebase context and understanding
 - [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options
+
+---
+
+## Changes Since 16 January 2026
+
+This section summarises all changes identified between the original analysis date (16 January 2026) and the updated analysis date (21 February 2026). All information is sourced from official Roo Code release notes and repository documentation.
+
+### Version
+
+- Current version is **3.48.0** (released 17 February 2026), up from 3.41.0 at the time of the original analysis. Versions 3.42.x through 3.48.0 were released in this period.
+
+### Rebranding
+
+- The extension's official display name is **Roo Code** (confirmed as of v3.2.0). Note: this document retains the title "Roo Cline Analysis" as the original analysis name. The VS Code Marketplace listing uses publisher ID `RooVeterinaryInc.roo-cline` with display name "Roo Code".
+
+### New Features
+
+- **Worktree selector and new creation UX** (v3.44.0, Section 1): New worktree selector and improved worktree creation interface.
+- **Improved subtask visibility and navigation** (v3.44.0+, Section 1): Enhanced subtask visibility and navigation in the chat and history interfaces.
+- **Smart Code Folding / context condensation** (v3.45.0+, Section 1): Preserves a lightweight map of recently accessed files, function signatures, class declarations, and type definitions. Prioritises recently worked-on files with an approximately 50,000 character budget.
+- **Enhanced model support** (v3.46.x, Section 1): Support added for `zai-glm-4.7` and other new models.
+
+### Bug Fixes
+
+Fixes applied in versions 3.42.x through 3.48.0:
+
+- Parallel tool calls
+- Worktree indexing
+- Context condensation and truncation
+- Duplicate tool_call emissions
+- Token counting errors
+- Tool name fuzzy matching
+
+**Citation:** Roo Code Update Notes. Roo Code Documentation. https://docs.roocode.com/update-notes/. Accessed 21 February 2026.  
+**Citation:** Roo Code CHANGELOG. GitHub. https://github.com/RooCodeInc/Roo-Code/blob/main/CHANGELOG.md. Accessed 21 February 2026.  
+**Citation:** Roo Code on VS Code Marketplace. Microsoft. https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline. Accessed 21 February 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## Revision History
+
+| Date | Version | Changes | Analyst |
+|------|---------|---------|---------|
+| 16 January 2026 | 1.0 | Initial analysis based on GitHub repository documentation, README, and source code examination | GitHub Copilot |
+| 21 February 2026 | 1.1 | Updated to version 3.48.0; added rebranding note, new features (Smart Code Folding, worktree selector, improved subtask navigation, enhanced model support), and bug fix documentation | GitHub Copilot |
 
 ---
 

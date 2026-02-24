@@ -4,8 +4,8 @@
 
 # GitHub Copilot Chat Analysis
 
-**Analysis Date:** 16 January 2026  
-**Tool Version:** Current (as of January 2026)  
+**Analysis Date:** 21 February 2026  
+**Tool Version:** Current (as of February 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://docs.github.com/en/copilot
 
@@ -39,20 +39,33 @@
 - [9. Summary and Key Findings](#9-summary-and-key-findings)
 - [10. Completeness Checklist](#10-completeness-checklist)
 - [11. References](#11-references)
+- [All Changes Since January 2026](#all-changes-since-january-2026)
 - [Revision History](#revision-history)
 
 ---
 
 ## 1. Tool Overview
 
+### Changes Since January 2026
+
+- **Multi-agent development focus** (VS Code v1.109 / February 2026): VS Code is now positioned as the "home for multi-agent development", with multi-agent workflows established as a primary focus area for Copilot.
+- **Claude Agent support** (VS Code v1.109 / February 2026): Users can delegate tasks to Anthropic's official Claude Agent SDK using Claude models from their Copilot subscription. Now in public preview.
+- **Agent orchestrations** (VS Code v1.109 / February 2026): New capability to orchestrate multiple AI agents working together on complex tasks.
+- **Agent Skills** (VS Code v1.109 / February 2026): Teams can create `SKILL.md` files containing reusable workflow definitions that agents can invoke.
+- **Copilot Memory** (VS Code v1.109 / February 2026): Agents can now retain context across sessions using Copilot Memory.
+
+Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
+
 **Official Documentation:** https://docs.github.com/en/copilot  
-**Version Analysed:** Current version (as of January 2026)  
+**Version Analysed:** Current version (as of February 2026)  
 **Primary Use Case:** AI-powered code assistance and chat interface for software development  
 **Licensing:** Subscription-based (Free, Pro, Pro+, Business, Enterprise)
 
 ### Description
 
 GitHub Copilot Chat is an AI-powered conversational interface that provides contextualised assistance throughout the software development lifecycle. It integrates into various development environments to offer code completions, code explanations, answers to documentation questions, and more. Copilot Chat is backed by advanced language models and provides developers with the ability to ask questions, generate code, explain existing code, suggest fixes, and create documentation directly within their IDE or on GitHub.com.
+
+As of early 2026, GitHub has positioned VS Code as the 'home for multi-agent development', with Copilot at the centre of multi-agent workflows. This includes support for delegating tasks to specialist agent providers such as Anthropic's Claude Agent SDK, running multiple subagents in parallel, and orchestrating complex development workflows across local, background, and cloud agent sessions.
 
 GitHub Copilot transforms the developer experience by enabling developers to focus more on problem-solving and innovation whilst spending less effort on mundane and boilerplate tasks. Developers who use GitHub Copilot report up to 75% higher satisfaction with their jobs and are up to 55% more productive at writing code without sacrifice to quality.
 
@@ -70,14 +83,27 @@ GitHub Copilot transforms the developer experience by enabling developers to foc
 - **Model Context Protocol (MCP)**: Extensible through MCP servers for additional capabilities
 - **CLI Interface**: Terminal-based agent for autonomous coding tasks
 - **Smart Actions**: Context menu shortcuts for common tasks
+- **Multi-Agent Orchestration**: Coordinate multiple agents (Copilot, Claude, local, background, cloud) from a unified session management interface
+- **Claude Agent Support**: Delegate tasks to Anthropic's Claude Agent SDK using Claude models from your Copilot subscription (public preview)
+- **Agent Skills**: Teams can create `SKILL.md` files containing reusable workflow definitions that agents invoke during task execution
+- **Copilot Memory**: Agents retain relevant context across sessions to avoid repeated discovery work
+- **Parallel Subagents**: Subagents run concurrently to speed up independent tasks within a workflow
 
-**Citation:** About GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/about-github-copilot. Accessed 16 January 2026.
+**Citation:** About GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/about-github-copilot. Accessed 21 February 2026. GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
 ---
 
 ## 2. LLM Provider Integration
+
+### Changes Since January 2026
+
+- **GPT-5.3-Codex availability** (February 2026): GPT-5.3-Codex, OpenAI's latest agentic coding model, began rolling out on 9 February 2026. It is faster than GPT-5.2-Codex on agentic tasks and is now generally available for GitHub Copilot.
+- **Gemini 3.1 Pro public preview** (February 2026): Gemini 3.1 Pro entered public preview in GitHub Copilot on 19 February 2026.
+- **Claude Agent support public preview** (VS Code v1.109 / February 2026): Users can delegate tasks to Anthropic's official Claude Agent SDK using Claude models from their Copilot subscription.
+
+Citation: GPT-5.3-Codex is now generally available for GitHub Copilot. GitHub Changelog. https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/. Accessed 21 February 2026. Gemini 3.1 Pro is now in public preview in GitHub Copilot. GitHub Changelog. https://github.blog/changelog/2026-02-19-gemini-3-1-pro-is-now-in-public-preview-in-github-copilot. Accessed 21 February 2026. GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
 
 ### 2.1 Ollama Integration
 
@@ -162,11 +188,11 @@ GitHub Copilot is powered by generative AI models developed by GitHub, OpenAI, a
 
 - **API URL Configuration:** Not applicable - models are provided through GitHub Copilot subscription
 - **API Key Configuration:** Not applicable - authentication handled through GitHub credentials
-- **Supported Models:** GPT-3.5, GPT-4, GPT-4o, GPT-4 Turbo, and other variants available through model selection
+- **Supported Models:** GPT-3.5, GPT-4, GPT-4o, GPT-4 Turbo, GPT-5.2-Codex, GPT-5.3-Codex (GA as of 9 February 2026 — faster on agentic tasks), and other variants available through model selection
 
 **Custom Endpoints:** Users can extend Copilot Chat with additional models through the Visual Studio Code AI Toolkit or by adding models from providers such as OpenAI directly. This requires an API key from the provider.
 
-**Citation:** What has GitHub Copilot been trained on? GitHub Features. https://github.com/features/copilot. Accessed 16 January 2026. Changing the AI model for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat. Accessed 16 January 2026.
+**Citation:** What has GitHub Copilot been trained on? GitHub Features. https://github.com/features/copilot. Accessed 21 February 2026. Changing the AI model for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat. Accessed 21 February 2026. GPT-5.3-Codex is now generally available for GitHub Copilot. GitHub Changelog. https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/. Accessed 21 February 2026.
 
 ---
 
@@ -183,13 +209,22 @@ GitHub Copilot is powered by generative AI models developed by GitHub, OpenAI, a
 
 **Features and Limitations:** Different models have different premium request multipliers, which can affect monthly usage allowance. Experimental pre-release versions may not interact with all filters correctly, including the setting to block suggestions matching public code.
 
-**Citation:** Changing the AI model for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat. Accessed 16 January 2026.
+**Claude Agent Support (Public Preview):** As of VS Code v1.109 (February 2026), GitHub Copilot users can delegate tasks to Anthropic's official Claude Agent SDK using Claude models from their existing Copilot subscription. This enables richer, specialist agent interactions directly within VS Code without requiring a separate Anthropic account.
+
+**Citation:** Changing the AI model for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat. Accessed 21 February 2026. GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
 ---
 
 ## 3. Policies and Rules (Instruction Files)
+
+### Changes Since January 2026
+
+- **Agent hooks** (VS Code v1.109.3 / February 2026, preview): A new preview feature allows users to run custom shell commands at key agent lifecycle points, enabling custom pre- and post-processing during agent sessions.
+- **Claude configuration file compatibility** (VS Code v1.109 / February 2026): Users can now reuse Claude configuration files directly in VS Code, removing the need to duplicate project context for Claude-based agents.
+
+Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
 
 ### Instruction File Support
 
@@ -257,6 +292,14 @@ Place agent instruction files in the repository to guide AI agents. The nearest 
 
 Path-specific instructions support the `excludeAgent` keyword to control whether they are used by Copilot coding agent or Copilot code review.
 
+#### Agent Hooks (Preview, VS Code v1.109)
+
+Agent hooks allow developers to run custom shell commands at key lifecycle points during agent execution. This enables pre- and post-processing around agent sessions, such as running linters before submitting code or triggering notifications when tasks complete. Agent hooks are configured in VS Code and are currently in preview.
+
+#### Claude Configuration File Compatibility
+
+Users who also use Claude can now reuse their Claude configuration files directly in VS Code. This removes the need to maintain duplicate project context for Claude-based agent sessions within Copilot.
+
 ### Example Policies
 
 ```markdown
@@ -280,7 +323,7 @@ Implement proper error handling with custom error classes.
 Log all database operations at debug level.
 ```
 
-**Citation:** Adding custom instructions for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot. Accessed 16 January 2026.
+**Citation:** Adding custom instructions for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot. Accessed 21 February 2026. GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -362,6 +405,12 @@ Example: `@workspace /explain #file:auth.ts` asks Copilot to explain the auth.ts
 
 ## 5. Tools and Model Context Protocol (MCP)
 
+### Changes Since January 2026
+
+- **MCP Apps** (VS Code v1.109 / February 2026): A new capability enabling richer, more tool-driven, interactive Copilot experiences directly inside VS Code chats through MCP application integrations.
+
+Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
+
 ### Model Context Protocol (MCP)
 
 **MCP Support:** Yes
@@ -422,13 +471,25 @@ MCP allows developers to create custom servers that extend Copilot Chat's capabi
 
 Developers can create custom tools and services that work with Copilot Chat by implementing MCP servers. The GitHub MCP Registry provides a curated list of MCP servers from partners and the community.
 
-**Citation:** About Model Context Protocol (MCP). GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/context/mcp. Accessed 16 January 2026. GitHub MCP Registry. GitHub. https://github.com/mcp. Accessed 16 January 2026.
+#### MCP Apps (VS Code v1.109)
+
+As of the January 2026 VS Code release, MCP Apps provide richer, more tool-driven, interactive Copilot experiences directly within VS Code chat. MCP Apps extend the standard MCP server integration by enabling more structured, interactive tool interactions within the chat interface.
+
+**Citation:** About Model Context Protocol (MCP). GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/context/mcp. Accessed 21 February 2026. GitHub MCP Registry. GitHub. https://github.com/mcp. Accessed 21 February 2026. GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
 ---
 
 ## 6. Application Development Workflow
+
+### Changes Since January 2026
+
+- **Plan agent revamp** (VS Code v1.109 / February 2026): The Plan agent has been redesigned with a 4-phase iterative workflow comprising Discovery, Alignment, Design, and Refinement phases.
+- **Ask Questions tool** (VS Code v1.109 / February 2026, experimental): The agent can now ask clarifying questions instead of making assumptions, reducing errors from ambiguous requirements.
+- **Message steering and queueing** (VS Code v1.109 / February 2026): Users can now send follow-up messages whilst a request is still running. Available options are: steer the current request, queue a follow-up message for after completion, or stop and send a new message immediately.
+
+Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
 
 ### 6.1 Project Initialisation
 
@@ -442,12 +503,14 @@ In Copilot CLI, developers can ask the agent to explore project structure, insta
 
 ### 6.2 Design and Planning
 
-**Plan Mode**: GitHub Copilot Chat includes a dedicated Plan mode (currently in public preview) that helps create detailed implementation plans before executing them. The plan agent:
-- Researches the task comprehensively using read-only tools and codebase analysis
-- Breaks down tasks into manageable, actionable steps
-- Identifies open questions about ambiguous requirements
-- Presents a concise plan draft based on a standardised format
-- Allows iteration to clarify requirements and adjust scope
+**Plan Mode**: GitHub Copilot Chat includes a dedicated Plan mode that helps create detailed implementation plans before executing code changes. As of VS Code v1.109 (February 2026), the Plan agent has been redesigned with a structured 4-phase iterative workflow:
+
+1. **Discovery** — Autonomously explores the codebase, searching for relevant files and understanding project structure using read-only tools.
+2. **Alignment** — Pauses to ask clarifying questions before committing to a plan, catching ambiguities early. The **Ask Questions tool** (experimental) presents questions directly in chat with single-select/multi-select options and free-text input.
+3. **Design** — Drafts a comprehensive implementation plan with clear steps, file locations, and code snippets.
+4. **Refinement** — Adds verification criteria and documents decisions made during planning.
+
+The Plan agent can be invoked by typing `/plan` in chat followed by a task description.
 
 Once complete, plans can be:
 - Handed off to the agent for implementation
@@ -487,14 +550,21 @@ Once complete, plans can be:
 6. Iterate with additional prompts
 
 **Agent Mode**: Enables autonomous code editing:
-1. Select Agent mode from the agents dropdown
+1. Select Agent mode from the agents dropdown (or use the session type picker to choose local, background, or cloud agent)
 2. Submit a task prompt
 3. Copilot determines which files to change
 4. Review streamed edits and suggested terminal commands
 5. Confirm or deny command execution
 6. Copilot iterates to remediate issues until task completion
 
+**Message Steering and Queueing (VS Code v1.109):** Whilst a request is in progress, the Send button becomes a dropdown with three options:
+- **Add to Queue**: message waits and sends after the current response completes
+- **Steer with Message**: signals the current request to yield after its active tool call, then processes the new message
+- **Stop and Send**: cancels the current request and sends the new message immediately
+
 Each prompt in Agent mode counts as one premium request multiplied by the model's multiplier. Follow-up actions by the agent do not count toward premium request usage.
+
+**Subagents:** Agents can run subtasks using subagents that operate in their own dedicated context windows. As of VS Code v1.109, subagents can run in parallel, significantly speeding up tasks that can be split into independent workstreams.
 
 ### 6.5 Testing and Validation
 
@@ -522,13 +592,26 @@ Smart actions (accessed via right-click context menu or sparkle icon) include op
 
 Not extensively documented in official sources. Copilot can assist with generating deployment scripts and configuration files through chat prompts, but does not provide built-in deployment automation features.
 
-**Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 16 January 2026. GitHub Copilot CLI. GitHub Features. https://github.com/features/copilot/cli. Accessed 16 January 2026.
+**Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 21 February 2026. GitHub Copilot CLI. GitHub Features. https://github.com/features/copilot/cli. Accessed 21 February 2026. January 2026 (version 1.109) - Visual Studio Code. https://code.visualstudio.com/updates/v1_109. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
 ---
 
 ## 7. IDE and Environment Integration
+
+### Changes Since January 2026
+
+- **Agent Session Management** (VS Code v1.109 / February 2026): A new unified view for local, background, and cloud agent sessions, enabling developers to manage all agent activity from one place.
+- **Parallel subagents** (VS Code v1.109 / February 2026): Subagents can now run in parallel, speeding up complex multi-step tasks.
+- **Agent status indicator** (VS Code v1.109 / February 2026): A new status indicator in the command centre shows the current state of agent activity.
+- **Inline chat UX revamp** (VS Code v1.109 / February 2026, preview): The inline chat experience has been redesigned in a preview update.
+- **Context window indicator** (VS Code v1.109 / February 2026): A new indicator shows token usage relative to the model's context window limit.
+- **Mermaid diagram rendering** (VS Code v1.109 / February 2026): Mermaid diagrams included in chat responses are now rendered visually within the chat panel.
+- **Terminal command sandboxing** (VS Code v1.109 / February 2026, experimental): Terminal commands executed by the agent can be sandboxed for additional security. Available on macOS and Linux only.
+- **Thinking tokens** (VS Code v1.109 / February 2026): Anthropic models now surface their reasoning process (thinking tokens) during agent sessions.
+
+Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
 
 ### 7.1 Visual Studio Code
 
@@ -550,15 +633,23 @@ Not extensively documented in official sources. Copilot can assist with generati
 - Quick chat dropdown
 - Inline chat in editor and terminal
 - Smart actions via context menu
-- Model selection and switching
+- Model selection and switching (including GPT-5.3-Codex, Claude models, Gemini models)
 - Chat participants (`@workspace`, `@terminal`, etc.)
 - Slash commands for common tasks
 - Chat variables for context inclusion
 - Image attachment support for multimodal prompts
-- MCP server integration (local and remote)
+- MCP server integration (local and remote) with MCP Apps support
 - Custom instructions support
 - Code referencing feature for matching public code
-- Subagent support (with `runSubagent` tool enabled)
+- Parallel subagent support for independent workstreams
+- Agent Session Management: unified view for local, background, and cloud agent sessions
+- Agent status indicator in the command centre
+- Context window indicator showing token usage breakdown
+- Mermaid diagram rendering in chat responses
+- Terminal command sandboxing (experimental, macOS/Linux only)
+- Thinking tokens: Anthropic models surface reasoning during agent sessions
+- Message steering and queueing whilst requests are in progress
+- Claude Agent SDK support for delegating to Anthropic's agent (public preview)
 
 **Keyboard Shortcuts:**
 
@@ -578,7 +669,7 @@ Copilot integrates into VS Code through:
 - Context menu smart actions
 - Sparkle icon for contextual suggestions
 
-**Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 16 January 2026. Installing the GitHub Copilot extension in your environment. GitHub Copilot Documentation. https://docs.visualstudio.com/copilot. Accessed 16 January 2026.
+**Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 21 February 2026. Installing the GitHub Copilot extension in your environment. GitHub Copilot Documentation. https://docs.visualstudio.com/copilot. Accessed 21 February 2026. January 2026 (version 1.109) - Visual Studio Code. https://code.visualstudio.com/updates/v1_109. Accessed 21 February 2026.
 
 ---
 
@@ -1041,9 +1132,43 @@ Areas for improvement:
 
 ### Version Information
 
-- **Tool Version Analysed:** Current version as of January 2026
-- **Documentation Last Updated:** January 2026 (continuously updated)
-- **Analysis Last Updated:** 16 January 2026
+- **Tool Version Analysed:** Current version as of February 2026
+- **Documentation Last Updated:** February 2026 (continuously updated)
+- **Analysis Last Updated:** 21 February 2026
+
+### Additional References (February 2026 Updates)
+
+13. GitHub Copilot in Visual Studio Code v1.109 (January Release) - GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/
+14. GPT-5.3-Codex is now generally available for GitHub Copilot - GitHub Changelog. https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/
+15. Gemini 3.1 Pro is now in public preview in GitHub Copilot - GitHub Changelog. https://github.blog/changelog/2026-02-19-gemini-3-1-pro-is-now-in-public-preview-in-github-copilot
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## All Changes Since January 2026
+
+- **Multi-agent development focus** (VS Code v1.109 / February 2026): VS Code is now positioned as the "home for multi-agent development", with multi-agent workflows established as a primary focus area for Copilot.
+- **Claude Agent support** (VS Code v1.109 / February 2026): Users can delegate tasks to Anthropic's official Claude Agent SDK using Claude models from their Copilot subscription. Now in public preview.
+- **Agent orchestrations** (VS Code v1.109 / February 2026): New capability to orchestrate multiple AI agents working together on complex tasks.
+- **Agent Skills** (VS Code v1.109 / February 2026): Teams can create `SKILL.md` files containing reusable workflow definitions that agents can invoke.
+- **Copilot Memory** (VS Code v1.109 / February 2026): Agents can now retain context across sessions using Copilot Memory.
+- **GPT-5.3-Codex availability** (February 2026): GPT-5.3-Codex, OpenAI's latest agentic coding model, is now generally available for GitHub Copilot. Faster than GPT-5.2-Codex on agentic tasks.
+- **Gemini 3.1 Pro public preview** (February 2026): Gemini 3.1 Pro entered public preview in GitHub Copilot on 19 February 2026.
+- **Agent hooks** (VS Code v1.109.3 / February 2026, preview): Run custom shell commands at key agent lifecycle points.
+- **Claude configuration file compatibility** (VS Code v1.109 / February 2026): Reuse Claude configuration files directly in VS Code.
+- **MCP Apps** (VS Code v1.109 / February 2026): Richer, more tool-driven, interactive Copilot experiences via MCP application integrations directly inside VS Code chats.
+- **Plan agent revamp** (VS Code v1.109 / February 2026): Plan agent redesigned with a 4-phase iterative workflow: Discovery, Alignment, Design, and Refinement.
+- **Ask Questions tool** (VS Code v1.109 / February 2026, experimental): Agent asks clarifying questions instead of making assumptions.
+- **Message steering and queueing** (VS Code v1.109 / February 2026): Send follow-up messages whilst a request is still running; options to steer, queue, or stop and send.
+- **Agent Session Management** (VS Code v1.109 / February 2026): Unified view for local, background, and cloud agent sessions.
+- **Parallel subagents** (VS Code v1.109 / February 2026): Subagents can now run in parallel, speeding up complex multi-step tasks.
+- **Agent status indicator** (VS Code v1.109 / February 2026): Status indicator in the command centre for current agent activity state.
+- **Inline chat UX revamp** (VS Code v1.109 / February 2026, preview): Redesigned inline chat experience.
+- **Context window indicator** (VS Code v1.109 / February 2026): Shows token usage relative to the model's context window limit.
+- **Mermaid diagram rendering** (VS Code v1.109 / February 2026): Mermaid diagrams in chat responses are now rendered visually in the chat panel.
+- **Terminal command sandboxing** (VS Code v1.109 / February 2026, experimental, macOS/Linux only): Terminal commands executed by the agent can be sandboxed for additional security.
+- **Thinking tokens** (VS Code v1.109 / February 2026): Anthropic models surface their reasoning process during agent sessions.
 
 [↑ Back to top](#table-of-contents)
 
@@ -1054,6 +1179,7 @@ Areas for improvement:
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 16 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+| 21 February 2026 | 1.1 | Updated with VS Code v1.109 changes (February 2026): multi-agent development focus, Claude Agent support, GPT-5.3-Codex, Gemini 3.1 Pro, agent hooks, MCP Apps, Plan agent revamp, message steering, Agent Session Management, parallel subagents, Mermaid diagram rendering, terminal command sandboxing, thinking tokens | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 

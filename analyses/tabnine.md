@@ -4,14 +4,15 @@
 
 # Tabnine Analysis
 
-**Analysis Date:** 20 January 2026  
-**Tool Version:** Current (as of January 2026)  
+**Analysis Date:** 21 February 2026  
+**Tool Version:** Current (v5.28.0, as of February 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://docs.tabnine.com
 
 ## Table of Contents
 
 - [1. Tool Overview](#1-tool-overview)
+  - [Changes Since January 2026](#changes-since-january-2026)
   - [Description](#description)
   - [Key Features](#key-features)
 - [2. LLM Provider Integration](#2-llm-provider-integration)
@@ -33,6 +34,7 @@
   - [Using Stored Prompts](#using-stored-prompts)
   - [Sharing and Exporting](#sharing-and-exporting)
 - [5. Tools and Model Context Protocol (MCP)](#5-tools-and-model-context-protocol-mcp)
+  - [Changes Since January 2026](#changes-since-january-2026-1)
   - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
   - [MCP Server Configuration](#mcp-server-configuration)
   - [Available Tools](#available-tools)
@@ -46,6 +48,7 @@
   - [6.6 Debugging](#66-debugging)
   - [6.7 Deployment](#67-deployment)
 - [7. IDE and Environment Integration](#7-ide-and-environment-integration)
+  - [Changes Since January 2026](#changes-since-january-2026-2)
   - [7.1 Visual Studio Code](#71-visual-studio-code)
   - [7.2 JetBrains IDEs](#72-jetbrains-ides)
   - [7.3 Eclipse](#73-eclipse)
@@ -53,6 +56,7 @@
   - [7.5 Other IDEs and Editors](#75-other-ides-and-editors)
 - [8. Third Party Reviews and Experiences](#8-third-party-reviews-and-experiences)
 - [9. Summary and Key Findings](#9-summary-and-key-findings)
+  - [Changes Since January 2026](#changes-since-january-2026-3)
   - [Strengths](#strengths)
   - [Limitations](#limitations)
   - [Best Use Cases](#best-use-cases)
@@ -62,6 +66,7 @@
   - [Official Documentation](#official-documentation)
   - [Version Information](#version-information)
   - [Notes on Documentation Availability](#notes-on-documentation-availability)
+- [Changes Since January 2026](#changes-since-january-2026-4)
 - [Revision History](#revision-history)
 
 ---
@@ -69,9 +74,23 @@
 ## 1. Tool Overview
 
 **Official Documentation:** https://docs.tabnine.com  
-**Version Analysed:** Current version (as of January 2026)  
+**Version Analysed:** Current (v5.28.0, as of February 2026)  
 **Primary Use Case:** AI-powered code completion and assistant for software development  
 **Licensing:** Free tier, Pro, and Enterprise plans available
+
+### Changes Since January 2026
+
+The following changes were released in Tabnine v5.28.0 (10 February 2026) since the original analysis date of 20 January 2026.
+
+**Context Engine General Availability:** The Context Engine is now Generally Available (previously in limited/preview access), broadening access to context-aware code assistance features.
+
+**New Admin UI for Context Engine:** New Admin UI sections have been added for the Context Engine, covering settings for availability, model preferences, scheduling, and agent tool access.
+
+**Organisation-Level Repositories:** Administrators can now define Git repositories and Perforce depots at the organisation level, making them available for context across teams.
+
+**BYOAI (Bring Your Own AI):** Enterprise customers can now orchestrate their own large language models through Tabnine, whilst retaining Tabnine's governance and unified user experience.
+
+**Citation:** Tabnine Release Notes. Tabnine. https://docs.tabnine.com/main/administering-tabnine/release-notes. Accessed 21 February 2026.
 
 ### Description
 
@@ -91,8 +110,11 @@ Tabnine distinguishes itself by offering flexible deployment models including fu
 - **Compliance Ready**: SOC 2 Type 2, GDPR, and other compliance certifications
 - **Custom AI Models**: Enterprise option to train private models
 - **Code Review**: AI-powered code review suggestions
+- **Context Engine (GA)**: Deep codebase awareness for agent features, now Generally Available to all Enterprise SaaS and self-hosted environments (v5.28.0, February 2026); previously in limited access
+- **BYOAI (Bring Your Own AI)**: Enterprises can orchestrate their own large language models through Tabnine whilst maintaining governance and a unified user experience (v5.28.0)
+- **Organisation-Level Repositories**: Organisation administrators can define Git repositories (GitHub, GitLab) and Perforce depots in the Admin UI for use by the Context Engine (v5.28.0)
 
-**Citation:** General information available at https://www.tabnine.com and https://docs.tabnine.com. Accessed 20 January 2026.
+**Citation:** General information available at https://www.tabnine.com and https://docs.tabnine.com. Tabnine Release Notes. https://docs.tabnine.com/main/administering-tabnine/release-notes. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -243,6 +265,16 @@ Not documented in official sources
 
 ## 5. Tools and Model Context Protocol (MCP)
 
+### Changes Since January 2026
+
+The following tools and agent capabilities were added in Tabnine v5.28.0 (10 February 2026).
+
+**Ripgrep-Powered Search (v5.28.0):** The IDE extension now includes a ripgrep-powered search utility that provides faster, code-aware context retrieval for agent interactions.
+
+**Predefined Slash Commands (v5.28.0):** A `/code-review` slash command is now available for use in agent interactions.
+
+**Citation:** Tabnine Release Notes. Tabnine. https://docs.tabnine.com/main/administering-tabnine/release-notes. Accessed 21 February 2026.
+
 ### Model Context Protocol (MCP)
 
 **MCP Support:** Not documented in official sources
@@ -257,7 +289,14 @@ Not documented in official sources
 
 ### Available Tools
 
-Not documented in official sources
+The following agent tools and utilities are available as of v5.28.0:
+
+- **Ripgrep-Powered Search**: A ripgrep-based search utility that enables faster, code-aware context retrieval when the agent generates or refactors code (v5.28.0)
+- **`/code-review` Slash Command**: A predefined `/code-review` slash command is available for triggering code reviews as an agent interaction (v5.28.0)
+
+**Context Engine Admin UI**: The Admin UI now includes dedicated sections for configuring Context Engine availability, model preferences, scheduling, and agent tool access (v5.28.0).
+
+**Citation:** Tabnine Release Notes. Tabnine. https://docs.tabnine.com/main/administering-tabnine/release-notes. Accessed 21 February 2026.
 
 ### Custom Tool Development
 
@@ -324,6 +363,16 @@ Not applicable - Tabnine is a code assistant and does not include deployment fea
 
 ## 7. IDE and Environment Integration
 
+### Changes Since January 2026
+
+The following IDE integration changes were made in Tabnine v5.28.0 (10 February 2026).
+
+**Visual Studio Support (v5.28.0):** Official Tabnine Agent support has been added for both Visual Studio 2022 and Visual Studio 2026.
+
+**Image Context for Gemini Models (v5.28.0):** When using Gemini models, the agent can now analyse and reason over screenshots and diagrams provided as image context.
+
+**Citation:** Tabnine Release Notes. Tabnine. https://docs.tabnine.com/main/administering-tabnine/release-notes. Accessed 21 February 2026.
+
 ### 7.1 Visual Studio Code
 
 **Supported:** Yes
@@ -346,6 +395,7 @@ Not applicable - Tabnine is a code assistant and does not include deployment fea
 - Language-specific completions
 - Context-aware suggestions from open files
 - Support for all VS Code languages
+- Image context for Gemini models: the agent can analyse and reason over screenshots and diagrams as part of code reviews and queries (v5.28.0)
 
 **Keyboard Shortcuts:**
 
@@ -463,9 +513,10 @@ Tabnine focuses on IDE integration and does not provide a standalone command-lin
 
 #### Visual Studio
 
+**Supported Versions:** Visual Studio 2022 and Visual Studio 2026 (Tabnine Agent support added in v5.28.0, February 2026)  
 **Installation:** Install from Visual Studio Marketplace  
-**Features:** Code completions integrated with Visual Studio IntelliSense  
-**Citation:** Extension available for Visual Studio. Information at https://www.tabnine.com
+**Features:** Code completions and Tabnine Agent integrated with Visual Studio IntelliSense. Official Tabnine Agent support was added for Visual Studio 2022 and Visual Studio 2026 in v5.28.0.  
+**Citation:** Extension available for Visual Studio. Information at https://www.tabnine.com. Tabnine Release Notes. https://docs.tabnine.com/main/administering-tabnine/release-notes. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -626,6 +677,16 @@ Tabnine officially claims up to **45% productivity improvement** for developers,
 
 ## 9. Summary and Key Findings
 
+### Changes Since January 2026
+
+The following summary-level changes have been made since January 2026 (Tabnine v5.28.0, 10 February 2026).
+
+**Context Engine GA:** The Context Engine is now Generally Available, bringing broader access to context-aware code assistance features across more organisations.
+
+**BYOAI:** The new BYOAI capability expands enterprise customisation options by allowing organisations to bring and orchestrate their own large language models through Tabnine.
+
+**Citation:** Tabnine Release Notes. Tabnine. https://docs.tabnine.com/main/administering-tabnine/release-notes. Accessed 21 February 2026.
+
 ### Strengths
 
 - Wide IDE support (15+ IDEs)
@@ -700,16 +761,49 @@ Tabnine's publicly accessible documentation provides basic installation and usag
 1. Tabnine Official Website - https://www.tabnine.com
 2. Tabnine Documentation - https://docs.tabnine.com
 3. Tabnine Blog - https://www.tabnine.com/blog
+4. Tabnine Release Notes - https://docs.tabnine.com/main/administering-tabnine/release-notes
 
 ### Version Information
 
-- **Tool Version Analysed:** Current (as of January 2026)
+- **Tool Version Analysed:** Current (v5.28.0, as of February 2026)
 - **Documentation Last Updated:** Not specified
-- **Analysis Last Updated:** 20 January 2026
+- **Analysis Last Updated:** 21 February 2026
 
 ### Notes on Documentation Availability
 
 This analysis was limited by restricted access to detailed official documentation. Many advanced features, configuration options, and technical details are not documented in publicly accessible sources. The analysis is based on general product information and commonly known capabilities.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## Changes Since January 2026
+
+This section summarises all changes to Tabnine identified since the original analysis date of 20 January 2026. All changes were introduced in Tabnine v5.28.0 (released 10 February 2026).
+
+**Citation:** Tabnine Release Notes. Tabnine. https://docs.tabnine.com/main/administering-tabnine/release-notes. Accessed 21 February 2026.
+
+### Tool Overview Changes
+
+- **Context Engine General Availability:** The Context Engine is now Generally Available (previously in limited/preview access).
+- **New Admin UI for Context Engine:** New Admin UI sections for availability, model preferences, scheduling, and agent tool access.
+- **Organisation-Level Repositories:** Ability to define Git repositories and Perforce depots at the organisation level.
+- **BYOAI:** Enterprise customers can orchestrate their own large language models through Tabnine with governance and unified UX.
+
+### Tools and MCP Changes
+
+- **Ripgrep-Powered Search:** IDE extension now offers a ripgrep-powered search utility for faster, code-aware context retrieval.
+- **Predefined Slash Commands:** `/code-review` slash command now available for agent interactions.
+
+### IDE Integration Changes
+
+- **Visual Studio Support:** Official Tabnine Agent support added for Visual Studio 2022 and Visual Studio 2026.
+- **Image Context for Gemini Models:** Agent can now analyse and reason over screenshots and diagrams when using Gemini models.
+
+### Summary Changes
+
+- Context Engine GA broadens access to context-aware features across organisations.
+- BYOAI expands enterprise customisation by enabling orchestration of custom large language models.
 
 [↑ Back to top](#table-of-contents)
 
@@ -720,6 +814,7 @@ This analysis was limited by restricted access to detailed official documentatio
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+| 21 February 2026 | 1.1 | Added changes since January 2026 (v5.28.0): Context Engine GA, Admin UI for Context Engine, organisation-level repositories, BYOAI, ripgrep-powered search, predefined slash commands (/code-review), Visual Studio 2022/2026 Agent support, image context for Gemini models | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 

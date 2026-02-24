@@ -4,8 +4,8 @@
 
 # Codeium Analysis
 
-**Analysis Date:** 20 January 2026  
-**Tool Version:** Current (as of January 2026)  
+**Analysis Date:** 21 February 2026  
+**Tool Version:** Current (as of February 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://codeium.com/docs
 
@@ -62,6 +62,7 @@
   - [Official Documentation](#official-documentation)
   - [Version Information](#version-information)
   - [Notes on Documentation Availability](#notes-on-documentation-availability)
+- [Changes Since January 2026](#changes-since-january-2026)
 - [Revision History](#revision-history)
 
 ---
@@ -739,13 +740,36 @@ Codeium's publicly accessible documentation provides installation and basic usag
 
 ### Version Information
 
-- **Tool Version Analysed:** Current (as of January 2026)
+- **Tool Version Analysed:** Current (as of February 2026)
 - **Documentation Last Updated:** Not specified
-- **Analysis Last Updated:** 20 January 2026
+- **Analysis Last Updated:** 21 February 2026
 
 ### Notes on Documentation Availability
 
 This analysis was limited by the scope of publicly accessible documentation. Many advanced features, configuration options, and technical implementation details are not thoroughly documented in public sources. The analysis is based on general product information, user experience patterns, and commonly available features.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## Changes Since January 2026
+
+This analysis covers the Codeium extension (IDE plugin), not the Windsurf standalone editor. The Windsurf product line — Codeium's standalone editor — received a number of updates in January–February 2026 (see citation), but these pertain to the Windsurf IDE and are not independently documented as changes to the Codeium extension itself.
+
+No independently documented changes specific to the Codeium extension (as distinct from the Windsurf IDE) were identified for January–February 2026 in publicly accessible sources. The extension continues to function as described in this analysis.
+
+For reference, the Windsurf standalone editor received the following platform updates in this period:
+
+- Wave 14 features including Arena Mode (side-by-side model comparison) and Plan Mode (January 2026)
+- Agent Skills for Cascade: support for `.agents/skills` directory (January 2026)
+- GPT-5.2-Codex support with four reasoning modes (January 2026)
+- Claude Sonnet 4.6 and Claude Opus 4.6 (research preview) availability (February 2026)
+- GPT-5.3-Codex-Spark added to Arena Mode (February 2026)
+- Linux ARM64 full client support with `.deb` and `.rpm` packages (February 2026)
+
+These changes are recorded here as context for the broader Codeium/Windsurf platform, but are not confirmed to apply to the Codeium extension. Readers should consult the Windsurf changelog for the current state of the Windsurf IDE.
+
+**Citation:** Windsurf Changelog. Windsurf. https://windsurf.com/changelog. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -756,6 +780,7 @@ This analysis was limited by the scope of publicly accessible documentation. Man
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+| 21 February 2026 | 1.1 | Updated analysis date; added Changes Since January 2026 section noting no independently documented extension-specific changes; Windsurf platform updates recorded as context | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 

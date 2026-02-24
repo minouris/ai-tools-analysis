@@ -4,8 +4,8 @@
 
 # GitHub Copilot Coding Agent Analysis
 
-**Analysis Date:** 22 January 2026  
-**Tool Version:** Current (as of January 2026)  
+**Analysis Date:** 21 February 2026  
+**Tool Version:** Current (as of February 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent
 
@@ -40,14 +40,23 @@
 - [10. Summary and Key Findings](#10-summary-and-key-findings)
 - [11. Completeness Checklist](#11-completeness-checklist)
 - [12. References](#12-references)
+- [All Changes Since January 2026](#all-changes-since-january-2026)
+- [Agent Skills](#agent-skills)
 - [Revision History](#revision-history)
 
 ---
 
 ## 1. Tool Overview
 
+### Changes Since January 2026
+
+- **Agent Skills System** (VS Code v1.109 / February 2026): Teams can create `SKILL.md` files containing reusable workflow definitions. Agents can invoke these skills to follow established team patterns when completing tasks.
+- **Copilot Memory** (VS Code v1.109 / February 2026): Copilot Memory now helps agents retain repository context across sessions, reducing repeated discovery work.
+
+Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
+
 **Official Documentation:** https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent  
-**Version Analysed:** Current version (as of January 2026)  
+**Version Analysed:** Current version (as of February 2026)  
 **Primary Use Case:** Autonomous AI developer that works independently to complete development tasks  
 **Licensing:** Available with GitHub Copilot Pro, Pro+, Business, and Enterprise plans
 
@@ -69,7 +78,8 @@ The Coding Agent can be invoked by assigning GitHub issues to `@copilot`, delega
 - **PR Comments**: Mention `@copilot` in PR comments to request changes
 - **Custom Agents**: Create specialised agents for different task types
 - **Custom Instructions**: Enhanced by repository-level custom instructions
-- **Copilot Memory**: Uses agentic memory (in preview) to store repository knowledge
+- **Agent Skills (SKILL.md)**: Teams create `SKILL.md` files defining reusable workflows that the agent invokes to follow established team patterns (VS Code v1.109)
+- **Copilot Memory**: Stores and reuses repository knowledge across coding sessions, reducing repeated discovery work
 - **Model Selection**: Pro and Pro+ users can select AI models (Claude Sonnet 4.5 default)
 - **Security Campaign Integration**: Assign security alerts to Copilot
 - **Iterative Refinement**: Responds to PR review feedback and iterates
@@ -83,13 +93,20 @@ The Coding Agent is distinct from:
 
 The Coding Agent works asynchronously on GitHub's infrastructure, whilst other Copilot features operate synchronously within the local IDE.
 
-**Citation:** About GitHub Copilot coding agent. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent. Accessed 22 January 2026.
+**Citation:** About GitHub Copilot coding agent. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent. Accessed 21 February 2026. GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
 ---
 
 ## 2. LLM Provider Integration
+
+### Changes Since January 2026
+
+- **GPT-5.3-Codex availability** (February 2026): GPT-5.3-Codex is now generally available for use with the Coding Agent, beginning its rollout on 9 February 2026. It is faster than GPT-5.2-Codex on agentic tasks. (Source: [GitHub Changelog](https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/))
+- **Network configuration changes** (February 2026): Dedicated domains are now used for AI inference traffic, based on the user's plan. Network administrators should update firewall and proxy rules to permit these domains.
+
+Citation: GPT-5.3-Codex is now generally available for GitHub Copilot. GitHub Changelog. https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/. Accessed 21 February 2026. Network configuration changes for Copilot Coding Agent. GitHub Changelog. https://github.blog/changelog/2026-02-13-network-configuration-changes-for-copilot-coding-agent/. Accessed 21 February 2026.
 
 ### 2.1 Ollama Integration
 
@@ -125,13 +142,14 @@ For Business and Enterprise users:
 **Model Selection:**
 
 GitHub Copilot Pro and Pro+ users can select the AI model used by Coding Agent:
-- Available models vary but include Claude Sonnet 4.5 (default)
+- Available models include Claude Sonnet 4.5 (default) and GPT-5.3-Codex (generally available as of 9 February 2026)
+- GPT-5.3-Codex delivers faster performance than GPT-5.2-Codex on agentic coding tasks
 - Model selection interface available when delegating tasks
 - Different models may perform better for different task types
 
-Business and Enterprise model selection support is coming soon. Current default is Claude Sonnet 4.5.
+Business and Enterprise users can also select models. Copilot Business and Enterprise administrators must enable the GPT-5.3-Codex policy in Copilot settings to make it available to their users.
 
-**Citation:** About GitHub Copilot coding agent. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent. Accessed 22 January 2026.
+**Citation:** About GitHub Copilot coding agent. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent. Accessed 21 February 2026. GPT-5.3-Codex is now generally available for GitHub Copilot. GitHub Changelog. https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/. Accessed 21 February 2026.
 
 ---
 
@@ -241,7 +259,26 @@ The Coding Agent reads and applies custom instructions when:
 - Mentioned in pull request comments
 - Working on security alerts
 
-**Citation:** Enhancing Copilot coding agent's knowledge of a repository. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent#enhancing-copilot-coding-agents-knowledge-of-a-repository. Accessed 22 January 2026.
+**Citation:** Enhancing Copilot coding agent's knowledge of a repository. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent#enhancing-copilot-coding-agents-knowledge-of-a-repository. Accessed 21 February 2026.
+
+---
+
+### Agent Skills
+
+**Supported:** Yes (VS Code v1.109, February 2026)
+
+Teams can create `SKILL.md` files in their repository to define reusable workflows for the Coding Agent to follow. Agent skills allow teams to codify established patterns and procedures so the agent applies them consistently when completing tasks.
+
+**Creating Skill Files:**
+
+1. Create a `SKILL.md` file in the repository (or a designated skills directory)
+2. Define named skills with step-by-step instructions or patterns
+3. The agent automatically discovers and applies relevant skills when working on tasks
+4. Skills can be invoked explicitly as slash commands from chat
+
+Agent skills complement custom instructions (`.github/copilot-instructions.md`) by providing more granular, task-specific procedural guidance rather than general project context.
+
+**Citation:** GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -574,6 +611,12 @@ The agent respects existing deployment workflows and does not trigger deployment
 
 ## 7. IDE and Environment Integration
 
+### Changes Since January 2026
+
+- **Visual Studio 2026 support** (February 2026): Users can now delegate tasks to the Coding Agent from Visual Studio 2026. Requires Visual Studio 2026 December Update 18.1.0 or later, with the "Enable Copilot Coding agent (preview)" setting enabled.
+
+Citation: Delegate tasks to Copilot Coding Agent from Visual Studio. GitHub Changelog. https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio/. Accessed 21 February 2026.
+
 ### 7.1 Visual Studio Code
 
 **Supported:** Yes (primary interface for delegation)
@@ -598,6 +641,7 @@ The agent respects existing deployment workflows and does not trigger deployment
 - Discuss feature or change
 - Use "Delegate to coding agent" button (experimental)
 - Or use `#copilotCodingAgent` tool in prompt
+- Skills defined in `SKILL.md` files are available as slash commands in the delegation prompt
 - Agent creates PR and works in background
 
 **Fix TODOs:**
@@ -668,6 +712,30 @@ Whilst there is no dedicated CLI specifically for the Coding Agent, users can in
 ---
 
 ### 7.5 Other IDEs and Editors
+
+**Visual Studio 2026:**
+
+**Supported:** Yes (as of 17 February 2026, requires December Update 18.1.0 or later)
+
+Developers can delegate tasks to the Coding Agent from Visual Studio 2026 via Copilot Chat.
+
+**Requirements:**
+- Visual Studio 2026 with at least December Update 18.1.0 installed
+- GitHub Copilot extension updated to latest version
+- "Enable Copilot Coding agent (preview)" setting enabled in Visual Studio
+
+**Process:**
+1. Open Copilot Chat in Visual Studio
+2. Enter a prompt describing the task
+3. Click the **Send to Copilot Coding Agent** button next to the Send button
+4. Confirm the delegation when prompted
+5. Copilot opens a pull request and begins working in the background
+
+Agent availability requires Copilot Pro, Pro+, Business, or Enterprise subscription. Business and Enterprise administrators must enable the coding agent policy before it can be used.
+
+**Citation:** Delegate tasks to Copilot Coding Agent from Visual Studio. GitHub Changelog. https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio/. Accessed 21 February 2026. Asking Copilot to create a pull request from Copilot Chat in Visual Studio 2026. GitHub Docs. https://docs.github.com/copilot/how-tos/use-copilot-agents/coding-agent/create-a-pr#asking-copilot-to-create-a-pull-request-from-copilot-chat-in-visual-studio-2026. Accessed 21 February 2026.
+
+---
 
 **Neovim/Vim:**
 
@@ -1188,6 +1256,26 @@ For users within monthly allowances, no additional costs beyond Copilot subscrip
 
 18. **About billing for GitHub Copilot.** GitHub Copilot Documentation. https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-copilot/about-billing-for-github-copilot. Accessed 22 January 2026.
 
+19. **GitHub Copilot in Visual Studio Code v1.109 (January Release).** GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
+
+20. **GPT-5.3-Codex is now generally available for GitHub Copilot.** GitHub Changelog. https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/. Accessed 21 February 2026.
+
+21. **Network configuration changes for Copilot Coding Agent.** GitHub Changelog. https://github.blog/changelog/2026-02-13-network-configuration-changes-for-copilot-coding-agent/. Accessed 21 February 2026.
+
+22. **Delegate tasks to Copilot Coding Agent from Visual Studio.** GitHub Changelog. https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio/. Accessed 21 February 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## All Changes Since January 2026
+
+- **Agent Skills System** (VS Code v1.109 / February 2026): Teams can create `SKILL.md` files containing reusable workflow definitions. Agents invoke these skills to follow established team patterns when completing tasks.
+- **Copilot Memory** (VS Code v1.109 / February 2026): Copilot Memory helps agents retain repository context across sessions, reducing repeated discovery work.
+- **GPT-5.3-Codex availability** (February 2026): GPT-5.3-Codex is now generally available for use with the Coding Agent. Faster than GPT-5.2-Codex on agentic tasks. Rollout began 9 February 2026.
+- **Network configuration changes** (February 2026): Dedicated domains are now used for AI inference traffic based on user plan. Network administrators should update firewall and proxy rules to permit these domains.
+- **Visual Studio 2026 support** (February 2026): Users can now delegate tasks to the Coding Agent from Visual Studio 2026 (December Update 18.1.0+) with the "Enable Copilot Coding agent (preview)" setting enabled.
+
 [↑ Back to top](#table-of-contents)
 
 ---
@@ -1197,6 +1285,7 @@ For users within monthly allowances, no additional costs beyond Copilot subscrip
 | Date | Version | Changes |
 |------|---------|---------|
 | 22 January 2026 | 1.0 | Initial analysis of GitHub Copilot Coding Agent |
+| 21 February 2026 | 1.1 | Updated with February 2026 changes: Agent Skills System (SKILL.md), GPT-5.3-Codex availability, network configuration changes for AI inference, Visual Studio 2026 delegation support |
 
 ---
 

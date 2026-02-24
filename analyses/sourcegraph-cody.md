@@ -4,14 +4,15 @@
 
 # Sourcegraph Cody Analysis
 
-**Analysis Date:** 20 January 2026  
-**Tool Version:** Current (as of January 2026)  
+**Analysis Date:** 21 February 2026  
+**Tool Version:** Current (v1.142.0, as of February 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://docs.sourcegraph.com/cody
 
 ## Table of Contents
 
 - [1. Tool Overview](#1-tool-overview)
+  - [Changes Since January 2026](#changes-since-january-2026)
 - [2. LLM Provider Integration](#2-llm-provider-integration)
   - [2.1 Ollama Integration](#21-ollama-integration)
   - [2.2 GitHub Copilot Pro Integration](#22-github-copilot-pro-integration)
@@ -39,13 +40,26 @@
 - [9. Summary and Key Findings](#9-summary-and-key-findings)
 - [10. Completeness Checklist](#10-completeness-checklist)
 - [11. References](#11-references)
+- [Changes Since January 2026](#changes-since-january-2026-1)
+- [Revision History](#revision-history)
 
 ---
 
 ## 1. Tool Overview
 
+### Changes Since January 2026
+
+The following changes to Sourcegraph Cody were documented after the original analysis date.
+
+- **Version 1.142.0 released (February 2026)**: Cody AI by Sourcegraph version 1.142.0 was released on 8 February 2026, representing an incremental update with stability improvements. Citation: Cody Public Snapshot Releases. https://github.com/sourcegraph/cody-public-snapshot/releases. Accessed 21 February 2026.
+- **Internal agent updated to v1.54.0**: The internal agent was updated to version 1.54.0 for enhanced code understanding capabilities. Citation: Cody Public Snapshot Releases. https://github.com/sourcegraph/cody-public-snapshot/releases. Accessed 21 February 2026.
+- **Auto-edit stability improvements**: Stability improvements were made to auto-edit functionality in agent mode. Citation: Cody Public Snapshot Releases. https://github.com/sourcegraph/cody-public-snapshot/releases. Accessed 21 February 2026.
+- **Bug fixes**: Fixes were applied for multi-repo authentication, error handling, and context filtering. Citation: Cody Public Snapshot Releases. https://github.com/sourcegraph/cody-public-snapshot/releases. Accessed 21 February 2026.
+
+---
+
 **Official Documentation:** https://docs.sourcegraph.com/cody  
-**Version Analysed:** Current version (as of January 2026)  
+**Version Analysed:** Current version (v1.142.0, as of February 2026)  
 **Primary Use Case:** AI coding assistant with deep codebase context and understanding  
 **Licensing:** Free tier for individuals, Pro tier for advanced features, Enterprise for organisations
 
@@ -54,6 +68,8 @@
 Sourcegraph Cody is an AI-powered coding assistant developed by Sourcegraph, a company known for its code search and intelligence platform. Cody leverages Sourcegraph's powerful code search and context capabilities to provide AI assistance with deep understanding of your codebase, dependencies, and documentation.
 
 Cody distinguishes itself through its ability to search and understand large codebases using Sourcegraph's enterprise-grade code intelligence. This enables Cody to provide context-aware suggestions and answers based on your entire codebase, not just open files. Cody supports multiple AI models and can be deployed on-premises for organisations with security requirements.
+
+As of February 2026, Cody is at version 1.142.0, representing an incremental update. The internal agent has been updated to v1.54.0 for enhanced code understanding and suggestion quality, and auto-edit stability improvements have been made in agent mode. No major new features were announced in this period.
 
 ### Key Features
 
@@ -69,8 +85,10 @@ Cody distinguishes itself through its ability to search and understand large cod
 - **IDE Integration**: VS Code, JetBrains IDEs, and Neovim
 - **Attribution**: Shows sources when code suggestions match open-source code
 - **Flexible Context**: Fine-tune which files and repositories Cody considers
+- **Internal Agent v1.54.0**: The internal agent has been updated to v1.54.0 for enhanced code understanding and suggestion quality (v1.142.0)
+- **Auto-edit Stability**: Improved stability for auto-edit functionality in agent mode (v1.142.0)
 
-**Citation:** General information available at https://sourcegraph.com/cody and https://docs.sourcegraph.com/cody. Accessed 20 January 2026.
+**Citation:** General information available at https://sourcegraph.com/cody and https://docs.sourcegraph.com/cody. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -787,16 +805,32 @@ Sourcegraph Cody's documentation is comprehensive for core features like install
 1. Sourcegraph Cody Official Page - https://sourcegraph.com/cody
 2. Cody Documentation - https://docs.sourcegraph.com/cody
 3. Sourcegraph Blog - https://about.sourcegraph.com/blog
+4. Sourcegraph Cody Releases - https://github.com/sourcegraph/cody-public-snapshot/releases
 
 ### Version Information
 
-- **Tool Version Analysed:** Current (as of January 2026)
+- **Tool Version Analysed:** Current (v1.142.0, as of February 2026)
 - **Documentation Last Updated:** Ongoing updates
-- **Analysis Last Updated:** 20 January 2026
+- **Analysis Last Updated:** 21 February 2026
 
 ### Notes on Documentation Availability
 
 This analysis is based on publicly accessible Sourcegraph documentation and product information. Some Enterprise features and advanced configuration options may have additional documentation available to Enterprise customers. The product is actively developed with regular feature additions and improvements.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## Changes Since January 2026
+
+This section summarises documented changes to Sourcegraph Cody since the original analysis date.
+
+### Section 1: Tool Overview
+
+- **Version 1.142.0 released (February 2026)**: Cody AI by Sourcegraph version 1.142.0 was released on 8 February 2026 as an incremental update. Citation: Cody Public Snapshot Releases. https://github.com/sourcegraph/cody-public-snapshot/releases. Accessed 21 February 2026.
+- **Internal agent updated to v1.54.0**: The internal agent was updated to version 1.54.0 for enhanced code understanding. Citation: Cody Public Snapshot Releases. https://github.com/sourcegraph/cody-public-snapshot/releases. Accessed 21 February 2026.
+- **Auto-edit stability improvements**: Stability improvements applied to auto-edit functionality in agent mode. Citation: Cody Public Snapshot Releases. https://github.com/sourcegraph/cody-public-snapshot/releases. Accessed 21 February 2026.
+- **Bug fixes**: Fixes applied for multi-repo authentication, error handling, and context filtering. Citation: Cody Public Snapshot Releases. https://github.com/sourcegraph/cody-public-snapshot/releases. Accessed 21 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -807,6 +841,7 @@ This analysis is based on publicly accessible Sourcegraph documentation and prod
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 20 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
+| 21 February 2026 | 1.1 | Updated analysis date; added incremental version updates (v1.142.0), internal agent v1.54.0 update, auto-edit stability improvements, and bug fixes | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 

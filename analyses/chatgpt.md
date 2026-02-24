@@ -4,7 +4,7 @@
 
 # ChatGPT Analysis
 
-**Analysis Date:** 20 January 2026  
+**Analysis Date:** 21 February 2026  
 **Tool Version:** ChatGPT Plus/Pro (as of January 2026)  
 **Analyst:** GitHub Copilot  
 **Official Documentation:** https://help.openai.com/
@@ -63,6 +63,7 @@
   - [Official Documentation](#official-documentation)
   - [Version Information](#version-information)
   - [Notes on Documentation Availability](#notes-on-documentation-availability)
+- [Changes Since January 2026](#changes-since-january-2026)
 - [Revision History](#revision-history)
 
 ---
@@ -1234,10 +1235,21 @@ Users requiring current, official information should consult:
 
 ---
 
+## Changes Since January 2026
+
+No major feature changes were documented in official OpenAI sources for ChatGPT during January–February 2026 that would materially affect this analysis.
+
+Citation: OpenAI Help Centre. https://help.openai.com/. Accessed 21 February 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## Revision History
 
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 20 January 2026 | 1.0 | Initial analysis of ChatGPT coding capabilities (Canvas, code execution) | GitHub Copilot |
+| 21 February 2026 | 1.1 | Updated analysis date; no major feature changes documented in official sources for this period | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
