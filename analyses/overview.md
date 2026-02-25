@@ -33,7 +33,7 @@
 
 ## 1. Executive Summary
 
-This document provides a comprehensive comparison of 14 AI coding tools and development platforms analysed in this repository. The tools represent different approaches to AI-assisted development, ranging from cloud-based subscription services to open-source agentic frameworks, cloud development environments, and historical platforms.
+This document provides a comprehensive comparison of 16 AI coding tools and development platforms analysed in this repository. The tools represent different approaches to AI-assisted development, ranging from cloud-based subscription services to open-source agentic frameworks, cloud development environments, and historical platforms.
 
 ### Tools Included
 
@@ -57,9 +57,9 @@ This document provides a comprehensive comparison of 14 AI coding tools and deve
 ### Key Insights
 
 - **Model Flexibility:** Continue and Roo Cline support 20-40+ LLM providers, whilst Amazon Q is AWS-only and Gemini Code Assist is Google-only
-- **MCP Adoption:** 7 tools (Claude Code, Continue, Gemini Code Assist, GitHub Copilot, OpenAI Codex, Roo Cline, Windsurf) offer full MCP support
+- **MCP Adoption:** 7 tools (Claude Code, Continue, Gemini Code Assist, GitHub Copilot Chat, OpenAI Codex, Roo Cline, Windsurf) offer full MCP support
 - **Total Cost of Ownership:** Codeium ($0) and GitHub Copilot Pro ($10 USD ≈ $17 NZD) offer best value. "Free" tools like Continue/Roo Cline require separate LLM subscriptions ($20-30 USD ≈ $33-50 NZD/month) or local deployment (hardware-intensive, lower model quality)
-- **IDE Coverage:** VS Code has universal support (100%); JetBrains (58%); Eclipse and Neovim limited
+- **IDE Coverage:** VS Code is supported by almost all tools; JetBrains by around half; Eclipse and Neovim have limited support
 - **Customisation:** 8 tools support custom instruction files; 9 support custom prompts/commands
 
 [↑ Back to top](#table-of-contents)
@@ -360,7 +360,7 @@ Updates to feature comparison data since 22 January 2026 are noted within each r
 | **Roo Cline** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | **20+ providers** |
 | **Sourcegraph Cody** | ✅ | ✅ | ✅ | Not doc. | ❌ | ✅ | Multi-provider |
 | **Tabnine** | ✅ BYOAI | ✅ BYOAI | Not doc. | Not doc. | ❌ | ✅ BYOAI | Proprietary + BYOAI |
-| **Windsurf** | ✅ BYOK | ❌ | ❌ | ❌ | ❌ | ✅ | Proprietary (SWE) + BYOK |
+| **Windsurf** | ✅ BYOK | ✅ (via service) | ❌ | ❌ | ❌ | ✅ | Proprietary (SWE) + BYOK |
 | **OpenAI Codex** | ❌ | ✅ **Native** | ❌ | ❌ | ❌ | ❌ | OpenAI only |
 
 † Claude Agent SDK integration for GitHub Copilot Chat is in public preview (VS Code v1.109, February 2026). Source: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109). Accessed 21 February 2026.
@@ -422,16 +422,18 @@ Updates to feature comparison data since 22 January 2026 are noted within each r
 | **Roo Cline** | ✅ **Native** | ❌ | ❌ | ❌ | ❌ | Partial | Cursor compat. |
 | **Sourcegraph Cody** | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ |
 | **Tabnine** | ✅ | ✅ | ✅ | ✅ | Not doc. | ❌ | ❌ |
-| **Windsurf** | ✅ (fork) | ✅ Plugin | ✅ (maintenance) | ✅ (maintenance) | ❌ | ✅ CLI | ✅ **Editor** |
+| **Windsurf** | ✅ (fork) | ✅ Plugin | ✅ (maintenance) | ✅ (maintenance) | ❌ | ❌ | ✅ **Editor** |
 | **OpenAI Codex** | ✅ Extension | ✅ | ❌ | ❌ | ❌ | ✅ **CLI** | ❌ |
 
 **IDE Support Count:**
-- **VS Code:** 13/14 tools (93%)
-- **JetBrains:** 9/14 tools (64%)
-- **Eclipse:** 4/14 tools (29%)
-- **Neovim:** 5/14 tools (36%)
-- **Terminal/CLI:** 6/14 tools (43%)
-- **Standalone:** 3/14 tools (21%) - Cursor (editor), ChatGPT (browser/app), Windsurf (editor)
+- **VS Code:** 13/14 table entries (93%) — near-universal
+- **JetBrains:** 9/14 table entries (64%)
+- **Eclipse:** 4/14 table entries (29%)
+- **Neovim:** 5/14 table entries (36%)
+- **Terminal/CLI:** 5/14 table entries (36%)
+- **Standalone:** 3/14 table entries (21%) — Cursor (editor), ChatGPT (browser/app), Windsurf (editor)
+
+> **Note on denominator:** The IDE table contains 14 entries. Of the 16 tools analysed, GitHub Copilot Chat and GitHub Copilot Coding Agent are combined as a single "GitHub Copilot" row, and the GitHub Codespaces row is retained separately, giving 14 distinct entries in this table. Counts above reflect the 14-entry table, not the full 16-analysis count.
 
 **Key Finding:** VS Code has near-universal support amongst IDE-integrated tools. ChatGPT, Cursor, and Windsurf operate as standalone applications. OpenAI Codex offers both a CLI and IDE extension. Windsurf's VS Code extension is in maintenance mode with new features only available in the native Windsurf Editor.
 
@@ -931,7 +933,7 @@ The "Best for Agentic Workflows" recommendation has been updated to include GitH
 ### Market Landscape
 
 1. **Consolidation Around Key Models:** Claude and OpenAI dominate LLM provider integration, with Ollama growing as local alternative
-2. **VS Code Dominance:** 100% of tools support VS Code; other IDEs have lower coverage (JetBrains 60%, Eclipse 30%)
+2. **VS Code Dominance:** VS Code is supported by almost all tools analysed (13 of 14 IDE table entries); other IDEs have lower coverage (JetBrains ~64%, Eclipse ~29%)
 3. **Emerging MCP Standard:** 40% of tools support MCP, suggesting growing standardisation for extensibility
 4. **Fragmented Instruction Formats:** 6 different instruction file formats exist, limiting cross-tool compatibility
 5. **Open Source Growth:** 2 major open-source options (Continue, Roo Cline) provide full-featured alternatives to commercial tools
@@ -1043,7 +1045,7 @@ When factoring in LLM access costs, the true pricing picture changes significant
 
 ### Technology Trends
 
-**MCP Adoption:** Model Context Protocol support growing but not universal. Tools with MCP (Claude Code, Continue, GitHub Copilot, Roo Cline) demonstrate extensibility advantages.
+**MCP Adoption:** Model Context Protocol support growing but not universal. Tools with MCP (Claude Code, Continue, Gemini Code Assist, GitHub Copilot Chat, OpenAI Codex, Roo Cline, Windsurf) demonstrate extensibility advantages.
 
 **Multi-Provider Support:** Increasing recognition that single-model approach limits flexibility. Continue (40+) and Roo Cline (20+) lead in provider diversity.
 

@@ -369,7 +369,9 @@ MCP support in Windsurf was notably improved in Wave 13, which addressed multipl
 
 **Configuration:**
 
-MCP servers are configured in a JSON configuration file. Windsurf supports both `stdio` (subprocess) and `sse` (server-sent events / HTTP) transport modes.
+MCP servers are configured in a JSON configuration file at `~/.codeium/windsurf/mcp_config.json`. Windsurf supports three transport types: `stdio` (subprocess), `Streamable HTTP`, and `SSE` (server-sent events). OAuth authentication is supported for each transport type.
+
+**Citation:** Windsurf MCP Documentation. https://docs.windsurf.com/windsurf/cascade/mcp. Accessed 25 February 2026.
 
 ### MCP Server Configuration
 
@@ -417,7 +419,7 @@ Windsurf's own built-in Cascade tools (not MCP) include capabilities for file sy
 
 **Supported:** Yes — via custom MCP server development
 
-Developers can build custom MCP servers in any language that supports stdio or HTTP/SSE communication. A custom MCP server exposes tools, resources, and prompts following the MCP specification, which Cascade can then discover and invoke.
+Developers can build custom MCP servers in any language that supports stdio, Streamable HTTP, or SSE communication. A custom MCP server exposes tools, resources, and prompts following the MCP specification, which Cascade can then discover and invoke.
 
 Windsurf also introduced a **Plugin system** in 2025 as an additional extensibility mechanism. Plugins allow packaging and distributing Cascade capabilities (tools, hooks, and configurations) for use by teams or the broader community.
 
