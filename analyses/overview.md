@@ -4,8 +4,8 @@
 
 # AI Coding Tools: Overview
 
-**Analysis Date:** 21 February 2026  
-**Tools Analysed:** 14 AI coding assistants and development platforms  
+**Analysis Date:** 25 February 2026  
+**Tools Analysed:** 16 AI coding assistants and development platforms  
 **Methodology:** Based on official documentation and tool analysis files in this repository
 
 ## Table of Contents
@@ -51,14 +51,16 @@ This document provides a comprehensive comparison of 14 AI coding tools and deve
 12. **[Cursor](cursor.md)** - AI-first standalone code editor
 13. **[Sourcegraph Cody](sourcegraph-cody.md)** - Deep codebase context via Sourcegraph
 14. **[Tabnine](tabnine.md)** - Privacy-focused with local deployment options
+15. **[Windsurf](windsurf.md)** - AI-first IDE with Cascade agentic assistant and in-house SWE models
+16. **[OpenAI Codex](openai-codex.md)** - OpenAI's coding agent available as CLI, cloud service, and IDE extension (2026)
 
 ### Key Insights
 
 - **Model Flexibility:** Continue and Roo Cline support 20-40+ LLM providers, whilst Amazon Q is AWS-only and Gemini Code Assist is Google-only
-- **MCP Adoption:** 5 tools (Claude Code, Continue, Gemini Code Assist, GitHub Copilot, Roo Cline) offer full MCP support
+- **MCP Adoption:** 7 tools (Claude Code, Continue, Gemini Code Assist, GitHub Copilot, OpenAI Codex, Roo Cline, Windsurf) offer full MCP support
 - **Total Cost of Ownership:** Codeium ($0) and GitHub Copilot Pro ($10 USD ≈ $17 NZD) offer best value. "Free" tools like Continue/Roo Cline require separate LLM subscriptions ($20-30 USD ≈ $33-50 NZD/month) or local deployment (hardware-intensive, lower model quality)
 - **IDE Coverage:** VS Code has universal support (100%); JetBrains (58%); Eclipse and Neovim limited
-- **Customisation:** 6 tools support custom instruction files; 7 support custom prompts/commands
+- **Customisation:** 8 tools support custom instruction files; 9 support custom prompts/commands
 
 [↑ Back to top](#table-of-contents)
 
@@ -78,6 +80,8 @@ The following tools have notable updates since 22 January 2026. Detailed changes
 - **Cursor:** Now at v2.5 with Plugins/Marketplace, async subagents, and Cursor Blame (Enterprise).
 - **Tabnine:** v5.28.0 with Context Engine GA, BYOAI, predefined slash commands, Visual Studio 2022/2026 support.
 - **Continue:** Reached stable v1.0; OpenRouter provider added.
+- **New: Windsurf** — AI-first IDE with Cascade agent, in-house SWE-1.5 model, MCP support, and rules/workflows system. Now at Wave 13 / v1.13.3.
+- **New: OpenAI Codex (2026)** — OpenAI's new coding agent (not the deprecated 2021-2023 Codex API) available as CLI, cloud service, and IDE extension. Open-source CLI included in ChatGPT Plus/Pro/Business/Enterprise plans.
 
 ---
 
@@ -297,6 +301,35 @@ Privacy-focused AI code completion tool supporting 15+ IDEs including VS Code, J
 - **Visual Studio Support:** Added support for Visual Studio 2022 and Visual Studio 2026. (Source: [Tabnine Release Notes](https://docs.tabnine.com/main/administering-tabnine/release-notes). Accessed 21 February 2026.)
 - **Image Context:** Image context support added for Gemini models. (Source: [Tabnine Release Notes](https://docs.tabnine.com/main/administering-tabnine/release-notes). Accessed 21 February 2026.)
 
+---
+
+### Windsurf
+
+**Type:** Standalone AI-First Code Editor  
+**Licence:** Free tier, Pro ($15/month), Teams ($30/user/month), Enterprise  
+**Key Focus:** Agentic AI IDE with in-house SWE models
+
+AI-first code editor built on a VS Code fork by Windsurf Inc. (formerly Codeium). Features Cascade, an agentic AI assistant with Code and Chat modes, real-time awareness of developer actions, and the ability to remember context across sessions. Includes in-house SWE model family (SWE-1, SWE-1.5) optimised for software engineering tasks, plus support for third-party models (Claude 4 Sonnet/Opus, Gemini). Supports MCP, rules system, workflows, and JetBrains plugin. **Note:** This is a separate product from the Codeium extension (analysed separately). Windsurf was launched in November 2024 and has grown to over 1 million users.
+
+**Official Documentation:** https://docs.windsurf.com
+
+---
+
+### OpenAI Codex (2026)
+
+**Type:** CLI + Cloud Agent + IDE Extension  
+**Licence:** Included with ChatGPT Plus/Pro/Business/Enterprise; API access available separately  
+**Key Focus:** Cloud and local coding agent with open-source CLI
+
+**Note:** This is the new 2026 Codex, not the deprecated Codex API (models `codex-001`, `code-davinci-002`) which was discontinued in March 2023.
+
+OpenAI's coding agent with three delivery modes: Codex CLI (open source, Rust, npm), Codex Web/Cloud (runs tasks in isolated OpenAI-managed containers), and Codex IDE Extension (VS Code, Cursor, Windsurf, JetBrains). Included in ChatGPT Plus, Pro, Business, Edu, and Enterprise plans. Uses GPT-5.3-Codex and GPT-5.1-Codex-Mini models. Features AGENTS.md instruction system, full MCP support, OS-level sandboxing, and GitHub integration for automated code reviews.
+
+**Official Documentation:** https://developers.openai.com/codex  
+**GitHub (CLI):** https://github.com/openai/codex
+
+---
+
 [↑ Back to top](#table-of-contents)
 
 ---
@@ -327,16 +360,20 @@ Updates to feature comparison data since 22 January 2026 are noted within each r
 | **Roo Cline** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | **20+ providers** |
 | **Sourcegraph Cody** | ✅ | ✅ | ✅ | Not doc. | ❌ | ✅ | Multi-provider |
 | **Tabnine** | ✅ BYOAI | ✅ BYOAI | Not doc. | Not doc. | ❌ | ✅ BYOAI | Proprietary + BYOAI |
+| **Windsurf** | ✅ BYOK | ❌ | ❌ | ❌ | ❌ | ✅ | Proprietary (SWE) + BYOK |
+| **OpenAI Codex** | ❌ | ✅ **Native** | ❌ | ❌ | ❌ | ❌ | OpenAI only |
 
 † Claude Agent SDK integration for GitHub Copilot Chat is in public preview (VS Code v1.109, February 2026). Source: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109). Accessed 21 February 2026.
 
-**Key Finding:** Continue and Roo Cline offer the most provider flexibility with 20-40+ integrations, whilst Amazon Q (AWS-only) and Gemini Code Assist (Google-only) are locked to their respective cloud ecosystems.
+**Key Finding:** Continue and Roo Cline offer the most provider flexibility with 20-40+ integrations, whilst Amazon Q (AWS-only), Gemini Code Assist (Google-only), and OpenAI Codex (OpenAI-only) are locked to their respective ecosystems. Windsurf uses proprietary in-house SWE models by default with BYOK support for Claude 4 models.
 
 #### Changes Since January 2026
 
 - **GitHub Copilot Chat:** Claude Agent SDK integration added in public preview (VS Code v1.109, 4 February 2026). (Source: [GitHub Copilot in VS Code v1.109](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
 - **Tabnine:** BYOAI (Bring Your Own AI) feature in v5.28.0 (10 February 2026) adds support for Claude, GPT-4o, Gemini, and Codestral, replacing the previous proprietary-only model approach. (Source: [Tabnine Release Notes](https://docs.tabnine.com/main/administering-tabnine/release-notes). Accessed 21 February 2026.)
 - **New Models in GitHub Copilot:** GPT-5.3-Codex became generally available on 9 February 2026. (Source: [GPT-5.3-Codex is now generally available for GitHub Copilot](https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/). Accessed 21 February 2026.)
+- **New Tool — Windsurf:** In-house SWE-1.5 model family, Claude 4 Sonnet/Opus via BYOK, Gemini 3.1 Pro available. (Source: [Windsurf Models](https://docs.windsurf.com/windsurf/models). Accessed 25 February 2026.)
+- **New Tool — OpenAI Codex:** Uses GPT-5.3-Codex and GPT-5.1-Codex-Mini; OpenAI models only; API key access available at standard rates. (Source: [OpenAI Codex Pricing](https://developers.openai.com/codex/pricing). Accessed 25 February 2026.)
 
 [↑ Back to top](#table-of-contents)
 
@@ -360,8 +397,10 @@ Updates to feature comparison data since 22 January 2026 are noted within each r
 | **Roo Cline** | ✅ **Full** | `.roomodes` config | Multiple | McpHub |
 | **Sourcegraph Cody** | ❌ Not documented | Built-in tools | N/A | N/A |
 | **Tabnine** | ❌ Not documented | N/A | N/A | N/A |
+| **Windsurf** | ✅ **Full** | `~/.codeium/windsurf/mcp_config.json` | stdio, Streamable HTTP, SSE | MCP Marketplace |
+| **OpenAI Codex** | ✅ **Full** | `~/.codex/config.toml` | stdio, Streamable HTTP | Multiple |
 
-**Key Finding:** 5 AI tools (Claude Code, Continue, Gemini Code Assist, GitHub Copilot Chat, Roo Cline) have documented MCP support. GitHub Codespaces supports MCP indirectly through installed AI tools. MCP adoption is growing but not yet universal.
+**Key Finding:** 7 AI tools (Claude Code, Continue, Gemini Code Assist, GitHub Copilot Chat, OpenAI Codex, Roo Cline, Windsurf) have documented MCP support. GitHub Codespaces supports MCP indirectly through installed AI tools. MCP adoption is growing and becoming a standard for extensibility.
 
 [↑ Back to top](#table-of-contents)
 
@@ -383,16 +422,18 @@ Updates to feature comparison data since 22 January 2026 are noted within each r
 | **Roo Cline** | ✅ **Native** | ❌ | ❌ | ❌ | ❌ | Partial | Cursor compat. |
 | **Sourcegraph Cody** | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ |
 | **Tabnine** | ✅ | ✅ | ✅ | ✅ | Not doc. | ❌ | ❌ |
+| **Windsurf** | ✅ (fork) | ✅ Plugin | ✅ (maintenance) | ✅ (maintenance) | ❌ | ✅ CLI | ✅ **Editor** |
+| **OpenAI Codex** | ✅ Extension | ✅ | ❌ | ❌ | ❌ | ✅ **CLI** | ❌ |
 
 **IDE Support Count:**
-- **VS Code:** 11/12 tools (92%)
-- **JetBrains:** 7/12 tools (58%)
-- **Eclipse:** 3/12 tools (25%)
-- **Neovim:** 4/12 tools (33%)
-- **Terminal/CLI:** 4/12 tools (33%)
-- **Standalone:** 2/12 tools (17%) - Cursor (editor), ChatGPT (browser/app)
+- **VS Code:** 13/14 tools (93%)
+- **JetBrains:** 9/14 tools (64%)
+- **Eclipse:** 4/14 tools (29%)
+- **Neovim:** 5/14 tools (36%)
+- **Terminal/CLI:** 6/14 tools (43%)
+- **Standalone:** 3/14 tools (21%) - Cursor (editor), ChatGPT (browser/app), Windsurf (editor)
 
-**Key Finding:** VS Code has near-universal support amongst IDE-integrated tools. ChatGPT and Cursor operate as standalone applications without IDE integration. Gemini Code Assist supports Cloud-native environments (Cloud Shell, Cloud Workstations, Android Studio).
+**Key Finding:** VS Code has near-universal support amongst IDE-integrated tools. ChatGPT, Cursor, and Windsurf operate as standalone applications. OpenAI Codex offers both a CLI and IDE extension. Windsurf's VS Code extension is in maintenance mode with new features only available in the native Windsurf Editor.
 
 #### Changes Since January 2026
 
@@ -419,6 +460,8 @@ Updates to feature comparison data since 22 January 2026 are noted within each r
 | **Roo Cline** | ✅ `.clinerules` + 6 variants | Project root | `.cursorrules`, `CLAUDE.md` | ❌ |
 | **Sourcegraph Cody** | ✅ `.cody/instructions` | `.cody/` | Project-level | Enterprise |
 | **Tabnine** | ❌ Not documented | N/A | N/A | N/A |
+| **Windsurf** | ✅ `global_rules.md` + `.windsurf/rules/` | Home dir + project | Windsurf-native | ✅ System-level (Enterprise) |
+| **OpenAI Codex** | ✅ `AGENTS.md` + `AGENTS.override.md` | `~/.codex/` + project | `AGENTS.md` (standard) | ✅ System config |
 
 **Supported Rule Formats:**
 1. `.github/copilot-instructions.md` (GitHub Copilot)
@@ -428,8 +471,10 @@ Updates to feature comparison data since 22 January 2026 are noted within each r
 5. `.continue/rules/` (Continue)
 6. `.cody/instructions` (Sourcegraph Cody)
 7. `CLAUDE.md` (Claude Code, Roo Cline cross-compat)
+8. `.windsurf/rules/` (Windsurf)
+9. `AGENTS.md` / `AGENTS.override.md` (OpenAI Codex)
 
-**Key Finding:** 6 out of 10 tools (60%) support custom instruction files, but formats are fragmented. Roo Cline offers the most cross-compatibility by supporting 3 different formats.
+**Key Finding:** 8 out of 14 tools (57%) support custom instruction files, but formats are fragmented. Roo Cline offers the most cross-compatibility by supporting 3 different formats. Both Windsurf and OpenAI Codex support enterprise/system-level deployment of rules for organisation-wide enforcement.
 
 [↑ Back to top](#table-of-contents)
 
@@ -451,8 +496,10 @@ Updates to feature comparison data since 22 January 2026 are noted within each r
 | **Roo Cline** | ✅ Custom Modes | `.roomodes` config | Text-based | Via modes |
 | **Sourcegraph Cody** | ✅ Custom Commands | JSON/settings | Enterprise org-wide | ✅ Via commands |
 | **Tabnine** | ✅ Predefined Slash | Not documented | N/A | ✅ /code-review |
+| **Windsurf** | ✅ Workflows | `.windsurf/workflows/` | Via repository | ✅ `/workflow-name` |
+| **OpenAI Codex** | Partial (via AGENTS.md) | `~/.codex/config.toml` (profiles) | Via AGENTS.md | ✅ `/model`, `/status` |
 
-**Key Finding:** 7 out of 12 tools (58%) support some form of custom prompts or commands. Continue and Claude Code offer the most sophisticated prompt management with Hub sharing and skills systems respectively.
+**Key Finding:** 9 out of 14 tools (64%) support some form of custom prompts or commands. Continue and Claude Code offer the most sophisticated prompt management. Windsurf's Workflows system provides structured multi-step automation via slash commands.
 
 #### Changes Since January 2026
 
@@ -480,6 +527,8 @@ Updates to feature comparison data since 22 January 2026 are noted within each r
 | **Roo Cline** | ✅ **Full** | ✅ Free | ✅ Free | ✅ Free | ✅ Apache 2.0 |
 | **Sourcegraph Cody** | ✅ Limited | $9/month (≈$15 NZD) | $19/user/month (≈$31 NZD) | Custom | ❌ |
 | **Tabnine** | ✅ Limited | $12/month (≈$20 NZD) | $39/user/month (≈$64 NZD) | Custom | ❌ |
+| **Windsurf** | ✅ (limited credits) | $15/month (≈$25 NZD) | $30/user/month (≈$50 NZD) | Custom | ❌ |
+| **OpenAI Codex** | ✅ (via ChatGPT Free) | Included with ChatGPT Plus ($20/month ≈ $33 NZD) | Included with Business | Custom (Enterprise) | ✅ CLI (Apache-2.0) |
 
 **Note:** Gemini Code Assist pricing is based on hourly usage with monthly/yearly commitments. Approximate monthly cost calculated assuming 720 hours/month (Standard: $0.031/hr × 720 = ~$22/month with monthly commitment; Enterprise: $0.074/hr × 720 = ~$54/month with monthly commitment).
 
@@ -528,6 +577,8 @@ Tools that appear "free" may require separate LLM subscriptions:
 | **Roo Cline** | ✅ | ✅ | ✅ | ✅ Code mode | ✅ Debug mode | ✅ Test mode | ✅ | Not doc. |
 | **Sourcegraph Cody** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Not doc. |
 | **Tabnine** | ✅ Primary | ✅ | ✅ | Not doc. | Not doc. | Not doc. | Not doc. | Not doc. |
+| **Windsurf** | ✅ (Tab) | ✅ Cascade | ✅ Cascade | ✅ Cascade | ✅ Cascade | ✅ Cascade | ✅ Cascade | Not doc. |
+| **OpenAI Codex** | ❌ | ✅ | ✅ | ✅ Agentic | ✅ Agentic | ✅ | ✅ | ✅ (GitHub PR) |
 
 **Key Finding:** All tools except ChatGPT (browser-based) provide code completion. All tools support multi-line generation and chat capabilities. GitHub Copilot and Amazon Q offer specialised security scanning and PR review features. Roo Cline, Claude Code, and Gemini Code Assist emphasise agentic workflows. ChatGPT focuses on conversational coding via Canvas without IDE integration.
 
@@ -555,6 +606,8 @@ This section consolidates third-party user reviews and experiences from multiple
 | **Gemini Code Assist** | Mixed | Free (180k completions/month) | Reliability issues, performance problems |
 | **ChatGPT Canvas** | Mixed | Collaborative coding interface | No IDE integration, cuts off code |
 | **Azure AI Toolkit** | Positive | Unified AI workflows, model catalog | Learning curve, not for simple completion |
+| **Windsurf** | Positive (with caveats) | Agentic UX, SWE models, free tier generosity | Pricing changes upset users, Cascade looping, credit limits changed |
+| **OpenAI Codex** | Mixed | Open-source CLI, ChatGPT bundle, sandbox security | Rate limits frustrating, Windows support experimental, API key feature gaps |
 
 *Source: Aggregated from reviews published 2024-2026 across multiple platforms*
 
@@ -1027,9 +1080,11 @@ When factoring in LLM access costs, the true pricing picture changes significant
 5. **Continue.** Continue Dev. https://docs.continue.dev/
 6. **Cursor.** Cursor. https://cursor.sh/
 7. **GitHub Copilot.** GitHub. https://docs.github.com/en/copilot
-8. **Roo Cline.** RooVetGit. https://github.com/RooVetGit/Roo-Cline
-9. **Sourcegraph Cody.** Sourcegraph. https://sourcegraph.com/cody
-10. **Tabnine.** Tabnine. https://www.tabnine.com/
+8. **OpenAI Codex (2026).** OpenAI. https://developers.openai.com/codex
+9. **Roo Cline.** RooVetGit. https://github.com/RooVetGit/Roo-Cline
+10. **Sourcegraph Cody.** Sourcegraph. https://sourcegraph.com/cody
+11. **Tabnine.** Tabnine. https://www.tabnine.com/
+12. **Windsurf.** Windsurf Inc. https://docs.windsurf.com
 
 ### Analysis Files
 
@@ -1042,9 +1097,11 @@ All detailed tool analyses are available in this directory:
 - [Continue Analysis](continue.md)
 - [Cursor Analysis](cursor.md)
 - [GitHub Copilot Chat Analysis](github-copilot-chat.md)
+- [OpenAI Codex Analysis](openai-codex.md)
 - [Roo Cline Analysis](roo-cline.md)
 - [Sourcegraph Cody Analysis](sourcegraph-cody.md)
 - [Tabnine Analysis](tabnine.md)
+- [Windsurf Analysis](windsurf.md)
 
 ### Methodology
 
@@ -1058,9 +1115,19 @@ Tool analysis template: [TOOL_ANALYSIS_TEMPLATE.md](../doc/templates/TOOL_ANALYS
 
 ## Changes Since January 2026
 
-**Update Date:** 21 February 2026
+**Update Date:** 25 February 2026
 
 This section summarises all changes identified since the original analysis date of 22 January 2026.
+
+### New Tools Analysed
+
+#### Windsurf
+
+Windsurf is an AI-first code editor launched in November 2024 by Windsurf Inc. (formerly Codeium) and now at Wave 13 / v1.13.3 (February 2026). It is a separate product from the Codeium extension (analysed separately at [codeium.md](codeium.md)). Windsurf features the Cascade AI agent, in-house SWE-1.5 frontier model, a rules and workflows system, full MCP support, and JetBrains integration. Over 1 million users as of February 2026. (Source: [Windsurf Documentation](https://docs.windsurf.com). Accessed 25 February 2026.)
+
+#### OpenAI Codex (2026)
+
+The new OpenAI Codex (2026) is a coding agent distinct from the deprecated Codex API (discontinued March 2023). It is available as an open-source CLI (Apache-2.0, Rust), a cloud-based agent at chatgpt.com/codex, and an IDE extension for VS Code, Cursor, Windsurf, and JetBrains IDEs. Included with ChatGPT Plus, Pro, Business, Edu, and Enterprise plans. Uses GPT-5.3-Codex and GPT-5.1-Codex-Mini models. Features AGENTS.md instruction system, full MCP support, and OS-level sandboxing. (Source: [OpenAI Codex Documentation](https://developers.openai.com/codex). Accessed 25 February 2026.)
 
 ### Tool Updates
 
@@ -1098,15 +1165,21 @@ Continue has reached its stable v1.0 release. OpenRouter has been added as a sup
 
 ### Feature Comparison Updates
 
-- **LLM Provider Support (§3.1):** GitHub Copilot Chat now includes Claude Agent SDK integration (public preview). Tabnine's BYOAI feature adds Claude, GPT-4o, Gemini, and Codestral support. GPT-5.3-Codex is now generally available in GitHub Copilot (9 February 2026).
-- **IDE Support (§3.3):** GitHub Copilot Coding Agent is now accessible from Visual Studio 2026. Tabnine added Visual Studio 2022 and 2026 support.
-- **Custom Prompts (§3.5):** Tabnine now supports predefined slash commands (`/code-review`), updating the previous "Not documented" status.
+- **LLM Provider Support (§3.1):** GitHub Copilot Chat now includes Claude Agent SDK integration (public preview). Tabnine's BYOAI feature adds Claude, GPT-4o, Gemini, and Codestral support. GPT-5.3-Codex is now generally available in GitHub Copilot (9 February 2026). Windsurf and OpenAI Codex added as new entries.
+- **MCP Support (§3.2):** Windsurf and OpenAI Codex both added with full MCP support, increasing tools count from 5 to 7.
+- **IDE Support (§3.3):** GitHub Copilot Coding Agent is now accessible from Visual Studio 2026. Tabnine added Visual Studio 2022 and 2026 support. Windsurf added as standalone editor with JetBrains plugin.
+- **Custom Instructions (§3.4):** Windsurf (`.windsurf/rules/`) and OpenAI Codex (`AGENTS.md`) added, increasing documented tools from 6 to 8.
+- **Custom Prompts (§3.5):** Tabnine now supports predefined slash commands. Windsurf (Workflows) and OpenAI Codex (profiles/AGENTS.md) added.
+- **Pricing (§3.6):** Windsurf Pro at $15/month, Teams at $30/user/month. OpenAI Codex included with ChatGPT plans.
 
 ### Technology Trends
 
 - **Multi-Agent Development:** VS Code is positioning itself as the platform for multi-agent development (v1.109, February 2026), with agent orchestrations, parallel subagents, and Agent Skills now available. (Source: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109). Accessed 21 February 2026.)
 - **Claude Agent SDK:** Integration of Anthropic's Claude Agent SDK into VS Code (public preview) expands the agent ecosystem beyond proprietary implementations. (Source: [GitHub Copilot in VS Code v1.109](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
 - **Open-Source Ecosystem Maturity:** Roo Cline rebranded to Roo Code (v3.2.0) with a dedicated documentation site, and Continue reached stable v1.0, reflecting increased maturity of open-source agentic tooling.
+- **Proprietary In-House Models:** Windsurf's SWE-1.5 model demonstrates the trend of coding-tool vendors building their own fine-tuned models rather than relying solely on third-party providers. (Source: [Windsurf Models](https://docs.windsurf.com/windsurf/models). Accessed 25 February 2026.)
+- **Open-Source CLI Agents:** OpenAI's Codex CLI (Apache-2.0) represents a trend towards open-source coding agents that can run locally with OS-level sandboxing. (Source: [OpenAI Codex GitHub](https://github.com/openai/codex). Accessed 25 February 2026.)
+- **Subscription Bundling:** The inclusion of Codex in existing ChatGPT plans without extra cost signals a trend of bundling agentic coding capabilities into existing AI subscription tiers.
 
 [↑ Back to top](#table-of-contents)
 
@@ -1124,6 +1197,8 @@ Continue has reached its stable v1.0 release. OpenRouter has been added as a sup
 - [Roo Cline](roo-cline.md) - AI-powered development assistant for VS Code with multiple operational modes
 - [Sourcegraph Cody](sourcegraph-cody.md) - AI coding assistant with deep codebase context and understanding
 - [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options
+- [Windsurf](windsurf.md) - AI-first IDE with Cascade agentic assistant and in-house SWE models
+- [OpenAI Codex](openai-codex.md) - OpenAI's coding agent available as CLI, cloud service, and IDE extension (2026)
 
 ---
 

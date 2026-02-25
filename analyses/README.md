@@ -22,6 +22,8 @@ This directory contains individual analyses of AI coding tools, each following t
 - [Cursor](cursor.md) - AI-first code editor built for productivity with deep AI integration
 - [Sourcegraph Cody](sourcegraph-cody.md) - AI coding assistant with deep codebase context and understanding
 - [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options
+- [Windsurf](windsurf.md) - AI-first code editor with Cascade agentic assistant, in-house SWE models, and MCP support
+- [OpenAI Codex](openai-codex.md) - OpenAI's coding agent available as CLI, cloud service, and IDE extension (2026; not to be confused with the deprecated 2021–2023 Codex API)
 
 ## Creating a New Analysis
 
