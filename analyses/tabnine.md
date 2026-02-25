@@ -1,4 +1,4 @@
-← [Previous: Sourcegraph Cody](sourcegraph-cody.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Claude Code](claude-code.md) →
+← [Previous: Sourcegraph Cody](sourcegraph-cody.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Windsurf](windsurf.md) →
 
 ---
 
@@ -834,4 +834,4 @@ This section summarises all changes to Tabnine identified since the original ana
 
 ---
 
-← [Previous: Sourcegraph Cody](sourcegraph-cody.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Claude Code](claude-code.md) →
+← [Previous: Sourcegraph Cody](sourcegraph-cody.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Windsurf](windsurf.md) →

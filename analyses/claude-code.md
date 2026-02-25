@@ -1,4 +1,4 @@
-← [Previous: Overview](overview.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
+← [Previous: OpenAI Codex](openai-codex.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
 
 ---
 
@@ -1443,7 +1443,7 @@ The official documentation quality is comprehensive:
 
 ---
 
-← [Previous: Overview](overview.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
+← [Previous: OpenAI Codex](openai-codex.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
 
 ---
 
