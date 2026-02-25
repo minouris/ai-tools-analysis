@@ -174,6 +174,8 @@ In Visual Studio Code, users can add Azure AI/Microsoft AI Foundry models throug
 
 **Authentication Methods:** GitHub personal access token (PAT), API keys, or provider-specific authentication as required by the model provider
 
+**Known Issue — Azure-hosted Anthropic models non-functional (February 2026):** In practice, Azure-hosted Anthropic models (e.g. Claude models deployed via Azure AI) cannot be added through the official model management screen in VS Code. Attempting to configure them via the VS Code settings JSON results in all Azure models disappearing from the model list in the chat panel. This appears to stem from a limitation in the Azure provider integration, which supports only a single API key for all Azure-hosted models. This is inconsistent with how Azure issues API keys (on a per-vendor basis), and no successful workaround has been identified. Azure-hosted Anthropic models should be considered non-functional in GitHub Copilot Chat until this is resolved.
+
 **Citation:** Changing the AI model for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat. Accessed 16 January 2026.
 
 ---
@@ -208,6 +210,8 @@ GitHub Copilot is powered by generative AI models developed by GitHub, OpenAI, a
 - **Supported Models:** Claude 3.5 Sonnet, Claude 3 Opus, Claude 3 Sonnet, and other Claude variants available through model selection
 
 **Features and Limitations:** Different models have different premium request multipliers, which can affect monthly usage allowance. Experimental pre-release versions may not interact with all filters correctly, including the setting to block suggestions matching public code.
+
+**Azure-hosted Anthropic models:** Although Microsoft AI Foundry hosts Anthropic Claude models and the Copilot documentation implies they can be added alongside other Azure models, in practice this does not work. Azure-hosted Anthropic models cannot be added via the model management screen, and attempting to configure them via settings results in all Azure models disappearing from the chat panel model list. This appears to be caused by the Azure provider integration supporting only a single API key for all Azure-hosted models, which conflicts with Azure's per-vendor key issuance. Direct Anthropic API key integration (as described above) continues to function correctly; the limitation applies only to Azure-hosted Anthropic model endpoints. See the Known Issue note in [2.3 Microsoft AI Foundry Integration](#23-microsoft-ai-foundry-integration) for further detail.
 
 **Claude Agent Support (Public Preview):** As of VS Code v1.109 (February 2026), GitHub Copilot users can delegate tasks to Anthropic's official Claude Agent SDK using Claude models from their existing Copilot subscription. This enables richer, specialist agent interactions directly within VS Code without requiring a separate Anthropic account.
 
@@ -926,6 +930,8 @@ gh copilot
 
 - **Content Exclusion Conflicts:** Content exclusion features can block Copilot suggestions in sensitive or excluded files, which is both a privacy advantage and a limitation when it unexpectedly restricts usefulness.
 
+- **Azure-hosted Anthropic models non-functional (February 2026):** Azure-hosted Anthropic models (e.g. Claude models deployed via Microsoft AI Foundry) cannot be added through the Copilot model management screen in VS Code. Attempting to configure them via the VS Code settings JSON causes all Azure models to vanish from the chat panel model list. The root cause appears to be that the Azure provider integration supports only a single API key for the entire Azure provider, which is incompatible with Azure's per-vendor key issuance model. No workaround has been identified; Azure-hosted Anthropic models should be treated as non-functional until a fix is available. Direct Anthropic API key integration (using an API key from Anthropic directly, not via Azure) is unaffected.
+
 **Minor Issues:**
 
 - **Outdated Suggestions:** Older Copilot installations may become less compatible with newer frameworks, leading to degraded performance until the extension is updated.
@@ -1051,6 +1057,7 @@ Developers who use GitHub Copilot report up to 75% higher satisfaction with thei
 ### Limitations
 
 - **Model management requires setup**: Adding Ollama, Azure AI, and other third-party models requires manual configuration through IDE-specific "Manage Models" interface
+- **Azure-hosted Anthropic models non-functional**: Azure-hosted Anthropic models cannot be added via the model management screen or settings configuration; attempting to do so causes all Azure models to disappear from the chat panel. No workaround has been identified (February 2026)
 - **VS Code-specific features**: Some features like prompt files are primarily documented in VS Code documentation rather than core GitHub Copilot documentation
 - **Subscription required**: Core features require paid subscription (Free tier has significant limitations: 2000 completions, 50 chat requests)
 - **Public preview features**: Some advanced features (Plan mode, Eclipse support, CLI) are in public preview and subject to change
@@ -1180,6 +1187,7 @@ Areas for improvement:
 |------|---------|---------|---------|
 | 16 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
 | 21 February 2026 | 1.1 | Updated with VS Code v1.109 changes (February 2026): multi-agent development focus, Claude Agent support, GPT-5.3-Codex, Gemini 3.1 Pro, agent hooks, MCP Apps, Plan agent revamp, message steering, Agent Session Management, parallel subagents, Mermaid diagram rendering, terminal command sandboxing, thinking tokens | GitHub Copilot |
+| 24 February 2026 | 1.2 | Documented known issue: Azure-hosted Anthropic models are non-functional in GitHub Copilot Chat (VS Code). Cannot be added via model management screen; configuring via settings causes all Azure models to vanish from chat panel. Root cause appears to be single-API-key limitation for Azure provider, incompatible with Azure's per-vendor key model. No workaround identified | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 
