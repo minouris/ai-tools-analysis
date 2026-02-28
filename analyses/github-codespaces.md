@@ -1,4 +1,4 @@
-← [Previous: GitHub Copilot Chat](github-copilot-chat.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Coding Agent](github-copilot-coding-agent.md) →
+← [Previous: GitHub Copilot Chat](github-copilot-chat.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Claude Integration](github-copilot-claude-integration.md) →
 
 ---
 
@@ -1196,4 +1196,4 @@ Citation: GitHub Codespaces Documentation. https://docs.github.com/en/codespaces
 
 ---
 
-← [Previous: GitHub Copilot Chat](github-copilot-chat.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Coding Agent](github-copilot-coding-agent.md) →
+← [Previous: GitHub Copilot Chat](github-copilot-chat.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Claude Integration](github-copilot-claude-integration.md) →

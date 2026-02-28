@@ -1,4 +1,4 @@
-← [Previous: GitHub Codespaces](github-codespaces.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
+← [Previous: GitHub Copilot Claude Integration](github-copilot-claude-integration.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
 
 ---
 
@@ -1299,4 +1299,4 @@ For users within monthly allowances, no additional costs beyond Copilot subscrip
 
 ---
 
-← [Previous: GitHub Codespaces](github-codespaces.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
+← [Previous: GitHub Copilot Claude Integration](github-copilot-claude-integration.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →

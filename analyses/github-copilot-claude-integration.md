@@ -1,4 +1,4 @@
-← [Previous: GitHub Copilot Chat](github-copilot-chat.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Coding Agent](github-copilot-coding-agent.md) →
+← [Previous: GitHub Codespaces](github-codespaces.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Coding Agent](github-copilot-coding-agent.md) →
 
 ---
 
@@ -631,4 +631,4 @@ At the time of writing (February 2026), agent skills are supported by the Copilo
 
 ---
 
-← [Previous: GitHub Copilot Chat](github-copilot-chat.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Coding Agent](github-copilot-coding-agent.md) →
+← [Previous: GitHub Codespaces](github-codespaces.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: GitHub Copilot Coding Agent](github-copilot-coding-agent.md) →
