@@ -1292,6 +1292,7 @@ For users within monthly allowances, no additional costs beyond Copilot subscrip
 ## See Also
 
 - [GitHub Copilot Chat](github-copilot-chat.md) - Interactive AI assistant in IDEs (synchronous)
+- [GitHub Copilot: Claude Integration Deep Dive](github-copilot-claude-integration.md) - Detailed analysis of Claude integration in GitHub Copilot, including the Claude Agent SDK delegation mode and CLAUDE.md support
 - [GitHub Codespaces](github-codespaces.md) - Cloud development environment that supports Copilot
 - [Roo Cline](roo-cline.md) - Similar autonomous agent for VS Code (local execution)
 - [Continue](continue.md) - AI assistant with agent capabilities
