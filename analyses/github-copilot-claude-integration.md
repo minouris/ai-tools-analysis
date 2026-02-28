@@ -32,12 +32,19 @@
   - [5.2 How Copilot Uses CLAUDE.md](#52-how-copilot-uses-claudemd)
   - [5.3 Supported Environments](#53-supported-environments)
   - [5.4 Restrictions and Limitations](#54-restrictions-and-limitations)
-- [6. Enabling and Configuring Claude](#6-enabling-and-configuring-claude)
-  - [6.1 Subscription Requirements](#61-subscription-requirements)
-  - [6.2 Organisation and Enterprise Policy Controls](#62-organisation-and-enterprise-policy-controls)
-- [7. Summary and Key Findings](#7-summary-and-key-findings)
-- [8. Completeness Checklist](#8-completeness-checklist)
-- [9. References](#9-references)
+- [6. Agent Skills Support](#6-agent-skills-support)
+  - [6.1 What are Agent Skills?](#61-what-are-agent-skills)
+  - [6.2 Supported Environments for Agent Skills](#62-supported-environments-for-agent-skills)
+  - [6.3 Skill Storage Locations and Cross-Compatibility](#63-skill-storage-locations-and-cross-compatibility)
+  - [6.4 SKILL.md Format: Copilot vs Claude Code](#64-skillmd-format-copilot-vs-claude-code)
+  - [6.5 Can Claude Code Skills Be Used in Copilot Without Modification?](#65-can-claude-code-skills-be-used-in-copilot-without-modification)
+  - [6.6 Claude Code Sub-Agents Are Not Agent Skills](#66-claude-code-sub-agents-are-not-agent-skills)
+- [7. Enabling and Configuring Claude](#7-enabling-and-configuring-claude)
+  - [7.1 Subscription Requirements](#71-subscription-requirements)
+  - [7.2 Organisation and Enterprise Policy Controls](#72-organisation-and-enterprise-policy-controls)
+- [8. Summary and Key Findings](#8-summary-and-key-findings)
+- [9. Completeness Checklist](#9-completeness-checklist)
+- [10. References](#10-references)
 - [Revision History](#revision-history)
 
 ---
@@ -333,9 +340,138 @@ The following restrictions and limitations apply to `CLAUDE.md` support in GitHu
 
 ---
 
-## 6. Enabling and Configuring Claude
+## 6. Agent Skills Support
 
-### 6.1 Subscription Requirements
+### 6.1 What are Agent Skills?
+
+Agent skills are folders of instructions, scripts, and resources that Copilot (and Claude Code) can load when relevant, to improve performance on specialised tasks. Each skill is a directory containing a required `SKILL.md` file (using YAML frontmatter and a Markdown body) plus any optional supporting resources such as scripts or examples.
+
+The Agent Skills specification is an **open standard** — not a proprietary Copilot or Claude invention. It is documented at https://github.com/agentskills/agentskills and is used by multiple AI systems, including both GitHub Copilot and Claude Code. This shared standard is the foundation for cross-tool compatibility.
+
+**Citation:** About agent skills. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-agent-skills. Accessed 28 February 2026. Skills. Claude Code Documentation. https://code.claude.com/docs/en/skills. Accessed 28 February 2026.
+
+### 6.2 Supported Environments for Agent Skills
+
+Agent skills in Copilot are **not universally supported**. Official documentation explicitly limits their scope:
+
+> "Agent Skills work with Copilot coding agent, the GitHub Copilot CLI and agent mode in Visual Studio Code Insiders. Support in the stable version of VS Code is coming soon."
+
+| Feature | Agent Skills Supported? |
+|---------|------------------------|
+| Copilot Coding Agent (cloud, GitHub.com) | ✅ Yes |
+| GitHub Copilot CLI | ✅ Yes |
+| Agent mode — VS Code Insiders | ✅ Yes |
+| Agent mode — VS Code stable | ⏳ Coming soon (not yet available) |
+| Copilot Chat (interactive chat, not agent mode) | ❌ Not documented |
+
+**Key limitation:** Agent skills are not available in the standard, stable release of VS Code at the time of writing (February 2026). Support for the stable VS Code release is listed as "coming soon" in official documentation.
+
+**Citation:** About agent skills. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-agent-skills. Accessed 28 February 2026. Creating agent skills for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-skills. Accessed 28 February 2026.
+
+### 6.3 Skill Storage Locations and Cross-Compatibility
+
+Both Copilot and Claude Code support the same skill storage locations, which enables direct sharing of skills between the two systems:
+
+| Skill Type | Copilot Locations | Claude Code Locations | Shared? |
+|-----------|------------------|-----------------------|---------|
+| **Project skills** (repository-specific) | `.github/skills/` or `.claude/skills/` | `.claude/skills/` | ✅ `.claude/skills/` is shared |
+| **Personal skills** (across all projects) | `~/.copilot/skills/` or `~/.claude/skills/` | `~/.claude/skills/` | ✅ `~/.claude/skills/` is shared |
+
+The `.claude/skills/` and `~/.claude/skills/` locations are read by **both** Copilot and Claude Code. Skills stored there are automatically available to both systems without any duplication or additional configuration.
+
+Skills stored in `.github/skills/` are Copilot-specific and not read by Claude Code. There is no equivalent `.github/`-rooted location in Claude Code.
+
+Organisation-level and enterprise-level skills are listed as "coming soon" in Copilot documentation; they are not yet available in either system.
+
+**Citation:** About agent skills. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-agent-skills. Accessed 28 February 2026. Creating agent skills for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-skills. Accessed 28 February 2026. Skills. Claude Code Documentation. https://code.claude.com/docs/en/skills. Accessed 28 February 2026.
+
+### 6.4 SKILL.md Format: Copilot vs Claude Code
+
+Both systems use `SKILL.md` files with YAML frontmatter, but the recognised fields differ:
+
+| Frontmatter Field | Copilot | Claude Code | Notes |
+|------------------|---------|-------------|-------|
+| `name` | ✅ Required | Optional (defaults to directory name) | Both use lowercase with hyphens |
+| `description` | ✅ Required | Recommended | Used by both to decide when to apply the skill |
+| `license` | Optional | Not documented | Copilot-specific metadata field |
+| `disable-model-invocation` | ❌ Not supported | Optional | Claude Code extension — ignored by Copilot |
+| `user-invocable` | ❌ Not supported | Optional | Claude Code extension — ignored by Copilot |
+| `allowed-tools` | ❌ Not supported | Optional | Claude Code extension — ignored by Copilot |
+| `model` | ❌ Not supported | Optional | Claude Code extension — ignored by Copilot |
+| `context` (fork/subagent) | ❌ Not supported | Optional | Claude Code extension — ignored by Copilot |
+| `agent` | ❌ Not supported | Optional | Claude Code extension — ignored by Copilot |
+| `hooks` | ❌ Not supported | Optional | Claude Code extension — ignored by Copilot |
+| `argument-hint` | ❌ Not supported | Optional | Claude Code extension — ignored by Copilot |
+
+Both systems use the same Markdown body format for the skill's instructions.
+
+**Citation:** Creating agent skills for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-skills. Accessed 28 February 2026. Skills. Claude Code Documentation. https://code.claude.com/docs/en/skills. Accessed 28 February 2026.
+
+### 6.5 Can Claude Code Skills Be Used in Copilot Without Modification?
+
+**Answer: Mostly yes, with conditions.**
+
+**Skills that work in Copilot without modification:**
+
+A Claude Code skill written using only the core fields (`name`, `description`, and a Markdown body) is directly compatible with Copilot. Since both systems follow the same Agent Skills open standard, such a skill requires no changes to work in both tools. If the skill is stored in `.claude/skills/`, it will be picked up by both Copilot and Claude Code automatically.
+
+Example of a fully compatible skill (works in both systems unchanged):
+
+```markdown
+---
+name: github-actions-failure-debugging
+description: Guide for debugging failing GitHub Actions workflows. Use this when asked to debug failing GitHub Actions workflows.
+---
+
+To debug failing GitHub Actions workflows, follow this process:
+
+1. Look up recent workflow runs and their status
+2. Get AI summaries of failed job logs
+3. Retrieve full logs if more detail is needed
+4. Reproduce the failure in your own environment
+5. Fix the failing build and verify before committing
+```
+
+**Skills that work in Copilot but with reduced functionality:**
+
+Claude Code skills using Claude-specific frontmatter fields (`disable-model-invocation`, `user-invocable`, `allowed-tools`, `model`, `context: fork`, `agent`, `hooks`) will be loaded by Copilot but the Claude Code-specific behaviour will not apply — those fields are silently ignored. The skill's Markdown body instructions will still be followed. This is not an error; Copilot simply does not implement those extensions to the standard.
+
+For example, a Claude Code skill with `disable-model-invocation: true` (which prevents Claude from invoking the skill automatically, requiring manual `/skill-name` invocation) will be treated by Copilot as a normal auto-invocable skill, since Copilot does not support that restriction.
+
+**Skills that use `$ARGUMENTS` substitution:**
+
+Claude Code supports dynamic argument substitution in skill content (e.g. `$ARGUMENTS`, `$0`, `$1`). This is a Claude Code extension. Copilot does not document support for argument substitution. Skills using `$ARGUMENTS` may have those placeholders treated as literal text by Copilot rather than being replaced.
+
+**Summary:**
+
+| Skill Type | Works in Copilot Without Modification? |
+|-----------|----------------------------------------|
+| Basic skill (name + description + Markdown body) | ✅ Yes, if stored in `.claude/skills/` |
+| Skill using Claude-specific frontmatter (`disable-model-invocation`, `allowed-tools`, etc.) | ⚠️ Partially — skill loads but Claude-specific behaviour is ignored |
+| Skill using `$ARGUMENTS` substitution | ⚠️ Unclear — not documented by Copilot; likely treated as literal text |
+| Skill stored in `.github/skills/` | ✅ Works in Copilot; not read by Claude Code |
+
+**Citation:** About agent skills. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-agent-skills. Accessed 28 February 2026. Skills. Claude Code Documentation. https://code.claude.com/docs/en/skills. Accessed 28 February 2026.
+
+### 6.6 Claude Code Sub-Agents Are Not Agent Skills
+
+It is important to distinguish between Claude Code's **skills** (`.claude/skills/`) and Claude Code's **sub-agents** (`.claude/agents/`). These are entirely separate concepts.
+
+**Claude Code sub-agents** are defined in Markdown files stored in `.claude/agents/`. They have a different and more complex YAML frontmatter schema (including `tools`, `model`, `permissionMode`, `maxTurns`, `mcpServers`, `hooks`, `memory`, `background`, `isolation`). Sub-agents are invoked via the `/agents` slash command within Claude Code and run with their own isolated context window.
+
+**Copilot has no equivalent to Claude Code sub-agents.** The `.claude/agents/` directory is not read by Copilot. There is no mechanism to port a Claude Code sub-agent definition directly to Copilot.
+
+The `/agents` slash command seen in VS Code when using the Claude Agent SDK is part of the Claude Agent SDK's own interface and is not a Copilot feature.
+
+**Citation:** Sub-agents. Claude Code Documentation. https://code.claude.com/docs/en/sub-agents. Accessed 28 February 2026. Third-party agents in Visual Studio Code. Visual Studio Code Documentation. https://code.visualstudio.com/docs/copilot/agents/third-party-agents. Accessed 28 February 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## 7. Enabling and Configuring Claude
+
+### 7.1 Subscription Requirements
 
 | Feature | Required Plan |
 |---------|--------------|
@@ -346,7 +482,7 @@ The Free plan does not have access to the Claude Agent SDK delegation feature. A
 
 **Citation:** About Anthropic Claude. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/anthropic-claude. Accessed 28 February 2026.
 
-### 6.2 Organisation and Enterprise Policy Controls
+### 7.2 Organisation and Enterprise Policy Controls
 
 For Business and Enterprise subscribers, the ability to use third-party coding agents (including Claude) is controlled by policy settings at the organisation or enterprise level. Organisation and enterprise admins must explicitly enable third-party coding agents before members can use them.
 
@@ -358,7 +494,7 @@ Coding agents (both the native Copilot Coding Agent and third-party agents inclu
 
 ---
 
-## 7. Summary and Key Findings
+## 8. Summary and Key Findings
 
 ### Summary of Claude Integrations
 
@@ -385,13 +521,19 @@ The zero data retention agreement between GitHub and Anthropic applies to genera
 **Local and cloud sessions available:**
 Unlike some third-party agents, the Claude Agent supports both local (within VS Code on the developer's machine) and cloud (GitHub-hosted, creating a pull request) session modes, providing flexibility for both interactive and background workflows.
 
-**Citation:** About Anthropic Claude. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/anthropic-claude. Accessed 28 February 2026. About third-party agents. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-third-party-agents. Accessed 28 February 2026. Third-party agents in Visual Studio Code. Visual Studio Code Documentation. https://code.visualstudio.com/docs/copilot/agents/third-party-agents. Accessed 28 February 2026. Support for different types of custom instructions. GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/custom-instructions-support. Accessed 28 February 2026. Hosting of models for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/ai-models/model-hosting. Accessed 28 February 2026.
+**Agent Skills compatibility with Claude Code:**
+Skills following the Agent Skills open standard (shared between Copilot and Claude Code) can be stored in `.claude/skills/` to be automatically available to both systems. Basic skills using only `name`, `description`, and a Markdown body are fully cross-compatible without modification. Claude Code-specific frontmatter fields are ignored by Copilot rather than causing errors. Claude Code sub-agents (`.claude/agents/`) are a separate concept and are not compatible with the Copilot skill system.
+
+**Agent skills not yet available in VS Code stable:**
+At the time of writing (February 2026), agent skills are supported by the Copilot Coding Agent, GitHub Copilot CLI, and agent mode in VS Code Insiders — but not yet in the stable release of VS Code. Support for VS Code stable is listed as coming soon.
+
+**Citation:** About Anthropic Claude. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/anthropic-claude. Accessed 28 February 2026. About third-party agents. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-third-party-agents. Accessed 28 February 2026. Third-party agents in Visual Studio Code. Visual Studio Code Documentation. https://code.visualstudio.com/docs/copilot/agents/third-party-agents. Accessed 28 February 2026. Support for different types of custom instructions. GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/custom-instructions-support. Accessed 28 February 2026. Hosting of models for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/ai-models/model-hosting. Accessed 28 February 2026. About agent skills. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-agent-skills. Accessed 28 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
 ---
 
-## 8. Completeness Checklist
+## 9. Completeness Checklist
 
 - [x] Overview of both Claude integration modes documented
 - [x] Supported Claude models listed with task areas
@@ -411,6 +553,12 @@ Unlike some third-party agents, the Claude Agent supports both local (within VS 
 - [x] Supported environments for CLAUDE.md tabulated
 - [x] Restrictions and limitations of CLAUDE.md support documented
 - [x] Subscription requirements for each feature documented
+- [x] Agent skills open standard and Copilot/Claude Code shared compatibility documented
+- [x] Supported environments for agent skills listed (with VS Code stable caveat)
+- [x] Shared skill storage locations (`.claude/skills/`, `~/.claude/skills/`) documented
+- [x] SKILL.md format differences between Copilot and Claude Code tabulated
+- [x] Cross-compatibility analysis: can Claude Code skills be used in Copilot without modification?
+- [x] Claude Code sub-agents distinguished from agent skills
 - [x] Organisation and enterprise policy controls documented
 - [x] All claims have citations to official documentation
 - [x] No assumptions or guesses made
@@ -420,7 +568,7 @@ Unlike some third-party agents, the Claude Agent supports both local (within VS 
 
 ---
 
-## 9. References
+## 10. References
 
 1. **About Anthropic Claude.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/anthropic-claude. Accessed 28 February 2026.
 
@@ -450,6 +598,16 @@ Unlike some third-party agents, the Claude Agent supports both local (within VS 
 
 14. **GitHub Copilot in Visual Studio Code v1.109 January Release.** GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 28 February 2026.
 
+15. **About agent skills.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-agent-skills. Accessed 28 February 2026.
+
+16. **Creating agent skills for GitHub Copilot.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-skills. Accessed 28 February 2026.
+
+17. **Creating agent skills for GitHub Copilot CLI.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-skills. Accessed 28 February 2026.
+
+18. **Skills.** Claude Code Documentation. https://code.claude.com/docs/en/skills. Accessed 28 February 2026.
+
+19. **Sub-agents.** Claude Code Documentation. https://code.claude.com/docs/en/sub-agents. Accessed 28 February 2026.
+
 [↑ Back to top](#table-of-contents)
 
 ---
@@ -459,6 +617,7 @@ Unlike some third-party agents, the Claude Agent supports both local (within VS 
 | Date | Version | Changes | Analyst |
 |------|---------|---------|---------|
 | 28 February 2026 | 1.0 | Initial analysis: Claude integration modes, delegation mode deep dive, CLAUDE.md support, restrictions and limitations | GitHub Copilot |
+| 28 February 2026 | 1.1 | Added section 6: Agent Skills Support — open standard cross-compatibility, shared storage locations, SKILL.md format comparison, Claude Code sub-agents distinction, VS Code stable caveat | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 
