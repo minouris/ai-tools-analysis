@@ -1,4 +1,4 @@
-← [Previous: GitHub Codespaces](github-codespaces.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
+← [Previous: GitHub Copilot Claude Integration](github-copilot-claude-integration.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
 
 ---
 
@@ -1292,10 +1292,11 @@ For users within monthly allowances, no additional costs beyond Copilot subscrip
 ## See Also
 
 - [GitHub Copilot Chat](github-copilot-chat.md) - Interactive AI assistant in IDEs (synchronous)
+- [GitHub Copilot: Claude Integration Deep Dive](github-copilot-claude-integration.md) - Detailed analysis of Claude integration in GitHub Copilot, including the Claude Agent SDK delegation mode and CLAUDE.md support
 - [GitHub Codespaces](github-codespaces.md) - Cloud development environment that supports Copilot
 - [Roo Cline](roo-cline.md) - Similar autonomous agent for VS Code (local execution)
 - [Continue](continue.md) - AI assistant with agent capabilities
 
 ---
 
-← [Previous: GitHub Codespaces](github-codespaces.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →
+← [Previous: GitHub Copilot Claude Integration](github-copilot-claude-integration.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Roo Cline](roo-cline.md) →

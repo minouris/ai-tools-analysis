@@ -1141,6 +1141,8 @@ The extension has been officially rebranded from "Roo Cline" to "Roo Code" as of
 
 VS Code v1.109 (4 February 2026) added multi-agent development as a primary focus, including Claude Agent SDK integration (public preview), agent orchestrations, Agent Skills, Copilot Memory, and parallel subagents. GPT-5.3-Codex became generally available for GitHub Copilot on 9 February 2026. (Sources: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109); [GitHub Copilot in VS Code v1.109](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/); [GPT-5.3-Codex GA](https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/). Accessed 21 February 2026.)
 
+For a detailed analysis of Claude integration in GitHub Copilot — including the Claude Agent SDK delegation mode, how it differs from regular agent mode, and restrictions on CLAUDE.md config file support — see [GitHub Copilot: Claude Integration Deep Dive](github-copilot-claude-integration.md).
+
 #### GitHub Copilot Coding Agent
 
 The Coding Agent is now accessible from Visual Studio 2026 (17 February 2026), in addition to VS Code and GitHub.com. SKILL.md files enable definition of custom agent skills. (Sources: [Delegate tasks from Visual Studio](https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio/); [GitHub Copilot in VS Code v1.109](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
@@ -1196,6 +1198,7 @@ Continue has reached its stable v1.0 release. OpenRouter has been added as a sup
 - [Continue](continue.md) - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
 - [Cursor](cursor.md) - AI-first code editor built for productivity with deep AI integration
 - [GitHub Copilot Chat](github-copilot-chat.md) - AI-powered code assistance and chat interface for software development
+- [GitHub Copilot: Claude Integration Deep Dive](github-copilot-claude-integration.md) - Detailed analysis of Claude integration in GitHub Copilot, including delegation mode and CLAUDE.md support
 - [Roo Cline](roo-cline.md) - AI-powered development assistant for VS Code with multiple operational modes
 - [Sourcegraph Cody](sourcegraph-cody.md) - AI coding assistant with deep codebase context and understanding
 - [Tabnine](tabnine.md) - AI-powered code completion tool with flexible deployment options

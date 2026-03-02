@@ -1201,6 +1201,7 @@ Areas for improvement:
 - [Codeium](codeium.md) - Free AI-powered code completion tool
 - [Continue](continue.md) - Open-source AI code assistant
 - [Cursor](cursor.md) - AI-first code editor
+- [GitHub Copilot: Claude Integration Deep Dive](github-copilot-claude-integration.md) - Detailed analysis of Claude integration in GitHub Copilot, including the Claude Agent SDK delegation mode, how it differs from regular agent mode, and restrictions on CLAUDE.md config file support
 - [Roo Cline](roo-cline.md) - AI coding assistant for VS Code
 - [Sourcegraph Cody](sourcegraph-cody.md) - AI assistant with codebase understanding
 - [Tabnine](tabnine.md) - AI code completion and chat assistant
