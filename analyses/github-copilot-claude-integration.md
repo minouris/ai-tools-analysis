@@ -574,7 +574,7 @@ Copilot Chat uses one premium request per user prompt, multiplied by the model's
 
 ### 8.5 Per-Session Cost: Copilot Coding Agent and Claude Agent SDK vs Direct API
 
-The Copilot Coding Agent and Claude Agent SDK delegation both use **one premium request per session**. Unlike individual chat turns, an agentic coding session encompasses many internal LLM calls as the agent reads files, writes code, runs tests, and iterates — yet all of this compute is included in the single premium request charge to the user.
+The Copilot Coding Agent uses **one base premium request per session**, which is then multiplied by the selected model's premium request multiplier shown above. During preview, Claude Agent SDK delegation instead consumes a flat **one premium request per session** with no multiplier applied. Unlike individual chat turns, an agentic coding session encompasses many internal LLM calls as the agent reads files, writes code, runs tests, and iterates — yet all of this compute is included in the single premium request charge to the user.
 
 **Estimated premium requests consumed per use case:**
 
@@ -591,12 +591,12 @@ The Copilot Coding Agent and Claude Agent SDK delegation both use **one premium 
 **Estimated token volume for an agentic feature ticket session:** ~150,000 input tokens + ~45,000 output tokens.
 *This is a representative estimate for a typical medium-complexity feature implementation. It covers the combined token usage across all internal LLM calls within a single coding agent session: code exploration (~30,000 tokens), code generation and file writes (~50,000 tokens), tool call results and debugging iterations (~50,000 tokens), and validation (~20,000 tokens). A simple bug fix is at the lower end (~30,000–50,000 total tokens); a complex multi-file refactor may exceed 300,000 tokens. The 150,000 token baseline is used throughout this section for consistency; actual costs will scale proportionally.*
 
-| Model | Copilot Coding Agent Overage Cost | Direct API Equivalent Cost | API : Copilot Ratio |
-|-------|----------------------------------|---------------------------|---------------------|
-| Claude Haiku 4.5 | $0.010 | ~$0.375 | Copilot is ~38× cheaper |
-| Claude Sonnet 4.6 | $0.040 | ~$1.125 | Copilot is ~28× cheaper |
-| Claude Opus 4.5 | $0.120 | ~$1.875 | Copilot is ~16× cheaper |
-| Claude Agent SDK delegation (any model, preview) | $0.040 | $0.375–$1.875 | Copilot is 10–47× cheaper |
+| Model | Copilot Coding Agent Overage Cost | Direct API Equivalent Cost | Copilot vs API |
+|-------|----------------------------------|---------------------------|----------------|
+| Claude Haiku 4.5 | $0.010 | ~$0.375 | ~38× cheaper |
+| Claude Sonnet 4.6 | $0.040 | ~$1.125 | ~28× cheaper |
+| Claude Opus 4.5 | $0.120 | ~$1.875 | ~16× cheaper |
+| Claude Agent SDK delegation (any model, preview) | $0.040 | $0.375–$1.875 | 10–47× cheaper |
 
 *Direct API costs are calculated as (150,000 × input rate) + (45,000 × output rate). For Haiku 4.5: (0.15 × $1.00) + (0.045 × $5.00) = $0.150 + $0.225 = $0.375.*
 
@@ -618,13 +618,13 @@ Claude Code operates under a subscription model that measures usage via rolling 
 
 **Cost comparison for a typical developer workload (20 feature tickets + 100 chat questions per month, Sonnet 4.6):**
 
-| Approach | Monthly Cost | Cost per Feature Ticket | Cost per Chat Question |
-|----------|-------------|------------------------|------------------------|
-| Copilot Pro (within 300-request allowance) | $10 | $0.033 (amortised) | $0.033 (amortised) |
-| Copilot Pro (at overage) | $0.04/request | $0.040 | $0.040 |
+| Approach | Plan Pricing (Fixed / Variable) | Cost per Feature Ticket | Cost per Chat Question |
+|----------|---------------------------------|------------------------|------------------------|
+| Copilot Pro (within 300-request allowance) | $10/month subscription | $0.033 (amortised) | $0.033 (amortised) |
+| Copilot Pro (at overage) | $0.04/request (overage) | $0.040 | $0.040 |
 | Claude Agent SDK delegation via Copilot (preview) | $0.04/session | $0.040 | N/A |
-| Claude Code Pro | $20 | ~$1.00 (amortised, 20 tickets) | ~$0.20 (amortised, 100 questions) |
-| Direct Anthropic API (Sonnet 4.6) | Per usage | ~$1.125 | ~$0.015 |
+| Claude Code Pro | $20/month subscription | ~$1.00 (amortised, 20 tickets) | ~$0.20 (amortised, 100 questions) |
+| Direct Anthropic API (Sonnet 4.6) | Usage-based (see per-ticket/per-question) | ~$1.125 | ~$0.015 |
 
 *Copilot Pro allowance at Sonnet 4.6 (1× multiplier): 20 feature tickets using Copilot Coding Agent (20 requests — one request per session) + 100 chat questions (100 requests) = 120 premium requests, well within the 300-request monthly allowance. Note: if feature tickets are implemented via iterative Copilot Chat agent mode (~8 prompts each) rather than the Coding Agent, the count increases to 160 + 100 = 260 requests — still within allowance.*
 
@@ -729,7 +729,7 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 - [x] Cost comparison table across Copilot plans, Claude Code, and direct API provided
 - [x] Claude Agent SDK delegation pricing distinction (no model multiplier in preview) documented
 - [x] All claims have citations to official documentation
-- [x] No assumptions or guesses made
+- [x] All assumptions and estimates are explicitly labelled and sourced where possible
 - [x] UK English used throughout
 
 [↑ Back to top](#table-of-contents)
