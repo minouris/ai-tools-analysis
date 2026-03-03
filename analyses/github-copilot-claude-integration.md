@@ -42,9 +42,17 @@
 - [7. Enabling and Configuring Claude](#7-enabling-and-configuring-claude)
   - [7.1 Subscription Requirements](#71-subscription-requirements)
   - [7.2 Organisation and Enterprise Policy Controls](#72-organisation-and-enterprise-policy-controls)
-- [8. Summary and Key Findings](#8-summary-and-key-findings)
-- [9. Completeness Checklist](#9-completeness-checklist)
-- [10. References](#10-references)
+- [8. Cost Comparison: Copilot Claude Mode vs Claude Code Standalone](#8-cost-comparison-copilot-claude-mode-vs-claude-code-standalone)
+  - [8.1 GitHub Copilot Plan Allowances and Overage Pricing](#81-github-copilot-plan-allowances-and-overage-pricing)
+  - [8.2 Claude Model Multipliers in Copilot](#82-claude-model-multipliers-in-copilot)
+  - [8.3 Anthropic API Pricing Reference](#83-anthropic-api-pricing-reference)
+  - [8.4 Per-Request Cost: Copilot Chat vs Direct API](#84-per-request-cost-copilot-chat-vs-direct-api)
+  - [8.5 Per-Session Cost: Copilot Coding Agent and Claude Agent SDK vs Direct API](#85-per-session-cost-copilot-coding-agent-and-claude-agent-sdk-vs-direct-api)
+  - [8.6 Claude Code Standalone Comparison](#86-claude-code-standalone-comparison)
+  - [8.7 Model Selection Architecture: Claude Code, Claude Agent SDK, and Copilot Coding Agent](#87-model-selection-architecture-claude-code-claude-agent-sdk-and-copilot-coding-agent)
+- [9. Summary and Key Findings](#9-summary-and-key-findings)
+- [10. Completeness Checklist](#10-completeness-checklist)
+- [11. References](#11-references)
 - [Revision History](#revision-history)
 
 ---
@@ -494,7 +502,224 @@ Coding agents (both the native Copilot Coding Agent and third-party agents inclu
 
 ---
 
-## 8. Summary and Key Findings
+## 8. Cost Comparison: Copilot Claude Mode vs Claude Code Standalone
+
+This section compares the cost of using GitHub Copilot with Claude models — both as the language model in Copilot Chat and in the Claude Agent SDK delegation mode — against using Claude Code standalone with an Anthropic subscription. Comparisons are provided per request and per feature ticket, across the Haiku, Sonnet, and Opus model families.
+
+> **Currency note:** All prices in this section are shown in New Zealand dollars (NZD) first, with US dollar (USD) equivalents in brackets. USD is the currency used in all official vendor pricing documentation. NZD equivalents are converted at the mid-market rate of **NZ$1.6974 per USD** (i.e. 1 USD = NZ$1.6974), sourced from XE.com Currency Converter at 22:14 UTC on 3 March 2026. Exchange rates fluctuate; verify the current rate before making purchasing decisions.
+>
+> **Citation:** XE.com Currency Converter. https://www.xe.com/currencyconverter/convert/?Amount=1&From=USD&To=NZD. Accessed 3 March 2026, 22:14 UTC.
+
+### 8.1 GitHub Copilot Plan Allowances and Overage Pricing
+
+Claude-powered Copilot features consume premium requests from the user's Copilot plan allowance. The following table shows the monthly allowance and overage rate for each plan.
+
+| Plan | Monthly Cost | Premium Requests/Month | Amortised Cost/Request | Overage Rate |
+|------|-------------|----------------------|----------------------|--------------|
+| Free | NZ$0 (USD $0) | 50 | — | Not available |
+| Pro | NZ$16.97/user (USD $10) | 300 | NZ$0.056 (USD $0.033) | NZ$0.068/request (USD $0.04) |
+| Pro+ | NZ$66.20/user (USD $39) | 1,500 | NZ$0.044 (USD $0.026) | NZ$0.068/request (USD $0.04) |
+| Business | NZ$32.25/user (USD $19) | 300 | NZ$0.107 (USD $0.063) | NZ$0.068/request (USD $0.04) |
+| Enterprise | NZ$66.20/user (USD $39) | 1,000 | NZ$0.066 (USD $0.039) | NZ$0.068/request (USD $0.04) |
+
+Unused premium requests expire at the end of each monthly billing period and do not carry over.
+
+*Note: Free, Pro, and Pro+ pricing and premium request allowances are confirmed from the official GitHub plans page and billing documentation. The Business plan price ($19/user/month) is confirmed from the GitHub Copilot billing documentation. Business and Enterprise premium request allowances are listed in the official GitHub Copilot plans comparison table; always verify current values at https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot. Enterprise plan pricing is listed as "pricing varies" in official billing documentation and should be confirmed with GitHub Sales or on the official plans page.*
+
+**Citation:** Plans for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot. Accessed 3 March 2026. About billing for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-copilot/about-billing-for-github-copilot. Accessed 3 March 2026. Requests in GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/billing/copilot-requests. Accessed 3 March 2026.
+
+### 8.2 Claude Model Multipliers in Copilot
+
+Each Claude model in Copilot has a premium request multiplier that scales the number of premium requests consumed per interaction. A multiplier of 1× means one user prompt consumes one premium request from the plan allowance.
+
+| Model | Multiplier | Effective Overage Cost per Chat Prompt |
+|-------|-----------|---------------------------------------|
+| Claude Haiku 4.5 | 0.25× | NZ$0.017 (USD $0.010) |
+| Claude Sonnet 4.5 / 4.6 | 1× | NZ$0.068 (USD $0.040) |
+| Claude Opus 4.5 | 3× | NZ$0.204 (USD $0.120) |
+| Claude Opus 4.6 | ~2× (not confirmed in official documentation) | ~NZ$0.136 (~USD $0.080) |
+
+**Notes:**
+
+- The multiplier values for Claude Haiku 4.5 (0.25×) and Claude Sonnet 4.5/4.6 (1×) are as listed in the official GitHub Copilot model multipliers table; verify current values at https://docs.github.com/en/copilot/concepts/billing/copilot-requests#model-multipliers.
+- The Claude Opus 4.5 multiplier (3×) is explicitly confirmed by example in the official documentation: "Using Claude Opus 4.5 in Copilot Chat: With a 3× multiplier, one interaction counts as 3 premium requests."
+- The multiplier for Claude Sonnet 4.6 is explicitly noted as "subject to change" in official documentation.
+- The multiplier for Claude Opus 4.6 has not been confirmed in official published documentation; the estimate above is based on the pattern established by Opus 4.5. Always verify the current value on the GitHub Copilot model comparison page.
+- Using Copilot auto model selection in VS Code provides a 10% discount on multipliers for paid plans (for example, Sonnet 4.6 would be billed at 0.9× rather than 1×).
+- The Claude Agent SDK delegation mode (third-party coding agent, currently in public preview) consumes **one premium request per session with no model multiplier**, regardless of which Claude model is used. This pricing may change when the feature reaches general availability.
+
+**Citation:** Requests in GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/billing/copilot-requests#model-multipliers. Accessed 3 March 2026. About third-party agents. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-third-party-agents. Accessed 3 March 2026. Supported AI models in GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/ai-models/supported-models. Accessed 3 March 2026.
+
+### 8.3 Anthropic API Pricing Reference
+
+The following table shows the Anthropic API direct rates for the equivalent Claude models, as published on the Anthropic developer platform. These rates represent the cost of calling the API directly, without a subscription wrapper.
+
+| Model | Input Tokens | Output Tokens |
+|-------|-------------|--------------|
+| Claude Haiku 4.5 | NZ$1.70/MTok (USD $1.00) | NZ$8.49/MTok (USD $5.00) |
+| Claude Sonnet 4.5 / 4.6 | NZ$5.09/MTok (USD $3.00) | NZ$25.46/MTok (USD $15.00) |
+| Claude Opus 4.5 / 4.6 | NZ$8.49/MTok (USD $5.00) | NZ$42.44/MTok (USD $25.00) |
+
+MTok = one million tokens. These are standard (non-cached, non-batch) rates for the Anthropic API. Prompt caching reduces input costs by up to 90% for repeated context; the Batch API offers 50% discounts for asynchronous processing. Neither optimisation is available through the Copilot subscription.
+
+**Citation:** Pricing. Anthropic Documentation. https://docs.anthropic.com/en/about-claude/pricing. Accessed 3 March 2026.
+
+### 8.4 Per-Request Cost: Copilot Chat vs Direct API
+
+Copilot Chat uses one premium request per user prompt, multiplied by the model's rate. The following comparison shows the cost of a single chat interaction at a representative estimated token volume.
+
+**Estimated token volume for a single Copilot Chat coding question:** ~2,000 input tokens + ~600 output tokens.
+*This is an estimate for a typical coding Q&A prompt comprising a question, a small code sample, and a detailed response. Actual usage varies with prompt length and response complexity.*
+
+| Model | Premium Requests Consumed | Copilot Overage Cost | Direct API Equivalent Cost | Overage : API Ratio |
+|-------|--------------------------|---------------------|---------------------------|---------------------|
+| Claude Haiku 4.5 | 0.25 | NZ$0.017 (USD $0.010) | ~NZ$0.008 (~USD $0.005) | ~2.0× |
+| Claude Sonnet 4.6 | 1.0 | NZ$0.068 (USD $0.040) | ~NZ$0.025 (~USD $0.015) | ~2.7× |
+| Claude Opus 4.5 | 3.0 | NZ$0.204 (USD $0.120) | ~NZ$0.042 (~USD $0.025) | ~4.8× |
+
+*Direct API costs are calculated as (input tokens × input rate) + (output tokens × output rate). For Haiku 4.5: (2,000 × USD $1.00/1,000,000) + (600 × USD $5.00/1,000,000) = USD $0.002 + USD $0.003 = USD $0.005 (NZ$0.008).*
+
+**Finding:** For a single chat interaction, Copilot's marginal (overage) pricing is approximately 2–5× higher than using the Anthropic API directly. Within the plan allowance, the amortised cost per request (NZ$0.044–NZ$0.107, USD $0.026–$0.063, depending on plan, before model multiplier) is comparable to the direct API rate, making the subscription a better overall value for regular use.
+
+### 8.5 Per-Session Cost: Copilot Coding Agent and Claude Agent SDK vs Direct API
+
+The Copilot Coding Agent uses **one base premium request per session**, which is then multiplied by the selected model's premium request multiplier shown above. During preview, Claude Agent SDK delegation instead consumes a flat **one premium request per session** with no multiplier applied. Unlike individual chat turns, an agentic coding session encompasses many internal LLM calls as the agent reads files, writes code, runs tests, and iterates — yet all of this compute is included in the single premium request charge to the user.
+
+**Estimated premium requests consumed per use case:**
+
+| Use Case | Haiku 4.5 | Sonnet 4.6 | Opus 4.5 |
+|----------|-----------|-----------|----------|
+| Copilot Chat: single question | 0.25 | 1 | 3 |
+| Copilot Chat: feature ticket via agent mode (~8 user prompts) | 2 | 8 | 24 |
+| Copilot Coding Agent: feature ticket (1 session) | 0.25 | 1 | 3 |
+| Copilot Coding Agent: feature ticket + 2 steering messages | 0.75 | 3 | 9 |
+| Claude Agent SDK delegation (preview, no multiplier): feature ticket | 1 | 1 | 1 |
+
+*Note: The Claude Agent SDK delegation mode (third-party coding agent, currently in public preview) is documented as consuming one premium request per session with no model multiplier — a flat NZ$0.068 (USD $0.04) at overage rates regardless of the Claude model selected. For the Copilot Coding Agent rows, the multiplier applies to the manually selected model. If using "Auto", which currently resolves to Sonnet 4.5 (1× multiplier), the Sonnet columns are the closest equivalent. See Section 8.7 for a full discussion of model selection and billing interactions across all three products.*
+
+**Estimated token volume for an agentic feature ticket session:** ~150,000 input tokens + ~45,000 output tokens.
+*This is a representative estimate for a typical medium-complexity feature implementation. It covers the combined token usage across all internal LLM calls within a single coding agent session: code exploration (~30,000 tokens), code generation and file writes (~50,000 tokens), tool call results and debugging iterations (~50,000 tokens), and validation (~20,000 tokens). A simple bug fix is at the lower end (~30,000–50,000 total tokens); a complex multi-file refactor may exceed 300,000 tokens. The 150,000 token baseline is used throughout this section for consistency; actual costs will scale proportionally.*
+
+| Model | Copilot Coding Agent Overage Cost | Direct API Equivalent Cost | Copilot vs API |
+|-------|----------------------------------|---------------------------|----------------|
+| Claude Haiku 4.5 | NZ$0.017 (USD $0.010) | ~NZ$0.637 (~USD $0.375) | ~38× cheaper |
+| Claude Sonnet 4.6 | NZ$0.068 (USD $0.040) | ~NZ$1.910 (~USD $1.125) | ~28× cheaper |
+| Claude Opus 4.5 | NZ$0.204 (USD $0.120) | ~NZ$3.183 (~USD $1.875) | ~16× cheaper |
+| Claude Agent SDK delegation (any model, preview) | NZ$0.068 (USD $0.040) | NZ$0.637–NZ$3.183 (USD $0.375–$1.875) | 10–47× cheaper |
+
+*Direct API costs are calculated as (150,000 × input rate) + (45,000 × output rate). For Haiku 4.5: (0.15 × USD $1.00) + (0.045 × USD $5.00) = USD $0.150 + USD $0.225 = USD $0.375 (NZ$0.637). Note: these figures assume the selected main model rate for all tokens; actual Claude Code direct API costs may be lower (Haiku subagent exploration) or higher (Opus as main model, or custom `model: opus` subagents) — see [Section 8.7](#87-model-selection-architecture-claude-code-claude-agent-sdk-and-copilot-coding-agent).*
+
+**Key finding:** The Copilot Coding Agent's session-based pricing is dramatically more cost-effective than direct Anthropic API access for the same agentic compute. At overage rates, a typical feature implementation costs NZ$0.017–NZ$0.204 (USD $0.01–$0.12) through Copilot, compared to NZ$0.637–NZ$3.183 (USD $0.375–$1.875) for equivalent direct API usage — a 16–38× cost advantage for Copilot at overage rates, rising further within the subscription allowance.
+
+### 8.6 Claude Code Standalone Comparison
+
+Claude Code operates under a subscription model that measures usage via rolling 5-hour windows rather than per-request charges. The following table summarises the available Claude Code subscription tiers.
+
+| Plan | Monthly Cost | Approx. Sonnet sessions / 5-hour window | Approx. Opus sessions / 5-hour window |
+|------|-------------|----------------------------------------|---------------------------------------|
+| Claude Pro | NZ$33.95 (USD $20) | ~100 | ~45 |
+| Claude Max 5× | NZ$169.74 (USD $100) | ~500 | ~225 |
+| Claude Max 20× | NZ$339.48 (USD $200) (verify at claude.com/pricing) | ~2,000 | ~900 |
+
+*Session counts are approximate rolling-window estimates derived from the plan usage multipliers (5× and 20× more usage than Pro). Actual capacity depends on request complexity and context length. The Max 20× price should be verified at https://claude.com/pricing as it is not explicitly stated in official text documentation reviewed for this analysis.*
+
+**Citation:** Pricing. Claude. https://claude.com/pricing. Accessed 3 March 2026. What is the Max plan? Anthropic Support. https://support.anthropic.com/en/articles/11049741-what-is-the-max-plan. Accessed 3 March 2026.
+
+**Cost comparison for a typical developer workload (20 feature tickets + 100 chat questions per month, Sonnet 4.6):**
+
+| Approach | Plan Pricing (Fixed / Variable) | Cost per Feature Ticket | Cost per Chat Question |
+|----------|---------------------------------|------------------------|------------------------|
+| Copilot Pro (within 300-request allowance) | NZ$16.97/month (USD $10) subscription | NZ$0.056 (USD $0.033) amortised | NZ$0.056 (USD $0.033) amortised |
+| Copilot Pro (at overage) | NZ$0.068/request (USD $0.04) overage | NZ$0.068 (USD $0.040) | NZ$0.068 (USD $0.040) |
+| Claude Agent SDK delegation via Copilot (preview) | NZ$0.068/session (USD $0.04) | NZ$0.068 (USD $0.040) | N/A |
+| Claude Code Pro | NZ$33.95/month (USD $20) subscription | ~NZ$1.70 (~USD $1.00) amortised, 20 tickets | ~NZ$0.34 (~USD $0.20) amortised, 100 questions |
+| Direct Anthropic API (Sonnet 4.6) | Usage-based (see per-ticket/per-question) | ~NZ$1.910 (~USD $1.125) | ~NZ$0.025 (~USD $0.015) |
+
+*Copilot Pro allowance at Sonnet 4.6 (1× multiplier): 20 feature tickets using Copilot Coding Agent (20 requests — one request per session) + 100 chat questions (100 requests) = 120 premium requests, well within the 300-request monthly allowance. Note: if feature tickets are implemented via iterative Copilot Chat agent mode (~8 prompts each) rather than the Coding Agent, the count increases to 160 + 100 = 260 requests — still within allowance.*
+
+**Key observations:**
+
+1. **Copilot Pro offers the lowest effective cost per feature ticket and chat question** for light-to-moderate use (up to 300 premium requests per month at Sonnet 4.6). At NZ$16.97/month (USD $10/month), the typical 20-ticket + 100-question workload fits comfortably within the included allowance at an amortised NZ$0.056 (USD $0.033) per request.
+
+2. **Claude Code Pro (NZ$33.95/month, USD $20/month) is cost-effective for intensive daily agentic use**, as the subscription covers all token consumption without per-session charges. A developer using Claude Code for several hours daily will encounter rate limits under the Pro tier, making Max tiers appropriate for sustained heavy use.
+
+3. **Direct Anthropic API** is the most expensive approach for agentic feature work (NZ$0.637–NZ$3.183, USD $0.375–$1.875, per session at standard rates) but offers maximum flexibility: no subscription, no session limits, and access to prompt caching and Batch API discounts that are unavailable through the Copilot or Claude Code subscription wrappers.
+
+4. **The Claude Agent SDK delegation mode (preview) benefits from a favourable flat rate** of one premium request per session with no model multiplier, making it the cheapest Copilot option per feature ticket (NZ$0.068, USD $0.040, at overage). This pricing may change at general availability.
+
+5. **For heavy Opus usage**, costs escalate quickly through Copilot. Five hundred agentic sessions per month at Opus 4.5 (3× multiplier) consumes the full Pro+ monthly allowance of 1,500 premium requests; 600 sessions would require 1,800 premium requests — exceeding the Pro+ allowance by 300 and incurring approximately NZ$20.37 (USD $12) in overage charges. Claude Code Max may be more predictable for power users who primarily use Opus.
+
+### 8.7 Model Selection Architecture: Claude Code, Claude Agent SDK, and Copilot Coding Agent
+
+Claude Code, the Claude Agent SDK, and the Copilot Coding Agent each approach model selection differently. Understanding these differences matters for billing: the mechanism that determines which model runs directly affects the multiplier charged per session.
+
+#### Claude Code's built-in subagents
+
+Claude Code routes different types of work to specialised subagents, each potentially using a different model. The following built-in subagents are documented officially:
+
+| Subagent | Model | Purpose |
+|----------|-------|---------|
+| Explore | Haiku (fast, low-latency) | Codebase search and exploration — file discovery, grep, pattern matching |
+| Plan | Inherits main session model | Research during plan mode — gathers context before presenting a plan |
+| General-purpose | Inherits main session model | Complex multi-step tasks requiring both exploration and code modification |
+| Bash | Inherits main session model | Running terminal commands in a separate context |
+| statusline-setup | Sonnet | Runs when `/statusline` is invoked to configure the status line |
+| Claude Code Guide | Haiku | Answering questions about Claude Code features |
+
+Claude Code's automatic per-operation model selection is confirmed by the documented built-in subagent assignments: the agent autonomously delegates subtasks to built-in subagents running the most appropriate model, with the model decided dynamically during execution rather than set before the session starts. Lightweight models (Haiku) are used where speed matters more than reasoning depth; the main session model handles complex multi-step work. These assignments apply to any matching operation — file exploration, bash execution, plan mode research, and so on. This is a runtime, per-operation dispatch, not a pre-session choice.
+
+Importantly, **no built-in subagent is hardcoded to Opus**. The three "inherit" subagents (Plan, General-purpose, Bash) use the same model as the user's main session. If the user selected Sonnet, those subagents run at Sonnet rates. If the user selected Opus, all three inherit-subagents run at Opus rates — but this is a direct consequence of the user's own model choice, not an autonomous upward escalation by Claude Code. The only built-in path to Opus appearing in a direct API session is when the user explicitly chose Opus as their main model.
+
+**Citation:** Sub-agents. Claude Code Documentation. https://docs.anthropic.com/en/docs/claude-code/sub-agents. Accessed 3 March 2026.
+
+#### Claude Agent SDK subagent support
+
+The Claude Agent SDK exposes the same subagent infrastructure that powers Claude Code, including support for model overrides. Custom subagents can specify `model: haiku`, `sonnet`, `opus`, or `inherit`. The built-in `general-purpose` subagent is available by default when the `Task` tool is included in `allowedTools`. Filesystem-based subagent definitions from `.claude/agents/` directories are also supported when `settingSources` includes `project`. As with Claude Code, a Claude Agent SDK session may internally dispatch Haiku for exploration subtasks and the main session model for complex reasoning — all within a single Copilot billing session.
+
+The `model: opus` option is available for custom subagents defined by developers. When a custom subagent specifies `model: opus`, Claude will automatically trigger it whenever the task matches the subagent's description — even if the user's main session model is Sonnet. For direct API usage, this is the scenario in which Opus tokens can appear unexpectedly in a session that started on Sonnet: not from built-in dispatch, but from a project-level custom subagent with a hardcoded Opus model.
+
+**Citation:** Subagents. Claude Agent SDK Documentation. https://platform.claude.com/docs/en/agent-sdk/subagents. Accessed 3 March 2026.
+
+#### Copilot Coding Agent: session-level auto model selection
+
+The Copilot Coding Agent uses a fundamentally different approach. Rather than per-operation model dispatch, it resolves to **one model for the entire session** before work begins. Users can manually select a model (Claude Sonnet 4.5, Opus 4.5, Opus 4.6, or Codex variants), or choose **Auto**. Official documentation states that "Auto" is currently optimised for model availability and reduces the chance of rate limiting; as of 3 March 2026 it selects Claude Sonnet 4.5 for the Coding Agent. The selected model runs all operations for that session.
+
+Unlike Claude Code's runtime subagent dispatch, this is a pre-session choice: Copilot resolves to a single model before the session starts, and that model's multiplier applies for the entire session.
+
+Key constraints on "Auto" selection for the Copilot Coding Agent:
+
+- Models with a premium request multiplier greater than 1× are **excluded** from "Auto" selection under the current availability-only model — so Opus (3×) will not be auto-selected. Whether this exclusion persists when the planned task-based selection is introduced is not yet documented.
+- Auto model selection for the Coding Agent is currently **only available on Pro and Pro+ plans**
+- The **10% multiplier discount** that applies to "Auto" selection in Copilot Chat does **not** apply to the Copilot Coding Agent
+- Official documentation notes that auto selection will in future also take task type into account when choosing a model — currently it is availability-only
+
+**Citation:** About Copilot auto model selection. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/auto-model-selection. Accessed 3 March 2026. Changing the AI model for GitHub Copilot coding agent. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/changing-the-ai-model. Accessed 3 March 2026.
+
+#### Effect on Copilot premium request billing
+
+**Copilot Coding Agent:** billing is per-session at the multiplier of the model resolved at session start. If the user selects or Auto-selects Sonnet 4.5 (1×), the session costs one premium request. If the user manually selects Opus 4.5 (3×), it costs three premium requests. Internal operations during the session all run on that same model — there is no per-operation model switching and therefore no change to the multiplier mid-session.
+
+**Claude Agent SDK (third-party coding agent):** GitHub's billing documentation for third-party coding agents states each session consumes one premium request. Unlike the entries for Copilot Chat and the native Copilot Coding Agent, the third-party agents entry does not include a "multiplied by the model's rate" clause, which indicates a flat rate of one premium request per session during preview — NZ$0.068 / USD $0.04 at overage — regardless of the model selected.
+
+The Copilot Chat window does present a model selector with multipliers when using Claude models; this reflects how model-multiplied features are presented across Copilot generally, and does not by itself confirm that the multiplier applies to third-party agent sessions. The absence of the multiplier clause in the official third-party agent billing documentation is the stronger signal during preview. Billing behaviour may change at general availability.
+
+**Internal subagent model switching (Claude Code and Claude Agent SDK):** subagent dispatching — including Haiku subagents invoked for exploration subtasks — does **not** generate additional Copilot premium requests in either product. Copilot bills the session as a single unit. The multiplier (or flat rate) is determined once per session, not once per subagent call.
+
+*Note on direct API cost estimates: the figures in [Section 8.5](#85-per-session-cost-copilot-coding-agent-and-claude-agent-sdk-vs-direct-api) assume the user's selected main model rate for all tokens. Actual costs may be lower or higher than that baseline:*
+
+- ***Lower** (exploration-heavy workflows on Sonnet): Explore-subagent tokens run at Haiku rates rather than Sonnet rates, reducing costs below the Sonnet row in the Section 8.5 table.*
+- ***Higher** (main model is Opus): all three "inherit" subagents — Plan, General-purpose, and Bash — run at Opus rates. With the same 150,000 input + 45,000 output token volume, that yields approximately NZ$3.183 (USD $1.875) — about 1.7× more than the Sonnet baseline of NZ$1.910 (USD $1.125), as shown in the Opus row of the Section 8.5 table.*
+- ***Higher** (custom `model: opus` subagents): if a project defines custom subagents with `model: opus`, those can be auto-triggered even when the main session model is Sonnet, raising costs above the Sonnet baseline in proportion to how many tokens they consume.*
+
+*For standard usage with no custom Opus subagents, choosing Sonnet as the main model means the Sonnet row in the Section 8.5 table is the reliable ceiling for direct API costs per session.*
+
+**Citation:** About third-party agents. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-third-party-agents. Accessed 3 March 2026. Requests in GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/billing/copilot-requests. Accessed 3 March 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## 9. Summary and Key Findings
 
 ### Summary of Claude Integrations
 
@@ -527,13 +752,22 @@ Skills following the Agent Skills open standard (shared between Copilot and Clau
 **Agent skills not yet available in VS Code stable:**
 At the time of writing (February 2026), agent skills are supported by the Copilot Coding Agent, GitHub Copilot CLI, and agent mode in VS Code Insiders — but not yet in the stable release of VS Code. Support for VS Code stable is listed as coming soon.
 
+**Copilot Coding Agent dramatically underprices direct API compute for agentic sessions:**
+At overage rates, a single Copilot Coding Agent feature ticket costs $0.01–$0.12 (depending on model and multiplier), compared to $0.375–$1.875 for equivalent direct Anthropic API usage. This represents a 16–38× cost advantage for Copilot. The session-based pricing model means all internal LLM calls within an agentic session are covered by a single premium request charge.
+
+**Claude Agent SDK delegation is priced more favourably than native Copilot Coding Agent during preview:**
+The Claude Agent SDK delegation mode (third-party coding agent) is documented as consuming one premium request per session with no model multiplier — a flat $0.04 at overage rates — compared to the native Copilot Coding Agent, which applies a model multiplier (for example, 3× for Opus 4.5). This pricing advantage may change at general availability.
+
+**Copilot Pro is cost-effective for light-to-moderate Claude usage:**
+A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 4.6 consumes only 120 of the 300 premium requests included in the Copilot Pro plan ($10/month). Claude Code Pro ($20/month) is more appropriate for developers working intensively with Claude Code throughout the day, as its subscription covers all token usage without per-session metering.
+
 **Citation:** About Anthropic Claude. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/anthropic-claude. Accessed 28 February 2026. About third-party agents. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-third-party-agents. Accessed 28 February 2026. Third-party agents in Visual Studio Code. Visual Studio Code Documentation. https://code.visualstudio.com/docs/copilot/agents/third-party-agents. Accessed 28 February 2026. Support for different types of custom instructions. GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/custom-instructions-support. Accessed 28 February 2026. Hosting of models for GitHub Copilot Chat. GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/ai-models/model-hosting. Accessed 28 February 2026. About agent skills. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-agent-skills. Accessed 28 February 2026.
 
 [↑ Back to top](#table-of-contents)
 
 ---
 
-## 9. Completeness Checklist
+## 10. Completeness Checklist
 
 - [x] Overview of both Claude integration modes documented
 - [x] Supported Claude models listed with task areas
@@ -560,15 +794,24 @@ At the time of writing (February 2026), agent skills are supported by the Copilo
 - [x] Cross-compatibility analysis: can Claude Code skills be used in Copilot without modification?
 - [x] Claude Code sub-agents distinguished from agent skills
 - [x] Organisation and enterprise policy controls documented
+- [x] GitHub Copilot plan allowances and overage pricing documented
+- [x] Claude model multipliers for Haiku, Sonnet, and Opus documented
+- [x] Anthropic API pricing reference provided for Haiku, Sonnet, and Opus
+- [x] Per-request cost comparison (Copilot Chat vs direct API) provided with calculations
+- [x] Per-session cost comparison (Copilot Coding Agent vs direct API) provided with calculations
+- [x] Estimated premium request count per use case (chat question vs feature ticket) documented
+- [x] Claude Code subscription tiers and session limits documented
+- [x] Cost comparison table across Copilot plans, Claude Code, and direct API provided
+- [x] Claude Agent SDK delegation pricing distinction (no model multiplier in preview) documented
 - [x] All claims have citations to official documentation
-- [x] No assumptions or guesses made
+- [x] All assumptions and estimates are explicitly labelled and sourced where possible
 - [x] UK English used throughout
 
 [↑ Back to top](#table-of-contents)
 
 ---
 
-## 10. References
+## 11. References
 
 1. **About Anthropic Claude.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/anthropic-claude. Accessed 28 February 2026.
 
@@ -608,6 +851,28 @@ At the time of writing (February 2026), agent skills are supported by the Copilo
 
 19. **Sub-agents.** Claude Code Documentation. https://code.claude.com/docs/en/sub-agents. Accessed 28 February 2026.
 
+20. **Plans for GitHub Copilot.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot. Accessed 3 March 2026.
+
+21. **Requests in GitHub Copilot.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/billing/copilot-requests. Accessed 3 March 2026.
+
+22. **Supported AI models in GitHub Copilot (model multipliers).** GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/ai-models/supported-models. Accessed 3 March 2026.
+
+23. **Pricing.** Anthropic Documentation. https://docs.anthropic.com/en/about-claude/pricing. Accessed 3 March 2026.
+
+24. **Pricing.** Claude. https://claude.com/pricing. Accessed 3 March 2026.
+
+25. **About billing for GitHub Copilot.** GitHub Copilot Documentation. https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-copilot/about-billing-for-github-copilot. Accessed 3 March 2026.
+
+26. **USD to NZD Currency Converter.** XE.com. https://www.xe.com/currencyconverter/convert/?Amount=1&From=USD&To=NZD. Accessed 3 March 2026, 22:14 UTC. Rate used: 1 USD = NZ$1.6974 (mid-market rate).
+
+27. **Sub-agents.** Claude Code Documentation. https://docs.anthropic.com/en/docs/claude-code/sub-agents. Accessed 3 March 2026.
+
+28. **Subagents.** Claude Agent SDK Documentation. https://platform.claude.com/docs/en/agent-sdk/subagents. Accessed 3 March 2026.
+
+29. **About Copilot auto model selection.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/auto-model-selection. Accessed 3 March 2026.
+
+30. **Changing the AI model for GitHub Copilot coding agent.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/changing-the-ai-model. Accessed 3 March 2026.
+
 [↑ Back to top](#table-of-contents)
 
 ---
@@ -618,6 +883,11 @@ At the time of writing (February 2026), agent skills are supported by the Copilo
 |------|---------|---------|---------|
 | 28 February 2026 | 1.0 | Initial analysis: Claude integration modes, delegation mode deep dive, CLAUDE.md support, restrictions and limitations | GitHub Copilot |
 | 28 February 2026 | 1.1 | Added section 6: Agent Skills Support — open standard cross-compatibility, shared storage locations, SKILL.md format comparison, Claude Code sub-agents distinction, VS Code stable caveat | GitHub Copilot |
+| 3 March 2026 | 1.2 | Added section 8: Cost Comparison — premium request allowances and overage pricing by plan, model multipliers for Haiku/Sonnet/Opus, Anthropic API pricing reference, per-request and per-session cost analysis with direct API equivalents, estimated premium requests per use case, Claude Code subscription comparison | GitHub Copilot |
+| 3 March 2026 | 1.3 | Updated section 8: corrected citation URLs (Anthropic pricing page, Claude subscription pricing page), added explicit verification notes for model multiplier values and Business/Enterprise plan allowances, added caveat for Claude Max 20× price, added Reference 25 (GitHub Copilot billing documentation) | GitHub Copilot |
+| 3 March 2026 | 1.4 | Updated section 8: added NZD prices (NZD first, USD in brackets) throughout all tables and prose, using mid-market rate NZ$1.6974/USD from XE.com at 22:14 UTC 3 March 2026; added currency conversion notice block; added Reference 26 (XE.com) | GitHub Copilot |
+| 3 March 2026 | 1.5 | Added section 8.7: Claude Code and Claude Agent SDK internal multi-model architecture — confirmed Haiku usage for Explore and Claude Code Guide subagents, corrected "web searches" framing to codebase exploration, confirmed Claude Agent SDK shares the same subagent infrastructure, confirmed Copilot billing is unaffected (flat one premium request per session regardless of internal model selection); updated ToC; added References 27 (Claude Code sub-agents docs) and 28 (Agent SDK subagents docs) | GitHub Copilot |
+| 3 March 2026 | 1.7 | Updated section 8.7: clarified when Opus may be auto-selected in Claude Code and Claude Agent SDK — no built-in subagent is hardcoded to Opus (inherit-subagents only use Opus when the user's main model is already Opus); documented that custom `model: opus` subagents can be auto-triggered as the only path to Opus appearing in a Sonnet session; updated direct API cost note in both 8.5 and 8.7 to be symmetric (costs may be lower via Haiku or higher via Opus, with ~1.7× quantification referencing the existing Section 8.5 Opus table row) | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 
