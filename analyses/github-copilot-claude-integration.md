@@ -519,7 +519,9 @@ Claude-powered Copilot features consume premium requests from the user's Copilot
 
 Unused premium requests expire at the end of each monthly billing period and do not carry over.
 
-**Citation:** Plans for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/get-started/plans. Accessed 3 March 2026. Requests in GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/billing/copilot-requests. Accessed 3 March 2026.
+*Note: Free, Pro, and Pro+ pricing and premium request allowances are confirmed from the official GitHub plans page and billing documentation. The Business plan price ($19/user/month) is confirmed from the GitHub Copilot billing documentation. Business and Enterprise premium request allowances are listed in the official GitHub Copilot plans comparison table; always verify current values at https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot. Enterprise plan pricing is listed as "pricing varies" in official billing documentation and should be confirmed with GitHub Sales or on the official plans page.*
+
+**Citation:** Plans for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot. Accessed 3 March 2026. About billing for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-copilot/about-billing-for-github-copilot. Accessed 3 March 2026. Requests in GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/billing/copilot-requests. Accessed 3 March 2026.
 
 ### 8.2 Claude Model Multipliers in Copilot
 
@@ -534,12 +536,14 @@ Each Claude model in Copilot has a premium request multiplier that scales the nu
 
 **Notes:**
 
+- The multiplier values for Claude Haiku 4.5 (0.25×) and Claude Sonnet 4.5/4.6 (1×) are as listed in the official GitHub Copilot model multipliers table; verify current values at https://docs.github.com/en/copilot/concepts/billing/copilot-requests#model-multipliers.
+- The Claude Opus 4.5 multiplier (3×) is explicitly confirmed by example in the official documentation: "Using Claude Opus 4.5 in Copilot Chat: With a 3× multiplier, one interaction counts as 3 premium requests."
 - The multiplier for Claude Sonnet 4.6 is explicitly noted as "subject to change" in official documentation.
 - The multiplier for Claude Opus 4.6 has not been confirmed in official published documentation; the estimate above is based on the pattern established by Opus 4.5. Always verify the current value on the GitHub Copilot model comparison page.
 - Using Copilot auto model selection in VS Code provides a 10% discount on multipliers for paid plans (for example, Sonnet 4.6 would be billed at 0.9× rather than 1×).
 - The Claude Agent SDK delegation mode (third-party coding agent, currently in public preview) consumes **one premium request per session with no model multiplier**, regardless of which Claude model is used. This pricing may change when the feature reaches general availability.
 
-**Citation:** Requests in GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/billing/copilot-requests. Accessed 3 March 2026. Supported AI models in GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/ai-models/supported-models. Accessed 3 March 2026.
+**Citation:** Requests in GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/billing/copilot-requests#model-multipliers. Accessed 3 March 2026. About third-party agents. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-third-party-agents. Accessed 3 March 2026. Supported AI models in GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/ai-models/supported-models. Accessed 3 March 2026.
 
 ### 8.3 Anthropic API Pricing Reference
 
@@ -553,7 +557,7 @@ The following table shows the Anthropic API direct rates for the equivalent Clau
 
 MTok = one million tokens. These are standard (non-cached, non-batch) rates for the Anthropic API. Prompt caching reduces input costs by up to 90% for repeated context; the Batch API offers 50% discounts for asynchronous processing. Neither optimisation is available through the Copilot subscription.
 
-**Citation:** Pricing. Anthropic Claude API Documentation. https://platform.claude.com/docs/en/about-claude/pricing. Accessed 3 March 2026.
+**Citation:** Pricing. Anthropic Documentation. https://docs.anthropic.com/en/about-claude/pricing. Accessed 3 March 2026.
 
 ### 8.4 Per-Request Cost: Copilot Chat vs Direct API
 
@@ -610,11 +614,11 @@ Claude Code operates under a subscription model that measures usage via rolling 
 |------|-------------|----------------------------------------|---------------------------------------|
 | Claude Pro | $20 | ~100 | ~45 |
 | Claude Max 5× | $100 | ~500 | ~225 |
-| Claude Max 20× | $200 | ~2,000 | ~900 |
+| Claude Max 20× | $200 (verify at claude.com/pricing) | ~2,000 | ~900 |
 
-*Session counts are approximate rolling-window estimates. Actual capacity depends on request complexity and context length.*
+*Session counts are approximate rolling-window estimates derived from the plan usage multipliers (5× and 20× more usage than Pro). Actual capacity depends on request complexity and context length. The Max 20× price should be verified at https://claude.com/pricing as it is not explicitly stated in official text documentation reviewed for this analysis.*
 
-**Citation:** Pricing. Claude. https://claude.ai/pricing. Accessed 3 March 2026.
+**Citation:** Pricing. Claude. https://claude.com/pricing. Accessed 3 March 2026. What is the Max plan? Anthropic Support. https://support.anthropic.com/en/articles/11049741-what-is-the-max-plan. Accessed 3 March 2026.
 
 **Cost comparison for a typical developer workload (20 feature tickets + 100 chat questions per month, Sonnet 4.6):**
 
@@ -776,15 +780,17 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 
 19. **Sub-agents.** Claude Code Documentation. https://code.claude.com/docs/en/sub-agents. Accessed 28 February 2026.
 
-20. **Plans for GitHub Copilot.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/get-started/plans. Accessed 3 March 2026.
+20. **Plans for GitHub Copilot.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot. Accessed 3 March 2026.
 
 21. **Requests in GitHub Copilot.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/billing/copilot-requests. Accessed 3 March 2026.
 
 22. **Supported AI models in GitHub Copilot (model multipliers).** GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/ai-models/supported-models. Accessed 3 March 2026.
 
-23. **Pricing.** Anthropic Claude API Documentation. https://platform.claude.com/docs/en/about-claude/pricing. Accessed 3 March 2026.
+23. **Pricing.** Anthropic Documentation. https://docs.anthropic.com/en/about-claude/pricing. Accessed 3 March 2026.
 
-24. **Pricing.** Claude. https://claude.ai/pricing. Accessed 3 March 2026.
+24. **Pricing.** Claude. https://claude.com/pricing. Accessed 3 March 2026.
+
+25. **About billing for GitHub Copilot.** GitHub Copilot Documentation. https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-copilot/about-billing-for-github-copilot. Accessed 3 March 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -797,6 +803,7 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 | 28 February 2026 | 1.0 | Initial analysis: Claude integration modes, delegation mode deep dive, CLAUDE.md support, restrictions and limitations | GitHub Copilot |
 | 28 February 2026 | 1.1 | Added section 6: Agent Skills Support — open standard cross-compatibility, shared storage locations, SKILL.md format comparison, Claude Code sub-agents distinction, VS Code stable caveat | GitHub Copilot |
 | 3 March 2026 | 1.2 | Added section 8: Cost Comparison — premium request allowances and overage pricing by plan, model multipliers for Haiku/Sonnet/Opus, Anthropic API pricing reference, per-request and per-session cost analysis with direct API equivalents, estimated premium requests per use case, Claude Code subscription comparison | GitHub Copilot |
+| 3 March 2026 | 1.3 | Updated section 8: corrected citation URLs (Anthropic pricing page, Claude subscription pricing page), added explicit verification notes for model multiplier values and Business/Enterprise plan allowances, added caveat for Claude Max 20× price, added Reference 25 (GitHub Copilot billing documentation) | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 
