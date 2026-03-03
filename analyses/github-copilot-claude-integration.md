@@ -505,17 +505,21 @@ Coding agents (both the native Copilot Coding Agent and third-party agents inclu
 
 This section compares the cost of using GitHub Copilot with Claude models — both as the language model in Copilot Chat and in the Claude Agent SDK delegation mode — against using Claude Code standalone with an Anthropic subscription. Comparisons are provided per request and per feature ticket, across the Haiku, Sonnet, and Opus model families.
 
+> **Currency note:** All prices in this section are shown in New Zealand dollars (NZD) first, with US dollar (USD) equivalents in brackets. USD is the currency used in all official vendor pricing documentation. NZD equivalents are converted at the mid-market rate of **NZ$1.6974 per USD** (i.e. 1 USD = NZ$1.6974), sourced from XE.com Currency Converter at 22:14 UTC on 3 March 2026. Exchange rates fluctuate; verify the current rate before making purchasing decisions.
+>
+> **Citation:** XE.com Currency Converter. https://www.xe.com/currencyconverter/convert/?Amount=1&From=USD&To=NZD. Accessed 3 March 2026, 22:14 UTC.
+
 ### 8.1 GitHub Copilot Plan Allowances and Overage Pricing
 
 Claude-powered Copilot features consume premium requests from the user's Copilot plan allowance. The following table shows the monthly allowance and overage rate for each plan.
 
 | Plan | Monthly Cost | Premium Requests/Month | Amortised Cost/Request | Overage Rate |
 |------|-------------|----------------------|----------------------|--------------|
-| Free | $0 | 50 | — | Not available |
-| Pro | $10/user | 300 | $0.033 | $0.04/request |
-| Pro+ | $39/user | 1,500 | $0.026 | $0.04/request |
-| Business | $19/user | 300 | $0.063 | $0.04/request |
-| Enterprise | $39/user | 1,000 | $0.039 | $0.04/request |
+| Free | NZ$0 (USD $0) | 50 | — | Not available |
+| Pro | NZ$16.97/user (USD $10) | 300 | NZ$0.056 (USD $0.033) | NZ$0.068/request (USD $0.04) |
+| Pro+ | NZ$66.20/user (USD $39) | 1,500 | NZ$0.044 (USD $0.026) | NZ$0.068/request (USD $0.04) |
+| Business | NZ$32.25/user (USD $19) | 300 | NZ$0.107 (USD $0.063) | NZ$0.068/request (USD $0.04) |
+| Enterprise | NZ$66.20/user (USD $39) | 1,000 | NZ$0.066 (USD $0.039) | NZ$0.068/request (USD $0.04) |
 
 Unused premium requests expire at the end of each monthly billing period and do not carry over.
 
@@ -529,10 +533,10 @@ Each Claude model in Copilot has a premium request multiplier that scales the nu
 
 | Model | Multiplier | Effective Overage Cost per Chat Prompt |
 |-------|-----------|---------------------------------------|
-| Claude Haiku 4.5 | 0.25× | $0.010 |
-| Claude Sonnet 4.5 / 4.6 | 1× | $0.040 |
-| Claude Opus 4.5 | 3× | $0.120 |
-| Claude Opus 4.6 | ~2× (not confirmed in official documentation) | ~$0.080 |
+| Claude Haiku 4.5 | 0.25× | NZ$0.017 (USD $0.010) |
+| Claude Sonnet 4.5 / 4.6 | 1× | NZ$0.068 (USD $0.040) |
+| Claude Opus 4.5 | 3× | NZ$0.204 (USD $0.120) |
+| Claude Opus 4.6 | ~2× (not confirmed in official documentation) | ~NZ$0.136 (~USD $0.080) |
 
 **Notes:**
 
@@ -551,9 +555,9 @@ The following table shows the Anthropic API direct rates for the equivalent Clau
 
 | Model | Input Tokens | Output Tokens |
 |-------|-------------|--------------|
-| Claude Haiku 4.5 | $1.00/MTok | $5.00/MTok |
-| Claude Sonnet 4.5 / 4.6 | $3.00/MTok | $15.00/MTok |
-| Claude Opus 4.5 / 4.6 | $5.00/MTok | $25.00/MTok |
+| Claude Haiku 4.5 | NZ$1.70/MTok (USD $1.00) | NZ$8.49/MTok (USD $5.00) |
+| Claude Sonnet 4.5 / 4.6 | NZ$5.09/MTok (USD $3.00) | NZ$25.46/MTok (USD $15.00) |
+| Claude Opus 4.5 / 4.6 | NZ$8.49/MTok (USD $5.00) | NZ$42.44/MTok (USD $25.00) |
 
 MTok = one million tokens. These are standard (non-cached, non-batch) rates for the Anthropic API. Prompt caching reduces input costs by up to 90% for repeated context; the Batch API offers 50% discounts for asynchronous processing. Neither optimisation is available through the Copilot subscription.
 
@@ -568,13 +572,13 @@ Copilot Chat uses one premium request per user prompt, multiplied by the model's
 
 | Model | Premium Requests Consumed | Copilot Overage Cost | Direct API Equivalent Cost | Overage : API Ratio |
 |-------|--------------------------|---------------------|---------------------------|---------------------|
-| Claude Haiku 4.5 | 0.25 | $0.010 | ~$0.005 | ~2.0× |
-| Claude Sonnet 4.6 | 1.0 | $0.040 | ~$0.015 | ~2.7× |
-| Claude Opus 4.5 | 3.0 | $0.120 | ~$0.025 | ~4.8× |
+| Claude Haiku 4.5 | 0.25 | NZ$0.017 (USD $0.010) | ~NZ$0.008 (~USD $0.005) | ~2.0× |
+| Claude Sonnet 4.6 | 1.0 | NZ$0.068 (USD $0.040) | ~NZ$0.025 (~USD $0.015) | ~2.7× |
+| Claude Opus 4.5 | 3.0 | NZ$0.204 (USD $0.120) | ~NZ$0.042 (~USD $0.025) | ~4.8× |
 
-*Direct API costs are calculated as (input tokens × input rate) + (output tokens × output rate). For Haiku 4.5: (2,000 × $1.00/1,000,000) + (600 × $5.00/1,000,000) = $0.002 + $0.003 = $0.005.*
+*Direct API costs are calculated as (input tokens × input rate) + (output tokens × output rate). For Haiku 4.5: (2,000 × USD $1.00/1,000,000) + (600 × USD $5.00/1,000,000) = USD $0.002 + USD $0.003 = USD $0.005 (NZ$0.008).*
 
-**Finding:** For a single chat interaction, Copilot's marginal (overage) pricing is approximately 2–5× higher than using the Anthropic API directly. Within the plan allowance, the amortised cost per request ($0.026–$0.063 depending on plan, before model multiplier) is comparable to the direct API rate, making the subscription a better overall value for regular use.
+**Finding:** For a single chat interaction, Copilot's marginal (overage) pricing is approximately 2–5× higher than using the Anthropic API directly. Within the plan allowance, the amortised cost per request (NZ$0.044–NZ$0.107, USD $0.026–$0.063, depending on plan, before model multiplier) is comparable to the direct API rate, making the subscription a better overall value for regular use.
 
 ### 8.5 Per-Session Cost: Copilot Coding Agent and Claude Agent SDK vs Direct API
 
@@ -590,21 +594,21 @@ The Copilot Coding Agent uses **one base premium request per session**, which is
 | Copilot Coding Agent: feature ticket + 2 steering messages | 0.75 | 3 | 9 |
 | Claude Agent SDK delegation (preview, no multiplier): feature ticket | 1 | 1 | 1 |
 
-*Note: The Claude Agent SDK delegation mode (third-party coding agent, currently in public preview) is documented as consuming one premium request per session with no model multiplier — a flat $0.04 at overage rates, regardless of the Claude model selected.*
+*Note: The Claude Agent SDK delegation mode (third-party coding agent, currently in public preview) is documented as consuming one premium request per session with no model multiplier — a flat NZ$0.068 (USD $0.04) at overage rates, regardless of the Claude model selected.*
 
 **Estimated token volume for an agentic feature ticket session:** ~150,000 input tokens + ~45,000 output tokens.
 *This is a representative estimate for a typical medium-complexity feature implementation. It covers the combined token usage across all internal LLM calls within a single coding agent session: code exploration (~30,000 tokens), code generation and file writes (~50,000 tokens), tool call results and debugging iterations (~50,000 tokens), and validation (~20,000 tokens). A simple bug fix is at the lower end (~30,000–50,000 total tokens); a complex multi-file refactor may exceed 300,000 tokens. The 150,000 token baseline is used throughout this section for consistency; actual costs will scale proportionally.*
 
 | Model | Copilot Coding Agent Overage Cost | Direct API Equivalent Cost | Copilot vs API |
 |-------|----------------------------------|---------------------------|----------------|
-| Claude Haiku 4.5 | $0.010 | ~$0.375 | ~38× cheaper |
-| Claude Sonnet 4.6 | $0.040 | ~$1.125 | ~28× cheaper |
-| Claude Opus 4.5 | $0.120 | ~$1.875 | ~16× cheaper |
-| Claude Agent SDK delegation (any model, preview) | $0.040 | $0.375–$1.875 | 10–47× cheaper |
+| Claude Haiku 4.5 | NZ$0.017 (USD $0.010) | ~NZ$0.637 (~USD $0.375) | ~38× cheaper |
+| Claude Sonnet 4.6 | NZ$0.068 (USD $0.040) | ~NZ$1.910 (~USD $1.125) | ~28× cheaper |
+| Claude Opus 4.5 | NZ$0.204 (USD $0.120) | ~NZ$3.183 (~USD $1.875) | ~16× cheaper |
+| Claude Agent SDK delegation (any model, preview) | NZ$0.068 (USD $0.040) | NZ$0.637–NZ$3.183 (USD $0.375–$1.875) | 10–47× cheaper |
 
-*Direct API costs are calculated as (150,000 × input rate) + (45,000 × output rate). For Haiku 4.5: (0.15 × $1.00) + (0.045 × $5.00) = $0.150 + $0.225 = $0.375.*
+*Direct API costs are calculated as (150,000 × input rate) + (45,000 × output rate). For Haiku 4.5: (0.15 × USD $1.00) + (0.045 × USD $5.00) = USD $0.150 + USD $0.225 = USD $0.375 (NZ$0.637).*
 
-**Key finding:** The Copilot Coding Agent's session-based pricing is dramatically more cost-effective than direct Anthropic API access for the same agentic compute. At overage rates, a typical feature implementation costs $0.01–$0.12 through Copilot, compared to $0.375–$1.875 for equivalent direct API usage — a 16–38× cost advantage for Copilot at overage rates, rising further within the subscription allowance.
+**Key finding:** The Copilot Coding Agent's session-based pricing is dramatically more cost-effective than direct Anthropic API access for the same agentic compute. At overage rates, a typical feature implementation costs NZ$0.017–NZ$0.204 (USD $0.01–$0.12) through Copilot, compared to NZ$0.637–NZ$3.183 (USD $0.375–$1.875) for equivalent direct API usage — a 16–38× cost advantage for Copilot at overage rates, rising further within the subscription allowance.
 
 ### 8.6 Claude Code Standalone Comparison
 
@@ -612,9 +616,9 @@ Claude Code operates under a subscription model that measures usage via rolling 
 
 | Plan | Monthly Cost | Approx. Sonnet sessions / 5-hour window | Approx. Opus sessions / 5-hour window |
 |------|-------------|----------------------------------------|---------------------------------------|
-| Claude Pro | $20 | ~100 | ~45 |
-| Claude Max 5× | $100 | ~500 | ~225 |
-| Claude Max 20× | $200 (verify at claude.com/pricing) | ~2,000 | ~900 |
+| Claude Pro | NZ$33.95 (USD $20) | ~100 | ~45 |
+| Claude Max 5× | NZ$169.74 (USD $100) | ~500 | ~225 |
+| Claude Max 20× | NZ$339.48 (USD $200) (verify at claude.com/pricing) | ~2,000 | ~900 |
 
 *Session counts are approximate rolling-window estimates derived from the plan usage multipliers (5× and 20× more usage than Pro). Actual capacity depends on request complexity and context length. The Max 20× price should be verified at https://claude.com/pricing as it is not explicitly stated in official text documentation reviewed for this analysis.*
 
@@ -624,25 +628,25 @@ Claude Code operates under a subscription model that measures usage via rolling 
 
 | Approach | Plan Pricing (Fixed / Variable) | Cost per Feature Ticket | Cost per Chat Question |
 |----------|---------------------------------|------------------------|------------------------|
-| Copilot Pro (within 300-request allowance) | $10/month subscription | $0.033 (amortised) | $0.033 (amortised) |
-| Copilot Pro (at overage) | $0.04/request (overage) | $0.040 | $0.040 |
-| Claude Agent SDK delegation via Copilot (preview) | $0.04/session | $0.040 | N/A |
-| Claude Code Pro | $20/month subscription | ~$1.00 (amortised, 20 tickets) | ~$0.20 (amortised, 100 questions) |
-| Direct Anthropic API (Sonnet 4.6) | Usage-based (see per-ticket/per-question) | ~$1.125 | ~$0.015 |
+| Copilot Pro (within 300-request allowance) | NZ$16.97/month (USD $10) subscription | NZ$0.056 (USD $0.033) amortised | NZ$0.056 (USD $0.033) amortised |
+| Copilot Pro (at overage) | NZ$0.068/request (USD $0.04) overage | NZ$0.068 (USD $0.040) | NZ$0.068 (USD $0.040) |
+| Claude Agent SDK delegation via Copilot (preview) | NZ$0.068/session (USD $0.04) | NZ$0.068 (USD $0.040) | N/A |
+| Claude Code Pro | NZ$33.95/month (USD $20) subscription | ~NZ$1.70 (~USD $1.00) amortised, 20 tickets | ~NZ$0.34 (~USD $0.20) amortised, 100 questions |
+| Direct Anthropic API (Sonnet 4.6) | Usage-based (see per-ticket/per-question) | ~NZ$1.910 (~USD $1.125) | ~NZ$0.025 (~USD $0.015) |
 
 *Copilot Pro allowance at Sonnet 4.6 (1× multiplier): 20 feature tickets using Copilot Coding Agent (20 requests — one request per session) + 100 chat questions (100 requests) = 120 premium requests, well within the 300-request monthly allowance. Note: if feature tickets are implemented via iterative Copilot Chat agent mode (~8 prompts each) rather than the Coding Agent, the count increases to 160 + 100 = 260 requests — still within allowance.*
 
 **Key observations:**
 
-1. **Copilot Pro offers the lowest effective cost per feature ticket and chat question** for light-to-moderate use (up to 300 premium requests per month at Sonnet 4.6). At $10/month, the typical 20-ticket + 100-question workload fits comfortably within the included allowance at an amortised $0.033 per request.
+1. **Copilot Pro offers the lowest effective cost per feature ticket and chat question** for light-to-moderate use (up to 300 premium requests per month at Sonnet 4.6). At NZ$16.97/month (USD $10/month), the typical 20-ticket + 100-question workload fits comfortably within the included allowance at an amortised NZ$0.056 (USD $0.033) per request.
 
-2. **Claude Code Pro ($20/month) is cost-effective for intensive daily agentic use**, as the subscription covers all token consumption without per-session charges. A developer using Claude Code for several hours daily will encounter rate limits under the Pro tier, making Max tiers appropriate for sustained heavy use.
+2. **Claude Code Pro (NZ$33.95/month, USD $20/month) is cost-effective for intensive daily agentic use**, as the subscription covers all token consumption without per-session charges. A developer using Claude Code for several hours daily will encounter rate limits under the Pro tier, making Max tiers appropriate for sustained heavy use.
 
-3. **Direct Anthropic API** is the most expensive approach for agentic feature work ($0.375–$1.875 per session at standard rates) but offers maximum flexibility: no subscription, no session limits, and access to prompt caching and Batch API discounts that are unavailable through the Copilot or Claude Code subscription wrappers.
+3. **Direct Anthropic API** is the most expensive approach for agentic feature work (NZ$0.637–NZ$3.183, USD $0.375–$1.875, per session at standard rates) but offers maximum flexibility: no subscription, no session limits, and access to prompt caching and Batch API discounts that are unavailable through the Copilot or Claude Code subscription wrappers.
 
-4. **The Claude Agent SDK delegation mode (preview) benefits from a favourable flat rate** of one premium request per session with no model multiplier, making it the cheapest Copilot option per feature ticket ($0.040 at overage). This pricing may change at general availability.
+4. **The Claude Agent SDK delegation mode (preview) benefits from a favourable flat rate** of one premium request per session with no model multiplier, making it the cheapest Copilot option per feature ticket (NZ$0.068, USD $0.040, at overage). This pricing may change at general availability.
 
-5. **For heavy Opus usage**, costs escalate quickly through Copilot. Five hundred agentic sessions per month at Opus 4.5 (3× multiplier) consumes the full Pro+ monthly allowance of 1,500 premium requests; 600 sessions would require 1,800 premium requests — exceeding the Pro+ allowance by 300 and incurring approximately $12 in overage charges. Claude Code Max may be more predictable for power users who primarily use Opus.
+5. **For heavy Opus usage**, costs escalate quickly through Copilot. Five hundred agentic sessions per month at Opus 4.5 (3× multiplier) consumes the full Pro+ monthly allowance of 1,500 premium requests; 600 sessions would require 1,800 premium requests — exceeding the Pro+ allowance by 300 and incurring approximately NZ$20.37 (USD $12) in overage charges. Claude Code Max may be more predictable for power users who primarily use Opus.
 
 [↑ Back to top](#table-of-contents)
 
@@ -792,6 +796,8 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 
 25. **About billing for GitHub Copilot.** GitHub Copilot Documentation. https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-copilot/about-billing-for-github-copilot. Accessed 3 March 2026.
 
+26. **USD to NZD Currency Converter.** XE.com. https://www.xe.com/currencyconverter/convert/?Amount=1&From=USD&To=NZD. Accessed 3 March 2026, 22:14 UTC. Rate used: 1 USD = NZ$1.6974 (mid-market rate).
+
 [↑ Back to top](#table-of-contents)
 
 ---
@@ -804,6 +810,7 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 | 28 February 2026 | 1.1 | Added section 6: Agent Skills Support — open standard cross-compatibility, shared storage locations, SKILL.md format comparison, Claude Code sub-agents distinction, VS Code stable caveat | GitHub Copilot |
 | 3 March 2026 | 1.2 | Added section 8: Cost Comparison — premium request allowances and overage pricing by plan, model multipliers for Haiku/Sonnet/Opus, Anthropic API pricing reference, per-request and per-session cost analysis with direct API equivalents, estimated premium requests per use case, Claude Code subscription comparison | GitHub Copilot |
 | 3 March 2026 | 1.3 | Updated section 8: corrected citation URLs (Anthropic pricing page, Claude subscription pricing page), added explicit verification notes for model multiplier values and Business/Enterprise plan allowances, added caveat for Claude Max 20× price, added Reference 25 (GitHub Copilot billing documentation) | GitHub Copilot |
+| 3 March 2026 | 1.4 | Updated section 8: added NZD prices (NZD first, USD in brackets) throughout all tables and prose, using mid-market rate NZ$1.6974/USD from XE.com at 22:14 UTC 3 March 2026; added currency conversion notice block; added Reference 26 (XE.com) | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 
