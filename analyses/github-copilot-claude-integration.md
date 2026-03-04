@@ -572,7 +572,7 @@ If you have existing Copilot instructions and want the Claude Agent SDK to follo
 
 **Option 1 — Duplicate content in `CLAUDE.md` (recommended; unambiguously supported)**
 
-Create a `CLAUDE.md` in the repository root containing the same instructions as your `.github/copilot-instructions.md`. This is the most explicit approach: `CLAUDE.md` is natively supported by both the Copilot Coding Agent (as a flat agent instructions file) and the Claude Agent SDK (as native project memory). Maintaining both files means each tool always reads its natively-supported instruction format. `CLAUDE.md` is also read by Copilot Chat (via the Copilot Coding Agent — see Section 5.3) — the `.github/copilot-instructions.md` file is still needed for Copilot Chat.
+Create a `CLAUDE.md` in the repository root containing the same instructions as your `.github/copilot-instructions.md`. This is the most explicit approach: `CLAUDE.md` is natively supported by both the Copilot Coding Agent (as a flat agent instructions file) and the Claude Agent SDK (as native project memory). Maintaining both files means each tool always reads its natively supported instruction format. Copilot Chat continues to rely on `.github/copilot-instructions.md` and does not read `CLAUDE.md` directly.
 
 **Option 2 — Use `@import` in `CLAUDE.md` to reference the Copilot file**
 
