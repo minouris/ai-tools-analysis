@@ -1,4 +1,4 @@
-← [Previous: OpenAI Codex](openai-codex.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
+← [Previous: OpenAI Codex](openai-codex.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Claude SDK](claude-sdk.md) →
 
 ---
 
@@ -1443,7 +1443,7 @@ The official documentation quality is comprehensive:
 
 ---
 
-← [Previous: OpenAI Codex](openai-codex.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Azure AI Toolkit](azure-ai-toolkit.md) →
+← [Previous: OpenAI Codex](openai-codex.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Claude SDK](claude-sdk.md) →
 
 ---
 

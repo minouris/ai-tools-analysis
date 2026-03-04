@@ -5,7 +5,7 @@
 # AI Coding Tools: Overview
 
 **Analysis Date:** 25 February 2026  
-**Tools Analysed:** 16 AI coding assistants and development platforms  
+**Tools Analysed:** 17 AI coding assistants and development platforms  
 **Methodology:** Based on official documentation and tool analysis files in this repository
 
 ## Table of Contents
@@ -38,21 +38,22 @@ This document provides a comprehensive comparison of 16 AI coding tools and deve
 ### Tools Included
 
 1. **[Claude Code](claude-code.md)** - Terminal-based agentic coding with MCP support
-2. **[Azure AI Toolkit](azure-ai-toolkit.md)** - Local and Azure model management for VS Code
-3. **[Continue](continue.md)** - Open-source multi-provider platform with MCP
-4. **[Gemini Code Assist](gemini-code-assist.md)** - Google Cloud enterprise AI assistant with agent mode
-5. **[GitHub Copilot Chat](github-copilot-chat.md)** - GitHub-native multi-mode assistant
-6. **[GitHub Copilot Coding Agent](github-copilot-coding-agent.md)** - Autonomous AI developer working independently in background
-7. **[GitHub Codespaces](github-codespaces.md)** - Cloud-hosted development environment platform
-8. **[Roo Cline](roo-cline.md)** - Open-source autonomous VS Code agent
-9. **[Amazon Q Developer](amazon-q-developer.md)** - AWS-focused AI assistant with security scanning
-10. **[ChatGPT](chatgpt.md)** - Browser-based AI chat with Canvas code editing (replaced deprecated Codex)
-11. **[Codeium](codeium.md)** - Free unlimited code completion and chat
-12. **[Cursor](cursor.md)** - AI-first standalone code editor
-13. **[Sourcegraph Cody](sourcegraph-cody.md)** - Deep codebase context via Sourcegraph
-14. **[Tabnine](tabnine.md)** - Privacy-focused with local deployment options
-15. **[Windsurf](windsurf.md)** - AI-first IDE with Cascade agentic assistant and in-house SWE models
-16. **[OpenAI Codex](openai-codex.md)** - OpenAI's coding agent available as CLI, cloud service, and IDE extension (2026)
+2. **[Claude SDK](claude-sdk.md)** - Programmatic API access to Claude models (Python, TypeScript, Java, Go, Ruby, C#, PHP)
+3. **[Azure AI Toolkit](azure-ai-toolkit.md)** - Local and Azure model management for VS Code
+4. **[Continue](continue.md)** - Open-source multi-provider platform with MCP
+5. **[Gemini Code Assist](gemini-code-assist.md)** - Google Cloud enterprise AI assistant with agent mode
+6. **[GitHub Copilot Chat](github-copilot-chat.md)** - GitHub-native multi-mode assistant
+7. **[GitHub Copilot Coding Agent](github-copilot-coding-agent.md)** - Autonomous AI developer working independently in background
+8. **[GitHub Codespaces](github-codespaces.md)** - Cloud-hosted development environment platform
+9. **[Roo Cline](roo-cline.md)** - Open-source autonomous VS Code agent
+10. **[Amazon Q Developer](amazon-q-developer.md)** - AWS-focused AI assistant with security scanning
+11. **[ChatGPT](chatgpt.md)** - Browser-based AI chat with Canvas code editing (replaced deprecated Codex)
+12. **[Codeium](codeium.md)** - Free unlimited code completion and chat
+13. **[Cursor](cursor.md)** - AI-first standalone code editor
+14. **[Sourcegraph Cody](sourcegraph-cody.md)** - Deep codebase context via Sourcegraph
+15. **[Tabnine](tabnine.md)** - Privacy-focused with local deployment options
+16. **[Windsurf](windsurf.md)** - AI-first IDE with Cascade agentic assistant and in-house SWE models
+17. **[OpenAI Codex](openai-codex.md)** - OpenAI's coding agent available as CLI, cloud service, and IDE extension (2026)
 
 ### Key Insights
 
