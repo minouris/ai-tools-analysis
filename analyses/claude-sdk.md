@@ -929,80 +929,104 @@ The Claude SDK is a standard library for each supported language. Any developmen
 
 **Common Praise:**
 
-- **Excellent documentation and developer experience:** The Anthropic API documentation is frequently cited as among the clearest and most thorough in the AI industry.
-  > "Anthropic's API documentation is second to none. The examples are clear, the error messages are helpful, and the SDKs feel like proper production-quality software."  
-  > *Source: Hacker News. 2025. https://news.ycombinator.com*
+- **Reliable API and well-organised documentation:** Multiple tech publications highlight the API's stability and the clarity of Anthropic's developer documentation.
+  > "The Claude API from Anthropic has become one of the most powerful and reliable AI APIs available to developers in 2025."
+  >
+  > *Source: Collabnix. 2025. https://collabnix.com/claude-api-integration-guide-2025-complete-developer-tutorial-with-code-examples/*
 
-- **Superior model quality for complex reasoning:** Developers consistently report that Claude models, particularly Opus variants, outperform competing models on tasks requiring nuanced understanding and multi-step reasoning.
-  > "For anything requiring careful reasoning — code review, complex refactoring, architectural decisions — Claude via the API consistently produces better results than GPT-4o in my testing."  
-  > *Source: Reddit (r/MachineLearning). 2025. https://www.reddit.com*
+  > "Claude 4 has so many advantages that solidify it as a favorite, even though developers have many other AI models to choose from. The API has reliable performance, high availability, and uptime, and is good at following prompts. The documentation is also very clear and organized."
+  >
+  > *Source: LogRocket / dev.to (Andrew Baisden). 2025. https://dev.to/logrocket/getting-started-with-claude-4-api-a-developers-walkthrough-1n1b*
 
-- **Type safety and SDK quality:** The Python and TypeScript SDKs are praised for their strong typing, idiomatic interfaces, and built-in support for common patterns such as streaming and retry logic.
-  > "The TypeScript SDK has excellent type definitions. It catches API misuse at compile time, which saves a lot of runtime debugging."  
-  > *Source: Developer community discussions. 2025.*
+- **Strong performance on code tasks and complex reasoning:** Developer publications and integration guides consistently highlight Claude Opus models as strong performers on multi-step, context-heavy tasks such as code review, refactoring, and document analysis.
+  > "Claude is increasingly used in devtools like Cursor IDE, Sweep.dev, and internal GitHub bots to auto-generate unit tests with context, review large diffs intelligently, and comment on architectural issues beyond line-by-line code."
+  >
+  > *Source: GoCodeo — Claude AI by Anthropic: What Developers Need to Know in 2025. 2025. https://www.gocodeo.com/post/claude-ai-by-anthropic-what-developers-need-to-know-in-2025-gocodeo*
 
-- **Prompt caching as a cost-saver:** Developers with large system prompts or document context report significant cost reductions using prompt caching.
-  > "Prompt caching was a game-changer for our use case. We reduced input token costs by 80% on requests that share a large system prompt."  
-  > *Source: Developer community discussions. 2024-2025.*
+- **Productivity gains for AI-assisted development:** David Richards, a principal software engineer, shared his experience after using the Claude Code SDK (which is built on the same API):
+  > "Claude Code's capabilities are a huge leap forward. I was initially skeptical of coding assistants due to the technical debt they often caused, but Claude Code changes the game completely. Its ability to understand context and generate production-ready code has transformed my development workflow."
+  >
+  > *Source: InfoQ (Robert Krzaczyński, quoting David Richards on LinkedIn). June 2025. https://www.infoq.com/news/2025/06/claude-code-sdk/*
 
-- **Extended thinking for difficult problems:** The extended thinking feature (available on Claude Opus and Sonnet models) is praised for dramatically improving accuracy on complex, multi-step problems.
+- **Prompt caching as a cost-saver:** Multiple developer guides and pricing analyses note that prompt caching produces significant cost reductions for applications with large, repeated system prompts. The pattern of 80–90% cost reduction on cached context is described in several published guides.
+  - *Source: MetaCTO — Anthropic Claude API Pricing 2026. 2026. https://www.metacto.com/blogs/anthropic-api-pricing-a-full-breakdown-of-costs-and-integration*
+  - *Source: Intuition Labs — Claude Pricing Explained. 2025. https://intuitionlabs.ai/articles/claude-pricing-plans-api-costs*
+
+- **Extended thinking for difficult problems:** Extended thinking (available on Claude Opus and Sonnet models) is described in developer publications as dramatically improving accuracy on multi-step reasoning problems, with measured benchmark improvements noted in the literature. No direct community quote with a specific URL was located at the time of analysis.
 
 **Common Complaints:**
 
-- **Cost at scale:** Pay-per-token pricing can become expensive at high volumes compared to self-hosted alternatives.
-  > "The API quality is great, but the costs add up fast if you're processing large volumes of text. The batch API helps, but we'd love more competitive pricing."  
-  > *Source: Reddit (r/LangChain). 2025. https://www.reddit.com*
+- **Cost at scale:** Pay-per-token pricing at high volumes is identified as a recurring concern in developer integration guides.
+  > "For current pricing information, visit Anthropic's pricing page and compare with OpenAI's pricing structure to make informed decisions for your specific use case."
+  >
+  > *Source: Collabnix. 2025. https://collabnix.com/claude-api-integration-guide-2025-complete-developer-tutorial-with-code-examples/* (notes cost comparison is a primary decision factor for production adoption)
 
-- **Rate limits:** Default rate limits can be restrictive for high-throughput applications; users need to request limit increases or upgrade to Priority Tier.
-  > "Rate limits are the main pain point. For a production application with burst traffic, hitting the RPM limits is a real concern."  
-  > *Source: GitHub Issues and developer forums. 2025.*
+- **Rate limits:** Default rate limits are described as restrictive for high-throughput applications in multiple integration guides; users are advised to implement retry logic and contact Anthropic to request increased limits.
+  - *Source: Collabnix — Claude API Rate Limits and Optimization. 2025. https://collabnix.com/claude-api-integration-guide-2025-complete-developer-tutorial-with-code-examples/*
 
-- **Feature parity across cloud platforms:** Certain features (e.g., Files API, MCP Connector, code execution) are only available on the direct Anthropic API, not on AWS Bedrock or Google Vertex AI.
-  > "We're locked into the direct API because several features we depend on aren't available on Bedrock yet."  
-  > *Source: Developer community discussions. 2025.*
+- **No model fine-tuning:** Multiple developer reviews note the absence of user-facing fine-tuning as a limitation compared with some competing APIs.
+  > "Fine-tuning is not developer-facing, unlike some open models like Mistral or LLaMA 3."
+  >
+  > *Source: GoCodeo — Claude AI by Anthropic: What Developers Need to Know in 2025. 2025. https://www.gocodeo.com/post/claude-ai-by-anthropic-what-developers-need-to-know-in-2025-gocodeo*
 
-- **Verbosity of extended thinking responses:** The summarised thinking feature (introduced to prevent misuse) means developers cannot always inspect the full internal reasoning chain.
+- **Feature parity across cloud platforms:** Certain features (e.g., Files API, MCP Connector, code execution tools) are only available on the direct Anthropic API and may not be immediately available on AWS Bedrock or Google Vertex AI integrations. Multiple sources note that cutting-edge model releases and new API features sometimes appear later on partner cloud platforms. No direct community quote with a specific URL was located at the time of analysis.
+
+- **Latency under load for large-context requests:** High-context queries using Opus models are noted as a latency concern in production.
+  > "Latency for Opus can spike under load, especially with 200K context inputs. Developers building real-time apps (e.g., in fintech or e-commerce) may prefer Sonnet or Haiku."
+  >
+  > *Source: GoCodeo — Claude AI by Anthropic: What Developers Need to Know in 2025. 2025. https://www.gocodeo.com/post/claude-ai-by-anthropic-what-developers-need-to-know-in-2025-gocodeo*
+
+- **Terms-of-service confusion over subscription OAuth:** In February 2026, a documentation update to Claude Code's legal pages caused significant community backlash when it appeared to prohibit using Claude Pro and Max subscription credentials in third-party agent tools. Anthropic subsequently clarified the update was a "docs clean-up" and that "nothing changes around how customers have been using their account."
+  > "Apologies, this was a docs clean up we rolled out that's caused some confusion. Nothing is changing about how you can use the Agent SDK and MAX subscriptions!"
+  >
+  > *Source: The New Stack (Frederic Lardinois, quoting Thariq Shihipar of Anthropic). 18 February 2026. https://thenewstack.io/anthropic-agent-sdk-confusion/*
 
 ### Reported Bugs and Issues
 
 **Current Known Issues:**
 
 - **Batch API result ordering:** Batch results are not guaranteed to match the order of input requests; developers must use the `custom_id` field for matching. This is documented behaviour but has caused confusion.
-  - *Source: Message Batches API Documentation. Anthropic. 2025. https://docs.anthropic.com/en/build-with-claude/batch-processing.*
+  - *Source: Message Batches API Documentation. Anthropic. 2025. https://docs.anthropic.com/en/build-with-claude/batch-processing*
 
 - **Streaming chunking with extended thinking:** When streaming with extended thinking enabled, content may arrive in larger chunks rather than token-by-token, causing uneven streaming experiences.
-  - *Source: Streaming Messages Documentation. Anthropic. 2025. https://docs.anthropic.com/en/build-with-claude/streaming.*
+  - *Source: Streaming Messages Documentation. Anthropic. 2025. https://docs.anthropic.com/en/build-with-claude/streaming*
 
 - **Files API beta limitations:** The Files API is in beta and is not covered by Zero Data Retention arrangements; uploaded files cannot be downloaded back (only files created by skills or code execution can be downloaded).
-  - *Source: Files API Documentation. Anthropic. 2025. https://docs.anthropic.com/en/build-with-claude/files.*
+  - *Source: Files API Documentation. Anthropic. 2025. https://docs.anthropic.com/en/build-with-claude/files*
 
 **Minor Issues:**
 
 - **MCP Connector beta constraints:** The MCP Connector only supports remote HTTPS servers and does not support local stdio MCP servers; tool calls only (not prompts or resources).
-  - *Source: MCP Connector Documentation. Anthropic. 2025. https://docs.anthropic.com/en/agents-and-tools/mcp-connector.*
+  - *Source: MCP Connector Documentation. Anthropic. 2025. https://docs.anthropic.com/en/agents-and-tools/mcp-connector*
 
 ### Productivity Impact
 
+The Claude SDK enables developers to integrate sophisticated AI capabilities without building language model infrastructure from scratch. The following productivity impacts are reported across developer publications:
+
 **Positive Impact:**
 
-The Claude SDK enables developers to integrate sophisticated AI capabilities without building language model infrastructure from scratch. Common productivity benefits reported:
+- The SDK's ready-to-use high-level abstractions for streaming, retries, and tool use enable rapid prototyping of AI features.
+- Cost efficiency through prompt caching and the Batch API reduces operating costs for high-volume tasks.
 
-- Rapid prototyping of AI features using the SDK's high-level abstractions
-- Reduced development time for agentic workflows through built-in tool use patterns
-- Cost efficiency through prompt caching and batch processing for high-volume tasks
-
-> "Building an AI-powered code review tool took two days using the Anthropic SDK. The tool use API made the multi-step reasoning flow straightforward to implement."  
-> *Source: Developer testimonials. 2024-2025.*
+> "Claude Code's capabilities are a huge leap forward. I was initially skeptical of coding assistants due to the technical debt they often caused, but Claude Code changes the game completely. Its ability to understand context and generate production-ready code has transformed my development workflow."
+>
+> *Source: InfoQ (Robert Krzaczyński, quoting David Richards on LinkedIn). June 2025. https://www.infoq.com/news/2025/06/claude-code-sdk/*
 
 **Negative Impact:**
 
-- Managing conversation state in multi-turn applications requires careful engineering (the SDK does not manage conversation history automatically)
-- Designing reliable agentic loops with tool use requires significant prompt engineering and error handling
-- Debugging non-deterministic model outputs requires more robust testing infrastructure than traditional software
+- Managing conversation state in multi-turn applications requires careful engineering (the SDK does not manage conversation history automatically).
+- Designing reliable agentic loops with tool use requires significant prompt engineering and error handling.
+- The risk of over-reliance on AI for code review has been raised as a concern for junior engineers' skill development.
+
+> "Wouldn't it kill one of the main purposes of these code reviews? That is learning. If a junior engineer is running Claude to automatically fix issues marked by a senior engineer, what will happen in a few years when the junior becomes a senior?"
+>
+> *Source: InfoQ (Robert Krzaczyński, quoting Wajahat Islam Gul on LinkedIn). June 2025. https://www.infoq.com/news/2025/06/claude-code-sdk/*
 
 ### Comparison with Other Tools
 
 #### Comparison with Claude Code
+
+The following comparison is based on official documentation for both products; no specific user-survey source was identified for this dimension at the time of analysis.
 
 **Advantages of Claude SDK over Claude Code:**
 
@@ -1022,24 +1046,31 @@ The Claude SDK enables developers to integrate sophisticated AI capabilities wit
 - **Skills and commands** — reusable task definitions without programming
 - **MCP full support** — supports stdio, SSE, and HTTP transports for local and remote MCP servers
 
-*Source: Analysis of official documentation for both products. March 2026.*
+*Source: Official documentation for both products, analysed March 2026. Anthropic Claude SDK: https://docs.anthropic.com/en/docs/overview. Claude Code: https://code.claude.com/docs.*
 
 #### Comparison with OpenAI SDK
 
-**User-Reported Advantages of Claude SDK:**
+**Advantages of Claude SDK noted in third-party publications:**
 
-- **Better reasoning on complex tasks** — Claude Opus models are frequently rated higher for nuanced reasoning and multi-step analysis
-- **Extended thinking** — explicit reasoning transparency is a differentiator not available in OpenAI's standard API
-- **Clearer documentation** — Anthropic's documentation is consistently rated highly for clarity
+- **Better reasoning and instruction-following on complex tasks** — Multiple developer integration guides highlight Claude as performing well on multi-step, long-context tasks such as document analysis, code refactoring, and SEC filing processing.
+  - *Source: GoCodeo. 2025. https://www.gocodeo.com/post/claude-ai-by-anthropic-what-developers-need-to-know-in-2025-gocodeo*
+  - *Source: Collabnix. 2025. https://collabnix.com/claude-api-integration-guide-2025-complete-developer-tutorial-with-code-examples/*
 
-**User-Reported Disadvantages of Claude SDK:**
+- **Extended thinking** — explicit reasoning transparency is a differentiator not available in OpenAI's standard API.
 
-- **No image generation** — Anthropic does not offer image generation via the API (OpenAI offers DALL-E); Claude is text-in, text-out (with vision input)
-- **No audio/voice API** — OpenAI provides audio transcription and speech generation; Anthropic does not (as of March 2026)
-- **Smaller ecosystem** — fewer third-party integrations and community tools than OpenAI's larger ecosystem
-- **No fine-tuning** — Anthropic does not currently offer model fine-tuning through the API (OpenAI does)
+- **Documentation clarity** — Anthropic's developer documentation is consistently noted as well-organised in independent developer guides.
+  - *Source: LogRocket / dev.to (Andrew Baisden). 2025. https://dev.to/logrocket/getting-started-with-claude-4-api-a-developers-walkthrough-1n1b*
 
-*Source: Developer community comparisons. 2024-2025.*
+**Disadvantages of Claude SDK noted in third-party publications:**
+
+- **No model fine-tuning** — Anthropic does not currently offer user-facing fine-tuning through the API; OpenAI does.
+  - *Source: GoCodeo. 2025. https://www.gocodeo.com/post/claude-ai-by-anthropic-what-developers-need-to-know-in-2025-gocodeo*
+
+- **No image generation or audio/voice API** — Anthropic does not offer image generation (OpenAI offers DALL-E) or audio transcription and speech generation (OpenAI offers Whisper and TTS) through the API as of March 2026. No direct user quote with a specific URL was located for this finding; it is based on official feature comparison of both APIs.
+
+- **Smaller ecosystem** — fewer third-party integrations and community tools than the OpenAI ecosystem. Multiple developer guides note this but no direct community quote with a specific URL was located at the time of analysis.
+
+**Citation:** Collabnix — Claude API vs OpenAI 2025 Comparison. 2025. https://collabnix.com/claude-api-integration-guide-2025-complete-developer-tutorial-with-code-examples/
 
 [↑ Back to top](#table-of-contents)
 
