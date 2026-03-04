@@ -1,4 +1,4 @@
-← [Previous: Claude Code](claude-code.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Continue](continue.md) →
+← [Previous: Claude SDK](claude-sdk.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Continue](continue.md) →
 
 ---
 
@@ -798,7 +798,7 @@ The documentation for Azure AI Toolkit is spread across multiple sources (Azure 
 
 ---
 
-← [Previous: Claude Code](claude-code.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Continue](continue.md) →
+← [Previous: Claude SDK](claude-sdk.md) | ↑ [Parent: Tool Analyses](README.md) | [Next: Continue](continue.md) →
 
 ---
 

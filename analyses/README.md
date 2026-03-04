@@ -9,6 +9,7 @@ This directory contains individual analyses of AI coding tools, each following t
 ## Current Analyses
 
 - [Claude Code](claude-code.md) - Terminal-based agentic coding tool from Anthropic with MCP support, plugin system, and VS Code integration
+- [Claude SDK](claude-sdk.md) - Anthropic's official client SDK libraries for programmatic access to Claude models via the API (Python, TypeScript, Java, Go, Ruby, C#, PHP)
 - [Azure AI Toolkit for Visual Studio Code](azure-ai-toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
 - [Continue](continue.md) - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
 - [Gemini Code Assist](gemini-code-assist.md) - Google Cloud's enterprise AI coding assistant with agent mode, MCP support, and Google Cloud integration
