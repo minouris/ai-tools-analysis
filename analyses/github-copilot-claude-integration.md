@@ -23,6 +23,7 @@
   - [3.4 Claude Agent Slash Commands](#34-claude-agent-slash-commands)
   - [3.5 Permission Modes](#35-permission-modes)
   - [3.6 Billing and Usage Costs](#36-billing-and-usage-costs)
+  - [3.7 Assigning GitHub Issues to the Claude Coding Agent](#37-assigning-github-issues-to-the-claude-coding-agent)
 - [4. How Claude Delegation Differs from Regular Agent Mode](#4-how-claude-delegation-differs-from-regular-agent-mode)
   - [4.1 Architecture Comparison](#41-architecture-comparison)
   - [4.2 Feature Comparison Table](#42-feature-comparison-table)
@@ -32,13 +33,21 @@
   - [5.2 How Copilot Uses CLAUDE.md](#52-how-copilot-uses-claudemd)
   - [5.3 Supported Environments](#53-supported-environments)
   - [5.4 Restrictions and Limitations](#54-restrictions-and-limitations)
-- [6. Agent Skills Support](#6-agent-skills-support)
+  - [5.5 CLAUDE.md Support in Claude Agent SDK Mode vs Default Copilot Agent Mode](#55-claudemd-support-in-claude-agent-sdk-mode-vs-default-copilot-agent-mode)
+  - [5.6 Master Comparison: All Claude Configuration File Types](#56-master-comparison-all-claude-configuration-file-types)
+  - [5.7 Does the Claude Agent SDK Read Copilot Instruction Files?](#57-does-the-claude-agent-sdk-read-copilot-instruction-files)
+- [6. Agent Skills, Commands, Hooks, and Settings Support](#6-agent-skills-commands-hooks-and-settings-support)
   - [6.1 What are Agent Skills?](#61-what-are-agent-skills)
   - [6.2 Supported Environments for Agent Skills](#62-supported-environments-for-agent-skills)
   - [6.3 Skill Storage Locations and Cross-Compatibility](#63-skill-storage-locations-and-cross-compatibility)
   - [6.4 SKILL.md Format: Copilot vs Claude Code](#64-skillmd-format-copilot-vs-claude-code)
   - [6.5 Can Claude Code Skills Be Used in Copilot Without Modification?](#65-can-claude-code-skills-be-used-in-copilot-without-modification)
-  - [6.6 Claude Code Sub-Agents Are Not Agent Skills](#66-claude-code-sub-agents-are-not-agent-skills)
+  - [6.6 Sub-Agents: Copilot Coding Agent vs Claude Agent SDK](#66-sub-agents-copilot-coding-agent-vs-claude-agent-sdk)
+  - [6.7 Skills: Claude Agent SDK Mode vs Copilot Coding Agent](#67-skills-claude-agent-sdk-mode-vs-copilot-coding-agent)
+  - [6.8 Custom Slash Commands (`.claude/commands/`)](#68-custom-slash-commands-claudecommands)
+  - [6.9 Hooks (`.claude/settings.json`)](#69-hooks-claudesettingsjson)
+  - [6.10 Settings and Permissions (`.claude/settings.json`)](#610-settings-and-permissions-claudesettingsjson)
+  - [6.11 MCP Server Configuration (`.mcp.json`)](#611-mcp-server-configuration-mcpjson)
 - [7. Enabling and Configuring Claude](#7-enabling-and-configuring-claude)
   - [7.1 Subscription Requirements](#71-subscription-requirements)
   - [7.2 Organisation and Enterprise Policy Controls](#72-organisation-and-enterprise-policy-controls)
@@ -221,6 +230,94 @@ Within the monthly usage allowance for GitHub Actions and premium requests, codi
 
 ---
 
+### 3.7 Assigning GitHub Issues to the Claude Coding Agent
+
+**Short answer: yes — but only on Pro+ or Enterprise.** The Anthropic Claude coding agent is a full third-party coding agent and supports all the same issue-assignment entry points as the native Copilot Coding Agent. This is the cloud session path: the agent runs on GitHub's infrastructure, implements the issue, and opens a pull request for review — the same end-to-end workflow as Copilot Coding Agent, but powered by Anthropic's Claude Agent SDK.
+
+#### Required plan
+
+The official GitHub documentation for issue assignment is explicit: the agent dropdown that exposes third-party agents including Claude is **only available in GitHub Copilot Pro+ and Copilot Enterprise plans**. This is documented in Step 8 of the "Assigning an issue to Copilot on GitHub.com" workflow:
+
+> "Third-party coding agents are available in the GitHub Copilot **Pro+ and Copilot Enterprise** plans."
+
+Users on the basic **Pro plan** do not have access to the third-party agent dropdown and cannot select Claude from the issue assignment dialog. The top-level `about-third-party-agents` overview page lists Pro, Pro+, Business, and Enterprise in its "Who can use this feature?" header, but this refers to the third-party agents feature broadly. The specific issue-assignment dropdown that exposes Claude requires Pro+ or Enterprise.
+
+**Citation:** Asking GitHub Copilot to create a pull request. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-a-pr#assigning-an-issue-to-copilot-on-githubcom. Accessed 3 March 2026.
+
+#### Prerequisites
+
+Before assigning issues to the Claude coding agent:
+
+1. **Confirm your plan**: You need **GitHub Copilot Pro+ or Enterprise**. The basic Pro plan does not include the third-party agent dropdown.
+2. **Enable third-party agents** in your Copilot settings. Navigate to [coding agent settings](https://github.com/settings/copilot/coding_agent) and under "Partner agents", toggle on **Anthropic Claude**.
+
+#### How to assign an issue to Claude (GitHub.com)
+
+1. Open the issue you want to assign in the repository on GitHub.com.
+2. In the right sidebar, click **Assignees**.
+3. Select **Copilot** from the assignees list. An "Assign to Copilot" dialog appears.
+4. In the dialog, click the **agent dropdown** and select **Anthropic Claude** to use the Claude coding agent instead of the default Copilot Coding Agent.
+5. Optionally add instructions in the "Optional prompt" field.
+6. Click to confirm.
+
+The Claude coding agent will start working on the task, push changes to a new pull request, and request a review from you when it finishes.
+
+#### How to assign a task to Claude (Agents tab)
+
+You can also start Claude agent tasks without an existing issue from the [Agents tab](https://github.com/copilot/agents):
+
+1. Open the [Agents page](https://github.com/copilot/agents) on GitHub.
+2. Select the target repository.
+3. Click the agent dropdown and select **Anthropic Claude**.
+4. Type a prompt describing the task.
+5. Submit the task.
+
+#### How to start a cloud Claude session from VS Code
+
+Within VS Code, to start a cloud Claude session that creates a pull request (equivalent to assigning an issue from GitHub.com):
+
+1. Open the Chat view and click **New Chat** (`+`).
+2. Select **Cloud** from the **Session Type** dropdown.
+3. Select **Claude** from the **Partner Agent** dropdown.
+4. Enter your prompt.
+
+#### Differences compared to the Copilot Coding Agent for issue assignment
+
+| Capability | Copilot Coding Agent | Claude Coding Agent (issue assignment) |
+|-----------|---------------------|----------------------------------------|
+| Assign issue on GitHub.com | ✅ Yes (all plans) | ✅ Yes (Pro+ / Enterprise only) |
+| Agents tab on GitHub.com | ✅ Yes | ✅ Yes (via agent dropdown) |
+| Mention in PR comments | ✅ Yes (`@copilot`) | ✅ Yes (via third-party agent mention) |
+| Cloud session creates PR | ✅ Yes | ✅ Yes |
+| Session steering (mid-task redirect) | ✅ Yes | ❌ Not supported for third-party agents |
+| GitHub Actions minutes consumed | ✅ Yes | ✅ Yes |
+| Premium requests consumed | 1 per session (+ model multiplier) | 1 per session (no multiplier in preview) |
+| GitHub Mobile | ✅ Yes | ✅ Yes (via Agents tab) |
+| Open session in VS Code | ✅ Yes | ✅ Yes |
+
+#### Troubleshooting: "I don't see Claude in the dropdown"
+
+If the issue assignment dialog only shows "Copilot" and "Custom Agent" but not "Anthropic Claude":
+
+**"Custom Agent" is not Claude.** The "Custom Agent" option in the issue assignment dialog creates a custom *Copilot* agent — a `.agent.md` file stored in `.github/agents/` that configures specialised behaviour for the Copilot Coding Agent. This is entirely separate from third-party agents such as Claude. Clicking "Custom Agent" takes you to a text editor for creating a Copilot agent profile, not the Claude Agent SDK.
+
+**Step 1 — Enable the Anthropic Claude partner agent toggle.** This is the most common cause. Claude only appears in the dropdown if you have explicitly enabled it in your account settings, regardless of your plan. The toggle is off by default. To enable it:
+
+1. Navigate to your [Copilot coding agent settings](https://github.com/settings/copilot/coding_agent). Alternatively: click your profile picture in the upper-right corner of any GitHub page → **Copilot settings** → **Coding agent** (in the left sidebar).
+2. Scroll to the **Partner agents** section.
+3. Click the toggle next to **Anthropic Claude** to turn it on.
+4. Return to the issue and try the **Assignees** dropdown again — **Anthropic Claude** should now appear in the agent selection dialog.
+
+**Step 2 — Confirm Copilot coding agent is enabled for the target repository.** Claude uses the same repository access as Copilot coding agent. If Copilot coding agent has been disabled for that repository, Claude cannot work in it either. Check under **Repository access** on the same [coding agent settings page](https://github.com/settings/copilot/coding_agent) and ensure the repository is included.
+
+**Step 3 — Check your plan.** The agent dropdown that surfaces third-party agents is available on Pro+ and Enterprise plans. On the basic Pro plan, the dropdown shows only built-in Copilot and custom Copilot agents. If you are on Pro and see the dropdown but not Claude, upgrading to Pro+ will unlock third-party agents.
+
+**Citation:** About third-party agents. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-third-party-agents. Accessed 28 February 2026. Anthropic Claude. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/anthropic-claude. Accessed 28 February 2026. Asking GitHub Copilot to create a pull request. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-a-pr. Accessed 3 March 2026. Managing coding agents. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/manage-agents. Accessed 3 March 2026. Creating custom agents for Copilot coding agent. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents. Accessed 3 March 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## 4. How Claude Delegation Differs from Regular Agent Mode
 
 ### 4.1 Architecture Comparison
@@ -248,6 +345,7 @@ When delegating to the Claude Agent SDK, Copilot hands off the task to Anthropic
 | **Cloud session** | Yes (background / cloud agent) | Yes (via Cloud + Partner Agent dropdown) |
 | **MCP server support** | Yes (built-in Copilot tools + MCP) | Via Claude Agent SDK only |
 | **Requires enabling** | Enabled by default | Must be enabled in account settings |
+| **Issue assignment on GitHub.com** | Yes (default Copilot agent) | Yes (via agent dropdown, Pro+ / Enterprise) |
 | **Plan** | All Copilot plans | Pro, Pro+, Business, Enterprise |
 | **Status** | Generally available | Public preview |
 
@@ -264,6 +362,7 @@ When delegating to the Claude Agent SDK, Copilot hands off the task to Anthropic
 - You have an existing Claude Code workflow and want to reuse its memory files and configuration
 - You want the specific capabilities of Claude's own agent harness
 - You want to run cloud-based tasks using Claude and create a pull request for review
+- You want to assign GitHub issues directly to Claude for autonomous implementation (cloud session, Pro+ or above)
 
 **Citation:** Agents overview. Visual Studio Code Documentation. https://code.visualstudio.com/docs/copilot/agents/overview. Accessed 28 February 2026. Third-party agents in Visual Studio Code. Visual Studio Code Documentation. https://code.visualstudio.com/docs/copilot/agents/third-party-agents. Accessed 28 February 2026.
 
@@ -302,6 +401,8 @@ Support for `CLAUDE.md` as an agent instructions file varies by Copilot feature 
 | **GitHub.com** | Copilot Code Review | ❌ Not supported |
 | **Visual Studio Code** | Copilot Chat | ❌ Not supported (`AGENTS.md` is supported; `CLAUDE.md` is not) |
 | **Visual Studio Code** | Copilot Coding Agent | ✅ Supported |
+| **Visual Studio Code** | Claude Agent SDK — local session | ✅ Natively supported by Anthropic's agent harness (project-level and user-level) |
+| **Visual Studio Code** | Claude Agent SDK — cloud session | ✅ Project-level supported; user-level (`~/.claude/CLAUDE.md`) not applicable in cloud sessions |
 | **Visual Studio Code** | Copilot Code Review | ❌ Not supported |
 | **Visual Studio** | Copilot Chat | ❌ Not supported |
 | **Visual Studio** | Copilot Code Review | ❌ Not supported |
@@ -315,9 +416,9 @@ Support for `CLAUDE.md` as an agent instructions file varies by Copilot feature 
 | **Xcode** | Copilot Coding Agent | ✅ Supported |
 | **Copilot CLI** | — | ❌ Not supported (`AGENTS.md` supported; `CLAUDE.md` is not) |
 
-In summary: `CLAUDE.md` is supported **only** for the Copilot Coding Agent feature, not for Copilot Chat. It is supported for the Coding Agent across GitHub.com, VS Code, JetBrains, Eclipse, and Xcode.
+In summary: `CLAUDE.md` is supported for the Copilot Coding Agent feature (not for Copilot Chat), and also natively by the Claude Agent SDK delegation mode. The Copilot Coding Agent supports `CLAUDE.md` across GitHub.com, VS Code, JetBrains, Eclipse, and Xcode. The Claude Agent SDK is available in VS Code only and is currently in public preview; it supports `CLAUDE.md` through Anthropic's own agent harness. See [Section 5.5](#55-claudemd-support-in-claude-agent-sdk-mode-vs-default-copilot-agent-mode) for a detailed comparison of these two modes.
 
-**Citation:** Support for different types of custom instructions. GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/custom-instructions-support. Accessed 28 February 2026.
+**Citation:** Support for different types of custom instructions. GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/custom-instructions-support. Accessed 28 February 2026. Third-party agents in Visual Studio Code. Visual Studio Code Documentation. https://code.visualstudio.com/docs/copilot/agents/third-party-agents. Accessed 28 February 2026.
 
 ### 5.4 Restrictions and Limitations
 
@@ -348,7 +449,180 @@ The following restrictions and limitations apply to `CLAUDE.md` support in GitHu
 
 ---
 
-## 6. Agent Skills Support
+### 5.5 CLAUDE.md Support in Claude Agent SDK Mode vs Default Copilot Agent Mode
+
+When using the Claude Agent SDK delegation mode in VS Code (the third-party agent accessed via the Session Type dropdown), `CLAUDE.md` support is handled entirely by Anthropic's own agent harness — not by GitHub Copilot's custom instructions system. This produces a materially different level of support compared with what Copilot itself provides.
+
+#### How the Claude Agent SDK handles CLAUDE.md
+
+The Claude Agent SDK natively reads `CLAUDE.md` files as project memory. According to the Anthropic Agent SDK documentation, the SDK supports:
+
+- **Project-level memory:** `CLAUDE.md` or `.claude/CLAUDE.md` in the working directory
+- **User-level memory:** `~/.claude/CLAUDE.md` for global instructions applied across all projects
+
+In local sessions (running on the developer's own machine), both project-level and user-level memory are accessible. In cloud sessions (running on GitHub-hosted infrastructure), only the project-level `CLAUDE.md` from the repository is accessible. User-level memory from `~/.claude/CLAUDE.md` is not available in cloud sessions because the file would need to exist on the remote machine, not the developer's local machine.
+
+The VS Code integration confirms this native support via two dedicated slash commands. The `/memory` slash command "Opens and edits `CLAUDE.md` memory files that provide persistent context to Claude agent across sessions". The `/init` slash command initialises a new `CLAUDE.md` for the project.
+
+**Citation:** Third-party agents in Visual Studio Code. Visual Studio Code Documentation. https://code.visualstudio.com/docs/copilot/agents/third-party-agents. Accessed 28 February 2026. Memory and system prompts. Claude Agent SDK Documentation. https://platform.claude.com/docs/en/agent-sdk/modifying-system-prompts. Accessed 3 March 2026.
+
+#### Comparison: Claude Agent SDK mode vs Copilot Coding Agent
+
+The table below compares the degree of `CLAUDE.md` support between the two modes that support the file at all: the Copilot Coding Agent (Copilot's native agent instructions system) and the Claude Agent SDK delegation mode (Anthropic's own agent harness running within VS Code).
+
+| Capability | Copilot Coding Agent | Claude Agent SDK (VS Code local) | Claude Agent SDK (VS Code cloud) |
+|-----------|---------------------|-----------------------------------|----------------------------------|
+| Project-level `CLAUDE.md` (`./CLAUDE.md` or `./.claude/CLAUDE.md`) | ✅ Supported (repository root only) | ✅ Natively supported | ✅ Natively supported |
+| User-level `~/.claude/CLAUDE.md` | ❌ Not supported | ✅ Natively supported | ❌ Not available (cloud machine, not user's local machine) |
+| `CLAUDE.local.md` (personal, untracked overrides) | ❌ Not supported | ⚠️ Not documented in Agent SDK documentation | ⚠️ Not applicable (cloud session) |
+| `.claude/rules/*.md` (modular rules directory) | ❌ Not supported | ⚠️ Not documented in Agent SDK documentation | ⚠️ Not applicable (cloud session) |
+| `@import` directives in `CLAUDE.md` | ❌ Not documented | ⚠️ Not documented in Agent SDK documentation | ⚠️ Not documented |
+| Auto-memory (`~/.claude/projects/<project>/memory/`) | ❌ Not supported | ⚠️ Not documented in Agent SDK documentation | ❌ Not available (cloud session) |
+| In-session memory management (`/memory` command) | ❌ Not applicable | ✅ Supported via `/memory` slash command | ✅ Supported via `/memory` slash command |
+| Memory file initialisation (`/init` command) | ❌ Not applicable | ✅ Supported via `/init` slash command | ✅ Supported via `/init` slash command |
+| Treated as flat agent instructions | ✅ Yes — Copilot reads file content as instructions | ❌ No — SDK uses it as a full memory system | ❌ No — SDK uses it as a full memory system |
+
+**Key findings from this comparison:**
+
+1. **Scope of memory loading:** When using the Copilot Coding Agent, Copilot reads the repository-level `CLAUDE.md` as a flat instructions file — equivalent in treatment to `AGENTS.md` or `GEMINI.md`. When using the Claude Agent SDK, Anthropic's harness manages `CLAUDE.md` as a live memory system, including project-level and (in local sessions) user-level files.
+
+2. **User-level memory:** The user-level memory file (`~/.claude/CLAUDE.md`) is supported only in Claude Agent SDK local sessions. Neither the Copilot Coding Agent nor cloud Claude Agent SDK sessions can access the developer's personal machine's home directory.
+
+3. **Claude Code-specific memory features:** The broader Claude Code memory hierarchy — `CLAUDE.local.md`, `.claude/rules/`, `@import` directives, and auto-memory — is not explicitly documented as supported by the Claude Agent SDK. These features are documented for Claude Code (the terminal tool) but are not confirmed for the Agent SDK. Teams relying on these advanced memory features should verify their behaviour in Claude Agent SDK sessions before depending on them.
+
+4. **In-session memory management:** The Claude Agent SDK's `/memory` and `/init` commands allow developers to create and edit `CLAUDE.md` files directly during an agent session, without leaving VS Code. This capability does not exist in the Copilot Coding Agent, where `CLAUDE.md` is read at session start and cannot be modified mid-session via a command.
+
+5. **Default Copilot Chat is unaffected:** Neither the Copilot Coding Agent's CLAUDE.md support nor the Claude Agent SDK's native memory system applies to standard Copilot Chat interactions (the default Copilot Chat mode in VS Code). Those interactions continue to use `AGENTS.md` (not `CLAUDE.md`) for agent-level instructions.
+
+**Citation:** Third-party agents in Visual Studio Code. Visual Studio Code Documentation. https://code.visualstudio.com/docs/copilot/agents/third-party-agents. Accessed 28 February 2026. Memory and system prompts. Claude Agent SDK Documentation. https://platform.claude.com/docs/en/agent-sdk/modifying-system-prompts. Accessed 3 March 2026. Support for different types of custom instructions. GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/custom-instructions-support. Accessed 28 February 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+### 5.6 Master Comparison: All Claude Configuration File Types
+
+This section provides a single at-a-glance comparison of every Claude Code configuration file type and the degree of support in each Copilot mode. Detailed treatment of each type follows in subsequent sections: CLAUDE.md in [Section 5.1–5.5](#5-claude-configuration-file-support); and all other config types — skills, sub-agents, commands, hooks, settings, and MCP servers — in [Section 6.1–6.11](#6-agent-skills-commands-hooks-and-settings-support).
+
+**Note on filesystem configuration in the VS Code Claude Agent SDK integration:** When using the Claude Agent SDK via the VS Code third-party agent integration, the SDK loads filesystem settings from the project directory. This is confirmed by the availability of the `/memory`, `/agents`, and `/hooks` slash commands, all of which depend on project-level configuration files being loaded. User-level configuration (`~/.claude/`) is available in local sessions (the developer's own machine) but not in cloud sessions (running on GitHub-hosted infrastructure, which does not have access to the developer's home directory).
+
+| Config File / Directory | Purpose | Copilot Coding Agent | Claude Agent SDK (VS Code local) | Claude Agent SDK (VS Code cloud) |
+|------------------------|---------|---------------------|-----------------------------------|----------------------------------|
+| `CLAUDE.md` / `.claude/CLAUDE.md` | Project memory and instructions | ✅ Read as flat instructions | ✅ Native memory system | ✅ Native memory system |
+| `~/.claude/CLAUDE.md` | User-level personal memory (cross-project) | ❌ Not supported | ✅ Natively supported | ❌ Not available in cloud |
+| `CLAUDE.local.md` | Personal untracked memory overrides | ❌ Not supported | ⚠️ Not confirmed in Agent SDK documentation | ❌ Not applicable in cloud |
+| `.claude/rules/*.md` | Modular topic-specific rules | ❌ Not supported | ⚠️ Not confirmed in Agent SDK documentation | ⚠️ Not confirmed in Agent SDK documentation |
+| `.claude/skills/` | Project skills (auto-invoked specialised tasks) | ✅ Supported | ✅ Supported | ✅ Supported |
+| `~/.claude/skills/` | User skills (personal, cross-project) | ✅ Supported (Coding Agent + CLI) | ✅ Supported | ❌ Not available in cloud |
+| `.claude/agents/` | Project sub-agents (specialised isolated agents) | ❌ Not supported | ✅ Supported | ✅ Supported |
+| `~/.claude/agents/` | User sub-agents (personal, cross-project) | ❌ Not supported | ✅ Supported | ❌ Not available in cloud |
+| `.claude/commands/` | Project custom slash commands | ❌ Not supported | ✅ Supported | ✅ Supported |
+| `~/.claude/commands/` | User custom slash commands (personal, cross-project) | ❌ Not supported | ✅ Supported | ❌ Not available in cloud |
+| `.claude/settings.json` — hooks | Project lifecycle event handlers | ❌ Not supported | ✅ Supported | ✅ Supported |
+| `~/.claude/settings.json` — hooks | User-level lifecycle hooks | ❌ Not supported | ✅ Supported | ❌ Not available in cloud |
+| `.claude/settings.json` — permissions | Project tool allow/deny rules | ❌ Not supported | ✅ Supported | ✅ Supported |
+| `.claude/settings.json` — env vars / model | Project environment variables and model overrides | ❌ Not supported | ✅ Supported | ✅ Supported |
+| `.mcp.json` | Project MCP server configuration | ❌ Uses IDE-level MCP config instead | ⚠️ Not confirmed in Agent SDK documentation | ⚠️ Not confirmed in Agent SDK documentation |
+
+**Key patterns:**
+
+1. **Copilot Coding Agent** reads memory/instructions (`CLAUDE.md` as a flat file) and skills only. It does not read any Claude-specific operational configuration — sub-agents, commands, hooks, settings, or the Claude Code MCP file format are all unsupported.
+
+2. **Claude Agent SDK (local)** reads all project-level and user-level configuration files from the Claude Code filesystem layout. This is the most complete implementation of the Claude Code configuration surface available within Copilot.
+
+3. **Claude Agent SDK (cloud)** reads all project-level configuration from the repository (`.claude/` and `CLAUDE.md`), but cannot access user-level configuration since cloud runners do not have access to the developer's `~/.claude/` directory.
+
+4. **Unconfirmed features**: `CLAUDE.local.md`, `.claude/rules/*.md`, and `.mcp.json` are not explicitly confirmed as supported in the Agent SDK documentation for either session type. These features are documented for Claude Code (the terminal tool) but have not been separately verified for the VS Code Agent SDK integration. Teams relying on these should test before depending on them.
+
+**Citation:** See References [3](#11-references), [31–38](#11-references) in the References section.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+### 5.7 Does the Claude Agent SDK Read Copilot Instruction Files?
+
+The previous sections document how Copilot reads Claude instruction files (`CLAUDE.md`) — but with significant limitations. The reverse question matters equally: **when using the Claude Agent SDK, does it automatically pick up and follow existing Copilot instruction files, or does switching to the Claude Agent SDK mean your project coding standards and conventions are no longer applied?**
+
+**The short answer: No.** The Claude Agent SDK does not read any of Copilot's instruction file formats. If you switch from the Copilot Coding Agent to the Claude Agent SDK without creating Claude-format instruction files, the Claude agent will operate without any of the project context or constraints encoded in your Copilot instructions.
+
+#### Copilot instruction files and whether Claude reads them
+
+Copilot uses three categories of repository instruction file. None are read by the Claude Agent SDK:
+
+| Copilot Instruction File | What It Does | Read by Claude Agent SDK? |
+|-------------------------|-------------|--------------------------|
+| `.github/copilot-instructions.md` | Repository-wide instructions applied to all Copilot features in the repository | ❌ No |
+| `.github/instructions/*.instructions.md` | Path-specific instructions, scoped via `applyTo` glob pattern in YAML frontmatter | ❌ No |
+| `AGENTS.md` | Cross-agent instructions readable by multiple agent tools (Copilot Coding Agent, OpenAI Codex, and others) | ⚠️ Not confirmed in official Anthropic documentation |
+
+Anthropic's official Claude Code and Agent SDK documentation exclusively documents `CLAUDE.md` (and the `.claude/` directory hierarchy) as the instruction and memory system. There is no mention of `.github/copilot-instructions.md` or `.github/instructions/*.instructions.md` in Claude Code or Agent SDK documentation. These paths are GitHub Copilot-specific and are loaded only by Copilot features (Chat, Coding Agent, Code Review, and other Copilot tools).
+
+**Citation:** Memory. Claude Code Documentation. https://code.claude.com/docs/en/memory. Accessed 4 March 2026. Memory and system prompts. Claude Agent SDK Documentation. https://platform.claude.com/docs/en/agent-sdk/modifying-system-prompts. Accessed 4 March 2026.
+
+#### `AGENTS.md` is a partial bridge — with caveats
+
+`AGENTS.md` is an open cross-agent standard maintained in the [openai/agents.md](https://github.com/openai/agents.md) repository. The GitHub Copilot Coding Agent reads `AGENTS.md` as an agent instructions file — equivalent in Copilot's hierarchy to `CLAUDE.md` or `GEMINI.md`. However, the official Anthropic and Claude Code documentation does not document reading `AGENTS.md` as part of the Claude Code memory system. Whether Claude Code or the VS Code Claude Agent SDK integration reads `AGENTS.md` is unconfirmed from official sources and should not be relied upon without testing in your specific setup.
+
+Even if Claude were to support `AGENTS.md`, that still does not bridge `.github/copilot-instructions.md` — the most commonly used Copilot instruction file. Teams relying on `.github/copilot-instructions.md` must still take an explicit migration step.
+
+#### Migration strategies
+
+If you have existing Copilot instructions and want the Claude Agent SDK to follow the same project conventions, three approaches are available:
+
+**Option 1 — Duplicate content in `CLAUDE.md` (recommended; unambiguously supported)**
+
+Create a `CLAUDE.md` in the repository root containing the same instructions as your `.github/copilot-instructions.md`. This is the most explicit approach: `CLAUDE.md` is natively supported by both the Copilot Coding Agent (as a flat agent instructions file) and the Claude Agent SDK (as native project memory). Maintaining both files means each tool always reads its natively supported instruction format. Copilot Chat continues to rely on `.github/copilot-instructions.md` and does not read `CLAUDE.md` directly.
+
+**Option 2 — Use `@import` in `CLAUDE.md` to reference the Copilot file**
+
+Claude Code supports `@import` syntax (using `@path/to/file`) to pull in content from other files into the memory context. You can create a minimal `CLAUDE.md` that imports the Copilot instructions file, avoiding duplication:
+
+```markdown
+@.github/copilot-instructions.md
+```
+
+This approach has two caveats:
+
+- The `@import` directive is documented for Claude Code CLI but is not explicitly confirmed as processed by the VS Code Claude Agent SDK integration. Verify that imports are resolved before relying on this approach in Agent SDK sessions.
+- `.github/instructions/*.instructions.md` path-specific instruction files cannot be bridged this way: even if the import works, the `applyTo` YAML frontmatter in those files is Copilot-specific syntax that Claude does not interpret. Path-specific instructions require creating equivalent `.claude/rules/*.md` files (see below).
+
+**Option 3 — Create `AGENTS.md` as a shared instruction source**
+
+If you want a single instruction file readable by multiple AI coding tools, consider placing core project guidelines in an `AGENTS.md` file. Copilot Coding Agent officially reads `AGENTS.md`. You can then have `CLAUDE.md` import it or contain the same content. This approach requires testing to confirm Claude Code and the Agent SDK honour `AGENTS.md` in your environment, as this is not confirmed in official Anthropic documentation.
+
+#### Path-specific instructions: no direct equivalent
+
+Copilot's `.github/instructions/*.instructions.md` files use an `applyTo` YAML frontmatter field to scope instructions to specific file paths. Claude Code uses a different format for the same purpose: `.claude/rules/*.md` files with a `paths` YAML frontmatter field.
+
+| Feature | Copilot path-specific instructions | Claude Code path-specific rules |
+|---------|------------------------------------|---------------------------------|
+| File location | `.github/instructions/*.instructions.md` | `.claude/rules/*.md` |
+| Glob pattern field name | `applyTo` | `paths` |
+| Agent exclusion field | `excludeAgent` | Not applicable |
+| Read by Copilot Coding Agent | ✅ Yes | ❌ No |
+| Read by Claude Agent SDK | ❌ No | ✅ Yes |
+| Shared between both systems | ❌ No — incompatible paths and field names | ❌ No — incompatible paths and field names |
+
+These files are not directly portable between systems. If you have path-specific Copilot instructions you want applied to Claude Agent SDK sessions, you need to create equivalent `.claude/rules/*.md` files with the `paths` field substituted for `applyTo`. The instruction content itself can be reused; only the YAML frontmatter key changes.
+
+#### Summary: instruction file asymmetry between Copilot and Claude
+
+The instruction file relationship between Copilot and the Claude Agent SDK is **asymmetric**:
+
+- **Claude → Copilot direction:** Copilot Coding Agent reads `CLAUDE.md` as a flat instructions file (with the limitations documented in Sections 5.3–5.5). This provides some cross-compatibility: teams with an existing `CLAUDE.md` can use the Copilot Coding Agent without additional setup.
+
+- **Copilot → Claude direction:** The Claude Agent SDK does not read any Copilot-specific instruction files (`.github/copilot-instructions.md`, `.github/instructions/*.instructions.md`). There is no automatic path from existing Copilot instructions into the Claude Agent SDK.
+
+This means **teams primarily using Copilot who add the Claude Agent SDK must explicitly create Claude-format instruction files** (`CLAUDE.md`, and optionally `.claude/rules/*.md` for path-specific guidance). Without this step, the Claude Agent SDK has no project-level constraints applied — the concern about "unconstrained AI" is well-founded. The recommended resolution is to create a `CLAUDE.md` in the repository root.
+
+**Citation:** Support for different types of custom instructions. GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/custom-instructions-support. Accessed 4 March 2026. Memory. Claude Code Documentation. https://code.claude.com/docs/en/memory. Accessed 4 March 2026. Memory and system prompts. Claude Agent SDK Documentation. https://platform.claude.com/docs/en/agent-sdk/modifying-system-prompts. Accessed 4 March 2026. Adding repository custom instructions for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions. Accessed 4 March 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## 6. Agent Skills, Commands, Hooks, and Settings Support
 
 ### 6.1 What are Agent Skills?
 
@@ -461,17 +735,137 @@ Claude Code supports dynamic argument substitution in skill content (e.g. `$ARGU
 
 **Citation:** About agent skills. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-agent-skills. Accessed 28 February 2026. Skills. Claude Code Documentation. https://code.claude.com/docs/en/skills. Accessed 28 February 2026.
 
-### 6.6 Claude Code Sub-Agents Are Not Agent Skills
+### 6.6 Sub-Agents: Copilot Coding Agent vs Claude Agent SDK
 
 It is important to distinguish between Claude Code's **skills** (`.claude/skills/`) and Claude Code's **sub-agents** (`.claude/agents/`). These are entirely separate concepts.
 
-**Claude Code sub-agents** are defined in Markdown files stored in `.claude/agents/`. They have a different and more complex YAML frontmatter schema (including `tools`, `model`, `permissionMode`, `maxTurns`, `mcpServers`, `hooks`, `memory`, `background`, `isolation`). Sub-agents are invoked via the `/agents` slash command within Claude Code and run with their own isolated context window.
+**Claude Code sub-agents** are defined in Markdown files stored in `.claude/agents/`. They have a different and more complex YAML frontmatter schema (including `tools`, `model`, `permissionMode`, `maxTurns`, `mcpServers`, `hooks`, `memory`, `background`, `isolation`). Sub-agents run with their own isolated context window and can be invoked via the `/agents` slash command.
 
-**Copilot has no equivalent to Claude Code sub-agents.** The `.claude/agents/` directory is not read by Copilot. There is no mechanism to port a Claude Code sub-agent definition directly to Copilot.
+**Copilot Coding Agent has no equivalent to Claude Code sub-agents.** The `.claude/agents/` directory is not read by the Copilot Coding Agent. There is no mechanism to port a Claude Code sub-agent definition directly to Copilot's native coding agent.
 
-The `/agents` slash command seen in VS Code when using the Claude Agent SDK is part of the Claude Agent SDK's own interface and is not a Copilot feature.
+**The Claude Agent SDK does support filesystem-based sub-agents.** When using the Claude Agent SDK through the VS Code third-party agent integration, the SDK loads sub-agent definitions from `.claude/agents/` (project-level, shareable via git) and `~/.claude/agents/` (user-level, available in local sessions only). The `/agents` slash command in the VS Code Claude Agent SDK integration provides an interactive interface for creating and managing these sub-agents within the session. Programmatically-defined agents take precedence over filesystem-based agents with the same name.
 
-**Citation:** Sub-agents. Claude Code Documentation. https://code.claude.com/docs/en/sub-agents. Accessed 28 February 2026. Third-party agents in Visual Studio Code. Visual Studio Code Documentation. https://code.visualstudio.com/docs/copilot/agents/third-party-agents. Accessed 28 February 2026.
+Sub-agents defined in `.claude/agents/` in the repository are therefore fully supported in Claude Agent SDK sessions but completely ignored by the Copilot Coding Agent — making this a key difference between the two modes for teams that rely on specialised sub-agent workflows.
+
+| Sub-Agent Feature | Copilot Coding Agent | Claude Agent SDK (VS Code local) | Claude Agent SDK (VS Code cloud) |
+|------------------|---------------------|-----------------------------------|----------------------------------|
+| Project sub-agents (`.claude/agents/`) | ❌ Not read | ✅ Loaded from filesystem | ✅ Loaded from filesystem |
+| User sub-agents (`~/.claude/agents/`) | ❌ Not read | ✅ Loaded from filesystem | ❌ Not available in cloud |
+| `/agents` slash command | ❌ Not applicable | ✅ Available for managing sub-agents | ✅ Available for managing sub-agents |
+| Programmatic sub-agent definition | ❌ Not applicable | ✅ Via SDK `agents` parameter | ✅ Via SDK `agents` parameter |
+
+**Citation:** Sub-agents. Claude Code Documentation. https://code.claude.com/docs/en/sub-agents. Accessed 28 February 2026. Subagents. Claude Agent SDK Documentation. https://platform.claude.com/docs/en/agent-sdk/subagents. Accessed 3 March 2026. Third-party agents in Visual Studio Code. Visual Studio Code Documentation. https://code.visualstudio.com/docs/copilot/agents/third-party-agents. Accessed 28 February 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+### 6.7 Skills: Claude Agent SDK Mode vs Copilot Coding Agent
+
+The existing sections 6.1–6.5 compare skills between the Copilot Coding Agent and Claude Code (the terminal tool). This section specifically addresses how skills work in the Claude Agent SDK delegation mode in VS Code, and where it differs from the Copilot Coding Agent.
+
+**Similarities:** Both the Copilot Coding Agent and the Claude Agent SDK load skills from the shared `.claude/skills/` location. Basic skills (using only `name`, `description`, and a Markdown body) work identically in both modes. User skills from `~/.claude/skills/` are available in both the Copilot Coding Agent and in local Claude Agent SDK sessions.
+
+**Key difference — `allowed-tools` SKILL.md field:** The `allowed-tools` frontmatter field in `SKILL.md` is not supported when using skills through the Agent SDK. Per the official Anthropic documentation: "The `allowed-tools` frontmatter field in SKILL.md is only supported when using Claude Code CLI directly. It does not apply when using Skills through the SDK." In Claude Agent SDK sessions, tool access is controlled through the SDK's main `allowedTools` configuration, not through per-skill frontmatter. In the Copilot Coding Agent, `allowed-tools` is also unsupported — it silently ignores the field — but this is because `allowed-tools` is a Claude Code extension to the base Agent Skills open standard, and Copilot only implements the core standard fields (`name`, `description`, and the Markdown body), not Claude Code's extensions.
+
+**Key difference — `$ARGUMENTS` substitution:** Claude Code and the Agent SDK support dynamic argument substitution in skill content (`$ARGUMENTS`, `$ARGUMENTS[N]`, `$N`, `${CLAUDE_SESSION_ID}`). The Copilot Coding Agent does not document support for argument substitution; skills using `$ARGUMENTS` placeholders may have those treated as literal text by Copilot.
+
+| Skill Capability | Copilot Coding Agent | Claude Agent SDK (VS Code local) | Claude Agent SDK (VS Code cloud) |
+|-----------------|---------------------|-----------------------------------|----------------------------------|
+| Project skills (`.claude/skills/`) | ✅ Supported | ✅ Supported | ✅ Supported |
+| User skills (`~/.claude/skills/`) | ✅ Supported (Coding Agent + CLI) | ✅ Supported | ❌ Not available in cloud |
+| `.github/skills/` (Copilot-specific) | ✅ Supported | ❌ Not read by Agent SDK | ❌ Not read by Agent SDK |
+| `allowed-tools` SKILL.md frontmatter | ❌ Silently ignored | ❌ Not supported in SDK (documented limitation) | ❌ Not supported in SDK |
+| Other Claude-specific frontmatter (`disable-model-invocation`, `model`, `context`, `hooks`) | ❌ Silently ignored | ✅ Supported (follows Claude Code behaviour) | ✅ Supported |
+| `$ARGUMENTS` substitution | ⚠️ Not documented (likely treated as literal text) | ✅ Supported | ✅ Supported |
+
+**Citation:** Skills. Claude Agent SDK Documentation. https://platform.claude.com/docs/en/agent-sdk/skills. Accessed 3 March 2026. About agent skills. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-agent-skills. Accessed 28 February 2026. Skills. Claude Code Documentation. https://code.claude.com/docs/en/skills. Accessed 28 February 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+### 6.8 Custom Slash Commands (`.claude/commands/`)
+
+**What they are:** Custom slash commands are Markdown files stored in `.claude/commands/<name>.md` (project-level) or `~/.claude/commands/<name>.md` (user-level). The filename (without `.md`) becomes the command name — for example, `.claude/commands/review.md` creates the `/review` command. Commands can include optional YAML frontmatter for configuration, plain Markdown instructions, dynamic `$ARGUMENTS` placeholders, bash command execution markers, and file references. They provide a way to define reusable, named workflows that can be invoked explicitly during a session.
+
+**Copilot Coding Agent:** Custom Claude commands (`.claude/commands/`) are not supported by the Copilot Coding Agent. Copilot has its own reusable prompt mechanism — prompt files (`.github/prompts/*.prompt.md`) in VS Code — but these are a Copilot-specific feature and are not the same as Claude commands.
+
+**Claude Agent SDK (VS Code):** Custom commands are fully supported. When the Claude Agent SDK integration loads project filesystem settings, commands from `.claude/commands/` appear as slash commands available in the VS Code chat input. User-level commands from `~/.claude/commands/` are also available in local sessions. In cloud sessions, only project-level commands from the repository's `.claude/commands/` are accessible.
+
+| Commands Feature | Copilot Coding Agent | Claude Agent SDK (VS Code local) | Claude Agent SDK (VS Code cloud) |
+|----------------|---------------------|-----------------------------------|----------------------------------|
+| Project commands (`.claude/commands/`) | ❌ Not supported | ✅ Available as slash commands | ✅ Available as slash commands |
+| User commands (`~/.claude/commands/`) | ❌ Not supported | ✅ Available | ❌ Not available in cloud |
+| `$ARGUMENTS` substitution in commands | ❌ Not supported | ✅ Supported | ✅ Supported |
+| Bash command execution in commands | ❌ Not supported | ✅ Supported | ✅ Supported |
+
+**Citation:** Slash Commands. Claude Agent SDK Documentation. https://platform.claude.com/docs/en/agent-sdk/slash-commands. Accessed 3 March 2026. Third-party agents in Visual Studio Code. Visual Studio Code Documentation. https://code.visualstudio.com/docs/copilot/agents/third-party-agents. Accessed 28 February 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+### 6.9 Hooks (`.claude/settings.json`)
+
+**What they are:** Hooks are user-defined shell commands, HTTP endpoints, or LLM prompts that execute automatically at specific points in an agent session's lifecycle. They are configured under the `hooks` key in Claude Code settings files (`.claude/settings.json` for project-level hooks shareable via git, `~/.claude/settings.json` for user-level hooks, and `.claude/settings.local.json` for local untracked hooks). Supported hook events include `PreToolUse`, `PostToolUse`, `UserPromptSubmit`, `SessionStart`, `Stop`, and others. Hooks can inspect inputs, block operations, run validators, trigger notifications, and more.
+
+**Copilot Coding Agent:** Claude Code-format hooks (`.claude/settings.json` hooks section) are not supported by the Copilot Coding Agent. Copilot has its own separate "agent hooks" feature (currently in preview in VS Code Insiders for the native Copilot agent), but these are not the same format and are not read from `.claude/settings.json`.
+
+**Claude Agent SDK (VS Code):** Hooks are supported. The VS Code Agent SDK integration exposes a `/hooks` slash command that allows users to "configure lifecycle hooks that execute at key points during Claude agent sessions, such as before or after tool execution." Project-level hooks defined in the repository's `.claude/settings.json` are loaded automatically. User-level hooks from `~/.claude/settings.json` are available in local sessions only. Local overrides in `.claude/settings.local.json` are available in local sessions but are gitignored and therefore not present in cloud sessions.
+
+| Hooks Feature | Copilot Coding Agent | Claude Agent SDK (VS Code local) | Claude Agent SDK (VS Code cloud) |
+|--------------|---------------------|-----------------------------------|----------------------------------|
+| Project hooks (`.claude/settings.json`) | ❌ Not supported | ✅ Supported | ✅ Supported |
+| User hooks (`~/.claude/settings.json`) | ❌ Not supported | ✅ Supported | ❌ Not available in cloud |
+| Local hooks (`.claude/settings.local.json`) | ❌ Not supported | ✅ Supported | ❌ Not present (gitignored) |
+| `/hooks` command to manage hooks | ❌ Not applicable | ✅ Available | ✅ Available |
+| `PreToolUse` / `PostToolUse` hook events | ❌ Not supported | ✅ Supported | ✅ Supported |
+
+**Citation:** Hooks. Claude Code Documentation. https://code.claude.com/docs/en/hooks. Accessed 3 March 2026. Third-party agents in Visual Studio Code. Visual Studio Code Documentation. https://code.visualstudio.com/docs/copilot/agents/third-party-agents. Accessed 28 February 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+### 6.10 Settings and Permissions (`.claude/settings.json`)
+
+**What they are:** Claude Code uses `settings.json` files to configure a wide range of operational settings: tool permission rules (`allow`, `deny`), environment variables (`env`), model overrides (`model`), MCP server references, and more. Project settings are stored in `.claude/settings.json` (committed to git, shared with the team). Personal overrides are in `.claude/settings.local.json` (gitignored) or `~/.claude/settings.json` (user-level). Managed organisation-wide settings can also be deployed via policy mechanisms.
+
+**Copilot Coding Agent:** The `.claude/settings.json` file is not read by the Copilot Coding Agent. Copilot manages its own permission model (approval prompts for tool calls, organisation policy controls) independently of Claude Code's settings format. Teams wishing to restrict tool access for Copilot sessions must use Copilot's own policy mechanisms, not Claude Code settings files.
+
+**Claude Agent SDK (VS Code):** Project settings from `.claude/settings.json` are loaded by the Agent SDK integration. This means permissions (`allow`/`deny` tool rules), environment variables, and model overrides defined in the repository's `.claude/settings.json` apply to Claude Agent SDK sessions. User and local settings are available in local sessions only.
+
+| Settings Feature | Copilot Coding Agent | Claude Agent SDK (VS Code local) | Claude Agent SDK (VS Code cloud) |
+|----------------|---------------------|-----------------------------------|----------------------------------|
+| Project permissions (`.claude/settings.json` `allow`/`deny`) | ❌ Not supported | ✅ Supported | ✅ Supported |
+| Project env vars (`.claude/settings.json` `env`) | ❌ Not supported | ✅ Supported | ✅ Supported |
+| Project model override (`.claude/settings.json` `model`) | ❌ Not supported | ✅ Supported | ✅ Supported |
+| User settings (`~/.claude/settings.json`) | ❌ Not supported | ✅ Supported | ❌ Not available in cloud |
+| Local overrides (`.claude/settings.local.json`) | ❌ Not supported | ✅ Supported | ❌ Not present (gitignored) |
+
+**Citation:** Settings. Claude Code Documentation. https://code.claude.com/docs/en/settings. Accessed 3 March 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+### 6.11 MCP Server Configuration (`.mcp.json`)
+
+**What it is:** Claude Code stores project-level MCP (Model Context Protocol) server configurations in a `.mcp.json` file at the repository root. This file specifies MCP server names, commands, arguments, and environment variables, and is designed to be committed to git so the whole team automatically has the same MCP server integrations when working in the repository. User-level and local MCP configurations are stored in `~/.claude.json`.
+
+**Copilot Coding Agent:** The Copilot Coding Agent does not read `.mcp.json` from Claude Code. Copilot supports MCP, but MCP servers for Copilot are configured through the IDE (VS Code `settings.json`, JetBrains settings, etc.) or through GitHub.com repository settings for the cloud coding agent — not through Claude Code's `.mcp.json` format. These are separate configuration mechanisms that happen to use the same underlying MCP protocol.
+
+**Claude Agent SDK (VS Code):** The Claude Agent SDK uses `.mcp.json` for project MCP server configuration, consistent with Claude Code. The Agent SDK is documented as providing "the same tools, agent loop, and context management that power Claude Code", and the Claude Code settings documentation lists `.mcp.json` as the project MCP configuration file. However, the Agent SDK documentation for VS Code does not explicitly confirm that `.mcp.json` is loaded from the project directory during VS Code sessions. Teams should verify MCP server availability via `.mcp.json` in both local and cloud sessions before relying on it.
+
+| MCP Configuration Feature | Copilot Coding Agent | Claude Agent SDK (VS Code local) | Claude Agent SDK (VS Code cloud) |
+|--------------------------|---------------------|-----------------------------------|----------------------------------|
+| `.mcp.json` (project MCP config) | ❌ Not read — uses IDE MCP config | ⚠️ Not confirmed in Agent SDK documentation for VS Code | ⚠️ Not confirmed in documentation |
+| IDE-level MCP configuration | ✅ Supported (VS Code, JetBrains, etc.) | ✅ VS Code MCP config is separate and also applies | ✅ Supported (cloud coding agent supports MCP via GitHub settings) |
+
+**Note:** Both Copilot and the Claude Agent SDK support MCP as a protocol. The distinction is only in the *configuration file format* — Copilot does not consume `.mcp.json` from Claude Code, while the Claude Agent SDK does. Teams adding MCP servers for both modes need to configure them in both the Claude Code `.mcp.json` and the IDE MCP settings.
+
+**Citation:** MCP. Claude Code Documentation. https://code.claude.com/docs/en/mcp. Accessed 3 March 2026. Model Context Protocol (MCP). GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/context/mcp. Accessed 3 March 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -737,8 +1131,20 @@ The Claude Agent SDK delegation mode is architecturally distinct from using Clau
 **Steering is unavailable for delegated Claude sessions:**
 A significant limitation of the Claude Agent SDK delegation is that mid-session steering (sending guidance to redirect the agent while it is running) is not available. This capability is available for the native Copilot Coding Agent but not for third-party agents including Claude.
 
-**CLAUDE.md support is narrower than it appears:**
-Copilot does support `CLAUDE.md` files as agent instructions, but only for the Copilot Coding Agent — not for Copilot Chat. Furthermore, only the repository-level `CLAUDE.md` is read; the full Claude Code memory hierarchy (user memory, local memory, auto-memory, rules directory, import directives) is not replicated.
+**CLAUDE.md support differs significantly between Copilot Coding Agent and Claude Agent SDK modes:**
+When using the Copilot Coding Agent, `CLAUDE.md` is treated as a flat agent instructions file — equivalent to `AGENTS.md`. When using the Claude Agent SDK delegation mode in VS Code, `CLAUDE.md` is handled natively by Anthropic's own agent harness, which supports both project-level and (in local sessions) user-level memory files, along with in-session memory management via the `/memory` and `/init` slash commands. The broader Claude Code memory hierarchy (`CLAUDE.local.md`, `.claude/rules/`, `@import` directives, auto-memory) is not explicitly documented as supported by the Agent SDK and should be verified before relying on it. Standard Copilot Chat (not delegation mode) does not support `CLAUDE.md` at all.
+
+**Instruction file compatibility between Copilot and the Claude Agent SDK is asymmetric:**
+Copilot Coding Agent reads `CLAUDE.md` (with limitations). The Claude Agent SDK does not read any Copilot-specific instruction files: `.github/copilot-instructions.md` and `.github/instructions/*.instructions.md` are Copilot-only and are ignored by the Claude Agent SDK. Teams switching from Copilot to the Claude Agent SDK must explicitly create a `CLAUDE.md` to apply project-level instructions to Claude sessions; without it, the agent operates without project-specific constraints. Teams already using Claude Code can reuse their `CLAUDE.md` in Copilot sessions without changes.
+
+**The Claude Agent SDK exposes significantly more of the Claude Code configuration surface than the Copilot Coding Agent:**
+The Copilot Coding Agent reads only `CLAUDE.md` (as flat instructions) and skills. The Claude Agent SDK (local session) reads all project-level and user-level Claude Code configuration: memory files, skills, sub-agents (`.claude/agents/`), custom commands (`.claude/commands/`), hooks (`.claude/settings.json`), settings/permissions, and MCP server configuration (`.mcp.json`). Cloud Agent SDK sessions read all project-level config from the repository but cannot access user-level (`~/.claude/`) directories. This makes the Claude Agent SDK mode the closest approximation to full Claude Code behaviour available within a Copilot subscription.
+
+**Sub-agents, commands, and hooks are exclusive to the Claude Agent SDK mode within Copilot:**
+Sub-agents (`.claude/agents/`), custom slash commands (`.claude/commands/`), and lifecycle hooks (`.claude/settings.json` hooks section) are fully supported in Claude Agent SDK sessions in VS Code but are entirely unsupported by the Copilot Coding Agent. Teams that build workflows relying on these Claude Code features should be aware that those workflows will not function in Copilot Coding Agent sessions.
+
+**MCP configuration uses different formats for Copilot and Claude Agent SDK:**
+Both Copilot and the Claude Agent SDK support MCP, but they use different configuration mechanisms. Copilot configures MCP servers through IDE settings (VS Code, JetBrains, etc.). The Claude Agent SDK is built on Claude Code, which uses `.mcp.json` as its project MCP configuration format; however, whether `.mcp.json` is loaded automatically by the VS Code Claude Agent SDK integration is not explicitly confirmed in the Agent SDK documentation. Teams integrating MCP servers for use across Copilot and Agent SDK modes should configure IDE-level MCP settings and verify `.mcp.json` behaviour separately.
 
 **Data privacy nuances in preview:**
 The zero data retention agreement between GitHub and Anthropic applies to generally available Anthropic features. Some aspects of the Claude Agent SDK that are in public preview — including tool search via the Messages API — may not be covered by this agreement.
@@ -784,8 +1190,18 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 - [x] Feature comparison table provided
 - [x] CLAUDE.md format explained
 - [x] How Copilot uses CLAUDE.md documented
-- [x] Supported environments for CLAUDE.md tabulated
+- [x] Supported environments for CLAUDE.md tabulated (including Claude Agent SDK delegation mode)
 - [x] Restrictions and limitations of CLAUDE.md support documented
+- [x] Comparison of CLAUDE.md support between Claude Agent SDK mode and Copilot Coding Agent mode
+- [x] Reverse compatibility: does Claude Agent SDK read Copilot instruction files? (Section 5.7)
+- [x] Migration strategies for teams with existing Copilot instructions adding Claude Agent SDK
+- [x] Master comparison table of all Claude configuration file types across Copilot modes
+- [x] Sub-agents (`.claude/agents/`) support in Claude Agent SDK vs Copilot Coding Agent documented
+- [x] Skills comparison between Claude Agent SDK mode and Copilot Coding Agent (including `allowed-tools` SDK limitation)
+- [x] Custom slash commands (`.claude/commands/`) support comparison documented
+- [x] Hooks (`.claude/settings.json`) support comparison documented
+- [x] Settings and permissions (`.claude/settings.json`) support comparison documented
+- [x] MCP server configuration (`.mcp.json`) support comparison documented
 - [x] Subscription requirements for each feature documented
 - [x] Agent skills open standard and Copilot/Claude Code shared compatibility documented
 - [x] Supported environments for agent skills listed (with VS Code stable caveat)
@@ -803,6 +1219,7 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 - [x] Claude Code subscription tiers and session limits documented
 - [x] Cost comparison table across Copilot plans, Claude Code, and direct API provided
 - [x] Claude Agent SDK delegation pricing distinction (no model multiplier in preview) documented
+- [x] Claude coding agent issue assignment workflow documented (entry points, plan requirements, differences vs Copilot Coding Agent)
 - [x] All claims have citations to official documentation
 - [x] All assumptions and estimates are explicitly labelled and sourced where possible
 - [x] UK English used throughout
@@ -873,6 +1290,32 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 
 30. **Changing the AI model for GitHub Copilot coding agent.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/changing-the-ai-model. Accessed 3 March 2026.
 
+31. **Memory and system prompts.** Claude Agent SDK Documentation. https://platform.claude.com/docs/en/agent-sdk/modifying-system-prompts. Accessed 3 March 2026.
+
+32. **Skills.** Claude Agent SDK Documentation. https://platform.claude.com/docs/en/agent-sdk/skills. Accessed 3 March 2026.
+
+33. **Slash Commands.** Claude Agent SDK Documentation. https://platform.claude.com/docs/en/agent-sdk/slash-commands. Accessed 3 March 2026.
+
+34. **Hooks.** Claude Code Documentation. https://code.claude.com/docs/en/hooks. Accessed 3 March 2026.
+
+35. **Settings.** Claude Code Documentation. https://code.claude.com/docs/en/settings. Accessed 3 March 2026.
+
+36. **MCP.** Claude Code Documentation. https://code.claude.com/docs/en/mcp. Accessed 3 March 2026.
+
+37. **Model Context Protocol (MCP).** GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/context/mcp. Accessed 3 March 2026.
+
+38. **Copilot customization cheat sheet.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/customization-cheat-sheet. Accessed 3 March 2026.
+
+39. **Asking GitHub Copilot to create a pull request.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-a-pr. Accessed 3 March 2026.
+
+40. **Managing coding agents.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/manage-agents. Accessed 3 March 2026.
+
+41. **About GitHub Copilot coding agent.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent. Accessed 3 March 2026.
+
+42. **Creating custom agents for Copilot coding agent.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents. Accessed 3 March 2026.
+
+43. **Adding repository custom instructions for GitHub Copilot.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions. Accessed 4 March 2026.
+
 [↑ Back to top](#table-of-contents)
 
 ---
@@ -888,6 +1331,12 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 | 3 March 2026 | 1.4 | Updated section 8: added NZD prices (NZD first, USD in brackets) throughout all tables and prose, using mid-market rate NZ$1.6974/USD from XE.com at 22:14 UTC 3 March 2026; added currency conversion notice block; added Reference 26 (XE.com) | GitHub Copilot |
 | 3 March 2026 | 1.5 | Added section 8.7: Claude Code and Claude Agent SDK internal multi-model architecture — confirmed Haiku usage for Explore and Claude Code Guide subagents, corrected "web searches" framing to codebase exploration, confirmed Claude Agent SDK shares the same subagent infrastructure, confirmed Copilot billing is unaffected (flat one premium request per session regardless of internal model selection); updated ToC; added References 27 (Claude Code sub-agents docs) and 28 (Agent SDK subagents docs) | GitHub Copilot |
 | 3 March 2026 | 1.7 | Updated section 8.7: clarified when Opus may be auto-selected in Claude Code and Claude Agent SDK — no built-in subagent is hardcoded to Opus (inherit-subagents only use Opus when the user's main model is already Opus); documented that custom `model: opus` subagents can be auto-triggered as the only path to Opus appearing in a Sonnet session; updated direct API cost note in both 8.5 and 8.7 to be symmetric (costs may be lower via Haiku or higher via Opus, with ~1.7× quantification referencing the existing Section 8.5 Opus table row) | GitHub Copilot |
+| 3 March 2026 | 1.8 | Added section 5.5: comparison of CLAUDE.md support in Claude Agent SDK delegation mode vs default Copilot agent mode — Claude Agent SDK natively supports project-level and user-level CLAUDE.md, /memory and /init slash commands; updated section 5.3 table with Claude Agent SDK rows for local and cloud sessions; updated section 9 key finding for CLAUDE.md; updated completeness checklist; added Reference 31 (Agent SDK memory documentation) | GitHub Copilot |
+| 3 March 2026 | 1.9 | Expanded config file comparison to cover all Claude Code configuration types: added Section 5.6 (master comparison table for all config file types), renamed Section 6 to include commands/hooks/settings, updated Section 6.6 (sub-agents: added Agent SDK filesystem support), added Section 6.7 (skills Agent SDK comparison including `allowed-tools` limitation), Section 6.8 (custom commands), Section 6.9 (hooks), Section 6.10 (settings/permissions), Section 6.11 (MCP servers); added four new key findings to Section 9; expanded completeness checklist; added References 32–38 | GitHub Copilot |
+| 3 March 2026 | 2.0 | Added Section 3.7: Assigning GitHub Issues to the Claude Coding Agent — confirmed the Claude coding agent supports all standard issue-assignment entry points (GitHub.com, Agents tab, VS Code cloud session); documented step-by-step workflow; added comparison table of capabilities vs Copilot Coding Agent; documented plan availability inconsistency (Pro+ / Enterprise noted in workflow docs); updated Section 4.2 feature comparison table and Section 4.3 use-case guidance; added References 39–41 | GitHub Copilot |
+| 3 March 2026 | 2.1 | Corrected Section 3.7: clarified that Pro+ or Enterprise is strictly required (not just a recommendation to verify); added Troubleshooting subsection explaining that "Custom Agent" in the issue dialog creates a custom Copilot agent (`.agent.md`), not a third-party agent; fixed capability comparison table to show Pro+ / Enterprise plan requirement; added Reference 42 (create-custom-agents) | GitHub Copilot |
+| 4 March 2026 | 2.2 | Revised Section 3.7 Troubleshooting: reordered checks to lead with the Partner agents toggle (most common cause for Pro+ users); expanded toggle instructions with explicit step-by-step navigation; added repository-level Copilot coding agent enablement as Step 2; demoted plan check to Step 3 | GitHub Copilot |
+| 4 March 2026 | 2.3 | Added Section 5.7: Does the Claude Agent SDK Read Copilot Instruction Files? — documented that `.github/copilot-instructions.md` and `.github/instructions/*.instructions.md` are not read by the Claude Agent SDK; documented `AGENTS.md` caveat (not confirmed in official Anthropic docs); provided three migration strategies (duplicate in CLAUDE.md, @import bridge, AGENTS.md shared file); documented path-specific instruction format incompatibility (`applyTo` vs `paths`); added asymmetry summary; added Key Finding to Section 9; added Reference 43 | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 
