@@ -231,21 +231,31 @@ Within the monthly usage allowance for GitHub Actions and premium requests, codi
 
 ### 3.7 Assigning GitHub Issues to the Claude Coding Agent
 
-**Short answer: yes.** The Anthropic Claude coding agent is a full third-party coding agent and supports all the same issue-assignment entry points as the native Copilot Coding Agent. This is the cloud session path: the agent runs on GitHub's infrastructure, implements the issue, and opens a pull request for review — the same end-to-end workflow as Copilot Coding Agent, but powered by Anthropic's Claude Agent SDK.
+**Short answer: yes — but only on Pro+ or Enterprise.** The Anthropic Claude coding agent is a full third-party coding agent and supports all the same issue-assignment entry points as the native Copilot Coding Agent. This is the cloud session path: the agent runs on GitHub's infrastructure, implements the issue, and opens a pull request for review — the same end-to-end workflow as Copilot Coding Agent, but powered by Anthropic's Claude Agent SDK.
+
+#### Required plan
+
+The official GitHub documentation for issue assignment is explicit: the agent dropdown that exposes third-party agents including Claude is **only available in GitHub Copilot Pro+ and Copilot Enterprise plans**. This is documented in Step 8 of the "Assigning an issue to Copilot on GitHub.com" workflow:
+
+> "Third-party coding agents are available in the GitHub Copilot **Pro+ and Copilot Enterprise** plans."
+
+Users on the basic **Pro plan** do not have access to the third-party agent dropdown and cannot select Claude from the issue assignment dialog. The top-level `about-third-party-agents` overview page lists Pro, Pro+, Business, and Enterprise in its "Who can use this feature?" header, but this refers to the third-party agents feature broadly. The specific issue-assignment dropdown that exposes Claude requires Pro+ or Enterprise.
+
+**Citation:** Asking GitHub Copilot to create a pull request. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-a-pr#assigning-an-issue-to-copilot-on-githubcom. Accessed 3 March 2026.
 
 #### Prerequisites
 
 Before assigning issues to the Claude coding agent:
 
-1. **Enable third-party agents** in your Copilot settings. Navigate to [coding agent settings](https://github.com/settings/copilot/coding_agent) and under "Partner agents", toggle on **Anthropic Claude**.
-2. **Plan requirement**: The detailed documentation for issue assignment notes that third-party coding agents are available in **GitHub Copilot Pro+, Business, and Enterprise** plans. The top-level third-party agents page also lists Pro, but the in-workflow notes consistently specify Pro+ and above for the agent selection dropdown. Verify the current requirement at the official GitHub Copilot plans page before relying on a Pro subscription for this feature.
+1. **Confirm your plan**: You need **GitHub Copilot Pro+, Business, or Enterprise**. The basic Pro plan does not include the third-party agent dropdown.
+2. **Enable third-party agents** in your Copilot settings. Navigate to [coding agent settings](https://github.com/settings/copilot/coding_agent) and under "Partner agents", toggle on **Anthropic Claude**.
 
 #### How to assign an issue to Claude (GitHub.com)
 
 1. Open the issue you want to assign in the repository on GitHub.com.
 2. In the right sidebar, click **Assignees**.
 3. Select **Copilot** from the assignees list. An "Assign to Copilot" dialog appears.
-4. In the dialog, click the **agent dropdown** (if available for your plan) and select **Anthropic Claude** to use the Claude coding agent instead of the default Copilot Coding Agent.
+4. In the dialog, click the **agent dropdown** and select **Anthropic Claude** to use the Claude coding agent instead of the default Copilot Coding Agent.
 5. Optionally add instructions in the "Optional prompt" field.
 6. Click to confirm.
 
@@ -274,7 +284,7 @@ Within VS Code, to start a cloud Claude session that creates a pull request (equ
 
 | Capability | Copilot Coding Agent | Claude Coding Agent (issue assignment) |
 |-----------|---------------------|----------------------------------------|
-| Assign issue on GitHub.com | ✅ Yes | ✅ Yes (via agent dropdown) |
+| Assign issue on GitHub.com | ✅ Yes (all plans) | ✅ Yes (Pro+ / Enterprise only) |
 | Agents tab on GitHub.com | ✅ Yes | ✅ Yes (via agent dropdown) |
 | Mention in PR comments | ✅ Yes (`@copilot`) | ✅ Yes (via third-party agent mention) |
 | Cloud session creates PR | ✅ Yes | ✅ Yes |
@@ -284,11 +294,17 @@ Within VS Code, to start a cloud Claude session that creates a pull request (equ
 | GitHub Mobile | ✅ Yes | ✅ Yes (via Agents tab) |
 | Open session in VS Code | ✅ Yes | ✅ Yes |
 
-#### Plan availability note
+#### Troubleshooting: "I don't see Claude in the dropdown"
 
-The `about-third-party-agents` documentation page lists Pro, Pro+, Business, and Enterprise as supported plans. However, the in-workflow step for the **agent dropdown** that selects Claude (as opposed to the default Copilot Coding Agent) consistently carries the note: "Third-party coding agents are available in the GitHub Copilot Pro+ and Copilot Enterprise plans." This suggests the dedicated Claude coding agent issue-assignment workflow specifically requires Pro+ or higher. Teams on the basic Pro plan should verify current availability at [https://docs.github.com/en/copilot/concepts/agents/about-third-party-agents](https://docs.github.com/en/copilot/concepts/agents/about-third-party-agents) before proceeding.
+If the issue assignment dialog only shows "Copilot" and "Custom Agent" but not "Anthropic Claude":
 
-**Citation:** About third-party agents. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-third-party-agents. Accessed 28 February 2026. Anthropic Claude. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/anthropic-claude. Accessed 28 February 2026. Asking GitHub Copilot to create a pull request. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-a-pr. Accessed 3 March 2026. Managing coding agents. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/manage-agents. Accessed 3 March 2026.
+**"Custom Agent" is not Claude.** The "Custom Agent" option in the issue assignment dialog creates a custom *Copilot* agent — a `.agent.md` file stored in `.github/agents/` that configures specialised behaviour for the Copilot Coding Agent. This is entirely separate from third-party agents such as Claude. Clicking "Custom Agent" takes you to a text editor for creating a Copilot agent profile, not the Claude Agent SDK.
+
+**Check your plan.** Third-party agents (including Claude) appear in the agent dropdown only on Pro+ and Enterprise plans. On the basic Pro plan, the dropdown contains only Copilot built-in and custom Copilot agents. To gain access, upgrade to Pro+ or Enterprise.
+
+**Check the Partner agents toggle.** Even on eligible plans, Claude only appears in the dropdown if you have enabled it. Go to [https://github.com/settings/copilot/coding_agent](https://github.com/settings/copilot/coding_agent) and confirm that the toggle for **Anthropic Claude** under "Partner agents" is on.
+
+**Citation:** About third-party agents. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-third-party-agents. Accessed 28 February 2026. Anthropic Claude. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/anthropic-claude. Accessed 28 February 2026. Asking GitHub Copilot to create a pull request. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-a-pr. Accessed 3 March 2026. Managing coding agents. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/manage-agents. Accessed 3 March 2026. Creating custom agents for Copilot coding agent. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents. Accessed 3 March 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -1201,6 +1217,8 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 
 41. **About GitHub Copilot coding agent.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent. Accessed 3 March 2026.
 
+42. **Creating custom agents for Copilot coding agent.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents. Accessed 3 March 2026.
+
 [↑ Back to top](#table-of-contents)
 
 ---
@@ -1219,6 +1237,7 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 | 3 March 2026 | 1.8 | Added section 5.5: comparison of CLAUDE.md support in Claude Agent SDK delegation mode vs default Copilot agent mode — Claude Agent SDK natively supports project-level and user-level CLAUDE.md, /memory and /init slash commands; updated section 5.3 table with Claude Agent SDK rows for local and cloud sessions; updated section 9 key finding for CLAUDE.md; updated completeness checklist; added Reference 31 (Agent SDK memory documentation) | GitHub Copilot |
 | 3 March 2026 | 1.9 | Expanded config file comparison to cover all Claude Code configuration types: added Section 5.6 (master comparison table for all config file types), renamed Section 6 to include commands/hooks/settings, updated Section 6.6 (sub-agents: added Agent SDK filesystem support), added Section 6.7 (skills Agent SDK comparison including `allowed-tools` limitation), Section 6.8 (custom commands), Section 6.9 (hooks), Section 6.10 (settings/permissions), Section 6.11 (MCP servers); added four new key findings to Section 9; expanded completeness checklist; added References 32–38 | GitHub Copilot |
 | 3 March 2026 | 2.0 | Added Section 3.7: Assigning GitHub Issues to the Claude Coding Agent — confirmed the Claude coding agent supports all standard issue-assignment entry points (GitHub.com, Agents tab, VS Code cloud session); documented step-by-step workflow; added comparison table of capabilities vs Copilot Coding Agent; documented plan availability inconsistency (Pro+ / Enterprise noted in workflow docs); updated Section 4.2 feature comparison table and Section 4.3 use-case guidance; added References 39–41 | GitHub Copilot |
+| 3 March 2026 | 2.1 | Corrected Section 3.7: clarified that Pro+ or Enterprise is strictly required (not just a recommendation to verify); added Troubleshooting subsection explaining that "Custom Agent" in the issue dialog creates a custom Copilot agent (`.agent.md`), not a third-party agent; fixed capability comparison table to show Pro+ / Enterprise plan requirement; added Reference 42 (create-custom-agents) | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 
