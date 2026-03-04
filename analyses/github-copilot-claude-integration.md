@@ -248,7 +248,7 @@ Users on the basic **Pro plan** do not have access to the third-party agent drop
 
 Before assigning issues to the Claude coding agent:
 
-1. **Confirm your plan**: You need **GitHub Copilot Pro+, Business, or Enterprise**. The basic Pro plan does not include the third-party agent dropdown.
+1. **Confirm your plan**: You need **GitHub Copilot Pro+ or Enterprise**. The basic Pro plan does not include the third-party agent dropdown.
 2. **Enable third-party agents** in your Copilot settings. Navigate to [coding agent settings](https://github.com/settings/copilot/coding_agent) and under "Partner agents", toggle on **Anthropic Claude**.
 
 #### How to assign an issue to Claude (GitHub.com)
