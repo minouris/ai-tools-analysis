@@ -36,6 +36,7 @@ Browse detailed analyses of popular AI coding tools in the [analyses](analyses/)
 - **[Cursor](analyses/cursor.md)** - AI-first code editor built for productivity with deep AI integration
 - **[Roo Cline](analyses/roo-cline.md)** - AI-powered development assistant for VS Code with multiple operational modes
 - **[Continue](analyses/continue.md)** - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
+- **[Claude Agent SDK](analyses/claude-agent-sdk.md)** - Programmable SDK for building production-grade AI agents using Claude
 - **[Claude Code](analyses/claude-code.md)** - Terminal-based agentic coding tool from Anthropic with MCP support
 - **[Sourcegraph Cody](analyses/sourcegraph-cody.md)** - AI coding assistant with deep codebase context and understanding
 - **[Amazon Q Developer](analyses/amazon-q-developer.md)** - AWS AI-powered coding assistant with security scanning

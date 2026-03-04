@@ -8,6 +8,7 @@ This directory contains individual analyses of AI coding tools, each following t
 
 ## Current Analyses
 
+- [Claude Agent SDK](claude-agent-sdk.md) - Programmable SDK for building production-grade AI agents using Claude's agentic capabilities (Python and TypeScript)
 - [Claude Code](claude-code.md) - Terminal-based agentic coding tool from Anthropic with MCP support, plugin system, and VS Code integration
 - [Azure AI Toolkit for Visual Studio Code](azure-ai-toolkit.md) - Visual Studio Code extension for integrating Azure AI services and local AI models into development workflows
 - [Continue](continue.md) - AI-powered coding assistant with IDE extensions, CLI, and cloud agents
