@@ -33,7 +33,7 @@
 
 ## 1. Executive Summary
 
-This document provides a comprehensive comparison of 16 AI coding tools and development platforms analysed in this repository. The tools represent different approaches to AI-assisted development, ranging from cloud-based subscription services to open-source agentic frameworks, cloud development environments, and historical platforms.
+This document provides a comprehensive comparison of 17 AI coding tools and development platforms analysed in this repository. The tools represent different approaches to AI-assisted development, ranging from cloud-based subscription services to open-source agentic frameworks, cloud development environments, and historical platforms.
 
 ### Tools Included
 
@@ -434,7 +434,7 @@ Updates to feature comparison data since 22 January 2026 are noted within each r
 - **Terminal/CLI:** 5/14 table entries (36%)
 - **Standalone:** 3/14 table entries (21%) — Cursor (editor), ChatGPT (browser/app), Windsurf (editor)
 
-> **Note on denominator:** The IDE table contains 14 entries. Of the 16 tools analysed, GitHub Copilot Chat and GitHub Copilot Coding Agent are combined as a single "GitHub Copilot" row, and the GitHub Codespaces row is retained separately, giving 14 distinct entries in this table. Counts above reflect the 14-entry table, not the full 16-analysis count.
+> **Note on denominator:** The IDE table contains 14 entries. Of the 17 tools analysed, GitHub Copilot Chat and GitHub Copilot Coding Agent are combined as a single "GitHub Copilot" row, and the GitHub Codespaces row is retained separately, giving 14 distinct entries in this table. Counts above reflect the 14-entry table, not the full 17-analysis count.
 
 **Key Finding:** VS Code has near-universal support amongst IDE-integrated tools. ChatGPT, Cursor, and Windsurf operate as standalone applications. OpenAI Codex offers both a CLI and IDE extension. Windsurf's VS Code extension is in maintenance mode with new features only available in the native Windsurf Editor.
 
