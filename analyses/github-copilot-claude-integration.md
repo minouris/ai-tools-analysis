@@ -35,6 +35,7 @@
   - [5.4 Restrictions and Limitations](#54-restrictions-and-limitations)
   - [5.5 CLAUDE.md Support in Claude Agent SDK Mode vs Default Copilot Agent Mode](#55-claudemd-support-in-claude-agent-sdk-mode-vs-default-copilot-agent-mode)
   - [5.6 Master Comparison: All Claude Configuration File Types](#56-master-comparison-all-claude-configuration-file-types)
+  - [5.7 Does the Claude Agent SDK Read Copilot Instruction Files?](#57-does-the-claude-agent-sdk-read-copilot-instruction-files)
 - [6. Agent Skills, Commands, Hooks, and Settings Support](#6-agent-skills-commands-hooks-and-settings-support)
   - [6.1 What are Agent Skills?](#61-what-are-agent-skills)
   - [6.2 Supported Environments for Agent Skills](#62-supported-environments-for-agent-skills)
@@ -534,6 +535,88 @@ This section provides a single at-a-glance comparison of every Claude Code confi
 4. **Unconfirmed features**: `CLAUDE.local.md`, `.claude/rules/*.md`, and `.mcp.json` are not explicitly confirmed as supported in the Agent SDK documentation for either session type. These features are documented for Claude Code (the terminal tool) but have not been separately verified for the VS Code Agent SDK integration. Teams relying on these should test before depending on them.
 
 **Citation:** See References [3](#11-references), [31–38](#11-references) in the References section.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+### 5.7 Does the Claude Agent SDK Read Copilot Instruction Files?
+
+The previous sections document how Copilot reads Claude instruction files (`CLAUDE.md`) — but with significant limitations. The reverse question matters equally: **when using the Claude Agent SDK, does it automatically pick up and follow existing Copilot instruction files, or does switching to the Claude Agent SDK mean your project coding standards and conventions are no longer applied?**
+
+**The short answer: No.** The Claude Agent SDK does not read any of Copilot's instruction file formats. If you switch from the Copilot Coding Agent to the Claude Agent SDK without creating Claude-format instruction files, the Claude agent will operate without any of the project context or constraints encoded in your Copilot instructions.
+
+#### Copilot instruction files and whether Claude reads them
+
+Copilot uses three categories of repository instruction file. None are read by the Claude Agent SDK:
+
+| Copilot Instruction File | What It Does | Read by Claude Agent SDK? |
+|-------------------------|-------------|--------------------------|
+| `.github/copilot-instructions.md` | Repository-wide instructions applied to all Copilot features in the repository | ❌ No |
+| `.github/instructions/*.instructions.md` | Path-specific instructions, scoped via `applyTo` glob pattern in YAML frontmatter | ❌ No |
+| `AGENTS.md` | Cross-agent instructions readable by multiple agent tools (Copilot Coding Agent, OpenAI Codex, and others) | ⚠️ Not confirmed in official Anthropic documentation |
+
+Anthropic's official Claude Code and Agent SDK documentation exclusively documents `CLAUDE.md` (and the `.claude/` directory hierarchy) as the instruction and memory system. There is no mention of `.github/copilot-instructions.md` or `.github/instructions/*.instructions.md` in Claude Code or Agent SDK documentation. These paths are GitHub Copilot-specific and are loaded only by Copilot features (Chat, Coding Agent, Code Review, and other Copilot tools).
+
+**Citation:** Memory. Claude Code Documentation. https://code.claude.com/docs/en/memory. Accessed 4 March 2026. Memory and system prompts. Claude Agent SDK Documentation. https://platform.claude.com/docs/en/agent-sdk/modifying-system-prompts. Accessed 4 March 2026.
+
+#### `AGENTS.md` is a partial bridge — with caveats
+
+`AGENTS.md` is an open cross-agent standard maintained in the [openai/agents.md](https://github.com/openai/agents.md) repository. The GitHub Copilot Coding Agent reads `AGENTS.md` as an agent instructions file — equivalent in Copilot's hierarchy to `CLAUDE.md` or `GEMINI.md`. However, the official Anthropic and Claude Code documentation does not document reading `AGENTS.md` as part of the Claude Code memory system. Whether Claude Code or the VS Code Claude Agent SDK integration reads `AGENTS.md` is unconfirmed from official sources and should not be relied upon without testing in your specific setup.
+
+Even if Claude were to support `AGENTS.md`, that still does not bridge `.github/copilot-instructions.md` — the most commonly used Copilot instruction file. Teams relying on `.github/copilot-instructions.md` must still take an explicit migration step.
+
+#### Migration strategies
+
+If you have existing Copilot instructions and want the Claude Agent SDK to follow the same project conventions, three approaches are available:
+
+**Option 1 — Duplicate content in `CLAUDE.md` (recommended; unambiguously supported)**
+
+Create a `CLAUDE.md` in the repository root containing the same instructions as your `.github/copilot-instructions.md`. This is the most explicit approach: `CLAUDE.md` is natively supported by both the Copilot Coding Agent (as a flat agent instructions file) and the Claude Agent SDK (as native project memory). Maintaining both files means each tool always reads its natively-supported instruction format. `CLAUDE.md` is also read by Copilot Chat (via the Copilot Coding Agent — see Section 5.3) — the `.github/copilot-instructions.md` file is still needed for Copilot Chat.
+
+**Option 2 — Use `@import` in `CLAUDE.md` to reference the Copilot file**
+
+Claude Code supports `@import` syntax (using `@path/to/file`) to pull in content from other files into the memory context. You can create a minimal `CLAUDE.md` that imports the Copilot instructions file, avoiding duplication:
+
+```markdown
+@.github/copilot-instructions.md
+```
+
+This approach has two caveats:
+
+- The `@import` directive is documented for Claude Code CLI but is not explicitly confirmed as processed by the VS Code Claude Agent SDK integration. Verify that imports are resolved before relying on this approach in Agent SDK sessions.
+- `.github/instructions/*.instructions.md` path-specific instruction files cannot be bridged this way: even if the import works, the `applyTo` YAML frontmatter in those files is Copilot-specific syntax that Claude does not interpret. Path-specific instructions require creating equivalent `.claude/rules/*.md` files (see below).
+
+**Option 3 — Create `AGENTS.md` as a shared instruction source**
+
+If you want a single instruction file readable by multiple AI coding tools, consider placing core project guidelines in an `AGENTS.md` file. Copilot Coding Agent officially reads `AGENTS.md`. You can then have `CLAUDE.md` import it or contain the same content. This approach requires testing to confirm Claude Code and the Agent SDK honour `AGENTS.md` in your environment, as this is not confirmed in official Anthropic documentation.
+
+#### Path-specific instructions: no direct equivalent
+
+Copilot's `.github/instructions/*.instructions.md` files use an `applyTo` YAML frontmatter field to scope instructions to specific file paths. Claude Code uses a different format for the same purpose: `.claude/rules/*.md` files with a `paths` YAML frontmatter field.
+
+| Feature | Copilot path-specific instructions | Claude Code path-specific rules |
+|---------|------------------------------------|---------------------------------|
+| File location | `.github/instructions/*.instructions.md` | `.claude/rules/*.md` |
+| Glob pattern field name | `applyTo` | `paths` |
+| Agent exclusion field | `excludeAgent` | Not applicable |
+| Read by Copilot Coding Agent | ✅ Yes | ❌ No |
+| Read by Claude Agent SDK | ❌ No | ✅ Yes |
+| Shared between both systems | ❌ No — incompatible paths and field names | ❌ No — incompatible paths and field names |
+
+These files are not directly portable between systems. If you have path-specific Copilot instructions you want applied to Claude Agent SDK sessions, you need to create equivalent `.claude/rules/*.md` files with the `paths` field substituted for `applyTo`. The instruction content itself can be reused; only the YAML frontmatter key changes.
+
+#### Summary: instruction file asymmetry between Copilot and Claude
+
+The instruction file relationship between Copilot and the Claude Agent SDK is **asymmetric**:
+
+- **Claude → Copilot direction:** Copilot Coding Agent reads `CLAUDE.md` as a flat instructions file (with the limitations documented in Sections 5.3–5.5). This provides some cross-compatibility: teams with an existing `CLAUDE.md` can use the Copilot Coding Agent without additional setup.
+
+- **Copilot → Claude direction:** The Claude Agent SDK does not read any Copilot-specific instruction files (`.github/copilot-instructions.md`, `.github/instructions/*.instructions.md`). There is no automatic path from existing Copilot instructions into the Claude Agent SDK.
+
+This means **teams primarily using Copilot who add the Claude Agent SDK must explicitly create Claude-format instruction files** (`CLAUDE.md`, and optionally `.claude/rules/*.md` for path-specific guidance). Without this step, the Claude Agent SDK has no project-level constraints applied — the concern about "unconstrained AI" is well-founded. The recommended resolution is to create a `CLAUDE.md` in the repository root.
+
+**Citation:** Support for different types of custom instructions. GitHub Copilot Documentation. https://docs.github.com/en/copilot/reference/custom-instructions-support. Accessed 4 March 2026. Memory. Claude Code Documentation. https://code.claude.com/docs/en/memory. Accessed 4 March 2026. Memory and system prompts. Claude Agent SDK Documentation. https://platform.claude.com/docs/en/agent-sdk/modifying-system-prompts. Accessed 4 March 2026. Adding repository custom instructions for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions. Accessed 4 March 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -1051,6 +1134,9 @@ A significant limitation of the Claude Agent SDK delegation is that mid-session 
 **CLAUDE.md support differs significantly between Copilot Coding Agent and Claude Agent SDK modes:**
 When using the Copilot Coding Agent, `CLAUDE.md` is treated as a flat agent instructions file — equivalent to `AGENTS.md`. When using the Claude Agent SDK delegation mode in VS Code, `CLAUDE.md` is handled natively by Anthropic's own agent harness, which supports both project-level and (in local sessions) user-level memory files, along with in-session memory management via the `/memory` and `/init` slash commands. The broader Claude Code memory hierarchy (`CLAUDE.local.md`, `.claude/rules/`, `@import` directives, auto-memory) is not explicitly documented as supported by the Agent SDK and should be verified before relying on it. Standard Copilot Chat (not delegation mode) does not support `CLAUDE.md` at all.
 
+**Instruction file compatibility between Copilot and the Claude Agent SDK is asymmetric:**
+Copilot Coding Agent reads `CLAUDE.md` (with limitations). The Claude Agent SDK does not read any Copilot-specific instruction files: `.github/copilot-instructions.md` and `.github/instructions/*.instructions.md` are Copilot-only and are ignored by the Claude Agent SDK. Teams switching from Copilot to the Claude Agent SDK must explicitly create a `CLAUDE.md` to apply project-level instructions to Claude sessions; without it, the agent operates without project-specific constraints. Teams already using Claude Code can reuse their `CLAUDE.md` in Copilot sessions without changes.
+
 **The Claude Agent SDK exposes significantly more of the Claude Code configuration surface than the Copilot Coding Agent:**
 The Copilot Coding Agent reads only `CLAUDE.md` (as flat instructions) and skills. The Claude Agent SDK (local session) reads all project-level and user-level Claude Code configuration: memory files, skills, sub-agents (`.claude/agents/`), custom commands (`.claude/commands/`), hooks (`.claude/settings.json`), settings/permissions, and MCP server configuration (`.mcp.json`). Cloud Agent SDK sessions read all project-level config from the repository but cannot access user-level (`~/.claude/`) directories. This makes the Claude Agent SDK mode the closest approximation to full Claude Code behaviour available within a Copilot subscription.
 
@@ -1107,6 +1193,8 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 - [x] Supported environments for CLAUDE.md tabulated (including Claude Agent SDK delegation mode)
 - [x] Restrictions and limitations of CLAUDE.md support documented
 - [x] Comparison of CLAUDE.md support between Claude Agent SDK mode and Copilot Coding Agent mode
+- [x] Reverse compatibility: does Claude Agent SDK read Copilot instruction files? (Section 5.7)
+- [x] Migration strategies for teams with existing Copilot instructions adding Claude Agent SDK
 - [x] Master comparison table of all Claude configuration file types across Copilot modes
 - [x] Sub-agents (`.claude/agents/`) support in Claude Agent SDK vs Copilot Coding Agent documented
 - [x] Skills comparison between Claude Agent SDK mode and Copilot Coding Agent (including `allowed-tools` SDK limitation)
@@ -1226,6 +1314,8 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 
 42. **Creating custom agents for Copilot coding agent.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents. Accessed 3 March 2026.
 
+43. **Adding repository custom instructions for GitHub Copilot.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions. Accessed 4 March 2026.
+
 [↑ Back to top](#table-of-contents)
 
 ---
@@ -1246,6 +1336,7 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 | 3 March 2026 | 2.0 | Added Section 3.7: Assigning GitHub Issues to the Claude Coding Agent — confirmed the Claude coding agent supports all standard issue-assignment entry points (GitHub.com, Agents tab, VS Code cloud session); documented step-by-step workflow; added comparison table of capabilities vs Copilot Coding Agent; documented plan availability inconsistency (Pro+ / Enterprise noted in workflow docs); updated Section 4.2 feature comparison table and Section 4.3 use-case guidance; added References 39–41 | GitHub Copilot |
 | 3 March 2026 | 2.1 | Corrected Section 3.7: clarified that Pro+ or Enterprise is strictly required (not just a recommendation to verify); added Troubleshooting subsection explaining that "Custom Agent" in the issue dialog creates a custom Copilot agent (`.agent.md`), not a third-party agent; fixed capability comparison table to show Pro+ / Enterprise plan requirement; added Reference 42 (create-custom-agents) | GitHub Copilot |
 | 4 March 2026 | 2.2 | Revised Section 3.7 Troubleshooting: reordered checks to lead with the Partner agents toggle (most common cause for Pro+ users); expanded toggle instructions with explicit step-by-step navigation; added repository-level Copilot coding agent enablement as Step 2; demoted plan check to Step 3 | GitHub Copilot |
+| 4 March 2026 | 2.3 | Added Section 5.7: Does the Claude Agent SDK Read Copilot Instruction Files? — documented that `.github/copilot-instructions.md` and `.github/instructions/*.instructions.md` are not read by the Claude Agent SDK; documented `AGENTS.md` caveat (not confirmed in official Anthropic docs); provided three migration strategies (duplicate in CLAUDE.md, @import bridge, AGENTS.md shared file); documented path-specific instruction format incompatibility (`applyTo` vs `paths`); added asymmetry summary; added Key Finding to Section 9; added Reference 43 | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 
