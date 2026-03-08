@@ -64,7 +64,7 @@
 - **Auto-approve slash commands** (VS Code v1.110 / March 2026): `/autoApprove` and `/disableAutoApprove` (also `/yolo` and `/disableYolo`) allow toggling global auto approve for all tools directly from the chat input.
 - **Agent plugins** (VS Code v1.110 / March 2026, experimental): Prepackaged bundles of skills, tools, and hooks can now be installed from the Extensions view. Search for `@agentPlugins` to find available plugins.
 - **Agentic browser tools** (VS Code v1.110 / March 2026, experimental): Agents can now drive the integrated browser to interact with web applications and validate their own changes (`workbench.browser.enableChatTools` setting).
-- **Create agent customizations from chat** (VS Code v1.110 / March 2026): New `/create-prompt`, `/create-instruction`, `/create-skill`, `/create-agent`, and `/create-hook` slash commands generate customisation files directly from a chat conversation.
+- **Create agent customisations from chat** (VS Code v1.110 / March 2026): New `/create-prompt`, `/create-instruction`, `/create-skill`, `/create-agent`, and `/create-hook` slash commands generate customisation files directly from a chat conversation.
 - **Explore subagent for codebase research** (VS Code v1.110 / March 2026): The Plan agent now always delegates codebase research to a dedicated read-only Explore subagent for fast, parallelised codebase exploration.
 - **Tools for usages and rename** (VS Code v1.110 / March 2026): Updated `usages` tool and a new `rename` tool enable agents to navigate and refactor code with high precision using existing LSP capabilities.
 - **Redesigned model picker** (VS Code v1.110 / March 2026): The language model dropdown has been reorganised into sections (Auto, Featured/recent models, Other models) with a search box and rich hover with model details.
@@ -250,9 +250,9 @@ GitHub Copilot is powered by generative AI models developed by GitHub, OpenAI, a
 
 - **Agent hooks** (VS Code v1.109.3 / February 2026, preview): A new preview feature allows users to run custom shell commands at key agent lifecycle points, enabling custom pre- and post-processing during agent sessions.
 - **Claude configuration file compatibility** (VS Code v1.109 / February 2026): Users can now reuse Claude configuration files directly in VS Code, removing the need to duplicate project context for Claude-based agents.
-- **Create agent customizations from chat** (VS Code v1.110 / March 2026): New `/create-prompt`, `/create-instruction`, `/create-skill`, `/create-agent`, and `/create-hook` slash commands generate customisation files directly from a chat conversation in agent mode. Commands guide you through user-level or workspace-level storage choice, and can extract patterns from an ongoing conversation.
+- **Create agent customisations from chat** (VS Code v1.110 / March 2026): New `/create-prompt`, `/create-instruction`, `/create-skill`, `/create-agent`, and `/create-hook` slash commands generate customisation files directly from a chat conversation in agent mode. Commands guide you through user-level or workspace-level storage choice, and can extract patterns from an ongoing conversation.
 
-Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
+Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 ### Instruction File Support
 
@@ -1275,7 +1275,7 @@ Areas for improvement:
 - **Auto-approve slash commands** (VS Code v1.110 / March 2026): `/autoApprove` and `/disableAutoApprove` (aliases: `/yolo`, `/disableYolo`) toggle global auto approve from the chat input.
 - **Agent plugins** (VS Code v1.110 / March 2026, experimental): Prepackaged bundles of skills, tools, and hooks can be installed from the Extensions view (`@agentPlugins`).
 - **Agentic browser tools** (VS Code v1.110 / March 2026, experimental): Agents can navigate and interact with the integrated browser (`workbench.browser.enableChatTools`).
-- **Create agent customizations from chat** (VS Code v1.110 / March 2026): `/create-prompt`, `/create-instruction`, `/create-skill`, `/create-agent`, and `/create-hook` commands generate customisation files from a chat conversation.
+- **Create agent customisations from chat** (VS Code v1.110 / March 2026): `/create-prompt`, `/create-instruction`, `/create-skill`, `/create-agent`, and `/create-hook` commands generate customisation files from a chat conversation.
 - **Explore subagent for codebase research** (VS Code v1.110 / March 2026): The Plan agent delegates codebase research to a dedicated read-only Explore subagent running on fast models.
 - **Tools for usages and rename** (VS Code v1.110 / March 2026): Updated `usages` tool and new `rename` tool for high-precision code navigation and refactoring.
 - **Redesigned model picker** (VS Code v1.110 / March 2026): Reorganised into sections (Auto, Featured/recent, Other) with a search box and rich model details in hover.
@@ -1296,7 +1296,7 @@ Areas for improvement:
 | 16 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
 | 21 February 2026 | 1.1 | Updated with VS Code v1.109 changes (February 2026): multi-agent development focus, Claude Agent support, GPT-5.3-Codex, Gemini 3.1 Pro, agent hooks, MCP Apps, Plan agent revamp, message steering, Agent Session Management, parallel subagents, Mermaid diagram rendering, terminal command sandboxing, thinking tokens | GitHub Copilot |
 | 24 February 2026 | 1.2 | Documented known issue: Azure-hosted Anthropic models are non-functional in GitHub Copilot Chat (VS Code). Cannot be added via model management screen; configuring via settings causes all Azure models to vanish from chat panel. Root cause appears to be single-API-key limitation for Azure provider, incompatible with Azure's per-vendor key model. No workaround identified | GitHub Copilot |
-| 8 March 2026 | 1.3 | Updated with VS Code v1.110 changes (February/March 2026): Edit Mode deprecated (hidden by default, removal in v1.125), context compaction (`/compact`), fork chat sessions (`/fork`), session memory for plans, Claude agent improvements (steering/queuing, renaming, compaction, `getDiagnostics`), background agent improvements, Agent Debug panel, auto-approve slash commands, agent plugins, agentic browser tools, create agent customizations from chat, Explore subagent for codebase research, tools for usages and rename, redesigned model picker, collapsible terminal tool calls, long-distance NES, NES eagerness, Ask Questions tool moved to core, inline chat queuing into existing session | GitHub Copilot |
+| 8 March 2026 | 1.3 | Updated with VS Code v1.110 changes (February/March 2026): Edit Mode deprecated (hidden by default, removal in v1.125), context compaction (`/compact`), fork chat sessions (`/fork`), session memory for plans, Claude agent improvements (steering/queuing, renaming, compaction, `getDiagnostics`), background agent improvements, Agent Debug panel, auto-approve slash commands, agent plugins, agentic browser tools, create agent customisations from chat, Explore subagent for codebase research, tools for usages and rename, redesigned model picker, collapsible terminal tool calls, long-distance NES, NES eagerness, Ask Questions tool moved to core, inline chat queuing into existing session | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 

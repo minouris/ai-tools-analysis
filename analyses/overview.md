@@ -74,7 +74,7 @@ This document provides a comprehensive comparison of 17 AI coding tools and deve
 The following tools have notable updates since 22 January 2026. Detailed changes are documented within each tool's section below.
 
 - **Roo Code (formerly Roo Cline):** Rebranded to Roo Code as of v3.2.0, now at v3.48.0 with new worktree selector, Smart Code Folding, and wider model support.
-- **GitHub Copilot Chat:** Multi-agent development focus in VS Code v1.109, Claude Agent SDK (public preview), GPT-5.3-Codex GA, Agent Skills, Copilot Memory. In VS Code v1.110: Edit Mode deprecated, context compaction (`/compact`), fork chat sessions, session memory for plans, Claude agent improvements (steering/queuing, `/compact`, `getDiagnostics`), background agent improvements, Agent Debug panel, agent plugins, agentic browser tools, create agent customizations from chat, Explore subagent, redesigned model picker, long-distance NES.
+- **GitHub Copilot Chat:** Multi-agent development focus in VS Code v1.109, Claude Agent SDK (public preview), GPT-5.3-Codex GA, Agent Skills, Copilot Memory. In VS Code v1.110: Edit Mode deprecated, context compaction (`/compact`), fork chat sessions, session memory for plans, Claude agent improvements (steering/queuing, `/compact`, `getDiagnostics`), background agent improvements, Agent Debug panel, agent plugins, agentic browser tools, create agent customisations from chat, Explore subagent, redesigned model picker, long-distance NES.
 - **GitHub Copilot Coding Agent:** Now accessible from Visual Studio 2026; SKILL.md support for agent skills. In VS Code v1.110: background agents (Copilot CLI in VS Code) now support context compaction, slash commands, and session renaming.
 - **Gemini Code Assist:** Agent mode now generally available (stable) in VS Code and IntelliJ.
 - **Claude Code:** Now at v2.1.47; Sonnet 4.6 added; Opus 4/4.1 deprecated; agent hooks and message queueing.
@@ -212,7 +212,7 @@ Google Cloud's enterprise AI coding assistant using Gemini 3 models. Available i
 **Licence:** Subscription-based (Free, Pro, Pro+, Business, Enterprise)  
 **Key Focus:** GitHub-native integration with multiple modes
 
-AI-powered conversational interface integrated across multiple IDEs (VS Code, JetBrains, Eclipse, Xcode, Neovim) and GitHub.com. Features Ask, Agent, and Plan modes. Supports Claude, GPT, and Gemini models. Custom instructions via `.github/copilot-instructions.md` and MCP server support. Edit mode is deprecated from VS Code v1.110.
+AI-powered conversational interface integrated across multiple IDEs (VS Code, JetBrains, Eclipse, Xcode, Neovim) and GitHub.com. Features Ask, Agent, Edit (deprecated), and Plan modes. Supports Claude, GPT, and Gemini models. Custom instructions via `.github/copilot-instructions.md` and MCP server support. Edit mode is deprecated from VS Code v1.110.
 
 **Official Documentation:** https://docs.github.com/en/copilot
 
@@ -370,7 +370,7 @@ Updates to feature comparison data since 22 January 2026 are noted within each r
 | **Windsurf** | ✅ BYOK | ✅ (via service) | ❌ | ❌ | ❌ | ✅ | Proprietary (SWE) + BYOK |
 | **OpenAI Codex** | ❌ | ✅ **Native** | ❌ | ❌ | ❌ | ❌ | OpenAI only |
 
-† Claude Agent SDK integration for GitHub Copilot Chat is in public preview (VS Code v1.109, February 2026). In VS Code v1.110, steering/queuing and additional slash commands were added to the Claude agent experience. Source: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109). Accessed 21 February 2026. Source: [VS Code v1.110 Release Notes](https://code.visualstudio.com/updates/v1_110). Accessed 8 March 2026.
+† Claude Agent SDK integration for GitHub Copilot Chat is in public preview (VS Code v1.109, February 2026). In VS Code v1.110, steering/queuing and additional slash commands were added to the Claude agent experience. Sources: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109) (Accessed 21 February 2026); [VS Code v1.110 Release Notes](https://code.visualstudio.com/updates/v1_110) (Accessed 8 March 2026).
 
 **Key Finding:** Continue and Roo Cline offer the most provider flexibility with 20-40+ integrations, whilst Amazon Q (AWS-only), Gemini Code Assist (Google-only), and OpenAI Codex (OpenAI-only) are locked to their respective ecosystems. Windsurf uses proprietary in-house SWE models by default with BYOK support for Claude 4 models.
 
