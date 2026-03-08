@@ -1197,7 +1197,7 @@ Areas for improvement:
 - **Documentation Last Updated:** March 2026 (continuously updated)
 - **Analysis Last Updated:** 8 March 2026
 
-### Additional References (February–March 2026 Updates)
+### Additional References (February-March 2026 Updates)
 
 13. GitHub Copilot in Visual Studio Code v1.109 (January Release) - GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/
 14. GPT-5.3-Codex is now generally available for GitHub Copilot - GitHub Changelog. https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/

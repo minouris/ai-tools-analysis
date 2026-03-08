@@ -370,7 +370,7 @@ Updates to feature comparison data since 22 January 2026 are noted within each r
 | **Windsurf** | ✅ BYOK | ✅ (via service) | ❌ | ❌ | ❌ | ✅ | Proprietary (SWE) + BYOK |
 | **OpenAI Codex** | ❌ | ✅ **Native** | ❌ | ❌ | ❌ | ❌ | OpenAI only |
 
-† Claude Agent SDK integration for GitHub Copilot Chat is in public preview (VS Code v1.109, February 2026). In VS Code v1.110, steering/queuing and additional slash commands were added to the Claude agent experience. Source: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109). Accessed 21 February 2026. [VS Code v1.110 Release Notes](https://code.visualstudio.com/updates/v1_110). Accessed 8 March 2026.
+† Claude Agent SDK integration for GitHub Copilot Chat is in public preview (VS Code v1.109, February 2026). In VS Code v1.110, steering/queuing and additional slash commands were added to the Claude agent experience. Source: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109). Accessed 21 February 2026. Source: [VS Code v1.110 Release Notes](https://code.visualstudio.com/updates/v1_110). Accessed 8 March 2026.
 
 **Key Finding:** Continue and Roo Cline offer the most provider flexibility with 20-40+ integrations, whilst Amazon Q (AWS-only), Gemini Code Assist (Google-only), and OpenAI Codex (OpenAI-only) are locked to their respective ecosystems. Windsurf uses proprietary in-house SWE models by default with BYOK support for Claude 4 models.
 
