@@ -62,6 +62,7 @@
 - [9. Summary and Key Findings](#9-summary-and-key-findings)
 - [10. Completeness Checklist](#10-completeness-checklist)
 - [11. References](#11-references)
+- [Changes in v1.110](#changes-in-v1110)
 - [Revision History](#revision-history)
 
 ---
@@ -160,6 +161,8 @@ In VS Code, the Claude agent can additionally be enabled or disabled with the `g
 
 ### 3.3 Local vs Cloud Agent Sessions
 
+> **Updated in VS Code v1.110 (February 2026):** Steering and queuing, session renaming, context window rendering with compaction, the `getDiagnostics` tool, and significant performance improvements have been added to the Claude agent experience. See [Changes in v1.110](#changes-in-v1110) for full details.
+
 The Claude Agent can run in two distinct modes within VS Code, which have different characteristics:
 
 **Local Claude Agent Session:**
@@ -177,16 +180,21 @@ The Claude Agent can run in two distinct modes within VS Code, which have differ
 
 Both session types use the same Claude Agent SDK and are managed from VS Code's unified agent sessions view, alongside local Copilot agent sessions, background agents, and cloud agents.
 
-**Note:** Steering (sending mid-session guidance) is not available for third-party coding agents including Claude. This is a limitation compared to the native Copilot coding agent, which does support steering input.
+**Steering and queuing (added in VS Code v1.110):** You can now send follow-up messages mid-conversation to alter the Claude agent's approach, or to queue up additional requests for after the current response completes. This aligns the Claude agent experience with the steering and queuing capabilities available in regular Copilot agent mode.
+
+**Session renaming (added in VS Code v1.110):** Claude agent sessions can now be renamed to keep track of them more easily.
 
 **Citation:** About third-party agents. GitHub Copilot Documentation. https://docs.github.com/en/copilot/concepts/agents/about-third-party-agents#where-you-can-use-coding-agents. Accessed 28 February 2026. Managing coding agents. GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/use-copilot-agents/manage-agents. Accessed 28 February 2026. Third-party agents in Visual Studio Code. Visual Studio Code Documentation. https://code.visualstudio.com/docs/copilot/agents/third-party-agents. Accessed 28 February 2026.
 
 ### 3.4 Claude Agent Slash Commands
 
+> **Updated in VS Code v1.110 (February 2026):** The `/compact` slash command has been added for on-demand conversation compaction.
+
 The Claude agent provides a set of specialised slash commands that are distinct from standard Copilot slash commands. These reflect Claude's own agent capabilities. Type `/` in the chat input box within a Claude agent session to access these commands:
 
 | Command | Description |
 |---------|-------------|
+| `/compact` | Compact the conversation history on demand. Optionally add custom instructions after the command (for example `/compact focus on the database schema decisions`). Added in VS Code v1.110. |
 | `/agents` | Create and manage specialised Claude sub-agents for specific tasks. Define custom agent behaviours through a wizard. |
 | `/hooks` | Configure lifecycle hooks that execute at key points during Claude agent sessions, such as before or after tool execution. |
 | `/memory` | Open and edit `CLAUDE.md` memory files that provide persistent context to the Claude agent across sessions. |
@@ -289,7 +297,7 @@ Within VS Code, to start a cloud Claude session that creates a pull request (equ
 | Agents tab on GitHub.com | ✅ Yes | ✅ Yes (via agent dropdown) |
 | Mention in PR comments | ✅ Yes (`@copilot`) | ✅ Yes (via third-party agent mention) |
 | Cloud session creates PR | ✅ Yes | ✅ Yes |
-| Session steering (mid-task redirect) | ✅ Yes | ❌ Not supported for third-party agents |
+| Session steering (mid-task redirect) | ✅ Yes | ✅ Yes (added in VS Code v1.110) |
 | GitHub Actions minutes consumed | ✅ Yes | ✅ Yes |
 | Premium requests consumed | 1 per session (+ model multiplier) | 1 per session (no multiplier in preview) |
 | GitHub Mobile | ✅ Yes | ✅ Yes (via Agents tab) |
@@ -335,9 +343,9 @@ When delegating to the Claude Agent SDK, Copilot hands off the task to Anthropic
 | **Orchestrator** | GitHub Copilot | Anthropic Claude Agent SDK |
 | **Language model** | Any Copilot-supported model | Claude (Anthropic) |
 | **Tools** | Built-in Copilot tools + MCP | Claude's own toolset (via SDK) |
-| **Session steering** | Supported | **Not supported** |
+| **Session steering** | Supported | **Supported (added in VS Code v1.110)** |
 | **Memory system** | Copilot Memory (preview) | `CLAUDE.md` / Claude memory hierarchy |
-| **Slash commands** | Copilot built-in commands | Claude-specific commands (`/memory`, `/hooks`, `/agents`, etc.) |
+| **Slash commands** | Copilot built-in commands | Claude-specific commands (`/memory`, `/hooks`, `/agents`, `/compact`, etc.) |
 | **Sub-agents** | Parallel subagents (Copilot) | Claude sub-agents (via `/agents`) |
 | **Hooks** | Agent hooks (preview, VS Code) | Claude lifecycle hooks (via `/hooks`) |
 | **Permission model** | Copilot approval prompts | Claude permission modes (auto / approval / plan) |
@@ -354,7 +362,6 @@ When delegating to the Claude Agent SDK, Copilot hands off the task to Anthropic
 **Use regular agent mode when:**
 - You want to use tools from VS Code extensions or MCP servers alongside the agent
 - You want to use models other than Claude (GPT, Gemini, etc.)
-- You want to steer or redirect the agent mid-session
 - You want the tightest VS Code editor integration
 
 **Use Claude Agent delegation when:**
@@ -1128,8 +1135,8 @@ GitHub Copilot supports Claude at two distinct levels, and conflating them leads
 **Delegation mode is not just "agent mode with Claude":**
 The Claude Agent SDK delegation mode is architecturally distinct from using Claude as the language model in regular agent mode. When delegating, Anthropic's own harness controls tool selection, memory management, and execution flow, rather than Copilot.
 
-**Steering is unavailable for delegated Claude sessions:**
-A significant limitation of the Claude Agent SDK delegation is that mid-session steering (sending guidance to redirect the agent while it is running) is not available. This capability is available for the native Copilot Coding Agent but not for third-party agents including Claude.
+**Steering is now available for delegated Claude sessions (added in VS Code v1.110):**
+As of VS Code v1.110 (February 2026), mid-session steering and queuing have been added for Claude agent sessions. You can now send follow-up messages mid-conversation to alter the agent's approach, or queue up additional requests for after the current response completes. Prior to v1.110, steering was only available for the native Copilot Coding Agent.
 
 **CLAUDE.md support differs significantly between Copilot Coding Agent and Claude Agent SDK modes:**
 When using the Copilot Coding Agent, `CLAUDE.md` is treated as a flat agent instructions file — equivalent to `AGENTS.md`. When using the Claude Agent SDK delegation mode in VS Code, `CLAUDE.md` is handled natively by Anthropic's own agent harness, which supports both project-level and (in local sessions) user-level memory files, along with in-session memory management via the `/memory` and `/init` slash commands. The broader Claude Code memory hierarchy (`CLAUDE.local.md`, `.claude/rules/`, `@import` directives, auto-memory) is not explicitly documented as supported by the Agent SDK and should be verified before relying on it. Standard Copilot Chat (not delegation mode) does not support `CLAUDE.md` at all.
@@ -1316,6 +1323,25 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 
 43. **Adding repository custom instructions for GitHub Copilot.** GitHub Copilot Documentation. https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions. Accessed 4 March 2026.
 
+44. **February 2026 (version 1.110) — Visual Studio Code.** https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## Changes in v1.110
+
+The following changes were made to the Claude Agent SDK integration in VS Code v1.110 (February 2026):
+
+- **Steering and queuing** (VS Code v1.110): You can now send follow-up messages mid-conversation to alter the Claude agent's approach, or queue up additional requests for after the current response completes. This feature was previously unavailable for third-party agents including Claude, and is now on a par with regular Copilot agent mode. See [Section 3.3](#33-local-vs-cloud-agent-sessions).
+- **Session renaming** (VS Code v1.110): Claude agent sessions can now be renamed for easier tracking. See [Section 3.3](#33-local-vs-cloud-agent-sessions).
+- **Context window rendering with compaction** (VS Code v1.110): The Claude agent now shows a context window control that indicates token usage. You can compact the conversation on demand using the `/compact` slash command or via the context window control. See [Section 3.3](#33-local-vs-cloud-agent-sessions) and [Section 3.4](#34-claude-agent-slash-commands).
+- **`/compact` slash command** (VS Code v1.110): A new slash command for on-demand conversation compaction is now available within Claude agent sessions. See [Section 3.4](#34-claude-agent-slash-commands).
+- **`getDiagnostics` tool** (VS Code v1.110): A new `getDiagnostics` tool has been added, allowing the Claude agent to access editor and workspace diagnostic information (problems, warnings, and errors from the Problems panel). This enables the agent to detect and respond to code issues without requiring manual sharing.
+- **Significant performance improvements** (VS Code v1.110): The Claude agent integration has received unspecified performance improvements in this release.
+
+**Citation:** February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
+
 [↑ Back to top](#table-of-contents)
 
 ---
@@ -1337,6 +1363,7 @@ A developer doing 20 feature tickets and 100 chat questions per month at Sonnet 
 | 3 March 2026 | 2.1 | Corrected Section 3.7: clarified that Pro+ or Enterprise is strictly required (not just a recommendation to verify); added Troubleshooting subsection explaining that "Custom Agent" in the issue dialog creates a custom Copilot agent (`.agent.md`), not a third-party agent; fixed capability comparison table to show Pro+ / Enterprise plan requirement; added Reference 42 (create-custom-agents) | GitHub Copilot |
 | 4 March 2026 | 2.2 | Revised Section 3.7 Troubleshooting: reordered checks to lead with the Partner agents toggle (most common cause for Pro+ users); expanded toggle instructions with explicit step-by-step navigation; added repository-level Copilot coding agent enablement as Step 2; demoted plan check to Step 3 | GitHub Copilot |
 | 4 March 2026 | 2.3 | Added Section 5.7: Does the Claude Agent SDK Read Copilot Instruction Files? — documented that `.github/copilot-instructions.md` and `.github/instructions/*.instructions.md` are not read by the Claude Agent SDK; documented `AGENTS.md` caveat (not confirmed in official Anthropic docs); provided three migration strategies (duplicate in CLAUDE.md, @import bridge, AGENTS.md shared file); documented path-specific instruction format incompatibility (`applyTo` vs `paths`); added asymmetry summary; added Key Finding to Section 9; added Reference 43 | GitHub Copilot |
+| 8 March 2026 | 2.4 | Updated with VS Code v1.110 changes (February 2026): added steering and queuing support for Claude agents (correcting prior limitation note in Section 3.3), added session renaming, context window rendering with compaction, and `getDiagnostics` tool information; added `/compact` slash command to Section 3.4 table; updated Section 4.2 feature comparison table (steering now supported); updated Section 4.3 when-to-use guidance; corrected Section 9 key finding on steering; updated Section 3.7 capability comparison table; added Changes in v1.110 section; added Reference 44 | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 
