@@ -31,6 +31,7 @@
   - [6.7 Deployment](#67-deployment)
 - [7. IDE and Environment Integration](#7-ide-and-environment-integration)
   - [7.1 Visual Studio Code](#71-visual-studio-code)
+    - [Agent Debug Panel (Preview, VS Code v1.110)](#agent-debug-panel-preview-vs-code-v1110)
   - [7.2 JetBrains IDEs](#72-jetbrains-ides)
   - [7.3 Eclipse](#73-eclipse)
   - [7.4 Terminal and CLI](#74-terminal-and-cli)
@@ -283,6 +284,8 @@ To create custom instructions:
 
 Custom instructions must be enabled in user settings (enabled by default in most IDEs). Users can also choose to disable custom instructions if desired.
 
+**Creating instruction files from chat (VS Code v1.110):** In an active agent session, use the `/create-instruction` slash command to generate a new instruction file. The command prompts you to choose user-level or workspace-level storage and can extract patterns from the current conversation to populate the file automatically.
+
 ### Syntax and Structure
 
 **Repository-wide instructions** (`.github/copilot-instructions.md`):
@@ -323,6 +326,8 @@ Path-specific instructions support the `excludeAgent` keyword to control whether
 
 Agent hooks allow developers to run custom shell commands at key lifecycle points during agent execution. This enables pre- and post-processing around agent sessions, such as running linters before submitting code or triggering notifications when tasks complete. Agent hooks are configured in VS Code and are currently in preview.
 
+**Creating agent hooks from chat (VS Code v1.110):** Use the `/create-hook` slash command in an agent session to generate a hook configuration file directly from the conversation. Similarly, use `/create-skill` to create a new `SKILL.md` file and `/create-agent` to scaffold a new agent definition file. All three commands guide you through user-level or workspace-level storage choice and can extract relevant patterns from the current conversation.
+
 #### Claude Configuration File Compatibility
 
 Users who also use Claude can now reuse their Claude configuration files directly in VS Code. This removes the need to maintain duplicate project context for Claude-based agent sessions within Copilot.
@@ -350,13 +355,19 @@ Implement proper error handling with custom error classes.
 Log all database operations at debug level.
 ```
 
-**Citation:** Adding custom instructions for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot. Accessed 21 February 2026. GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
+**Citation:** Adding custom instructions for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot. Accessed 21 February 2026. GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 [↑ Back to top](#table-of-contents)
 
 ---
 
 ## 4. Custom and Stored Prompts
+
+### Changes Since January 2026
+
+- **Create prompt files from chat** (VS Code v1.110 / March 2026): The `/create-prompt` slash command generates a new prompt file directly from an agent conversation. The command guides you through storage choice and can extract patterns from the current session.
+
+Citation: February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 ### Prompt Storage Mechanism
 
@@ -382,6 +393,8 @@ To create a prompt file:
 2. Add Markdown files (`.md`) containing your custom prompts
 3. Prompt files can include structured content for specific tasks, making them reusable across the team
 4. These files are committed to version control, enabling team collaboration
+
+**Creating prompt files from chat (VS Code v1.110):** In an active agent session, use the `/create-prompt` slash command to generate a new prompt file. The command prompts you to choose user-level or workspace-level storage and can extract a useful prompt pattern from the current conversation automatically.
 
 **Built-in Keywords**:
 1. **Chat participants**: Type `@` to see available participants (e.g., `@workspace`, `@terminal`)
@@ -424,7 +437,7 @@ Example: `@workspace /explain #file:auth.ts` asks Copilot to explain the auth.ts
 
 **Built-in Keywords**: Individual prompt templates using built-in keywords cannot be directly exported or shared through the Copilot interface, but effective prompt patterns can be documented and shared externally.
 
-**Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 16 January 2026. Prompt files for GitHub Copilot. VS Code Documentation. https://code.visualstudio.com/docs/copilot/customization/prompt-files. Accessed 16 January 2026.
+**Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 16 January 2026. Prompt files for GitHub Copilot. VS Code Documentation. https://code.visualstudio.com/docs/copilot/customization/prompt-files. Accessed 16 January 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -726,6 +739,27 @@ Copilot integrates into VS Code through:
 - Status bar indicators
 - Context menu smart actions
 - Sparkle icon for contextual suggestions
+
+#### Agent Debug Panel (Preview, VS Code v1.110)
+
+> **Added in VS Code v1.110 (March 2026, preview)**
+
+The Agent Debug Panel provides real-time visibility into what the agent is doing during a session. It surfaces information that is otherwise only partially visible in the chat stream, making it significantly easier to diagnose unexpected agent behaviour and understand how customisations are being applied.
+
+**To open:** Open the Command Palette (`Ctrl+Shift+P` / `⇧⌘P`) and run **Developer: Open Agent Debug Panel**.
+
+**What it shows:**
+
+| View | Description |
+|------|-------------|
+| **Events** | Live feed of all agent events in the current session, including tool calls (name, arguments, output), model requests and responses, and timing information |
+| **Chart** | Visual hierarchy of events, showing the parent-child relationship between agent steps, subagent calls, and tool invocations |
+| **System Prompt** | The full system prompt sent to the model for the current session, including injected content from customisation files |
+| **Loaded Customisations** | Lists all instruction files, prompt files, skills, hooks, and agent definitions that were loaded and applied to the current session |
+
+The **Loaded Customisations** view is particularly useful for verifying that custom instructions and skills are being picked up correctly, and for diagnosing cases where a customisation file is not behaving as expected.
+
+**Citation:** February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 **Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 21 February 2026. Installing the GitHub Copilot extension in your environment. GitHub Copilot Documentation. https://docs.visualstudio.com/copilot. Accessed 21 February 2026. January 2026 (version 1.109) - Visual Studio Code. https://code.visualstudio.com/updates/v1_109. Accessed 21 February 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
