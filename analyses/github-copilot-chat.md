@@ -31,6 +31,7 @@
   - [6.7 Deployment](#67-deployment)
 - [7. IDE and Environment Integration](#7-ide-and-environment-integration)
   - [7.1 Visual Studio Code](#71-visual-studio-code)
+    - [Agent Debug Panel (Preview, VS Code v1.110)](#agent-debug-panel-preview-vs-code-v1110)
   - [7.2 JetBrains IDEs](#72-jetbrains-ides)
   - [7.3 Eclipse](#73-eclipse)
   - [7.4 Terminal and CLI](#74-terminal-and-cli)
@@ -53,8 +54,25 @@
 - **Agent orchestrations** (VS Code v1.109 / February 2026): New capability to orchestrate multiple AI agents working together on complex tasks.
 - **Agent Skills** (VS Code v1.109 / February 2026): Teams can create `SKILL.md` files containing reusable workflow definitions that agents can invoke.
 - **Copilot Memory** (VS Code v1.109 / February 2026): Agents can now retain context across sessions using Copilot Memory.
+- **Edit Mode deprecated** (VS Code v1.110 / March 2026): Edit mode is now hidden from the agent picker by default (`chat.editMode.hidden` setting). Edit Mode is officially deprecated as of v1.110 and will be fully removed in v1.125. Users requiring edit-style behaviour are encouraged to use Agent mode or create a custom agent.
+- **Context compaction** (VS Code v1.110 / March 2026): Conversation history can now be compacted to free up context space. VS Code automatically compacts when the context window fills up, and users can manually compact with the `/compact` slash command (available for local, background, and Claude agent sessions).
+- **Fork a chat session** (VS Code v1.110 / March 2026): Users can now fork a chat session to create a new independent session that inherits the conversation history. Use `/fork` to fork the full session, or hover over any chat request and select **Fork Conversation** to fork from that point.
+- **Session memory for plans** (VS Code v1.110 / March 2026): Plans created by the Plan agent now persist to session memory and remain available across conversation turns, even when older history is compacted.
+- **Claude Agent improvements** (VS Code v1.110 / March 2026): Steering and queuing, session renaming, context window rendering with compaction, the `/compact` slash command, the `getDiagnostics` tool, and significant performance improvements have been added to the Claude agent experience.
+- **Background agent improvements** (VS Code v1.110 / March 2026): Background agents (Copilot CLI) now support context compaction with `/compact`, use of slash commands for prompt files, hooks, and skills, and session renaming.
+- **Agent Debug panel** (VS Code v1.110 / March 2026, preview): A new Agent Debug panel provides real-time visibility into agent events, tool calls, system prompts, and loaded customisations. Open from the Command Palette with **Developer: Open Agent Debug Panel**.
+- **Auto-approve slash commands** (VS Code v1.110 / March 2026): `/autoApprove` and `/disableAutoApprove` (also `/yolo` and `/disableYolo`) allow toggling global auto approve for all tools directly from the chat input.
+- **Agent plugins** (VS Code v1.110 / March 2026, experimental): Prepackaged bundles of skills, tools, and hooks can now be installed from the Extensions view. Search for `@agentPlugins` to find available plugins.
+- **Agentic browser tools** (VS Code v1.110 / March 2026, experimental): Agents can now drive the integrated browser to interact with web applications and validate their own changes (`workbench.browser.enableChatTools` setting).
+- **Create agent customisations from chat** (VS Code v1.110 / March 2026): New `/create-prompt`, `/create-instruction`, `/create-skill`, `/create-agent`, and `/create-hook` slash commands generate customisation files directly from a chat conversation.
+- **Explore subagent for codebase research** (VS Code v1.110 / March 2026): The Plan agent now always delegates codebase research to a dedicated read-only Explore subagent for fast, parallelised codebase exploration.
+- **Tools for usages and rename** (VS Code v1.110 / March 2026): Updated `usages` tool and a new `rename` tool enable agents to navigate and refactor code with high precision using existing LSP capabilities.
+- **Redesigned model picker** (VS Code v1.110 / March 2026): The language model dropdown has been reorganised into sections (Auto, Featured/recent models, Other models) with a search box and rich hover with model details.
+- **Collapsible terminal tool calls** (VS Code v1.110 / March 2026): Terminal tool invocations in agent mode are now displayed as collapsible sections (`chat.tools.terminal.simpleCollapsible` setting).
+- **Long-distance next edit suggestions** (VS Code v1.110 / March 2026): Next edit suggestions (NES) now extend to predict and suggest edits anywhere in the current file, not just near the cursor (`github.copilot.nextEditSuggestions.extendedRange` setting).
+- **NES eagerness** (VS Code v1.110 / March 2026): A new eagerness option in the Copilot Status Bar allows choosing between more-frequent or more-targeted NES suggestions.
 
-Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
+Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 **Official Documentation:** https://docs.github.com/en/copilot  
 **Version Analysed:** Current version (as of February 2026)  
@@ -88,8 +106,12 @@ GitHub Copilot transforms the developer experience by enabling developers to foc
 - **Agent Skills**: Teams can create `SKILL.md` files containing reusable workflow definitions that agents invoke during task execution
 - **Copilot Memory**: Agents retain relevant context across sessions to avoid repeated discovery work
 - **Parallel Subagents**: Subagents run concurrently to speed up independent tasks within a workflow
+- **Context Compaction**: Conversation history can be compacted automatically or on demand (`/compact`) to free up context space (VS Code v1.110)
+- **Fork Chat Sessions**: Create a new independent session inheriting the conversation history to explore alternative approaches (`/fork`) (VS Code v1.110)
+- **Agent Plugins**: Install prepackaged bundles of skills, tools, and hooks from the Extensions view (experimental, VS Code v1.110)
+- **Agent Debug Panel**: Real-time visibility into agent events, tool calls, and loaded customisations (preview, VS Code v1.110)
 
-**Citation:** About GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/about-github-copilot. Accessed 21 February 2026. GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
+**Citation:** About GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/about-github-copilot. Accessed 21 February 2026. GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -102,8 +124,9 @@ GitHub Copilot transforms the developer experience by enabling developers to foc
 - **GPT-5.3-Codex availability** (February 2026): GPT-5.3-Codex, OpenAI's latest agentic coding model, began rolling out on 9 February 2026. It is faster than GPT-5.2-Codex on agentic tasks and is now generally available for GitHub Copilot.
 - **Gemini 3.1 Pro public preview** (February 2026): Gemini 3.1 Pro entered public preview in GitHub Copilot on 19 February 2026.
 - **Claude Agent support public preview** (VS Code v1.109 / February 2026): Users can delegate tasks to Anthropic's official Claude Agent SDK using Claude models from their Copilot subscription.
+- **Redesigned model picker** (VS Code v1.110 / March 2026): The language model dropdown has been reorganised into sections (Auto at top, Featured/recently used models, Other models) with a search box and rich hover with model details including capabilities and context window size. Models unavailable on the user's plan are shown but not selectable.
 
-Citation: GPT-5.3-Codex is now generally available for GitHub Copilot. GitHub Changelog. https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/. Accessed 21 February 2026. Gemini 3.1 Pro is now in public preview in GitHub Copilot. GitHub Changelog. https://github.blog/changelog/2026-02-19-gemini-3-1-pro-is-now-in-public-preview-in-github-copilot. Accessed 21 February 2026. GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
+Citation: GPT-5.3-Codex is now generally available for GitHub Copilot. GitHub Changelog. https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/. Accessed 21 February 2026. Gemini 3.1 Pro is now in public preview in GitHub Copilot. GitHub Changelog. https://github.blog/changelog/2026-02-19-gemini-3-1-pro-is-now-in-public-preview-in-github-copilot. Accessed 21 February 2026. GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 ### 2.1 Ollama Integration
 
@@ -227,8 +250,9 @@ GitHub Copilot is powered by generative AI models developed by GitHub, OpenAI, a
 
 - **Agent hooks** (VS Code v1.109.3 / February 2026, preview): A new preview feature allows users to run custom shell commands at key agent lifecycle points, enabling custom pre- and post-processing during agent sessions.
 - **Claude configuration file compatibility** (VS Code v1.109 / February 2026): Users can now reuse Claude configuration files directly in VS Code, removing the need to duplicate project context for Claude-based agents.
+- **Create agent customisations from chat** (VS Code v1.110 / March 2026): New `/create-prompt`, `/create-instruction`, `/create-skill`, `/create-agent`, and `/create-hook` slash commands generate customisation files directly from a chat conversation in agent mode. Commands guide you through user-level or workspace-level storage choice, and can extract patterns from an ongoing conversation.
 
-Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
+Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 ### Instruction File Support
 
@@ -259,6 +283,8 @@ To create custom instructions:
 4. For path-specific files, include frontmatter with `applyTo` keyword using glob patterns
 
 Custom instructions must be enabled in user settings (enabled by default in most IDEs). Users can also choose to disable custom instructions if desired.
+
+**Creating instruction files from chat (VS Code v1.110):** In an active agent session, use the `/create-instruction` slash command to generate a new instruction file. The command prompts you to choose user-level or workspace-level storage and can extract patterns from the current conversation to populate the file automatically.
 
 ### Syntax and Structure
 
@@ -300,6 +326,8 @@ Path-specific instructions support the `excludeAgent` keyword to control whether
 
 Agent hooks allow developers to run custom shell commands at key lifecycle points during agent execution. This enables pre- and post-processing around agent sessions, such as running linters before submitting code or triggering notifications when tasks complete. Agent hooks are configured in VS Code and are currently in preview.
 
+**Creating agent hooks from chat (VS Code v1.110):** Use the `/create-hook` slash command in an agent session to generate a hook configuration file directly from the conversation. Similarly, use `/create-skill` to create a new `SKILL.md` file and `/create-agent` to scaffold a new agent definition file. All three commands guide you through user-level or workspace-level storage choice and can extract relevant patterns from the current conversation.
+
 #### Claude Configuration File Compatibility
 
 Users who also use Claude can now reuse their Claude configuration files directly in VS Code. This removes the need to maintain duplicate project context for Claude-based agent sessions within Copilot.
@@ -327,13 +355,19 @@ Implement proper error handling with custom error classes.
 Log all database operations at debug level.
 ```
 
-**Citation:** Adding custom instructions for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot. Accessed 21 February 2026. GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
+**Citation:** Adding custom instructions for GitHub Copilot. GitHub Copilot Documentation. https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot. Accessed 21 February 2026. GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 [↑ Back to top](#table-of-contents)
 
 ---
 
 ## 4. Custom and Stored Prompts
+
+### Changes Since January 2026
+
+- **Create prompt files from chat** (VS Code v1.110 / March 2026): The `/create-prompt` slash command generates a new prompt file directly from an agent conversation. The command guides you through storage choice and can extract patterns from the current session.
+
+Citation: February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 ### Prompt Storage Mechanism
 
@@ -359,6 +393,8 @@ To create a prompt file:
 2. Add Markdown files (`.md`) containing your custom prompts
 3. Prompt files can include structured content for specific tasks, making them reusable across the team
 4. These files are committed to version control, enabling team collaboration
+
+**Creating prompt files from chat (VS Code v1.110):** In an active agent session, use the `/create-prompt` slash command to generate a new prompt file. The command prompts you to choose user-level or workspace-level storage and can extract a useful prompt pattern from the current conversation automatically.
 
 **Built-in Keywords**:
 1. **Chat participants**: Type `@` to see available participants (e.g., `@workspace`, `@terminal`)
@@ -401,7 +437,7 @@ Example: `@workspace /explain #file:auth.ts` asks Copilot to explain the auth.ts
 
 **Built-in Keywords**: Individual prompt templates using built-in keywords cannot be directly exported or shared through the Copilot interface, but effective prompt patterns can be documented and shared externally.
 
-**Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 16 January 2026. Prompt files for GitHub Copilot. VS Code Documentation. https://code.visualstudio.com/docs/copilot/customization/prompt-files. Accessed 16 January 2026.
+**Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 16 January 2026. Prompt files for GitHub Copilot. VS Code Documentation. https://code.visualstudio.com/docs/copilot/customization/prompt-files. Accessed 16 January 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -492,8 +528,13 @@ As of the January 2026 VS Code release, MCP Apps provide richer, more tool-drive
 - **Plan agent revamp** (VS Code v1.109 / February 2026): The Plan agent has been redesigned with a 4-phase iterative workflow comprising Discovery, Alignment, Design, and Refinement phases.
 - **Ask Questions tool** (VS Code v1.109 / February 2026, experimental): The agent can now ask clarifying questions instead of making assumptions, reducing errors from ambiguous requirements.
 - **Message steering and queueing** (VS Code v1.109 / February 2026): Users can now send follow-up messages whilst a request is still running. Available options are: steer the current request, queue a follow-up message for after completion, or stop and send a new message immediately.
+- **Session memory for plans** (VS Code v1.110 / March 2026): Plans created by the Plan agent now persist to session memory and remain available across conversation turns. When refinements are requested, the agent builds on the existing plan rather than starting fresh. Plans remain accessible even when older conversation history is compacted.
+- **Explore subagent for codebase research** (VS Code v1.110 / March 2026): The Plan agent now always delegates codebase research to a dedicated read-only Explore subagent. Explore uses fast models (Claude Haiku 4.5, Gemini 3 Flash) by default and enables parallelised codebase exploration, resulting in plans that reference specific files and code paths.
+- **Fork a chat session** (VS Code v1.110 / March 2026): Users can create a new independent session that inherits conversation history, enabling alternative approaches to be explored without losing the original context.
+- **Edit Mode deprecated** (VS Code v1.110 / March 2026): Edit mode is now hidden from the agent picker by default. It is officially deprecated as of v1.110 and will be fully removed in v1.125.
+- **Ask Questions tool moved to VS Code core** (VS Code v1.110 / March 2026): The `askQuestions` tool has been moved into VS Code core for improved reliability. Keyboard navigation (⌥N/⌥P on macOS, Alt+N/Alt+P on Windows/Linux) can be used to browse questions in the carousel.
 
-Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
+Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 ### 6.1 Project Initialisation
 
@@ -509,12 +550,14 @@ In Copilot CLI, developers can ask the agent to explore project structure, insta
 
 **Plan Mode**: GitHub Copilot Chat includes a dedicated Plan mode that helps create detailed implementation plans before executing code changes. As of VS Code v1.109 (February 2026), the Plan agent has been redesigned with a structured 4-phase iterative workflow:
 
-1. **Discovery** — Autonomously explores the codebase, searching for relevant files and understanding project structure using read-only tools.
-2. **Alignment** — Pauses to ask clarifying questions before committing to a plan, catching ambiguities early. The **Ask Questions tool** (experimental) presents questions directly in chat with single-select/multi-select options and free-text input.
+1. **Discovery** — Autonomously explores the codebase, searching for relevant files and understanding project structure using read-only tools. As of VS Code v1.110, this phase is delegated to a dedicated read-only **Explore** subagent running on fast models (Claude Haiku 4.5, Gemini 3 Flash by default).
+2. **Alignment** — Pauses to ask clarifying questions before committing to a plan, catching ambiguities early. The **Ask Questions tool** (moved to VS Code core in v1.110) presents questions directly in chat with single-select/multi-select options and free-text input.
 3. **Design** — Drafts a comprehensive implementation plan with clear steps, file locations, and code snippets.
 4. **Refinement** — Adds verification criteria and documents decisions made during planning.
 
 The Plan agent can be invoked by typing `/plan` in chat followed by a task description.
+
+**Session memory for plans (VS Code v1.110):** Plans now persist to session memory across conversation turns. When you request refinements, the agent builds on the existing plan rather than starting from scratch. Plans remain accessible in memory even when older conversation history is compacted.
 
 Once complete, plans can be:
 - Handed off to the agent for implementation
@@ -527,7 +570,7 @@ Once complete, plans can be:
 
 - **Inline completions**: Real-time code suggestions as you type
 - **Chat-based generation**: Request code through conversational prompts
-- **Edit mode**: Controlled edits across multiple files with explicit approval
+- **Edit mode**: Controlled edits across multiple files with explicit approval. **Deprecated in VS Code v1.110** — hidden from the agent picker by default (`chat.editMode.hidden` setting). Will be fully removed in v1.125.
 - **Agent mode**: Autonomous code generation with iterative improvements
 - **Quick chat**: Dropdown chat interface (⇧+⌥+⌘+L on Mac, Ctrl+Shift+Alt+L on Windows/Linux)
 - **Inline chat**: Editor-integrated chat (Command+i on Mac, Ctrl+i on Windows/Linux)
@@ -543,9 +586,12 @@ Once complete, plans can be:
 
 ### 6.4 Iterative Development
 
-**Ask Mode**: Optimised for answering questions and getting code suggestions. Best for understanding how something works or exploring ideas.
+**Ask Mode**: Optimised for answering questions and getting code suggestions. Best for understanding how something works or exploring ideas. As of VS Code v1.110, Ask mode is backed by a custom agent definition, resolving previous limitations such as requiring a new session when switching between Ask and Agent mode.
 
 **Edit Mode**: Provides granular control over proposed edits:
+
+> **Deprecated in VS Code v1.110 (March 2026):** Edit mode is now hidden from the agent picker by default (`chat.editMode.hidden` setting). It is officially deprecated as of v1.110 and will be fully removed in v1.125. Agent mode handles everything Edit mode can do and more. To re-enable Edit mode temporarily, set `chat.editMode.hidden` to `false`.
+
 1. Select Edit mode from the agents dropdown
 2. Add relevant files to the working set
 3. Submit a prompt describing desired changes
@@ -569,6 +615,12 @@ Once complete, plans can be:
 Each prompt in Agent mode counts as one premium request multiplied by the model's multiplier. Follow-up actions by the agent do not count toward premium request usage.
 
 **Subagents:** Agents can run subtasks using subagents that operate in their own dedicated context windows. As of VS Code v1.109, subagents can run in parallel, significantly speeding up tasks that can be split into independent workstreams.
+
+**Context compaction (VS Code v1.110):** As a conversation grows, VS Code automatically compacts the conversation history when the context window reaches its limit. You can also trigger compaction manually with the `/compact` slash command (optionally followed by custom instructions, for example `/compact focus on the database schema decisions`). Compaction is available for local, background, and Claude agent sessions.
+
+**Fork a chat session (VS Code v1.110):** Use `/fork` to create a new independent session that inherits the full conversation history. You can also hover over any chat request and select **Fork Conversation** to create a session inheriting only the history up to that point. The forked session is fully independent — changes in one do not affect the other.
+
+**Auto-approve slash commands (VS Code v1.110):** Use `/autoApprove` (or the alias `/yolo`) to enable global auto approve for all tools without navigating to settings. Use `/disableAutoApprove` (or `/disableYolo`) to disable it. Global auto approve skips all tool confirmation prompts; use with caution and consider terminal sandboxing for additional protection.
 
 ### 6.5 Testing and Validation
 
@@ -596,7 +648,7 @@ Smart actions (accessed via right-click context menu or sparkle icon) include op
 
 Not extensively documented in official sources. Copilot can assist with generating deployment scripts and configuration files through chat prompts, but does not provide built-in deployment automation features.
 
-**Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 21 February 2026. GitHub Copilot CLI. GitHub Features. https://github.com/features/copilot/cli. Accessed 21 February 2026. January 2026 (version 1.109) - Visual Studio Code. https://code.visualstudio.com/updates/v1_109. Accessed 21 February 2026.
+**Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 21 February 2026. GitHub Copilot CLI. GitHub Features. https://github.com/features/copilot/cli. Accessed 21 February 2026. January 2026 (version 1.109) - Visual Studio Code. https://code.visualstudio.com/updates/v1_109. Accessed 21 February 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 [↑ Back to top](#table-of-contents)
 
@@ -612,10 +664,17 @@ Not extensively documented in official sources. Copilot can assist with generati
 - **Inline chat UX revamp** (VS Code v1.109 / February 2026, preview): The inline chat experience has been redesigned in a preview update.
 - **Context window indicator** (VS Code v1.109 / February 2026): A new indicator shows token usage relative to the model's context window limit.
 - **Mermaid diagram rendering** (VS Code v1.109 / February 2026): Mermaid diagrams included in chat responses are now rendered visually within the chat panel.
-- **Terminal command sandboxing** (VS Code v1.109 / February 2026, experimental): Terminal commands executed by the agent can be sandboxed for additional security. Available on macOS and Linux only.
+- **Terminal command sandboxing** (VS Code v1.109 / February 2026, experimental): Terminal commands executed by the agent can be sandboxed for additional security. Available on macOS and Linux only. Improved in v1.110: trusted domains can be selected for network isolation.
 - **Thinking tokens** (VS Code v1.109 / February 2026): Anthropic models now surface their reasoning process (thinking tokens) during agent sessions.
+- **Agent Debug panel** (VS Code v1.110 / March 2026, preview): A new panel provides real-time visibility into agent events, tool calls, system prompts, and loaded customisations. Includes a chart view for visual hierarchy of events. Open with **Developer: Open Agent Debug Panel** from the Command Palette.
+- **Background agent improvements** (VS Code v1.110 / March 2026): Background agents (Copilot CLI in VS Code) now support context compaction with `/compact`, slash commands for prompt files, hooks, and skills, and session renaming.
+- **Agent plugins** (VS Code v1.110 / March 2026, experimental): Prepackaged bundles of skills, tools, and hooks can be installed from the Extensions view by searching `@agentPlugins`.
+- **Agentic browser tools** (VS Code v1.110 / March 2026, experimental): Agents can navigate and interact with the integrated browser (`workbench.browser.enableChatTools` setting).
+- **Collapsible terminal tool calls** (VS Code v1.110 / March 2026): Terminal tool invocations in agent mode now appear as collapsible sections to reduce visual clutter (`chat.tools.terminal.simpleCollapsible` setting).
+- **Inline chat queues into existing session** (VS Code v1.110 / March 2026): When an agent session has already changed a file, inline chat now queues new messages into that session rather than making changes in isolation.
+- **Inline chat hover mode and affordance** (VS Code v1.110 / March 2026): New `inlineChat.renderMode` (hover-based UI) and `inlineChat.affordance` (menu alongside selection in editor or gutter) settings for inline chat.
 
-Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
+Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 ### 7.1 Visual Studio Code
 
@@ -654,6 +713,14 @@ Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Ch
 - Thinking tokens: Anthropic models surface reasoning during agent sessions
 - Message steering and queueing whilst requests are in progress
 - Claude Agent SDK support for delegating to Anthropic's agent (public preview)
+- Context compaction with `/compact` slash command (VS Code v1.110)
+- Fork a chat session with `/fork` command (VS Code v1.110)
+- Agent Debug panel for real-time visibility into agent events (preview, VS Code v1.110)
+- Agent plugins: prepackaged bundles of skills, tools, and hooks (experimental, VS Code v1.110)
+- Agentic browser tools for agents to interact with the integrated browser (experimental, VS Code v1.110)
+- Collapsible terminal tool calls for reduced visual clutter (VS Code v1.110)
+- Auto-approve slash commands (`/autoApprove`, `/disableAutoApprove`) (VS Code v1.110)
+- Redesigned model picker with sections, search box, and rich model details (VS Code v1.110)
 
 **Keyboard Shortcuts:**
 
@@ -673,7 +740,28 @@ Copilot integrates into VS Code through:
 - Context menu smart actions
 - Sparkle icon for contextual suggestions
 
-**Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 21 February 2026. Installing the GitHub Copilot extension in your environment. GitHub Copilot Documentation. https://docs.visualstudio.com/copilot. Accessed 21 February 2026. January 2026 (version 1.109) - Visual Studio Code. https://code.visualstudio.com/updates/v1_109. Accessed 21 February 2026.
+#### Agent Debug Panel (Preview, VS Code v1.110)
+
+> **Added in VS Code v1.110 (March 2026, preview)**
+
+The Agent Debug Panel provides real-time visibility into what the agent is doing during a session. It surfaces information that is otherwise only partially visible in the chat stream, making it significantly easier to diagnose unexpected agent behaviour and understand how customisations are being applied.
+
+**To open:** Open the Command Palette (`Ctrl+Shift+P` / `⇧⌘P`) and run **Developer: Open Agent Debug Panel**.
+
+**What it shows:**
+
+| View | Description |
+|------|-------------|
+| **Events** | Live feed of all agent events in the current session, including tool calls (name, arguments, output), model requests and responses, and timing information |
+| **Chart** | Visual hierarchy of events, showing the parent-child relationship between agent steps, subagent calls, and tool invocations |
+| **System Prompt** | The full system prompt sent to the model for the current session, including injected content from customisation files |
+| **Loaded Customisations** | Lists all instruction files, prompt files, skills, hooks, and agent definitions that were loaded and applied to the current session |
+
+The **Loaded Customisations** view is particularly useful for verifying that custom instructions and skills are being picked up correctly, and for diagnosing cases where a customisation file is not behaving as expected.
+
+**Citation:** February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
+
+**Citation:** Asking GitHub Copilot questions in your IDE. GitHub Copilot Documentation. https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide. Accessed 21 February 2026. Installing the GitHub Copilot extension in your environment. GitHub Copilot Documentation. https://docs.visualstudio.com/copilot. Accessed 21 February 2026. January 2026 (version 1.109) - Visual Studio Code. https://code.visualstudio.com/updates/v1_109. Accessed 21 February 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 ---
 
@@ -1139,15 +1227,16 @@ Areas for improvement:
 
 ### Version Information
 
-- **Tool Version Analysed:** Current version as of February 2026
-- **Documentation Last Updated:** February 2026 (continuously updated)
-- **Analysis Last Updated:** 21 February 2026
+- **Tool Version Analysed:** Current version as of March 2026
+- **Documentation Last Updated:** March 2026 (continuously updated)
+- **Analysis Last Updated:** 8 March 2026
 
-### Additional References (February 2026 Updates)
+### Additional References (February-March 2026 Updates)
 
 13. GitHub Copilot in Visual Studio Code v1.109 (January Release) - GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/
 14. GPT-5.3-Codex is now generally available for GitHub Copilot - GitHub Changelog. https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/
 15. Gemini 3.1 Pro is now in public preview in GitHub Copilot - GitHub Changelog. https://github.blog/changelog/2026-02-19-gemini-3-1-pro-is-now-in-public-preview-in-github-copilot
+16. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110
 
 [↑ Back to top](#table-of-contents)
 
@@ -1176,6 +1265,25 @@ Areas for improvement:
 - **Mermaid diagram rendering** (VS Code v1.109 / February 2026): Mermaid diagrams in chat responses are now rendered visually in the chat panel.
 - **Terminal command sandboxing** (VS Code v1.109 / February 2026, experimental, macOS/Linux only): Terminal commands executed by the agent can be sandboxed for additional security.
 - **Thinking tokens** (VS Code v1.109 / February 2026): Anthropic models surface their reasoning process during agent sessions.
+- **Edit Mode deprecated** (VS Code v1.110 / March 2026): Edit mode is now hidden from the agent picker by default (`chat.editMode.hidden`). Officially deprecated in v1.110; will be fully removed in v1.125.
+- **Context compaction** (VS Code v1.110 / March 2026): Conversation history can be compacted automatically or on demand (`/compact`) for local, background, and Claude agent sessions.
+- **Fork a chat session** (VS Code v1.110 / March 2026): Create a new independent session inheriting conversation history using `/fork` or the **Fork Conversation** button.
+- **Session memory for plans** (VS Code v1.110 / March 2026): Plans created by the Plan agent now persist to session memory across conversation turns.
+- **Claude Agent improvements** (VS Code v1.110 / March 2026): Steering and queuing, session renaming, context window rendering with compaction, `/compact` slash command, `getDiagnostics` tool, and significant performance improvements added to the Claude agent.
+- **Background agent improvements** (VS Code v1.110 / March 2026): Background agents (Copilot CLI) now support `/compact`, slash commands for prompt files/hooks/skills, and session renaming.
+- **Agent Debug panel** (VS Code v1.110 / March 2026, preview): Real-time visibility into agent events, tool calls, system prompts, and loaded customisations, with a chart view for visual hierarchy.
+- **Auto-approve slash commands** (VS Code v1.110 / March 2026): `/autoApprove` and `/disableAutoApprove` (aliases: `/yolo`, `/disableYolo`) toggle global auto approve from the chat input.
+- **Agent plugins** (VS Code v1.110 / March 2026, experimental): Prepackaged bundles of skills, tools, and hooks can be installed from the Extensions view (`@agentPlugins`).
+- **Agentic browser tools** (VS Code v1.110 / March 2026, experimental): Agents can navigate and interact with the integrated browser (`workbench.browser.enableChatTools`).
+- **Create agent customisations from chat** (VS Code v1.110 / March 2026): `/create-prompt`, `/create-instruction`, `/create-skill`, `/create-agent`, and `/create-hook` commands generate customisation files from a chat conversation.
+- **Explore subagent for codebase research** (VS Code v1.110 / March 2026): The Plan agent delegates codebase research to a dedicated read-only Explore subagent running on fast models.
+- **Tools for usages and rename** (VS Code v1.110 / March 2026): Updated `usages` tool and new `rename` tool for high-precision code navigation and refactoring.
+- **Redesigned model picker** (VS Code v1.110 / March 2026): Reorganised into sections (Auto, Featured/recent, Other) with a search box and rich model details in hover.
+- **Collapsible terminal tool calls** (VS Code v1.110 / March 2026): Terminal invocations in agent mode display as collapsible sections (`chat.tools.terminal.simpleCollapsible`).
+- **Long-distance next edit suggestions** (VS Code v1.110 / March 2026): NES extended to predict edits anywhere in the current file (`github.copilot.nextEditSuggestions.extendedRange`).
+- **NES eagerness** (VS Code v1.110 / March 2026): New eagerness option in the Copilot Status Bar for controlling NES frequency vs relevance.
+- **Ask Questions tool moved to core** (VS Code v1.110 / March 2026): `askQuestions` tool moved to VS Code core for improved reliability, with keyboard navigation (⌥N/⌥P) for carousel questions.
+- **Inline chat queues into existing session** (VS Code v1.110 / March 2026): When an agent session has already changed a file, inline chat queues new messages into that session.
 
 [↑ Back to top](#table-of-contents)
 
@@ -1188,6 +1296,7 @@ Areas for improvement:
 | 16 January 2026 | 1.0 | Initial analysis | GitHub Copilot |
 | 21 February 2026 | 1.1 | Updated with VS Code v1.109 changes (February 2026): multi-agent development focus, Claude Agent support, GPT-5.3-Codex, Gemini 3.1 Pro, agent hooks, MCP Apps, Plan agent revamp, message steering, Agent Session Management, parallel subagents, Mermaid diagram rendering, terminal command sandboxing, thinking tokens | GitHub Copilot |
 | 24 February 2026 | 1.2 | Documented known issue: Azure-hosted Anthropic models are non-functional in GitHub Copilot Chat (VS Code). Cannot be added via model management screen; configuring via settings causes all Azure models to vanish from chat panel. Root cause appears to be single-API-key limitation for Azure provider, incompatible with Azure's per-vendor key model. No workaround identified | GitHub Copilot |
+| 8 March 2026 | 1.3 | Updated with VS Code v1.110 changes (February/March 2026): Edit Mode deprecated (hidden by default, removal in v1.125), context compaction (`/compact`), fork chat sessions (`/fork`), session memory for plans, Claude agent improvements (steering/queuing, renaming, compaction, `getDiagnostics`), background agent improvements, Agent Debug panel, auto-approve slash commands, agent plugins, agentic browser tools, create agent customisations from chat, Explore subagent for codebase research, tools for usages and rename, redesigned model picker, collapsible terminal tool calls, long-distance NES, NES eagerness, Ask Questions tool moved to core, inline chat queuing into existing session | GitHub Copilot |
 
 [↑ Back to top](#table-of-contents)
 

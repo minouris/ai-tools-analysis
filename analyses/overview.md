@@ -74,8 +74,8 @@ This document provides a comprehensive comparison of 17 AI coding tools and deve
 The following tools have notable updates since 22 January 2026. Detailed changes are documented within each tool's section below.
 
 - **Roo Code (formerly Roo Cline):** Rebranded to Roo Code as of v3.2.0, now at v3.48.0 with new worktree selector, Smart Code Folding, and wider model support.
-- **GitHub Copilot Chat:** Multi-agent development focus in VS Code v1.109, Claude Agent SDK (public preview), GPT-5.3-Codex GA, Agent Skills, Copilot Memory.
-- **GitHub Copilot Coding Agent:** Now accessible from Visual Studio 2026; SKILL.md support for agent skills.
+- **GitHub Copilot Chat:** Multi-agent development focus in VS Code v1.109, Claude Agent SDK (public preview), GPT-5.3-Codex GA, Agent Skills, Copilot Memory. In VS Code v1.110: Edit Mode deprecated, context compaction (`/compact`), fork chat sessions, session memory for plans, Claude agent improvements (steering/queuing, `/compact`, `getDiagnostics`), background agent improvements, Agent Debug panel, agent plugins, agentic browser tools, create agent customisations from chat, Explore subagent, redesigned model picker, long-distance NES.
+- **GitHub Copilot Coding Agent:** Now accessible from Visual Studio 2026; SKILL.md support for agent skills. In VS Code v1.110: background agents (Copilot CLI in VS Code) now support context compaction, slash commands, and session renaming.
 - **Gemini Code Assist:** Agent mode now generally available (stable) in VS Code and IntelliJ.
 - **Claude Code:** Now at v2.1.47; Sonnet 4.6 added; Opus 4/4.1 deprecated; agent hooks and message queueing.
 - **Cursor:** Now at v2.5 with Plugins/Marketplace, async subagents, and Cursor Blame (Enterprise).
@@ -212,7 +212,7 @@ Google Cloud's enterprise AI coding assistant using Gemini 3 models. Available i
 **Licence:** Subscription-based (Free, Pro, Pro+, Business, Enterprise)  
 **Key Focus:** GitHub-native integration with multiple modes
 
-AI-powered conversational interface integrated across multiple IDEs (VS Code, JetBrains, Eclipse, Xcode, Neovim) and GitHub.com. Features Ask, Edit, Agent, and Plan modes. Supports Claude, GPT, and Gemini models. Custom instructions via `.github/copilot-instructions.md` and MCP server support.
+AI-powered conversational interface integrated across multiple IDEs (VS Code, JetBrains, Eclipse, Xcode, Neovim) and GitHub.com. Features Ask, Agent, Edit (deprecated), and Plan modes. Supports Claude, GPT, and Gemini models. Custom instructions via `.github/copilot-instructions.md` and MCP server support. Edit mode is deprecated from VS Code v1.110.
 
 **Official Documentation:** https://docs.github.com/en/copilot
 
@@ -220,8 +220,13 @@ AI-powered conversational interface integrated across multiple IDEs (VS Code, Je
 
 - **Multi-Agent Development:** VS Code v1.109 (released 4 February 2026) positions VS Code as the platform for multi-agent development, with multi-agent workflows as a primary focus. (Source: [GitHub Copilot in VS Code v1.109 January Release](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
 - **Claude Agent SDK (Public Preview):** Claude Agent support in public preview enables delegation to Anthropic's Claude Agent SDK. (Source: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109). Accessed 21 February 2026.)
-- **New Capabilities:** Agent orchestrations, Agent Skills, Copilot Memory, and parallel subagents. (Source: [GitHub Copilot in VS Code v1.109 January Release](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
+- **New Capabilities (v1.109):** Agent orchestrations, Agent Skills, Copilot Memory, and parallel subagents. (Source: [GitHub Copilot in VS Code v1.109 January Release](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
 - **GPT-5.3-Codex:** Generally available for GitHub Copilot from 9 February 2026. (Source: [GPT-5.3-Codex is now generally available for GitHub Copilot](https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot/). Accessed 21 February 2026.)
+- **Edit Mode deprecated (v1.110):** Edit mode is hidden from the agent picker by default and officially deprecated; will be removed in v1.125. (Source: [February 2026 (version 1.110) — VS Code](https://code.visualstudio.com/updates/v1_110). Accessed 8 March 2026.)
+- **Context compaction (v1.110):** Conversation history can be compacted automatically or on demand with the `/compact` slash command. (Source: [February 2026 (version 1.110) — VS Code](https://code.visualstudio.com/updates/v1_110). Accessed 8 March 2026.)
+- **Fork chat sessions (v1.110):** `/fork` creates a new independent session inheriting conversation history. (Source: [February 2026 (version 1.110) — VS Code](https://code.visualstudio.com/updates/v1_110). Accessed 8 March 2026.)
+- **Claude agent improvements (v1.110):** Steering/queuing, session renaming, `/compact`, `getDiagnostics` tool, and performance improvements added for Claude agents. (Source: [February 2026 (version 1.110) — VS Code](https://code.visualstudio.com/updates/v1_110). Accessed 8 March 2026.)
+- **Agent Debug panel, agent plugins, agentic browser tools (v1.110):** New tooling for agent development and debugging. (Source: [February 2026 (version 1.110) — VS Code](https://code.visualstudio.com/updates/v1_110). Accessed 8 March 2026.)
 
 ---
 
@@ -239,6 +244,7 @@ GitHub-hosted autonomous AI developer that works independently in GitHub Actions
 
 - **Visual Studio 2026 Support:** The Coding Agent is now accessible from Visual Studio 2026 (released 17 February 2026), in addition to VS Code and GitHub.com. (Source: [Delegate tasks to Copilot coding agent from Visual Studio](https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio/). Accessed 21 February 2026.)
 - **Agent Skills System:** SKILL.md files enable definition of custom agent skills. (Source: [GitHub Copilot in VS Code v1.109 January Release](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
+- **Background agent improvements (v1.110):** Background agents (Copilot CLI in VS Code) now support context compaction with `/compact`, slash commands for prompt files/hooks/skills, and session renaming. (Source: [February 2026 (version 1.110) — VS Code](https://code.visualstudio.com/updates/v1_110). Accessed 8 March 2026.)
 
 ---
 
@@ -364,7 +370,7 @@ Updates to feature comparison data since 22 January 2026 are noted within each r
 | **Windsurf** | ✅ BYOK | ✅ (via service) | ❌ | ❌ | ❌ | ✅ | Proprietary (SWE) + BYOK |
 | **OpenAI Codex** | ❌ | ✅ **Native** | ❌ | ❌ | ❌ | ❌ | OpenAI only |
 
-† Claude Agent SDK integration for GitHub Copilot Chat is in public preview (VS Code v1.109, February 2026). Source: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109). Accessed 21 February 2026.
+† Claude Agent SDK integration for GitHub Copilot Chat is in public preview (VS Code v1.109, February 2026). In VS Code v1.110, steering/queuing and additional slash commands were added to the Claude agent experience. Sources: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109) (Accessed 21 February 2026); [VS Code v1.110 Release Notes](https://code.visualstudio.com/updates/v1_110) (Accessed 8 March 2026).
 
 **Key Finding:** Continue and Roo Cline offer the most provider flexibility with 20-40+ integrations, whilst Amazon Q (AWS-only), Gemini Code Assist (Google-only), and OpenAI Codex (OpenAI-only) are locked to their respective ecosystems. Windsurf uses proprietary in-house SWE models by default with BYOK support for Claude 4 models.
 
@@ -1174,13 +1180,15 @@ Continue has reached its stable v1.0 release. OpenRouter has been added as a sup
 - **MCP Support (§3.2):** Windsurf and OpenAI Codex both added with full MCP support, increasing tools count from 5 to 7.
 - **IDE Support (§3.3):** GitHub Copilot Coding Agent is now accessible from Visual Studio 2026. Tabnine added Visual Studio 2022 and 2026 support. Windsurf added as standalone editor with JetBrains plugin.
 - **Custom Instructions (§3.4):** Windsurf (`.windsurf/rules/`) and OpenAI Codex (`AGENTS.md`) added, increasing documented tools from 6 to 8.
-- **Custom Prompts (§3.5):** Tabnine now supports predefined slash commands. Windsurf (Workflows) and OpenAI Codex (profiles/AGENTS.md) added.
+- **Custom Prompts (§3.5):** Tabnine now supports predefined slash commands. Windsurf (Workflows) and OpenAI Codex (profiles/AGENTS.md) added. GitHub Copilot Chat v1.110 adds `/create-prompt`, `/create-instruction`, `/create-skill`, `/create-agent`, and `/create-hook` commands.
 - **Pricing (§3.6):** Windsurf Pro at $15/month, Teams at $30/user/month. OpenAI Codex included with ChatGPT plans.
 
 ### Technology Trends
 
-- **Multi-Agent Development:** VS Code is positioning itself as the platform for multi-agent development (v1.109, February 2026), with agent orchestrations, parallel subagents, and Agent Skills now available. (Source: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109). Accessed 21 February 2026.)
-- **Claude Agent SDK:** Integration of Anthropic's Claude Agent SDK into VS Code (public preview) expands the agent ecosystem beyond proprietary implementations. (Source: [GitHub Copilot in VS Code v1.109](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
+- **Multi-Agent Development:** VS Code is positioning itself as the platform for multi-agent development (v1.109, February 2026), with agent orchestrations, parallel subagents, and Agent Skills now available. In v1.110, agent plugins, agentic browser tools, and the Agent Debug panel further deepen multi-agent capabilities. (Source: [VS Code v1.109 Release Notes](https://code.visualstudio.com/updates/v1_109). Accessed 21 February 2026. [VS Code v1.110 Release Notes](https://code.visualstudio.com/updates/v1_110). Accessed 8 March 2026.)
+- **Claude Agent SDK:** Integration of Anthropic's Claude Agent SDK into VS Code (public preview) expands the agent ecosystem beyond proprietary implementations. In v1.110, steering/queuing, `/compact`, and `getDiagnostics` have been added, closing the capability gap between Claude agents and native Copilot agents. (Source: [GitHub Copilot in VS Code v1.109](https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/). Accessed 21 February 2026.)
+- **Edit Mode Deprecation:** GitHub Copilot Chat's Edit mode is deprecated in v1.110 and will be removed in v1.125. Agent mode and Ask mode handle all previous Edit mode use cases, signalling that interactive multi-file editing is now considered a standard agentic task rather than a separate mode. (Source: [VS Code v1.110 Release Notes](https://code.visualstudio.com/updates/v1_110). Accessed 8 March 2026.)
+- **Context Management:** Context compaction (available in v1.110 for local, background, and Claude agents via `/compact`) and session memory for plans represent growing investment in managing long-running agentic sessions more effectively.
 - **Open-Source Ecosystem Maturity:** Roo Cline rebranded to Roo Code (v3.2.0) with a dedicated documentation site, and Continue reached stable v1.0, reflecting increased maturity of open-source agentic tooling.
 - **Proprietary In-House Models:** Windsurf's SWE-1.5 model demonstrates the trend of coding-tool vendors building their own fine-tuned models rather than relying solely on third-party providers. (Source: [Windsurf Models](https://docs.windsurf.com/windsurf/models). Accessed 25 February 2026.)
 - **Open-Source CLI Agents:** OpenAI's Codex CLI (Apache-2.0) represents a trend towards open-source coding agents that can run locally with OS-level sandboxing. (Source: [OpenAI Codex GitHub](https://github.com/openai/codex). Accessed 25 February 2026.)

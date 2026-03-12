@@ -52,8 +52,9 @@
 
 - **Agent Skills System** (VS Code v1.109 / February 2026): Teams can create `SKILL.md` files containing reusable workflow definitions. Agents can invoke these skills to follow established team patterns when completing tasks.
 - **Copilot Memory** (VS Code v1.109 / February 2026): Copilot Memory now helps agents retain repository context across sessions, reducing repeated discovery work.
+- **Background agent improvements** (VS Code v1.110 / March 2026): Background agents (Copilot CLI in VS Code) now support context compaction with the `/compact` slash command, use of slash commands for prompt files, hooks, and skills, and session renaming.
 
-Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026.
+Citation: GitHub Copilot in Visual Studio Code v1.109 January Release. GitHub Changelog. https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release/. Accessed 21 February 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 **Official Documentation:** https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent  
 **Version Analysed:** Current version (as of February 2026)  
@@ -614,8 +615,9 @@ The agent respects existing deployment workflows and does not trigger deployment
 ### Changes Since January 2026
 
 - **Visual Studio 2026 support** (February 2026): Users can now delegate tasks to the Coding Agent from Visual Studio 2026. Requires Visual Studio 2026 December Update 18.1.0 or later, with the "Enable Copilot Coding agent (preview)" setting enabled.
+- **Background agent improvements in VS Code** (VS Code v1.110 / March 2026): When using the Coding Agent through VS Code's background agents interface (Copilot CLI), sessions now support context compaction with `/compact`, slash commands for prompt files, hooks, and skills, and session renaming.
 
-Citation: Delegate tasks to Copilot Coding Agent from Visual Studio. GitHub Changelog. https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio/. Accessed 21 February 2026.
+Citation: Delegate tasks to Copilot Coding Agent from Visual Studio. GitHub Changelog. https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio/. Accessed 21 February 2026. February 2026 (version 1.110) — Visual Studio Code. https://code.visualstudio.com/updates/v1_110. Accessed 8 March 2026.
 
 ### 7.1 Visual Studio Code
 
@@ -1275,6 +1277,7 @@ For users within monthly allowances, no additional costs beyond Copilot subscrip
 - **GPT-5.3-Codex availability** (February 2026): GPT-5.3-Codex is now generally available for use with the Coding Agent. Faster than GPT-5.2-Codex on agentic tasks. Rollout began 9 February 2026.
 - **Network configuration changes** (February 2026): Dedicated domains are now used for AI inference traffic based on user plan. Network administrators should update firewall and proxy rules to permit these domains.
 - **Visual Studio 2026 support** (February 2026): Users can now delegate tasks to the Coding Agent from Visual Studio 2026 (December Update 18.1.0+) with the "Enable Copilot Coding agent (preview)" setting enabled.
+- **Background agent improvements** (VS Code v1.110 / March 2026): When using the Coding Agent through VS Code's background agents interface (Copilot CLI), sessions now support context compaction with `/compact`, slash commands for prompt files, hooks, and skills, and session renaming.
 
 [↑ Back to top](#table-of-contents)
 
@@ -1286,6 +1289,7 @@ For users within monthly allowances, no additional costs beyond Copilot subscrip
 |------|---------|---------|
 | 22 January 2026 | 1.0 | Initial analysis of GitHub Copilot Coding Agent |
 | 21 February 2026 | 1.1 | Updated with February 2026 changes: Agent Skills System (SKILL.md), GPT-5.3-Codex availability, network configuration changes for AI inference, Visual Studio 2026 delegation support |
+| 8 March 2026 | 1.2 | Updated with VS Code v1.110 changes (February/March 2026): background agent improvements (context compaction with `/compact`, slash commands for prompt files/hooks/skills, session renaming) |
 
 ---
 
