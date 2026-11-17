@@ -45,6 +45,7 @@ Browse detailed analyses of popular AI coding tools in the [analyses](analyses/)
 - **[ChatGPT](analyses/chatgpt.md)** - Browser-based conversational AI with Canvas code editing
 - **[Azure AI Toolkit](analyses/azure-ai-toolkit.md)** - Visual Studio Code extension for Azure AI services integration
 - **[GitHub Codespaces](analyses/github-codespaces.md)** - Cloud-hosted development environment platform
+- **[Mel – the agentic terminal](https://www.openmel.dev)** - The agentic team for coding: a multi-agent, multi-model AI terminal for macOS, Windows, Linux and VS Code. Free with your own API key; Pro from $20/month. Proprietary.
 
 [View all analyses →](analyses/README.md)
 
